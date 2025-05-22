@@ -54,23 +54,23 @@ In VS Code, press `Ctrl+Shift+P` and select **Dev Containers: Reopen in Containe
 ### 3. Authenticate with Shopify
 In the Dev Container terminal:
 ```bash
-shopify theme dev --store <yourstore.myshopify.com>
+shopify theme list --store <yourstore.myshopify.com>
 ```
 Follow the link to authenticate in your browser.
 
-### 4. Run locally
-In the terminal, inside the theme folder:
-```bash
-shopify theme dev --store <yourstore.myshopify.com>
-```
-Go to [http://localhost:9292](http://localhost:9292) to preview.
-
-### 5. Pull the latest theme code from Shopify
+### 4. Pull the latest theme code from Shopify
 Before making any changes or commits, always pull the latest version of the theme from Shopify to ensure you are working with the most up-to-date code:
 ```bash
 shopify theme pull --theme <THEME_ID>
 ```
 > **Important:** Always run this command before every commit to avoid overwriting changes made directly in the Shopify admin.
+
+### 5. Run locally
+In the terminal, move to a theme folder (themes/ThemeName) and run:
+```bash
+shopify theme dev --store <yourstore.myshopify.com>
+```
+Go to [http://localhost:9292](http://localhost:9292) to preview.
 
 ### 6. Commit and push changes
 ```bash
