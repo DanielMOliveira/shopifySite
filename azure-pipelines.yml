@@ -18,9 +18,22 @@ steps:
     displayName: 'Install Node.js'
 
   - script: |
-      npm install -g @shopify/cli @shopify/theme
-      npm install --save-dev eslint stylelint stylelint-config-standard prettier @shopify/prettier-plugin-liquid
+      echo "🧼 Cleaning npm cache..."
+      npm cache clean --force
+  
+      echo "📦 Installing Shopify CLI..."
+      npm install -g @shopify/cli@latest
+  
+      echo "🔍 Installing linting tools..."
+      npm install -g eslint stylelint prettier
+  
+      echo "✅ Tools installed:"
+      shopify version
+      eslint -v
+      stylelint -v
+      prettier -v
     displayName: 'Install Shopify CLI and linting tools'
+
 
   - script: |
       BRANCH=$(echo "$(Build.SourceBranchName)")
