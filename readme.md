@@ -65,12 +65,21 @@ shopify theme dev --store <yourstore.myshopify.com>
 ```
 Go to [http://localhost:9292](http://localhost:9292) to preview.
 
-### 5. Commit and push changes
+### 5. Pull the latest theme code from Shopify
+Before making any changes or commits, always pull the latest version of the theme from Shopify to ensure you are working with the most up-to-date code:
+```bash
+shopify theme pull --theme <THEME_ID>
+```
+> **Important:** Always run this command before every commit to avoid overwriting changes made directly in the Shopify admin.
+
+### 6. Commit and push changes
 ```bash
 git add .
 git commit -m "Description of the change"
 git push origin <branch>
 ```
+
+> **Note:** The code in the repository always takes priority over changes made directly in the Shopify admin. When you push from the repository, it will overwrite any changes made online.
 
 ---
 

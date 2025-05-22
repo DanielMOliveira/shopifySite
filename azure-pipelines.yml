@@ -3,6 +3,7 @@ trigger:
     include:
       - main
       - dev
+      - feature/*
 
 pool:
   vmImage: ubuntu-latest
@@ -22,49 +23,58 @@ steps:
     displayName: 'Install Shopify CLI and linting tools'
 
   - script: |
-      npx prettier --check "$THEME_FOLDER/**/*.{liquid,js,css,json}"
-    displayName: 'Check formatting with Prettier'
-    continueOnError: 'true' #Verificar como alterar para false no main
+      BRANCH=$(echo "$(Build.SourceBranchName)")
+      CONFIG_FILE="deploy/config.json"
+      echo "Detectando configurações para o branch: $BRANCH"
+
+      STORE=$(jq -r ".\"$BRANCH\".store" $CONFIG_FILE)
+      THEME_ID=$(jq -r ".\"$BRANCH\".theme_id" $CONFIG_FILE)
+      PUBLISH=$(jq -r ".\"$BRANCH\".publish" $CONFIG_FILE)
+      THEME_FOLDER=$(jq -r ".\"$BRANCH\".theme_folder" $CONFIG_FILE)
+
+      if [ "$STORE" = "null" ] || [ "$THEME_ID" = "null" ] || [ "$THEME_FOLDER" = "null" ]; then
+        echo "Erro: configuração incompleta para a branch '$BRANCH'"
+        exit 1
+      fi
+
+      echo "##vso[task.setvariable variable=SHOPIFY_STORE_URL]$STORE"
+      echo "##vso[task.setvariable variable=THEME_ID]$THEME_ID"
+      echo "##vso[task.setvariable variable=PUBLISH_THEME]$PUBLISH"
+      echo "##vso[task.setvariable variable=THEME_FOLDER]$THEME_FOLDER"
+    displayName: 'Ler configurações do config.json'
 
   - script: |
-      npx eslint "$THEME_FOLDER/assets/*.js" || true
+      mkdir -p lint-reports
+      npx prettier --check "$THEME_FOLDER/**/*.{liquid,js,css,json}" > lint-reports/prettier.txt || true
+    displayName: 'Check formatting with Prettier'
+
+  - script: |
+      mkdir -p lint-reports
+      npx eslint "$THEME_FOLDER/assets/*.js" > lint-reports/eslint.txt || true
     displayName: 'Run ESLint on JavaScript files'
 
   - script: |
-      npx stylelint "$THEME_FOLDER/assets/*.css" || true
+      mkdir -p lint-reports
+      npx stylelint "$THEME_FOLDER/assets/*.css" > lint-reports/stylelint.txt || true
     displayName: 'Run Stylelint on CSS files'
 
   - script: |
+      mkdir -p lint-reports
       cd "$THEME_FOLDER"
-      shopify theme check || true
+      shopify theme check > ../lint-reports/theme-check.txt || true
     displayName: 'Run Shopify Theme Check'
-    continueOnError: 'true'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: 'lint-reports'
+      ArtifactName: 'lint-results'
+      publishLocation: 'Container'
+    displayName: 'Publicar artefatos dos lints'
 
   - script: |
-      echo "Current branch: $BUILD_SOURCEBRANCH"
-      if [ "$BUILD_SOURCEBRANCH" = "refs/heads/main" ]; then
-        echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_PROD"
-      else
-        echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_STAGING"
-      fi
-    displayName: 'Set theme ID based on branch'
-    env:
-      SHOPIFY_THEME_ID_PROD: $(SHOPIFY_THEME_ID_PROD)
-      SHOPIFY_THEME_ID_STAGING: $(SHOPIFY_THEME_ID_STAGING)
-      BUILD_SOURCEBRANCH: $(Build.SourceBranch)
-
-  - script: |
-      echo "Working directory before cd:"
-      pwd
-      echo "Listing current files:"
-      ls -al
-      echo "Changing to theme folder: $THEME_FOLDER"
       cd "$THEME_FOLDER"
-      echo "Inside theme folder:"
-      pwd
-      ls -al
       shopify theme push --store "$SHOPIFY_STORE_URL" --theme "$THEME_ID" --password "$SHOPIFY_THEME_TOKEN" --allow-live
-    displayName: 'Push theme to Shopify store'
+    displayName: 'Push theme to Shopify'
     env:
       SHOPIFY_STORE_URL: $(SHOPIFY_STORE_URL)
       SHOPIFY_THEME_TOKEN: $(SHOPIFY_THEME_TOKEN)
@@ -72,13 +82,12 @@ steps:
       THEME_FOLDER: $(THEME_FOLDER)
 
   - script: |
-      echo "Publishing theme $THEME_ID to store $SHOPIFY_STORE_URL"
       cd "$THEME_FOLDER"
       shopify theme publish --store "$SHOPIFY_STORE_URL" --theme "$THEME_ID" --password "$SHOPIFY_THEME_TOKEN" --allow-live
-    displayName: 'Publish theme to Shopify (production)'
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['PUBLISH_THEME'], 'true'))
+    displayName: 'Publish theme to Shopify'
+    condition: and(succeeded(), eq(variables['PUBLISH_THEME'], 'true'))
     env:
       SHOPIFY_STORE_URL: $(SHOPIFY_STORE_URL)
       SHOPIFY_THEME_TOKEN: $(SHOPIFY_THEME_TOKEN)
-      THEME_ID: $(SHOPIFY_THEME_ID_PROD)
+      THEME_ID: $(THEME_ID)
       THEME_FOLDER: $(THEME_FOLDER)
