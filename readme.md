@@ -9,14 +9,18 @@ Este projeto permite:
 
 ## Comandos básicos do Shopify CLI
 
-### Login
-```bash
-shopify theme dev --store jy1f5j-6g.myshopify.com
-```
-
 ### Listar todos os temas
 ```bash
-shopify theme list --store jy1f5j-6g.myshopify.com
+shopify theme list --store zippy-development.myshopify.com
+```
+### Baixar um tema
+```bash
+shopify theme pull --store zippy-development.myshopify.com --theme 180267843959
+```
+## Correr Localmente para Testes
+Inicie o servidor de desenvolvimento local:
+```bash
+shopify theme dev --store zippy-development.myshopify.com
 ```
 
 ### Limpar autenticação

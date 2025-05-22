@@ -1,7 +1,7 @@
 trigger:
   branches:
     include:
-      - master
+      - main
       - dev
 
 pool:
@@ -24,7 +24,7 @@ steps:
   - script: |
       npx prettier --check "$THEME_FOLDER/**/*.{liquid,js,css,json}"
     displayName: 'Check formatting with Prettier'
-    continueOnError: true #Verificar como alterar para false no master
+    continueOnError: 'true' #Verificar como alterar para false no main
 
   - script: |
       npx eslint "$THEME_FOLDER/assets/*.js" || true
@@ -38,11 +38,11 @@ steps:
       cd "$THEME_FOLDER"
       shopify theme check || true
     displayName: 'Run Shopify Theme Check'
-    continueOnError: true
+    continueOnError: 'true'
 
   - script: |
       echo "Current branch: $BUILD_SOURCEBRANCH"
-      if [ "$BUILD_SOURCEBRANCH" = "refs/heads/master" ]; then
+      if [ "$BUILD_SOURCEBRANCH" = "refs/heads/main" ]; then
         echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_PROD"
       else
         echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_STAGING"
@@ -76,7 +76,7 @@ steps:
       cd "$THEME_FOLDER"
       shopify theme publish --store "$SHOPIFY_STORE_URL" --theme "$THEME_ID" --password "$SHOPIFY_THEME_TOKEN" --allow-live
     displayName: 'Publish theme to Shopify (production)'
-    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['PUBLISH_THEME'], 'true'))
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/main'), eq(variables['PUBLISH_THEME'], 'true'))
     env:
       SHOPIFY_STORE_URL: $(SHOPIFY_STORE_URL)
       SHOPIFY_THEME_TOKEN: $(SHOPIFY_THEME_TOKEN)
