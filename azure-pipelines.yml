@@ -50,18 +50,17 @@ steps:
 
   - script: |
       mkdir -p lint-reports
-      npx eslint "$THEME_FOLDER/assets/*.js" > lint-reports/eslint.txt || true
-    displayName: 'Run ESLint on JavaScript files'
+      npx eslint "$THEME_FOLDER/**/*.js" > lint-reports/eslint.txt || true
+    displayName: 'Run ESLint '
+  
+  - script: |
+      mkdir -p lint-reports
+      npx stylelint "$THEME_FOLDER/**/*.css" > lint-reports/stylelint.txt || true
+    displayName: 'Run Stylelint'
 
   - script: |
       mkdir -p lint-reports
-      npx stylelint "$THEME_FOLDER/assets/*.css" > lint-reports/stylelint.txt || true
-    displayName: 'Run Stylelint on CSS files'
-
-  - script: |
-      mkdir -p lint-reports
-      cd "$THEME_FOLDER"
-      shopify theme check > ../lint-reports/theme-check.txt || true
+      shopify theme check --path "$THEME_FOLDER" > lint-reports/theme-check.txt || true
     displayName: 'Run Shopify Theme Check'
 
   - task: PublishBuildArtifacts@1
