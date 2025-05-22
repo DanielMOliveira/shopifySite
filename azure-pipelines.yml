@@ -8,7 +8,7 @@ pool:
   vmImage: ubuntu-latest
 
 variables:
-  - group: shopify-credentials
+  - group: shopify-credentials-zippyDev
 
 steps:
   - task: NodeTool@0
