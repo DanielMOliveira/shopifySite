@@ -1,0 +1,99 @@
+{% comment %}
+  Renders a best-selling products
+
+  Usage:
+      {% render 'cart-drawer-best-selling' %}
+{% endcomment %}
+
+<cart-drawer-best-selling class="best-selling !hidden md:w-[355px]">
+  <section
+    id="section-best-selling"
+    class="w-[520px] max-w-[calc(100vw-110px)] overflow-hidden pb-6 opacity-0 transition-opacity md:w-[355px]"
+  >
+    <div class="lg:relative">
+      <div
+        class="swiper best-selling-swiper group !overflow-visible lg:!static lg:transition-all"
+        data-slider='
+          {
+              "spaceBetween": 16,
+              "slidesPerView": 1.2,
+              "breakpoints": {
+                  "468": {
+                      "slidesPerView": 2.2
+                  },
+                  "1024": {
+                      "spaceBetween": 20
+                  }
+              },
+              "navigation": {
+                  "prevEl": "#section-best-selling .swiper-button-prev",
+                  "nextEl": "#section-best-selling .swiper-button-next"
+              },
+              "scrollbar": {
+                  "el": "#section-best-selling .swiper-scrollbar"
+              }
+          }
+        '
+      >
+        <div class="best-selling-products swiper-wrapper flex"></div>
+
+        <div class="swiper-button-prev -!transform-y-2/4 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] lg:!right-4 xl:!right-10">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      </div>
+    </div>
+
+    {% style %}
+      #section-best-selling:has(.offcanvas-card-product.is-open) {
+        position: relative;
+        z-index: 1000;
+      }
+
+      #section-best-selling:has(.swiper.swiper-initialized .swiper-slide) {
+        opacity: 1;
+      }
+
+      #section-best-selling .swiper-scrollbar .swiper-scrollbar-drag {
+        background-color: rgb(var(--color-gray-500));
+        border-radius: 100px;
+        display: block !important;
+      }
+
+      #section-best-selling .swiper:not(.swiper-initialized) .swiper-wrapper.recently-viewed-products .swiper-slide {
+        width: 73%;
+      }
+
+      @media screen and (min-width: 768px) {
+        #section-best-selling .swiper .swiper-wrapper.recently-viewed-products > .swiper-slide {
+          max-width: 29%;
+          margin-right: 16px;
+        }
+      }
+
+      @media screen and (min-width: 1024px) {
+        #section-best-selling
+          .swiper:not(.swiper-initialized)
+          .swiper-wrapper:not(.swiper-wrapper-card-product)
+          .swiper-wrapper {
+          transform: translateX(-27%);
+        }
+
+        #section-best-selling .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {
+          margin-left: 0;
+        }
+
+        #section-best-selling .swiper.slider-end .swiper-wrapper:not(.swiper-wrapper-card-product) {
+          margin-left: 0;
+        }
+
+        #section-best-selling .swiper .swiper-wrapper.recently-viewed-products > .swiper-slide {
+          max-width: 23%;
+          margin-right: 16px;
+        }
+      }
+    {% endstyle %}
+  </section>
+</cart-drawer-best-selling>

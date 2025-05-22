@@ -1,0 +1,235 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+{% if customer %}
+  <script>
+    window.location.href = '/account/#main';
+  </script>
+{% else %}
+  <section id="section-{{ section.id }}" class="overflow-hidden">
+    <div class="container-valantic">
+      <div class="login-block group mx-auto hidden max-w-107.5" id="recover">
+        <h1 class="mb-4 text-center text-3_5xl" tabindex="-1">{{ 'customer.recover_password.title' | t }}</h1>
+        <div class="form-wrapper w-full rounded border border-gray-400 p-6">
+          <p class="mb-3 text-[11px] leading-3">* {{ 'customer.recover_password.subtext' | t }}</p>
+
+          {% form 'recover_customer_password' %}
+            {% assign recover_success = form.posted_successfully? %}
+
+            {% if form.errors %}
+              <div class="recover-message mb-3 rounded border border-red-500/40 bg-red-500/15 px-4 py-2 text-sm leading-[18px]">
+                <ul class="flex list-disc flex-col gap-0.5 pl-3">
+                  <li>{{ form.errors.messages.form }}</li>
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if recover_success == true %}
+              <div class="recover-message mb-3 rounded border border-green-100/40 bg-green-100/15 px-4 py-2 text-sm leading-[18px]">
+                <ul class="flex list-disc flex-col gap-0.5 pl-3">
+                  <li>{{ 'customer.recover_password.success' | t }}</li>
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="input-group mb-3{% if form.errors %} error{% endif %}">
+              <input
+                class="peer w-full"
+                type="email"
+                value=""
+                name="email"
+                id="RecoverEmail"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  aria-invalid="true"
+                  aria-describedby="RecoverEmail-email-error"
+                  autofocus
+                {% endif %}
+                placeholder=" "
+              >
+
+              <label for="RecoverEmail">{{ 'customer.login_page.email' | t }}</label>
+              {% if form.errors %}
+                {% render 'icon', icon: 'error-circle', class: 'absolute top-1/2 -translate-y-1/2 right-4' %}
+              {% endif %}
+            </div>
+
+            <div class="flex items-center gap-4">
+              <a href="#login" class="login-link text-sm underline">
+                {{ 'customer.login_page.cancel' | t }}
+              </a>
+              <button class="w-full">{{ 'customer.login_page.submit' | t }}</button>
+            </div>
+          {% endform %}
+        </div>
+      </div>
+
+      <div class="login-block group mx-auto block max-w-107.5" id="login">
+        <h1 class="mb-4 text-center text-3_5xl" tabindex="-1">{{ 'customer.login_page.title' | t }}</h1>
+        <div class="w-full rounded border border-gray-400 p-6">
+          {% form 'customer_login', novalidate: 'novalidate' %}
+            <input type="hidden" name="return_to" value="?login=true">
+            {% if form.errors %}
+              <div class="mb-3 rounded border border-red-500/40 bg-red-500/15 px-4 py-2 text-sm leading-[18px]">
+                <p>{{ 'templates.contact.form.error_heading' | t }}</p>
+                <ul class="mt-1 flex list-disc flex-col gap-0.5 pl-3">
+                  {% for field in form.errors %}
+                    <li>
+                      {{ form.errors | default_errors }}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="input-group mb-3">
+              <input
+                class="peer w-full"
+                type="email"
+                name="customer[email]"
+                id="CustomerEmail"
+                autocomplete="email"
+                autocorrect="off"
+                autocapitalize="off"
+                {% if form.errors contains 'form' %}
+                  aria-invalid="true"
+                {% endif %}
+                placeholder=" "
+              >
+
+              <label for="CustomerEmail">{{ 'customer.login_page.email' | t }}</label>
+            </div>
+
+            {% if form.password_needed %}
+              <div class="input-group mb-7.5">
+                <input
+                  class="peer w-full"
+                  type="password"
+                  value=""
+                  name="customer[password]"
+                  id="CustomerPassword"
+                  autocomplete="current-password"
+                  {% if form.errors contains 'form' %}
+                    aria-invalid="true"
+                  {% endif %}
+                  placeholder=" "
+                >
+
+                <label for="CustomerPassword">{{ 'customer.login_page.password' | t }}</label>
+                <a href="#recover" class="login-link absolute left-0 top-full text-2xs underline">
+                  {{ 'customer.login_page.forgot_password' | t }}
+                </a>
+              </div>
+            {% endif %}
+
+            <button class="mb-3 w-full">
+              {{ 'customer.login_page.sign_in' | t }}
+            </button>
+
+            <a class="button secondary w-full" href="{{ routes.account_register_url }}">
+              {{ 'customer.login_page.create_account' | t }}
+            </a>
+          {% endform %}
+        </div>
+
+        {% if shop.checkout.guest_login %}
+          <div>
+            <h2 class="my-4 text-center text-3_5xl">{{ 'customer.login_page.guest_title' | t }}</h2>
+
+            <div class="w-full rounded border border-gray-400 p-6">
+              {% form 'guest_login' %}
+                <input type="hidden" name="return_to" value="?login=true">
+                <button class="w-full">{{ 'customer.login_page.guest_continue' | t }}</button>
+              {% endform %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.login-link').forEach((link) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        document.querySelectorAll('.login-block').forEach((block) => {
+          block.classList.add('hidden');
+        });
+
+        document.querySelector(link.getAttribute('href')).classList.remove('hidden');
+      });
+    });
+  </script>
+
+  {% style %}
+    .login-block.hidden#recover:has(.recover-message) {
+      display: block;
+    }
+
+    .login-block.hidden#recover:has(.recover-message) .form-wrapper {
+      border: none;
+      margin: 0 0 20px;
+      padding: 0;
+    }
+
+    .login-block.hidden#recover:has(.recover-message) .recover-message {
+      margin-bottom: 0;
+    }
+
+    .login-block.hidden#recover:has(.recover-message) h1,
+    .login-block.hidden#recover:has(.recover-message) p,
+    .login-block.hidden#recover:has(.recover-message) a,
+    .login-block.hidden#recover:has(.recover-message) button,
+    .login-block.hidden#recover:has(.recover-message) .input-group {
+      display: none;
+    }
+  {% endstyle %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.main-login.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 20,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 60,
+      "info": "From 768px"
+    }
+  ]
+}
+{% endschema %}

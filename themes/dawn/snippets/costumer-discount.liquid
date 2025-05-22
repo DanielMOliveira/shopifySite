@@ -1,0 +1,13 @@
+
+{% assign discount_customer_tag = 'nl_subscriber' %} 
+{% assign discount_codes = "35KG,25KB,10NB,30BB,20BG" | split: "," %}
+
+{% if customer.tags contains discount_customer_tag %}
+  <script>
+    window.addEventListener('load', function() {
+      {% for discount_code in discount_codes %}
+        fetch("/discount/{{ discount_code }}");
+      {% endfor %}
+    });
+  </script>
+{% endif %}

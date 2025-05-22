@@ -1,0 +1,76 @@
+{% liquid
+  assign notification_bar_settings = notification_bar.first.settings
+
+  assign background_color = notification_bar_settings.background_color
+  assign is_enabled = notification_bar_settings.is_enabled
+  assign content = notification_bar_settings.content
+  assign color = notification_bar_settings.color
+  assign icon = notification_bar_settings.icon
+  assign custom_liquid = notification_bar_settings.custom_liquid
+
+  assign liquid_displaying = notification_bar_settings.liquid_displaying
+%}
+
+{% if is_enabled %}
+  {% if custom_liquid != 'blank' and liquid_displaying == 'instead_block' %}
+    {{ custom_liquid }}
+  {% else %}
+    <div
+      class="top-notification relative max-h-50 overflow-hidden text-center transition-all"
+      {% if background_color %}
+        style="background-color: {{ background_color }}"
+      {% endif %}
+    >
+      <div
+        class="notification-text inline-flex items-center justify-center px-10 py-1 text-2xs text-gray-900"
+        data-id="{{ section.id }}"
+        {% if color %}
+          style="color: {{ color }}"
+        {% endif %}
+      >
+        {% if liquid_displaying == 'disabled' %}
+          {% if icon != blank %}
+            {% capture icon_src %}
+              <img src="{{ icon | image_url }}"
+                   height="{{ icon.height }}"
+                   width="{{ icon.width }}"
+                   alt="{{ icon.alt | default: 'Icon' }}"
+                   loading="eager"
+                   class="ml-1.5 inline-block w-3.25">
+            {% endcapture %}
+          {% endif %}
+
+          {{ content | replace: '[icon]', icon_src }}
+        {% elsif custom_liquid != 'blank' and liquid_displaying == 'instead_content' %}
+          {{ custom_liquid }}
+        {% endif %}
+      </div>
+
+      <span
+        class="notification-close absolute right-2 top-2/4 -translate-y-1/2 cursor-pointer rounded-full"
+        {% if color or background_color %}
+          style="color: {{ background_color }}; background-color: {{ color }}"
+        {% endif %}
+      >
+        {% render 'icon', icon: 'cross-small', class: '!w-3.25 !h-3.25', label: 'label' %}
+      </span>
+
+      {% style %}
+        .top-notification.is-hidden {
+          max-height: 0;
+        }
+
+        .top-notification p {
+          margin: 0 !important;
+        }
+
+        .top-notification a {
+          margin-left: 12px;
+          text-decoration: underline;
+        }
+      {% endstyle %}
+    </div>
+
+    <script src="{{ 'notification.js' | asset_url }}" defer></script>
+  {% endif %}
+{% endif %}

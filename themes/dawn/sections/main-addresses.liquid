@@ -1,0 +1,125 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{% assign logout_text = 'customer.log_out' | t %}
+
+<div
+  class="container-valantic addresses page-section--{{ section.id }} pb-8 pt-7 md:pb-20 md:pt-10"
+  data-customer-addresses
+>
+  <div class="mb-5 flex w-full justify-between">
+    <h1 class="customer__title text-xl">
+      Hi {{ customer.first_name }}
+      {{ customer.last_name }}!
+    </h1>
+    <a href="{{ routes.account_logout_url }}" class="logout button secondary flex">
+      {% render 'icon', icon: 'log-out', class: 'w-6 h-6' %}
+      {{ logout_text }}
+    </a>
+  </div>
+
+  {% render 'account-navigation' %}
+
+  <div class="customer-shipping-data addresses flex flex-col" data-customer-addresses>
+    <h1 class="mb-3 text-2xl">{{ 'customer.addresses.title' | t }}</h1>
+    <div class="account-block flex flex-1 flex-col items-start justify-between" style="min-height: auto">
+      <div class="address flex h-full w-full flex-col items-start justify-between">
+        <div class="address-list mb-6 flex w-full flex-1 flex-col gap-3">
+          {%- for address in customer.addresses -%}
+            <div class="w-full bg-neutral-100 px-4 py-3.5 {% if address == customer.default_address -%}-order-1 border border-neutral-400 {% endif %}">
+              <div data-address>
+                {%- if address == customer.default_address -%}
+                  <h2 class="text-base font-medium">{{ 'customer.addresses.default' | t }}</h2>
+                {%- endif -%}
+                <div class="flex flex-col justify-between gap-2 md:flex-row">
+                  <div class="lg:flex-1">
+                    {% if address.address1 != blank -%}
+                      <p>{{ address.address1 }}</p>
+                    {%- endif -%}
+                    {% if address.zip != blank or address.city != blank -%}
+                      <p>
+                        {{ address.zip }}
+                        {{ address.city }}
+                      </p>
+                    {%- endif -%}
+                    {% if address.address1 == blank and address.zip == blank and address.city == blank -%}
+                      {{ 'customer.account.shipping_data.no_shipping_info' | t }}
+                    {%- endif -%}
+                    {% if address != customer.default_address -%}
+                      <div class="mt-2.5">
+                        {% render 'account-address-form-make-default', address: address -%}
+                      </div>
+                    {%- endif %}
+                  </div>
+                  <div class="flex gap-2">
+                    {% render 'account-address-form-edit', address: address %}
+                    {% render 'account-address-form-delete', address: address %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="actions flex items-center gap-2">
+          {% render 'account-address-form-new' %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+<script>
+  window.addEventListener('load', () => {
+    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+  });
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.main-addresses.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 80,
+      "info": "From 768px"
+    }
+  ]
+}
+{% endschema %}

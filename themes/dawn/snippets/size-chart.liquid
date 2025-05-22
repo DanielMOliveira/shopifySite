@@ -1,0 +1,2148 @@
+{% comment %}
+  Render size chart.
+
+  Usage:
+  {% render 'size-chart' %}
+{% endcomment %}
+
+{% liquid
+  assign tab_level_0_1 = 'products.size_guide.navigation.category.girl' | t
+  assign tab_level_0_2 = 'products.size_guide.navigation.category.boy' | t
+  assign tab_level_0_3 = 'products.size_guide.navigation.category.baby_girl' | t
+  assign tab_level_0_4 = 'products.size_guide.navigation.category.baby_boy' | t
+  assign tab_level_0_5 = 'products.size_guide.navigation.category.newborn' | t
+  assign tab_level_0_6 = 'products.size_guide.navigation.category.adult' | t
+  assign tabs_level_0_ids = 'girl,boy,baby-girl,baby-boy,newborn,adult' | split: ','
+  assign tabs_level_0 = tab_level_0_1 | append: ',' | append: tab_level_0_2 | append: ',' | append: tab_level_0_3 | append: ',' | append: tab_level_0_4 | append: ',' | append: tab_level_0_5 | append: ',' | append: tab_level_0_6 | split: ','
+
+  assign tab_level_1_1 = 'products.size_guide.navigation.clothing_type.apparel' | t
+  assign tab_level_1_2 = 'products.size_guide.navigation.clothing_type.accessories' | t
+  assign tab_level_1_3 = 'products.size_guide.navigation.clothing_type.underwear' | t
+  assign tab_level_1_4 = 'products.size_guide.navigation.clothing_type.shoes' | t
+
+  assign tabs_level_1_ids = 'apparel,accessories,underwear,shoes' | split: ','
+  assign tabs_level_1 = tab_level_1_1 | append: ',' | append: tab_level_1_2 | append: ',' | append: tab_level_1_3 | append: ',' | append: tab_level_1_4 | append: ',' | append: tab_level_1_5 | split: ','
+%}
+
+{% capture measure_content %}
+  <div>
+    <p class="mb-2.5">
+      {{ 'products.size_guide.how_to_measure.description' | t }}
+    </p>
+    <div class="mb-2.5 flex gap-2.5">
+          <span class="inline-flex h-4.5 w-4.5 min-w-4.5 items-center justify-center rounded-full border border-gray-800 font-medium"
+          >A</span
+          >
+      <div>
+        <div class="font-medium">{{ 'products.size_guide.how_to_measure.height' | t }}</div>
+        <div>{{ 'products.size_guide.how_to_measure.height_description' | t }}</div>
+      </div>
+    </div>
+    <div class="mb-2.5 flex gap-2.5">
+          <span class="inline-flex h-4.5 w-4.5 min-w-4.5 items-center justify-center rounded-full border border-gray-800 font-medium"
+          >B</span
+          >
+      <div>
+        <div class="font-medium">{{ 'products.size_guide.how_to_measure.chest' | t }}</div>
+        <div>
+          {{ 'products.size_guide.how_to_measure.chest_description' | t }}
+        </div>
+      </div>
+    </div>
+    <div class="mb-2.5 flex gap-2.5">
+          <span class="inline-flex h-4.5 w-4.5 min-w-4.5 items-center justify-center rounded-full border border-gray-800 font-medium"
+          >C</span
+          >
+      <div>
+        <div class="font-medium">{{ 'products.size_guide.how_to_measure.waist' | t }}</div>
+        <div>{{ 'products.size_guide.how_to_measure.waist_description' | t }}</div>
+      </div>
+    </div>
+    <div class="mb-2.5 flex gap-2.5">
+          <span class="inline-flex h-4.5 w-4.5 min-w-4.5 items-center justify-center rounded-full border border-gray-800 font-medium"
+          >D</span
+          >
+      <div>
+        <div class="font-medium">{{ 'products.size_guide.how_to_measure.hips' | t }}</div>
+        <div>{{ 'products.size_guide.how_to_measure.hips_description' | t }}</div>
+      </div>
+    </div>
+    <div class="flex gap-2.5">
+          <span class="inline-flex h-4.5 w-4.5 min-w-4.5 items-center justify-center rounded-full border border-gray-800 font-medium"
+          >E</span
+          >
+      <div>
+        <div class="font-medium">{{ 'products.size_guide.how_to_measure.leg_length' | t }}</div>
+        <div>{{ 'products.size_guide.how_to_measure.leg_length_description' | t }}</div>
+      </div>
+    </div>
+  </div>
+{% endcapture %}
+<size-chart class="size-chart" data-active-tab="{{ tabs_level_0[0] | downcase | replace: ' ', '-' }}/{{ tabs_level_1[0] | downcase | replace: ' ', '-' }}/guide">
+  <div class="size-chart__tabs size-chart__tabs--level-0 flex justify-center gap-6 text-gray-800">
+    {% for tab in tabs_level_0 %}
+      {% assign key = tabs_level_0_ids[forloop.index0] | downcase | replace: ' ', '-' %}
+
+      <span
+        class="size-chart__tab hidden cursor-pointer border-b-4 border-transparent pb-3 md:inline{% if forloop.first %} active{% endif %}"
+        data-tab="{{ key }}"
+        data-level="0">
+        {{ tab }}
+      </span>
+    {% endfor %}
+
+    <div class="input-group w-full md:hidden">
+      <select class="w-full !border !border-gray-500 text-sm font-medium text-primary !outline-none" data-level="0">
+        {% for tab in tabs_level_0 %}
+          {% assign key = tabs_level_0_ids[forloop.index0] | downcase | replace: ' ', '-' %}
+
+          <option value="{{ key }}">{{ tab }}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+
+  <div class="size-chart__tabs size-chart__tabs--level-1 mt-4 flex justify-center gap-6 text-gray-800 md:mt-0 md:border-t md:border-gray-300 md:bg-gray-100">
+    {% for tab in tabs_level_1 %}
+      {% assign key = tabs_level_1_ids[forloop.index0] | downcase | replace: ' ', '-' %}
+
+      <span
+        class="size-chart__tab hidden cursor-pointer border-b-4 border-transparent py-4 pb-3 md:inline{% if forloop.first %} active{% endif %}"
+        data-tab="{{ key }}"
+        data-level="1">
+        {{ tab }}
+      </span>
+    {% endfor %}
+
+    <span
+      class="size-chart__tab pointer-events-none hidden border-b-4 border-primary py-4 pb-3 font-medium"
+      data-tab="clothing"
+      data-level="1">
+      {{ 'products.size_guide.navigation.clothing_type.clothing' | t }}
+    </span>
+
+    <div class="input-group w-full md:hidden">
+      <select class="w-full !border !border-gray-500 text-sm font-medium text-primary !outline-none" data-level="1">
+        {% for tab in tabs_level_1 %}
+          {% assign key = tabs_level_1_ids[forloop.index0] | downcase | replace: ' ', '-' %}
+
+          <option value="{{ key }}">{{ tab }}</option>
+        {% endfor %}
+        <option value="clothing" class="hidden">
+          {{ 'products.size_guide.navigation.clothing_type.clothing' | t }}
+        </option>
+      </select>
+    </div>
+  </div>
+
+  <div class="size-chart__tabs size-chart__tabs--level-2 mb-5 mt-7 flex justify-center text-2xs text-gray-800">
+    <span
+      class="size-chart__tab active cursor-pointer rounded-[100px] px-4 py-2 font-medium transition-colors"
+      data-tab="guide"
+      data-level="2">
+      {{ 'products.size_guide.content_type.size_chart' | t }}
+    </span>
+    <span
+      class="size-chart__tab cursor-pointer rounded-[100px] px-4 py-2 font-medium transition-colors"
+      data-tab="measure"
+      data-level="2">
+      {{- 'products.size_guide.content_type.how_to_measure' | t -}}
+    </span>
+  </div>
+
+  <div class="size-chart__content" data-id="girl/measure">
+    <div class="flex flex-col gap-5 text-2xs leading-4 text-gray-800 md:flex-row md:items-center">
+      <img
+        class="mx-auto block"
+        src="{{ 'measure-girl.jpg' | asset_url }}"
+        alt="Size Guide Girl"
+        height=""
+        width=""
+        loading="lazy">
+      {{ measure_content }}
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="boy/measure">
+    <div class="flex flex-col gap-5 text-2xs leading-4 text-gray-800 md:flex-row md:items-center">
+      <img
+        class="mx-auto block"
+        src="{{ 'measure-boy.jpg' | asset_url }}"
+        alt="Size Guide Boy"
+        height=""
+        width=""
+        loading="lazy">
+      {{ measure_content }}
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-girl/measure">
+    <div class="flex flex-col gap-5 text-2xs leading-4 text-gray-800 md:flex-row md:items-center">
+      <img
+        class="mx-auto block"
+        src="{{ 'measure-babygirl.jpg' | asset_url }}"
+        alt="Size Guide Baby Girl"
+        height=""
+        width=""
+        loading="lazy">
+      {{ measure_content }}
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-boy/measure">
+    <div class="flex flex-col gap-5 text-2xs leading-4 text-gray-800 md:flex-row md:items-center">
+      <img
+        class="mx-auto block"
+        src="{{ 'measure-babyboy.jpg' | asset_url }}"
+        alt="Size Guide Baby Boy"
+        height=""
+        width=""
+        loading="lazy">
+      {{ measure_content }}
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="newborn/measure">
+    <div class="flex flex-col gap-5 text-2xs leading-4 text-gray-800 md:flex-row md:items-center">
+      <img
+        class="mx-auto block"
+        src="{{ 'measure-newborn.jpg' | asset_url }}"
+        alt="Size Guide Baby Boy"
+        height=""
+        width=""
+        loading="lazy">
+      {{ measure_content }}
+    </div>
+  </div>
+
+  <div class="size-chart__content active" data-id="girl/apparel/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.apparel' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_years' | t }}</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>4-5</td>
+            <td>5-6</td>
+            <td>6-7</td>
+            <td>7-8</td>
+            <td>8-9</td>
+            <td>9-10</td>
+            <td>11-12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>95</td>
+            <td>103</td>
+            <td>110</td>
+            <td>118</td>
+            <td>121</td>
+            <td>128</td>
+            <td>132</td>
+            <td>138</td>
+            <td>152</td>
+            <td>163</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>61</td>
+            <td>64</td>
+            <td>66</td>
+            <td>68</td>
+            <td>76</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>58</td>
+            <td>59</td>
+            <td>60.5</td>
+            <td>62</td>
+            <td>65</td>
+            <td>68</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>57</td>
+            <td>59</td>
+            <td>61</td>
+            <td>63</td>
+            <td>66</td>
+            <td>68</td>
+            <td>71</td>
+            <td>74</td>
+            <td>80</td>
+            <td>86</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>38</td>
+            <td>41</td>
+            <td>45</td>
+            <td>50</td>
+            <td>54</td>
+            <td>58</td>
+            <td>61.5</td>
+            <td>65</td>
+            <td>70</td>
+            <td>73</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages' | t }}</td>
+            <td>2-4</td>
+            <td>4-6</td>
+            <td>7-10</td>
+            <td>11-14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="girl/accessories/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.hats_and_beanies' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>1-3</td>
+            <td>3-5</td>
+            <td>6-7</td>
+            <td>7-9</td>
+            <td>10-12</td>
+            <td>12-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.head_perimeter' | t }}</td>
+            <td>48</td>
+            <td>50</td>
+            <td>52</td>
+            <td>54</td>
+            <td>56</td>
+            <td>58</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td colspan="2">M</td>
+            <td colspan="2">L</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.belts' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_years' | t }}</td>
+            <td>3-4</td>
+            <td>7-8</td>
+            <td>11-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.belt_length' | t }}</td>
+            <td>50</td>
+            <td>60</td>
+            <td>70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="girl/underwear/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.underwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_years' | t }}</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>4-5</td>
+            <td>5-6</td>
+            <td>6-7</td>
+            <td>7-8</td>
+            <td>8-9</td>
+            <td>10-12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>95</td>
+            <td>103</td>
+            <td>110</td>
+            <td>118</td>
+            <td>121</td>
+            <td>127</td>
+            <td>132</td>
+            <td>152</td>
+            <td>163</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>61</td>
+            <td>64</td>
+            <td>66</td>
+            <td>76</td>
+            <td>82</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>58</td>
+            <td>59</td>
+            <td>61</td>
+            <td>65</td>
+            <td>68</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>57</td>
+            <td>59</td>
+            <td>61</td>
+            <td>63</td>
+            <td>66</td>
+            <td>68</td>
+            <td>72</td>
+            <td>80</td>
+            <td>86</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>38</td>
+            <td>41</td>
+            <td>45</td>
+            <td>50</td>
+            <td>54</td>
+            <td>58</td>
+            <td>62</td>
+            <td>70</td>
+            <td>73</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.socks' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_years' | t }}</td>
+            <td>2/3</td>
+            <td>4/6</td>
+            <td>8/9</td>
+            <td>10/12</td>
+            <td>13/14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>23/26</td>
+            <td>27/30</td>
+            <td>31/34</td>
+            <td>35/37</td>
+            <td>38/40</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>14.2 - 16</td>
+            <td>16.6 - 18.5</td>
+            <td>19.2 - 21</td>
+            <td>21.7 - 23</td>
+            <td>24.6 - 26</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="girl/shoes/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>3</td>
+            <td>4</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+            <td>6</td>
+            <td>6</td>
+            <td>8</td>
+            <td>9</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>15.4</td>
+            <td>16</td>
+            <td>16.6</td>
+            <td>17.3</td>
+            <td>17.9</td>
+            <td>18.5</td>
+            <td>19.2</td>
+            <td>19.8</td>
+            <td>20.4</td>
+            <td>21</td>
+            <td>21.7</td>
+            <td>22.4</td>
+            <td>23</td>
+            <td>24.6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear_double_sizes' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8-9</td>
+            <td>10-11</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>25/26</td>
+            <td>27/28</td>
+            <td>29/30</td>
+            <td>31/32</td>
+            <td>33/34</td>
+            <td>35/36</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>15.4/16</td>
+            <td>16.6/17.3</td>
+            <td>17.9/18.5</td>
+            <td>19.2/19.8</td>
+            <td>20.4/21</td>
+            <td>21.7/22.4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="boy/apparel/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.apparel' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_age_years' | t }}</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>4-5</td>
+            <td>5-6</td>
+            <td>6-7</td>
+            <td>7-8</td>
+            <td>8-9</td>
+            <td>9-10</td>
+            <td>11-12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>95</td>
+            <td>103</td>
+            <td>110</td>
+            <td>118</td>
+            <td>121</td>
+            <td>128</td>
+            <td>132</td>
+            <td>138</td>
+            <td>152</td>
+            <td>163</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>55</td>
+            <td>56</td>
+            <td>58</td>
+            <td>60</td>
+            <td>62</td>
+            <td>64</td>
+            <td>66</td>
+            <td>68</td>
+            <td>72</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>60</td>
+            <td>62</td>
+            <td>64</td>
+            <td>70</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>57</td>
+            <td>59</td>
+            <td>61</td>
+            <td>63</td>
+            <td>66</td>
+            <td>68</td>
+            <td>74</td>
+            <td>74</td>
+            <td>79</td>
+            <td>84</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>38</td>
+            <td>41</td>
+            <td>45</td>
+            <td>50</td>
+            <td>54</td>
+            <td>58</td>
+            <td>62.5</td>
+            <td>67</td>
+            <td>72</td>
+            <td>75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages' | t }}</td>
+            <td>2-4</td>
+            <td>4-6</td>
+            <td>7-10</td>
+            <td>11-14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="boy/accessories/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.hats_and_beanies' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>1-3</td>
+            <td>3-5</td>
+            <td>6-7</td>
+            <td>7-9</td>
+            <td>10-12</td>
+            <td>12-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.head_perimeter' | t }}</td>
+            <td>48</td>
+            <td>50</td>
+            <td>52</td>
+            <td>54</td>
+            <td>56</td>
+            <td>58</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td colspan="2">M</td>
+            <td colspan="2">L</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.belts' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_years' | t }}</td>
+            <td>3-4</td>
+            <td>7-8</td>
+            <td>11-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Belt Length</td>
+            <td>50</td>
+            <td>60</td>
+            <td>70</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="boy/underwear/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.underwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_years' | t }}</td>
+            <td>2-3</td>
+            <td>3-4</td>
+            <td>4-5</td>
+            <td>5-6</td>
+            <td>6-7</td>
+            <td>7-8</td>
+            <td>8-9</td>
+            <td>10-12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>95</td>
+            <td>103</td>
+            <td>110</td>
+            <td>118</td>
+            <td>121</td>
+            <td>127</td>
+            <td>132</td>
+            <td>152</td>
+            <td>163</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>55</td>
+            <td>56</td>
+            <td>58</td>
+            <td>60</td>
+            <td>62</td>
+            <td>64</td>
+            <td>66</td>
+            <td>72</td>
+            <td>80</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>53</td>
+            <td>54</td>
+            <td>55</td>
+            <td>56</td>
+            <td>57</td>
+            <td>58</td>
+            <td>59</td>
+            <td>64</td>
+            <td>71</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>57</td>
+            <td>59</td>
+            <td>61</td>
+            <td>63</td>
+            <td>66</td>
+            <td>68</td>
+            <td>71</td>
+            <td>79</td>
+            <td>84</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>38</td>
+            <td>41</td>
+            <td>45</td>
+            <td>50</td>
+            <td>54</td>
+            <td>58</td>
+            <td>60</td>
+            <td>72</td>
+            <td>75</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.socks' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_years' | t }}</td>
+            <td>2/3</td>
+            <td>4/6</td>
+            <td>8/9</td>
+            <td>10/12</td>
+            <td>13/14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>23/26</td>
+            <td>27/30</td>
+            <td>31/34</td>
+            <td>35/37</td>
+            <td>38/40</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>14.2 - 16</td>
+            <td>16.6 - 18.5</td>
+            <td>19.2 - 21</td>
+            <td>21.7 - 23</td>
+            <td>24.6 - 26</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="boy/shoes/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>3</td>
+            <td>4</td>
+            <td>4</td>
+            <td>5</td>
+            <td>5</td>
+            <td>6</td>
+            <td>6</td>
+            <td>8</td>
+            <td>9</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13-14</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+            <td>31</td>
+            <td>32</td>
+            <td>33</td>
+            <td>34</td>
+            <td>35</td>
+            <td>36</td>
+            <td>37</td>
+            <td>38</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>15.4</td>
+            <td>16</td>
+            <td>16.6</td>
+            <td>17.3</td>
+            <td>17.9</td>
+            <td>18.5</td>
+            <td>19.2</td>
+            <td>19.8</td>
+            <td>20.4</td>
+            <td>21</td>
+            <td>21.7</td>
+            <td>22.4</td>
+            <td>23</td>
+            <td>24.6</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear_double_sizes' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_years' | t }}</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8-9</td>
+            <td>10-11</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>25/26</td>
+            <td>27/28</td>
+            <td>29/30</td>
+            <td>31/32</td>
+            <td>33/34</td>
+            <td>35/36</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>15.4/16</td>
+            <td>16.6/17.3</td>
+            <td>17.9/18.5</td>
+            <td>19.2/19.8</td>
+            <td>20.4/21</td>
+            <td>21.7/22.4</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-girl/apparel/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.apparel' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_age_months' | t }}</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-18</td>
+            <td>18-24</td>
+            <td>24-36</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+            <td>82</td>
+            <td>88</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48</td>
+            <td>48.5</td>
+            <td>50</td>
+            <td>51</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+            <td>53</td>
+            <td>55</td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>19</td>
+            <td>21</td>
+            <td>23</td>
+            <td>28</td>
+            <td>33</td>
+            <td>36</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages' | t }}</td>
+            <td>2-4</td>
+            <td>4-6</td>
+            <td>7-10</td>
+            <td>11-14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-girl/accessories/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.hats' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>1-6</td>
+            <td>6-12</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.head_perimeter' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>XS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.belts' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>9-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.belt_length' | t }}</td>
+            <td>40</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-girl/underwear/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.underwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_months' | t }}</td>
+            <td>0-1</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-18</td>
+            <td>18-24</td>
+            <td>24-36</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>55</td>
+            <td>61</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+            <td>82</td>
+            <td>88</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48.5</td>
+            <td>50</td>
+            <td>50</td>
+            <td>51</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>43</td>
+            <td>45</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+            <td>53</td>
+            <td>55</td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>14</td>
+            <td>16</td>
+            <td>19</td>
+            <td>21</td>
+            <td>23</td>
+            <td>28</td>
+            <td>33</td>
+            <td>36</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.socks' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>0-3</td>
+            <td>6-9</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>11/14</td>
+            <td>15/18</td>
+            <td>19/22</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>8 - 8.7</td>
+            <td>9.4 - 10.7</td>
+            <td>11.3 - 13.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-girl/shoes/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>9-12</td>
+            <td>12</td>
+            <td>12</td>
+            <td>24</td>
+            <td>24</td>
+            <td>3 (years)</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>11.7</td>
+            <td>12.3</td>
+            <td>13</td>
+            <td>13.5</td>
+            <td>14.2</td>
+            <td>14.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.my_first_sneakers_footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>12</td>
+            <td>12</td>
+            <td>24</td>
+            <td>24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>13.3</td>
+            <td>14</td>
+            <td>14.6</td>
+            <td>15.2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear_double_sizes' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>12</td>
+            <td>24</td>
+            <td>3 (years)</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>19/20</td>
+            <td>21/22</td>
+            <td>23/24</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>11.7/12.3</td>
+            <td>13/13.5</td>
+            <td>14.2/14.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-boy/apparel/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.apparel' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_age_months' | t }}</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-18</td>
+            <td>18-24</td>
+            <td>24-36</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+            <td>82</td>
+            <td>88</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48</td>
+            <td>48.5</td>
+            <td>50</td>
+            <td>51</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+            <td>53</td>
+            <td>55</td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>19</td>
+            <td>21</td>
+            <td>23</td>
+            <td>28</td>
+            <td>33</td>
+            <td>36</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages' | t }}</td>
+            <td>2-4</td>
+            <td>4-6</td>
+            <td>7-10</td>
+            <td>11-14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-boy/accessories/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.hats_and_beanies' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>1-6</td>
+            <td>6-12</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.head_perimeter' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>-</td>
+            <td>-</td>
+            <td>XS</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.belts' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>9-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.belt_length' | t }}</td>
+            <td>40</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-boy/underwear/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.underwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_months' | t }}</td>
+            <td>0-1</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+            <td>12-18</td>
+            <td>18-24</td>
+            <td>24-36</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>55</td>
+            <td>61</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+            <td>82</td>
+            <td>88</td>
+            <td>95</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+            <td>52</td>
+            <td>53</td>
+            <td>54</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48.5</td>
+            <td>50</td>
+            <td>50</td>
+            <td>51</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>43</td>
+            <td>45</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+            <td>53</td>
+            <td>55</td>
+            <td>57</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.leg_length' | t }}</td>
+            <td>14</td>
+            <td>16</td>
+            <td>19</td>
+            <td>21</td>
+            <td>23</td>
+            <td>28</td>
+            <td>33</td>
+            <td>36</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.socks' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>0-3</td>
+            <td>6-9</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>11/14</td>
+            <td>15/18</td>
+            <td>19/22</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>8 - 8.7</td>
+            <td>9.4 - 10.7</td>
+            <td>11.3 - 13.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="baby-boy/shoes/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>9-12</td>
+            <td>12</td>
+            <td>12</td>
+            <td>24</td>
+            <td>24</td>
+            <td>3 (years)</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>11.7</td>
+            <td>12.3</td>
+            <td>13</td>
+            <td>13.5</td>
+            <td>14.2</td>
+            <td>14.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.my_first_sneakers_footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>12</td>
+            <td>12</td>
+            <td>24</td>
+            <td>24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes' | t }}</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>13.3</td>
+            <td>14</td>
+            <td>14.6</td>
+            <td>15.2</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear_double_sizes' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>12</td>
+            <td>24</td>
+            <td>3 (years)</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>19/20</td>
+            <td>21/22</td>
+            <td>23/24</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>11.7/12.3</td>
+            <td>13/13.5</td>
+            <td>14.2/14.8</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="newborn/apparel/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.apparel' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_age_months' | t }}</td>
+            <td>00</td>
+            <td>0-0</td>
+            <td>0-1</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>45</td>
+            <td>50</td>
+            <td>55</td>
+            <td>61</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>40</td>
+            <td>42</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>40</td>
+            <td>42</td>
+            <td>44</td>
+            <td>46</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>39</td>
+            <td>41</td>
+            <td>43</td>
+            <td>45</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="newborn/accessories/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.hats' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.age_months' | t }}</td>
+            <td>1-6</td>
+            <td>6-12</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.head_perimeter' | t }}</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.belts' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>9-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.belt_length' | t }}</td>
+            <td>40</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="newborn/underwear/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.underwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_months' | t }}</td>
+            <td>00</td>
+            <td>0-0</td>
+            <td>0-1</td>
+            <td>1-3</td>
+            <td>3-6</td>
+            <td>6-9</td>
+            <td>9-12</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.height' | t }}</td>
+            <td>45</td>
+            <td>50</td>
+            <td>55</td>
+            <td>61</td>
+            <td>68</td>
+            <td>72</td>
+            <td>76</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>40</td>
+            <td>42</td>
+            <td>44</td>
+            <td>46</td>
+            <td>48</td>
+            <td>49</td>
+            <td>50</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>40</td>
+            <td>42</td>
+            <td>44</td>
+            <td>46</td>
+            <td>47</td>
+            <td>47.5</td>
+            <td>48</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.hips' | t }}</td>
+            <td>39</td>
+            <td>41</td>
+            <td>43</td>
+            <td>45</td>
+            <td>47</td>
+            <td>49</td>
+            <td>51</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.socks' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.ages_months' | t }}</td>
+            <td>0-3</td>
+            <td>6-9</td>
+            <td>12-24</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.eu_size' | t }}</td>
+            <td>11/14</td>
+            <td>15/18</td>
+            <td>19/22</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>8 - 8.7</td>
+            <td>9.4 - 10.7</td>
+            <td>11.3 - 13.5</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="newborn/shoes/guide">
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.footwear' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_cm' | t }}</td>
+            <td>14/15</td>
+            <td>16/17</td>
+            <td>18/19</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.foot_length' | t }}</td>
+            <td>8.7/9.4</td>
+            <td>9.5/10.3</td>
+            <td>10.7/11.3</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.my_first_sneakers_footwear' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_cm' | t }}</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.sizes_cm' | t }}</td>
+            <td>11.9</td>
+            <td>12.55</td>
+            <td>13.3</td>
+            <td>13.95</td>
+            <td>14.6</td>
+            <td>15.25</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="size-chart__content" data-id="adult">
+    <div class="mb-2.5 text-2xs text-red-500">{{ 'products.size_guide.table_titles.collection_you_and_me' | t }}</div>
+    <div class="mb-2.5 text-2xs font-medium">{{ 'products.size_guide.table_titles.women' | t }}</div>
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.clothing' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>S/M</td>
+            <td>L/XL</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>82/93</td>
+            <td>94/106</td>
+          </tr>
+          <tr>
+            <td>
+              {{ 'products.size_guide.table_column_labels.total_length_without_straps_1' | t -}}
+              <br>
+              {{ 'products.size_guide.table_column_labels.total_length_without_straps_2' | t }}
+            </td>
+            <td>117</td>
+            <td>119</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.swimsuit' | t }}</div>
+    <div class="table-wrapper mb-5">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+            <td>XL</td>
+            <td>XXL</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>74-80</td>
+            <td>80-86</td>
+            <td>86-92</td>
+            <td>92-101</td>
+            <td>101-108</td>
+            <td>108-116</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>58-64</td>
+            <td>64-70</td>
+            <td>70-76</td>
+            <td>76-85</td>
+            <td>85-92</td>
+            <td>92-100</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.peel' | t }}</td>
+            <td>82-88</td>
+            <td>88-94</td>
+            <td>94-100</td>
+            <td>100-109</td>
+            <td>109-116</td>
+            <td>116-124</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="mb-2.5 text-2xs font-medium">{{ 'products.size_guide.table_titles.men' | t }}</div>
+    <div class="text-2xs">{{ 'products.size_guide.table_titles.clothing_and_swimwear' | t }}</div>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_title.size' | t }}</td>
+            <td>XS</td>
+            <td>S</td>
+            <td>M</td>
+            <td>L</td>
+            <td>XL</td>
+            <td>XXL</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.neck' | t }}</td>
+            <td>35-36</td>
+            <td>37-38</td>
+            <td>39-40</td>
+            <td>41-42</td>
+            <td>43-44</td>
+            <td>45-46</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.chest' | t }}</td>
+            <td>84-90</td>
+            <td>90-96</td>
+            <td>96-100</td>
+            <td>100-106</td>
+            <td>106-112</td>
+            <td>112-118</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.waist' | t }}</td>
+            <td>68-74</td>
+            <td>74-80</td>
+            <td>80-86</td>
+            <td>86-92</td>
+            <td>92-98</td>
+            <td>98-104</td>
+          </tr>
+          <tr>
+            <td>{{ 'products.size_guide.table_column_labels.peel' | t }}</td>
+            <td>88-94</td>
+            <td>94-100</td>
+            <td>100-106</td>
+            <td>106-112</td>
+            <td>112-118</td>
+            <td>118-124</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</size-chart>
+
+{% style %}
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__tabs--level-2 .size-chart__tab {
+    background-color: rgb(var(--color-primary));
+    color: rgb(var(--color-white));
+  }
+
+  .size-chart__tabs:not(.size-chart__tabs--level-2) .size-chart__tab.active {
+    border-color: rgb(var(--color-primary));
+    font-weight: 500;
+  }
+
+  .size-chart__tabs.size-chart__tabs--level-2 .size-chart__tab.active {
+    background-color: rgb(var(--color-primary));
+    color: rgb(var(--color-white));
+  }
+
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__tabs--level-1 .size-chart__tab:not([data-tab='clothing']),
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__tabs--level-2 .size-chart__tab[data-tab='measure'],
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__content,
+  .size-chart.adult-active .size-chart__content,
+  .size-chart.adult-active .size-chart__tabs--level-2 .size-chart__tab[data-tab='measure'],
+  .size-chart.adult-active .size-chart__tabs--level-1 option:not([value='clothing']) {
+    display: none;
+  }
+
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__tabs--level-1 .size-chart__tab[data-tab='clothing'],
+  .size-chart:has(.size-chart__tab[data-tab='adult'].active) .size-chart__content[data-id='adult'],
+  .size-chart.adult-active .size-chart__tabs--level-1 option[value='clothing'],
+  .size-chart.adult-active .size-chart__content[data-id='adult'] {
+    display: block;
+  }
+
+  .size-chart__content {
+    display: none;
+  }
+
+  .size-chart__content.active {
+    display: block;
+  }
+
+  .size-chart .table-wrapper {
+    border: 1px solid rgb(var(--color-gray-300));
+    border-radius: 4px;
+    overflow: auto;
+    white-space: nowrap;
+  }
+
+  .size-chart table {
+    width: 100%;
+  }
+
+  .size-chart table td {
+    border-bottom: 1px solid rgb(var(--color-gray-300));
+    border-right: 1px solid rgb(var(--color-gray-300));
+    font-size: var(--font-size-2xs);
+    line-height: 24px;
+    padding: 8px 12px;
+    text-align: center;
+  }
+
+  .size-chart table tr:last-child td {
+    border-bottom: none;
+  }
+
+  .size-chart table tr td:last-child {
+    border-right: none;
+  }
+
+  .size-chart table tr td:first-child {
+    max-width: 140px;
+    min-width: 140px;
+    text-align: left;
+    width: 140px;
+    text-wrap: initial;
+  }
+
+  .size-chart table thead td {
+    background-color: rgb(var(--color-gray-300));
+    border-right: 1px solid rgb(var(--color-white));
+    color: rgb(var(--color-gray-700));
+    font-weight: 500;
+  }
+
+  .size-chart table thead td:last-child {
+    border-right: none;
+  }
+{% endstyle %}

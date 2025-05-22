@@ -1,0 +1,692 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "store_locator_search_pYdeHr": {
+      "type": "store-locator-search",
+      "custom_css": [
+        "h1 {color: #221f20;}"
+      ],
+      "settings": {
+        "title": "Encontre a sua loja Zippy:",
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 16
+      }
+    },
+    "store_locator_items_x36FXL": {
+      "type": "store-locator-items",
+      "blocks": {
+        "store_Cz383g": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALEGRO ALFRAGIDE (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "936548982",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_hEYYEt": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALEGRO SETÚBAL",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "931127243",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_DgVkrM": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALMADA FÓRUM",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935652106",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_6NEntk": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY 8ª AVENIDA SHOPPING SÃO JOÃO DA MADEIRA (AVEIRO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935650240",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_z4UMcU": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALAMEDA SHOP & SPOT (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935658059",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_B7qMMW": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALMA SHOPPING COIMBRA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)<br/>10h00 - 24h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "935651463",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_Ldj8aE": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ARENA SHOPPING TORRES VEDRAS",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651732",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_XHHynJ": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ARRÁBIDA SHOPPING (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935784970",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_zeiaFJ": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY BRAGANÇA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 19h00 (segunda a sábado)<br/>Encerra ao domingo.</p>",
+            "phone": "938148139",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_KibaQF": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL ALGARVE SHOPPING GUIA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "10h00 - 23h00 (segunda a domingo)",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_FhTeUD": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CASCAIS SHOPPING (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "930431492",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_KQwa3P": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL AQUA PORTIMÃO (ALGARVE)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651891",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_6k8aqU": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL COLOMBO (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 24h00 (segunda a domingo)</p>",
+            "phone": "935651457",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_rWMPED": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL TAVIRA GRAN-PLAZA (ALGARVE)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935650334",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_UtLYPn": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY UBBO (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (domingo a quinta)<br/>10h00 - 24h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "935650627",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_pjhEJr": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ESPAÇO GUIMARÃES (BRAGA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (domingo a quinta)<br/>10h00 - 23h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "931170084",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_ztAjzb": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ESTAÇÃO VIANA SHOP (VIANA DO CASTELO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (domingo a quinta)<br/>10h00 - 23h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "935651684",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_eHNVTC": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ÉVORA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "936547861",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_tXiWHA": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FAMALICÃO (BRAGA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10H00 – 22H00 (segunda a domingo)</p>",
+            "phone": "936548983",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_VQTge8": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY BARCELOS",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>9h30 - 19h30 (segunda a sábado)<br/>10h00 - 19h00 (domingo)</p>",
+            "phone": "932451795",
+            "additional_text": ""
+          }
+        },
+        "store_KfiJCr": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FÓRUM BARREIRO (SETÚBAL)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935651498",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_Krywji": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FREEPORT FASHION OUTLET (ALCOCHETE)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935651498",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_J49JBr": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY GLICÍNIAS PLAZA SHOPPING CENTER (AVEIRO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "930478591",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_iHjDWn": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL FERRARA PLAZA CARVALHOSA (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935650889",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_mt4Wak": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALEGRO MONTIJO (SETÚBAL)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "934556671",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_K8UPgn": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY ALEGRO SINTRA (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651613",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_3ktKeG": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FÓRUM AVEIRO",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935651558",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_FpNPJT": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FÓRUM CASTELO BRANCO",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (domingo a quinta)<br/>10h00 - 23h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "935651666",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_9h8Dh3": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FÓRUM COIMBRA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (domingo a quinta)<br/>10h00 - 24h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "938703727",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_qjtYCE": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY FÓRUM ALGARVE",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "937244264",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_dKnPDb": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY GAIA SHOPPING (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "934550283",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_nLDwBL": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY LA VIE CALDAS DA RAINHA (LEIRIA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651597",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_AVyaM9": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY LOURES SHOPPING (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "936548985",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_WKMDPP": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY LA VIE FUNCHAL (MADEIRA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>09h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "930423316",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_3q4z7t": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY LOULÉ",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "938202692",
+            "additional_text": ""
+          }
+        },
+        "store_yGgFHh": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY MADEIRA SHOPPING (MADEIRA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651608",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_Dp8Q8U": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY MAR SHOPPING (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935653262",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_nbaVLD": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY NORTE SHOPPING (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651510",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_hWLyrU": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY NOSSO SHOPPING VILA REAL",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651971",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_jBd48z": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY NOVA ARCADA BRAGA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (domingo a quinta)<br/>10h00 - 23h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "938304737",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_C6A9fj": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY OEIRAS",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "930582813",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_a7rpkP": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY OUTLET VILA DO CONDE",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "936780426",
+            "additional_text": ""
+          }
+        },
+        "store_iCaeyt": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY PARQUE NASCENTE (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935652569",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_mzNG8T": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY PÓVOA DE VARZIM (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 19h00 (segunda a domingo)</p>",
+            "phone": "930592973",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_ehDrU4": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY RIOSUL SHOPPING (SETÚBAL)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "936618748",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_XqQ9wd": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY SERRA SHOPPING COVILHÃ (CASTELO BRANCO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935650557",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_zLwnnX": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY SHOPPING BRAGA PARQUE",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935652090",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_7bAtwF": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY SPACIO SHOPPING OLIVAIS (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935650748",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_ET9ViP": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY STRADA OUTLET (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "937621936",
+            "additional_text": ""
+          }
+        },
+        "store_TWbaGc": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY CENTRO COMERCIAL VASCO DA GAMA (LISBOA)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 24h00 (segunda a domingo)</p>",
+            "phone": "935651320",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        }
+      },
+      "block_order": [
+        "store_Cz383g",
+        "store_hEYYEt",
+        "store_DgVkrM",
+        "store_6NEntk",
+        "store_z4UMcU",
+        "store_B7qMMW",
+        "store_Ldj8aE",
+        "store_XHHynJ",
+        "store_zeiaFJ",
+        "store_KibaQF",
+        "store_FhTeUD",
+        "store_KQwa3P",
+        "store_6k8aqU",
+        "store_rWMPED",
+        "store_UtLYPn",
+        "store_pjhEJr",
+        "store_ztAjzb",
+        "store_eHNVTC",
+        "store_tXiWHA",
+        "store_VQTge8",
+        "store_KfiJCr",
+        "store_Krywji",
+        "store_J49JBr",
+        "store_iHjDWn",
+        "store_mt4Wak",
+        "store_K8UPgn",
+        "store_3ktKeG",
+        "store_FpNPJT",
+        "store_9h8Dh3",
+        "store_qjtYCE",
+        "store_dKnPDb",
+        "store_nLDwBL",
+        "store_AVyaM9",
+        "store_WKMDPP",
+        "store_3q4z7t",
+        "store_yGgFHh",
+        "store_Dp8Q8U",
+        "store_nbaVLD",
+        "store_hWLyrU",
+        "store_jBd48z",
+        "store_C6A9fj",
+        "store_a7rpkP",
+        "store_iCaeyt",
+        "store_mzNG8T",
+        "store_ehDrU4",
+        "store_XqQ9wd",
+        "store_zLwnnX",
+        "store_7bAtwF",
+        "store_ET9ViP",
+        "store_TWbaGc"
+      ],
+      "custom_css": [
+        "h3 {color: #221f20;}"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 16
+      }
+    },
+    "store_locator_items_RFNGVe": {
+      "type": "store-locator-items",
+      "blocks": {
+        "store_xpGDLy": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY TORRESHOPPING (SANTARÉM)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651727",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_pRDL3V": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY VALONGO (PORTO)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "935657963",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_g6ALA8": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY VISEU",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "935651704",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_HFbLKN": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY VIVACI GUARDA",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (segunda a domingo)</p>",
+            "phone": "938701046",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_GUH4Fw": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY W SHOPPING SANTARÉM",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 22h00 (domingo a quinta)<br/>10h00 - 23h00 (sexta, sábado e véspera de feriado)</p>",
+            "phone": "935652018",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        },
+        "store_Mw64Kk": {
+          "type": "store",
+          "settings": {
+            "name": "ZIPPY MARSHOPPING ALGARVE (LOULÉ)",
+            "subheading": "Loja aberta ao público",
+            "working_hours": "<p>10h00 - 23h00 (segunda a domingo)</p>",
+            "phone": "938202692",
+            "additional_text": "Serviço Glovo disponível"
+          }
+        }
+      },
+      "block_order": [
+        "store_xpGDLy",
+        "store_pRDL3V",
+        "store_g6ALA8",
+        "store_HFbLKN",
+        "store_GUH4Fw",
+        "store_Mw64Kk"
+      ],
+      "custom_css": [
+        "h3 {color: #221f20;}"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "store_locator_search_pYdeHr",
+    "store_locator_items_x36FXL",
+    "store_locator_items_RFNGVe"
+  ]
+}

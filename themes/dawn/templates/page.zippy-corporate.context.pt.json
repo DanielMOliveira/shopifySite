@@ -1,0 +1,87 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.zippy-corporate.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_Cemk9": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n  .breadcrumbs {\n    display: none;\n  }\n\n  #shopify-section-template--16311520493777__page_navigation_GAaRWF .container-valantic {\n    margin-top: 2rem;\n  }\n  #shopify-section-template--16311520493777__page_navigation_GAaRWF {\n    background-color: #ffffff;\n  }\n  h4 {\n    margin-top: 3rem;\n  }\n</style>",
+        "color_scheme": "",
+        "header-76b14b2a7e3e1a3deeb586a1d860d78e": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "page_navigation_GAaRWF": {
+      "disabled": false,
+      "custom_css": [
+        ".container-valantic {margin: 2vw 20vw;}",
+        "@media only screen and (max-width: 991px) {.container-valantic {margin: 2vw; }}"
+      ],
+      "settings": {
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30
+      },
+      "blocks": {
+        "text_ET8JA": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "text": "<h1><strong>Zippy Corporate</strong></h1><h5><strong>Childcare and Children's Clothing Products for Companies</strong></h5>",
+            "content_alignment": "left",
+            "header-7676ae86334510c8b561883f20dd47ca": null,
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "text_yzHLA": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "text": "<p>Zippy presents a new personalized advice service for childcare items and children's clothing for companies.<br/><br/>Specialized in childcare and children's fashion, Zippy has a complete offer with competitive prices and special conditions for companies and businesses in areas such as Education, Hotels & Catering or Children's Transport.<br/><br/>Contact us for more information!</p>",
+            "content_alignment": "left",
+            "header-39bf86237e6f39dbef22b0bb77b2652d": null,
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "contact_ffLRrH": {
+          "disabled": false,
+          "settings": {
+            "form_id": "qnqcp",
+            "language_id": "61731"
+          }
+        }
+      },
+      "block_order": [
+        "text_ET8JA",
+        "text_yzHLA",
+        "contact_ffLRrH"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_GAaRWF",
+    "custom_liquid_Cemk9"
+  ]
+}

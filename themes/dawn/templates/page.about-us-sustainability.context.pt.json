@@ -1,0 +1,107 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.about-us-sustainability.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "page_navigation_4EtxMc": {
+      "settings": {
+      },
+      "blocks": {
+        "navigation_item_GGBDWJ": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "text_ndbx44": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "text_Dyj6Kd": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_ebFhXj": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_DN3nKd": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_rKGYQC": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_aCphVV": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_iErxwJ": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_awmLrk": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_zfkJJr": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_y6Uj9m": {
+          "disabled": false,
+          "settings": {
+          }
+        },
+        "faq_item_cNgfKR": {
+          "disabled": false,
+          "settings": {
+            "faq_answer": "<p>[table1]</p>",
+            "table_1": "<style media=\"screen\" type=\"text/css\">\n  table, th, tr, td {\n      border: 1px solid #E4E4E4;\n      text-align: center;\n      vertical-align: middle;\n  }\n  table {\n      width: 100%;\n  }\n  th {\n      background-color: #F7F7F7;\n      padding: 1rem\n  }\n  td {\n      padding: 1rem;\n  }\n  .faq-answer img {\n      max-width: 50%;\n      height: auto;\n  }\n  \n  </style>\n  <div style=\"overflow-x:auto;\">\n    <table>\n      <tbody>\n        <tr>\n          <th>Logótipo</th>\n          <th>País</th>\n          <th>Descrição</th>\n        </tr>\n        <tr>\n          <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_fsc.png?v=1726137461\" alt=\"logótipo\"></td>\n          <td>Mundial</td>\n          <td>A FSC é uma organização sem fins lucrativos, de âmbito internacional dedicada a promoção de uma gestão florestal ambientalmente adequada, socialmente benéfica e economicamente viavél.</td>\n        </tr>\n        <tr>\n          <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_fr.png?v=1726137461\" alt=\"logótipo\"></td>\n          <td>França</td>\n          <td>O componente deve ser colocado num contentor designado para a reciclagem de papel.</td>\n        </tr>\n        <tr>\n          <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_21.png?v=1726137461\" alt=\"logótipo\"></td>\n          <td>Itália</td>\n          <td>O componente deve ser encaminhado para a recolha de papel.</td>\n        </tr>\n        <tr>\n          <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_60.png?v=1726137461\" alt=\"logótipo\"></td>\n          <td>Itália</td>\n          <td>Os componentes devem ser separados e encaminhados para a recolha designada.</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "navigation_item_YdmhFw",
+        "navigation_item_GGBDWJ",
+        "text_ndbx44",
+        "text_Dyj6Kd",
+        "faq_item_ebFhXj",
+        "faq_item_DN3nKd",
+        "faq_item_rKGYQC",
+        "faq_item_aCphVV",
+        "faq_item_iErxwJ",
+        "faq_item_awmLrk",
+        "faq_item_zfkJJr",
+        "faq_item_y6Uj9m",
+        "faq_item_cNgfKR",
+        "navigation_item_eJDVpT",
+        "navigation_item_FXWqUN"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}

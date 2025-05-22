@@ -1,0 +1,207 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_iw7Y3Q": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz .row {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n  }\n\n  #dbz .container-image {\n    width: 50%;\n  }\n\n  #dbz .container-text {\n    width: 50%;\n    margin: 0;\n  }\n\n  #dbz .container-text .text-inside {\n    width: 60%;\n    margin: auto;\n  }\n\n  #dbz h1 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 2rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.2;\n    text-align: left;\n    text-transform: uppercase;\n    margin: 0.5rem 0 1rem 0;\n  }\n\n  #dbz h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.143rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: left;\n    text-transform: uppercase;\n  }\n\n  #dbz h3 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0.02rem;\n    text-align: left;\n    text-transform: uppercase;\n    margin-bottom: 2rem;\n  }\n\n  #dbz h3 > span {\n    font-weight: 600;\n    letter-spacing: 0;\n    text-transform: none;\n  }\n\n  #dbz p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz .row {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n\n    #dbz .container-image {\n      width: 100%;\n    }\n\n    #dbz .container-text {\n      width: 100%;\n    }\n\n    #dbz .container-text .text-inside {\n      width: 80%;\n      margin: 1rem auto 2rem auto;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz h1 {\n      font-size: 1.563rem;\n      letter-spacing: 0.05rem;\n    }\n\n    #dbz h2 {\n      font-size: 0.875rem;\n      letter-spacing: 0.03rem;\n    }\n\n    #dbz p {\n      margin-top: 1rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz\">\n  <div class=\"row\">\n    <div class=\"container-image\">\n      <a href=\"{{ collections['cadeiras-auto'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-auto_banner.jpg?v=1725891484\" alt=\"Dicas Baby Zippy - Cadeiras Auto\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text\">\n      <div class=\"text-inside\">\n        <h3>Dicas Baby Zippy — <span>Cadeiras Auto</span></h3>\n        <h2>Passeios de Carro em Segurança</h2>\n        <h1>Como escolher a Cadeirinha do Bebé</h1>\n        <p>Passear de carro com um bebé requer muita paciência, cuidados redobrados e, sobretudo, atenção na condução.</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_Ec6kQ6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgWhite {\n    background-color: #fafafa;\n  }\n\n  #dbz-text .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-text .row {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #dbz-text .container-text {\n    max-width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-text p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: center;\n    padding-top: 1rem;\n  }\n  #dbz-text p > span {\n    text-transform: uppercase;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-text .container-text {\n      max-width: 80%;\n      margin: 2rem 0;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Cadeira auto, espelho retrovisor, chupetas extra e tapa-sol são acessórios que vão passar a fazer parte do seu dia-a-dia. Falamos de uma parafernália de produtos indispensável para a segurança do seu bebé em viagem. Independentemente das exigências, às quais rapidamente se habitua, lembre-se que o mais incrível é que vai poder explorar o mundo com o seu filho. As cadeiras auto são obrigatórias por lei e devem acompanhar, ao longo do crescimento do bebé em idade e altura.</p>\n      <p><span>Sabe como escolher a cadeira auto ideal para o seu bebé? </span></p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_acrTpQ": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n  #dbz-tips h2 > span {\n    font-weight: 700;\n    font-size: 1.2rem;\n  }\n\n  #dbz-tips h3 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 1.3rem;\n    line-height: 1;\n    letter-spacing: 0.02rem;\n    text-align: left;\n    text-transform: uppercase;\n    margin-bottom: 2rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin: 2rem 0 2rem 0;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    font-weight: 400;\n    margin: 0.5rem;\n    text-transform: none;\n    margin: 0.5rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h3>Recém-Nascidos:<br />do nascimento até aos 12 meses</h3>\n        <h2>Cadeiras Auto entre 75-87 cm</h2>\n        <p>\n          A cadeira auto até aos 75 cm ou 87 cm, homologada pela norma R129, é a mais adequada para as viagens em segurança com um bebé recém-nascido, pois é a que melhor se adapta ao pequeno corpo do bebé. Para além do automóvel, este tipo de cadeiras auto podem igualmente ser instaladas no carrinho de passeio.<br /><br />Esta cadeira auto, designada por vezes como \"ovo\", é uma cadeira auto leve, fácil de mudar de um carro para outro, e que geralmente tem menos erros na instalação, facilitando\n          a utilização de uma só cadeira no primeiro ano de vida. Por exemplo: quando levar o bebé à creche, à ama ou a casa de um cuidador pela manhã, pode deixar lá o ovo para que outra pessoa possa trazê-lo à tarde, noutro carro.\n        </p>\n        <a href=\"{{ collections['cadeiras-auto-recem-nascido'].url }}\"> <button>Ver Cadeiras Auto para Recém-Nascido</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['cadeiras-auto-recem-nascido'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-auto_01.jpg?v=1725891484\" alt=\"Dicas Baby Zippy - Cadeiras Auto\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['cadeiras-auto-bebe'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-auto_02_1.jpg?v=1725891484\" alt=\"Dicas Baby Zippy - Cadeiras Auto\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h3>Bebés:<br />dos 12 ou 15 meses até aos 3/4 anos</h3>\n        <h2>Cadeiras Auto até 105 cm, voltadas para trás</h2>\n        <p>\n          Dentro desta faixa etária, existem vários modelos de cadeiras auto homologadas até aos 105 cm (R129 ou i-Size), sendo essencial que a criança continue a ser transportada voltada para trás, preferencialmente até aos 3 ou 4 anos. A razão é simples: a cabeça da criança até aos 4 anos é muito grande e pesada, comparativamente com o peso total do corpo (cerca de 25%, comparando com 6% no adulto) e o pescoço é muito frágil. Assim, a posição voltada para trás é a que confere maior proteção em\n          caso de acidente — mais concretamente, 90% de proteção — o que significa que pode evitar a morte de 9 em cada 10 crianças. Existem cadeiras auto evolutivas que podem instalar-se voltadas para trás desde o nascimento até aos 4 anos, mas só são aconselhadas para uso a partir dos 6 meses de vida ou mais tarde. Ao contrário das cadeiras auto para recém-nascido, este tipo de cadeiras auto são para uso exclusivo no automóvel.\n        </p>\n        <a href=\"{{ collections['cadeiras-auto-bebe'].url }}\"> <button>Ver Cadeiras Auto para Bebé</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h3>Crianças:<br />dos 3 aos 12 anos</h3>\n        <h2>Cadeiras Auto até aos 135 cm</h2>\n        <p>\n          Depois dos 3/4 anos, as crianças já podem viajar viradas para a frente numa cadeira de apoio (banco elevatório com costas). Caso a criança ainda fique bem na cadeira auto anterior — isto é, não ultrapasse o peso ou altura máximos indicados, os cintos internos fiquem à altura do ombro, não exista folga na fixação ao automóvel, a cabeça fique bem apoiada — não é necessário mudá-la de imediato para uma nova cadeira.<br /><br />Existem modelos que se instalam no automóvel com Isofix, o que\n          evita a obrigatoriedade de prender a cadeira com o cinto de segurança quando a criança sai do carro. A cadeira nunca deve ficar solta, pois poderá causar lesões aos ocupantes em caso de travagem ou acidente.\n        </p>\n        <a href=\"{{ collections['cadeiras-auto-crianca'].url }}\"> <button>Ver Cadeiras Auto para Criança</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['cadeiras-auto-crianca'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-auto_03_1.jpg?v=1725891484\" alt=\"Dicas Baby Zippy - Cadeiras Auto\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_products_936EHy": {
+      "type": "featured-products",
+      "blocks": {
+        "product_mNYWWT": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_rtadar": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_LRbY6y": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_PmAX6m": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_EPQqyw": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_aVe7RP": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "kid_type": "Girls"
+          }
+        },
+        "product_9TWVer": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_egHET4": {
+          "type": "product",
+          "settings": {
+            "product": "31065082",
+            "kid_type": "Girls"
+          }
+        },
+        "product_ce8z8k": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4",
+        "product_ce8z8k"
+      ],
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "ALTERAR ESTE CARROSSEL",
+        "show_kids_type": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_eNGpb6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n    text-align: center;\n    align-items: center;\n  }\n\n  #dbz-text .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n</style>\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>\n        É importante que os pais procurem informação isenta que os ajude a escolher a cadeira auto que melhor se adapta ao carro, mas também aos bebés e crianças. Assim, aconselhamos a consulta do <a href=\"https://apsi.org.pt/guiaprodutoscriancas/\"> <span class=\"button\">‘Guia Digital de Segurança: Produtos para Crianças’</span></a\n        >, disponível no site da Associação para a Promoção da Segurança Infantil (APSI) que, além de ajudar na escolha da cadeira auto, dá orientações para uma instalação segura e uma utilização correta, chamando a atenção para os erros mais comuns ou mais graves.\n      </p>\n      <p>No site da Autoridade Nacional de Segurança Rodoviária (ANSR), poderá ainda encontrar quatro filmes, realizados pela APSI, que indicam as cadeiras auto mais aconselhadas para cada idade e tamanho, alertando também para os erros na instalação/utilização, e como evitá-los.</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_bFXxQC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n  #dbz-tips h2 > span {\n    font-weight: 700;\n    font-size: 1.2rem;\n  }\n\n  #dbz-tips h3 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 1.3rem;\n    line-height: 1;\n    letter-spacing: 0.02rem;\n    text-align: left;\n    text-transform: uppercase;\n    margin-bottom: 2rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-image\">\n      <a href=\"{{ collections['cadeiras-auto-bebe'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-auto_04.jpg?v=1725893944\" alt=\"Dicas Baby Zippy - Cadeiras Auto\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text\">\n      <div class=\"text-inside\">\n        <h2>Existem ainda algumas questões a ter em conta:</h2>\n        <p>O <b>cinto de segurança</b> e o <b>arnês</b> nunca devem ficar torcidos nem dobrados. Ambos devem ficar sempre bem justos sobre o corpo. O arnês deve ser ajustado diariamente, ficando com uma folga de apenas um dedo, medida entre o ombro e o arnês. Nas cadeiras instaladas voltadas para trás, o arnês deve ficar regulado à altura do ombro ou ligeiramente abaixo; nas cadeiras instaladas de frente, deve ficar à altura do ombro ou ligeiramente acima.</p>\n        <p>\n          Saiba também como fazer <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-nas-viagens-com-bebes\"><span class=\"button\">viagens tranquilas</span></a> com bebés e como complementar os passeios em família com o <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-o-carrinho-de-passeio\"><span class=\"button\">carrinho de bebé</span></a> mais adequado.\n        </p>\n        <p>Siga as recomendações e viaje com total segurança e descanso.</p>\n        <a href=\"{{ collections['cadeiras-auto-bebe'].url }}\"> <button>Ver Cadeiras Auto para Bebé</button></a>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_imQXiW": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n    text-align: center;\n    align-items: center;\n  }\n\n  #dbz-text .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n</style>\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p><b>FALTA ADICIONAR A SANDUICHE DAS FAQS.</b></p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "divider_fullwidth_T6wrRL": {
+      "type": "divider-fullwidth",
+      "disabled": true,
+      "settings": {}
+    },
+    "divider_rJpcW4": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_liquid_dNyfL6": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-cat div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #dbz-cat img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-cat .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-cat .container-title {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0 1.5rem 0;\n  }\n\n  #dbz-cat .menu-grid {\n    display: grid;\n    grid-template-columns: repeat(6, 1fr);\n    justify-content: center;\n    gap: 0.5rem;\n    padding: 0 3rem 3rem 3rem;\n  }\n\n  #dbz-cat h2 {\n    font-family: \"Newzald\", serif;\n    font-size: 1.375rem;\n    letter-spacing: 0;\n    line-height: 1.2;\n    color: #221f20;\n  }\n\n  #dbz-cat a:hover {\n    text-decoration: none;\n  }\n\n  #dbz-cat button {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    font-size: 0.75rem;\n    color: #221f20;\n    letter-spacing: 0;\n    line-height: 1.2;\n    text-align: left;\n    cursor: pointer;\n    display: block;\n    text-transform: none;\n    padding: 0;\n    opacity: 0.9;\n    margin: 0.2rem 0 0 0;\n    border: none;\n    background-color: transparent;\n  }\n\n  #dbz-cat button:after {\n    content: \"\\2192\";\n    color: #221f20;\n    font-size: 1rem;\n    position: relative;\n    margin-left: 0.2rem;\n    top: 0.1rem;\n  }\n\n  #dbz-cat button:hover:after {\n    transition: 0.3s ease-in-out;\n    margin-left: 0.5rem;\n  }\n\n  #dbz-cat button:hover {\n    transform: none;\n  }\n\n  #dbz-cat .img-hover:hover {\n    opacity: 0.9;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-cat .menu-grid {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      padding: 0 1rem 3rem 1rem;\n      gap: 0.5rem;\n      scrollbar-width: none;\n    }\n\n    #dbz-cat .menu-grid .cat-container {\n      width: 60%;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-cat\">\n  <div class=\"container-title\">\n    <h2>Descubra todas as Dicas Baby Zippy</h2>\n  </div>\n  <div class=\"menu-grid\">\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-enxoval-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_enxoval.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Enxoval do Bebé\" class=\"img-hover\" />\n        <button>O Enxoval do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-quarto-para-a-chegada-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_quarto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Quarto para a chegada do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Quarto</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-o-carrinho-de-passeio\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_carrinhos-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher o Carrinho de Passeio\" class=\"img-hover\" />\n        <button>Escolher o Carrinho de Passeio</button>\n      </a>\n    </div>\n    <!--  <div class=\"cat-container\">\n          <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-a-cadeirinha-do-bebe\">\n              <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_cadeiras-auto.jpg?v=1724851568\"\n                  alt=\"Dicas Baby Zippy - Como escolher a Cadeirinha do Bebé\" class=\"img-hover\">\n              <button>Escolher a Cadeirinha do Bebé</button>\n          </a>\n      </div>  -->\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-na-mala-de-maternidade\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_mala-maternidade.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar na Mala de Maternidade\" class=\"img-hover\" />\n        <button>Preparar a Mala de Maternidade</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-o-banho-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_banho.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como preparar o Banho do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Banho</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-mitos-verdades-e-essenciais-para-a-amamentacao\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_amamentacao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Mitos, Verdades e Essenciais para a Amamentação\" class=\"img-hover\" />\n        <button>Essenciais para a Amamentação</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-as-rotinas-de-sono-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_sono.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - As Rotinas de Sono do Bebé\" class=\"img-hover\" />\n        <button>Rotinas de Sono</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-a-hora-da-refeicao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_refeicao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar a Hora da Refeição do Bebé\" class=\"img-hover\" />\n        <button>Preparar a Hora da Refeição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-dicas-e-essenciais-para-a-denticao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_denticao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Dicas e Essenciais para a Dentição do Bebé\" class=\"img-hover\" />\n        <button>Essenciais para a Dentição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-escolher-os-primeiros-brinquedos-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_brinquedos.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Escolher os Primeiros Brinquedos do Bebé\" class=\"img-hover\" />\n        <button>Os Primeiros Brinquedos</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-tornar-a-casa-segura-para-o-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_seguranca.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como tornar a Casa Segura para o Bebé\" class=\"img-hover\" />\n        <button>Segurança em Casa</button>\n      </a>\n    </div>\n    <div class=\"cat-container mr-3\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-nas-viagens-com-bebes\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_viajar-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar nas Viagens com Bebés\" class=\"img-hover\" />\n        <button>Viajar com Bebés</button>\n      </a>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_iw7Y3Q",
+    "custom_liquid_Ec6kQ6",
+    "custom_liquid_acrTpQ",
+    "featured_products_936EHy",
+    "custom_liquid_eNGpb6",
+    "custom_liquid_bFXxQC",
+    "custom_liquid_imQXiW",
+    "divider_fullwidth_T6wrRL",
+    "divider_rJpcW4",
+    "custom_liquid_dNyfL6"
+  ]
+}

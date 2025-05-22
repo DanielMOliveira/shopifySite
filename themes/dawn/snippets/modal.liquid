@@ -1,0 +1,35 @@
+{% comment %}
+  Renders popup.
+
+  Accepts:
+  - id: {String}
+  - title: {String}
+  - content: {String}
+  - popup_class: {String}
+
+  Usage:
+      {% render 'modal', id: 'id', title: 'Title', content: capture_content, popup_class: 'test' %}
+{% endcomment %}
+
+<div
+  class="valantic-modal-wrapper fixed inset-0 hidden cursor-pointer items-center justify-center bg-primary/40 z-[100000]{% if popup_class != blank %} {{ popup_class }}{% endif %}"
+  id="{{ id }}"
+>
+  <div class="modal-content-wrapper relative mx-4 max-h-[calc(100%-32px)] max-w-[840px] cursor-default overflow-auto rounded-2xl bg-white px-6 py-10 lg:max-h-[calc(100%-40px)] lg:px-10">
+    {% if title != blank %}
+      <div class="modal-title mb-6 text-center font-heading text-2xl leading-[normal] text-gray-800 lg:mb-10">
+        {{ title }}
+      </div>
+    {% endif %}
+
+    {% if content != blank %}
+      <div class="modal-content">
+        {{ content }}
+      </div>
+    {% endif %}
+
+    <button class="button-reset-styles absolute right-4 top-4" title="{{ 'accessibility.close' | t }}" data-close>
+      {% render 'icon', icon: 'cross-bold', class: 'text-gray-800 !h-6 !w-6' %}
+    </button>
+  </div>
+</div>

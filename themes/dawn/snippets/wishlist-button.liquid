@@ -1,0 +1,24 @@
+{% comment %}
+  Renders wishlist button
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - class: {String} (optional)
+  - id: {String}
+
+  Usage:
+      {% render 'wishlist-button', product: product, id: 'unique identifier' %}
+{% endcomment %}
+
+<button
+  class="button-{{ id }} button-reset-styles swym-button swym-add-to-wishlist group{% if class != blank %} {{ class }}{% endif %}"
+  aria-label="Add to Wishlist"
+  data-with-epi="true"
+  data-swaction="addToWishlist"
+  data-product-id="{{ product.id | json }}"
+  data-variant-id="{{ product.variants[0].id }}"
+  data-product-url="{{ shop.url }}{{ product.url }}"
+>
+  {% render 'icon', icon: 'heart', class: 'heart transition-all !h-6 !w-6 group-hover:scale-110' %}
+  {% render 'icon', icon: 'heart-full', class: 'heart-full hidden transition-all !h-6 !w-6 group-hover:scale-110' %}
+</button>

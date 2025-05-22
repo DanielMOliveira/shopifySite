@@ -1,0 +1,111 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign synonyms = section.settings.synonyms_list
+  assign is_synonyms_full_word_search = section.settings.is_synonyms_full_word_search
+%}
+
+<div
+  class="container-valantic faq-section--{{ section.id }}"
+  id="section-{{ section.id }}"
+>
+  <div class="mx-auto mb-6 w-full md:mb-12">
+    <div class="input-group">
+      <input
+        class="peer w-full"
+        type="text"
+        id="faq-search-input"
+        name="faq-search-input"
+        placeholder=" "
+        required
+
+        {% if synonyms.size > 0 %}
+          data-synonyms="{{ synonyms }}"
+          data-full-word-search="{{ is_synonyms_full_word_search }}"
+        {% endif %}
+      >
+      <label for="faq-search-input">{{ 'templates.faq.search_placeholder' | t }}</label>
+
+      <span class="absolute right-6 top-2/4 -translate-y-1/2">
+        {% render 'icon', icon: 'search' %}
+      </span>
+    </div>
+  </div>
+  <div class="search-result-empty mx-auto hidden w-full px-4 pb-10 md:px-0">
+    {{ 'templates.faq.no_search_results' | t }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "FAQ Search",
+  "class": "faq-search",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "FAQs search"
+    },
+    {
+      "type": "textarea",
+      "id": "synonyms_list",
+      "label": "Synonyms",
+      "info": "Add synonyms words separated by comma, and synonyms groups separated by semicolon (e.g. 'word1, word2; word3, word4')"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_synonyms_full_word_search",
+      "label": "Search Synonyms By Full Words Only",
+      "default": true,
+      "info": "Using this checkbox will only allow you to search for synonyms when the word is fully entered"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Search"
+    }
+  ]
+}
+{% endschema %}

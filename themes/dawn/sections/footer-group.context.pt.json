@@ -1,0 +1,54 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "footer-group.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "footer": {
+      "disabled": false,
+      "settings": {
+        "menu": "footer",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our newsletter and get 10% off",
+        "social_heading": "Follow us on Social Media",
+        "payment_heading": "Secure Payment Methods ",
+        "copyright_text": "All rights reserved.",
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+        "service_links_3XQ4if": {
+          "settings": {
+            "link_label_1": "Sales Terms & Conditions",
+            "link_label_2": "Privacy Policy",
+            "link_url_2": "shopify://policies/privacy-policy",
+            "link_label_3": "Cookies Policy",
+            "link_label_4": "Electronic Complaints Book"
+          }
+        },
+        "payment_icons_PA4yUB": {
+          "settings": {
+            "payment_icon_1": "shopify://shop_images/mbway_c64bcfab-f949-4f60-9191-3a0c6e75db95.svg",
+            "payment_icon_2": "shopify://shop_images/multibanco_18e21a44-b542-4acd-99e5-527366e79fd7.svg",
+            "payment_icon_3": "shopify://shop_images/visa_05a862ce-e00e-43f1-ac20-be89a0005c89.svg",
+            "payment_icon_4": "shopify://shop_images/mastercard_f502e345-ca74-43b5-90ba-4ad56e8aa355.svg",
+            "payment_icon_5": "shopify://shop_images/paypal_f72dff7f-b36f-48d5-be98-782799aa5cd7.svg"
+          }
+        }
+      }
+    }
+  }
+}

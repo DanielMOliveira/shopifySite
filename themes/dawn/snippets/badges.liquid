@@ -1,0 +1,47 @@
+{% comment %}
+  Render a list of product badges.
+
+  Accepts:
+  - product: {Object} Product (required)
+
+  Usage:
+      {% render 'badges', product: product %}
+{% endcomment %}
+
+{% liquid
+  if product.available == false
+    assign label = settings.card_badge_sold_out
+    assign label_color = settings.card_badge_sold_out_color
+    assign background_color = settings.card_badge_sold_out_background
+  elsif product.compare_at_price > product.price and product.available
+    assign label = settings.card_badge_sale
+    assign label_color = settings.card_badge_sale_color
+    assign background_color = settings.card_badge_sale_background
+  endif
+%}
+
+{% if product != blank and label != blank %}
+  {% capture product_badges %}
+        <span class="mb-1 rounded-sm px-1.5 py-[7px] text-[10px] uppercase leading-[10px]"
+              style="color: {{ label_color }}; background-color: {{ background_color }};">
+            {{ label }}
+        </span>
+    {% endcapture %}
+{% endif %}
+
+{% for badge in product.metafields.custom.badges.value %}
+  {% capture product_badge %}
+        <span class="mb-1 rounded-sm px-1.5 py-[7px] text-[10px] uppercase leading-[10px]"
+              style="color: {{ badge.label_color }};
+              background-color: {{ badge.background_color }};">
+
+            {{ badge.label }}
+        </span>
+    {% endcapture %}
+
+  {% assign product_badges = product_badges | append: product_badge %}
+{% endfor %}
+
+<div class="badges absolute left-2 top-2 z-10 flex flex-col items-start justify-start">
+  {{ product_badges }}
+</div>

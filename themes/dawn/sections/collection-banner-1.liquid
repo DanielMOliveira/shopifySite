@@ -1,0 +1,521 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign banner_bg_color = section.settings.banner_bg_color
+
+  assign image_desktop = section.settings.desktop_image
+  assign image_mobile = section.settings.mobile_image | default: image_desktop
+  assign image_id = section.id | append: '-' | append: section.id
+  assign image_class = 'w-full h-full object-cover'
+  assign lazy_load = section.settings.lazy_load
+
+  assign max_height_desktop = section.settings.max_height_desktop | append: 'px'
+  assign max_height_mobile = section.settings.max_height_mobile | append: 'px'
+
+  assign width_desktop = section.settings.width | append: '%'
+
+  assign content_vertical_position_mobile = section.settings.content_vertical_position_mobile
+  assign content_horizontal_position_desktop = section.settings.content_horizontal_position_desktop
+  assign content_vertical_position_desktop = section.settings.content_vertical_position_desktop
+
+  assign title = section.settings.title
+  assign title_image = section.settings.title_image
+  assign title_color = section.settings.title_color
+  assign title_font_size_desktop = section.settings.title_font_size_desktop | append: 'px'
+  assign title_font_size_mobile = section.settings.title_font_size_mobile | append: 'px'
+
+  assign subtitle = section.settings.subtitle
+  assign subtitle_color = section.settings.subtitle_color
+  assign subtitle_font_size_desktop = section.settings.subtitle_font_size_desktop | append: 'px'
+  assign subtitle_font_size_mobile = section.settings.subtitle_font_size_mobile | append: 'px'
+
+  assign links_vertical_position_desktop = section.settings.links_vertical_position_desktop
+
+  assign link_first_text = section.settings.link_first_text
+  assign link_first_url = section.settings.link_first_url
+
+  assign link_second_text = section.settings.link_second_text
+  assign link_second_url = section.settings.link_second_url
+%}
+
+<section
+  id="section-{{ section.id }}"
+  class="mb-3"
+  {% if banner_bg_color %}
+    style="background: {{ banner_bg_color }}"
+  {% endif %}
+>
+  {% if image_desktop != blank or image_mobile != blank %}
+    <div class="banner banner-{{ section.id }} relative">
+      {% render 'picture',
+        image_desktop: image_desktop,
+        image_mobile: image_mobile,
+        loading: lazy_load,
+        class: image_class,
+        id: image_id
+      %}
+
+      <div class="content-wrapper absolute inset-0 flex flex-col text-center md:gap-10 {{ content_vertical_position_mobile }} {{ content_horizontal_position_desktop }} {{ content_vertical_position_desktop }}">
+        {% if title != blank or subtitle != blank %}
+          <div class="content">
+            {% if title_image != blank %}
+              <img
+                class="title-image mb-3.5 inline-block max-w-[250px] md:mb-3 md:max-w-[75%] lg:max-w-[385px]"
+                src="{{ title_image | image_url }}"
+                height="{{ title_image.height }}"
+                width="{{ title_image.width }}"
+                alt="{{ title_image.alt }}"
+                loading="lazy"
+              >
+            {% elsif title != blank %}
+              <div class="title font-semibold max-[767px]:overflow-hidden">{{ title }}</div>
+            {% endif %}
+
+            {% if subtitle != blank %}
+              <div class="subtitle mt-2 uppercase tracking-[1.6px] md:mt-3.75">{{ subtitle }}</div>
+            {% endif %}
+
+            {% if link_first_text != blank or link_second_text != blank %}
+              <div class="actions {{ links_vertical_position_desktop }} hidden w-full flex-wrap items-center justify-center gap-2 md:mt-10 md:flex">
+                {% if link_first_text != blank %}
+                  <a
+                    href="{{ link_first_url }}"
+                    title="{{ link_first_text }}"
+                    class="button tertiary scale-on-hover !px-4 !py-[9px] md:!py-3.25"
+                  >
+                    <span>{{ link_first_text }}</span>
+                  </a>
+                {% endif %}
+
+                {% if link_second_text != blank %}
+                  <a
+                    href="{{ link_second_url }}"
+                    title="{{ link_second_text }}"
+                    class="button tertiary scale-on-hover !px-4 !py-[9px] md:!py-3.25"
+                  >
+                    <span>{{ link_second_text }}</span>
+                  </a>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endif %}
+
+  {% style %}
+    {% if max_height_mobile != '0px' %}
+        .banner-{{ section.id }} img:not(.title-image) {
+            height: {{ max_height_mobile }};
+            max-height: {{ max_height_mobile }};
+        }
+    {% endif %}
+
+    #section-{{ section.id }} .content-wrapper.mobile-y-top .content {
+        margin-top: 20px;
+    }
+
+    #section-{{ section.id }} .content-wrapper.mobile-y-center .content {
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+    }
+
+    #section-{{ section.id }} .content-wrapper.mobile-y-bottom .content {
+        bottom: 112px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+    }
+
+    #section-{{ section.id }} .title h2:last-child {
+        left: 8%;
+    }
+
+    @media screen and (min-width: 768px) {
+        #section-{{ section.id }} .content-wrapper.mobile-y-top .content {
+            margin-top: 0;
+        }
+
+        #section-{{ section.id }} .content-wrapper.mobile-y-center .content,
+        #section-{{ section.id }} .content-wrapper.mobile-y-bottom .content {
+            position: static;
+            transform: none;
+            width: auto;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-x-left {
+            left: 60px;
+            right: auto;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-x-right {
+            left: auto;
+            right: 60px;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-x-center {
+            left: 50%;
+            right: auto;
+            transform: translateX(-50%);
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-y-top {
+            bottom: auto;
+            top: 40px;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-y-center {
+            bottom: auto;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-y-bottom {
+            bottom: 40px;
+            top: auto;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-x-center.desktop-y-center {
+            transform: translate(-50%, -50%);
+        }
+
+        #section-{{ section.id }} .actions {
+            bottom: 0;
+            position: relative;
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        #section-{{ section.id }} .content-wrapper.desktop-x-left {
+            left: 80px;
+        }
+
+        #section-{{ section.id }} .content-wrapper.desktop-x-right {
+            right: 80px;
+        }
+
+        #section-{{ section.id }} .content-wrapper {
+            right: 10% !important;
+        }
+
+        #section-{{ section.id }} .title h2:last-child {
+            left: 22%;
+        }
+    }
+
+    .banner-{{ section.id }} .title * {
+        color: {{ title_color }};
+        font-family: var(--font-heading-additional-family);
+        font-size: {{ title_font_size_mobile }};
+        line-height: 80%;
+        position: relative;
+    }
+
+    .banner-{{ section.id }} .subtitle * {
+        color: {{ subtitle_color }};
+        font-size: {{ subtitle_font_size_mobile }};
+        line-height: 80%;
+        position: relative;
+    }
+
+    @media screen and (min-width: 768px) {
+        {% if max_height_desktop != '0px' %}
+            .banner-{{ section.id }} img:not(.title-image) {
+                height: {{ max_height_desktop }};
+                max-height: {{ max_height_desktop }};
+            }
+
+        {% else %}
+            .banner-{{ section.id }} img:not(.title-image) {
+                height: auto;
+                max-height: 100%;
+            }
+        {% endif %}
+
+        .banner-{{ section.id }} {
+            width: {{ width_desktop }};
+        }
+
+        .banner-{{ section.id }} .title * {
+            font-size: {{ title_font_size_desktop }};
+        }
+
+        .banner-{{ section.id }} .subtitle * {
+            font-size: {{ subtitle_font_size_desktop }};
+        }
+
+        .banner-{{ section.id }} .content-wrapper:has(.actions.desktop-y-bottom) {
+            height: 100%;
+            width: 100%;
+        }
+
+        .banner-{{ section.id }} .content-wrapper.desktop-y-center:has(.actions.desktop-y-bottom) .content {
+            margin-bottom: auto;
+            margin-top: auto;
+        }
+
+        .banner-{{ section.id }} .content-wrapper .actions.desktop-y-bottom {
+            position: absolute;
+        }
+    }
+  {% endstyle %}
+</section>
+
+{% schema %}
+{
+  "name": "Collection Banner 1",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "mobile_image",
+      "label": "Mobile Image",
+      "info": "Until 768px."
+    },
+    {
+      "type": "image_picker",
+      "id": "desktop_image",
+      "label": "Desktop Image",
+      "info": "From 768px."
+    },
+    {
+      "type": "select",
+      "id": "lazy_load",
+      "label": "Lazy Load",
+      "default": "lazy",
+      "options": [
+        { "value": "eager", "label": "Eager" },
+        { "value": "lazy", "label": "Lazy" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Max Height"
+    },
+    {
+      "type": "number",
+      "id": "max_height_mobile",
+      "label": "Max Height Mobile (px)",
+      "default": 505,
+      "info": "If set 0, then max height is auto. Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "max_height_desktop",
+      "label": "Max Height Desktop (px)",
+      "default": 605,
+      "info": "If set 0, then max height is auto. From 768px"
+    },
+    {
+      "type": "header",
+      "content": "Width"
+    },
+    {
+      "type": "range",
+      "id": "width",
+      "label": "Width Desktop (%)",
+      "min": 25,
+      "max": 100,
+      "step": 1,
+      "default": 100,
+      "unit": "%",
+      "info": "From 768px"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_position_mobile",
+      "label": "Content Position Mobile",
+      "default": "mobile-y-top",
+      "options": [
+        { "value": "mobile-y-top", "label": "Top" },
+        { "value": "mobile-y-center", "label": "Center" },
+        { "value": "mobile-y-bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_horizontal_position_desktop",
+      "label": "Content Position Desktop (Horizontal)",
+      "default": "desktop-x-right",
+      "options": [
+        { "value": "desktop-x-left", "label": "Left" },
+        { "value": "desktop-x-center", "label": "Center" },
+        { "value": "desktop-x-right", "label": "Right" }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "content_vertical_position_desktop",
+      "label": "Content Position Desktop (Vertical)",
+      "default": "desktop-y-center",
+      "options": [
+        { "value": "desktop-y-top", "label": "Top" },
+        { "value": "desktop-y-center", "label": "Center" },
+        { "value": "desktop-y-bottom", "label": "Bottom" }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "title_image",
+      "label": "Title Image"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "info": "Renders if no title image uploaded"
+    },
+    {
+      "type": "number",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size Mobile (px)",
+      "default": 49,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "title_font_size_desktop",
+      "label": "Title Font Size Desktop (px)",
+      "default": 88,
+      "info": "From 768px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Subtitle"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "number",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size Mobile (px)",
+      "default": 12,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "subtitle_font_size_desktop",
+      "label": "Subtitle Font Size Desktop (px)",
+      "default": 20,
+      "info": "From 768px"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle Color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Links"
+    },
+    {
+      "type": "select",
+      "id": "links_vertical_position_desktop",
+      "label": "Links Position Desktop (Vertical)",
+      "default": "desktop-y-auto",
+      "options": [
+        { "value": "desktop-y-auto", "label": "Auto" },
+        { "value": "desktop-y-bottom", "label": "Bottom" }
+      ],
+      "info": "From 768px"
+    },
+    {
+      "type": "paragraph",
+      "content": "Link 1"
+    },
+    {
+      "type": "text",
+      "id": "link_first_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_first_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "paragraph",
+      "content": "Link 2"
+    },
+    {
+      "type": "text",
+      "id": "link_second_text",
+      "label": "Link Text"
+    },
+    {
+      "type": "url",
+      "id": "link_second_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 32,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 32,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 32,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 32,
+      "info": "From 768px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Banner 1"
+    }
+  ]
+}
+{% endschema %}

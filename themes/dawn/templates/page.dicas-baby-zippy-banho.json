@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_iw7Y3Q": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n    #dbz div {\n      padding: 0;\n      margin: 0;\n    }\n  \n    .zyBgBeige {\n      background-color: #f2f0e9;\n    }\n  \n    #dbz img {\n      max-width: 100%;\n      height: auto;\n    }\n  \n    #dbz .container-fluid {\n      max-width: 100%;\n    }\n  \n    #dbz .row {\n      display: flex;\n      justify-content: space-around;\n      align-items: center;\n    }\n  \n    #dbz .container-image {\n      width: 50%;\n    }\n  \n    #dbz .container-text {\n      width: 50%;\n      margin: 0;\n    }\n  \n    #dbz .container-text .text-inside {\n      width: 60%;\n      margin: auto;\n    }\n  \n    #dbz h1 {\n      font-family: \"Newzald\", serif;\n      color: #221f20;\n      font-size: 2rem;\n      letter-spacing: 0.05rem;\n      line-height: 1.2;\n      text-align: left;\n      text-transform: uppercase;\n      margin: 0.5rem 0 1rem 0;\n    }\n  \n    #dbz h2 {\n      font-family: \"CentraNo1\", Assistant, sans-serif;\n      color: #221f20;\n      font-size: 1.143rem;\n      letter-spacing: 0.05rem;\n      line-height: 1.3;\n      text-align: left;\n      text-transform: uppercase;\n    }\n  \n    #dbz h3 {\n      font-family: \"Newzald\", serif;\n      color: #221f20;\n      font-size: 1rem;\n      letter-spacing: 0.02rem;\n      text-align: left;\n      text-transform: uppercase;\n      margin-bottom: 2rem;\n    }\n  \n    #dbz h3 > span {\n      font-weight: 600;\n      letter-spacing: 0;\n      text-transform: none;\n    }\n  \n    #dbz p {\n      font-family: \"CentraNo1\", Assistant, sans-serif;\n      color: #221f20;\n      font-size: 1rem;\n      letter-spacing: 0;\n      line-height: 1.5;\n      text-align: left;\n      margin-top: 2rem;\n    }\n  \n    @media (max-width: 991px) {\n      #dbz .row {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n      }\n  \n      #dbz .container-image {\n        width: 100%;\n      }\n  \n      #dbz .container-text {\n        width: 100%;\n      }\n  \n      #dbz .container-text .text-inside {\n        width: 80%;\n        margin: 1rem auto 2rem auto;\n      }\n    }\n  \n    @media (max-width: 576px) {\n      #dbz h1 {\n        font-size: 1.563rem;\n        letter-spacing: 0.05rem;\n      }\n  \n      #dbz h2 {\n        font-size: 0.875rem;\n        letter-spacing: 0.03rem;\n      }\n  \n      #dbz p {\n        margin-top: 1rem;\n      }\n    }\n  </style>\n  \n  <section class=\"container-fluid zyBgBeige\" id=\"dbz\">\n    <div class=\"row\">\n      <div class=\"container-image\">\n        <a href=\"{{ collections['banho-higiene'].url }}\">\n            <picture>\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_banner.jpg?v=1725374160\" alt=\"Dicas Baby Zippy - Banho\" />\n          </picture>\n        </a>\n      </div>\n      <div class=\"container-text\">\n        <div class=\"text-inside\">\n          <h3>Dicas Baby Zippy — <span>Banho</span></h3>\n          <h2>Salpicos e risadas</h2>\n          <h1>Como preparar o Banho do Bebé</h1>\n          <p>A hora de dar banho ao bebé é mais um dos momentos que suscita algumas dúvidas para os pais de primeira viagem: a água estará muito quente? Como devo segurar no bebé? A que horas o devo fazer?</p>\n        </div>\n      </div>\n    </div>\n  </section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_Ec6kQ6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgWhite {\n    background-color: #fafafa;\n  }\n\n  #dbz-text .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-text .row {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #dbz-text .container-text {\n    max-width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-text p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: center;\n    padding-top: 1rem;\n  }\n  #dbz-text p > span {\n    text-transform: uppercase;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-text .container-text {\n      max-width: 80%;\n      margin: 2rem 0;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Porém, mesmo os pais mais experientes podem ter algumas dúvidas, pois cada bebé é diferente e o que funcionou com o primeiro filho, poderá não funcionar com o novo membro da família.</p>\n      <p>Assim, damos-lhe algumas dicas de como preparar o banho do bebé. Quanto à hora a que deve iniciar o ritual do banho, este horário deve ser definido de forma quase intuitiva, e que vai depender da resposta que o próprio bebé lhe der.</p>\n      <p>Enquanto são muito pequeninos, o banho funciona bem para ajudar o bebé a relaxar e a iniciar o ritual de descanso; já quando são mais crescidos, é normal que, em conjunto, o tornem num momento divertido !</p>\n      <p><span>Melhor do que ninguém, saberá interpretar os sinais que o bebé lhe transmite.</span></p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_acrTpQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Vamos preparar o banho do bebé</h2>\n        <p>1 — Prepare o ambiente do quarto onde dará o banho ao bebé. Deverá rondar os 22º C e sem correntes de ar.</p>\n        <p>2 — Idealmente, a temperatura da água deve rondar os 37ºC. Coloque primeiro a água fria e só depois a quente. Verifique a temperatura com um termómetro de banho.</p>\n        <p>3 — A limpeza do bebé deve ser feita sempre de cima para baixo, da cabeça para os pés. A cabeça deverá estar apoiada na sua mão. Descubra os artigos de higiene para ajudar na limpeza do bebé.</p>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['banho-higiene'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_01.jpg?v=1725374160\" alt=\"Dicas Baby Zippy - Banho\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['banho-higiene'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_02.jpg?v=1725374160\" alt=\"Dicas Baby Zippy - Banho\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Brincadeiras durante o banho</h2>\n        <p>Quando o seu bebé já estiver um pouco maior, irá certamente tornar a hora do banho num momento de brincadeira e de descoberta e é aqui que entram os brinquedos de banho. Deixamos também algumas sugestões que poderão fazer a diferença:</p>\n        <p>1 — Celebre cada conquista do seu bebé, desde colocar um brinquedo a flutuar até a aprender a ensaboar a própria esponja.</p>\n        <p>2 — Aprender é divertido. Exercícios como “vamos brincar com o patinho amarelo” ou “dar banho com a esponja azul” são ótimos para ajudar a aprender as cores.</p>\n        <p>3 — Deixem-se levar pela imaginação, colorindo a água do banho com uma varinha mágica especial.</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qwUMDX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p><span>Como escolher a Banheira do Bebé</span></p>\n      <p>A escolha da primeira banheira do bebé deverá ter em conta o espaço onde estará inserida. Irá dar banho ao bebé no quarto de dormir ou na casa de banho? Precisará de guardá-la após o banho ou terá espaço para mantê-la sempre disponível?</p>\n      <p>Tenha em conta que existem diferentes tipos de banheiras que se podem adequar às diferentes necessidades e rotinas de cada família. Apresentamos-lhas para que escolha a que melhor se adequará à sua.</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_x39PbC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  #DBZ-cat-slider,\n  #DBZ-prod,\n  #DBZ {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    background-color: #f2f0e9;\n  }\n\n  #DBZ-cat-slider .container {\n    width: 100%;\n    max-width: 1600px;\n    margin: 0 auto;\n    padding: 0 15px;\n  }\n\n  #DBZ-cat-slider .container {\n    padding-top: 2rem;\n  }\n\n  #DBZ-cat-slider .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n  }\n\n  #DBZ-cat-slider h3 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 500;\n    color: #221f20;\n    font-size: 1.3rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: left;\n    margin-bottom: 0.5rem;\n  }\n\n  /* Botões de navegação */\n  #DBZ-cat-slider .cat-navigation {\n    text-align: center;\n    padding-top: 30px;\n    padding-bottom: 15px;\n  }\n\n  #DBZ-cat-slider .cat-navigation button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    font-weight: 400;\n  }\n\n  #DBZ-cat-slider .cat-navigation .active {\n    text-decoration: underline;\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider .DBZ-cat-slider-content {\n    padding-top: 15px;\n    padding-bottom: 10px;\n    width: 100%;\n  }\n\n  .cat-slider-1,\n  .cat-slider-2,\n  .cat-slider-3,\n  .cat-slider-4,\n  .cat-slider-5 {\n    display: none;\n  }\n\n  #DBZ-cat-slider .cat-slider-1.active,\n  #DBZ-cat-slider .cat-slider-2.active,\n  #DBZ-cat-slider .cat-slider-3.active,\n  #DBZ-cat-slider .cat-slider-4.active,\n  #DBZ-cat-slider .cat-slider-5.active {\n    display: block;\n  }\n\n  #DBZ-cat-slider .content-row {\n    display: flex;\n    flex-direction: column-reverse;\n    align-items: center;\n    justify-content: center;\n    gap: 3rem;\n  }\n\n  #DBZ-cat-slider .content-row img {\n    width: 100%;\n    max-width: 600px;\n  }\n\n  #DBZ-cat-slider .content-text {\n    max-width: 600px;\n    margin-bottom: 15px;\n  }\n\n  #DBZ-cat-slider button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    border: none;\n    cursor: pointer;\n    background-color: transparent;\n  }\n\n  #DBZ-cat-slider .cta {\n    font-size: 0.9rem;\n    color: #221f20;\n    border: solid #221f20 1px;\n    border-radius: 100px;\n    text-decoration: none;\n    background-color: transparent;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-bottom: 1rem;\n  }\n\n  #DBZ-cat-slider .content-text p {\n    margin-bottom: 15px;\n    line-height: 1.4rem;\n    font-size: 0.9rem;\n  }\n\n  #DBZ-cat-slider b {\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider a {\n    text-decoration: underline;\n  }\n\n  @media (max-width: 1300px) {\n    #DBZ-cat-slider .container {\n      width: 100%;\n      max-width: 1300px;\n      margin: 0 auto;\n      padding: 0 15px;\n    }\n\n    #DBZ-cat-slider .content-row img {\n      max-width: 500px;\n    }\n\n    #DBZ-cat-slider .content-text {\n      max-width: 500px;\n    }\n  }\n  @media (min-width: 992px) {\n    #DBZ-cat-slider .content-row {\n      flex-direction: row;\n      justify-content: space-between;\n    }\n\n    #DBZ-cat-slider .content-text {\n      text-align: left;\n    }\n  }\n\n  @media (max-width: 992px) {\n    #DBZ-cat-slider .cat-navigation {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      display: -moz-box;\n      padding: 2 0 0 1rem;\n      scrollbar-width: none;\n    }\n    #DBZ-cat-slider .DBZ-cat-slider-content {\n      padding-bottom: 40px;\n    }\n  }\n</style>\n\n<section id=\"DBZ-cat-slider\">\n  <div class=\"container\">\n    <div class=\"row cat-navigation\">\n      <button class=\"DBZ-cat-slider active\" data-show=\".cat-slider-1\">Cómodas com Banheira</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-2\">Banheiras com Vestidor</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-3\">Assentos & Anéis de Banho</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-4\">Banheiras Tradicionais</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-5\">Banheiras em Formato de Balde</button>\n    </div>\n\n    <div class=\"row DBZ-cat-slider-content\">\n      <div class=\"cat-slider-1 active\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Cómodas com Banheira</h3>\n            <p>\n              Colocadas no quarto do bebé, as cómodas com banheira e vestidor são uma opção muito prática, versátil e utilitária. Numa fase inicial pode dar banho ao bebé na banheira incorporada na cómoda, mantendo o bebé no ambiente confortável do quarto, evitando diferenças de temperaturas entre as divisões da casa. Assim que a banheira se tornar pequena, poderá retirá-la e utilizar o espaço da mesma para uma gaveta, aumentando a arrumação da cómoda e mantendo o vestidor para trocar as fraldas\n              ou vestir o bebé.\n            </p>\n          </div>\n          <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_prod-01.jpg?v=1725375544\" alt=\"Dicas Baby Zippy - Banho\" /> </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-2\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Banheiras com Vestidor</h3>\n            <p>\n              As banheiras com vestidor são um 2-em-1 que permite dar banho e vestir ou trocar a fralda do bebé sem sair do mesmo espaço físico. As banheiras integradas neste sistema são, geralmente, anatómicas e com duas posições de assento, permitindo dar banho ao bebé na posição sentada ou deitada. A estrutura dobrável ou desmontável, consoante os modelos, facilita a arrumação da mesma. Existem ainda modelos pensados para serem colocados por cima das louças sanitárias, de forma a ocupar pouco\n              espaço na casa de banho.\n            </p>\n          </div>\n          <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_prod-02.jpg?v=1725375753\" alt=\"Dicas Baby Zippy - Banho\" /> </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-3\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Assentos & Anéis de Banho</h3>\n            <p>\n              Económicos e adaptáveis às banheiras dos adultos, os assentos e anéis de banho possuem ventosas que asseguram a estabilidade dentro da banheira e uma construção ergonómica para manter o bebé sentado e confortável durante o banho. Algumas opções trazem ainda brinquedos para entreter o bebé, assim como termómetros embutidos para saber sempre a temperatura atual da água. Por razões de segurança, os assentos e anéis de banho não devem utilizados sobre os tapetes de banheira, uma vez\n              que não permitem uma boa aderência das ventosas e podem tombar, provocando um acidente.\n            </p>\n          </div>\n          <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_prod-03.jpg?v=1725375753\" alt=\"Dicas Baby Zippy - Banho\" /> </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-4\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Banheiras Tradicionais: Amplas ou Ergonómicas</h3>\n            <p>\n              As banheiras tradicionais são leves e fáceis de transportar, podendo ser utilizadas no chão, na banheira da casa de banho ou noutra superfície plana, estável e regular. Nas banheiras tradicionais para bebé, existem dois tipos de banheiras: as banheiras amplas e as banheiras ergonómicas. As banheiras amplas são, geralmente, mais económicas, com um interior mais espaçoso que permite a manipulação livre do bebé. Por sua vez, as banheiras ergonómicas possuem uma estrutura que facilita\n              dar banho ao bebé em posição deitada, reclinada ou sentada, dependendo da idade, transmitindo assim uma maior confiança aos pais, sobretudo aos de primeira viagem.\n            </p>\n          </div>\n          <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_prod-04.jpg?v=1725375753\" alt=\"Dicas Baby Zippy - Banho\" /> </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-5\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Banheiras Ergonómicas em Formato Balde</h3>\n            <p>\n              Compactas e ergonómicas, as banheiras com formato de balde, como a Shantala, têm vindo a ganhar cada vez mais protagonismo nas escolhas dos pais. Desenhadas especialmente para os primeiros meses de vida do recém-nascido, são banheiras que permitem dar banho ao bebé na posição fetal, tal como estava no ventre da mãe, recriando uma sensação que lhe é familiar e reconfortante. Simultaneamente, ajuda a relaxar e a aliviar as cólicas. Tendo ainda em conta o pequeno formato da banheira,\n              a quantidade de água necessária para o banho é menor comparativamente com outras banheiras, mantendo-se quente por mais tempo.\n            </p>\n          </div>\n          <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-banho_prod-05.jpg?v=1725375753\" alt=\"Dicas Baby Zippy - Banho\" /> </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<section id=\"DBZ-cat-slider\">\n  <div class=\"container\">\n    <div class=\"row\">\n      <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <button class=\"cta\">Ver todas as banheiras e vestidores</button> </a>\n    </div>\n  </div>\n</section>\n<script>\n  // slider cat-slider //\n  document.querySelectorAll(\".DBZ-cat-slider\").forEach((button) => {\n    button.addEventListener(\"click\", function () {\n      document.querySelectorAll(\".DBZ-cat-slider\").forEach((btn) => btn.classList.remove(\"active\"));\n      this.classList.add(\"active\");\n\n      document.querySelectorAll(\".DBZ-cat-slider-content > div\").forEach((content) => content.classList.remove(\"active\"));\n      document.querySelector(this.dataset.show).classList.add(\"active\");\n    });\n  });\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_eNGpb6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n    text-align: center;\n    align-items: center;\n  }\n\n  #dbz-text .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n</style>\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Aproveite cada segundo dos primeiros banhos: são inesquecíveis!</p>\n      <p>\n        Conheça a nossa gama de produtos de <a href=\"{{ collections['banho-higiene'].url }}\"><span class=\"button\">Banho e Higiene do Bebé</span></a\n        >, onde poderá encontrar todos os essenciais para o banho do bebé.\n      </p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_products_936EHy": {
+      "type": "featured-products",
+      "blocks": {
+        "product_mNYWWT": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_rtadar": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_LRbY6y": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_PmAX6m": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_EPQqyw": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_aVe7RP": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "kid_type": "Girls"
+          }
+        },
+        "product_9TWVer": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_egHET4": {
+          "type": "product",
+          "settings": {
+            "product": "31065082",
+            "kid_type": "Girls"
+          }
+        },
+        "product_ce8z8k": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4",
+        "product_ce8z8k"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "ALTERAR ESTE CARROSSEL",
+        "show_kids_type": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "divider_fullwidth_T6wrRL": {
+      "type": "divider-fullwidth",
+      "disabled": true,
+      "settings": {}
+    },
+    "divider_rJpcW4": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_liquid_dNyfL6": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-cat div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #dbz-cat img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-cat .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-cat .container-title {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0 1.5rem 0;\n  }\n\n  #dbz-cat .menu-grid {\n    display: grid;\n    grid-template-columns: repeat(6, 1fr);\n    justify-content: center;\n    gap: 0.5rem;\n    padding: 0 3rem 3rem 3rem;\n  }\n\n  #dbz-cat h2 {\n    font-family: \"Newzald\", serif;\n    font-size: 1.375rem;\n    letter-spacing: 0;\n    line-height: 1.2;\n    color: #221f20;\n  }\n\n  #dbz-cat a:hover {\n    text-decoration: none;\n  }\n\n  #dbz-cat button {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    font-size: 0.75rem;\n    color: #221f20;\n    letter-spacing: 0;\n    line-height: 1.2;\n    text-align: left;\n    cursor: pointer;\n    display: block;\n    text-transform: none;\n    padding: 0;\n    opacity: 0.9;\n    margin: 0.2rem 0 0 0;\n    border: none;\n    background-color: transparent;\n  }\n\n  #dbz-cat button:after {\n    content: \"\\2192\";\n    color: #221f20;\n    font-size: 1rem;\n    position: relative;\n    margin-left: 0.2rem;\n    top: 0.1rem;\n  }\n\n  #dbz-cat button:hover:after {\n    transition: 0.3s ease-in-out;\n    margin-left: 0.5rem;\n  }\n\n  #dbz-cat button:hover {\n    transform: none;\n  }\n\n  #dbz-cat .img-hover:hover {\n    opacity: 0.9;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-cat .menu-grid {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      padding: 0 1rem 3rem 1rem;\n      gap: 0.5rem;\n      scrollbar-width: none;\n    }\n\n    #dbz-cat .menu-grid .cat-container {\n      width: 60%;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-cat\">\n  <div class=\"container-title\">\n    <h2>Descubra todas as Dicas Baby Zippy</h2>\n  </div>\n  <div class=\"menu-grid\">\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-enxoval-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_enxoval.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Enxoval do Bebé\" class=\"img-hover\" />\n        <button>O Enxoval do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-quarto-para-a-chegada-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_quarto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Quarto para a chegada do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Quarto</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-o-carrinho-de-passeio\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_carrinhos-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher o Carrinho de Passeio\" class=\"img-hover\" />\n        <button>Escolher o Carrinho de Passeio</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n          <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-a-cadeirinha-do-bebe\">\n              <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_cadeiras-auto.jpg?v=1724851568\"\n                  alt=\"Dicas Baby Zippy - Como escolher a Cadeirinha do Bebé\" class=\"img-hover\">\n              <button>Escolher a Cadeirinha do Bebé</button>\n          </a>\n      </div>  \n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-na-mala-de-maternidade\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_mala-maternidade.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar na Mala de Maternidade\" class=\"img-hover\" />\n        <button>Preparar a Mala de Maternidade</button>\n      </a>\n    </div> \n      <!-- <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-o-banho-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_banho.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como preparar o Banho do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Banho</button>\n      </a>\n    </div> -->\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-mitos-verdades-e-essenciais-para-a-amamentacao\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_amamentacao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Mitos, Verdades e Essenciais para a Amamentação\" class=\"img-hover\" />\n        <button>Essenciais para a Amamentação</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-as-rotinas-de-sono-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_sono.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - As Rotinas de Sono do Bebé\" class=\"img-hover\" />\n        <button>Rotinas de Sono</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-a-hora-da-refeicao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_refeicao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar a Hora da Refeição do Bebé\" class=\"img-hover\" />\n        <button>Preparar a Hora da Refeição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-dicas-e-essenciais-para-a-denticao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_denticao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Dicas e Essenciais para a Dentição do Bebé\" class=\"img-hover\" />\n        <button>Essenciais para a Dentição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-escolher-os-primeiros-brinquedos-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_brinquedos.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Escolher os Primeiros Brinquedos do Bebé\" class=\"img-hover\" />\n        <button>Os Primeiros Brinquedos</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-tornar-a-casa-segura-para-o-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_seguranca.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como tornar a Casa Segura para o Bebé\" class=\"img-hover\" />\n        <button>Segurança em Casa</button>\n      </a>\n    </div>\n    <div class=\"cat-container mr-3\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-nas-viagens-com-bebes\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_viajar-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar nas Viagens com Bebés\" class=\"img-hover\" />\n        <button>Viajar com Bebés</button>\n      </a>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_iw7Y3Q",
+    "custom_liquid_Ec6kQ6",
+    "custom_liquid_acrTpQ",
+    "custom_liquid_qwUMDX",
+    "custom_liquid_x39PbC",
+    "custom_liquid_eNGpb6",
+    "featured_products_936EHy",
+    "divider_fullwidth_T6wrRL",
+    "divider_rJpcW4",
+    "custom_liquid_dNyfL6"
+  ]
+}

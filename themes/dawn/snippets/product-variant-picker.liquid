@@ -1,0 +1,195 @@
+{% comment %}
+  Renders product variant-picker
+
+  Accepts:
+  - product: {Object} product object.
+  - block: {Object} passing the block information.
+  - product_form_id: {String} Id of the product form to which the variant picker is associated.
+  - is_size_guide: {Boolean}
+
+  Usage:
+    {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
+{% endcomment %}
+
+{% assign bundle_inner_products = product.metafields.custom.bundle_inner_products.value %}
+
+{% if bundle_inner_products != blank %}
+  <div class="bundle-products flex flex-col gap-6 md:gap-7">
+    {% for bundle_inner_product in bundle_inner_products %}
+      {% if bundle_inner_product.variants.size <= 1 %}
+        {% for option in product.options_with_values %}
+          {% if forloop.first %}
+            {% assign is_shown = false %}
+          {% endif %}
+
+          {% unless is_shown %}
+            {% assign is_shown = true %}
+
+            {% unless option.name == bundle_inner_product.title or option.name contains bundle_inner_product.title %}
+              <div class="flex items-center text-2xs text-gray-700 last:mb-6 md:text-sm md:last:mb-7">
+                <div class="relative">
+                  <img
+                    class="bundle-product-image mr-2 block h-9 w-9 min-w-9 object-contain"
+                    src="{{ bundle_inner_product.featured_image | image_url }}"
+                    height="36"
+                    width="36"
+                    alt="{{ bundle_inner_product.title }}"
+                  >
+                  <img
+                    class="bundle-product-image-hover pointer-events-none absolute bottom-0 left-0 z-10 mb-10 block h-25 w-25 min-w-25 object-contain opacity-0 transition-opacity md:left-1/2 md:-ml-12.5"
+                    src="{{ bundle_inner_product.featured_image | image_url }}"
+                    height="100"
+                    width="100"
+                    alt="{{ bundle_inner_product.title }}"
+                  >
+                </div>
+                <div>{{ bundle_inner_product.title }}</div>
+              </div>
+            {% endunless %}
+          {% endunless %}
+
+          {% if forloop.last %}
+            {% assign is_shown = false %}
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% unless product.has_only_default_variant %}
+  <variant-selects
+    class="flex flex-col gap-6 md:gap-7"
+    id="variant-selects-{{ section.id }}"
+    data-section="{{ section.id }}"
+    {{ block.shopify_attributes }}
+  >
+    {% for option in product.options_with_values %}
+      {% liquid
+        assign has_last_items = false
+        assign matched_bundle_product = null
+
+        for value in option.values
+          if value.variant.inventory_quantity == 1
+            assign has_last_items = true
+          endif
+        endfor
+
+        if bundle_inner_products != blank
+          for bundle_inner_product in bundle_inner_products
+            if option.name == bundle_inner_product.title or option.name contains bundle_inner_product.title
+              assign matched_bundle_product = bundle_inner_product
+            endif
+          endfor
+        endif
+      %}
+
+      <fieldset class="js product-form__input product-form__input--swatch relative">
+        <div class="mb-3 flex justify-between text-2xs md:text-sm">
+          <div class="flex items-start">
+            {% if matched_bundle_product != blank %}
+              <div class="relative">
+                <img
+                  class="bundle-product-image -mt-2 mr-2 block h-9 w-9 min-w-9 object-contain"
+                  src="{{ matched_bundle_product.featured_image | image_url }}"
+                  height="36"
+                  width="36"
+                  alt="{{ matched_bundle_product.title }}"
+                >
+                <img
+                  class="bundle-product-image-hover pointer-events-none absolute bottom-0 left-0 z-10 mb-10 block h-25 w-25 min-w-25 object-contain opacity-0 transition-opacity md:left-1/2 md:-ml-12.5"
+                  src="{{ matched_bundle_product.featured_image | image_url }}"
+                  height="100"
+                  width="100"
+                  alt="{{ matched_bundle_product.title }}"
+                >
+              </div>
+            {% endif %}
+            <span class="mr-1 inline-block text-gray-700">
+              {% if option.name == 'Size' %}
+                {{ 'products.product.size' | t }}
+              {% else %}
+                {{- option.name -}}
+              {% endif %}
+              {%- if product.available %}:{% endif -%}
+            </span>
+            {% if product.available %}
+              <span class="mr-1 flex shrink-0 font-medium text-primary" data-selected-value>
+                {{ option.selected_value }}
+              </span>
+            {% endif %}
+          </div>
+
+          {% if has_last_items or is_size_guide %}
+            <div class="flex items-start gap-3 whitespace-nowrap pl-2">
+              {% if has_last_items %}
+                <div class="hidden items-center gap-2 text-2xs md:flex">
+                  <span class="!inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+                  <span>{{ 'products.product.last_items' | t }}</span>
+                </div>
+              {% endif %}
+
+              {% if has_last_items and is_size_guide %}
+                <span class="hidden h-3 w-px bg-gray-300 md:inline-block"></span>
+              {% endif %}
+
+              {% if is_size_guide %}
+                {% assign size_guide_modal_id = 'size-guide-' | append: product.id %}
+
+                <div
+                  class="hover-underline !inline-flex cursor-pointer items-center gap-2 text-2xs leading-3 transition-colors"
+                  data-trigger-modal="{{ size_guide_modal_id }}"
+                >
+                  {% render 'icon', icon: 'ruler', class: '!h-[18px] !w-[18px]' %}
+                  <span>{{ 'products.product.size_chart' | t }}</span>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+
+        <div
+          class="flex items-center justify-between rounded border border-gray-500 px-3 py-[9px] text-sm font-medium md:hidden"
+          data-open-swatches
+        >
+          <span class="selected-value-placeholder">{{ 'products.product.select_option' | t }}</span>
+          <span data-selected-value></span>
+          {% render 'icon', icon: 'chevron-down' %}
+        </div>
+
+        <div
+          class="swatches-overlay pointer-events-none fixed left-0 top-0 z-[999] !block h-full w-full bg-black/40 opacity-0 transition-opacity md:!hidden"
+          data-close-swatches
+        ></div>
+        <div
+          class="fixed bottom-0 left-0 z-[1010] flex max-h-[60%] w-full translate-y-full flex-col overflow-auto rounded-t-2xl bg-white px-6 pb-6 transition-transform md:static md:max-h-full md:!translate-y-0 md:flex-row md:flex-wrap md:gap-2 md:rounded-none md:bg-transparent md:p-0"
+          data-swatches
+        >
+          <div class="input-group !sticky top-0 flex items-center justify-between border-b border-gray-200 bg-white py-6 text-xl leading-[normal] text-gray-800 md:hidden">
+            <span>
+              {{- 'products.product.select' | t }}
+              {{ option.name | downcase -}}
+            </span>
+            <button class="button-reset-styles" data-close-swatches>
+              {% render 'icon', icon: 'cross', class: 'text-gray-800' %}
+            </button>
+          </div>
+
+          {% render 'product-variant-options', product: product, option: option %}
+        </div>
+      </fieldset>
+    {% endfor %}
+
+    <script type="application/json" data-selected-variant>
+      {{ product.selected_or_first_available_variant | json }}
+    </script>
+  </variant-selects>
+{% endunless %}
+
+{% style %}
+  @media screen and (min-width: 768px) {
+    .bundle-product-image:hover + .bundle-product-image-hover {
+      opacity: 1;
+    }
+  }
+{% endstyle %}

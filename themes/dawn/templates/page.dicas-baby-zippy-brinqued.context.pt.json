@@ -1,0 +1,81 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-brinqued.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_acrTpQ": {
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20; \n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Peluches para Bebé</h2>\n        <p>Amorosos, delicados e macios, os peluches são os primeiros companheiros dos bebés. Ajudam a confortar o bebé desde o primeiro dia, fazendo-lhe companhia durante o sono, seja no berço ou durante o passeio no seu carrinho. Na sua versão musical, os peluches para bebé estimulam o desenvolvimento sensorial e cognitivo, sendo igualmente uma fonte de diversão até à próxima sesta, onde o suave doudou ganha protagonismo.</p>\n        <a href=\"{{ collections['peluches'].url }}\"> <button>Ver Peluches</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['peluches'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_01.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['rocas-mordedores'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_02.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Rocas e Mordedores para Bebé</h2>\n        <p>\n          As rocas e mordedores têm a importante função de ajudar a aliviar as gengivas sensíveis e doloridas quando começam a nascer os primeiros dentes. Porém, são também uma fonte de entretenimento através dos seus variados sons, cores e diferentes texturas, promovendo a exploração natural de diferentes objetos de forma segura. Leves e fáceis de agarrar pelas mãos pequeninas dos bebés, são brinquedos úteis e facilmente transportáveis, estando sempre presentes nas malas e mochilas do bebé.\n        </p>\n        <a href=\"{{ collections['rocas-mordedores'].url }}\"> <button>Ver Rocas e Mordedores</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Centros e Tapetes de Atividades para Bebé</h2>\n        <p>Os centros e tapetes de atividades para bebés, também conhecidos por ginásios de atividades, são uma verdadeira fonte de brincadeira e diversão para os mais pequeninos, com atividades interativas e sensoriais que promovem a autonomia e ajudam no desenvolvimento cognitivo do bebé. Estas áreas de lazer, com diferentes melodias, texturas e cores, ajudam a captar a atenção do bebé, divertindo-o, estimulando e desenvolvimento os sentidos, a motricidade e a curiosidade.</p>\n        <a href=\"{{ collections['centros-tapetes-atividades'].url }}\"> <button>Ver Centros e Tapetes de Atividades</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['centros-tapetes-atividades'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_03.jpg?v=1726052892\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['brinquedos-musicais-mobiles'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_04.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Brinquedos Musicais para Bebé</h2>\n        <p>\n          Os brinquedos musicais são dos brinquedos mais procurados para os primeiros meses. Quem nunca ofereceu um brinquedo musical aquando do nascimento de um bebé? Os móbiles, por exemplo, são os brinquedos ideais para colocar no berço ou para decorar o quarto do bebé, ajudando a acalmar e a adormecer o bebé através das suas suaves e harmoniosas melodias. Por sua vez, os brinquedos musicais lúdicos, como os pequenos pianos, o primeiro telemóvel ou as chaves de brincar, ajudam a desenvolver a\n          motricidade, a atividade sensorial e a capacidade cognitiva através dos sons, luzes e cores.\n        </p>\n        <a href=\"{{ collections['brinquedos-musicais-mobiles'].url }}\"> <button>Ver Brinquedos Musicais</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Espreguiçadeiras & Andadores</h2>\n        <p>As espreguiçadeiras para bebé são um tipo de brinquedo muito procurado para os primeiros meses. Adequadas para uso desde o nascimento, servem de cadeira de repouso e de baloiço, uma função muito apreciada pelos mais pequeninos. A maioria dos modelos de espreguiçadeiras para bebé possuem elementos visuais e auditivos integrados, entretendo-o e estimulando o seu desenvolvimento sensorial.</p>\n        <p>Quando o bebé cresce e começa a ganhar alguma autonomia, já ninguém o para! Alimente essa independência e deixe-o explorar novos cantos da casa. Os andadores para bebé são um excelente aliado para esses momentos de independência, permitindo-os partir à descoberta e desenvolver a autonomia de forma segura. Os tabuleiros de atividades geralmente integrados nos andadores são também uma fonte de diversão e de desenvolvimento sensorial dos bebés.</p>\n        <a href=\"{{ collections['andadores-espreguicadeiras'].url }}\"> <button>Ver Espreguiçadeiras e Andadores</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['andadores-espreguicadeiras'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_05.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['parques-para-bebe'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_06.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Parques para Bebé</h2>\n        <p>Os parques para bebé são o recreio perfeito para poderem brincar à vontade, uma área delimitada, ampla e segura, onde o bebé pode divertir-se sem riscos de quedas dolorosas, dada a sua construção confortável e almofadada. São um artigo essencial que permite dar algum descanso aos pais, que podem ocupar-se de outros afazeres sem perderem o bebé de vista. Alguns modelos podem ser utilizados também como camas de viagem, dada a sua versatilidade e facilidade de transporte.</p>\n        <a href=\"{{ collections['parques-para-bebe'].url }}\"> <button>Ver Parques para Bebés</button></a>\n      </div>\n    </div>\n  </div>\n</section>"
+      }
+    },
+    "featured_products_936EHy": {
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "activities-table-3-in-1-grey-safari-kinderland-6m"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "comfy-car-activity-gym-by-playgro"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "sophie-la-girafe-classic-0m"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "polvo-lapidou-22-cm-nattou-0m-moka"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "chicco-2-in-1-multi-activity-cubes-10m"
+          }
+        },
+        "product_aVe7RP": {
+          "settings": {
+            "product": "play-mobile-phone-chicco"
+          }
+        },
+        "product_9TWVer": {
+          "settings": {
+            "product": "duck-family-bath-time-toy-by-playgro"
+          }
+        },
+        "product_egHET4": {
+          "settings": {
+            "product": "funky-orchestra-piano-by-chicco"
+          }
+        },
+        "product_ce8z8k": {
+          "settings": {
+            "product": "super-shaker-rattle-playgro"
+          }
+        }
+      },
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601078796615__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões de Brinquedos para Bebé"
+      }
+    }
+  }
+}

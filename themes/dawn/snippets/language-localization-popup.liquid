@@ -1,0 +1,167 @@
+<div
+  id="section-{{ section.id }}"
+  style=""
+  class="language-switcher-popup relative !z-10 hidden"
+>
+  <div class="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity">
+    <span class="hidden"></span>
+  </div>
+
+  <div class="language-switcher-popup-wrapper fixed inset-0 z-10 w-screen overflow-y-auto bg-transparent">
+    <div class="sm:items-center sm:p-0 flex min-h-full items-center justify-center text-center">
+      <div class="language-switcher-popup-content sm:my-8 sm:w-full sm:max-w-sm relative w-full max-w-[500px] transform bg-white text-left shadow-xl transition-all">
+        <div class="language-switcher-header flex items-center justify-between px-6 py-4">
+          <span class="text-xl text-gray-800">{{ 'general.language_switcher.title' | t }}</span>
+        </div>
+        <div class="language-switcher-content flex flex-col p-5">
+          <div class="pb-3">{{ 'general.language_switcher.content' | t }}</div>
+
+          <div class="form-inner flex flex-wrap">
+            <div class="mb-2 text-sm font-bold">{{ 'general.language_switcher.label_select_country' | t }}</div>
+
+            <div class="disclosure w-full">
+              <button
+                type="button"
+                class="disclosure__button localization-form__select localization-selector localization-country-selector link link--text caption-large flex !h-12 !min-h-12 !transform-none !justify-between !px-7 !py-3"
+                aria-expanded="false"
+                aria-controls="{{ localPosition }}-country-results"
+                aria-describedby="{{ localPosition }}Label"
+              >
+                {% liquid
+                  assign current_country_iso_code = localization.country.iso_code | downcase
+                  assign current_country_icon_iso_code = current_country_iso_code | split: '-' | first
+                  assign current_country_icon = 'icon-' | append: current_country_icon_iso_code | append: '.svg'
+                %}
+                <span class="disclosure__button-content flex items-center gap-3">
+                  <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                    <img
+                      src="{{ current_country_icon | asset_url }}"
+                      class="object-cover"
+                      alt="{{ current_country_icon_iso_code }}"
+                      height="{{ current_country_icon.height }}"
+                      width="{{ current_country_icon.width }}"
+                      loading="lazy"
+                    >
+                  </span>
+                  <span>
+                    {{- localization.country.name }}
+                  </span>
+                </span>
+                {% render 'icon', icon: 'chevron-down' %}
+              </button>
+              <div
+                class="disclosure__list-wrapper !bottom-auto right-0 top-full w-full translate-y-0 !bg-white"
+                hidden
+              >
+                <ul role="list" class="disclosure__list countries px-2" data-target="country_code">
+                  {% for country in localization.available_countries %}
+                    {% liquid
+                      assign country_iso_code = country.iso_code | downcase
+                      assign country_icon_iso_code = country_iso_code | split: '-' | first
+                      assign country_icon = 'icon-' | append: country_icon_iso_code | append: '.svg'
+                    %}
+
+                    <li>
+                      <div
+                        class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                        id="{{ country.name }}"
+                        data-value="{{ country.iso_code }}"
+                        data-iso-code="{{ country.iso_code | downcase }}"
+                      >
+                        <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                          <img
+                            src="{{ country_icon | asset_url }}"
+                            class="object-cover"
+                            alt="{{ country_icon_iso_code }}"
+                            height="{{ country_icon.height }}"
+                            width="{{ country_icon.width }}"
+                            loading="lazy"
+                          >
+                        </span>
+
+                        {{ country.name }}
+                      </div>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <div class="country-selector__overlay"></div>
+              <input
+                class="popup-country-code"
+                type="hidden"
+                name="country_code"
+                value="{{ localization.country.iso_code }}"
+              >
+            </div>
+
+            <div class="mb-2 text-sm font-bold">{{ 'general.language_switcher.label_select_language' | t }}</div>
+
+            <div class="disclosure w-full">
+              <button
+                type="button"
+                class="disclosure__button localization-form__select localization-selector localization-language-selector link link--text caption-large flex !h-12 !min-h-12 !transform-none !justify-between !px-7 !py-3"
+                aria-expanded="false"
+                aria-controls="{{ localPosition }}List"
+                aria-describedby="{{ localPosition }}Label"
+              >
+                <span class="disclosure__button-content flex items-center gap-3">
+                  <span>{{ localization.language.endonym_name | split: '(' | first | capitalize }}</span>
+                </span>
+
+                {% render 'icon', icon: 'chevron-down' %}
+              </button>
+              <div class="disclosure__list-wrapper !bottom-auto right-0 top-full w-full translate-y-0 !bg-white" hidden>
+                <ul id="{{ localPosition }}List" role="list" class="disclosure__list px-2" data-target="locale_code">
+                  {% for language in localization.available_languages %}
+                    <li>
+                      <span
+                        class="disclosure__item grid w-full grid-cols-[1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                        data-value="{{ language.iso_code }}"
+                        data-iso-code="{{ language.iso_code | downcase | split: '-' | first }}"
+                      >
+                        {{ language.endonym_name | split: '(' | first | capitalize }}
+                      </span>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+              <input
+                class="popup-locale-code"
+                type="hidden"
+                name="locale_code"
+                value="{{ localization.language.iso_code }}"
+              >
+            </div>
+            <div class="submit" class="w-full">
+              <button type="submit" class="submit-language-switcher !px-8">
+                {{ 'general.language_switcher.submit' | t }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    body.overflow-hidden .shopify-section-group-header-group {
+      z-index: 1001;
+    }
+
+    .disclosure__button-content .success-circle-icon {
+      display: none;
+    }
+
+    span.language-switcher-popup-close {
+      position: relative;
+    }
+
+    span.language-switcher-popup-close:after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+    }
+  {% endstyle %}
+</div>

@@ -1,0 +1,67 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "service_links_3XQ4if": {
+          "type": "service_links",
+          "settings": {
+            "link_label_1": "Sales Terms & Conditions",
+            "link_url_1": "shopify://policies/terms-of-service",
+            "link_label_2": "Privacy Policy",
+            "link_url_2": "shopify://policies/privacy-policy",
+            "link_label_3": "Cookies Policy",
+            "link_url_3": "shopify://pages/cookies-policy",
+            "link_label_4": "Electronic Complaints Book",
+            "link_url_4": "https://www.livroreclamacoes.pt/Inicio/"
+          }
+        },
+        "payment_icons_PA4yUB": {
+          "type": "payment_icons",
+          "settings": {
+            "payment_icon_1": "shopify://shop_images/visa_05a862ce-e00e-43f1-ac20-be89a0005c89.svg",
+            "payment_icon_2": "shopify://shop_images/mastercard_f502e345-ca74-43b5-90ba-4ad56e8aa355.svg",
+            "payment_icon_3": "shopify://shop_images/paypal_f72dff7f-b36f-48d5-be98-782799aa5cd7.svg"
+          }
+        }
+      },
+      "block_order": [
+        "service_links_3XQ4if",
+        "payment_icons_PA4yUB"
+      ],
+      "settings": {
+        "color_scheme": "scheme-1",
+        "menu": "footer-menu-int",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our newsletter and get 10% discount",
+        "newsletter_url": "shopify://pages/newsletter-delete",
+        "social_heading": "Follow us on social media",
+        "payment_heading": "Secure payment methods",
+        "copyright_text": "All rights reserved.",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

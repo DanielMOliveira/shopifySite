@@ -1,0 +1,145 @@
+{% comment %}
+  Renders image slider on collection card
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - image_link_class: {String} classes for the slider image
+  - index: {Number} The index of the product in the array.
+
+  Usage:
+  {% render 'card-product-image-slider', product: product, image_link_class: image_link_class, index: index %}
+{% endcomment %}
+
+{% liquid
+  if lazy_load_custom and index != blank and index > 4
+    assign custom_lazy_load = true
+  endif
+%}
+
+<div
+  class="swiper card-images-slider relative{% unless product.media[0].media_type == 'video' %} deferred-init{% endunless %}"
+  data-slider='
+    {
+        "navigation": {
+            "prevEl": "#swiper-button-prev-{{ product.id }}",
+            "nextEl": "#swiper-button-next-{{ product.id }}"
+        }
+    }
+  '
+  data-custom-pagination="true"
+>
+  <div class="swiper-wrapper swiper-wrapper-card-product !h-[240px] md:!h-[320px] lg:!h-full">
+    {% for image in product.media %}
+      <div class="swiper-slide group !h-auto{% if forloop.index > 1 %} !hidden{% endif %}">
+        <a
+          href="{{ product.url }}"
+          class="card__media group relative block h-full"
+          title="{{ product.title | escape }}"
+          style="background-color: {{ settings.card_background }}"
+        >
+          {% if image.media_type == 'video' %}
+            <div class="align-center mx-auto flex justify-center overflow-hidden">
+              {{
+                image
+                | video_tag:
+                  image_size: '400x',
+                  class: 'mx-auto w-full',
+                  width: 600,
+                  height: 600,
+                  autoplay: true,
+                  loop: true,
+                  muted: true
+              }}
+            </div>
+          {% else %}
+            <img
+              {% if custom_lazy_load %}
+                data-
+              {% endif -%}
+              src="{{ image | image_url }}"
+              srcset="
+                {%- if image.width >= 450 -%}{{ image | image_url: width: 450 }} 450w,{%- endif -%}
+                {%- if image.width >= 735 -%}{{ image | image_url: width: 735 }} 735w,{%- endif -%}
+                {{ image | image_url: width: 1000 }} 1000w
+              "
+              sizes="
+                (min-width: 1900px) 735px,
+                (min-width: 768px) 440px,
+                (min-width: 480px) 735px
+                (min-width: 0px) 440px,
+                100vw
+              "
+              alt="{{ image.alt | default: product.title }}"
+              class="mx-auto h-full object-contain mix-blend-darken"
+              width="{{ image.width }}"
+              height="{{ image.height }}"
+              {% if index != blank and index > 4 or forloop.index > 1 %}
+                loading="lazy"
+              {% elsif index == blank %}
+                loading="lazy"
+              {% else %}
+                loading="eager"
+              {% endif %}
+            >
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="swiper-custom-pagination absolute !bottom-2 !left-4 z-10 lg:hidden"></div>
+  <div
+    id="swiper-button-prev-{{ product.id }}"
+    class="swiper-button-prev-product absolute !left-2 !top-1/2 z-10 inline-flex !h-8 !w-8 -translate-y-2/4 items-center justify-center rounded-full !bg-transparent transition-all lg:!bg-white lg:!opacity-0 lg:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]"
+  >
+    {% render 'icon', icon: 'chevron-left', class: 'w-6 h-6 lg:!w-4 lg:!h-4' %}
+  </div>
+  <div
+    id="swiper-button-next-{{ product.id }}"
+    class="swiper-button-next-product absolute !right-2 !top-1/2 z-10 inline-flex !h-8 !w-8 -translate-y-2/4 items-center justify-center rounded-full !bg-transparent transition-all lg:!bg-white lg:!opacity-0 lg:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]"
+  >
+    {% render 'icon', icon: 'chevron-right', class: 'w-6 h-6 lg:!w-4 lg:!h-4' %}
+  </div>
+
+  {% style %}
+    .swiper:has(.offcanvas-card-product.is-open) > .swiper-button-prev,
+    .swiper:has(.offcanvas-card-product.is-open) > .swiper-button-next {
+      display: none !important;
+    }
+
+    .swiper.swiper-initialized .swiper-slide {
+      display: block !important;
+    }
+
+    .swiper-wrapper:has(.offcanvas-card-product.is-open),
+    .swiper-wrapper .swiper-slide:has(.offcanvas-card-product.is-open) {
+      transform: none !important;
+    }
+
+    .swiper-custom-pagination span:first-child {
+      font-size: var(--font-size-xs);
+      color: rgb(var(--color-gray-800));
+    }
+
+    .swiper-custom-pagination span:nth-child(2) {
+      padding: 0 4px;
+    }
+
+    .swiper-custom-pagination span:nth-child(2),
+    .swiper-custom-pagination span:nth-child(3) {
+      font-size: var(--font-size-xs);
+      color: rgb(var(--color-gray-500));
+    }
+
+    .swiper-initialized .swiper-button-prev.swiper-button-disabled,
+    .swiper-initialized .swiper-button-next.swiper-button-disabled {
+      opacity: 0 !important;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .card-wrapper:hover .swiper-button-prev-product,
+      .card-wrapper:hover .swiper-button-next-product {
+        opacity: 1 !important;
+      }
+    }
+  {% endstyle %}
+</div>

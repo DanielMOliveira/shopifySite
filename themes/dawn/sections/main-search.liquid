@@ -1,0 +1,370 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-search.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign products_per_page = section.settings.products_per_page
+  assign sort_by = search.sort_by | default: search.default_sort_by
+  assign terms = search.terms | escape
+  assign search_url = '?q=' | append: terms | append: '&options%5Bprefix%5D=last&sort_by=' | append: sort_by
+%}
+
+{% paginate search.results by products_per_page %}
+  <div
+    id="section-{{ section.id }}"
+    class="template-search{% unless search.performed and search.results_count > 0 %} template-search--empty{% endunless %}"
+  >
+    <div class="template-search__header container-valantic mb-5 md:mb-10">
+      <h1 class="h2 center mb-2">
+        {% if search.performed %}
+          {{- 'templates.search.title' | t -}}
+        {% else %}
+          {{- 'general.search.search' | t -}}
+        {% endif %}
+      </h1>
+      <div class="template-search__search">
+        {% if settings.predictive_search_enabled %}
+          <predictive-search data-loading-text="{{ 'accessibility.loading' | t }}">
+        {% endif %}
+        <main-search>
+          <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+            <div class="field">
+              <input
+                class="search__input field__input !rounded-full !border !border-solid !border-gray-300 !text-xs md:!text-base"
+                id="Search-In-Template"
+                type="search"
+                name="q"
+                value="{{ search.terms | escape }}"
+                placeholder="{{ 'general.search.search' | t }}"
+                {% if settings.predictive_search_enabled %}
+                  role="combobox"
+                  aria-expanded="false"
+                  aria-owns="predictive-search-results"
+                  aria-controls="predictive-search-results"
+                  aria-haspopup="listbox"
+                  aria-autocomplete="list"
+                  autocorrect="off"
+                  autocomplete="off"
+                  autocapitalize="off"
+                  spellcheck="false"
+                {% endif %}
+              >
+              <label
+                class="field__label !text-xs md:!text-base"
+                for="Search-In-Template"
+              >
+                {{- 'general.search.search' | t -}}
+              </label>
+              <input name="options[prefix]" type="hidden" value="last">
+
+              {% if settings.predictive_search_enabled %}
+                <div
+                  class="predictive-search predictive-search--search-template !z-[11]"
+                  tabindex="-1"
+                  data-predictive-search
+                >
+                  {% render 'loading-spinner', class: 'predictive-search__loading-state' %}
+                </div>
+
+                <span class="predictive-search-status visually-hidden" role="status" aria-hidden="true"></span>
+              {% endif %}
+
+              <button
+                type="reset"
+                class="reset__button field__button !hidden"
+                aria-label="{{ 'general.search.reset' | t }}"
+              >
+                {% render 'icon', icon: 'cross' %}
+              </button>
+              <button
+                type="submit"
+                class="search__button field__button !text-gray-800"
+                aria-label="{{ 'general.search.search' | t }}"
+              >
+                {% render 'icon', icon: 'search', class: 'w-6 h-6' %}
+              </button>
+            </div>
+          </form>
+        </main-search>
+        {% if settings.predictive_search_enabled %}
+          </predictive-search>
+        {% endif %}
+      </div>
+
+      {% if search.performed %}
+        {% unless section.settings.enable_filtering or section.settings.enable_sorting %}
+          {% if search.results_count > 0 %}
+            <p role="status">
+              {{ 'templates.search.results_with_count_and_term' | t: terms: search.terms, count: search.results_count }}
+            </p>
+          {% endif %}
+        {% endunless %}
+
+        {% if search.results_count == 0 and search.filters == empty %}
+          <p role="status">{{ 'templates.search.no_results' | t: terms: search.terms }}</p>
+        {% endif %}
+      {% endif %}
+    </div>
+
+    {% if search.performed %}
+      <div>
+        {% if search.filters != empty %}
+          <aside
+            aria-labelledby="verticalTitle"
+            class="facets-wrapper container-valantic"
+            id="main-search-filters"
+            data-id="{{ section.id }}"
+          >
+            {% render 'facets',
+              results: search,
+              enable_sorting: section.settings.enable_sorting,
+              filter_type: section.settings.filter_type,
+              paginate: paginate
+            %}
+          </aside>
+        {% endif %}
+
+        <div class="product-grid-container pb-7 pt-4" id="ProductGridContainer">
+          {% if search.results.size == 0 and search.filters != empty %}
+            <div class="template-search__results collection collection--empty" data-id="{{ section.id }}">
+              <div class="loading-overlay"></div>
+              <div class="title-wrapper center">
+                <h2 class="title title--primary">
+                  {{ 'sections.collection_template.empty' | t -}}
+                  <br>
+                  {{
+                    'sections.collection_template.use_fewer_filters_html'
+                    | t: link: search_url, class: 'underlined-link link'
+                  }}
+                </h2>
+              </div>
+            </div>
+          {% else %}
+            <div
+              class="collection container-valantic pb-7 pt-4"
+              data-infinite-scroll='
+                {
+                  "containerSelector": "#section-{{ section.id }} .collection",
+                  "paginationSelector": ".collection-pagination",
+                  "itemsContainerSelector": "#product-grid"
+                }
+              '
+            >
+              <div class="loading-overlay"></div>
+              <ul
+                id="product-grid"
+                data-id="{{ section.id }}"
+                class="flex flex-wrap gap-2 md:gap-5"
+              >
+                {% for item in search.results %}
+                  {% assign lazy_load = false %}
+
+                  {% if forloop.index > 4 %}
+                    {% assign lazy_load = true %}
+                  {% endif %}
+
+                  <li>
+                    {% case item.object_type %}
+                      {% when 'product' %}
+                        {% render 'card-product',
+                          card_product: item,
+                          lazy_load: lazy_load,
+                          section_id: section.id,
+                          index: forloop.index
+                        %}
+                      {% when 'article' %}
+                        {% render 'article-card',
+                          article: item,
+                          show_image: true,
+                          show_date: section.settings.article_show_date,
+                          show_author: section.settings.article_show_author,
+                          show_badge: true,
+                          media_aspect_ratio: 1,
+                          lazy_load: lazy_load
+                        %}
+                      {% when 'page' %}
+                        <div class="article-card-wrapper card-wrapper underline-links-hover relative h-full">
+                          <div
+                            class="card card--card card--text h-full"
+                            style="background-color: {{ settings.card_background }}"
+                          >
+                            <div class="card__content grid h-full w-full flex-grow grid-rows-[minmax(0,1fr)_max-content_minmax(0,1fr)] p-4">
+                              <div class="card__information row-start-2">
+                                <h3 class="card__heading !leading-6">
+                                  <a href="{{ item.url }}" class="full-unstyled-link !text-base uppercase md:!text-xl">
+                                    {{ item.title | truncate: 50 | escape }}
+                                  </a>
+                                </h3>
+                              </div>
+                              <div class="card__badge row-start-3 pt-4">
+                                <span class="badge !px-3 !py-1 !text-sm">
+                                  {{- 'templates.search.page' | t -}}
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                    {% endcase %}
+                  </li>
+                {% endfor %}
+              </ul>
+
+              {% if paginate.pages > 1 %}
+                <div
+                  class="collection-pagination pt-6 md:pt-10"
+                  data-page="{{ paginate.current_page }}"
+                >
+                  {% render 'pagination-infinite', paginate: paginate, anchor: '' %}
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    {% style %}
+      .search__button .icon {
+        height: 1.8rem;
+      }
+    {% endstyle %}
+  </div>
+{% endpaginate %}
+
+{% if search.results_count == 0 and search.filters == empty %}
+  <script>
+    let dataLayer = window.dataLayer || [];
+
+    dataLayer.push({
+      event: 'no_search_results',
+      search_query: '{{ search.terms }}',
+    });
+  </script>
+{% endif %}
+
+<script src="{{ 'main-search.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+{% if settings.infinity_loading_products_type == 'preloaded' %}
+  <script src="{{ 'infinite-scroll-preloaded.js' | asset_url }}" defer="defer"></script>
+{% else %}
+  <script src="{{ 'infinite-scroll-default.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-search.name",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 36,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label",
+      "info": "The initial number of displayed products on the page, to change the number of loaded products use Theme Settings - Product grid - Count Of Loaded Products Using Infinity Loading"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.header__1.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-search.settings.header__2.content",
+      "info": "t:sections.main-search.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_show_date",
+      "default": true,
+      "label": "t:sections.main-search.settings.article_show_date.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_show_author",
+      "default": false,
+      "label": "t:sections.main-search.settings.article_show_author.label"
+    },
+    {
+      "type": "header",
+      "content": "Size filters"
+    },
+    {
+      "type": "richtext",
+      "id": "size_in_months",
+      "label": "Sizes In Months List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "size_in_years",
+      "label": "Sizes In Years List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "international_sizes",
+      "label": "International Sizes List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "european_sizes",
+      "label": "European Sizes List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ]
+}
+{% endschema %}

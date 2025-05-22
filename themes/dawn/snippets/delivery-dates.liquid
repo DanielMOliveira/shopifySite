@@ -1,0 +1,60 @@
+{% comment %}
+  Delivery dates information
+
+  Accepts:
+  - country_code: {String} Required
+
+  Usage:
+      {% render 'delivery-dates', country_code: 'PT' %}
+{% endcomment %}
+
+{% case country_code %}
+  {% when 'PT' %}
+    {% comment %} Portugal {% endcomment %}
+    2-5
+  {% when 'ES' %}
+    {% comment %} Spain {% endcomment %}
+    3-6
+  {% when 'DE' %}
+    {% comment %} Germany {% endcomment %}
+    4-7
+  {% when 'FR' %}
+    {% comment %} France {% endcomment %}
+    4-7
+  {% when 'MC' %}
+    {% comment %} Monaco {% endcomment %}
+    4-7
+  {% when 'BE' %}
+    {% comment %} Belgium {% endcomment %}
+    4-7
+  {% when 'NL' %}
+    {% comment %} Netherlands {% endcomment %}
+    4-7
+  {% when 'AT' %}
+    {% comment %} Austria {% endcomment %}
+    4-7
+  {% when 'DK' %}
+    {% comment %} Denmark {% endcomment %}
+    4-7
+  {% when 'LT' %}
+    {% comment %} Lithuania {% endcomment %}
+    4-7
+  {% when 'IT' %}
+    {% comment %} Italy {% endcomment %}
+    4-7
+  {% when 'SE' %}
+    {% comment %} Sweden {% endcomment %}
+    4-7
+  {% when 'EE' %}
+    {% comment %} Estonia {% endcomment %}
+    4-7
+  {% when 'FI' %}
+    {% comment %} Finland {% endcomment %}
+    4-7
+  {% when 'RO' %}
+    {% comment %} Romania {% endcomment %}
+    4-7
+  {% when 'BG' %}
+    {% comment %} Bulgaria {% endcomment %}
+    4-7
+{% endcase %}

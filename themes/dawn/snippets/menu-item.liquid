@@ -1,0 +1,145 @@
+{% if level > 0 %}
+  {% liquid
+    if currentMenuItem.title contains '['
+      assign current_category_name = currentMenuItem.title | split: '[' | first
+    else
+      assign current_category_name = currentMenuItem.title
+    endif
+  %}
+
+  <div class="grid grid-cols-[24px_1fr_24px] items-center gap-5 border-b border-gray-300 px-4 py-6.25 text-center text-xl hover:cursor-pointer">
+    {% render 'icon', icon: 'arrow-left', class: 'sub-menu--back mr-2 w-6 h-6' %}
+
+    <a href="{{ currentMenuItem.url }}" title="current_category_name">{{ current_category_name }}</a>
+  </div>
+{% endif %}
+
+{% assign level = level | plus: 1 %}
+
+{%- for menuItem in currentMenuItem.links -%}
+  {%- liquid
+    assign links_size = menuItem.links | size
+
+    if links_size > 0
+      assign tag = 'div'
+    else
+      assign tag = 'a'
+    endif
+  -%}
+
+  <div class="sub-menu-item{% if level > 1 %} px-6{% endif %}{% if forloop.first %} pt-6{% endif %}{% if links_size > 0 %} contain-sub-menu{% endif %}">
+    {% liquid
+      assign category_name = false
+      assign menu_item_label = false
+      assign meta_object_key = false
+      assign meta_object_item = false
+
+      assign menu_banner_link = menuItem.object.metafields.custom.menu_banner_link
+      assign menu_banner_text = menuItem.object.metafields.custom.menu_banner_text
+      assign menu_banner_image = menuItem.object.metafields.custom.menu_banner_image
+
+      assign category_name = menuItem.title
+
+      if category_name contains '[#'
+        assign category_color_hex = category_name | split: '[#' | last | split: ']' | first
+        assign category_color = '#' | append: category_color_hex
+      endif
+
+      if category_name contains '['
+        assign meta_object_key = category_name | split: '[' | last | split: ']' | first
+        assign meta_object_item = shop.metaobjects.menu_labels.values | where: 'unique_key', meta_object_key | first
+        assign category_name = category_name | split: '[' | first
+      endif
+    %}
+
+    {% if meta_object_item != blank %}
+      {% liquid
+        assign text = meta_object_item.text
+        assign color = meta_object_item.color
+        assign font_size = meta_object_item.font_size
+        assign font_weight = meta_object_item.font_weight
+      %}
+
+      {% capture menu_item_label %}
+                <span class="ml-2" style="{% if color %}color: {{ color }};{% endif %}{% if font_size %}font-size: {{ font_size }}px;{% endif %}{% if font_weight %}font-weight: {{ font_weight }};{% endif %}">
+                    {{ text }}
+                </span>
+            {% endcapture %}
+    {% endif %}
+
+    {% if menuItem.title contains '[title]' %}
+      <div class="flex items-center justify-between py-2.5 pt-6 text-2xs uppercase !text-gray-500 hover:cursor-pointer">
+        {{ menuItem.title | replace: '[title]', '' }}
+      </div>
+    {% else %}
+      <{{ tag }}
+        {% if links_size == 0 %}
+          href="{{ menuItem.url }}"
+          title="{{ menuItem.title }}"
+        {% else %}
+          data-href="{{ menuItem.url }}"
+          data-title="{{ menuItem.title }}"
+        {% endif %}
+        class="sub-menu-link flex items-center justify-between py-2.5 text-base !text-primary hover:cursor-pointer"
+      >
+        <span
+          class="flex items-center"
+          {% if category_color %}
+            style="color: {{ category_color }}"
+          {% endif %}
+        >
+          {{ category_name }}
+
+          {% if menu_item_label %}
+            {{ menu_item_label }}
+          {% endif %}
+        </span>
+
+        {% if links_size > 0 %}
+          <span
+            {% if category_color %}
+              style="color: {{ category_color }}"
+            {% endif %}
+          >
+            {% render 'icon', icon: 'chevron-right', class: 'w-3.5 h-3.5' %}
+          </span>
+        {% endif %}
+      </{{ tag }}>
+
+      {% if links_size > 0 %}
+        <div
+          class="sub-menu absolute left-0 top-0 h-full w-full translate-x-full overflow-auto overflow-x-hidden bg-white pb-6 transition-all"
+          style="z-index:{{ level }}"
+        >
+          {% render 'menu-item', currentMenuItem: menuItem, level: level %}
+
+          {% if menu_banner_image != blank %}
+            <div class="relative relative mx-6 mt-6 overflow-hidden pb-[calc(100%_-_48px)]">
+              <img
+                src="{{ menu_banner_image | image_url }}"
+                height="{{ menu_banner_image.height }}"
+                width="{{ menu_banner_image.width }}"
+                alt="{{ menu_banner_image.alt | default: 'Icon' }}"
+                class="absolute h-full w-full rounded-lg object-cover"
+              >
+
+              {% if menu_banner_text != blank and menu_banner_link != blank %}
+                <div class="absolute bottom-8 left-1/2 w-max -translate-x-1/2">
+                  <a
+                    class="button tertiary flex items-center justify-center !px-4 !py-[9px] md:!py-3.25"
+                    href="{{ menu_banner_link }}"
+                    title="{{ menu_banner_text }}"
+                  >
+                    {{ menu_banner_text }}
+
+                    {% render 'icon', icon: 'arrow-right', class: '!w-5 !h-5' %}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+{%- endfor -%}

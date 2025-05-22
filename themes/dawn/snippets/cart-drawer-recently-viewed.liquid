@@ -1,0 +1,46 @@
+{% comment %}
+  Renders a recently viewed products
+
+  Usage:
+      {% render 'cart-drawer-recently-viewed' %}
+{% endcomment %}
+
+<recently-viewed
+  class="recently-viewed !hidden md:w-[372px]"
+  data-without-image-slider="true"
+  data-desktop-offcanvas="true"
+>
+  <section
+    id="section-recently-viewed"
+    class="w-[520px] max-w-[calc(100vw-100px)] overflow-hidden pb-6 opacity-0 transition-opacity md:w-[355px]"
+  >
+    <div class="lg:relative">
+      <div
+        class="swiper recently-viewed-swiper group !overflow-visible lg:!static lg:transition-all"
+        data-slider='
+            {
+              "spaceBetween": 8,
+              "slidesPerView": 2.2,
+              "navigation": {
+                  "prevEl": "#section-recently-viewed .swiper-button-prev",
+                  "nextEl": "#section-recently-viewed .swiper-button-next"
+              }
+          }
+        '
+      >
+        <div class="recently-viewed-products swiper-wrapper flex"></div>
+
+        <div class="swiper-button-prev -!transform-y-2/4 !left-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="{{ 'recently-viewed-products.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+</recently-viewed>

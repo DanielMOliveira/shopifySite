@@ -1,0 +1,39 @@
+{% comment %}
+  Renders video element.
+
+  Accepts:
+  - video: {Object}
+  - poster_url: {String}
+  - class: {String}
+  - video_url: {String}
+  - autoplay: {Boolean}
+
+  Usage:
+      {% render 'video', class: class, autoplay: true %}
+{% endcomment %}
+
+{% liquid
+  assign video_url = video.sources[1].url
+  assign poster_url = video.preview_image | image_url
+%}
+
+{% if video != blank %}
+  <video
+    {% if class %}
+      class="{{ class }}"
+    {% endif %}
+    {% if autoplay %}
+      autoplay
+    {% endif %}
+    {% if poster_url %}
+      poster="{{ poster_url }}"
+    {% endif %}
+    loop
+    muted
+    playsinline
+  >
+    {% # theme-check-disable RemoteAsset %}
+    <source src="{{ video_url }}" type="video/mp4">
+    {% # theme-check-enable RemoteAsset %}
+  </video>
+{% endif %}

@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "newsletter_9QxJkH": {
+      "type": "newsletter",
+      "blocks": {
+        "heading_U6ENaY": {
+          "type": "heading",
+          "settings": {
+            "heading": "Subscribe to our emails"
+          }
+        },
+        "paragraph_E6hY6B": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "email_form_HUHV7w": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "heading_U6ENaY",
+        "paragraph_E6hY6B",
+        "email_form_HUHV7w"
+      ],
+      "settings": {}
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "ABOUT ZIPPY",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "settings": {
+            "text": "<p>A Zippy é uma marca portuguesa com mais de duas décadas de experiência consolidada no setor do retalho. Fundada em 1996, no Porto, beneficiamos do reconhecido know-how especializado da indústria têxtil portuguesa, no norte de Portugal. O nosso ADN é otimista.Vemos a vida de forma descontraída e descomplicada. Tudo se resume a um espírito prático aliado a um design funcional e acessível.Nós vestimos bebés e crianças que veem os dias repletos de possibilidades e que procuram aproveitar ao máximo cada momento e oportunidade. Um lugar onde cada membro da família é convidado.</p>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "faq_item_V4Xx4K": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "O nosso compromisso",
+            "faq_answer": "<p>Asseguramos o cumprimento das obrigações decorrentes do Regulamento (UE) 2016/679 do Parlamento Europeu e do Conselho (doravante “RGPD”) e demais legislação sobre matéria de proteção de dados pessoais e privacidade.O respeito pela sua privacidade, a proteção dos seus dados pessoais e o cumprimento das obrigações legais aplicáveis nesta matéria é uma prioridade para nós, motivo pelo qual assumimos o compromisso de apenas tratar os seus dados pessoais que sejam estritamente necessários para lhe prestarmos o melhor serviço, garantindo respeito pela sua privacidade, transparência na informação e aplicação das melhores práticas no domínio da segurança e da proteção dos dados pessoais.Sempre que os seus dados pessoais sejam tratados por entidades contratadas, exigir-lhes-emos que apresentem o mesmo nível de segurança e garantia de privacidade, em matéria de proteção de dados pessoais.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_UT4wPW": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Quem é o responsável pelo tratamento dos seus dados pessoais?",
+            "faq_answer": "<p>A Responsável pelo Tratamento dos dados pessoais dos Utilizadores é a Zippy – Comércio e Distribuição S.A., com sede na Rua João Mendonça, n.º 529, 4464-503 – Senhora da Hora, Matosinhos, com o capital social de € 2.050.000,00, matriculada na Conservatória do Registo Comercial do Porto, sob o número único de matrícula e pessoa coletiva 503 226 696.Caso necessite de entrar em contacto connosco, poderá fazê-lo através do seguinte e-mail:<a href=\"mailto:cliente@zippy.pt\">cliente@zippy.pt</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "navigation_item_xUj3rX": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "FAQ",
+            "link_url": "shopify://pages/faq"
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "QUALITY",
+            "link_url": "shopify://pages/contact"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "SONAE GROUP",
+            "link_url": "shopify://pages/cms"
+          }
+        },
+        "navigation_item_E8BfPN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "PRIVACY POLICY",
+            "link_url": "shopify://pages/cms"
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "COOKIE POLICY",
+            "link_url": "shopify://pages/cms"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "text_ndbx44",
+        "faq_item_V4Xx4K",
+        "faq_item_UT4wPW",
+        "navigation_item_xUj3rX",
+        "navigation_item_YdmhFw",
+        "navigation_item_eJDVpT",
+        "navigation_item_E8BfPN",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter_9QxJkH",
+    "page_navigation_4EtxMc"
+  ]
+}

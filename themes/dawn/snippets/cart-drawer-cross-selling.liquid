@@ -1,0 +1,66 @@
+{% comment %}
+  Renders a best-selling products
+
+  Usage:
+      {% render 'cart-drawer-best-selling' %}
+{% endcomment %}
+
+<section
+  id="section-cross-selling"
+  class="w-[520px] max-w-[calc(100vw-100px)] overflow-hidden pb-6 transition-opacity md:w-[355px]"
+>
+  <div class="lg:relative">
+    <div
+      class="swiper cross-selling-swiper group !overflow-visible lg:!static lg:transition-all"
+      data-slider='
+        {
+            "spaceBetween": 8,
+            "slidesPerView": 2.2,
+            "navigation": {
+                "prevEl": "#section-cross-selling .swiper-button-prev",
+                "nextEl": "#section-cross-selling .swiper-button-next"
+            }
+        }
+      '
+    >
+      <div class="cross-selling-products swiper-wrapper flex">
+        {% for i in (1..6) %}
+          {% assign cross_selling_product = 'cross_selling_product_' | append: i %}
+
+          {% if settings[cross_selling_product] and settings[cross_selling_product].available %}
+            <div class="swiper-slide">
+              {% render 'card-product',
+                card_product: settings[cross_selling_product],
+                class: '',
+                lazy_load: 'lazy',
+                section_id: 'card-products-only',
+                index: forloop.index,
+                without_image_slider: true,
+                desktop_offcanvas: true
+              %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="swiper-button-prev -!transform-y-2/4 !left-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+        {% render 'icon', icon: 'chevron-left' %}
+      </div>
+      <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+        {% render 'icon', icon: 'chevron-right' %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    .swiper.cross-selling-swiper:not(.swiper-initialized) {
+      opacity: 0;
+    }
+    .swiper.cross-selling-swiper.swiper-initialized {
+      opacity: 1;
+    }
+  {% endstyle %}
+
+  <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+</section>

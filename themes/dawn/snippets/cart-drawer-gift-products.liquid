@@ -1,0 +1,78 @@
+{% comment %}
+  Renders a best-selling products
+
+  Usage:
+      {% render 'cart-drawer-gift-products' %}
+{% endcomment %}
+
+{% liquid
+  assign gift_product_1 = settings.gift_product_1.available
+  assign gift_product_2 = settings.gift_product_2.available
+  assign gift_product_3 = settings.gift_product_3.available
+  assign gift_product_4 = settings.gift_product_4.available
+  assign gift_product_5 = settings.gift_product_5.available
+  assign gift_product_6 = settings.gift_product_6.available
+
+  if gift_product_1 or gift_product_2 or gift_product_3 or gift_product_4 or gift_product_5 or gift_product_6
+    assign show_cart_gift_products = true
+  endif
+%}
+
+{% if show_cart_gift_products %}
+  <div class="mb-6 flex items-center gap-2 border-t border-gray-200 pt-6 text-sm">
+    {% render 'icon', icon: 'gift', class: 'w-6 h-6 -mt-0.5' %}
+
+    <span>
+      {{ 'general.cart.gift_block_text' | t }}
+    </span>
+    <div
+      class="cursor-pointer underline"
+      onclick="document.querySelector('.gift-products-grid').classList.remove('hidden')"
+    >
+      {{ 'general.cart.gift_block_text_for_link' | t }}
+    </div>
+  </div>
+
+  <div class="gift-products-grid absolute bottom-0 left-0 right-0 top-0 z-50 grid hidden gap-x-2 gap-y-3 overflow-auto bg-white px-6">
+    <div>
+      <h2
+        class="relative pb-8 pt-4 text-xl font-medium"
+      >
+        {{ 'general.cart.gift_bag_products_title' | t }}
+
+        <button
+          class="drawer__close button secondary absolute right-0 top-6 h-5 w-5 !transform-none border-none !p-0"
+          type="button"
+          onclick="this.closest('.gift-products-grid').classList.add('hidden')"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon', icon: 'cross' %}
+        </button>
+      </h2>
+
+      <div>
+        {% for i in (1..6) %}
+          {% assign gift_product = 'gift_product_' | append: i %}
+
+          {% if settings[gift_product] and settings[gift_product].available %}
+            {% render 'card-product-line-view',
+              card_product: settings[gift_product],
+              lazy_load: 'lazy',
+              section_id: 'minicart',
+              show_loader: true
+            %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    #CartDrawer .drawer__inner:has(.gift-products-grid:not(.hidden)) {
+      overflow: initial;
+    }
+  {% endstyle %}
+
+  <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+{% endif %}

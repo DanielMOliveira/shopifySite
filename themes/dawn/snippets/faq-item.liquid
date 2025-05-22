@@ -1,0 +1,134 @@
+{% comment %}
+  Renders faq item block.
+
+  Accepts:
+  - faq_question: {String}
+  - faq_answer: {String}
+  - faq_image_1: {String}
+  - faq_image_2: {String}
+  - faq_image_3: {String}
+  - faq_image_4: {String}
+  - faq_image_5: {String}
+  - list_1: {String}
+  - table_1: {String}
+
+  Usage:
+      {% render 'faq-item',
+              faq_question: faq_question,
+              faq_answer: faq_answer,
+              faq_image_1: faq_image_src_1,
+              faq_image_2: faq_image_src_2,
+              faq_image_3: faq_image_src_3,
+              faq_image_4: faq_image_src_4,
+              faq_image_5: faq_image_src_5,
+              list_1: list_1,
+              table_1: table_1
+      %}
+{% endcomment %}
+
+{% liquid
+  assign faq_question = faq_question
+  assign faq_answer = faq_answer
+  assign faq_image_src_1 = faq_image_1
+  assign faq_image_src_2 = faq_image_2
+  assign faq_image_src_3 = faq_image_3
+  assign faq_image_src_4 = faq_image_4
+  assign faq_image_src_5 = faq_image_5
+  assign list_1 = list_1
+  assign table_1 = table_1
+%}
+
+{% if faq_image_1 %}
+  {% capture faq_image_src_1 %}
+        <img src="{{ faq_image_1 | image_url  }}"
+             alt="{{ block.settings.heading }}"
+             width="{{ faq_image_1.width }}"
+             height="{{ faq_image_1.height }}"
+             class="faq-image"/>
+    {% endcapture %}
+{% endif %}
+
+{% if faq_image_2 %}
+  {% capture faq_image_src_2 %}
+        <img src="{{ faq_image_2 | image_url }}"
+             alt="{{ block.settings.heading }}"
+             width="{{ faq_image_2.width }}"
+             height="{{ faq_image_2.height }}"
+             class="faq-image"/>
+    {% endcapture %}
+{% endif %}
+
+{% if faq_image_3 %}
+  {% capture faq_image_src_3 %}
+    <img src="{{ faq_image_3 | image_url }}"
+         alt="{{ block.settings.heading }}"
+         width="{{ faq_image_3.width }}"
+         height="{{ faq_image_3.height }}"
+         class="faq-image"/>
+  {% endcapture %}
+{% endif %}
+
+{% if faq_image_4 %}
+  {% capture faq_image_src_4 %}
+    <img src="{{ faq_image_4 | image_url }}"
+         alt="{{ block.settings.heading }}"
+         width="{{ faq_image_4.width }}"
+         height="{{ faq_image_4.height }}"
+         class="faq-image"/>
+  {% endcapture %}
+{% endif %}
+
+{% if faq_image_5 %}
+  {% capture faq_image_src_5 %}
+    <img src="{{ faq_image_5 | image_url }}"
+         alt="{{ block.settings.heading }}"
+         width="{{ faq_image_5.width }}"
+         height="{{ faq_image_5.height }}"
+         class="faq-image"/>
+  {% endcapture %}
+{% endif %}
+
+<div class="faq-item mx-3 border-b md:mx-0">
+  <div class="faq-question flex justify-between pb-4 pt-4 text-base hover:cursor-pointer">
+    <span>{{ faq_question }}</span>
+
+    <span class="ml-4">
+      <span class="faq-icon-plus">
+        {% render 'icon', icon: 'plus', class: 'w-4 h-4' %}
+      </span>
+
+      <span class="faq-icon-minus hidden">
+        {% render 'icon', icon: 'minus', class: 'w-4 h-4' %}
+      </span>
+    </span>
+  </div>
+
+  <div class="faq-answer hidden pb-6 text-sm">
+    {{
+      faq_answer
+      | replace: '[image1]', faq_image_src_1
+      | replace: '[image2]', faq_image_src_2
+      | replace: '[image3]', faq_image_src_3
+      | replace: '[image4]', faq_image_src_4
+      | replace: '[image5]', faq_image_src_5
+      | replace: '[list1]', list_1
+      | replace: '[table1]', table_1
+    }}
+  </div>
+
+  {% style %}
+    .faq-answer a {
+      text-decoration: underline;
+    }
+
+    .faq-answer ul {
+      list-style: initial;
+      list-style-position: inside;
+    }
+
+    .faq-answer p:empty {
+      display: block;
+      padding-bottom: 1rem;
+    }
+  {% endstyle %}
+</div>

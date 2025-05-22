@@ -1,0 +1,72 @@
+{% comment %}
+  Renders kid types tabs
+
+  Accepts:
+  - tabs: {Object}
+  - section_id: {String}
+  - class: {String} (optional)
+{% endcomment %}
+
+{% if tabs.size > 0 %}
+  <div class="tabs flex mb-6{% if class != blank %} {{ class }}{% endif %}">
+    {% for tab in tabs %}
+      <div class="tab flex-shrink flex-grow basis-0 cursor-pointer border-b border-gray-300 px-4 pb-2 text-center text-2xs text-gray-800 {% if forloop.first %} active{% endif %}">
+        <span>{{ tab }}</span>
+      </div>
+    {% endfor %}
+
+    {% style %}
+      #section-{{ section_id }} .tabs .tab.active {
+          border-bottom-color: rgb(var(--color-primary));
+          border-bottom-width: 2px;
+          color: rgb(var(--color-primary));
+          font-weight: 500;
+      }
+    {% endstyle %}
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('#section-{{ section_id }} .tabs .tab');
+        const items = document.querySelectorAll('#section-{{ section_id }} [data-tab]');
+        const slider = document.querySelector('#section-{{ section_id }} .swiper');
+
+        tabs.forEach((tab) => {
+          tab.addEventListener('click', () => {
+            const matchedItems = document.querySelectorAll(
+              `#section-{{ section_id }} [data-tab="${tab.innerText.trim()}"]`,
+            );
+
+            tabs.forEach((tab) => tab.classList.remove('active'));
+            tab.classList.add('active');
+
+            items.forEach((item) => item.classList.add('!hidden'));
+            matchedItems.forEach((matchedItem) => matchedItem.classList.remove('!hidden'));
+
+            if (slider && slider.swiper) {
+              slider.swiper.update();
+
+              if (window.innerWidth > 1023 && slider.classList.contains('has-prev-next-half-slides')) {
+                const visibleSlidesCount = [
+                  ...slider.querySelectorAll('.swiper-wrapper:not(.swiper-wrapper-card-product) > .swiper-slide'),
+                ].filter((slide) => slide.offsetHeight).length;
+
+                if (visibleSlidesCount > 4) {
+                  slider.swiper.slideTo(1);
+                  slider.children[0].style.marginLeft = '';
+
+                  return;
+                }
+              }
+
+              slider.swiper.slideTo(0);
+              slider.children[0].style.transition = `margin-left ${slider.swiper.params.speed}ms`;
+              slider.children[0].style.marginLeft = '0';
+
+              setTimeout(() => (slider.children[0].style.transition = ''), slider.swiper.params.speed);
+            }
+          });
+        });
+      });
+    </script>
+  </div>
+{% endif %}

@@ -1,0 +1,108 @@
+<script>
+    class LocalizationRedirect {
+        constructor() {
+            this.options = {
+                cookieName: 'languageSwitcherPopup'
+            };
+
+            this.enabledLocales = [
+                {% for locale in shop.enabled_locales %}
+                '{{ locale.iso_code | split: '-' | first }}',
+                {% endfor %}
+            ];
+
+            this.languageIsoCode = `{{ localization.language.iso_code }}`;
+            this.isCookieValue = this.getCookieItem(this.options.cookieName);
+
+            if (!this.isCookieValue || !this.enabledLocales.includes(this.isCookieValue)) return;
+
+            this.checkLocalization();
+            this.useRedirect();
+        }
+
+        useRedirect() {
+            const path = window.location.pathname,
+                cookieLanguageIsoCode = this.getCookieItem(this.options.cookieName).split('-')[0].toLowerCase(),
+                segments = path.split('/').filter(Boolean);
+
+            if (!!cookieLanguageIsoCode && !this.languageIsoCode.includes(cookieLanguageIsoCode)) {
+                let urlPart = '';
+
+                if (segments.length > 0) {
+                    if (this.enabledLocales.includes(segments[0])) {
+                        const segmentsWithoutLocale = segments.slice(1);
+                        urlPart = '/' + segmentsWithoutLocale.join('/');
+                    }
+
+                    urlPart = '/' + segments.join('/');
+                }
+
+                const locale = cookieLanguageIsoCode == 'en' ? '' : cookieLanguageIsoCode,
+                    urlPath = `${window.location.origin}/${locale}`,
+                    urlFullPath = `${window.location.origin}/${locale}${urlPart}`;
+
+                if (!window.location.href.includes(urlPath)) {
+                    window.location.href = urlFullPath;
+                }
+            }
+        }
+
+        checkLocalization() {
+            const path = window.location.pathname,
+                segments = path.split('/').filter(Boolean);
+
+            if (segments.length > 0) {
+                const locale = segments[0];
+
+                if (this.enabledLocales.includes(locale)) {
+                    this.setCookieItem(this.options.cookieName, locale, 1);
+                    return;
+                }
+            }
+
+            return null;
+        }
+
+
+        setCookieItem(key, value, expirationDays) {
+            if (typeof key === 'undefined' || key === null) {
+                throw new Error('You must specify a key to set a cookie');
+            }
+
+            const date = new Date();
+            date.setTime(date.getTime() + (expirationDays * 24 * 60 * 60 * 1000));
+
+            let secure = '';
+            if (location.protocol === 'https:') {
+                secure = 'secure';
+            }
+
+            document.cookie = `${key}=${value};expires=${date.toUTCString()};path=/;sameSite=lax;${secure}`;
+        }
+
+        getCookieItem(key) {
+            if (!key) {
+                return false;
+            }
+
+            const name = key + '=',
+                allCookies = document.cookie.split(';');
+
+            for (let i = 0; i < allCookies.length; i++) {
+                let singleCookie = allCookies[i];
+
+                while (singleCookie.charAt(0) === ' ') {
+                    singleCookie = singleCookie.substring(1);
+                }
+
+                if (singleCookie.indexOf(name) === 0) {
+                    return singleCookie.substring(name.length, singleCookie.length);
+                }
+            }
+
+            return false;
+        }
+    }
+
+    new LocalizationRedirect();
+</script>

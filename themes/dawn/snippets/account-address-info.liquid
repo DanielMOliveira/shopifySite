@@ -1,0 +1,66 @@
+{% liquid
+  assign shown_address_limit = 5
+%}
+
+<div class="customer-shipping-data addresses flex flex-col" data-customer-addresses>
+  <h2 class="mb-3 text-base">{{ 'customer.account.shipping_data.title' | t }}</h2>
+  <div class="account-block flex flex-1 flex-col items-start justify-between">
+    <div class="address flex h-full w-full flex-col items-start justify-between rounded border p-6">
+      <p class="mb-2 w-full font-medium leading-6">{{ 'customer.account.shipping_data.address' | t }}</p>
+      <div class="address-list mb-6 flex w-full flex-1 flex-col gap-3">
+        {%- for address in customer.addresses -%}
+          {% if forloop.index <= shown_address_limit %}
+            <div class="w-full bg-neutral-100 px-4 py-3.5 {% if address == customer.default_address -%}-order-1 border border-neutral-400 {% endif %}">
+              <div data-address>
+                {%- if address == customer.default_address -%}
+                  <h2 class="text-base font-medium">{{ 'customer.addresses.default' | t }}</h2>
+                {%- endif -%}
+                <div class="flex flex-col justify-between gap-2 md:flex-row">
+                  <div class="lg:flex-1">
+                    {% if address.address1 != blank -%}
+                      <p>{{ address.address1 }}</p>
+                    {%- endif -%}
+                    {% if address.zip != blank or address.city != blank -%}
+                      <p>
+                        {{ address.zip }}
+                        {{ address.city }}
+                      </p>
+                    {%- endif -%}
+                    {% if address.address1 == blank and address.zip == blank and address.city == blank -%}
+                      {{ 'customer.account.shipping_data.no_shipping_info' | t }}
+                    {%- endif -%}
+                    {% if address != customer.default_address -%}
+                      <div class="mt-2.5">
+                        {% render 'account-address-form-make-default', address: address -%}
+                      </div>
+                    {%- endif %}
+                  </div>
+                  <div class="flex gap-2">
+                    {% render 'account-address-form-edit', address: address %}
+                    {% render 'account-address-form-delete', address: address %}
+                  </div>
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {%- endfor -%}
+      </div>
+      <div class="actions flex items-center gap-2">
+        {% render 'account-address-form-new' %}
+        {%- if customer.addresses.size > shown_address_limit -%}
+          <a href="{{ routes.account_addresses_url }}" class="link hover:underline">
+            {{ 'customer.account.shipping_data.all_addresses_page' | t }}
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'customer.js' | asset_url }}" defer></script>
+
+<script>
+  window.addEventListener('load', () => {
+    typeof CustomerAddresses !== 'undefined' && new CustomerAddresses();
+  });
+</script>

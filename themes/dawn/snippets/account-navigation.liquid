@@ -1,0 +1,33 @@
+{% liquid
+  assign navigation_account = 'customer.account.navigation.account' | t
+  assign navigation_order_history = 'customer.account.navigation.order_history' | t
+  assign navigation_family_data = 'customer.account.navigation.family_data' | t
+  assign navigation_continent_card = 'customer.account.navigation.continent_card' | t
+%}
+
+<div class="customer-navigation hidden w-full md:mb-10 md:flex">
+  <a
+    href="/account#main"
+    data-nav-button="true"
+    data-id="account"
+    class="customer-nav__item active open flex flex-1 border-b py-5 md:justify-center md:px-10"
+  >
+    {{ navigation_account }}
+  </a>
+  <a
+    href="/account#main"
+    data-nav-button="true"
+    data-id="order_history"
+    class="customer-nav__item flex flex-1 border-b py-5 md:justify-center md:px-10"
+  >
+    {{ navigation_order_history }}
+  </a>
+  <a
+    href="/account#main"
+    data-nav-button="true"
+    data-id="family_data"
+    class="customer-nav__item flex flex-1 border-b py-5 md:justify-center md:px-10"
+  >
+    {{ navigation_family_data }}
+  </a>
+</div>

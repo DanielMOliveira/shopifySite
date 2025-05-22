@@ -1,0 +1,45 @@
+{% if footer_menu != blank %}
+  {% for link in linklists[footer_menu].links %}
+    <div class="footer-block__details-content footer-menu mb-4 md:mb-0">
+      <div class="footer-block__heading flex items-center justify-between pb-4">
+        <button
+          type="button"
+          class="footer-block__heading-link footer-heading button-reset flex w-full items-center justify-between text-left !font-body text-2xs font-medium uppercase leading-none text-gray-800"
+          aria-expanded="false"
+          onclick="toggleFooterMenu(this)"
+        >
+          <span>{{ link.title }}</span>
+          {% render 'icon', icon: 'chevron-down', class: 'chevron-down w-3' %}
+        </button>
+      </div>
+
+      {% if link.links != blank %}
+        <ul class="footer-block__details-content list-none pl-0">
+          {% for childlink in link.links %}
+            <li>
+              <a
+                href="{{ childlink.url }}"
+                class="hover-underline link-animate block py-1.5 text-2xs !no-underline transition-colors"
+                {% if childlink.current %}aria-current="page"{% endif %}
+              >
+                {{ childlink.title }}
+              </a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </div>
+  {% endfor %}
+{% endif %}
+
+<script>
+  function toggleFooterMenu(button) {
+    const content = button.parentElement.nextElementSibling;
+    
+    if (content) {
+      const isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', !isExpanded);
+      content.style.display = isExpanded ? 'none' : 'block';
+    }
+  }
+</script>

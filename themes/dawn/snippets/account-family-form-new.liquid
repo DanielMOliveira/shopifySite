@@ -1,0 +1,85 @@
+<div data-family>
+  <button
+    type="button"
+    class="button secondary"
+    aria-expanded="false"
+    aria-controls="AddAddress"
+  >
+    {% render 'icon', icon: 'plus', class: 'w-5 h-5' %}
+    {{ 'customer.addresses.add_new_family' | t }}
+  </button>
+  <div class="popupscreen" id="AddAddress">
+    <div class="popupscreen-inner bg-white p-4 md:p-10">
+      <h2 class="mb-5 font-medium" id="AddressNewHeading">{{ 'customer.addresses.add_new_family' | t }}</h2>
+      <form
+        {% render 'form-action' %}
+        method="post"
+      >
+        <input type="hidden" name="address[country]" value="{{ customer.default_address.country }}">
+        <input type="hidden" name="address[address2]" value="Family Data">
+        <div class="popupscreen-close absolute right-4 top-4 md:right-10 md:top-10">
+          <button
+            type="reset"
+            class="secondary h-10 w-10 !p-0"
+          >
+            {% render 'icon', icon: 'cross' %}
+          </button>
+        </div>
+        <div class="fields mb-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressFirstNameNew"
+              class="peer"
+              name="address[first_name]"
+              autocomplete="given-name"
+              placeholder=" "
+            >
+            <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressLastNameNew"
+              class="peer"
+              name="address[last_name]"
+              autocomplete="family-name"
+              placeholder=" "
+            >
+            <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+          </div>
+          <div class="input-group">
+            <label class="select-label" for="AddressSex">{{ 'customer.addresses.family_sex' | t }}</label>
+            <div class="select">
+              <select id="AddressSex" name="address[address1]">
+                <option value="Male">{{ 'customer.addresses.family_sex_male' | t }}</option>
+                <option value="Female">{{ 'customer.addresses.family_sex_female' | t }}</option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group input-group-date">
+            <input
+              type="date"
+              id="DOBFamilyNew"
+              class="peer"
+              name="address[company]"
+              placeholder=" "
+            >
+            <label for="DOBFamilyNew">{{ 'customer.addresses.family_dob' | t }}</label>
+          </div>
+        </div>
+
+        <input type="hidden" name="form_type" value="family">
+        {% if localization.language.endonym_name != 'English' %}
+          <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+        {% else %}
+          <input type="hidden" name="country_code" value="">
+        {% endif %}
+        <div class="popupscreen-footer flex justify-end gap-4">
+          <button class="secondary" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+          <button>{{ 'customer.addresses.add_new_family' | t }}</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

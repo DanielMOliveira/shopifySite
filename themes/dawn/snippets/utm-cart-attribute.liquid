@@ -1,0 +1,77 @@
+{% comment %}
+  Renders UTM Cart Attribute Javascript.
+
+  Usage:
+  {% render 'utm-cart-attribute' %}
+{% endcomment %}
+
+<script>
+  var queryForm = function (settings) {
+    // STORE THE UTM IN SESSION STORAGE
+
+    var reset = settings && settings.reset ? settings.reset : false;
+
+    var self = window.location.toString();
+
+    var querystring = self.split('?');
+
+    if (querystring.length > 1) {
+      var pairs = querystring[1].split('&');
+
+      for (i in pairs) {
+        var keyval = pairs[i].split('=');
+
+        if (reset || sessionStorage.getItem(keyval[0]) === null) {
+          sessionStorage.setItem(keyval[0], decodeURIComponent(keyval[1]));
+        }
+      }
+    }
+
+    // STORE THE UTM IN SESSION STORAGE
+
+    // READ THE UTM IN SESSION STORAGE INTO INPUT VALUES
+
+    var hiddenFields = document.querySelector('.utm_parameters');
+
+    // Get all hidden inputs with utm_parameters in form submission ex: {name: value} OR {utm_campaign: reel}
+    var utm_parameters = document.getElementsByClassName('utm_parameters');
+
+    // GET UTM PARAMETERS STORED IN SESSION
+
+    var utm_source = sessionStorage.getItem('utm_source');
+    var utm_medium = sessionStorage.getItem('utm_medium');
+
+    /**
+     * LOOP THROUGH THE UTM PARAMETERS
+     * COLLECTED FROM THE PAGE
+     * AND APPEND THE UTM PARAMETERS
+     * COLLECTED FROM THE SESSION STORAGE
+     */
+    for (var i = 0, length = utm_parameters.length; i < length; i++) {
+      if (document.getElementsByName(utm_parameters[i].name)[0].name == 'attributes[utm_source]') {
+        if (utm_source == 'pos') {
+          // console.log(utm_source);
+          document.getElementsByName(utm_parameters[i].name)[0].value = utm_source;
+        } else {
+          // console.log(utm_source);
+          document.getElementsByName(utm_parameters[i].name)[0].value = 'customer';
+        }
+      } else if (document.getElementsByName(utm_parameters[i].name)[0].name == 'attributes[utm_medium]') {
+        document.getElementsByName(utm_parameters[i].name)[0].value = utm_medium;
+      }
+      // console.log(document.getElementsByName(utm_parameters[i].name)[0].name+': '+document.getElementsByName(utm_parameters[i].name)[0].value)
+    }
+
+    // READ THE UTM IN SESSION STORAGE INTO INPUT VALUES
+    //console.log("done");
+  };
+
+  var updateUTMminicart = function () {
+    // USE THIS FUNCTION TO UPDATE MINICART ATTRIBUTES
+    setTimeout(() => {
+      queryForm({ reset: true });
+    }, 600);
+  };
+
+  queryForm({ reset: true });
+</script>

@@ -1,0 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.return-request-form.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "page_navigation_GAaRWF": {
+      "blocks": {
+        "text_PKiDhM": {
+          "settings": {
+            "text": "<h2><strong>Order returns </strong></h2><p><strong><br/>At Zippy, returns are always free! </strong><br/>Online orders can only be returned, exchanges are not possible.  To return your order, you can go to one of our physical stores or schedule a home collection. To do this, follow these steps:</p><p><strong>Request a pick-up</strong>: request a pick-up by filling in the details requested in the form below. We will contact you to confirm the availability of collection on the selected day.</p><p><strong>Packing: </strong>place the items in the original packaging and seal your order as indicated. If you do not have the original packaging, you should use one that is not transparent and ensure that the items are well packed to avoid damage or loss.</p><p><strong>Courier:</strong> from the address indicated, deliver the package to be returned to the courier, who will place the labels on the outside of the package.</p><p><strong>Receiving the refund: </strong>the refund is processed for the original method of payment within 14 days from the day of receipt of the items in our returns center and validation of their conformity. Once the return has been processed, you will receive an email with the credit note. You have 30 days to return your order from the day it is received at your home address or when it arrives at your desired store.</p>"
+          }
+        },
+        "heading_zmAQDa": {
+          "settings": {
+            "heading": "<h4><br/>Pick-up Form</h4>"
+          }
+        },
+        "text_Ee7yF4": {
+          "settings": {
+            "text": "<p><strong><br/><br/>Note:</strong>  No returns are allowed in Zippy physical stores (except OUTLET) for products purchased in Zippy Outlet stores. The opposite also applies.<br/><br/></p>"
+          }
+        }
+      }
+    }
+  }
+}

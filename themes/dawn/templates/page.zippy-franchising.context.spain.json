@@ -1,0 +1,28 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.zippy-franchising.json",
+  "context": {
+    "market": "spain"
+  },
+  "sections": {
+    "page_navigation_GAaRWF": {
+      "settings": {
+      },
+      "blocks": {
+        "text_Ee7yF4": {
+          "settings": {
+            "text": "<h4><strong>Do you want to sell Zippy in your shop?</strong></h4><ul><li><h6>Growing brand with franchise presence in 20 countries, leader in the children's segment in several markets</h6></li><li><h6>Focus on the customer and product</h6></li><li><h6>Attractive and commercial shop concept with a strong focus on the shopping experience</h6></li><li><h6>Competitive value proposition</h6></li><li><h6>Continuous operational support by a dedicated multidisciplinary team</h6></li><li><h6>Close monitoring by Visual Merchandising department</h6></li><li><h6>Please fill out this short form and we will contact you</h6></li></ul>"
+          }
+        }
+      }
+    }
+  }
+}

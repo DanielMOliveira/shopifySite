@@ -1,0 +1,283 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign promo_block = section.blocks | where: 'type', 'collection_promo'
+  assign product_number_to_show_after = promo_block[0].settings.product_number_to_show_after
+%}
+
+<div id="section-{{ section.id }}">
+  {%- paginate collection.products by section.settings.products_per_page -%}
+    <div>
+      <aside
+        aria-labelledby="verticalTitle"
+        class="facets-wrapper container-valantic"
+        id="main-collection-filters"
+        data-id="{{ section.id }}"
+      >
+        {% render 'facets',
+          results: collection,
+          enable_sorting: section.settings.enable_sorting,
+          paginate: paginate,
+          section: section
+        %}
+      </aside>
+
+      <div id="ProductGridContainer" class="product-grid-container">
+        {%- if collection.products.size == 0 -%}
+          <div class="collection collection--empty" id="product-grid" data-id="{{ section.id }}">
+            <h2 class="py-10 text-center font-semibold uppercase">
+              {{ 'sections.collection_template.empty' | t }}
+              <br>
+              {{ 'sections.collection_template.use_fewer_filters_html' | t: link: collection.url, class: 'link' }}
+            </h2>
+          </div>
+        {%- else -%}
+          <div
+            class="collection container-valantic pb-7 pt-4"
+            data-infinite-scroll='
+              {
+                  "containerSelector": "#section-{{ section.id }} .collection",
+                  "paginationSelector": ".collection-pagination",
+                  "itemsContainerSelector": "#product-grid"
+              }
+            '
+          >
+            <div class="loading-overlay gradient"></div>
+            <ul
+              id="product-grid"
+              data-id="{{ section.id }}"
+              class="flex flex-wrap gap-2 md:gap-5"
+            >
+              {%- for product in collection.products -%}
+                {% liquid
+                  assign lazy_load = false
+
+                  if forloop.index > 4
+                    assign lazy_load = true
+                  endif
+                %}
+
+                <li>
+                  {% render 'card-product',
+                    card_product: product,
+                    lazy_load: lazy_load,
+                    section_id: section.id,
+                    index: forloop.index
+                  %}
+                </li>
+
+                {% if promo_block.size > 0 and product_number_to_show_after != blank %}
+                  {% if forloop.index == product_number_to_show_after %}
+                    {% render 'collection-promo-banner', block: promo_block[0] %}
+                  {% endif %}
+                {% endif %}
+              {%- endfor -%}
+            </ul>
+
+            <div class="collection-pagination pt-6 md:pt-10" data-page="{{ paginate.current_page }}">
+              {% render 'pagination-infinite', paginate: paginate, anchor: '' %}
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endpaginate -%}
+
+  {% if section.settings.image_shape == 'arch' %}
+    {% render 'mask-arch' %}
+  {%- endif -%}
+</div>
+
+<script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+
+{% if settings.infinity_loading_products_type == 'preloaded' %}
+  <script src="{{ 'infinite-scroll-preloaded.js' | asset_url }}" defer="defer"></script>
+{% else %}
+  <script src="{{ 'infinite-scroll-default.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-product-grid.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_per_page",
+      "min": 8,
+      "max": 36,
+      "step": 4,
+      "default": 16,
+      "label": "t:sections.main-collection-product-grid.settings.products_per_page.label",
+      "info": "The initial number of displayed products on the page, to change the number of loaded products use Theme Settings - Product grid - Count Of Loaded Products Using Infinity Loading"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sorting",
+      "default": true,
+      "label": "t:sections.main-collection-product-grid.settings.enable_sorting.label"
+    },
+    {
+      "type": "header",
+      "content": "Size filters"
+    },
+    {
+      "type": "richtext",
+      "id": "size_in_months",
+      "label": "Sizes In Months List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "size_in_years",
+      "label": "Sizes In Years List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "international_sizes",
+      "label": "International Sizes List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "richtext",
+      "id": "european_sizes",
+      "label": "Other Sizes List",
+      "info": "Add possible sizes separated by comma"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "max_blocks": 1,
+  "blocks": [
+    {
+      "type": "collection_promo",
+      "name": "Collection Promo",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Position"
+        },
+        {
+          "type": "number",
+          "id": "product_number_to_show_after",
+          "label": "Product Number To Show After",
+          "default": 8,
+          "info": "Banner will be shown after filled number"
+        },
+        {
+          "type": "header",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#FFBF00"
+        },
+        {
+          "type": "color",
+          "id": "circle_first_color",
+          "label": "1 Circle Color",
+          "default": "#83dbcb"
+        },
+        {
+          "type": "color",
+          "id": "circle_second_color",
+          "label": "2 Circle Color",
+          "default": "#FF4141"
+        },
+        {
+          "type": "number",
+          "id": "content_width_mobile",
+          "label": "Content Width Mobile (px)",
+          "default": 305,
+          "info": "Until 768px"
+        },
+        {
+          "type": "number",
+          "id": "content_width_desktop",
+          "label": "Content Width Desktop (px)",
+          "default": 1080,
+          "info": "From 768px"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "promotions"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "up to"
+        },
+        {
+          "type": "text",
+          "id": "percent_amount",
+          "label": "Percent Amount",
+          "default": "50"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text",
+          "default": "Enjoy your discount!"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        },
+        {
+          "type": "richtext",
+          "id": "note",
+          "label": "Note",
+          "default": "<p>Promotion valid from 14/05/2024 to 03/06/2024 on the highlighted items. \nNot combinable with other existing discounts or promotions.</p>"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

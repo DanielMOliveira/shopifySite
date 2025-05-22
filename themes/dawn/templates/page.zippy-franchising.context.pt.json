@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.zippy-franchising.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_4qmgG": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n  .breadcrumbs {\n    display: none;\n  }\n\n  #shopify-section-template--16311520461009__page_navigation_GAaRWF .container-valantic {\n    margin-top: 2rem;\n  }\n  #shopify-section-template--16311520461009__page_navigation_GAaRWF {\n    background-color: #fbfbf8;\n  }\n  h4 {\n    margin-top: 3rem;\n  }\n</style>",
+        "color_scheme": "",
+        "header-7e5997644f23bae6be3b215f97bdda2d": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "page_navigation_GAaRWF": {
+      "settings": {
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30
+      },
+      "blocks": {
+        "heading_EAcwa": {
+          "type": "heading",
+          "disabled": false,
+          "settings": {
+            "heading": "<h1><strong>Franchising Zippy</strong></h1>",
+            "title_alignment": "left"
+          }
+        }
+      },
+      "block_order": [
+        "heading_EAcwa",
+        "text_PKiDhM",
+        "text_Ee7yF4",
+        "contact_ffLRrH"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "page_navigation_GAaRWF",
+    "custom_liquid_4qmgG"
+  ]
+}

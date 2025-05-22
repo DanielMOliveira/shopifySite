@@ -1,0 +1,145 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+<section id="section-{{ section.id }}" class="style-guide py-10">
+  <div class="bg-cyan-800/50 py-10 text-cyan-800">
+    <div class="container-valantic">
+      <h1 class="font-bold uppercase">Style Guide</h1>
+    </div>
+  </div>
+
+  <div class="container-valantic">
+    <div class="my-5 flex flex-col gap-5 lg:my-10 lg:flex-row lg:items-start lg:gap-10">
+      <div class="flex flex-col rounded bg-cyan-800/50 text-xl font-bold uppercase text-cyan-800 lg:w-80">
+        <a class="active relative border-b border-cyan-800 px-5 py-2.5 transition-all" href="#colors">Colors</a>
+        <a class="relative border-b border-cyan-800 px-5 py-2.5 transition-all" href="#icons">Icons</a>
+        <a class="relative border-b border-cyan-800 px-5 py-2.5 transition-all" href="#buttons">Buttons</a>
+        <a class="relative border-b border-cyan-800 px-5 py-2.5 transition-all" href="#forms">Forms</a>
+        <a class="relative px-5 py-2.5 transition-all" href="#typography">Typography</a>
+      </div>
+
+      <div class="rounded p-5 shadow-[0px_0px_40px_#155e7580] lg:w-[calc(100%-360px)] lg:p-10">
+        <div id="colors">{% render 'ui-colors' %}</div>
+        <div class="hidden" id="icons">{% render 'ui-icons' %}</div>
+        <div class="hidden" id="buttons">{% render 'ui-buttons' %}</div>
+        <div class="hidden" id="forms">{% render 'ui-forms' %}</div>
+        <div class="hidden" id="typography">{% render 'ui-typography' %}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="!block bg-cyan-800/50 py-20"></div>
+
+  {% style %}
+    #section-{{ section.id }} a[href]:before {
+        background: linear-gradient(90deg, rgba(22 78 99 / 0) 0%, rgba(22 78 99 / 30%) 100%);
+        content: '';
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: all 150ms;
+        width: 100%;
+    }
+
+    #section-{{ section.id }} a[href]:first-child:before {
+        border-radius: 0 4px 0 0;
+    }
+
+    #section-{{ section.id }} a[href]:last-child:before {
+        border-radius: 0 0 4px 0;
+    }
+
+    #section-{{ section.id }} a[href]:hover,
+    #section-{{ section.id }} a[href].active {
+        padding-left: 32px;
+    }
+
+    #section-{{ section.id }} a[href]:hover:before,
+    #section-{{ section.id }} a[href].active:before {
+        opacity: 1;
+    }
+
+    #section-{{ section.id }} input:not([type='checkbox']):not([type='radio']),
+    #section-{{ section.id }} select,
+    #section-{{ section.id }} textarea,
+    #section-{{ section.id }} .input-group {
+        width: 100%;
+    }
+  {% endstyle %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const triggers = document.querySelectorAll('#section-{{ section.id }} a[href]');
+      const contents = document.querySelectorAll('#section-{{ section.id }} div[id]');
+
+      triggers.forEach((trigger) => {
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+
+          const id = trigger.getAttribute('href').replace('#', '');
+
+          triggers.forEach((trigger) => trigger.classList.remove('active'));
+          trigger.classList.add('active');
+
+          contents.forEach((content) => {
+            if (!content.classList.contains('hidden')) content.classList.add('hidden');
+            if (content.id === id) content.classList.remove('hidden');
+          });
+        });
+      });
+    });
+  </script>
+</section>
+
+{% schema %}
+{
+  "name": "Style Guide",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Style Guide"
+    }
+  ]
+}
+{% endschema %}

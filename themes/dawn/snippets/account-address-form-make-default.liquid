@@ -1,0 +1,14 @@
+{%- form 'customer_address', address -%}
+  <input type="hidden" id="address_default_address_{{ form.id }}" name="address[default]" value="1">
+  <button
+    class="button"
+    type="submit"
+  >
+    {{ 'customer.addresses.set_default' | t }}
+  </button>
+  {% if localization.language.endonym_name != 'English' %}
+    <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+  {% else %}
+    <input type="hidden" name="country_code" value="">
+  {% endif %}
+{%- endform -%}

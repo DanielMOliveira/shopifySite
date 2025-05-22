@@ -1,0 +1,525 @@
+<script src="{{ 'details-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-modal.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'search-form.js' | asset_url }}" defer="defer"></script>
+
+<link rel="stylesheet" href="{{ 'component-menu-drawer.css' | asset_url }}" media="print" onload="this.media='all'">
+<link
+  rel="stylesheet"
+  href="{{ 'component-cart-notification.css' | asset_url }}"
+  media="print"
+  onload="this.media='all'"
+>
+<link rel="stylesheet" href="{{ 'component-cart-items.css' | asset_url }}" media="print" onload="this.media='all'">
+
+{%- if settings.cart_type == 'drawer' -%}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if settings.cart_type == 'drawer' -%}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+{% liquid
+  assign logo_mobile = settings.logo_mobile
+  assign logo_mobile_width = settings.logo_mobile_width
+  assign logo_desktop = settings.logo_desktop
+  assign logo_desktop_width = settings.logo_desktop_width
+  assign logo_desktop_height = settings.logo_desktop_height
+  assign logo_desktop_alignment = settings.logo_desktop_alignment
+  assign notification_bar = section.blocks | where: 'type', 'notification_bar'
+  assign menu_top_bar = section.blocks | where: 'type', 'menu_top_bar'
+  assign menu_collections_block = section.blocks | where: 'type', 'menu_collections'
+%}
+
+<header class="header drawer-menu z-20 mb-[58px] border-gray-300 lg:mb-0">
+  {% render 'notification-bar', notification_bar: notification_bar %}
+
+  <div class="container-valantic relative">
+    <div class="header-content flex flex-wrap items-center justify-between pb-2.5 pt-2.5">
+      {% if section.settings.menu_1 != blank or section.settings.menu_2 != blank %}
+        {% render 'header-menu', menu_top_bar: menu_top_bar, menu_collections_block: menu_collections_block %}
+      {% endif %}
+
+      {% if request.page_type == 'index' %}
+        <h1 class="flex-auto leading-[0px]">
+      {% else %}
+        <div class="flex-auto leading-[0px]">
+      {% endif %}
+
+      <a href="{{ routes.root_url }}" class="logo-link ml-5 inline-flex flex-auto">
+        {% if logo_mobile != blank %}
+          <div class="logo-mobile md:hidden">
+            {% assign logo_mobile_alt = logo_mobile.alt | default: shop.name | escape %}
+            {% assign logo_mobile_height = logo_mobile_width | divided_by: logo_mobile.aspect_ratio %}
+            {% capture sizes_mobile %}(min-width: 750px) {{ logo_mobile_width }}px, 50vw{% endcapture %}
+            {% capture widths_mobile %}{{ logo_mobile_width }}, {{ logo_mobile_width | times: 1.5 | round }}, {{ logo_mobile_width | times: 2 }}{% endcapture %}
+            {{
+              logo_mobile
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo',
+                widths: widths_mobile,
+                height: logo_mobile_height,
+                width: logo_mobile_width,
+                alt: logo_mobile_alt,
+                sizes: sizes_mobile,
+                preload: true
+            }}
+          </div>
+        {% endif %}
+
+        {% if logo_desktop != blank %}
+          <div class="logo-desktop hidden md:flex {% if logo_desktop_alignment == 'center' %}md:flex-auto md:absolute md:top-2/4 md:left-2/4 md:-translate-x-1/2 md:-translate-y-1/2{% else %}ml-7{% endif %}">
+            {% assign logo_desktop_alt = logo_desktop.alt | default: shop.name | escape %}
+            {% assign logo_desktop_height = logo_desktop_width | divided_by: logo_desktop.aspect_ratio %}
+            {% capture sizes_desktop %}(min-width: 750px) {{ logo_desktop_width }}px, 50vw{% endcapture %}
+            {% capture widths_desktop %}{{ logo_desktop_width }}, {{ logo_desktop_width | times: 1.5 | round }}, {{ logo_desktop_width | times: 2 }}{% endcapture %}
+            {{
+              logo_desktop
+              | image_url: width: 600
+              | image_tag:
+                class: 'header__heading-logo-desktop',
+                widths: widths_desktop,
+                height: logo_desktop_height,
+                width: logo_desktop_width,
+                alt: logo_desktop_alt,
+                sizes: sizes_desktop,
+                preload: true
+            }}
+          </div>
+        {% endif %}
+
+        {% unless logo_mobile != blank and logo_desktop != blank %}
+          <span class="h2">{{ shop.name }}</span>
+        {% endunless %}
+      </a>
+
+      {% if request.page_type == 'index' %}
+        </h1>
+      {% else %}
+        </div>
+      {% endif %}
+
+      {% render 'header-search', input_id: 'Search-In-Modal-Desktop' %}
+
+      {% if shop.customer_accounts_enabled %}
+        {% if customer %}
+          <dropdown-item class="header-account group relative">
+            <div class="dropdown-trigger ml-4 flex cursor-pointer items-center">
+              <div class="relative">
+                {% render 'icon', icon: 'account', class: 'w-6 h-6 transition-all group-hover:scale-110' %}
+
+                <span class="absolute -right-[3px] -top-[3px] h-2 w-2 rounded-full bg-green-100"></span>
+              </div>
+              <span class="ml-1.5 text-2xs">{{ customer.first_name }}</span>
+
+              {% render 'icon', icon: 'chevron-down', class: '!w-3.5 !h-3.5' %}
+            </div>
+            <div class="dropdown-content absolute right-0 top-full z-[1002] mt-2.5 hidden min-w-50 border border-gray-300 bg-white p-3 text-sm">
+              <div class="flex flex-col">
+                <a href="{{ routes.account_url }}/#main">
+                  {{ 'customer.account.dropdown.account' | t }}
+                </a>
+              </div>
+              <a
+                href="{{ routes.account_logout_url }}"
+                class="header-logout mt-3 flex items-center border-t border-gray-300 pt-3"
+              >
+                {% render 'icon', icon: 'log-out' %}
+
+                <span class="ml-2">{{ 'customer.account.dropdown.log_out' | t }}</span>
+              </a>
+            </div>
+          </dropdown-item>
+        {% else %}
+          <div class="header-account group ml-4">
+            <a href="{{ routes.account_login_url }}" class="relative flex">
+              {% render 'icon', icon: 'account', class: 'w-6 h-6 transition-all group-hover:scale-110' %}
+
+              <span
+                class="absolute -right-[3px] -top-[3px] h-2 w-2 rounded-full{% if customer %} bg-green-100{% else %} bg-red-500{% endif %}"
+              ></span>
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      <div class="ml-4">
+        <a id="cart-icon-bubble" href="{{ routes.cart_url }}" class="group !flex items-center">
+          <span class="dropdown-item">
+            {% render 'icon', icon: 'bag', class: 'w-6 h-6 transition-all group-hover:scale-110' %}
+          </span>
+
+          {% if cart.item_count > 0 %}
+            <span class="text-2xs">{{ cart.item_count }}</span>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    .section-header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        transition: background-color 0.15s;
+    }
+
+    {% if request.path == routes.root_url %}
+        .section-header.search_active,
+        .section-header.search_active .search-modal,
+        .section-header:not(.scrolled):has(.offcanvas-menu__wrapper.active),
+        .section-header:not(.scrolled):has(.offcanvas-menu__wrapper.active) .search-modal,
+        .section-header.scrolled,
+        .section-header.scrolled .search-modal {
+            background-color: rgb(var(--color-white)) !important;
+        }
+
+        @media screen and (min-width: 1024px) {
+            .section-header.search_active .header {
+                border-bottom-width: 1px !important;
+            }
+        }
+    {% else %}
+        @media screen and (min-width: 1024px) {
+            .section-header .header > .container-valantic {
+                border-bottom: 1px solid rgb(var(--color-gray-300));
+            }
+        }
+
+        @media screen and (max-width: 1023px) {
+            search-modal .search-modal {
+                border-bottom: 1px solid rgb(var(--color-gray-300));
+            }
+        }
+
+        .section-header,
+        .section-header .search-modal {
+            background-color: rgb(var(--color-white)) !important;
+        }
+    {% endif %}
+
+    {% if logo_desktop_alignment == 'center' %}
+        @media screen and (min-width: 768px) {
+            .logo-link {
+                height: {{ logo_desktop_height }}px;
+            }
+        }
+    {% endif %}
+  {% endstyle %}
+</header>
+
+{%- if settings.cart_type == 'drawer' -%}
+  <script src="{{ 'cart-drawer-collapsible-elements.js' | asset_url }}" defer="defer"></script>
+
+  {% if settings.show_cart_best_selling_products %}
+    <script src="{{ 'best-selling-products.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+
+  {% if settings.show_cart_recently_viewed_products %}
+    <script src="{{ 'recently-viewed-products.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+
+  {% if settings.show_cart_best_selling_products or settings.show_cart_recently_viewed_products %}
+    <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+{%- endif -%}
+
+<script src="{{ "dropdown.js" | asset_url }}" defer="defer"></script>
+
+{% if request.path == routes.root_url %}
+  <script src="{{ "sticky-header.js" | asset_url }}" defer="defer"></script>
+{% endif %}
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": {{ shop.name | json }},
+  {% if settings.logo %}
+    "logo": {{ settings.logo | image_url: width: 500 | prepend: "https:" | json }},
+  {% endif %}
+  "sameAs": [
+    {% if settings.social_twitter_link != "" %}
+      {{ settings.social_twitter_link | json }},
+    {% endif %}
+    {% if settings.social_facebook_link != "" %}
+      {{ settings.social_facebook_link | json }},
+    {% endif %}
+    {% if settings.social_pinterest_link != "" %}
+      {{ settings.social_pinterest_link | json }},
+    {% endif %}
+    {% if settings.social_instagram_link != "" %}
+      {{ settings.social_instagram_link | json }},
+    {% endif %}
+    {% if settings.social_tiktok_link != "" %}
+      {{ settings.social_tiktok_link | json }},
+    {% endif %}
+      {% if settings.social_tumblr_link != "" %}
+      {{ settings.social_tumblr_link | json }},
+    {% endif %}
+      {% if settings.social_snapchat_link != "" %}
+      {{ settings.social_snapchat_link | json }},
+    {% endif %}
+      {% if settings.social_youtube_link != "" %}
+    {% endif %}
+      {{ settings.social_youtube_link | json }},
+    {% if settings.social_vimeo_link != "" %}
+     {{ settings.social_vimeo_link | json }}
+    {% endif %}
+
+  ],
+  "url": {{ request.origin | append: page.url | json }}
+  }
+</script>
+
+{% if request.page_type == 'index' %}
+  {% assign potential_action_target = request.origin | append: routes.search_url | append: '?q={search_term_string}' %}
+
+  <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebSite",
+        "name": {{ shop.name | json }},
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {{ potential_action_target | json }},
+            "query-input": "required name=search_term_string"
+        },
+        "url": {{ request.origin | append: page.url | json }}
+    }
+  </script>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.header.name",
+  "class": "section-header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu_1",
+      "label": "Menu 1"
+    },
+    {
+      "type": "text",
+      "id": "menu_1_title",
+      "label": "Menu 1 Title",
+      "default": "Clothing & Footwear"
+    },
+    {
+      "type": "link_list",
+      "id": "menu_2",
+      "label": "Menu 2"
+    },
+    {
+      "type": "text",
+      "id": "menu_2_title",
+      "label": "Menu 2 Title",
+      "default": "Nursery"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "notification_bar",
+      "name": "Notification Bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "is_enabled",
+          "label": "Enabled?",
+          "default": true
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "default": "#F5C242",
+          "label": "Background Color"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "default": "#232323",
+          "label": "Content Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon",
+          "info": "Use [icon] in the 'Content' field to display this image"
+        },
+        {
+          "type": "header",
+          "content": "Liquid Code Settings"
+        },
+        {
+          "type": "select",
+          "id": "liquid_displaying",
+          "options": [
+            {
+              "value": "disabled",
+              "label": "Disabled"
+            },
+            {
+              "value": "instead_content",
+              "label": "Instead Of Content"
+            },
+            {
+              "value": "instead_block",
+              "label": "Instead Of Block"
+            }
+          ],
+          "default": "disabled",
+          "label": "Liquid Displaying"
+        },
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.custom-liquid.settings.custom_liquid.label",
+          "info": "t:sections.custom-liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "menu_top_bar",
+      "name": "Menu Top Bar",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "color",
+          "id": "background_color",
+          "default": "#F5C242",
+          "label": "Background Color"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link"
+        },
+        {
+          "type": "select",
+          "id": "content_font_weight",
+          "options": [
+            {
+              "value": "400",
+              "label": "Regular"
+            },
+            {
+              "value": "500",
+              "label": "Medium"
+            },
+            {
+              "value": "600",
+              "label": "Bold"
+            }
+          ],
+          "default": "500",
+          "label": "Font Weight"
+        }
+      ]
+    },
+    {
+      "type": "menu_collections",
+      "name": "Menu Collections",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Collections Block header"
+        },
+        {
+          "type": "text",
+          "id": "collections_label",
+          "label": "Title"
+        },
+        {
+          "type": "url",
+          "id": "collections_url",
+          "label": "Show All URL"
+        },
+        {
+          "type": "text",
+          "id": "collections_show_all_label",
+          "label": "Show All Label"
+        },
+        {
+          "type": "header",
+          "content": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "collection_1",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_1_label",
+          "label": "Label"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_1_thumbnail",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Collection"
+        },
+        {
+          "type": "url",
+          "id": "collection_2",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_2_label",
+          "label": "Label"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_2_thumbnail",
+          "label": "Icon"
+        },
+        {
+          "type": "header",
+          "content": "Collection 3"
+        },
+        {
+          "type": "url",
+          "id": "collection_3",
+          "label": "Collection"
+        },
+        {
+          "type": "text",
+          "id": "collection_3_label",
+          "label": "Label"
+        },
+        {
+          "type": "image_picker",
+          "id": "collection_3_thumbnail",
+          "label": "Icon"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

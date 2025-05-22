@@ -1,0 +1,30 @@
+{% comment %}
+  Renders table
+
+  Accepts:
+      - rows: {Number} required
+      - columns: {Number} required
+      - prefix: {String} required
+      - settings: {Object} required
+      - class: {String} (optional)
+
+  Usage:
+      {% render 'table', rows: 3, columns: 3, prefix: 'cell_text_', settings: section.settings, class: 'class' %}
+{% endcomment %}
+
+<table>
+  <tbody>
+    {% for row in (1..rows) %}
+      <tr>
+        {% for column in (1..columns) %}
+          {% liquid
+            assign cell_text_id = prefix | append: row | append: '_' | append: column
+            assign cell_text = settings[cell_text_id]
+          %}
+
+          <td>{{ cell_text }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>

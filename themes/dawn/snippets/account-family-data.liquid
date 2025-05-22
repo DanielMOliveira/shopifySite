@@ -1,0 +1,169 @@
+{% style %}
+  #DOBFamilyNew,
+  #DOBFamilyEdit {
+    height: 51px;
+  }
+  @media only screen and (max-width: 479px) {
+    .input-group-date {
+      width: 100%;
+    }
+    #DOBFamilyNew,
+    #DOBFamilyEdit {
+      min-width: 300px;
+      width: 100%;
+      max-width: 100%;
+      text-align: left;
+      height: 56px;
+    }
+  }
+{% endstyle %}
+<div class="customer-shipping-data addresses flex flex-col" data-customer-family>
+  <h2 class="mb-3 text-base">{{ 'customer.addresses.family_title' | t }}</h2>
+  <div class="account-block flex flex-1 flex-col items-start justify-between">
+    <div class="address flex h-full w-full flex-col items-start justify-between rounded border p-6">
+      <p class="mb-2 w-full font-medium leading-6">{{ 'customer.addresses.family_member_title' | t }}</p>
+      <div class="address-list mb-6 flex w-full flex-1 flex-col gap-3">
+        <div
+          class="w-full bg-neutral-100 px-4 py-3.5"
+        >
+          <div data-family>
+            <div>
+              <form
+                {% render 'form-action' %}
+                method="post"
+              >
+                <script type="application/json" class="form-alerts">
+                  {
+                    "error": "{{ 'customer.account.personal_data.error_occured' | t }}",
+                    "success": "{{ 'customer.account.personal_data.saved_success' | t }}"
+                  }
+                </script>
+
+                <div class="d-none mb-2" data-alert="status"></div>
+
+                {% assign family_members_count = 10 %}
+
+                {% for i in (1..family_members_count) %}
+                  {% assign family_member_key = 'family_member_' | append: i %}
+                  {% assign family_member_data = customer.metafields.custom[family_member_key] %}
+
+                  {% if family_member_data %}
+                    {% assign family_member_array = family_member_data | split: ', ' %}
+                  {% else %}
+                    {% assign family_member_array = '' | split: '' %}
+                  {% endif %}
+
+                  <div class="fields mb-5 grid grid-cols-1 gap-4 lg:grid-cols-4">
+                    <div class="input-group">
+                      <input
+                        type="text"
+                        id="FamilydataFirstNameNew_{{ i }}"
+                        class="peer"
+                        name="name_{{ i }}"
+                        autocomplete="given-name"
+                        placeholder=" "
+                        value="{{ family_member_array[0] | default: '' | strip }}"
+                      >
+                      <label for="FamilydataFirstNameNew_{{ i }}">{{ 'templates.contact.form.name' | t }}</label>
+                    </div>
+
+                    <div class="input-group">
+                      <label class="pt-[2px]" class="select-label" for="FamilydataSex_{{ i }}">
+                        {{ 'customer.addresses.family_sex' | t }}
+                      </label>
+                      <div class="select">
+                        <select
+                          class="mt-[2px] w-full !pt-[20px] lg:h-[52px]"
+                          id="FamilydataSex_{{ i }}"
+                          name="gender_{{ i }}"
+                        >
+                          <option
+                            value=""
+                            {% if family_member_array[1] != 'Male' and family_member_array[1] != 'Female' %}
+                              selected
+                            {% endif %}
+                          >
+                            {{ 'customer.account.personal_data.select_gender' | t }}
+                          </option>
+                          <option
+                            value="Male"
+                            {% if family_member_array[1] == 'Male' %}
+                              selected
+                            {% endif %}
+                          >
+                            {{ 'customer.addresses.family_sex_male' | t }}
+                          </option>
+                          <option
+                            value="Female"
+                            {% if family_member_array[1] == 'Female' %}
+                              selected
+                            {% endif %}
+                          >
+                            {{ 'customer.addresses.family_sex_female' | t }}
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="input-group input-group-date">
+                      <input
+                        type="date"
+                        id="DOBFamilyNew_{{ i }}"
+                        class="peer h-[52px] w-56 appearance-none !text-left md:w-full md:appearance-auto lg:h-auto"
+                        name="dob_{{ i }}"
+                        placeholder=" "
+                        value="{{ family_member_array[2] | default: '' | strip }}"
+                      >
+                      <label for="DOBFamilyNew_{{ i }}">{{ 'customer.addresses.family_dob' | t }}</label>
+                    </div>
+                  </div>
+                {% endfor %}
+
+                <input type="hidden" name="form_type" value="family">
+                <input type="hidden" name="customer_id" value="{{ customer.id }}">
+                <input
+                  type="hidden"
+                  name="phone"
+                  value="{{ customer.metafields.custom.customer_mobile | prepend: '+' }}"
+                >
+                {% if localization.language.endonym_name != 'English' %}
+                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+                {% else %}
+                  <input type="hidden" name="country_code" value="">
+                {% endif %}
+
+                {% assign family_members_count = 10 %}
+
+                {% for i in (1..family_members_count) %}
+                  {% assign family_member_key = 'family_member_' | append: i %}
+                  {% assign family_member_data = customer.metafields.custom[family_member_key] %}
+
+                  {% if family_member_data %}
+                    {% assign family_member_array = family_member_data | split: ', ' %}
+                  {% else %}
+                    {% assign family_member_array = '' | split: '' %}
+                  {% endif %}
+                  <input
+                    type="hidden"
+                    name="family_member_{{ i }}"
+                    value="{{ family_member_data }}"
+                  >
+                {% endfor %}
+                {% render 'hidden-form-fields' %}
+                <div class="popupscreen-footer ml-auto">
+                  <button
+                    data-update="{{ 'customer.account.personal_data.update_details' | t }}"
+                    data-wait="{{ 'customer.account.personal_data.please_wait' | t }}"
+                    type="submit"
+                  >
+                    {{ 'customer.account.personal_data.update_details' | t }}
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

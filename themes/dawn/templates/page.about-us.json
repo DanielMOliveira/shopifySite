@@ -1,0 +1,102 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "About Zippy",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>About Zippy</strong></h6>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "text_Dyj6Kd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Zippy is a Portuguese brand with more than two decades of experience in children and nursery retail segment. Founded in 1996, in Porto, we benefit from the well-known specialized Portuguese textile industry know-how, in the north of Portugal.</p><p></p><p>Our DNA is optimistic. We see life in an uncomplicated way. It all comes into a practical side combined to a functional and accessible design. We dress babies and children who see the days full of possibilities and try to make the most of every moment and opportunity. A place where every member of the family is invited. Our products are available in 40 countries around the world and we keep growing with confidence.</p>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Quality",
+            "link_url": "shopify://pages/quality"
+          }
+        },
+        "navigation_item_ygTNRj": {
+          "type": "navigation_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Sustainability",
+            "link_url": "shopify://pages/sustainability"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sonae Group",
+            "link_url": "shopify://pages/sonae-group"
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Cookie Policy",
+            "link_url": "shopify://pages/cookies-policy"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "text_ndbx44",
+        "text_Dyj6Kd",
+        "navigation_item_YdmhFw",
+        "navigation_item_ygTNRj",
+        "navigation_item_eJDVpT",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}

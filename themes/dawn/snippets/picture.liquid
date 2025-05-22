@@ -1,0 +1,52 @@
+{% comment %}
+  Renders picture element.
+
+  Accepts:
+  - image_desktop: {Object}
+  - image_mobile: {Object}
+  - loading: {String}
+  - class: {String}
+  - id: {String}
+
+  Usage:
+      {% render 'picture', placeholder: placeholder, image_desktop: image_desktop, image_mobile: image_mobile, loading: 'eager', class: class, id: id %}
+{% endcomment %}
+
+{% liquid
+  if placeholder == blank
+    assign placeholder = 'hero-apparel-1' | placeholder_svg_tag
+  endif
+
+  assign focal_point_desktop = image_desktop.presentation.focal_point
+  assign focal_point_mobile = image_mobile.presentation.focal_point | default: focal_point_desktop
+%}
+
+{% if image_mobile != blank or image_desktop != blank %}
+  <picture class="picture--{{ id }}">
+    <source srcset="{{ image_mobile | image_url: width: 768 }}" media="(max-width: 767px)">
+    <source srcset="{{ image_desktop | image_url }}" media="(min-width: 768px)">
+
+    <img
+      src="{{ image_mobile | image_url: width: 768 }}"
+      alt="{{ image_mobile.alt | default: 'Image' }}"
+      loading="{% if loading %}{{ loading }}{% else %}lazy{% endif %}"
+      height="{{ image_mobile.height }}"
+      width="{{ image_mobile.width }}"
+      class="block mb-0{% if class %} {{ class }}{% endif %}"
+    >
+  </picture>
+
+  {% style %}
+    .picture--{{ id }} img {
+        object-position: {{ focal_point_mobile }};
+    }
+
+    @media screen and (min-width: 768px) {
+        .picture--{{ id }} img {
+            object-position: {{ focal_point_desktop }};
+        }
+    }
+  {% endstyle %}
+{% else %}
+  {{ placeholder }}
+{% endif %}

@@ -1,0 +1,212 @@
+{% liquid
+  assign chevron_class = chevron_class
+%}
+
+<div class="account-order_history border-b md:border-none">
+  <a
+    href="#"
+    data-nav-button="false"
+    data-id="order_history"
+    class="customer-nav__item flex flex-1 py-5 md:hidden md:justify-center md:px-10"
+  >
+    {{ 'customer.account.navigation.order_history' | t }}
+    {% render 'icon', icon: 'chevron-down', class: chevron_class %}
+  </a>
+  <div
+    class="hidden max-[767px]:overflow-hidden max-[767px]:transition-all"
+    data-nav-content="true"
+    data-id="order_history"
+  >
+    <h2 class="mb-3 text-base">{{ 'customer.orders.title' | t }}</h2>
+
+    {%- if customer.orders.size > 0 -%}
+      <table role="table" class="customer order-history w-full border-0 text-left">
+        <caption class="visually-hidden">
+          {{ 'customer.orders.title' | t }}
+        </caption>
+        <thead role="rowgroup" class="hidden md:table-header-group">
+          <tr role="row">
+            <th
+              class="border-beige-50 border border-b-0 p-2 py-3"
+              id="ColumnOrder"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.order_number' | t }}
+            </th>
+            <th
+              class="border-beige-50 border border-b-0 p-2 py-3"
+              id="ColumnDate"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.date' | t }}
+            </th>
+            <th
+              class="border-beige-50 border border-b-0 p-2 py-3"
+              id="ColumnPayment"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.payment_status' | t }}
+            </th>
+            <th
+              class="border-beige-50 !hidden border border-b-0 p-2 py-3"
+              id="ColumnFulfillment"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.fulfillment_status' | t }}
+            </th>
+            <th
+              class="border-beige-50 border border-b-0 p-2 py-3"
+              id="ColumnTotal"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.total' | t }}
+            </th>
+            <th
+              class="border-beige-50 border border-b-0 p-2 py-3"
+              id="ColumnTotal"
+              scope="col"
+              role="columnheader"
+            >
+              {{ 'customer.orders.refund' | t }}
+            </th>
+          </tr>
+        </thead>
+        <tbody role="rowgroup">
+          {%- for order in customer.orders -%}
+            {% liquid
+              assign available_days = 35
+              assign seconds = available_days | times: 24 | times: 60 | times: 60
+              assign today = 'now' | date: '%s' | date: '%Y-%m-%d'
+              assign end_date = order.created_at | date: '%s' | plus: seconds | date: '%Y-%m-%d'
+            %}
+
+            <tr role="row" class="border-beige-50 border-b text-sm last:border-none md:border-b-0 md:text-base">
+              <td
+                id="RowOrder"
+                class="items-right flex px-0 md:table-cell md:border md:px-2 md:py-3 md:border-beige-50{% unless forloop.first %} !pt-8 md:!pt-3{% endunless %}{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                role="cell"
+                headers="ColumnOrder"
+                data-label="{{ 'customer.orders.order_number' | t }}"
+              >
+                <a
+                  href="{{ order.customer_url }}"
+                  class="underline"
+                  aria-label="{{ 'customer.orders.order_number_link' | t: number: order.name }}"
+                >
+                  {{ order.name }}
+                </a>
+              </td>
+              <td
+                class="items-right flex px-0 md:table-cell md:border md:px-2 md:py-3 md:border-beige-50{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                headers="RowOrder ColumnDate"
+                role="cell"
+                data-label="{{ 'customer.orders.date' | t }}"
+              >
+                {{ order.created_at | time_tag: format: 'date' }}
+              </td>
+              <td
+                class="items-right flex px-0 md:table-cell md:border md:px-2 md:py-3 md:border-beige-50{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                headers="RowOrder ColumnPayment"
+                role="cell"
+                data-label="{{ 'customer.orders.payment_status' | t }}"
+              >
+                {{ order.financial_status_label }}
+              </td>
+              <td
+                class="items-right flex !hidden px-0 md:table-cell md:border md:px-2 md:py-3 md:border-beige-50{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                headers="RowOrder ColumnFulfillment"
+                role="cell"
+                data-label="{{ 'customer.orders.fulfillment_status' | t }}"
+              >
+                {{ order.fulfillment_status_label }}
+              </td>
+              <td
+                class="items-right md:border-beige-50 flex px-0 md:table-cell md:border md:px-2 md:py-3 md:!pb-3{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                headers="RowOrder ColumnTotal"
+                role="cell"
+                data-label="{{ 'customer.orders.total' | t }}"
+              >
+                {{ order.total_net_amount | money_with_currency }}
+              </td>
+              <td
+                class="items-right md:border-beige-50 flex px-0 !pb-8 md:table-cell md:border md:px-2 md:py-3 md:!pb-3{% unless forloop.last %} md:!border-b-0{% endunless -%}"
+                headers="RowOrder ColumnTotal"
+                role="cell"
+                data-label="{{ 'customer.orders.refund' | t }}"
+              >
+                {% if today < end_date %}
+                  {% if order.shipping_address.country == 'Portugal' %}
+                    <a
+                      class="underline"
+                      href="/pt/pages/pedido-devolucao"
+                    >
+                      {{ 'customer.orders.refund' | t }}
+                    </a>
+                  {% elsif order.shipping_address.country == 'Spain' %}
+                    <a
+                      class="underline"
+                      href="/es/pages/pedir-devolucion"
+                    >
+                      {{ 'customer.orders.refund' | t }}
+                    </a>
+                  {% else %}
+                    <p>{{ 'customer.orders.refund_not_eligible' | t }}</p>
+                  {% endif %}
+                {% endif %}
+              </td>
+            </tr>
+          {%- endfor -%}
+        </tbody>
+      </table>
+    {%- else -%}
+      <p>{{ 'customer.orders.none' | t }}</p>
+    {%- endif -%}
+
+    {%- if paginate.pages > 1 -%}
+      {%- if paginate.parts.size > 0 -%}
+        <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+          <ul role="list">
+            {%- if paginate.previous -%}
+              <li>
+                <a href="{{ paginate.previous.url }}" aria-label="{{ 'general.pagination.previous' | t }}">
+                  {% render 'icon', icon: 'chevron-left' %}
+                </a>
+              </li>
+            {%- endif -%}
+
+            {%- for part in paginate.parts -%}
+              <li>
+                {%- if part.is_link -%}
+                  <a href="{{ part.url }}" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                    {{- part.title -}}
+                  </a>
+                {%- else -%}
+                  {%- if part.title == paginate.current_page -%}
+                    <span aria-current="page" aria-label="{{ 'general.pagination.page' | t: number: part.title }}">
+                      {{- part.title -}}
+                    </span>
+                  {%- else -%}
+                    <span>{{ part.title }}</span>
+                  {%- endif -%}
+                {%- endif -%}
+              </li>
+            {%- endfor -%}
+
+            {%- if paginate.next -%}
+              <li>
+                <a href="{{ paginate.next.url }}" aria-label="{{ 'general.pagination.next' | t }}">
+                  {% render 'icon', icon: 'chevron-right' %}
+                </a>
+              </li>
+            {%- endif -%}
+          </ul>
+        </nav>
+      {%- endif -%}
+    {%- endif -%}
+  </div>
+</div>

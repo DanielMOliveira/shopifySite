@@ -1,0 +1,242 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign title = section.settings.title
+  assign view_all_categories_text = section.settings.view_all_categories_text
+  assign tabs = ''
+
+  for block in section.blocks
+    if block.settings.category != blank
+      assign tabs = tabs | append: block.settings.kid_type | append: ','
+    endif
+  endfor
+
+  assign tabs = tabs | split: ',' | uniq
+%}
+
+<section id="section-{{ section.id }}" class="overflow-hidden">
+  <div class="container-valantic">
+    {% if title != blank %}
+      <h2 class="mb-4 hidden text-3_5xl !leading-8 text-gray-800 md:block">{{ title }}</h2>
+    {% endif %}
+
+    {% if section.blocks.size > 0 %}
+      {% render 'kid-types-tabs', tabs: tabs, section_id: section.id, class: 'md:hidden' %}
+
+      <div
+        class="swiper xl:!px-6"
+        data-slider='
+          {
+              "navigation": {
+                  "prevEl": "#section-{{ section.id }} .swiper-button-prev",
+                  "nextEl": "#section-{{ section.id }} .swiper-button-next"
+              },
+              "breakpoints": {
+                  "768": {
+                      "slidesPerView": 5,
+                      "spaceBetween": 20
+                  },
+                  "1024": {
+                      "slidesPerView": 7,
+                      "spaceBetween": 20
+                  },
+                  "1440": {
+                      "slidesPerView": "auto",
+                      "spaceBetween": 0
+                  }
+              }
+          }
+        '
+      >
+        <div class="swiper-wrapper max-[767px]:!grid max-[767px]:!transform-none max-[767px]:grid-cols-3 max-[767px]:gap-x-2 max-[767px]:gap-y-5">
+          {% for block in section.blocks %}
+            {% liquid
+              assign category = block.settings.category
+              assign category_name = block.settings.category_name | default: category.title
+              assign kid_type = block.settings.kid_type
+
+              assign image_desktop = block.settings.desktop_image
+              assign image_mobile = block.settings.mobile_image | default: image_desktop
+              assign placeholder = 'collection-1' | placeholder_svg_tag
+              assign image_class = 'object-contain mx-auto bg-gray-100 rounded-lg h-[108px] w-full transition-all group-hover:shadow-[0px_8px_8px_0px_rgba(0,0,0,0.08)] md:rounded-full md:min-h-32 md:min-w-32 md:max-h-32 md:max-w-32'
+              assign image_id = section.id | append: '-' | append: block.id
+            %}
+
+            {% if category != blank %}
+              <div
+                class="swiper-slide group max-[767px]:!w-full md:mr-5 xl:!w-32{% if tabs[0] != kid_type %} !hidden md:!block{% endif %}"
+                data-tab="{{ kid_type }}"
+              >
+                <a
+                  href="{{ category.url }}"
+                  title="{{ category_name }}"
+                  class="block h-full w-full"
+                >
+                  {% render 'picture',
+                    image_desktop: image_desktop,
+                    image_mobile: image_mobile,
+                    placeholder: placeholder,
+                    class: image_class,
+                    id: image_id
+                  %}
+
+                  {% if category_name != blank %}
+                    <h3 class="mt-1 text-center text-2xs font-medium text-gray-800 transition-colors group-hover:text-primary md:text-gray-600">
+                      {{ category_name }}
+                    </h3>
+                  {% endif %}
+                </a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="swiper-button-prev !left-0 !top-10 !hidden !transform-none !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:!text-white md:!inline-flex xl:!-right-6">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next !right-0 !top-10 !hidden !transform-none !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:!text-white md:!inline-flex">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      </div>
+
+      {% if view_all_categories_text != blank %}
+        <div class="mt-6 md:hidden">
+          <a
+            href="/collections"
+            title="{{ view_all_categories_text }}"
+            class="button tertiary w-full !border-primary !py-[9px]"
+          >
+            {{ view_all_categories_text }}
+          </a>
+        </div>
+      {% endif %}
+    {% endif %}
+  </div>
+
+  {% style %}
+    @media screen and (min-width: 768px) {
+        #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-slide {
+            width: calc(20% - 18px);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-slide {
+            width: calc((100% / 7) - 16px);
+        }
+    }
+
+    @media screen and (min-width: 1440px) {
+        #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-slide {
+            width: calc((100% / 9) - 16px);
+        }
+    }
+  {% endstyle %}
+</section>
+
+{% schema %}
+{
+  "name": "Popular Categories",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Popular categories"
+    },
+    {
+      "type": "text",
+      "id": "view_all_categories_text",
+      "label": "View All Categories Text",
+      "default": "View all categories"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "Category",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "mobile_image",
+          "label": "Mobile Image",
+          "info": "Until 768px"
+        },
+        {
+          "type": "image_picker",
+          "id": "desktop_image",
+          "label": "Desktop Image",
+          "info": "From 768px"
+        },
+        {
+          "type": "select",
+          "id": "kid_type",
+          "label": "Kid Type",
+          "default": "Girls",
+          "options": [
+            { "value": "Girls", "label": "Girls" },
+            { "value": "Boys", "label": "Boys" },
+            { "value": "Nursery", "label": "Nursery" }
+          ],
+          "info": "Uses for mobile tabs. Until 768px"
+        },
+        {
+          "type": "collection",
+          "id": "category",
+          "label": "Category"
+        },
+        {
+          "type": "text",
+          "id": "category_name",
+          "label": "Custom Category Name",
+          "info": "Use a custom name instead of a default category name."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Popular Categories"
+    }
+  ]
+}
+{% endschema %}

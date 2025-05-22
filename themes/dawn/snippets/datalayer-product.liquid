@@ -1,0 +1,132 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - lazy_load: {Boolean} Image should be lazy loaded
+  - section_id: {String} The ID of the section that contains this card.
+  - index: {Number} The index of the product in the array.
+
+  Usage:
+      {% render 'card-product', product: product, section_id: id, index: forloop.index %}
+{% endcomment %}
+
+{% liquid
+  assign product_title = product.title | replace: "'", '&#39;'
+  assign price = product.price | default: 1999 | money_without_currency | replace: ',', '.'
+  assign product_sku = product.selected_or_first_available_variant.sku | default: product.metafields.custom.sku
+  assign compare_at_price = product.selected_or_first_available_variant.compare_at_price
+  assign old_price = compare_at_price | money_without_currency | replace: ',', '.'
+  assign product_color_data = product.metafields.custom.colorswatches.value
+  assign product_color_label = product_color_data.color_name | default: 'Label is not configured'
+  assign section_id = section_id | replace: '--', '_' | replace: 'template_', '' | replace: '__', '_' | replace: '-', '_'
+
+  if section_id contains 'featured_products'
+    assign item_list_id = 'featured_products'
+    assign item_list_name = 'Featured Products'
+  endif
+
+  if section_id contains 'related_products'
+    assign item_list_id = 'related_products'
+    assign item_list_name = 'Related Products'
+  endif
+
+  if section_id contains 'cart_recommended_products'
+    assign item_list_id = 'cart_recommended_products'
+    assign item_list_name = 'Cart Recommended Products'
+  endif
+
+  if section_id contains 'cart_footer' and template contains 'cart'
+    assign item_list_id = 'gift_bag_products'
+    assign item_list_name = 'Gift Bag Products'
+  endif
+
+  if section_id contains 'minicart'
+    assign item_list_id = 'minicart'
+    assign item_list_name = 'Minicart'
+  endif
+
+  if section_id contains 'cross_selling_products'
+    assign item_list_id = 'cross_selling_products'
+    assign item_list_name = 'Cross Selling Products'
+  endif
+
+  if section_id contains 'product_grid' and template contains 'collection'
+    assign item_list_id = 'category_page'
+    assign item_list_name = 'Category Page'
+  endif
+
+  if section_id contains 'main' and template contains 'product'
+    assign item_list_id = 'product_page'
+    assign item_list_name = 'Product page'
+  endif
+
+  if section_id contains 'main' and template contains 'search'
+    assign item_list_id = 'search_results'
+    assign item_list_name = 'Search Results'
+  endif
+
+  if section_id contains 'combine_us_products'
+    assign item_list_id = 'combine_us_products'
+    assign item_list_name = 'Combine us products'
+  endif
+
+  if section_id contains 'cart'
+    assign item_list_id = 'cart_page'
+    assign item_list_name = 'Cart Page'
+  endif
+
+  if index == blank
+    assign index = 0
+  endif
+
+  if price == blank
+    assign price = 0
+  endif
+
+  if old_price != blank and old_price > price
+    assign discount = old_price | minus: price
+  else
+    assign discount = 0
+  endif
+
+  if product.id != blank
+    assign item_id = product.id
+  else
+    assign item_id = product_sku
+  endif
+%}
+
+{% capture item_variant %}{{ 'products.product.color' | t }}: {{ product_color_label }}{% endcapture %}
+
+{% if product.variants.size > 1 %}
+  {% for variant in product.options_with_values %}
+    {% capture item_variant %}{{ 'products.product.color' | t }}: {{ product_color_label }}, {{ variant.name }}: {{ variant.selected_value | remove: '\n' }}{% endcapture %}
+  {% endfor %}
+{% endif %}
+
+<div
+  class="card-product_gtm card-product_gtm_{{ product.id }}"
+  data-gtm='
+    {
+    "index": {{ index }},
+    "item_name": {{ product_title | json }},
+    "item_id": {{ item_id | json }},
+    "coupon": "-",
+    "currency": {{ cart.currency.iso_code | json }},
+    "discount": {{ discount | json }},
+    "price": {{ price }},
+    "item_variant": {{ item_variant | json }},
+    "item_brand": {{ product.vendor | json }},
+    {%- for collection in product.collections -%}
+      {%- if forloop.index == 1 -%}
+        "item_category": {{ collection.title | json }},
+      {%- else -%}
+        "item_category{{ forloop.index | json }}": {{ collection.title | json }},
+      {%- endif -%}
+    {%- endfor -%}
+    "item_list_id": {{ item_list_id | json }},
+    "item_list_name": {{ item_list_name | json }}
+    }
+  '
+></div>

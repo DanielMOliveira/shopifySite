@@ -1,0 +1,338 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.lista-nascimento.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_bAEMJ": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "custom_css": [
+
+      ],
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n    html {\n        scroll-padding-top: 10vw;\n    }\n  \n    .breadcrumbs {\n        display: none;\n    }\n  \n    #shopify-section-template--16312099143889__main .container-valantic,\n    #zybirthlist div {\n        padding: 0;\n        margin: 0;\n    }\n  \n    .zyBgWhite {\n        background-color: #FBFBF8;\n    }\n  \n    .zyBgBeige {\n        background-color: #F2F0E9;\n    }\n  \n    #babyzippy-navbar {\n        box-shadow: 0 2px #00000015;\n        background-color: #FBFBF8;\n        padding: 1rem 0;\n        position: fixed;\n        z-index: 2;\n        width: 100%;\n    }\n  \n    #babyzippy-navbar a {\n        text-decoration: none;\n    }\n  \n    #babyzippy-navbar a:hover {\n        text-decoration: none;\n    }\n  \n    #babyzippy-navbar button {\n        cursor: pointer;\n    }\n  \n    #babyzippy-navbar p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221F20;\n        font-size: 0.688rem;\n        letter-spacing: 0.01rem;\n        text-align: center;\n        margin: 0;\n    }\n  \n    #babyzippy-navbar button {\n        background-color: transparent;\n        border: none;\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 500;\n        color: #221F20;\n        font-size: 0.75rem;\n        letter-spacing: 0.07rem;\n        min-width: 14rem;\n        text-transform: uppercase;\n        padding: 0;\n        align-items: center;\n    }\n  \n    #babyzippy-navbar button:hover,\n    #babyzippy-navbar .active {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 700;\n        text-decoration: underline;\n        text-underline-offset: 0.25rem;\n        transform: none;\n    }\n  \n    #babyzippy-navbar .nav-row {\n        display: flex;\n        align-items: center;\n        justify-content: space-between;\n    }\n  \n    #babyzippy-navbar .goback {\n        width: 10%;\n    }\n  \n    #babyzippy-navbar .navbar-slider {\n        display: flex;\n        justify-content: space-around;\n        align-items: center;\n        width: 90%;\n    }\n  \n    #zybirthlist img {\n        max-width: 100%;\n        height: auto;\n    }\n  \n    #babyzippy-navbar .container-fluid,\n    #zybirthlist .container-fluid {\n        max-width: 100%;\n    }\n  \n    #zybirthlist .main-container-text {\n        width: 60%;\n        margin: auto;\n        padding-top: 3rem;\n        text-align: center;\n    }\n  \n    #zybirthlist .main-container-text-2 {\n        width: 50%;\n        margin: auto;\n        padding: 3rem 0;\n        text-align: center;\n    }\n  \n    #zybirthlist .content-grid {\n        width: 90%;\n        margin: auto;\n        padding-top: 3rem;\n    }\n  \n    #zybirthlist .baby-zippy-logo {\n        width: 20%;\n        padding: 5rem 0 2rem 0;\n        margin: auto;\n    }\n  \n    #zybirthlist h1 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 700;\n        color: #FF4141;\n        font-size: 2.25rem;\n        letter-spacing: 0.04rem;\n        line-height: 1.3;\n        text-align: center;\n    }\n  \n    #zybirthlist h2 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221f20;\n        font-size: 1.875rem;\n        letter-spacing: 0.04rem;\n        line-height: 1.2;\n        text-align: center;\n        margin: 1.071rem 0;\n    }\n  \n    #zybirthlist p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221f20;\n        font-size: 1.125rem;\n        letter-spacing: 0.02rem;\n        line-height: 1.4;\n        text-align: center;\n        padding: 1rem 0;\n    }\n  \n    #zybirthlist u {\n        text-underline-offset: 0.25rem;\n    }\n  \n    #zybirthlist .benefits-row {\n        width: 60%;\n        margin: auto;\n        padding: 5rem 0 3rem 0;\n    }\n  \n    #zybirthlist .benefits-slider {\n        display: flex;\n        justify-content: space-around;\n        align-items: center;\n        flex-direction: row;\n    }\n  \n    #zybirthlist .benefits-slider h3 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n        font-size: 1.875rem;\n        letter-spacing: 0.04rem;\n        color: #FF4141;\n        line-height: 0.8;\n        text-align: center;\n        position: relative;\n        z-index: 1;\n        margin: 0;\n    }\n  \n    #zybirthlist .benefits-slider .benefit-bold {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n        font-size: 1.25rem;\n        letter-spacing: 0;\n        color: #FF4141;\n    }\n  \n    #zybirthlist .benefits-slider .benefit-book {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 400;\n        font-size: 1.125rem;\n        letter-spacing: 0;\n        color: #FF4141;\n    }\n  \n    #zybirthlist .benefits-slider .plus {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-size: 3rem;\n        letter-spacing: 0;\n        color: #221f20;\n    }\n  \n  \n    #zybirthlist .benefits-slider a {\n        text-decoration: underline;\n        text-underline-offset: 0.20rem;\n        color: #FF4141;\n        z-index: 1;\n    }\n  \n    #zybirthlist .benefit {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        width: 20%;\n    }\n  \n    #zybirthlist .benefit a,\n    #zybirthlist .benefit a:hover {\n        text-decoration: none;\n    }\n  \n    #zybirthlist .white-circle-benefits {\n        position: absolute;\n        background-color: #FBFBF8;\n        border-radius: 50%;\n        width: 200px;\n        height: 200px;\n        z-index: 0;\n        top: 50%;\n        left: 50%;\n        transform: translate(-50%, -50%);\n        display: block;\n    }\n  \n    #zybirthlist button {\n        background-color: #FF4141;\n        border: none;\n        width: 15rem;\n        letter-spacing: 0.05rem;\n        margin-top: 2rem;\n    }\n  \n    #zybirthlist .ol-lista {\n        display: flex;\n        align-items: center;\n        justify-content: start;\n        padding: 1.071rem 0;\n    }\n  \n    #zybirthlist .ol-lista p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: hsl(340, 5%, 13%);\n        font-size: 1.125rem;\n        letter-spacing: 0.02rem;\n        line-height: 1.4;\n        text-align: left;\n        margin: 0;\n        width: 100%;\n    }\n  \n    #zybirthlist .ol-lista a,\n    #zybirthlist .smallertext a {\n        text-decoration: underline;\n        text-underline-offset: 0.20rem;\n    }\n  \n    #zybirthlist .circle-number {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 500;\n        background-color: #E8E6DA;\n        color: #221F20;\n        font-size: 1.125rem;\n        letter-spacing: 0.02rem;\n        line-height: 1;\n        text-align: center;\n        width: 60px;\n        height: 55px;\n        border-radius: 50%;\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        margin-right: 1rem;\n    }\n  \n    #zybirthlist span {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n    }\n  \n    #zybirthlist .smallertext {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221F20;\n        font-size: 1rem;\n        letter-spacing: 0.02rem;\n        line-height: 1.2;\n        text-align: center;\n        margin: 0;       \n    }\n  \n    #zybirthlist .container-images {\n        display: grid;\n        grid-template-columns: repeat(3, 1fr);\n        gap: 1rem;\n        padding: 3rem 0;\n        width: 80%;\n        margin: auto;\n    }\n  \n    #zybirthlist .img-container {\n        position: relative;\n        width: 100%;\n    }\n  \n    #zybirthlist .detail-content-1 {\n        position: absolute;\n        right: 2%;\n        top: 5%;\n        width: 45%;\n    }\n  \n    #zybirthlist .detail-content-2 {\n        position: absolute;\n        left: 10%;\n        bottom: 3%;\n        width: 50%;\n    }\n  \n    #zybirthlist .detail-content-3 {\n        position: absolute;\n        right: 4%;\n        bottom: 5%;\n        width: 50%;\n    }\n  \n    #zybirthlist .detail-title {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n        color: #221F20;\n        font-size: 0.875rem;\n        letter-spacing: 0;\n        line-height: 1.3;\n        text-align: left;\n        margin: 0;\n        text-transform: uppercase;\n        padding: 0;\n    }\n  \n    #zybirthlist .detail-title::before {\n        content: '';\n        background-color: #221F20;\n        width: 10px;\n        height: 10px;\n        border-radius: 50%;\n        border: solid 1px #221F20;\n        display: inline-flex;\n        margin-right: 0.3rem;\n        margin: -0.35rem;\n        left: -1rem;\n        position: relative;\n    }\n  \n    #zybirthlist .detail-text {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221F20;\n        font-size: 0.875rem;\n        letter-spacing: 0;\n        line-height: 1.3;\n        text-align: left;\n        margin: 0;\n        padding: 0;\n    }\n  \n    #zybirthlist h3 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221f20;\n        font-size: 1.875rem;\n        letter-spacing: 0.04rem;\n        line-height: 1.2;\n        text-align: center;\n        margin: 1.071rem 0;\n    }\n  \n    #zybirthlist h3>span {\n        font-size: 1.5rem;\n        font-weight: 400;\n    }\n  \n    #zybirthlist h3>b {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n  \n    }\n  \n    #zybirthlist .container-bebevida {\n        width: 60%;\n        padding: 5rem 0 3rem 0;\n        margin: auto;\n    }\n  \n    #zybirthlist .bebevida-flex {\n        position: relative;\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 0.5rem;\n        z-index: 1;\n    }\n  \n    #zybirthlist .white-circle {\n        position: absolute;\n        background-color: #FBFBF8;\n        border-radius: 50%;\n        width: 280px;\n        height: 280px;\n        z-index: 0;\n        display: block;\n    }\n  \n    #zybirthlist .logo-bebevida {\n        width: 25%;\n        margin: auto;\n        position: relative;\n        z-index: 1;\n    }\n  \n    #zybirthlist .boldtext {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n        color: #221F20;\n        font-size: 1.313rem;\n        letter-spacing: 0;\n        line-height: 1.3;\n        text-align: center;\n        text-transform: unset;\n        margin: 0;\n        z-index: 1;\n    }\n  \n    #zybirthlist .no-bold {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 400;\n        letter-spacing: 0;\n    }\n  \n    #zybirthlist .percentage {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 800;\n        color: #221F20;\n        font-size: 1.875rem;\n        letter-spacing: 0.03rem;\n        line-height: 1;\n        text-align: center;\n        text-transform: unset;\n        margin-bottom: 0;\n    }\n  \n    #zybirthlist .text-left {\n        text-align: left;\n    }\n  \n    #zybirthlist .py-lg-3 {\n        padding: 3rem 0;\n    }\n  \n    #zybirthlist .pb-lg-3 {\n        padding-bottom: 3rem;\n    }\n  \n    \n    #zybirthlist .underline {\n        text-transform: underline;\n    }\n  \n  \n    @media (max-width: 991px) {\n  \n        #zybirthlist .main-container-text,\n        #zybirthlist .main-container-text-2 {\n            width: 90%;\n        }\n  \n        #zybirthlist .container-bebevida {\n        width: 90%;\n        padding: 5rem 0 1rem 0;\n    }\n  \n        #zybirthlist .benefits-row {\n            width: 90%;\n            padding: 3rem 0;\n        }\n  \n        #zybirthlist .container-images {\n            grid-template-columns: repeat(2, 1fr);\n            grid-template-rows: repeat(2, 1fr);\n            gap: 0.5rem;\n            width: 100%;\n        }\n  \n        #zybirthlist .container-images .img-1 {\n            grid-area: 1 / 1 / 2 / 3;\n        }\n  \n        #zybirthlist .container-images .img-2 {\n            grid-area: 2 / 1 / 3 / 2;\n        }\n  \n        #zybirthlist .container-images .img-3 {\n            grid-area: 2 / 2 / 3 / 3;\n        }\n  \n        #zybirthlist .ol-lista {\n            display: flex;\n            flex-direction: column;\n            padding: 1rem 0;\n        }\n  \n        #zybirthlist .ol-lista p {\n            text-align: center;\n            padding-left: 0;\n        }\n  \n        #babyzippy-navbar .nav-row {\n            justify-content: space-around;\n        }\n  \n        #babyzippy-navbar .goback {\n            width: 15%;\n        }\n  \n        #babyzippy-navbar .navbar-slider {\n            overflow-x: scroll;\n            width: 85%;\n        }\n  \n  \n        #babyzippy-navbar .navbar-slider {\n            scrollbar-color: rgba(251, 251, 248, 0) rgba(251, 251, 248, 0);\n        }\n  \n        #zybirthlist p {\n            padding-left: 0;\n        }\n  \n        #zybirthlist h2,\n        #zybirthlist h3,\n        #zybirthlist p {\n            text-align: center;\n        }\n    }\n  \n    @media only screen and (max-width: 768px) {\n  \n        #babyzippy-navbar {\n            padding: 0.5rem 0;\n        }\n  \n        #babyzippy-navbar button {\n            min-width: 12rem;\n  \n        }\n  \n        #zybirthlist .detail-content-1 {\n            left: 13%;\n            top: 5%;\n            width: 80%;\n        }\n  \n        #zybirthlist .detail-content-2 {\n            left: 13%;\n            bottom: 5%;\n            width: 80%;\n        }\n  \n        #zybirthlist .detail-content-3 {\n            left: 13%;\n            bottom: 10%;\n            width: 80%;\n        }\n  \n        #zybirthlist .detail-title,\n        #zybirthlist .detail-text {\n            font-size: 0.857rem;\n            line-height: 1.2;\n        }\n  \n        #zybirthlist .detail-title::before {\n            width: 6px;\n            height: 6px;\n            left: -0.7rem;\n            top: -0.2rem;\n        }\n  \n        #zybirthlist .detail-text {\n            margin-left: -0.25rem;\n        }\n  \n        #zybirthlist .white-circle-benefits {\n            width: 27vw;\n            height: 27vw;\n        }\n  \n        .py-3 {\n            padding: 3rem 0;\n        }\n  \n        .py-2 {\n            padding: 2rem 0;\n        }\n    }\n  \n    @media only screen and (max-width: 576px) {\n  \n        html {\n            scroll-padding-top: 35vw;\n        }\n  \n        #babyzippy-navbar .navbar-slider {\n            justify-content: flex-start;\n        }\n  \n        #zybirthlist .baby-zippy-logo {\n            width: 40%;\n        }\n  \n        #zybirthlist h1,\n        #zybirthlist h2,\n        #zybirthlist h3 {\n            font-size: 1.563rem;\n            letter-spacing: 0.025rem;\n        }\n  \n        #zybirthlist h3>span {\n            font-size: 1.5rem;\n            letter-spacing: 0.015rem;\n        }\n  \n        #zybirthlist .ol-lista p {\n            font-size: 1rem;\n        }\n  \n        #zybirthlist .boldtext {\n            font-size: 1rem;\n            letter-spacing: 0.015rem;\n        }\n  \n        #zybirthlist .smallertext {\n            font-size: 0.975rem;\n            letter-spacing: 0.01rem;\n            line-height: 1.4;\n        }\n  \n        #zybirthlist p {\n            font-size: 1rem;\n            letter-spacing: 0.02rem;\n            margin: 0.5rem 0 0 0;\n        }\n  \n        #zybirthlist h5 {\n            font-size: 0.75rem;\n            letter-spacing: 0.017rem;\n            line-height: 1.2rem;\n        }\n  \n        #zybirthlist .circle-number {\n            font-size: 1.125rem;\n            width: 12vw;\n            height: 12vw;\n            margin: 0;\n        }\n  \n        #zybirthlist .white-circle {\n            width: 50vw;\n            height: 50vw;\n        }\n  \n        #zybirthlist .benefits {\n            width: 25%;\n        }\n  \n        #zybirthlist .benefits-slider h3 {\n            font-size: 1rem;\n            letter-spacing: 0.02rem;\n            line-height: 0.9;\n        }\n  \n        #zybirthlist .benefits-slider .benefit-bold,\n        #zybirthlist .benefits-slider .benefit-book {\n            font-size: 0.8rem;\n            letter-spacing: 0;\n            line-height: 0.9;\n        }\n  \n        #zybirthlist .benefits-slider .plus {\n            font-size: 1.8rem;\n            letter-spacing: 0;\n            z-index: 1;\n        }\n  \n        #zybirthlist .benefits-slider .smallertext {\n            font-size: 0.8rem;\n            letter-spacing: 0;\n            padding: 0.4rem 0;\n            line-height: 0.9;\n        }\n    }\n  \n    @media (max-width: 440px) {\n        #zybirthlist .benefit {\n            width: 50%;\n        }\n    }\n  \n    @media (max-width: 389px) {\n  \n        #zybirthlist .benefits-slider h3 {\n            font-size: 0.875rem;\n            letter-spacing: 0;\n        }\n    }\n  </style>",
+        "color_scheme": "",
+        "header-f75c2fb682c3c9ffefa115be55d28940": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "custom_liquid_7Pd4w": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<nav id=\"babyzippy-navbar\">\n  <div class=\"container-fluid nav-row\">\n    <div class=\"goback\">\n      <a href=\"{{ pages['programa-baby-zippy'].url }}\"> <p>< Início</p> </a>\n    </div>\n    <div class=\"navbar-slider\">\n      <a href=\"{{ pages['programa-baby-zippy-lista-de-nascimento'].url }}\">\n        <p>Estou grávida / Já nasceu:</p>\n        <button class=\"active\">Lista de Nascimento</button>\n      </a>\n      <a href=\"{{ pages['bolsa-baby-zippy'].url }}\">\n        <p>Estou a tentar engravidar:</p>\n        <button>Bolsa Baby Zippy</button>\n      </a>\n    </div>\n  </div>\n</nav>\n\n<div id=\"zybirthlist\">\n  <section class=\"container-fluid zyBgBeige\">\n    <div class=\"main-container-text\">\n      <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/logo_baby-zippy.png?v=1725461756\" alt=\"Programa Baby Zippy\" class=\"baby-zippy-logo\" />\n      <h1>Lista de Nascimento</h1>\n      <p>A nossa Lista de Nascimento foi desenvolvida a pensar nos futuros pais. Se a sua família está à espera de um bebé, ou acabou de dar as boas-vindas a um, adira à nossa lista e receba:</p>\n    </div>\n  </section>\n\n  <section class=\"container-fluid zyBgBeige pb-3\">\n    <div class=\"benefits-row\">\n      <div class=\"benefits-slider\">\n        <div class=\"benefit\">\n          <h3>10%<br /><span class=\"benefit-bold\">desconto</span> <br /><span class=\"benefit-book\">durante um ano</span></h3>\n          <div class=\"white-circle-benefits\"></div>\n        </div>\n        <div class=\"plus\">+</div>\n        <div class=\"benefit\">\n          <a href=\"#oferta-primeiro-body\">\n            <h3>\n              OFERTA<br />\n              <span class=\"benefit-book\">do primeiro</span>\n              <span class=\"benefit-bold\"\n                ><br />\n                body</span\n              >\n              <span class=\"benefit-book\">do bebé</span>\n            </h3>\n            <a href=\"#oferta-primeiro-body\">\n              <p class=\"smallertext\" style=\"color: #ff4141; text-decoration: underline; text-underline-offset: 0.2rem\">Saber mais</p>\n            </a>\n            <div class=\"white-circle-benefits\"></div\n          ></a>\n        </div>\n        <div class=\"plus\">+</div>\n        <div class=\"benefit\">\n          <a href=\"#bebevida\">\n            <h3>35%<br /><span class=\"benefit-bold\">desconto</span> <br /><span class=\"benefit-book\">na BebéVida</span></h3>\n            <p class=\"smallertext\" style=\"color: #ff4141; text-decoration: underline; text-underline-offset: 0.2rem\">Saber mais</p>\n          </a>\n          <div class=\"white-circle-benefits\"></div>\n        </div>\n      </div>\n      <div class=\"main-container-text\">\n        <a href=\"/pages/newsletter\">\n          <button>Criar Lista de Nascimento</button>\n        </a>\n      </div>\n      <div class=\"main-container-text\">\n        <p>Tem alguma dúvida? Consulte a nossa secção de <a href=\"https://zippyonline.com/pt/pages/faq/#faq_listanascimento\"><span class=\"underline\">Perguntas Frequentes</span></a> acerca das Listas de Nascimento.</p>\n      </div>\n    </div>\n  </section>\n\n  <section class=\"container-fluid zyBgWhite\">\n    <div class=\"main-container-text-2\">\n      <h2>Como funciona?*</h2>\n      <div class=\"ol-lista\">\n        <div class=\"circle-number\">1</div>\n        <p><span>Crie a Lista de Nascimento</span>;</p>\n      </div>\n      <div class=\"ol-lista\">\n        <div class=\"circle-number\">2</div>\n        <p>Associe as suas compras de Puericultura e Recém-Nascido à sua lista;</p>\n      </div>\n      <div class=\"ol-lista\">\n        <div class=\"circle-number\">3</div>\n        <p>Visite-nos em qualquer loja Zippy para levantar o primeiro body do seu bebé;</p>\n      </div>\n      <div class=\"ol-lista\">\n        <div class=\"circle-number\">4</div>\n        <p><span>Receba 10%</span> de todo o valor acumulado na sua lista, <span>12 meses após criação da lista</span>.</p>\n      </div>\n      <div class=\"ol-lista\">\n        <div class=\"circle-number\">5</div>\n        <p>Consiga <span>35% de desconto na recolha de células estaminais</span>, com a BebéVida.<br /><a href=\"#bebevida\">Saiba como aqui</a></p>\n      </div>\n\n      <p class=\"smallertext\">\n        *Consulte\n        <a href=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Regulamento_Listas_de_Nascimento_V2.pdf?v=1728405049\">aqui</a> o regulamento\n      </p>\n    </div>\n  </section>\n</div>",
+        "color_scheme": "",
+        "header-a92ec465fe77ed42a6dc950ca77394ee": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "custom_liquid_aFqX6": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<nav id=\"babyzippy-navbar\">\n    <div class=\"container-fluid nav-row\">\n        <div class=\"goback\">\n            <a href=\"{{ pages['programa-baby-zippy'].url }}\">\n                <p>\n                    < Início</p> </a> </div> <div class=\"navbar-slider\">\n                        <a href=\"{{ pages['programa-baby-zippy-lista-de-nascimento'].url }}\">\n                            <p>Estou grávida / Já nasceu:</p>\n                            <button class=\"active\">Lista de Nascimento</button>\n                        </a>\n                        <a href=\"{{ pages['bolsa-baby-zippy'].url }}\">                            \n                            <p>Estou a tentar engravidar:</p>\n                            <button>Bolsa Baby Zippy</button>\n                        </a>\n        </div>\n    </div>\n</nav>\n\n<div id=\"zybirthlist\">\n    <section class=\"container-fluid zyBgBeige\">\n        <div class=\"main-container-text\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/logo_baby-zippy.png?v=1725461756\"\n                alt=\"Programa Baby Zippy\" class=\"baby-zippy-logo\">\n            <h1>Lista de Nascimento</h1>\n            <p>A nossa Lista de Nascimento foi desenvolvida a pensar nos futuros pais. Se a sua família está à espera de\n                um\n                bebé,\n                ou acabou de dar as boas-vindas a um,\n                adira à nossa lista e receba:</p>\n        </div>\n    </section>\n\n    <section class=\"container-fluid zyBgBeige pb-3\">\n        <div class=\"benefits-row\">\n            <div class=\"benefits-slider\">\n                <div class=\"benefit\">\n                    <h3>10%<br /><span class=\"benefit-bold\">desconto</span> <br><span class=\"benefit-book\">durante um\n                            ano</span>\n                    </h3>\n                    <div class=\"white-circle-benefits\"></div>\n                </div>\n                <div class=\"plus\">+</div>\n                <div class=\"benefit\">\n                    <a href=\"#oferta-primeiro-body\">\n                        <h3>OFERTA<br /> <span class=\"benefit-book\">do primeiro</span> <span class=\"benefit-bold\"><br />\n                                body</span> <span class=\"benefit-book\">do bebé</span></h3>\n                        <a href=\"#oferta-primeiro-body\">\n                            <p class=\"smallertext\"\n                                style=\"color: #FF4141; text-decoration: underline; text-underline-offset: 0.20rem;\">\n                                Saber mais</p>\n                        </a>\n                        <div class=\"white-circle-benefits\"></div>\n                </div>\n                <div class=\"plus\">+</div>\n                <div class=\"benefit\">\n                    <a href=\"#bebevida\">\n                        <h3>35%<br /><span class=\"benefit-bold\">desconto</span> <br><span class=\"benefit-book\">na\n                                BebéVida</span>\n                        </h3>\n                        <p class=\"smallertext\"\n                            style=\"color: #FF4141; text-decoration: underline; text-underline-offset: 0.20rem;\">Saber\n                            mais</p>\n                    </a>\n                    <div class=\"white-circle-benefits\"></div>\n                </div>\n            </div>\n            <!-- <div class=\"main-container-text\">\n                <a href=\"#subscrever-lista-nascimento\">\n                    <button>Criar Lista de Nascimento</button>\n                </a>\n            </div> -->\n        </div>\n    </section>\n\n    <section class=\"container-fluid zyBgWhite\">\n        <div class=\"main-container-text-2\">\n            <h2>Como funciona?*</h2>\n            <div class=\"ol-lista\">\n                <div class=\"circle-number\">1</div>\n                <p><span>Crie a Lista de Nascimento</span>;</p>\n            </div>\n            <div class=\"ol-lista\">\n                <div class=\"circle-number\">2</div>\n                <p>Associe as suas compras de Puericultura e Recém-Nascido à sua lista;</p>\n            </div>\n            <div class=\"ol-lista\">\n                <div class=\"circle-number\">3</div>\n                <p>Visite-nos em qualquer loja Zippy para levantar o primeiro body do seu bebé;</p>\n            </div>\n            <div class=\"ol-lista\">\n                <div class=\"circle-number\">4</div>\n                <p><span>Receba 10%</span> de todo o valor acumulado na sua lista, <span>12 meses após\n                        criação da lista</span>.</p>\n            </div>\n            <div class=\"ol-lista\">\n                <div class=\"circle-number\">5</div>\n                <p>Consiga <span>35% de desconto na recolha de células estaminais</span>, com a BebéVida.<br><a\n                        href=\"#bebevida\">Saiba como aqui</a></p>\n            </div>\n\n            <p class=\"smallertext\">*Consulte <a\n                    href=\"$url('Search-ShowContent','fdid','static-page-regulamento-lista-nascimento-zippy')$\"\n                    data-static-modal=\"$url('ContentModal-Get','assetId','regulamento-lista-nascimento-zippy')$\">aqui</a>\n                o regulamento</p>\n        </div>\n    </section> \n</div>",
+        "color_scheme": "",
+        "header-3572225ff312afc8c4dc90739d278267": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "divider_fullwidth_YN4P6": {
+      "type": "divider-fullwidth",
+      "disabled": false,
+      "settings": {
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "faq_content_GqBaV": {
+      "type": "faq-content",
+      "disabled": true,
+      "custom_css": [
+        ".container-valantic {background-color: #fbfbf8;}",
+        "h3 {font-weight: 400; font-size: 1.875rem; letter-spacing: 0.04rem; line-height: 1.2; text-align: left; margin: 1rem 0;}",
+        ".faq-block-wrapper {width: 70%; margin: auto;}",
+        "@media (max-width: 991px) {.faq-block-wrapper {width: 95%; }}",
+        "@media (max-width: 576px) {h3 {font-size: 1.563rem; letter-spacing: 0.03rem; line-height: 1.2; text-align: left; margin: 1rem 0; }}"
+      ],
+      "settings": {
+        "header-3c64e97408ae604da58ca0008b1f04bf": null,
+        "heading": "FAQ Lista de Nascimento",
+        "faq_section_id": "Lista de Nascimento",
+        "header-ad1cb9b618eff5154010c38f52a4f22a": null,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50,
+        "padding_top_desktop": 50,
+        "padding_bottom_desktop": 50
+      },
+      "blocks": {
+        "faq_item_H9yeY": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Posso criar uma Lista de Nascimento Online?",
+            "faq_answer": "<p>Para criar uma lista de nascimento online, tem apenas que se inscrever na página das Listas de Nascimento do site <a href=\"https://zippyonline.com/pt/programa-bebe-zippy/lista-nascimento.html\">aqui </a>e preencher os campos indicados. Em resposta receberá o regulamento da lista de nascimento, bem como o ID da sua Lista de Nascimento.</p>",
+            "header-94c0f1f478443cf95e45b34c39394e38": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-0aa97e17e7891d40bc9ba9b5d0509e0e": null,
+            "list_1": "",
+            "header-a3d6a178bb9dc624b1030c08abd99bf5": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_YnfH7": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso saber o ID da minha lista de nascimento?",
+            "faq_answer": "<p>Para saber o ID da lista de nascimento deverá contactar o apoio ao cliente através do <a href=\"https://zippyonline.com/pt/ajuda/apoio-ao-cliente/\">formulário </a>ou chat disponível no site fazendo referência ao contacto telefónico associado à lista. Também pode saber o ID da lista de nascimento se contactar uma loja física e indicar o contacto telefónico associado à mesma.</p>",
+            "header-59b109bf1d2ddc936e62551186767212": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-3ad0325ac2218705fc81af166da7d4c6": null,
+            "list_1": "",
+            "header-a33b8d279e90b1e516a512b51f75ecd2": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_LcG3F": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Que artigos posso acumular na minha lista de nascimento?",
+            "faq_answer": "<p>Podem integrar a lista de nascimento os artigos de puericultura, mamã e bebé até ao tamanho 24/36 meses em têxtil e tamanho 24 em calçado.</p>",
+            "header-d48eade365e6bc5a5c1da23228d075d9": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-25e122b40b37f543073540f8053952a4": null,
+            "list_1": "",
+            "header-fefc47464b4409f7fe2f7378c2471116": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_RiWGT": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Abri uma lista de nascimento numa loja física ZIPPY, posso associar as minhas encomendas da ZIPPY Online?",
+            "faq_answer": "<p>As encomendas ZIPPY Online são igualmente consideradas para associação e acumulação de valores de compra na sua lista de nascimento.</p>",
+            "header-cbc5e36dd9a1963b6225ea699fa133dd": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-7daf920bee586438f0c180c4f22ce952": null,
+            "list_1": "",
+            "header-84bdc0980a7dd71922a2ab9d5a62a820": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_URywM": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso associar uma encomenda ZIPPY Online à minha lista de nascimento?",
+            "faq_answer": "<p>Para associar uma encomenda feita na Zippy Online à sua Lista de Nascimento basta aplicar o ID da lista no campo “Código Promocional”, válido também para amigos e familiares que pretendam associar uma compra à sua lista de nascimento.O campo “Código Promocional” encontra-se quando se carrega em “Ver as Minhas Compras” antes de finalizar a encomenda.Apenas são consideradas para efeito de acumulação na lista de nascimento as encomendas faturadas e enviadas.</p>",
+            "header-e2f34fbee77b1e31358b350ce6d8be1b": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-c1bf0d0521890cb3f0034efdd756f182": null,
+            "list_1": "",
+            "header-624f979a25ae04649db5a121fd02b294": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_cqcj3": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso associar as compras feitas em loja física à minha lista de nascimento?",
+            "faq_answer": "<p>A adição de novos produtos à lista de nascimento pode ser requerida por qualquer ofertante nas lojas físicas no momento da compra, indicando o contacto telefónico associado à lista ou o ID da mesma.</p>",
+            "header-c4d1820efe666d7de0c0e11e27629d23": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-9e44509793bba1995fad7474b41e9e95": null,
+            "list_1": "",
+            "header-c5507488816b7cb443d047bf36f09c4f": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_f88nj": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso recuperar a associação à lista de nascimento de uma encomenda já recebida?",
+            "faq_answer": "<p>Caso tenha registado uma encomenda com e-mail distinto da lista de nascimento e sem informação do ID no campo promocional, poderá recuperar a associação do pedido à lista de nascimento através do serviço de Apoio ao cliente via <a href=\"https://zippyonline.com/pt/ajuda/apoio-ao-cliente/\">formulário </a>ou chat disponível no site.Deverá indicar o contacto telefónico associado à sua lista de nascimento e o nº da encomenda já recebida.</p>",
+            "header-85cde118166dbd642ee502f97ef37206": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-2da97b2c5cf1328243546ca791b8d268": null,
+            "list_1": "",
+            "header-7b23b60c407b89f6b0223b7bf8a51f90": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_bVFDE": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso consultar o valor acumulado da minha lista de nascimento?",
+            "faq_answer": "<p>Poderá solicitar a lista de valor de compras acumulados nascimento através do serviço de apoio ao cliente via <a href=\"https://zippyonline.com/pt/ajuda/apoio-ao-cliente/\">formulário </a>ou chat disponível no site. Deverá indicar o ID da lista ou contacto telefónico associada à mesma fazendo referência ao contacto telefónico associado à lista.Também pode consultar o valor acumulado da lista de nascimento contactando uma loja física e indicando o ID da lista ou contacto telefónico associado à mesma.</p>",
+            "header-dc47cbd37d602851d8bfce8a6adddc6f": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-66cb98b1189e79562aa94433a41c08ae": null,
+            "list_1": "",
+            "header-55be4dcf580e0a658224da3d6406f53a": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_tpPCE": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso encerrar a minha lista de nascimento?",
+            "faq_answer": "<p>O fecho da lista acontecerá 12 meses após a sua data de abertura, não podendo ser solicitado o seu fecho antecipadamente.</p>",
+            "header-072e3584cd754f857cbd18f94b8a1485": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-a3fe7757c23777c2b9f31a1315468eb8": null,
+            "list_1": "",
+            "header-2c2d588730e2578087939700bf206a82": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_XKLqd": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Qual o desconto que vou ter na minha lista de nascimento?",
+            "faq_answer": "<p>O valor da promessa de desconto a receber pelo titular da lista é de 10% do valor das compras de artigos elegíveis feitas nos 12 meses de duração obrigatória da lista de nascimento. O valor dos artigos comprados a incluir na lista não poderá ultrapassar os 4000€.</p>",
+            "header-04819b87a22f77f7549d4bcab95a938b": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-f0318d922d3297df199830e3a325eb92": null,
+            "list_1": "",
+            "header-8728837e2201b51aad5ddc809de63b23": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_cMJab": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Como posso resgatar e utilizar o prémio das listas de nascimento?",
+            "faq_answer": "<p>A promessa de desconto poderá ser resgatada apenas nas lojas físicas. A mesma será entregue na forma de um vale de desconto, cartão presente Zippy ou outro meio equivalente, excluindo a promessa de desconto em numerário.</p><p>O regaste do valor da promessa de desconto poderá ser efetuado até 6 meses após a data de fecho da lista, ou seja, 18 meses após a sua data de abertura. Após este período, a lista é apagada não sendo possível resgate da promessa de desconto.</p><p>O prémio só poderá ser utilizado em lojas físicas da marca Zippy.</p><p>O valor da promessa de desconto atribuído terá a validade de 1 (um) ano após a sua emissão. Para o titular da lista de nascimento poder aceder à promessa de desconto após o fecho da lista, deve dirigir-se a uma loja física acompanhado do cartão de cidadão do bebé e do titular da lista de nascimento.</p>",
+            "header-8dafe3b0d69a24b6c4514eca727a2060": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-9c7ebed7c7cbba27d0de2a055810d9de": null,
+            "list_1": "",
+            "header-7f6d819caad584cb2d032a29124c39db": null,
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_H9yeY",
+        "faq_item_YnfH7",
+        "faq_item_LcG3F",
+        "faq_item_RiWGT",
+        "faq_item_URywM",
+        "faq_item_cqcj3",
+        "faq_item_f88nj",
+        "faq_item_bVFDE",
+        "faq_item_tpPCE",
+        "faq_item_XKLqd",
+        "faq_item_cMJab"
+      ]
+    },
+    "custom_liquid_8FBEh": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<div id=\"zybirthlist\">\n  <div id=\"oferta-primeiro-body\">\n      <section class=\"container-fluid zyBgWhite\">\n          <div class=\"main-container-text\">\n              <h2>O Primeiro Body do Bebé</h2>\n              <p>Após criar a Lista de Nascimento, terá à sua espera o primeiro body do seu bebé. Para levantá-lo, só\n                  precisa de visitar-nos numa loja Zippy e mencionar o ID da sua Lista de Nascimento.</p>\n              <a href=\"{{ pages['store-locator'].url }}\"><u>Ver Lojas Zippy</u></a>\n          </div>\n\n          <div class=\"container-images\">\n              <div class=\"img-container img-1\">\n                  <picture>\n                      <source media=\"(max-width: 991px)\" type=\"image/jpeg\" srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/LP-Listas-Body-Baby-Zippy-Mobile.jpg?v=1726605797\">\n                      <source media=\"(min-width: 992px)\" type=\"image/jpeg\" srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/LP-Listas-Body-Baby-Zippy.jpg?v=1726524077\">\n                      <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/LP-Listas-Body-Baby-Zippy.jpg?v=1726524077\"\n                      alt=\"O Primeiro Body do Bebé\">\n                    </picture>\n              </div>\n\n              <div class=\"img-container img-2\">\n                  <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/body-frente.jpg?v=1726524062\"\n                      alt=\"Programa Baby Zippy - Primeiro Body\">\n                  <div class=\"detail-content-1\">\n                      <p class=\"detail-title\">etiqueta estampada</p>\n                      <p class=\"detail-text\">Para não irritar a pele sensível do seu bebé</p>\n                  </div>\n                  <div class=\"detail-content-2\">\n                      <p class=\"detail-title\">abertura em envelope</p>\n                      <p class=\"detail-text\">Para facilitar as trocas das fraldas, o vestir e despir</p>\n                  </div>\n              </div>\n              <div class=\"img-container img-3\">\n                  <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/body-pormenor.jpg?v=1726524068\"\n                      alt=\"Programa Baby Zippy - Primeiro Body\">\n                  <div class=\"detail-content-3\">\n                      <p class=\"detail-title\">molas de pressão</p>\n                      <p class=\"detail-text\">Para facilitar o vestir e o despir</p>\n                  </div>\n              </div>\n          </div>\n      </section>\n  </div>\n\n\n  <div id=\"bebevida\">\n      <section class=\"container-fluid zyBgBeige pb-20\">\n          <div class=\"main-container-text py-3\">\n              <h3>Sabia ainda que...<br><br>\n                  <span> ...as células estaminais podem ser utilizadas no tratamento de mais de 80 doenças?</span>\n              </h3>\n              <p>As células estaminais (muitas vezes chamadas de “células mãe”) têm a capacidade de se auto renovar\n                  indefinidamente e de se transformarem em células capazes de exercer outro tipo de funções e de ter\n                  outras características. Por isso, estas células podem ser utilizadas no tratamento de mais de 80a\n                  doenças. A sua colheita é feita no momento do parto, mas cabe a cada família a decisão de fazê-lo.\n              </p>\n\n              <p>Caso a sua opte por fazer esta colheita (que além de não invasiva é indolor para a mãe e para o\n                  bebé),\n                  temos para si:</p>\n          </div>\n          <div class=\"container-bebevida\">\n              <div class=\"bebevida-flex\">\n                  <div class=\"white-circle\"></div>\n                  <h4 class=\"boldtext\"><span class=\"percentage\">35%</span><br>desconto <span class=\"no-bold\">na\n                          recolha\n                          <br>de\n                          células estaminais</span></h4>\n                  <a href=\"https://bebevida.com/\" target=\"_blank\">\n                      <picture>\n                          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/logo_bebevida.png?v=1726572891\"\n                              alt=\"Programa Baby Zippy - Parceria BebéVida - Recolha de Células Estaminais\"\n                              class=\"logo-bebevida\">\n                      </picture>\n                  </a>\n              </div>\n          </div>\n          <div class=\"main-container-text\">\n            <a href=\"{{ pages['programa-baby-zippy-bebevida'].url }}\">\n                  <button>Obter Desconto</button>\n              </a>\n              <p class=\"smallertext\"><a href=\"https://bebevida.com/\" target=\"_blank\">Saber\n                      mais sobre a BebéVida</a></p>\n          </div>\n      </section>\n  </div>\n<!--\n  <section class=\"container-fluid zyBgBeige pb-3\">\n      <div class=\"main-container-text-2\">\n          <h3><span>A Zippy homenageia todas as grávidas com a <b>oferta especial de uma ecografia 3D/4D e de uma\n                      fotografia\n                      digital do seu bebé</b> em parceria com a BebéVida.<br><br>Como consigo ter acesso a esta\n                  oferta?</span>\n          </h3>\n          <div class=\"ol-lista\">\n              <div class=\"circle-number\">1</div>\n              <p>Faça a sua inscrição <a href=\"https://bebevida.com/events/\" target=\"_blank\">aqui</a> e escolha o\n                  local onde quer realizar a sua ecografia;</p>\n          </div>\n          <div class=\"ol-lista\">\n              <div class=\"circle-number\">2</div>\n              <p>No campo “Como teve conhecimento da sessão”, deverá obrigatoriamente inserir o código\n                  <span>zippy2024</span>;</p>\n          </div>\n          <div class=\"ol-lista\">\n              <div class=\"circle-number\">3</div>\n              <p>Disfrute da sua sessão de ecografia 3D/4D com a duração de 15 minutos;</p>\n          </div>\n          <div class=\"ol-lista\">\n              <div class=\"circle-number\">4</div>\n              <p>Receba a sua fotografia digital da sessão.</p>\n          </div>\n          <p class=\"smallertext text-left\"><span>Nota:</span> As nossas lojas do Colombo e do Arrábida Shopping\n              farão\n              parte desta ação, nos dias 10 e 11 de outubro, inscreva-se no link abaixo.</p>\n          <a href=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/Regulamento_Dia_Gravida.pdf?v=1726597941\"c\n              target=\"_blank\"><u>Saber mais sobre esta oferta</u></a>\n      </div>\n  </section>\n</div> -->",
+        "color_scheme": "",
+        "header-36746501620cb39abd60e9bc8e8a6a50": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    }
+  },
+  "order": [
+    "custom_liquid_bAEMJ",
+    "main",
+    "custom_liquid_7Pd4w",
+    "custom_liquid_aFqX6",
+    "divider_fullwidth_YN4P6",
+    "faq_content_GqBaV",
+    "custom_liquid_8FBEh"
+  ]
+}

@@ -1,0 +1,798 @@
+{% comment %}
+  Renders facets (filtering and sorting)
+
+  Accepts:
+  - results: {Object} Collection or Search object
+
+  - enable_sorting: {Boolean} Show sorting when true
+  - filter_type: {String} Type of filter
+  - paginate: {Object}
+  - section: {Object}
+
+  Usage:
+  {% render 'facets', results: collection, enable_sorting: true, paginate: paginate, section: section %}
+{% endcomment %}
+
+{% liquid
+  assign total_active_values = 0
+  assign default_presentation = 'text'
+
+  if results.url
+    assign results_url = results.url
+  else
+    assign terms = results.terms | escape
+    assign results_url = '?q=' | append: terms
+  endif
+
+  assign active_filters = 0
+
+  for filter in results.filters
+    for value in filter.active_values
+      assign active_filters = active_filters | plus: 1
+    endfor
+
+    if filter.type == 'price_range'
+      assign price_min_value = filter.min_value.value | money_without_currency
+      assign price_max_value = filter.max_value.value | money_without_currency
+      assign price_min_value_default = '0,00'
+      assign price_max_value_default = filter.range_max | money_without_currency
+      assign price_max_odds_result = price_max_value_default | minus: price_max_value
+
+      if price_max_odds_result > 1
+        assign price_max_filter_active = true
+      else
+        assign price_max_filter_active = false
+      endif
+
+      if price_min_value != blank and price_min_value != price_min_value_default
+        assign active_filters = active_filters | plus: 1
+      endif
+
+      if price_max_value != blank and price_max_filter_active
+        assign active_filters = active_filters | plus: 1
+      endif
+    endif
+  endfor
+
+  if results.results_count
+    assign results_count = results.results_count
+  elsif results.products_count == results.all_products_count
+    assign results_count = results.products_count
+  else
+    assign results_count = results.products_count
+  endif
+%}
+
+<div class="collection-grid-header mb-3">
+  <div class="flex items-center justify-between gap-2 md:justify-start">
+    {% if collection.title != blank %}
+      <div class="text-xl md:text-2xs md:font-medium">
+        {{ collection.title | escape }}
+      </div>
+    {% endif %}
+
+    <span id="ProductCount" class="text-2xs text-gray-600">
+      {% if results_count > 1 %}
+        {{ 'products.facets.product_count_simple.other' | t: count: results_count }}
+      {% elsif results_count == 1 %}
+        {{ 'products.facets.product_count_simple.one' | t: count: results_count }}
+      {% else %}
+        {{ 'products.facets.no_results' | t }}
+      {% endif %}
+    </span>
+  </div>
+</div>
+
+<div class="listing-mob-actions flex items-center justify-center gap-5 md:hidden">
+  <listing-view-selector class="listing-view-selector flex items-center justify-center gap-3" data-listing-view="true">
+    <div
+      class="listing-view-selector__button group relative inline-flex max-h-6 min-w-6 items-center justify-center !text-gray-800"
+      data-view="grid"
+    >
+      {% render 'icon', icon: 'grid-4', class: 'group-[.is-active]:!hidden !w-4.5 !h-4.5' %}
+      {% render 'icon', icon: 'grid-4-full', class: '!hidden group-[.is-active]:!block !w-4.5 !h-4.5' %}
+    </div>
+
+    <div
+      class="listing-view-selector__button group relative inline-flex max-h-6 min-w-6 items-center justify-center !text-gray-800"
+      data-view="list"
+    >
+      {% render 'icon', icon: 'grid-single', class: 'group-[.is-active]:!hidden w-5 h-5' %}
+      {% render 'icon', icon: 'grid-single-full', class: '!hidden group-[.is-active]:!block w-5 h-5' %}
+    </div>
+  </listing-view-selector>
+
+  <div
+    class="flex w-full items-center justify-center rounded-full border border-gray-900 py-[9px] text-sm font-medium text-gray-900"
+    data-mob-trigger="true"
+  >
+    {% render 'icon', icon: 'filter', class: '!w-4 !h-4 mr-1' %}
+
+    <div class="align-center flex justify-center">
+      {{ 'products.facets.filter_and_sort' | t }}
+      <span class="active-facets-mobile ml-2 inline-flex h-5 w-5 items-center justify-center bg-gray-400 text-4xs font-bold rounded-full{% if active_filters > 0 %} inline-flex{% else %} hidden{% endif %}">
+        {{ active_filters }}
+      </span>
+    </div>
+  </div>
+</div>
+
+<div
+  id="facets-container"
+  class="facets-container fixed bottom-0 left-0 right-0 z-20 h-[calc(100%-52px)] max-h-[70vh] bg-white pb-20 transition-transform max-[767px]:z-[1001] max-[767px]:translate-y-full max-[767px]:rounded-tl-2xl max-[767px]:rounded-tr-2xl md:static md:h-full md:transform-none md:overflow-visible md:bg-transparent md:pb-0"
+>
+  <div class="flex items-center justify-between p-6 pb-5 md:!hidden">
+    <span class="text-2xl text-gray-800">{{ 'products.facets.filter_and_sort' | t }}</span>
+    <span
+      class="offcanvas-close flex items-center justify-center hover:cursor-pointer"
+      onclick="event.target.closest('.facets-container')?.classList?.remove('active')"
+    >
+      {% render 'icon', icon: 'cross', class: '!w-5 !h-5' %}
+    </span>
+  </div>
+
+  <facet-filters-form
+    class="facets block h-[calc(100%-64px)] overflow-auto px-6 pb-8 md:h-full md:overflow-visible md:p-0"
+  >
+    <form id="FacetFiltersForm" class="facets__form facets__form relative flex flex-col md:block">
+      {% if results.terms %}
+        <input type="hidden" name="q" value="{{ results.terms | escape }}">
+        <input name="options[prefix]" type="hidden" value="last">
+      {% endif %}
+
+      {% if results.current_vendor or results.current_type %}
+        <input type="hidden" name="q" value="{{ results.current_vendor }}{{ results.current_type }}">
+      {% endif %}
+
+      <div class="active-facets active-facets-desktop flex flex-wrap items-center justify-center md:!hidden">
+        {% if active_filters > 0 %}
+          <facet-remove class="active-facets__button-wrapper pb-5">
+            <a
+              href="{{ results_url }}"
+              class="active-facets__button-remove flex items-center justify-center gap-1 text-sm font-medium text-gray-800"
+            >
+              {% render 'icon', icon: 'reset' %}
+
+              <span>{{ 'products.facets.reset_all' | t }}</span>
+            </a>
+          </facet-remove>
+        {% endif %}
+      </div>
+
+      <div
+        id="FacetsWrapperDesktop"
+        class="facets__wrapper md:flex md:items-center md:gap-5 md:border-b md:border-gray-400"
+      >
+        {% if enable_sorting %}
+          <details
+            id="Filter-Details-Sort-By-{{ section.id }}"
+            class="disclosure-has-popup facets__disclosure js-filter relative rounded-b border-b border-gray-200 py-5 md:mb-0 md:rounded-none md:border-none md:py-0"
+          >
+            <summary class="facets__summary inline-flex w-full cursor-pointer items-center justify-between text-base text-gray-800 md:justify-start md:gap-2 md:rounded-t md:py-3.25 md:text-xs md:text-gray-800">
+              <span class="facets__summary-label leading-6">
+                {{ 'products.facets.sort_by_label' | t }}
+              </span>
+
+              {% render 'icon', icon: 'chevron-down', class: 'w-6 h-6' %}
+            </summary>
+
+            <div class="facets__display rounded-b bg-white py-4 text-gray-800 md:absolute md:left-0 md:top-full md:z-10 md:mt-2 md:w-[300px] md:rounded md:px-6 md:pb-6 md:pt-5 md:shadow-[0px_4px_68px_0px_rgba(0,0,0,0.12)]">
+              <fieldset class="facets-wrap parent-wrap pb-4">
+                {% assign sort_by_value = results.sort_by | default: results.default_sort_by %}
+
+                <ul
+                  class="{{ visual_layout_class }} facets__list !flex flex-col gap-4  md:max-h-[400px] md:overflow-auto"
+                  role="list"
+                >
+                  {% for option in results.sort_options %}
+                    {% liquid
+                      assign input_id = 'SortBy-' | append: option.value | escape
+                    %}
+
+                    <li class="list-menu__item facets__item">
+                      <input
+                        class="checkbox !hidden"
+                        type="checkbox"
+                        name="sort_by"
+                        value="{{ option.value | escape }}"
+                        id="{{ input_id }}"
+                      >
+                      <label
+                        for="{{ input_id }}"
+                        class="flex items-center justify-between text-2xs md:hover:font-bold md:hover:cursor-pointer{% if option.value == sort_by_value %} font-bold{% endif %}"
+                      >
+                        <span>{{ option.name | escape }}</span>
+
+                        {% if option.value == sort_by_value %}
+                          <span class="ml-2 min-w-5">
+                            {% render 'icon', icon: 'success-circle' %}
+                          </span>
+                        {% endif %}
+                      </label>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </fieldset>
+            </div>
+          </details>
+        {% endif %}
+
+        {% for filter in results.filters %}
+          {% liquid
+            assign presentation = filter.presentation | default: default_presentation
+            assign total_active_values = total_active_values | plus: filter.active_values.size
+
+            if presentation == 'image'
+              assign visual_layout_class = 'facets-layout facets-layout-grid facets-layout-grid--' | append: presentation
+            else
+              assign visual_layout_class = 'facets-layout facets-layout-list facets-layout-list--' | append: presentation
+            endif
+          %}
+
+          {% unless filter.param_name == 'filter.p.m.custom.refdesign' %}
+            {% case filter.type %}
+              {% when 'boolean', 'list' %}
+                <details
+                  id="Filter-Details-{{ filter.param_name | escape }}-{{ section.id }}"
+                  class="disclosure-has-popup facets__disclosure js-filter relative rounded-b py-5 {% unless forloop.first %} border-t border-gray-200{% endunless %} last:mb-0 md:rounded-none md:border-none md:py-0"
+                  data-index="{{ forloop.index }}"
+                >
+                  <summary
+                    class="facets__summary inline-flex w-full cursor-pointer items-center justify-between text-base text-gray-800 md:justify-start md:gap-2 md:rounded-t md:py-3.25 md:text-xs md:text-gray-800"
+                    aria-label="{{ filter.label | escape }} ({{ 'products.facets.filters_selected.one' | t: count: filter.active_values.size }})"
+                  >
+                    <span class="facets__summary-label leading-6">
+                      {{ filter.label | escape }}
+
+                      {% if filter.active_values.size > 0 %}
+                        <span class="facet-active-total relative -top-0.5 ml-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-400 text-4xs font-bold">
+                          {{- filter.active_values.size -}}
+                        </span>
+                      {% endif %}
+                    </span>
+
+                    {% render 'icon', icon: 'chevron-down', class: 'w-6 h-6' %}
+                  </summary>
+
+                  <div
+                    id="Facet-{{ forloop.index }}-{{ section.id }}"
+                    class="facets__display rounded-b bg-white py-4 text-gray-800 md:absolute md:left-0 md:top-full md:z-10 md:mt-2 md:w-[300px] md:rounded md:px-6 md:pb-6 md:pt-5 md:shadow-[0px_4px_68px_0px_rgba(0,0,0,0.12)]"
+                  >
+                    <fieldset class="facets-wrap parent-wrap">
+                      {% liquid
+                        assign sorted_values = filter.values
+
+                        # Keep the selected values grouped together when operator is AND
+                        if filter.operator == 'AND'
+                          assign active_filter_values = filter.values | where: 'active', true
+                          assign inactive_filter_values = filter.values | where: 'active', false
+                          assign sorted_values = active_filter_values | concat: inactive_filter_values
+                        endif
+                      %}
+
+                      <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+                      {% if filter.label == 'Brand' %}
+                        <div class="facets-search">
+                          <div class="mx-auto mb-3 w-full">
+                            <div class="input-group">
+                              <input
+                                class="facets-search-input w-full !border-none !bg-gray-100 !px-4 !py-3 text-2xs text-gray-800 !outline-none"
+                                type="text"
+                                placeholder="Search Brand"
+                              >
+                              <span class="absolute right-6 top-2/4 -translate-y-1/2">
+                                {% render 'icon', icon: 'search' %}
+                              </span>
+                            </div>
+                          </div>
+                          <div class="facets-search-result-empty mx-auto hidden w-full px-4 pb-10 md:px-0">
+                            {{ 'templates.faq.no_search_results' | t }}
+                          </div>
+                        </div>
+                      {% endif %}
+                      <ul
+                        class="{{ visual_layout_class }} facets__list !flex flex-col gap-4 md:max-h-[380px] md:pr-4 md:overflow-auto{% if filter.param_name == "filter.v.option.size" %} !flex-row !flex-wrap !gap-2{% endif %}"
+                        role="list"
+                      >
+                        {% if filter.param_name == 'filter.v.option.size' %}
+                          {% liquid
+                            assign size_in_months = section.settings.size_in_months | strip_html | split: ','
+                            assign size_in_years = section.settings.size_in_years | strip_html | split: ','
+                            assign european_sizes = section.settings.european_sizes | strip_html | split: ','
+                            assign international_sizes = section.settings.international_sizes | strip_html | split: ','
+
+                            assign is_size_in_months = 0
+                            assign is_size_in_years = 0
+                            assign is_international_sizes = 0
+                            assign is_european_sizes = 0
+                            assign is_footwear = 0
+                            assign is_clothing = 0
+                          %}
+
+                          {% for value in sorted_values %}
+                            {% liquid
+                              assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
+                              assign is_disabled = false
+
+                              if value.count == 0 and value.active == false
+                                assign is_disabled = true
+                              endif
+                            %}
+
+                            {% if is_clothing != 1 %}
+                              {% if size_in_months contains value.label
+                                or size_in_years contains value.label
+                                or international_sizes contains value.label
+                              %}
+                                {% assign is_clothing = 1 %}
+
+                                <li class="title -mb-4 mt-4 w-full pb-2 text-sm font-medium">
+                                  {{ 'products.facets.sizes.clothing' | t }}
+                                </li>
+                              {% endif %}
+                            {% endif %}
+
+                            {% if is_footwear != 1 %}
+                              {% if european_sizes contains value.label %}
+                                {% assign is_footwear = 1 %}
+                                <li class="title mb-2 mt-4 w-full border-b border-gray-300 pb-2 text-sm font-medium">
+                                  {{ 'products.facets.sizes.footwear' | t }}
+                                </li>
+                              {% endif %}
+                            {% endif %}
+
+                            {% if size_in_months contains value.label and is_size_in_months != 1 %}
+                              {% assign is_size_in_months = 1 %}
+
+                              <li class="title mb-2 mt-4 w-full border-b border-gray-300 pb-2 text-xs font-medium">
+                                {{ 'products.facets.sizes.in_months' | t }}
+                              </li>
+                            {% elsif size_in_years contains value.label and is_size_in_years != 1 %}
+                              {% assign is_size_in_years = 1 %}
+
+                              <li class="title mb-2 mt-4 w-full border-b border-gray-300 pb-2 text-xs font-medium">
+                                {{ 'products.facets.sizes.in_years' | t }}
+                              </li>
+                            {% elsif international_sizes contains value.label and is_international_sizes != 1 %}
+                              {% assign is_international_sizes = 1 %}
+
+                              <li class="title mb-2 mt-4 w-full border-b border-gray-300 pb-2 text-xs font-medium">
+                                {{ 'products.facets.sizes.other' | t }}
+                              </li>
+                            {% endif %}
+
+                            <li class="list-menu__item facets-size__item">
+                              <input
+                                class="checkbox !hidden"
+                                type="checkbox"
+                                name="{{ value.param_name }}"
+                                value="{{ value.value }}"
+                                id="{{ input_id }}"
+                                {% if value.active %}
+                                  checked
+                                {% endif %}
+                                {% if is_disabled %}
+                                  disabled
+                                {% endif %}
+                              >
+                              <label
+                                for="{{ input_id }}"
+                                class="inline-flex items-center justify-between rounded border border-gray-200 px-3 py-2 text-2xs hover:cursor-pointer"
+                              >
+                                <div class="flex items-center">
+                                  <span>{{ value.label }}</span>
+                                </div>
+                              </label>
+                            </li>
+                          {% endfor %}
+                        {% else %}
+                          {% for value in sorted_values %}
+                            {% liquid
+                              assign input_id = 'Filter-' | append: filter.param_name | escape | append: '-' | append: forloop.index
+                              assign is_disabled = false
+
+                              if value.count == 0 and value.active == false
+                                assign is_disabled = true
+                              endif
+                            %}
+
+                            <li class="list-menu__item facets__item">
+                              {% if presentation == 'swatch' %}
+                                <div>
+                                  <div class="swatch-input-wrapper">
+                                    {% render 'swatch-input',
+                                      id: input_id,
+                                      type: 'checkbox',
+                                      name: value.param_name,
+                                      value: value.value,
+                                      product_form_id: 'FacetFiltersForm',
+                                      swatch: value.swatch,
+                                      checked: value.active,
+                                      disabled: is_disabled
+                                    %}
+                                  </div>
+
+                                  {{ value.label | escape }}
+                                </div>
+                              {% else %}
+                                <input
+                                  class="checkbox !hidden"
+                                  type="checkbox"
+                                  name="{{ value.param_name }}"
+                                  value="{{ value.value }}"
+                                  id="{{ input_id }}"
+                                  {% if value.active %}
+                                    checked
+                                  {% endif %}
+                                  {% if is_disabled %}
+                                    disabled
+                                  {% endif %}
+                                >
+                                <label
+                                  for="{{ input_id }}"
+                                  class="flex items-center justify-between text-2xs md:hover:cursor-pointer md:hover:font-bold{% if value.active %} font-bold{% endif %}"
+                                >
+                                  {% if presentation == 'image' %}
+                                    <div class="facets__image-wrapper">
+                                      {% if value.image %}
+                                        {{
+                                          value.image
+                                          | image_url: width: 300
+                                          | image_tag: class: 'facets__image', alt: value.alt
+                                        }}
+                                      {% endif %}
+                                    </div>
+                                  {% endif %}
+
+                                  {% liquid
+                                    assign metaobject_color_data = shop.metaobjects.color_swatch.values | where: 'color_name', value.label | first
+                                    assign metaobject_color_hex = metaobject_color_data.color_hex_code.value[0]
+                                  %}
+
+                                  <div class="flex items-center">
+                                    {% if metaobject_color_hex %}
+                                      <span
+                                        class="mr-2 !flex h-5 w-5 rounded border border-gray-200"
+                                        style="background: {{ metaobject_color_hex }}"
+                                      ></span>
+                                    {% endif %}
+
+                                    <span>{{ value.label }}</span>
+                                  </div>
+
+                                  <span class="facets-checked-icon ml-2 !hidden min-w-5">
+                                    {% render 'icon', icon: 'success-circle' %}
+                                  </span>
+                                </label>
+                              {% endif %}
+                            </li>
+                          {% endfor %}
+                        {% endif %}
+                      </ul>
+                    </fieldset>
+
+                    <div class="facets__footer hidden items-center justify-between gap-2 pt-4 md:flex ">
+                      <facet-remove class="flex max-w-screen-xl flex-1">
+                        <a
+                          href="{{ filter.url_to_remove }}"
+                          class="button secondary facets__reset inline-flex w-full items-center gap-2 text-xs{% unless filter.active_values.size > 0 %} !transition-none !transform-none !text-gray-400 md:hover:!cursor-not-allowed !border-gray-400{% endunless %}"
+                        >
+                          <span>{{ 'products.facets.reset' | t }}</span>
+                        </a>
+                      </facet-remove>
+
+                      <facet-save class="flex-1">
+                        <a href="#" class="button facets__reset inline-flex w-full items-center gap-2 text-xs">
+                          <span>{{ 'products.facets.save' | t }}</span>
+                        </a>
+                      </facet-save>
+                    </div>
+                  </div>
+                </details>
+              {% when 'price_range' %}
+                <details
+                  id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
+                  class="price-range-filter-wrapper disclosure-has-popup facets__disclosure js-filter js-filter relative rounded-b py-5 text-gray-800 {% unless forloop.first %} border-t border-gray-200{% endunless %} last:mb-0 md:rounded-none md:border-none md:py-0"
+                  data-index="{{ forloop.index }}"
+                >
+                  <summary class="facets__summary inline-flex w-full cursor-pointer items-center justify-between text-base text-gray-800 md:justify-start md:gap-2 md:rounded-t md:py-3.25 md:text-xs md:text-gray-800">
+                    <legend class="visually-hidden">{{ filter.label | escape }}</legend>
+                    <span class="facets__summary-label leading-6">
+                      {% liquid
+                        assign price_min_value = filter.min_value.value | money_without_currency
+                        assign price_max_value = filter.max_value.value | money_without_currency
+                        assign price_min_value_default = '0,00'
+                        assign price_max_value_default = filter.range_max | money_without_currency
+                        assign price_max_odds_result = price_max_value_default | minus: price_max_value
+
+                        if price_max_odds_result > 1
+                          assign price_max_filter_active = true
+                        else
+                          assign price_max_filter_active = false
+                        endif
+
+                        if price_min_value != blank and price_min_value != price_min_value_default
+                          assign price_active_values = 1
+
+                          if price_max_value != blank and price_max_filter_active
+                            assign price_active_values = 2
+                          endif
+                        elsif price_max_value != blank and price_max_filter_active
+                          assign price_active_values = 1
+
+                          if price_min_value != blank and price_min_value != price_min_value_default
+                            assign price_active_values = 2
+                          endif
+                        else
+                          assign price_active_values = 0
+                        endif
+                      %}
+
+                      <span>{{ filter.label | escape }}</span>
+
+                      <span class="price-value-total{% if price_active_values < 1 %} !hidden{% endif %} facet-active-total relative -top-0.5 ml-1 inline-flex h-5 w-5 items-center justify-center rounded-full bg-gray-400 text-4xs font-bold">
+                        {{- price_active_values -}}
+                      </span>
+                    </span>
+
+                    {% render 'icon', icon: 'chevron-down', class: 'w-6 h-6' %}
+                  </summary>
+
+                  <div
+                    id="Facet-{{ forloop.index }}-{{ section.id }}"
+                    class="facets__display facets-price__display rounded-b bg-white px-4 pb-4 pt-4 md:absolute md:left-0 md:top-full md:z-10 md:mt-2 md:w-[300px] md:rounded md:px-6 md:pb-6 md:pt-5 md:shadow-[0px_4px_68px_0px_rgba(0,0,0,0.12)]"
+                  >
+                    <div class="facets-wrap facets__price">
+                      {% render 'price-facet-slider', filter: filter, id_prefix: 'Filter-' %}
+                    </div>
+                    <div class="facets__footer hidden items-center justify-between gap-2 pt-4 md:flex ">
+                      <facet-remove class="flex max-w-screen-xl flex-1">
+                        {% if filter.active_values.size > 0 %}
+                          <a
+                            href="{{ filter.url_to_remove }}"
+                            class="button secondary facets__reset facets__reset-price is-disabled inline-flex w-full items-center gap-2 text-xs"
+                          >
+                        {% else %}
+                          <div
+                            class="button secondary facets__reset facets__reset-price is-disabled inline-flex w-full items-center gap-2 text-xs"
+                          >
+                        {% endif %}
+                        <span>{{ 'products.facets.reset' | t }}</span>
+                        {% if filter.active_values.size > 0 %}
+                          </a>
+                        {% else %}
+                          </div>
+                        {% endif %}
+                      </facet-remove>
+
+                      <facet-save class="flex-1">
+                        <a
+                          href="{{ filter.url_to_remove }}"
+                          class="button facets__save is-disabled inline-flex w-full items-center gap-2 text-xs"
+                        >
+                          <span>{{ 'products.facets.save' | t }}</span>
+                        </a>
+                      </facet-save>
+                    </div>
+                  </div>
+                </details>
+            {% endcase %}
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </form>
+  </facet-filters-form>
+
+  <div class="fixed bottom-0 left-0 right-0 bg-white p-4 shadow-[0px_-5px_5px_0px_rgba(161,133,99,0.10)] md:hidden">
+    <button
+      data-show-results
+      class="button w-full rounded !bg-gray-800 !text-xs !font-bold"
+      onclick="event.target.closest('.facets-container')?.classList?.remove('active')"
+    >
+      {% if results_count > 1 %}
+        {{ 'products.facets.show_results' | t: count: results_count }}
+      {% elsif results_count == 1 %}
+        {{ 'products.facets.show_result' | t: count: results_count }}
+      {% else %}
+        {{ 'products.facets.no_results' | t }}
+      {% endif %}
+    </button>
+  </div>
+</div>
+
+<div
+  class="facets-container-overlay facets-container-close pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-[1000] !block bg-black/30 opacity-0"
+  onclick="event.target.closest('.facets-wrapper').querySelector('.facets-container')?.classList?.remove('active')"
+></div>
+
+{% style %}
+  .facets-price__display facet-remove .is-disabled {
+    color: rgb(var(--color-gray-400)) !important;
+    border-color: rgb(var(--color-gray-400));
+    pointer-events: none;
+  }
+
+  .facets-price__display facet-save .is-disabled {
+    background: rgb(var(--color-gray-400));
+    border-color: rgb(var(--color-gray-400));
+    pointer-events: none;
+  }
+
+  .listing-view-selector .listing-view-selector__button:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  .facets-wrapper:has(.facets-container.active) .facets-container-overlay {
+    opacity: 1;
+    pointer-events: initial;
+  }
+
+  .list-menu__item.facets__item .checkbox:checked + label {
+    font-weight: 700;
+  }
+
+  .list-menu__item.facets__item .checkbox:checked + label .facets-checked-icon {
+    display: inline-flex !important;
+  }
+
+  .list-menu__item.facets__item .checkbox:disabled + label {
+    color: rgb(var(--color-gray-500));
+  }
+
+  .list-menu__item.facets-size__item .checkbox:checked + label {
+    color: rgb(var(--color-white));
+    background: rgb(var(--color-gray-900));
+    border-color: rgb(var(--color-gray-900));
+  }
+
+  .list-menu__item.facets-size__item .checkbox:disabled + label {
+    color: rgb(var(--color-white));
+    background: rgb(var(--color-gray-500));
+    border-color: rgb(var(--color-gray-500));
+  }
+
+  .facets__form details[open] summary .chevron-down {
+    transform: rotate(180deg);
+  }
+
+  .facets-search-input::placeholder,
+  .facets-search-input::-ms-input-placeholder {
+    color: rgb(var(--color-gray-800));
+  }
+
+  .facets-layout-list::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background: rgb(var(--color-gray-200));
+  }
+
+  .facets-layout-list::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .facets-layout-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(var(--color-gray-500));
+  }
+
+  facet-filters-form::-webkit-scrollbar-track {
+    border-radius: 4px;
+    background: #fff;
+  }
+
+  facet-filters-form::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  facet-filters-form::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: rgb(var(--color-gray-800));
+  }
+
+  .price-range-filter-wrapper .facets__footer {
+    padding-top: 24px;
+  }
+
+  @media (max-width: 767px) {
+    .facets-container {
+      top: var(--announcement-bar-height);
+    }
+
+    html:has(.facets-container.active),
+    body:has(.facets-container.active) {
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .facets-container.active {
+      transform: translateX(0);
+    }
+
+    .facets-container .disclosure-has-popup[open] > summary::before {
+      display: none;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    details[open] {
+      position: relative;
+    }
+
+    details[open]:after {
+      content: '';
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: rgb(var(--color-gray-900));
+    }
+
+    .facets__form details[open] summary {
+      color: rgb(var(--color-gray-800));
+    }
+
+    .facets__display:not(.facets-price__display):not(:has(input:checked)) facet-save a {
+      background: rgb(var(--color-gray-400));
+      border-color: rgb(var(--color-gray-400));
+      pointer-events: none;
+    }
+  }
+{% endstyle %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const trigger = document.querySelector('[data-mob-trigger]');
+    const content = document.querySelector('#facets-container');
+    const facetsSearchItems = document.querySelectorAll('.facets-search');
+
+    trigger.addEventListener('click', () => {
+      content.classList[content.classList.contains('active') ? 'remove' : 'add']('active');
+      window.scrollTo(0, 0);
+    });
+
+    if (!!facetsSearchItems) {
+      facetsSearchItems.forEach((item) => {
+        const searchInput = item.querySelector('input[type="text"]');
+        const searchResultEmpty = item.querySelector('.facets-search-result-empty');
+        const facetsWrap = item.closest('.facets__display');
+        const facetsFooter = facetsWrap.querySelector('.facets__footer');
+        const facetsItems = facetsWrap.querySelectorAll('.facets__item input');
+
+        let values = null;
+        searchInput.addEventListener('input', (e) => {
+          const searchValue = e.target.value.toLowerCase();
+
+          facetsItems.forEach((facetItem) => {
+            const facetValue = facetItem.value.toLowerCase();
+
+            if (facetValue.includes(searchValue)) {
+              facetItem.closest('.facets__item').style.display = 'block';
+            } else {
+              facetItem.closest('.facets__item').style.display = 'none';
+              values++;
+            }
+          });
+
+          if (values === facetsItems.length) {
+            searchResultEmpty.classList.remove('hidden');
+            facetsFooter.classList.add('!hidden');
+          } else {
+            searchResultEmpty.classList.add('hidden');
+            facetsFooter.classList.remove('!hidden');
+          }
+
+          values = 0;
+        });
+      });
+    }
+  });
+</script>
+
+<script src="{{ "listing-view-actions.js" | asset_url }}" defer="defer"></script>

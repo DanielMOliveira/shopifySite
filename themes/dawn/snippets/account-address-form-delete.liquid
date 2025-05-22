@@ -1,0 +1,14 @@
+<button
+  class="button secondary h-10 w-10 !p-0"
+  type="button"
+  aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
+  data-address-id="{{ address.id }}"
+  {% if localization.language.endonym_name != 'English' %}
+    data-target="/{{ localization.country.iso_code }}/account/addresses/{{ address.id }}"
+  {% else %}
+    data-target="/account/addresses/{{ address.id }}"
+  {% endif %}
+  data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
+>
+  {% render 'icon', icon: 'minus' %}
+</button>

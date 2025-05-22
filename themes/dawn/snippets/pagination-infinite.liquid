@@ -1,0 +1,52 @@
+{% comment %}
+  Renders a set of links for paginated results. Must be used within paginate tags.
+
+  Usage:
+  {% paginate results by 2 %}
+    {% render 'pagination', paginate: paginate, anchor: '#yourID' %}
+  {% endpaginate %}
+
+  Accepts:
+  - paginate: {Object}
+  - anchor: {String} (optional) This can be added so that on page reload it takes you to wherever you've placed your anchor tag.
+{% endcomment %}
+
+{%- if paginate.parts.size > 0 -%}
+  <div class="pagination-wrapper text-center">
+    <nav class="pagination" role="navigation" aria-label="{{ 'general.pagination.label' | t }}">
+      <ul class="pagination__list list-unstyled" role="list">
+        {%- if paginate.next -%}
+          <li>
+            <a
+              href="{{ paginate.next.url }}{{ anchor }}"
+              class="pagination__item button secondary inline-flex text-xs"
+              aria-label="{{ 'general.pagination.next' | t }}"
+            >
+              {{ 'general.pagination.load_more' | t }}
+
+              {% render 'icon', icon: 'chevron-down', class: 'w-6 h-6' %}
+
+              {% render 'loading-spinner' %}
+            </a>
+          </li>
+        {%- endif -%}
+      </ul>
+    </nav>
+
+    {% style %}
+      .collection.loading .collection-pagination .loading__spinner.hidden,
+      .collection.loading-preloaded .collection-pagination .loading__spinner.hidden {
+        display: inline-block !important;
+      }
+
+      .collection.loading-preloaded .collection-pagination .pagination__item {
+        color: rgba(var(--color-gray-600) / 0.5);
+      }
+
+      .collection.loading .collection-pagination .loading__spinner.hidden svg circle,
+      .collection.loading-preloaded .collection-pagination .loading__spinner.hidden svg circle {
+        stroke: rgb(var(--color-gray-800));
+      }
+    {% endstyle %}
+  </div>
+{%- endif -%}

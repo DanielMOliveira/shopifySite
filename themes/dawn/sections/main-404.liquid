@@ -1,0 +1,173 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign page_heading = section.settings.page_heading
+  assign page_sub_heading = section.settings.page_sub_heading
+  assign links = section.blocks | where: 'type', 'links'
+%}
+
+<section id="section-{{ section.id }}" class="overflow-hidden">
+  <div class="template-404 container-valantic center flex flex-col items-center justify-center py-10">
+    <h1 class="title mb-10 text-2xl">
+      <span class="block">{{ page_heading }}</span>
+      <span class="block">{{ page_sub_heading }}</span>
+    </h1>
+    <div class="404-links grid w-full max-w-3xl grid-cols-1 gap-5 md:grid-cols-3">
+      {% for link in links %}
+        {% for i in (1..6) %}
+          {% assign link_url = 'link_url_' | append: i %}
+          {% assign link_text = 'link_label_' | append: i %}
+
+          {% if link.settings[link_url] != blank %}
+            <a href="{{ link.settings[link_url] }}" class="button flex font-normal">
+              {{ link.settings[link_text] }}
+            </a>
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404",
+  "blocks": [
+    {
+      "type": "links",
+      "limit": 1,
+      "name": "404 links",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "text",
+          "id": "link_label_1",
+          "label": "Link 1 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_1",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_2",
+          "label": "Link 2 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_2",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_3",
+          "label": "Link 3 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_3",
+          "label": "Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_4",
+          "label": "Link 4 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_4",
+          "label": "Link 4 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_5",
+          "label": "Link 5 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_5",
+          "label": "Link 5 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_6",
+          "label": "Link 6 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_6",
+          "label": "Link 6 URL"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "page_heading",
+      "default": "Sorry, we couldn’t find any matching results for this search.",
+      "label": "404 Page Title"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "page_sub_heading",
+      "default": "These popular categories might interest you.",
+      "label": "404 Page Text"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "links"
+      }
+    ]
+  }
+}
+{% endschema %}

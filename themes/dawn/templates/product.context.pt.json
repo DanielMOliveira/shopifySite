@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "product.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_cxxJX": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "{% assign current_time = 'now' | date: '%Y-%m-%d %H:%M' %} {% assign start_time = '2025-04-01 20:00' %} {% assign end_time = '2025-04-02 10:00' %} {% if current_time >= start_time and current_time <= end_time %}\n  \n{% assign excluded_collections = 'colecao-you-and-me,promocoes,puericultura' | split: ',' %}\n{% assign show_banner = true %}\n\n{% for collection in product.collections %}\n  {% if excluded_collections contains collection.handle %}\n    {% assign show_banner = false %}\n  {% endif %}\n{% endfor %}\n\n{% if show_banner %}\n<link rel=\"stylesheet\" href=\"https://use.typekit.net/qxh4eep.css\" />\n<style media=\"screen\" type=\"text/css\">\n  #section-template--23834745700679__main,\n  #section-template--16206166491345__main {\n    padding-top: 0 !important;\n  }\n\n  #zyPDP-Sale {\n    overflow: hidden;\n    background-color: #dcd5c5;\n    margin-bottom: 1rem;\n  }\n\n  #zyPDP-Sale .container-fluid {\n    width: 100%;\n    padding: 1rem 0;\n    margin: auto;\n    justify-content: center;\n    align-items: center;\n    display: flex;\n  }\n\n  #zyPDP-Sale h3 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    color: #ff4500;\n    font-size: 1rem;\n    line-height: 1.4;\n  }\n\n  #zyPDP-Sale h3 > span {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-size: 1rem;\n    font-weight: 600;\n  }\n\n  #zyPDP-Sale h3 > span.regular-text {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    letter-spacing: 0;\n  }\n\n  #zyPDP-Sale a {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 500;\n    color: #ff4500;\n    font-size: 1rem;\n    text-decoration: underline;\n    text-underline-offset: 0.2rem;\n  }\n\n  #zyPDP-Sale .promocode {\n    cursor: pointer;\n    color: #ff4500;\n    display: inline-flex;\n    justify-content: center;\n    align-items: center;\n    transition: background-color 0.3s;\n    font-weight: 600;\n    background-color: transparent;\n    border-radius: 0;\n    border: none;\n    width: 6rem;\n    font-size: 1rem;\n    letter-spacing: 0;\n  }\n\n  #zyPDP-Sale .copy-icon {\n    width: 25%;\n    margin-left: -0.1rem;\n    transition: transform 0.1s ease-in-out;\n  }\n\n  #zyPDP-Sale .copy-icon:hover {\n    transform: scale(1.05);\n    transition: transform 0.1s ease-in-out;\n  }\n\n  #zyPDP-Sale .promocode-message {\n    color: #ff4500;\n    font-size: 0.75rem;\n    opacity: 0;\n    transition: opacity 0.7s ease-in-out;\n    line-height: 1.2;\n    margin-left: 0.5rem;\n  }\n\n  #zyPDP-Sale .promocode-message.visible {\n    opacity: 1;\n  }\n\n  #zytimer {\n    width: 6.5rem;\n    display: inline-block;\n    text-align: left;\n  }\n\n  #zyPDP-Sale .margem {\n    padding-left: 8rem;\n  }\n\n  #zyPDP-Sale .lh-code {\n    line-height: 1.5;\n  }\n\n  @media (max-width: 991px) {\n    #zyPDP-Sale {\n      margin-top: 2rem;\n      margin-bottom: 0;\n      background-color: transparent;\n    }\n\n    #zyPDP-Sale .container-fluid {\n      width: 100%;\n      margin: auto;\n      display: block;\n      left: 0;\n      margin: 2.5rem 0 0.5rem 0;\n      background-color: #dcd5c5;\n      padding: 0.5rem;\n    }\n\n    #zyPDP-Sale h3 {\n      text-align: center;\n      padding: 0 0.5rem;\n    }\n\n    #zyPDP-Sale .promocode-message {\n      margin-left: 20vw;\n    }\n\n    #zyPDP-Sale .margem {\n      padding: 1.5rem 0.5rem 0.2rem 0.5rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #zytimer {\n      width: 5rem;\n    }\n\n    #zyPDP-Sale h3 {\n      font-size: 0.857rem;\n      line-height: 1.5;\n    }\n\n    #zyPDP-Sale h3 > span {\n      font-size: 0.857rem;\n    }\n\n    #zyPDP-Sale .promocode {\n      font-size: 0.857rem;\n    }\n\n    #zyPDP-Sale a {\n      font-size: 0.857rem;\n    }\n  }\n</style>\n\n{% if customer and customer.tags contains 'nl_subscriber' %}\n<script>\n  function copycode() {\n    const promocodeElement = document.querySelector(\".promocode\");\n    const promocodeMessage = document.querySelector(\".promocode-message\");\n\n    const promocode = promocodeElement.childNodes[0].textContent.trim();\n\n    const tempInput = document.createElement(\"input\");\n    document.body.appendChild(tempInput);\n    tempInput.value = promocode;\n    tempInput.select();\n    document.execCommand(\"copy\");\n    document.body.removeChild(tempInput);\n\n    promocodeMessage.classList.add(\"visible\");\n    setTimeout(() => {\n      promocodeMessage.classList.remove(\"visible\");\n    }, 3000);\n  }\n</script>\n\n<div id=\"zyPDP-Sale\">\n  <section class=\"container-fluid margem\">\n    {% assign locale = shop.locale %} {% if locale == 'pt-PT' %}\n    <h3 class=\"lh-code\">\n      <span>-20% na Coleção</span>: {{ customer.first_name }}, tem acesso à promoção! Use o código: <span class=\"promocode\" onclick=\"copycode()\">ZYHAPPY <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/ZY_Icon_Copy_1.svg?v=1742489484\" class=\"copy-icon\" /></span>\n    </h3>\n    <span class=\"promocode-message\">Código copiado! Aplique-o no checkout.</span>\n    {% elsif locale == 'en' %}\n    <h3 class=\"lh-code\">\n      <span>-20% on New Collection</span>: {{ customer.first_name }}, enjoy you access to the discount! class=\"regular-text\"> Use the code: <span class=\"promocode\" onclick=\"copycode()\">ZYHAPPY <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/ZY_Icon_Copy_White.svg?v=1737108748\" class=\"copy-icon\" /></span>\n    </h3>\n    <span class=\"promocode-message\">Code copied! Apply it at checkout.</span>\n    {% endif %}\n  </section>\n</div>\n\n{% elsif customer %}\n\n<div id=\"zyPDP-Sale\">\n  <section class=\"container-fluid\">\n    {% assign locale = shop.locale %} {% if locale == 'pt-PT' %}\n    <h3><span>-20% na Coleção</span>: {{ customer.first_name }}, está quase lá! <a href=\"/account\">Ative aqui</a> as comunicações na área \"Assinaturas\" da sua conta para ter acesso à promoção.</h3>\n    {% elsif locale == 'en' %}\n    <h3>\n      <span>-20% on Collection</span>: {{ customer.first_name }}, you're almost there! <a href=\"/account\">Activate here</a>\n      the communications in the \"Subscriptions\" area of your account to get access to the discount.\n    </h3>\n    {% endif %}\n  </section>\n</div>\n\n{% else %}\n\n<div id=\"zyPDP-Sale\">\n  <section class=\"container-fluid\">\n    {% assign locale = shop.locale %} {% if locale == 'pt-PT' %}\n    <h3><span>-20% na Coleção</span>: <a href=\"/account/login\">Inicie sessão</a> ou <a href=\"/account/register\">registe-se</a> para ter acesso à promoção!</h3>\n    {% elsif locale == 'en' %}\n    <h3><span>-20% on Collection</span>: <a href=\"/account/login\">Log in</a> or <a href=\"/account/register\">sign up</a> to get access to the discount!</h3>\n    {% endif %}\n  </section>\n</div>\n\n{% endif %}\n\n<script>\n  function getParameterByName(name) {\n    const url = window.location.href;\n    name = name.replace(/[\\[\\]]/g, \"\\\\$&\");\n    const regex = new RegExp(\"[?&]\" + name + \"(=([^&#]*)|&|#|$)\"),\n      results = regex.exec(url);\n    if (!results) return null;\n    if (!results[2]) return \"\";\n    return decodeURIComponent(results[2].replace(/\\+/g, \" \"));\n  }\n\n  function setCookie(name, value, days) {\n    const d = new Date();\n    d.setTime(d.getTime() + days * 24 * 60 * 60 * 1000);\n    const expires = \"expires=\" + d.toUTCString();\n    document.cookie = name + \"=\" + value + \";\" + expires + \";path=/\";\n  }\n\n  function getCookie(name) {\n    const cookieName = name + \"=\";\n    const decodedCookie = decodeURIComponent(document.cookie);\n    const ca = decodedCookie.split(\";\");\n    for (let i = 0; i < ca.length; i++) {\n      let c = ca[i];\n      while (c.charAt(0) === \" \") {\n        c = c.substring(1);\n      }\n      if (c.indexOf(cookieName) === 0) {\n        return c.substring(cookieName.length, c.length);\n      }\n    }\n    return \"\";\n  }\n\n  const utmSource = getParameterByName(\"utm_source\");\n\n  if (utmSource === \"pos\") {\n    setCookie(\"hideBanner\", \"true\", 365);\n  }\n\n  if (getCookie(\"hideBanner\") === \"true\") {\n    const banner = document.getElementById(\"zyPDP-Sale\");\n    if (banner) {\n      banner.style.display = \"none\";\n    }\n  }\n</script>\n{% endif %}\n{% endif %}",
+        "color_scheme": "",
+        "header-f6e3a8283e918cb308bbf1e7c9286c1e": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "main": {
+      "disabled": false,
+      "custom_css": [
+        ".main-product .returns [data-content] a {color: #221f20;}"
+      ],
+      "settings": {
+        "delivery_content": "<p>Deliveries are made on working days between 9:00 and 19:00. If the customer is not at the address, the order will be made available for collection at the pick up point (DPD) or post office closest to their area of ​​residence.</p><p>For the Azores, between 5 and 10 working days are added to the deadlines mentioned and for Madeira, between 5 and 7 working days are added. For islands there will always be a fixed delivery cost of €5.50.</p>",
+        "delivery_columns": 3,
+        "delivery_rows": 3,
+        "delivery_cell_text_1_1": "Tipo de Envio",
+        "delivery_cell_text_1_2": "Custos de Envio",
+        "delivery_cell_text_1_3": "Tempo de Envio",
+        "delivery_cell_text_2_1": "Loja Zippy",
+        "delivery_cell_text_2_2": "Gratuito",
+        "delivery_cell_text_2_3": "3 a 5 dias úteis",
+        "delivery_cell_text_3_1": "Envio ao Domicílio*",
+        "delivery_cell_text_3_2": "3,99€ (Gratuito a partir de 34,99€)",
+        "delivery_cell_text_3_3": "2 a 4 dias úteis",
+        "delivery_cell_text_4_1": "Cell 4, 1",
+        "delivery_cell_text_4_3": "Cell 4, 3",
+        "return_text": "<p><strong>Free Store Returns</strong><br/>You can return your items at any Zippy shop.<br/><br/><strong>Free Home Pick-Up<br/></strong>You can request that the items to be returned be collected from your home using the <a href=\"/pages/pedido-devolucao\" title=\"formulário de devolução\">return forms</a>.</p>",
+        "reviews_title": ""
+      },
+      "blocks": {
+        "payment_method_enzwVc": {
+          "disabled": false,
+          "settings": {}
+        },
+        "payment_method_hFwbXf": {
+          "disabled": false,
+          "settings": {}
+        }
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_cxxJX",
+    "main",
+    "related-products",
+    "recently_viewed_4gaUBR",
+    "featured_products_WtBxhq"
+  ]
+}

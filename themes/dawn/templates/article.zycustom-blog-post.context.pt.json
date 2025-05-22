@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "article.zycustom-blog-post.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_drpLz": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n  .breadcrumbs {\n      display: none;\n  }\n\n  #zypost {\n      overflow: hidden;\n      padding: 0 2rem;\n  }\n\n  #zypost h1 {\n      font-size: 2rem;\n      margin-top: 2rem;\n      margin-bottom: 1rem;\n  }\n\n  #zypost h2 {\n      font-size: 1.6rem;\n      margin-top: 2rem;\n      margin-bottom: 1rem;\n  }\n\n  #zypost p,\n  #zypost div {\n      font-size: 1rem;\n      line-height: 1.6;\n      margin-bottom: 2rem;\n  }\n\n  #zypost .image-row {\n      display: flex;\n      flex-wrap: wrap;\n      gap: 1rem;\n      margin-bottom: 2rem;\n  }\n\n  #zypost .image-row img {\n      width: calc(50% - 0.5rem);\n      height: auto;\n      object-fit: cover;\n      margin: auto;\n  }\n\n  #zypost img {\n      max-width: 100%;\n      height: auto;\n      margin: auto;\n  }\n\n  /* Estilos para o template text_gallery */\n  #zypost .gallery-grid {\n      display: grid;\n      grid-template-columns: repeat(3, 1fr);\n      gap: 1rem;\n      margin-bottom: 2rem;\n  }\n\n  #zypost .gallery-item {\n      display: flex;\n      flex-direction: column;\n  }\n\n  #zypost .gallery-item img {\n      width: 100%;\n      height: 500px;\n      object-fit: cover;\n      margin-bottom: 0.5rem;\n  }\n\n  #zypost .gallery-item h3 {\n      font-size: 1.2rem;\n      margin: 0.5rem 0;\n  }\n\n  #zypost .gallery-item p {\n      font-size: 0.9rem;\n      margin: 0;\n  }\n\n  @media (max-width: 768px) {\n      #zypost .image-row img {\n          width: 100%;\n      }\n\n      #zypost .gallery-grid {\n          grid-template-columns: repeat(2, 1fr);\n      }\n  }\n\n  @media (max-width: 480px) {\n      #zypost .gallery-grid {\n          grid-template-columns: 1fr;\n      }\n  }\n</style>\n\n<div id=\"zypost\">\n  <h1>{{ article.title }}</h1>\n  <p>{{ article.published_at | date: \"%d de %B de %Y\" }}</p>\n\n  {% assign post_type = article.metafields.custom.post_template_type | strip | replace: '[', '' | replace: ']', '' | replace: '\"', '' %}\n\n  <!-- post type: image_blocks -->\n  {% if post_type contains \"image_blocks\" %}\n  {% if article.metafields.custom.title_1 != blank %}\n  <h2>{{ article.metafields.custom.title_1 }}</h2>\n  {% endif %}\n\n  {% if article.metafields.custom.text_block_1 != blank %}\n  <div>{{ article.metafields.custom.text_block_1 | newline_to_br }}</div>\n  {% endif %}\n\n  {% if article.metafields.custom.image_1 != blank or article.metafields.custom.image_2 != blank %}\n  <div class=\"image-row\">\n      {% if article.metafields.custom.image_1 != blank %}\n      {% assign alt_text_1 = article.metafields.custom.image_1.alt | default: article.metafields.custom.title_1 | default: article.title %}\n      <img src=\"{{ article.metafields.custom.image_1 | file_url }}\" alt=\"{{ alt_text_1 }}\">\n      {% endif %}\n\n      {% if article.metafields.custom.image_2 != blank %}\n      {% assign alt_text_2 = article.metafields.custom.image_2.alt | default: article.metafields.custom.title_2 | default: article.title %}\n      <img src=\"{{ article.metafields.custom.image_2 | file_url }}\" alt=\"{{ alt_text_2 }}\">\n      {% endif %}\n  </div>\n  {% endif %}\n\n  {% if article.metafields.custom.title_2 != blank %}\n  <h2>{{ article.metafields.custom.title_2 }}</h2>\n  {% endif %}\n\n  {% if article.metafields.custom.text_block_2 != blank %}\n  <div>{{ article.metafields.custom.text_block_2 | newline_to_br }}</div>\n  {% endif %}\n\n  {% if article.metafields.custom.image_3 != blank %}\n  {% assign alt_text_3 = article.metafields.custom.image_3.alt | default: article.metafields.custom.title_3 | default: article.title %}\n  <img src=\"{{ article.metafields.custom.image_3 | file_url }}\" alt=\"{{ alt_text_3 }}\">\n  {% endif %}\n\n  {% if article.metafields.custom.title_3 != blank %}\n  <h2>{{ article.metafields.custom.title_3 }}</h2>\n  {% endif %}\n\n  {% if article.metafields.custom.text_block_3 != blank %}\n  <div>{{ article.metafields.custom.text_block_3 | newline_to_br }}</div>\n  {% endif %}\n\n\n<!-- post type: gallery -->\n  {% elsif post_type contains \"gallery\" %}\n  {% if article.metafields.custom.gallery_text_1 != blank %}\n  <div class=\"intro-text\">\n      {{ article.metafields.custom.gallery_text_1 | newline_to_br }}\n  </div>\n  {% endif %}\n\n  <div class=\"gallery-grid\">\n      {% for i in (1..6) %}\n      {% capture gallery_image_key %}gallery_image_{{ i }}{% endcapture %}\n      {% assign gallery_image = article.metafields.custom[gallery_image_key] %}\n\n      {% if gallery_image != blank %}\n      <div class=\"gallery-item\">\n          {% assign alt_text = gallery_image.alt | default: gallery_title | default: article.title %}\n          <img src=\"{{ gallery_image | file_url }}\" alt=\"{{ alt_text }}\">\n      </div>\n      {% endif %}\n      {% endfor %}\n  </div>\n\n  {% if article.metafields.custom.gallery_text_3 != blank %}\n  <div class=\"conclusion-text\">\n      {{ article.metafields.custom.gallery_text_3 | newline_to_br }}\n  </div>\n  {% endif %}\n\n  {% else %}\n\n  <div>{{ article.content }}</div>\n  {% endif %}\n</div>",
+        "color_scheme": "",
+        "header-d0b901e1a90f43c100942fb337085ba7": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "custom_liquid_eN4ia": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n #zyBlog .blog-tags-nav {\n        display: flex;\n        flex-wrap: wrap;\n        gap: 0.5rem;\n        margin: 1rem 2rem 2rem;\n        padding: 0.5rem 0;\n        justify-content: center;\n    }\n\n    #zyBlog .tag-link {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-size: 0.875rem;\n        color: #221f20;\n        font-weight: 500;\n        text-decoration: none;\n        text-transform: uppercase;\n        padding: 0.4rem 0.8rem;\n        white-space: nowrap;\n        width: auto;\n    }\n\n    #zyBlog .tag-link:hover,\n    #zyBlog .tag-link.active {\n        text-decoration: underline;\n        text-underline-offset: 0.2rem;\n    }\n</style>\n<div id=\"zyBlog\">\n    <div class=\"blog-tags-nav\">\n        <a href=\"{{ blog.url }}\" class=\"tag-link{% unless current_tags %} active{% endunless %}\">ver tudo</a>\n\n        {% assign custom_order = \"Jornada Criativa,Agenda,Atividades,Collabs,Giveaways\" | split: ',' %}\n        {% assign remaining_tags = blog.all_tags | minus: custom_order %}\n\n        {% for tag in custom_order %}\n        {% if blog.all_tags contains tag %}\n        <a href=\"{{ blog.url }}/tagged/{{ tag | handle }}\"\n            class=\"tag-link{% if current_tags contains tag %} active{% endif %}\">\n            {{ tag }}\n        </a>\n        {% endif %}\n        {% endfor %}\n    </div>\n</div>",
+        "color_scheme": "",
+        "header-d0b901e1a90f43c100942fb337085ba7": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": []
+    },
+    "custom_liquid_KBih6": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n  #zyrelatedposts {\n    overflow: hidden;\n    padding: 0 2rem;\n    position: relative;\n    /* Importante para o posicionamento dos botões dentro deste contêiner */\n  }\n\n  #zyrelatedposts .related-posts-wrapper h3 {\n    font-size: 1.5rem;\n    margin-bottom: 1rem;\n  }\n\n  #zyrelatedposts .carousel-container {\n    display: flex;\n    overflow-x: auto;\n    scroll-snap-type: x mandatory;\n    gap: 0.5rem;\n    padding-bottom: 1rem;\n    -webkit-overflow-scrolling: touch;\n  }\n\n  #zyrelatedposts .carousel-container::-webkit-scrollbar {\n    display: none;\n  }\n\n  #zyrelatedposts .carousel-item {\n    flex: 0 0 250px;\n    scroll-snap-align: start;\n    overflow: hidden;\n    background: #fff;\n    text-align: left;\n    padding-top: 1rem;\n  }\n\n  #zyrelatedposts .carousel-item img {\n    width: 100%;\n    height: 200px;\n    object-fit: cover;\n    margin-bottom: 0.5rem;\n  }\n\n  #zyrelatedposts .carousel-item h3 {\n    font-size: 1rem;\n    margin: 0.5rem 0;\n  }\n\n  /* Botões no topo direito */\n  .carousel-button {\n    position: absolute;\n    top: 0;\n    transform: translateY(0%);\n    background: #fff;\n    border: 1px solid #ccc;\n    border-radius: 50%;\n    padding: 0.5rem;\n    cursor: pointer;\n    z-index: 1;\n    width: 32px;\n    height: 32px;\n    background-color: transparent;\n  }\n\n  .carousel-button svg {\n    width: 100%;\n    height: 100%;\n    color: #333;\n  }\n\n  .carousel-button.left {\n    right: 70px;\n  }\n\n  .carousel-button.right {\n    right: 30px;\n  }\n\n  @media (max-width: 768px) {\n    .carousel-button {\n      display: none;\n    }\n  }\n</style>\n\n<div id=\"zyrelatedposts\" class=\"related-posts-wrapper\">\n  {% assign main_tag = article.tags.first %}\n  {% assign related_articles = \"\" %}\n\n  {% if main_tag %}\n  {% for related in blog.articles %}\n  {% if related.id != article.id and related.tags contains main_tag %}\n  {% assign related_articles = related_articles | append: related.id | append: \",\" %}\n  {% endif %}\n  {% endfor %}\n  {% endif %}\n\n  {% if related_articles != \"\" %}\n  <h3>Posts relacionados:</h3>\n\n  <!-- Botões de navegação no topo direito -->\n  <div class=\"carousel-button left\" onclick=\"scrollCarousel(-1)\">\n    <svg class=\"icon chevron-left\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" fill=\"none\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n        d=\"M5.52852 8.47148C5.26819 8.21115 5.26819 7.78902 5.52852 7.52868L9.29975 3.75744C9.56007 3.49711 9.98218 3.49711 10.2425 3.75744C10.5029 4.01778 10.5029 4.4399 10.2425 4.70024L6.94269 8.00008L10.2425 11.2999C10.5029 11.5603 10.5029 11.9824 10.2425 12.2427C9.98218 12.5031 9.56007 12.5031 9.29975 12.2427L5.52852 8.47148Z\"\n        fill=\"currentColor\" />\n    </svg>\n  </div>\n\n  <div class=\"carousel-button right\" onclick=\"scrollCarousel(1)\">\n    <svg class=\"icon chevron-right\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" fill=\"none\">\n      <path fill-rule=\"evenodd\" clip-rule=\"evenodd\"\n        d=\"M10.4713 7.52852C10.7317 7.78885 10.7317 8.21098 10.4713 8.47132L6.70005 12.2426C6.43973 12.5029 6.01763 12.5029 5.75727 12.2426C5.49693 11.9822 5.49693 11.5601 5.75727 11.2997L9.05712 7.99992L5.75727 4.70008C5.49693 4.43974 5.49693 4.01762 5.75727 3.75728C6.01763 3.49692 6.43973 3.49692 6.70005 3.75728L10.4713 7.52852Z\"\n        fill=\"currentColor\" />\n    </svg>\n  </div>\n\n  <div class=\"carousel-container\" id=\"carouselContainer\">\n    {% assign shown_ids = \"\" %}\n    {% for related in blog.articles %}\n    {% if related.id != article.id and related.tags contains main_tag %}\n    {% assign related_id = related.id | string %}\n    {% unless shown_ids contains related_id %}\n    {% assign shown_ids = shown_ids | append: related_id | append: \",\" %}\n    <div class=\"carousel-item\">\n      <a href=\"{{ related.url }}\">\n        {% if related.image %}\n        <img src=\"{{ related.image.src | img_url: '400x' }}\" alt=\"{{ related.title }}\">\n        {% endif %}\n        <h3>{{ related.title }}</h3>\n      </a>\n    </div>\n    {% endunless %}\n    {% endif %}\n    {% endfor %}\n  </div>\n  {% endif %}\n</div>\n\n<script>\n  function scrollCarousel(direction) {\n    const container = document.getElementById('carouselContainer');\n    const scrollAmount = 260;\n    container.scrollBy({\n      left: direction * scrollAmount,\n      behavior: 'smooth'\n    });\n  }\n</script>",
+        "color_scheme": "",
+        "header-d0b901e1a90f43c100942fb337085ba7": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": [
+    "custom_liquid_eN4ia",
+    "main",
+    "custom_liquid_drpLz",
+    "custom_liquid_KBih6"
+  ]
+}

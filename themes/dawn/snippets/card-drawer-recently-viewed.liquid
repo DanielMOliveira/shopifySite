@@ -1,0 +1,70 @@
+{% comment %}
+  Renders a recently viewed products
+
+  Usage:
+      {% render 'card-drawer-recently-viewed' %}
+{% endcomment %}
+
+<recently-viewed class="recently-viewed !hidden md:w-[355px]" data-without-image-slider="true">
+  <section
+    id="section-recently-viewed"
+    class="w-[520px] max-w-[calc(100vw-110px)] overflow-hidden pb-6 opacity-0 transition-opacity md:w-[355px]"
+  >
+    <div class="lg:relative">
+      <div
+        class="swiper recently-viewed-swiper group !overflow-visible lg:!static lg:transition-all"
+        data-slider='
+            {
+              "spaceBetween": 16,
+              "slidesPerView": 1.2,
+              "breakpoints": {
+                  "468": {
+                      "slidesPerView": 2.2
+                  },
+                  "1024": {
+                      "spaceBetween": 20
+                  }
+              },
+              "navigation": {
+                  "prevEl": "#section-recently-viewed .swiper-button-prev",
+                  "nextEl": "#section-recently-viewed .swiper-button-next"
+              },
+              "scrollbar": {
+                  "el": "#section-recently-viewed .swiper-scrollbar"
+              }
+          }
+        '
+      >
+        <div class="recently-viewed-products swiper-wrapper flex"></div>
+
+        <div class="swiper-button-prev -!transform-y-2/4 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] lg:!right-4 xl:!right-10">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      </div>
+    </div>
+
+    {% style %}
+      #section-recently-viewed:has(.offcanvas-card-product.is-open) {
+        position: relative;
+        z-index: 1000;
+      }
+
+      #section-recently-viewed:has(.swiper.swiper-initialized .swiper-slide) {
+        opacity: 1;
+      }
+
+      #section-recently-viewed .swiper-scrollbar .swiper-scrollbar-drag {
+        background-color: rgb(var(--color-gray-500));
+        border-radius: 100px;
+        display: block !important;
+      }
+
+      #section-recently-viewed .swiper:not(.swiper-initialized) .swiper-wrapper.recently-viewed-products .swiper-slide {
+        width: 73%;
+      }
+    {% endstyle %}
+  </section>
+</recently-viewed>

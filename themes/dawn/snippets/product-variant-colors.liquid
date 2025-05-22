@@ -1,0 +1,46 @@
+{% comment %}
+  Renders a colors in the collection card
+    Accepts:
+    - product: {Object} Product Liquid object
+    - class: {String} (optional)
+    - is_product_page: {Boolean} Required for product block on product detail page
+
+  Usage:
+  {% render 'product-variant-colors', product: product, is_product_page: false  %}
+{% endcomment %}
+
+{% liquid
+  assign matched_products = ''
+  assign refdesign = ''
+  assign refdesign = product.metafields.custom.refdesign | escape
+
+  assign product_color_data = product.metafields.custom.colorswatches.value
+  assign product_color = product_color_data.color_hex_code.value[0]
+  assign product_color_label = product_color_data.color_name | default: 'Label is not configured'
+
+  assign color_swatches_visible_count = 4
+  assign matched_products_visible = color_swatches_visible_count | minus: 1
+%}
+
+{% if refdesign != blank %}
+  {% if is_product_page %}
+    <div class="mb-3 text-2xs md:text-sm">
+      <span class="mr-1 inline-block text-gray-700">{{ 'products.product.color' | t }}:</span>
+      <span class="font-medium text-primary">{{ product_color_label }}</span>
+    </div>
+  {% endif %}
+
+  <div
+    class="product-variant__colors hidden flex-wrap items-center gap-1 product-detail-page-variant__colors{% if class != blank %} {{ class }}{% endif %}"
+    data-refdesign="{{ refdesign }}"
+    data-product-url="{{ product.url | split: '?' | first }}"
+  >
+    {% unless is_product_page %}
+      {% if matched_products_size > matched_products_visible %}
+        <span class="product-variant__size ml-1 text-2xs font-medium">
+          + {{ matched_products_size | minus: matched_products_visible }}
+        </span>
+      {% endif %}
+    {% endunless %}
+  </div>
+{% endif %}

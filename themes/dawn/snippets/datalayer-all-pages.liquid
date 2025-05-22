@@ -1,0 +1,93 @@
+{% if cart.items.size > 0 %}
+  <script type="application/json" id="datalayer-cart-items">
+    [
+      {
+        "currency": {{ cart.currency.iso_code | json }},
+        "value": {{ cart.total_price | json }},
+        "items": [
+          {% for item in cart.items %}
+            {
+              "index": {{ forloop.index }},
+              "quantity": {{ item.quantity }},
+              "item_name": {{ item.title | json }},
+              "item_id": {{ item.product_id | json }},
+              "currency": {{ cart.currency.iso_code | json }},
+              "price": {{ item.price }},
+              "final_price": {{ item.final_price }},
+              "item_variant": {{ item.variant.title | json }},
+              "item_brand": {{ item.vendor | json }},
+              "item_list_id": "cart_page",
+              "item_list_name": "Cart Page"
+              {% if item.line_level_discount_allocations.size > 0 %}
+                ,"line_level_discount_allocations": [
+                  {% for discount in item.line_level_discount_allocations %}
+                    {
+                      "value_type": {{ discount.discount_application.value_type | json }},
+                      "value": {{ discount.discount_application.value | json }},
+                      "title": {{ discount.discount_application.title | json }}
+                    }
+                    {% unless forloop.last %},{% endunless %}
+                  {% endfor %}
+                ]
+              {% endif %}
+            }
+            {% unless forloop.last %},{% endunless %}
+          {% endfor %}
+        ]
+      }
+    ]
+  </script>
+{% endif %}
+
+<script src="{{ "datalayer-all-pages.js" | asset_url }}" defer="defer"></script>
+<script>
+  let dataLayer = window.dataLayer || [];
+  let pageType = {{ template.name | json }};
+
+  const user = {
+    logged_in: "{% if customer %}Logged In{% else %}Logged Out{% endif %}",
+    type: "{% if customer %}regular{% else %}guest{% endif %}",
+    {% if customer %}
+      account_id: {{ customer.id | json }},
+    {% endif %}
+  };
+
+  let data = {
+    event: "pageview",
+    user,
+    consent: {
+      essential: false,
+      functional: false,
+      marketing: false
+    },
+    application: {
+      id: "main",
+      store: {{ shop.domain | json }},
+      version: "15.0.0",
+    },
+    site: {
+      language: {{ shop.locale | json }},
+      environment: {{ theme.role | json }},
+      country: {{ shop.address.country | json }}
+    },
+    page: pageType
+  };
+
+  {% if template contains "index" %}
+    data.page = "homepage";
+  {% endif %}
+
+  {% if template contains "collection" %}
+    data.page = "categorypage";
+  {% endif %}
+
+  {% if template contains "product" %}
+    data.page = "productpage";
+    data.product = {
+      stock: {{ product.available | json }},
+      review_quantity: 0,
+    }
+  {% endif %}
+
+  document.addEventListener("DOMContentLoaded", () => new DataLayer(data));
+</script>

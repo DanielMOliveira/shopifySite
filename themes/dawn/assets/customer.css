@@ -1,0 +1,121 @@
+/* Account/Order */
+.addresses [aria-expanded="false"] ~ div[id] {
+  display: none;
+}
+
+.addresses [aria-expanded="true"] ~ div[id] {
+  display: block;
+}
+
+.customer-nav__item {
+  position: relative;
+  transition: all 0.15s ease-in-out;
+}
+
+.order-details tr {
+  vertical-align: baseline;
+}
+
+@media screen and (max-width: 767px) {
+  .order-details td::before,
+  .customer td::before {
+    content: attr(data-label);
+    text-transform: uppercase;
+    flex-grow: 1;
+    text-align: left;
+  }
+
+  .customer-nav__item.open {
+    font-weight: 500;
+    border-color: transparent;
+  }
+
+  .customer-nav__item.open + [data-nav-content] {
+    padding-bottom: 20px;
+  }
+
+  .customer-nav__item.open .icon-animation {
+    transform: rotate(180deg);
+  }
+
+  .customer.order-history tbody tr td:first-child {
+    padding-top: 2rem;
+  }
+
+  .customer.order-history tbody tr:first-child td:first-child {
+    padding-top: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .customer-nav__item:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #232323;
+    transition: all 0.15s ease-in-out;
+  }
+
+  .customer-nav__item.active {
+    font-weight: 500;
+  }
+
+  .customer-nav__item.active:after,
+  .customer-nav__item:hover:after {
+    width: 100%;
+  }
+
+  .account-block {
+    min-height: 360px;
+  }
+}
+
+/** Popup screen **/
+
+.addresses .fields input,
+.addresses .fields select {
+  width: 100%;
+}
+
+.addresses .popupscreen {
+  position: fixed;
+  z-index: 100;
+  max-width: 640px;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100vh;
+}
+
+.addresses .popupscreen-inner {
+  position: relative;
+  overflow: auto;
+  top: calc(50% + 140px);
+  max-height: calc(100% - 160px);
+  background-color: #fff;
+  transform: translateY(calc(-1 * 50% - 80px));
+}
+
+@media only screen and (min-width: 1024px) {
+  .addresses .popupscreen-inner {
+    max-height: calc(100% - 112px);
+    top: calc(50% + 72px);
+    transform: translateY(calc(-1 * 50% - 36px));
+  }
+}
+
+.popupscreen:before {
+  content: "" !important;
+  display: block !important;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000000b3;
+  z-index: -10;
+  left: 0;
+  top: 0;
+}

@@ -1,0 +1,963 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_search_F9nejq": {
+      "type": "faq-search",
+      "settings": {
+        "synonyms_list": "",
+        "is_synonyms_full_word_search": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_navigation_nCQVUy": {
+      "type": "faq-navigation",
+      "blocks": {
+        "faq_section_id_eggL8a": {
+          "type": "faq_section_id",
+          "disabled": true,
+          "settings": {
+            "heading": "Frequently Asked Questions"
+          }
+        },
+        "faq_section_id_DfwYXd": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Shipping & Delivery"
+          }
+        },
+        "faq_section_id_n3DDLE": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Returns & Exchanges"
+          }
+        },
+        "faq_section_id_rC4nLB": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "How to Shop"
+          }
+        },
+        "faq_section_id_9TNXqi": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Payment Methods"
+          }
+        },
+        "faq_section_id_zQtRjL": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Secure Shopping"
+          }
+        },
+        "faq_section_id_RerTNg": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Sales Terms & Conditions"
+          }
+        },
+        "faq_section_id_c9MdK7": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Campaigns"
+          }
+        },
+        "faq_section_id_eefEhP": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Irregularities Communication"
+          }
+        },
+        "faq_section_id_m9ehyA": {
+          "type": "faq_section_id",
+          "settings": {
+            "heading": "Contact Us"
+          }
+        }
+      },
+      "block_order": [
+        "faq_section_id_eggL8a",
+        "faq_section_id_DfwYXd",
+        "faq_section_id_n3DDLE",
+        "faq_section_id_rC4nLB",
+        "faq_section_id_9TNXqi",
+        "faq_section_id_zQtRjL",
+        "faq_section_id_RerTNg",
+        "faq_section_id_c9MdK7",
+        "faq_section_id_eefEhP",
+        "faq_section_id_m9ehyA"
+      ],
+      "custom_css": [
+        "li {text-transform: none; padding: 1rem 0;}"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_adq8Gf": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_xeHz69": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How long does delivery take?",
+            "faq_answer": "<p>For further details on delivery time, please see <a href=\"https://zippyonline.com/on/demandware.store/Sites-zippy_es-Site/en_BE/Search-ShowContent?fdid=static-page-delivery-INT\">delivery</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_X7B9p3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "When am I charged for my order?",
+            "faq_answer": "<p>We won't charge your credit/debit card or PayPal until the items are ready to be dispatched from our warehouse. In some cases, payment for the items will be taken upfront, once the order has been placed. If we find that goods are not available after payment has been taken, we will ensure that you receive a refund.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_FD9T3g": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I cancel an order?",
+            "faq_answer": "<p>For details on how to cancel your order and return items after they have been dispatched to you, please refer to our returns' policy here.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_nBKB7x": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I return an item?",
+            "faq_answer": "<p>Items can be returned by sending them to the following address:</p><p><br/>Name: ZIPPY – Centro Comercial Gaiashopping<br/>Street: Rua Particular Santo António Loja nº 232<br/>ZIP: 4400-503 | Vila Nova de Gaia<br/><br/>Please note:</p><ul><li>All items must be in perfect conditions and with the original labels;</li><li>The invoice must be enclosed in the package;</li><li>You can return any item within 14 days of receipt;</li></ul><p></p><p>We will arrange for the items to be collected from your home address. Our Customer Care team will contact you to schedule the collection of your item(s). If you are unable to be present on the arranged day, please contact our Customer Care team to schedule another date. Once we receive and confirm the condition of the items, our Customer Care team will proceed with the refund to your original method of payment. Additionally, we will refund the shipping costs originally associated with your order. You will receive a confirmation of the refund and a refund invoice via email.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_6hPYaQ": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can my parcel be shipped to a different country?",
+            "faq_answer": "<p>No, the delivery country must always match the country of purchase.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_QhxqAY": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I know what size to order?",
+            "faq_answer": "<p>Our size guides will help you choose clothes and footwear. Full size guides are provided for girl, boy, baby girl, baby boy and newborn. With advice on how to measure up correctly, you can be sure your order will be a perfect fit. Our size guides can also be viewed whilst you are browsing our online collections. Simply click on size guide listed under the size option box.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_xeHz69",
+        "faq_item_X7B9p3",
+        "faq_item_FD9T3g",
+        "faq_item_nBKB7x",
+        "faq_item_6hPYaQ",
+        "faq_item_QhxqAY"
+      ],
+      "disabled": true,
+      "custom_css": [
+        "p {line-height: 1.5;}"
+      ],
+      "settings": {
+        "heading": "Frequently Asked Questions",
+        "faq_section_id": "Frequently Asked Questions",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_BjUGR4": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_TNeDXf": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How long does delivery take?",
+            "faq_answer": "<p>[table1]</p><p>*Currently, we only ship heavy Nursery items to Spain. Items not eligible for shipping are specified on their product page.</p><p>**it depends on the supplier.</p>",
+            "list_1": "",
+            "table_1": "<style>\n  table,\n  th,\n  tr, td {\n    border: 1px solid #E4E4E4;\n    text-align: center;\n    vertical-align: middle;\n  }\n\n  table {\n    width: 100%;\n  }\n\n  th {\n    background-color: #F7F7F7;\n    padding: 1rem\n  }\n\n  td {\n    padding: 1rem;\n  }\n\n\n</style>\n<div style=\"overflow-x:auto;\">\n<table>\n  <tbody>\n    <tr>\n      <th rowspan=\"2\" style=\"width: 10%;\">Country</th>\n      <th colspan=\"2\">Fashion, Footwear &amp; Small Nursery</th>\n      <th colspan=\"2\">Heavy Nursery* </th>\n    </tr>\n    <tr style=\"background-color:#F7F7F7\">\n      <td style=\"width: 22.5%\"><b>Cost</b></td>\n      <td style=\"width: 22.5%\"><b>Shipping Times</b></td>\n      <td style=\"width: 22.5%\"><b>Cost</b></td>\n      <td style=\"width: 22.5%\"><b>Shipping Times**</b></td>\n    </tr>\n    <tr>\n      <td>Austria</td>\n      <td>€6,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Belgium</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Denmark</td>\n      <td>€7,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Estonia</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Finland</td>\n      <td>€14,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>France</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Germany</td>\n      <td>€5,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Italy</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Lithuania</td>\n      <td>€7,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Monaco</td>\n      <td>€6,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Netherlands</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Romania</td>\n      <td>€14,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Spain</td>\n      <td>3,99€ (free over 39,99€)</td>\n      <td>3-6 business days</td>\n      <td>€3,99</td>\n      <td>3-6 business days</td>\n    </tr>\n    <tr>\n      <td>Sweden</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n<br><br>"
+          }
+        },
+        "faq_item_3aHJzG": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How will my order be delivered?",
+            "faq_answer": "<p>Chronopost will deliver your order to the address of your choice between 9 a.m. and 7 p.m. on workdays. Please note that if your order contains a nursery item and a fashion/footwear item, they may be delivered separately.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_LaRMDg": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can my order be shipped to a different country?",
+            "faq_answer": "<p>No, the delivery country must always match the country of purchase.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_TNeDXf",
+        "faq_item_3aHJzG",
+        "faq_item_LaRMDg"
+      ],
+      "settings": {
+        "heading": "Shipping & Delivery",
+        "faq_section_id": "Delivery",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_BEGrDX": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_XQNBHt": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I return an item?",
+            "faq_answer": "<p>If you wish to return an item, please be aware that the shipping charges will be your responsibility. The item(s) being returned should be sent to our warehouse at the following address:<br/><br/>ZIPPY Centro Comercial Ferrara Plaza<br/>Rua Ferrara Plaza nº36, Carvalhosa<br/>4590-073 Paços de Ferreira<br/><br/>Please remember the following:<br/>- All items must be in perfect condition with their original labels.<br/>- Include the original invoice in the package.<br/>- You have 14 days from receipt to return any item.<br/><br/>Once we receive and verify the condition of the items, we will process the refund to your original method of payment. </p><p>Additionally, we will reimburse the shipping costs associated with your order.<br/><br/>You will receive an email confirmation of the refund and the refund invoice.</p>",
+            "list_1": "<ul><li>All items must be in perfect conditions, with the original labels.</li><li>The invoice must be enclosed in the package.</li><li>You can return any item within 14 days of receipt.</li></ul>",
+            "table_1": ""
+          }
+        },
+        "faq_item_y8gqML": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How do I exchange an item?",
+            "faq_answer": "<p>Currently, orders can only be returned; exchanges are not possible.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_tmMD6r": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Have you received my return?",
+            "faq_answer": "<p>Please allow up to 14 working days for us to receive and process your return. We will send you an email once your returned items have been received. You can check the status of your return by logging into your account. If you made your purchase with a debit or credit card, or through PayPal, please allow 3 working days for the refund to be processed once we receive your item. If you haven't received your refund after this time, please get in touch with us and we will investigate.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_yGYgmj": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How will I receive my refund?",
+            "faq_answer": "<p>The period to receive the refund is 3 to 14 business days after the date of receipt of your order. </p><p>Your refund will be issued to the original payment method within 14 days of us receiving the returned items and confirming their condition.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_eQckar": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How much will it cost to return my order?",
+            "faq_answer": "<p>Customer is responsible for the carrier costs. Nevertheless, we’ll refund the shipping costs originally paid in your order.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_3AnNPL": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How will I receive my refund?",
+            "faq_answer": "<p>If you request a return on the online store, in your personal area, your refund will automatically be issued to the original payment method used for the order.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_nHDk49": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Can I return any item?",
+            "faq_answer": "<p>We will only accept returns of items in perfect condition, with the corresponding receipt and original sealed packaging.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_XQNBHt",
+        "faq_item_y8gqML",
+        "faq_item_tmMD6r",
+        "faq_item_yGYgmj",
+        "faq_item_eQckar",
+        "faq_item_3AnNPL",
+        "faq_item_nHDk49"
+      ],
+      "custom_css": [],
+      "settings": {
+        "heading": "Returns & Exchanges",
+        "faq_section_id": "Returns & Exchanges",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_jDfR76": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_JrUVQe": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "How can I place an order?",
+            "faq_answer": "<p>1. Choose a category (Girl, Boy, Baby Girl, Baby Boy, Newborn, or Nursery) and use the navigation to select the type of product you want, such as shoes or T-shirts.<br/>2. Click on the item to see a detailed description, including price, reference, composition, and recommended care.<br/>3. Click \"Add to Shopping Cart\" to add it to your basket. You can then choose to view your shopping cart or proceed to checkout to complete your purchase.<br/>4. If you have any promo codes, enter them in the promo code area and click “Apply” to receive discounts.<br/>5. To complete your order, click on “Checkout” and then \"Login\" or \"Create an Account\" to register.<br/>6. Select your delivery address.<br/>7. Choose a payment method (Visa or Mastercard Credit Card or Paypal).<br/>8. Confirm your order, and once it's successfully processed, you will receive an email confirmation.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_JrUVQe"
+      ],
+      "settings": {
+        "heading": "How to Shop",
+        "faq_section_id": "How to Shop",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_KBWJAX": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_edBdbP": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What are the available payment methods?",
+            "faq_answer": "<p>Credit card</p><p>You’ll be charged when the order leaves the warehouse. When you place the order we authorize the amount, in the moment the order leaves the warehouse we capture the amount.SafetyWe use the zippy most advanced coding systems (ssl) to guarantee that your purchase is secure. All payments with visa and mastercard only accept transactions via the set (secure electronic trading) system. Once the card has been verified, the set system will contact the issuing card authority so that the buyer may authorize the purchase. The amount will only be debited to the card once the bank has confirmed that the card and user are authentic. Should this not be the case, the request is cancelled. The cvv (card verification value) is a security guarantee against credit card fraud. The encrypted code corresponds to the card number and expiry date, and is requested when carrying out a transaction to ensure that the buyer is in possession of the card.Refused credit cardsYour credit card can be refused in one of the following situations:- card expired: check your card’s expiry date. If it has expired, you need to renew it.- limit exceeded: if you have reached the limit on your card for your purchases.- incorrect or incomplete data: check that you have completed each required field correctly.If any of these situations has occurred, contact your bank.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_BqrtcC": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_CAgQWt": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_gAH3Kh": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_iFjJVz": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_6jbjCk": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_GX9CWc": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_YGMEfJ": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_CHka7f": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_eccTeX": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_39bDbC": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_3tanMn": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_L9b9bY": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_edBdbP",
+        "faq_item_BqrtcC",
+        "faq_item_CAgQWt",
+        "faq_item_gAH3Kh",
+        "faq_item_iFjJVz",
+        "faq_item_6jbjCk",
+        "faq_item_GX9CWc",
+        "faq_item_YGMEfJ",
+        "faq_item_CHka7f",
+        "faq_item_eccTeX",
+        "faq_item_39bDbC",
+        "faq_item_3tanMn",
+        "faq_item_L9b9bY"
+      ],
+      "settings": {
+        "heading": "Payment Methods",
+        "faq_section_id": "Payment Methods",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_iXMDQQ": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_ti6gLg": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Is shopping on Zippy Website secure?",
+            "faq_answer": "<p>We use the most advanced coding systems (SSL) to ensure that your shopping is secure. All Visa and Mastercard payments only accept transactions using the Secure Electronic Trading (SET) system. Once the card has been verified, the SET system contacts the institution that issued the card so that the buyer can authorise the purchase. The amount will only be debited to the card once the bank has confirmed that the card and user are authentic. If not, the order is cancelled. The CCV (Card Verification Value) is a guarantee that the card is secure and helps reduce credit card fraud. The encrypted code corresponds to the card number and expiry date and is requested when paying online to prove that you actually have the physical card.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_LDXdmw": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_jqmeXT": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_ti6gLg",
+        "faq_item_LDXdmw",
+        "faq_item_jqmeXT"
+      ],
+      "settings": {
+        "heading": "Secure Shopping",
+        "faq_section_id": "Secure Shopping",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_f4iEgh": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_ec6wYq": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "What are the general terms of conditions of sale?",
+            "faq_answer": "<h5>Intellectual Property</h5><p>The Intellectual Property rights regarding the Zippy website, including its content and information, belong to ZIPPY .All the intellectual property rights on text, images, sound, software and other website content belong to ZIPPY. Users can search the Zippy website and reproduce excerpts by printing, downloading either to a disc or by distributing to third parties, but never for commercial purposes.The website contents can only be used for personal purposes. No part of the website can be used or distributed for commercial purposes, and, in the same way, it cannot be Zippy defied or used in any essay or publication, regardless of format, and particularly be transferred to other website(s). By allowing access to its website, ZIPPY is not granting its users any rights or license.</p><h5>Conditions of Use</h5><p>The user is responsible for using this website in compliance with that laid down by the law, refraining from any unlawful or immoral activity, or any activity that goes against the best practices or rights of third parties.</p><h5>Information on products and prices</h5><p>The prices provided by ZIPPY include the tax applicable by law (VAT). Any changes to the said tax will reflect immediately on the prices practiced by the brand. Nevertheless, ZIPPY reserves the right to change its prices at any given time, and items may be available for limited periods of time established by the brand.The user is responsible for any shipping costs, unless otherwise established by the brand.Considering that ZIPPY is responsible for a wide range of articles, keep in mind that labelling is not error-free. In cases where errors are detected during the order treatment process, the buyer is free to reconfirm his order at the correct price or cancel such order.</p><h5>Purchasing Process</h5><p>The purchasing process with ZIPPY is very simple. After creating an account, you’ll have access to a personal area where you can see your shopping and your returns history.</p><h5>Payment Method</h5><p>Shoppers can choose which payment method they prefer from the following options: Visa or Mastercard Credit Cards, or Paypal.We use the Zippy most advanced coding systems (SSL) to guarantee that your purchase is secure. All payments with Visa and Mastercard only accept transactions via the SET (Secure Electronic Trading) system. Once the card has been verified, the SET system will contact the issuing card authority so that the buyer may authorize the purchase. The amount will only be debited to the card once the bank has confirmed that the card and user are authentic. Should this not be the case, the request is cancelled. The CVV (Card Verification Value) is a security guarantee against credit card fraud. The encrypted code corresponds to the card number and expiry date, and is requested when carrying out a transaction to ensure that the buyer is in possession of the card.</p><h5>Warranty</h5><p>The warranty period begins from the date the product is delivered. Should the buyer verify any defect to the product, s/he must e-mail the customer support service at:<a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a>referring the order number whenever possible.</p><h5>Returns</h5><p>Returns are made within 14 days from the day the order was received. Returns must be sent to our returns center and costs are from customer’s responsibility. Zippy will refund you the order shipping costs originally paid via store credit.</p><h5>Returns Policy</h5><p>Only returns in perfect condition will be accepted and must include the corresponding receipt and original sealed packaging (in the case of perfumes and cosmetics). We do not accept underwear returns or exchanges.</p><h5>Customer Support</h5><p>ZIPPY will clarify your queries and/or respond to any requests for information sent to the following e-mail:<a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a></p><h5>Liability</h5><p>ZIPPY is not liable for any viruses or other similar elements to its website, present in electronic documents and/or files stored on your computer.</p><h5>Law and Court</h5><p>These general conditions of sale have been drawn up under Portuguese law. However, in the event of a dispute, the consumer may appeal to the Portuguese courts or to the courts of the country of the consumer.</p><h5>Coupons</h5><p>Conditions of use:Coupons used on the Zippy website are only valid for the online store and for a single purchase made within the period indicated in the e-mail. The discount does not apply to the dispatch costs of the order. Coupon credits are immediately allocated once the order is invoiced and sent by e-mail. Such amount can only be used by the owner of the account.Return conditions:The value of the coupon used is divided in equal parts for each item in an order. When an order for which a coupon was issued is returned, such coupon will immediately become null and void. Should an order which originated a coupon be returned and said coupon has already been used, the proportional value gained with the coupon for each item will be deducted from the amount to be refund. Should an order paid in full or partially with a coupon be returned, the client shall be refund via the method of payment originally used. With regard to the amount paid with a coupon, the amount refund is the proportional amount for each article.</p><h5>Stock-outs</h5><p>In the case of unavailable products and/or stock-out, the client will be informed that the order will be completely or partially cancelled and the customer won’t be charged for the stock-out products.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_tgXknd": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_JiHzYA": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_A9dC8R": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_Vz6pUm": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_RBrkXA": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_VbykdY": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_wUJcry": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_ETPyj6": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_YkqkwM": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_q89bBW": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_xepN4x": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_kB37L3": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_BryryH": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_nHHkd8": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_aRq8Nr": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_AegqnJ": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_6pFtfD": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_Mkpkd9": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_ntJQMH": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_LLf3Tq": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_6hWY9Y": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_Nr9DPi": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_bjqHKA": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_DGVfke": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "<p>Question</p>",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_ec6wYq",
+        "faq_item_tgXknd",
+        "faq_item_JiHzYA",
+        "faq_item_A9dC8R",
+        "faq_item_Vz6pUm",
+        "faq_item_RBrkXA",
+        "faq_item_VbykdY",
+        "faq_item_wUJcry",
+        "faq_item_ETPyj6",
+        "faq_item_YkqkwM",
+        "faq_item_q89bBW",
+        "faq_item_xepN4x",
+        "faq_item_kB37L3",
+        "faq_item_BryryH",
+        "faq_item_nHHkd8",
+        "faq_item_aRq8Nr",
+        "faq_item_AegqnJ",
+        "faq_item_6pFtfD",
+        "faq_item_Mkpkd9",
+        "faq_item_ntJQMH",
+        "faq_item_LLf3Tq",
+        "faq_item_6hWY9Y",
+        "faq_item_Nr9DPi",
+        "faq_item_bjqHKA",
+        "faq_item_DGVfke"
+      ],
+      "settings": {
+        "heading": "Terms and Conditions",
+        "faq_section_id": "Terms and Conditions",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_N7DKKQ": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_QjnYiU": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Do you need assistance? We're here to help you.",
+            "faq_answer": "<p>We are always happy to help!</p><p>Monday to Friday from 9am to 6pm (WET Time). Only business days.</p><p>Address</p><p>Customer Care – ZIPPY<br/>Estrada Nacional 13, km 6,78<br/>Edifício SONAE 2.D 2º Piso<br/>Lugar do Espido – Via Norte<br/>4470-179 Maia, Portugal</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_AAPCdq": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_3MMwDC": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_QjnYiU",
+        "faq_item_AAPCdq",
+        "faq_item_3MMwDC"
+      ],
+      "settings": {
+        "heading": "Contact us",
+        "faq_section_id": "Contact Us",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_XG3GGr": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_EWmxKW": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Which campaigns are currently active?",
+            "faq_answer": "<p>Currently, there are no campaigns available.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_7ghWcM": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_Khcfff": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_EWmxKW",
+        "faq_item_7ghWcM",
+        "faq_item_Khcfff"
+      ],
+      "settings": {
+        "heading": "Campaigns",
+        "faq_section_id": "Campaigns",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "faq_content_HtActz": {
+      "type": "faq-content",
+      "blocks": {
+        "faq_item_meDM7C": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Regulatory Compliance Program regarding Whistleblowing and Policy on Prevention of Corruption and Related Offences.",
+            "faq_answer": "<p>ZEITEREEL approved a Regulatory Compliance Program regarding Whistleblowing and a Policy on Prevention of Corruption and Related Offences.</p><p><strong>To read the Regulations:</strong></p><p>- Whistleblowing Regulation, click <a href=\"https://stg.zippyonline.com/on/demandware.static/-/Library-Sites-zippy-shared/default/dw0b57f02e/zippy/Whistleblowing_Regulation_eng_Zeitreel_2022.pdf\" target=\"_blank\">here</a>.</p><p>- Policy on Prevention of Corruption and Related Offences, click<a href=\"https://stg.zippyonline.com/on/demandware.static/-/Library-Sites-zippy-shared/default/dwc71991cc/zippy/Policy_on_Prevention_of_Corruption_eng_zeitreel_2022.pdf\" target=\"_blank\">here</a>.</p><p>To report Irregularities:- Whistleblowing – violations of the EU law, based on information obtained during professional activity, as stipulated in the respective regulation.- Prevention of Corruption and Related Offences - corruption crimes and related offences as stipulated in the Prevention of Corruption and Related Offences Policy.</p><p>You may contact us through the following channels:</p><ul><li>E-mail: <a href=\"mailto:comunicacao.irregularidades@zeitreel.com?subject=Comunica%C3%A7%C3%A3o%20de%20Irregularidade%20Zippy\">comunicacao.irregularidades@zeitreel.com</a></li><li>Zeitreel’s Whistleblowing & Anticorruption Officer: Sonae Maia Business Center, Edificio 2E, Lugar do Espido – Via Norte, 4470-179 Maia, Portugal</li></ul>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_tQfYxe": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_LxMzdc": {
+          "type": "faq_item",
+          "settings": {
+            "heading": "Question",
+            "faq_answer": "<p>Answer</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_meDM7C",
+        "faq_item_tQfYxe",
+        "faq_item_LxMzdc"
+      ],
+      "settings": {
+        "heading": "Irregularities Communication",
+        "faq_section_id": "Irregularities Communication",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq_search_F9nejq",
+    "faq_navigation_nCQVUy",
+    "faq_content_adq8Gf",
+    "faq_content_BjUGR4",
+    "faq_content_BEGrDX",
+    "faq_content_jDfR76",
+    "faq_content_KBWJAX",
+    "faq_content_iXMDQQ",
+    "faq_content_f4iEgh",
+    "faq_content_N7DKKQ",
+    "faq_content_XG3GGr",
+    "faq_content_HtActz"
+  ]
+}

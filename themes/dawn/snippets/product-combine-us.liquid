@@ -1,0 +1,298 @@
+{% comment %}
+  Render a list of combine us products.
+
+  Accepts:
+  - products: {Object} Products (required)
+  - is_bundle_product: {Boolean} Check if product is bundle. Default: false
+
+  Usage:
+      {% render 'product_combine_us, products: products, is_bundle_product: is_bundle_product %}
+{% endcomment %}
+
+<combine-us
+  class="combine-products-wrapper flex flex-col border-b border-gray-200 pb-7 md:pb-10"
+  data-items-count-text="{{ 'products.product.combine_us.add_to_cart_items' | t }}"
+>
+  <div class="mb-4 text-sm font-medium text-gray-900">
+    {% if is_bundle_product %}
+      {{ 'products.product.combine_us.title_is_bundle_product' | t }}
+    {% else %}
+      {{ 'products.product.combine_us.title' | t }}
+    {% endif %}
+  </div>
+
+  {% for combine_us_product in products %}
+    {% liquid
+      assign product_not_available = false
+
+      if combine_us_product.has_only_default_variant and combine_us_product.available == false
+        assign product_not_available = true
+      endif
+    %}
+
+    {% unless product_not_available %}
+      {% liquid
+        assign product_color_data = combine_us_product.metafields.custom.colorswatches.value
+        assign product_color = product_color_data.color_hex_code.value[0]
+        assign product_color_label = product_color_data.color_name | default: 'Label is not configured'
+      %}
+
+      <div class="combine-product mb-2 flex items-center gap-4 rounded-lg border border-gray-300 px-3 py-5 transition-all">
+        <div class="combine-image w-[70px] min-w-[70px]">
+          <a
+            href="{{ combine_us_product.url }}"
+            class="card__media group relative block h-full"
+            title="{{ combine_us_product.title | escape }}"
+          >
+            {% if combine_us_product.media.size > 0 and combine_us_product.featured_media %}
+              {% if combine_us_product.featured_media.media_type == 'video' %}
+                <div class="align-center relative mx-auto flex h-full justify-center overflow-hidden">
+                  <img
+                    src="{{ combine_us_product.featured_media | image_url : height: 89 }}"
+                    alt="{{ combine_us_product.featured_media.alt | default: product.title }}"
+                    class="mx-auto h-full object-contain mix-blend-darken"
+                    width="{{ combine_us_product.featured_media.width }}"
+                    height="{{ combine_us_product.featured_media.height }}"
+                    loading="{{ lazy_load }}"
+                  >
+                  {{
+                    combine_us_product.featured_media
+                    | video_tag:
+                      image_size: '400x',
+                      class: 'mx-auto w-full absolute',
+                      width: 600,
+                      height: 600,
+                      autoplay: true,
+                      loop: true,
+                      muted: true
+                  }}
+                </div>
+              {% else %}
+                <img
+                  src="{{ combine_us_product.featured_media | image_url }}"
+                  alt="{{ combine_us_product.featured_media.alt | default: product.title }}"
+                  class="mx-auto h-full object-contain mix-blend-darken"
+                  width="{{ combine_us_product.featured_media.width }}"
+                  height="{{ combine_us_product.featured_media.height }}"
+                  loading="{{ lazy_load }}"
+                >
+              {% endif %}
+
+            {% else %}
+              {{ 'product-1' | placeholder_svg_tag: 'placeholder-svg' }}
+            {% endif %}
+          </a>
+        </div>
+
+        <div class="combine-content flex-auto">
+          <div class="mb-2 flex items-start justify-between">
+            <h3 class="combine--card__heading text-base">
+              <a
+                href="{{ combine_us_product.url }}"
+                id="StandardCardNoMediaLink-{{ section_id }}-{{ product.id }}"
+                title="{{ combine_us_product.title | escape }}"
+                aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ combine_us_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ combine_us_product.id }}"
+              >
+                {{ combine_us_product.title | escape }}
+              </a>
+            </h3>
+          </div>
+          <div class="combine--cart__price mb-5">
+            {% render 'price', product: combine_us_product, currency_enabled: true, class: 'card-price' %}
+          </div>
+          <div class="combine--options flex text-2xs">
+            <div class="product-size flex w-full">
+              <product-form class="product-form w-full" data-section-id="{{ combine_us_product.id }}">
+                {% form 'product',
+                  product,
+                  id: combine_us_product.id,
+                  class: 'form flex items-center justify-start flex-wrap gap-2',
+                  novalidate: 'novalidate',
+                  data-type: 'add-to-cart-form'
+                %}
+                  {% if product_color_data != blank %}
+                    <div class="inline-flex items-center justify-center pr-3 relative{% unless combine_us_product.has_only_default_variant or combine_us_product.variants.size == 1 %} after:absolute after:right-0 after:top-2/4 after:-translate-y-1/2 after:h-3 after:w-[1px] after:bg-gray-300{% endunless %}">
+                      <span
+                        class="product-variant__color mr-1.5 inline-flex h-3 w-3 rounded-full "
+                        {% if product_color != blank %}
+                          style="background-color: {{ product_color }};"
+                        {% endif %}
+                      ></span>
+                      {{ product_color_label }}
+                    </div>
+                  {% endif %}
+                  {% if combine_us_product.has_only_default_variant %}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ combine_us_product.selected_or_first_available_variant.id }}"
+                      class="combine-product-size"
+                    >
+                  {% elsif combine_us_product.variants.size == 1 %}
+                    <input
+                      type="hidden"
+                      name="id"
+                      value="{{ combine_us_product.variants[0].id }}"
+                      class="combine-product-size"
+                    >
+                  {% elsif combine_us_product.variants.size > 1 %}
+                    {% assign set_selected_option = true %}
+
+                    <select
+                      name="id"
+                      class="combine-product-size block appearance-none pl-1 pr-6 outline-none hover:cursor-pointer"
+                    >
+                      {% for variant in combine_us_product.variants %}
+                        <option
+                          value="{{ variant.id }}"
+
+                          {% unless variant.available %}
+                            disabled
+                          {% endunless %}
+
+                          {% if set_selected_option and variant.available %}
+                            {% assign set_selected_option = false %}
+                            selected
+                          {% endif %}
+                        >
+                          {{ variant.title }}
+                        </option>
+                      {% endfor %}
+                    </select>
+                  {% endif %}
+                  <button
+                    class="add-to-cart-combine-us !ml-auto !mr-3 !justify-end !border-none !bg-transparent !p-0 !text-2xs !font-normal !text-gray-800 md:!mr-6 lg:!mr-10"
+                    id="ProductSubmitButton-{{ combine_us_product.id }}"
+                    type="submit"
+                    name="add"
+                    {% if target.available == false or quantity_rule_soldout %}
+                      disabled
+                    {% endif %}
+                  >
+                    <span class="h-4 w-4 min-w-4 md:h-5 md:w-5 md:min-w-5">
+                      {% render 'icon', icon: 'bag', class: '!h-4 !w-4 md:!h-5 md:!w-5' %}
+                    </span>
+                    <span data-text>
+                      {{ 'products.product.add_to_cart' | t }}
+                    </span>
+                    {% render 'loading-spinner' %}
+                  </button>
+                {% endform %}
+                <div
+                  class="product-form__error-message-wrapper mt-2.5 rounded border border-red-500 p-2.5 text-xs leading-3"
+                  role="alert"
+                  hidden
+                >
+                  <div class="flex items-center gap-2" tabindex="-1" autofocus>
+                    {% render 'icon', icon: 'error-circle' %}
+                    <span class="product-form__error-message"></span>
+                  </div>
+                </div>
+                {% render 'datalayer-product',
+                  product: combine_us_product,
+                  section_id: 'combine_us_products',
+                  index: 0
+                %}
+              </product-form>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endunless %}
+  {% endfor %}
+
+  {% style %}
+    .combine-products-wrapper select.combine-product-size:not(:has(option:not([disabled]))) + button {
+      color: rgb(var(--color-gray-500)) !important;
+      pointer-events: none !important;
+    }
+
+    .combine-products-wrapper:not(:has(.combine-product)) {
+      display: none;
+    }
+
+    .combine-product-size {
+      background-color: transparent;
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      background-size: 12px 10px;
+    }
+
+    .combine-product-size option:disabled {
+      color: rgb(var(--color-gray-400));
+    }
+
+    .combine-product:has(input:checked) {
+      border-color: rgb(var(--color-gray-900));
+    }
+
+    .combine--cart__price .price__regular,
+    .combine--cart__price .price__sale .regular,
+    .combine--cart__price .price__sale .sale {
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    .product-form button[disabled='true'] {
+      position: relative;
+    }
+
+    .product-form button[disabled='true'] .loading__spinner {
+      display: flex !important;
+      width: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .product-form button[disabled='true'] .loading__spinner svg .path {
+      stroke: rgb(var(--color-gray-800)) !important;
+    }
+
+    .combine-product .add-to-cart-combine-us:has(.loading__spinner:not(.hidden)) {
+      position: relative;
+      color: rgb(var(--color-gray-400)) !important;
+    }
+
+    .combine-product .add-to-cart-combine-us .loading__spinner:not(.hidden) {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+
+    .combine-product .add-to-cart-combine-us .loading__spinner:not(.hidden) {
+      display: flex !important;
+      width: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .combine-product .add-to-cart-combine-us .loading__spinner:not(.hidden) .path {
+      stroke: rgb(var(--color-gray-800)) !important;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .combine-us-items-count {
+        margin-right: 4px;
+        padding-right: 12px;
+        border-right-width: 1px;
+        border-color: rgba(var(--color-white) / 0.5);
+        line-height: 100%;
+      }
+    }
+  {% endstyle %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const combineProductsSize = document.querySelectorAll('.combine-product-size');
+
+      combineProductsSize.forEach((element) => {
+        element.addEventListener('change', () => {
+          const formWrapper = element.closest('product-form');
+          const errorWrapper = formWrapper.querySelector('.product-form__error-message-wrapper');
+
+          errorWrapper.hidden = true;
+        });
+      });
+    });
+  </script>
+</combine-us>

@@ -1,0 +1,92 @@
+{% comment %}
+  Renders footer menu.
+
+  Usage:
+      {% render 'footer-menu' %}
+{% endcomment %}
+
+{% liquid
+  assign link_with_columns = false
+
+  for link in section.settings.menu.links
+    if link.links != blank
+      for child_link in link.links
+        if child_link.links != blank
+          assign link_with_columns = link.title
+        endif
+      endfor
+    endif
+  endfor
+%}
+
+{% for link in section.settings.menu.links %}
+  <div class="footer-menu__item group w-full border-b md:border-none {% if link.title == link_with_columns %}md:col-span-2{% else %}md:col-span-1{% endif %}">
+    {% if link.links != blank %}
+      <div
+        class="footer-menu__content{% if section.settings.menu.links.size == 1 %} md:columns-2 gap-x-[20px]{% endif %}"
+        data-collapsible='
+          {
+              "collapsed": true,
+              "mobileOnly": true
+          }
+        '
+      >
+        {% for child_link in link.links %}
+          {% if forloop.first %}
+            <h2
+              class="relative cursor-pointer py-5 pb-[19px] !font-body text-base font-medium leading-none md:cursor-text md:pt-0 lg:pb-4"
+              data-trigger="true"
+            >
+              <span>{{ link.title }}</span>
+
+              {% render 'icon',
+                icon: 'chevron-down',
+                class: 'icon-animation md:hidden absolute top-4 right-0 transition-transform duration-300 ease'
+              %}
+            </h2>
+          {% endif %}
+        {% endfor %}
+        <div
+          class="footer-menu__submenu ease duration-300 max-[767px]:h-0 max-[767px]:overflow-hidden max-[767px]:transition-all"
+          data-content="true"
+        >
+          {% for child_link in link.links %}
+            <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+              {% if child_link.links != blank %}
+                <div class="footer-menu__column">
+                  {% for child_child_link in child_link.links %}
+                    <div class="footer-menu__link-wrapper uppercase leading-none last:mb-0">
+                      <a
+                        class="inline-block text-sm text-gray-800 transition-colors"
+                        href="{{ child_child_link.url }}"
+                        {% if child_child_link.url contains 'http' %}
+                          target="_blank"
+                        {% endif %}
+                        title="{{ child_child_link.title }}"
+                      >
+                        {{ child_child_link.title }}
+                      </a>
+                    </div>
+                  {% endfor %}
+                </div>
+              {% else %}
+                <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                  <a
+                    class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                    href="{{ child_link.url }}"
+                    {% if child_link.url contains 'http' %}
+                      target="_blank"
+                    {% endif %}
+                    title="{{ child_link.title }}"
+                  >
+                    {{ child_link.title }}
+                  </a>
+                </div>
+              {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}

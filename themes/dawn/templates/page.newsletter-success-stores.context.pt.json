@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.newsletter-success-stores.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_xUkGd": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n    .breadcrumbs {\n        display: none;\n    }\n\n    #zyMember .container-fluid {\n        max-width: 100%;\n        background-color: #F2F0E9;\n    }\n\n    #zyMember .row {\n        width: 100%;\n        margin: auto;\n        padding: 5rem 0 3rem 0;\n        display: flex;\n        justify-content: space-around;\n        align-items: start;\n        padding: 8rem 0;\n    }\n\n    #zyMember .container-benefits {\n        width: 70%;\n    }\n\n    #zyMember h1 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 500;\n        color: #221f20;\n        font-size: 2rem;\n        line-height: 1.3;\n        text-align: center;\n        margin: 0.5rem 0;\n    }\n\n    #zyMember h2 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 500;\n        color: #221f20;\n        font-size: 1.125rem;\n        line-height: 1.3;\n        text-align: center;\n        margin: 1rem 0;\n    }\n\n    #zyMember p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 400;\n        color: #221f20;\n        font-size: 1rem;\n        line-height: 1.4;\n        text-align: center;\n    }\n\n    #zyMember .info {\n        font-size: 0.875rem;\n        padding-top: 2rem;\n    }\n\n    #zyMember .pt-1 {\n        padding-top: 1rem;\n    }\n\n    #zyMember .pt-2 {\n        padding-top: 2rem;\n    }\n\n    #zyMember p>span {\n        font-weight: 500;\n    }\n\n    #zyMember button {\n        min-width: 12rem;\n    }\n\n    #zyMember .collections-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 200px);\n        justify-content: center;\n        align-items: center;\n        gap: 1rem;\n        padding-top: 2rem;\n        width: 60%;\n        margin: auto;\n    }\n\n    @media only screen and (max-width: 991px) {\n\n        #zyMember .row {\n            padding: 1.5rem 0;\n        }\n\n        #zyMember .container-benefits {\n            width: 90%;\n            margin: auto;\n        }\n\n        #zyMember .collections-grid {\n            grid-template-columns: repeat(2, 1fr);\n            gap: 0.5rem;\n        }\n    }\n\n    @media only screen and (max-width: 576px) {\n\n        #zyMember h1 {\n            font-size: 1.75rem;\n        }\n\n        #zyMember button {\n            min-width: 10rem;\n        }\n    }\n</style>\n<div id=\"zyMember\">\n    <section class=\"container-fluid\">\n        <div class=\"row\">\n            <div class=\"container-benefits\">\n                <div class=\"benefits-title\">\n                    <h1>A subscrição foi concluída com sucesso.</h1>\n                    <p class=\"pt-1\">O cliente irá em breve receber um e-mail com o código de <span>10% de\n                            desconto</span>*\n                        para usar na sua primeira encomenda na loja online.</p>\n                    <p class=\"pt-1\">Se criou Lista de Nascimento, receberá também um e-mail com todas as informações\n                        sobre o\n                        programa.</p>\n                </div>\n                <p class=\"info\">*Desconto válido para novos subscritores</p>\n            </div>\n        </div>\n    </section>\n</div>\n\n<script>\n    $('head').append('<meta name=\"robots\" content=\"noindex\">');\n</script>",
+        "color_scheme": "",
+        "header-102bd002324f3d473f0b830b37802920": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {
+      },
+      "block_order": [
+
+      ]
+    },
+    "main": {
+      "disabled": true,
+      "settings": {
+      },
+      "blocks": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_xUkGd"
+  ]
+}

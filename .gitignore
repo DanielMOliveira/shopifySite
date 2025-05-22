@@ -1,0 +1,41 @@
+# Ignore pastas de dependências
+node_modules/
+
+# Pastas geradas pelo Shopify CLI
+.shopify/
+.shopifyignore
+
+# MacOS & VSCode
+.DS_Store
+.vscode/
+
+# Arquivos de build (se houver build tools tipo Gulp/Webpack)
+dist/
+build/
+
+# DevContainers
+.devcontainer/**/env.local
+.devcontainer/.env
+*.devcontainer.log
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Arquivos temporários
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Ignorar backups/documentos pessoais (caso queira)
+# ClonarRepositorio.md
+# NovoProjeto.md
+# TokenShopify.md

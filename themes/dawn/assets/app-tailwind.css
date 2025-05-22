@@ -1,0 +1,258 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  @apply box-border h-full text-base;
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply select-auto font-body leading-6 text-primary;
+  font-style: var(--font-body-style);
+  font-weight: var(--font-body-weight);
+}
+
+body *::selection {
+  @apply bg-red-500/40 text-white;
+}
+
+.container-valantic {
+  @apply px-[var(--container-mobile-horizontal-spacing)] xl:px-[var(--container-desktop-horizontal-spacing)];
+}
+
+/* START: Buttons */
+.button:not(.button-reset-styles),
+button:not(.button-reset-styles) {
+  @apply inline-flex items-center justify-center gap-1 rounded-[100px] border border-primary bg-primary px-4 py-3.25 text-center text-sm font-medium text-white transition-all;
+
+  &:not(:disabled) {
+    @apply hover:scale-105;
+  }
+
+  &.small {
+    @apply py-3 text-xs leading-[14px];
+  }
+
+  &.secondary {
+    @apply bg-transparent text-primary;
+  }
+
+  &.tertiary {
+    @apply border-white bg-white text-primary;
+  }
+
+  &:disabled {
+    @apply cursor-not-allowed border-stone-300 bg-stone-300 text-stone-600 hover:border-stone-300 hover:bg-stone-300 hover:text-stone-600;
+  }
+}
+/* END: Buttons */
+
+/* START: Forms */
+.input-group {
+  @apply relative;
+
+  &:not(:has(input[type="checkbox"])):not(:has(input[type="radio"])):not(
+      .input-reset-styles
+    ) {
+    &:has(svg.icon) {
+      input,
+      textarea {
+        @apply pr-12.5;
+      }
+    }
+
+    &:has(:disabled):has(svg.icon) svg.icon,
+    &:has(.disabled):has(svg.icon) svg.icon {
+      @apply text-gray-600;
+    }
+
+    &.error,
+    &:has(.error) {
+      input,
+      textarea,
+      select {
+        @apply border-red-500;
+      }
+    }
+
+    input,
+    textarea {
+      @apply rounded border border-gray-300 bg-white px-4 pb-2.5 pt-5 text-sm placeholder-shown:py-3.75 focus:pb-2.5 focus:pt-5;
+      outline: none !important;
+
+      &:disabled,
+      &.disabled {
+        @apply pointer-events-none bg-gray-300;
+      }
+    }
+
+    label {
+      @apply pointer-events-none absolute left-4 top-3.25 flex -translate-y-1/2 text-2xs text-gray-600 transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-sm peer-placeholder-shown:text-primary peer-focus:top-3.25 peer-focus:text-2xs peer-focus:text-gray-600 peer-disabled:text-gray-600;
+    }
+
+    select {
+      @apply rounded border border-gray-300 bg-white bg-[95%_50%] bg-no-repeat px-4 py-3.75 text-sm;
+      background-image: var(--select-bg);
+      outline: none !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    textarea + label {
+      @apply !top-5;
+    }
+  }
+
+  &:has([type="checkbox"]) {
+    input {
+      @apply hidden;
+
+      &:checked + label .icon-wrapper {
+        @apply opacity-100;
+      }
+    }
+
+    label {
+      @apply cursor-pointer pl-8 text-sm before:absolute before:-top-px before:left-0 before:h-6 before:w-6 before:rounded before:border before:border-gray-400 before:transition-colors hover:before:border-primary peer-checked:before:border-primary peer-disabled:pointer-events-none peer-disabled:text-gray-600 peer-disabled:before:border-gray-300 peer-disabled:before:bg-gray-300;
+
+      .icon-wrapper {
+        @apply absolute left-1 top-[3px] h-4 w-4 text-primary opacity-0 transition-opacity;
+      }
+    }
+  }
+
+  &.switcher:has([type="checkbox"]) {
+    .icon-wrapper {
+      @apply left-1.5 z-10 text-primary transition-all;
+
+      &.cross {
+        @apply -top-px h-6 w-6 rounded-full bg-white opacity-100;
+      }
+
+      &.success {
+        @apply top-1.25 h-3 w-3 text-white;
+      }
+    }
+
+    input {
+      &:checked + label .icon-wrapper {
+        &.cross {
+          @apply left-[22px] opacity-0;
+        }
+
+        &.success {
+          @apply left-7 opacity-100;
+        }
+      }
+
+      &:disabled + label .icon-wrapper {
+        @apply !opacity-0;
+      }
+    }
+
+    label {
+      @apply pl-15 before:-top-1.25 before:h-8 before:w-[52px] before:rounded-full before:border-gray-300 after:absolute after:-top-px after:left-1.5 after:h-6 after:w-6 after:rounded-full after:bg-primary after:transition-all hover:before:border-primary peer-checked:before:border-primary peer-checked:after:left-[22px] peer-disabled:before:bg-white peer-disabled:after:bg-gray-300;
+    }
+  }
+
+  &:has([type="radio"]) {
+    input {
+      @apply hidden;
+    }
+
+    label {
+      @apply cursor-pointer pl-8 text-sm before:absolute before:-top-px before:left-0 before:h-6 before:w-6 before:rounded-full before:border before:border-gray-400 before:transition-all after:absolute after:left-1.5 after:top-1.25 after:h-3 after:w-3 after:rounded-full after:bg-primary after:opacity-0 after:transition-all hover:before:border-primary peer-checked:before:border-primary peer-checked:after:opacity-100 peer-disabled:pointer-events-none peer-disabled:text-gray-600 peer-disabled:before:border-gray-300 peer-disabled:before:bg-gray-300;
+    }
+  }
+}
+/* END: Forms */
+
+/* START: Typography */
+h1 {
+  @apply font-heading text-4_25xl;
+}
+
+h2 {
+  @apply font-heading text-4xl;
+}
+
+h3 {
+  @apply font-heading text-3_5xl;
+}
+
+h4 {
+  @apply font-heading text-2xl leading-7;
+}
+
+h5 {
+  @apply font-heading text-xl leading-6;
+}
+/* END: Typography */
+/* PRELOADER */
+#loading {
+  @apply fixed left-0 top-0 z-[11] block h-full w-full bg-white;
+}
+.loaded {
+  @apply !hidden;
+}
+/* END: PRELOADER */
+
+/*LINK UNDERLINE*/
+
+.hover-underline {
+  @apply relative inline-block overflow-hidden after:absolute after:bottom-0 after:left-0 after:block after:h-px after:w-full after:-translate-x-full after:bg-primary after:transition-transform hover:after:translate-x-0;
+}
+
+/*END LINK UNDERLINE*/
+
+/* START: Swiper */
+body .swiper-button-prev,
+body .swiper-button-prev-product,
+body .swiper-button-next,
+body .swiper-button-prev-product {
+  @apply top-1/2 z-10 m-0 inline-flex h-12 w-12 -translate-y-1/2 cursor-pointer items-center justify-center rounded-full bg-gray-200 text-primary opacity-0 transition-all after:hidden;
+
+  &.swiper-button-disabled,
+  &.swiper-button-lock {
+    @apply !opacity-0;
+  }
+}
+
+body .swiper-initialized .swiper-button-prev,
+body .swiper-initialized .swiper-button-prev-product,
+body .swiper-initialized .swiper-button-next,
+body .swiper-initialized .swiper-button-next-product {
+  @apply opacity-100;
+}
+
+body .swiper-button-prev,
+body .swiper-button-prev-product {
+  @apply left-[var(--container-mobile-horizontal-spacing)] right-auto;
+}
+
+body .swiper-button-next,
+body .swiper-button-next-product {
+  @apply left-auto right-[var(--container-mobile-horizontal-spacing)];
+}
+
+body.overflow-hidden .swiper {
+  @apply !z-[0];
+}
+/* END: Swiper */
+
+/* START: Modal */
+body:has(.valantic-modal-wrapper.active) {
+  @apply overflow-hidden;
+}
+
+.valantic-modal-wrapper.active {
+  @apply flex;
+}
+/* END: Modal */

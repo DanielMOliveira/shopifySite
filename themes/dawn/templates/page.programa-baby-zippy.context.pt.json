@@ -1,0 +1,34 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.programa-baby-zippy.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_KWh9F": {
+      "type": "custom-liquid",
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style type=\"text/css\" media=\"screen\">\n    .breadcrumbs {\n        display: none;\n    }\n\n    #section-template--16315370963153__main .container-valantic,\n    #BabyZippy div {\n        padding: 0;\n        margin: 0;\n    }\n\n    .zyBgWhite {\n        background-color: #FBFBF8;\n    }\n\n    .zyBgBeige {\n        background-color: #F2F0E9;\n    }\n\n    #BabyZippy img {\n        max-width: 100%;\n        height: auto;\n    }\n\n    #BabyZippy .container-fluid {\n        max-width: 100%;\n    }\n\n    #BabyZippy .row-containers {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n    }\n\n    #BabyZippy .main-container-text {\n        width: 60%;\n        margin: auto;\n        padding: 3rem 0;\n        text-align: center;\n    }\n\n    #BabyZippy .baby-zippy-logo {\n        width: 30%;\n        padding: 2rem 0;\n        margin: auto;\n    }\n\n    #BabyZippy .img-container {\n        width: 50%;\n    }\n\n    #BabyZippy .options-container {\n        width: 50%;\n    }\n\n\n    #BabyZippy h1 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 400;\n        color: #FF4141;\n        font-size: 3rem;\n        letter-spacing: 0.04rem;\n        line-height: 1.3;\n        text-align: center;\n    }\n\n    #BabyZippy h1>span {\n        font-weight: 800;\n    }\n\n\n    #BabyZippy h1>br {\n        display: none;\n    }\n\n    #BabyZippy h2 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221f20;\n        font-size: 1.875rem;\n        letter-spacing: 0.04rem;\n        line-height: 1.2;\n        text-align: center;\n        margin: 1.071rem 0;\n    }\n\n    #BabyZippy p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221f20;\n        font-size: 1.125rem;\n        letter-spacing: 0.02rem;\n        line-height: 1.4;\n        text-align: center;\n        padding: 1rem 0;\n    }\n\n    #BabyZippy h3 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        color: #221F20;\n        font-size: 0.875rem;\n        letter-spacing: 0.017rem;\n        line-height: 1.3;\n        text-align: center;\n    }\n\n    #BabyZippy button {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-weight: 500;\n        color: #221F20;\n        font-size: 1rem;\n        letter-spacing: 0.1rem;\n        line-height: 1.3;\n        text-align: center;\n        background-color: #E8E6DA;\n        border-radius: 3rem;\n        border: none;\n        padding: 1rem 2rem;\n        cursor: pointer;\n        margin: 0.5rem 0;\n        min-width: 16rem;\n\n    }\n\n    #BabyZippy .baby-options {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        gap: 4.286rem 0;\n        padding-top: 1.5rem;\n    }\n\n    #BabyZippy u {\n        text-underline-offset: 0.25rem;\n    }\n\n\n    @media (max-width: 991px) {\n\n        #BabyZippy h1>br {\n            display: block;\n        }\n\n        #BabyZippy .main-container-text {\n            width: 90%;\n            padding: 1.5rem 0;\n        }\n\n\n        #BabyZippy .img-container {\n            width: 100%;\n            order: 2;\n            padding-top: 2rem;\n        }\n\n        #BabyZippy .options-container {\n            width: 90%;\n            order: 1;\n        }\n\n        #BabyZippy .row-containers {\n            display: flex;\n            flex-direction: column;\n            padding-top: 1.5rem;\n        }\n\n        #BabyZippy .baby-options {\n            gap: 2rem 0;\n        }\n\n    }\n\n    @media only screen and (max-width: 768px) {\n\n        #babyzippy-navbar {\n            padding: 0.5rem 0;\n        }\n\n        #babyzippy-navbar button {\n            min-width: 12rem;\n\n        }\n    }\n\n    @media only screen and (max-width: 576px) {\n\n        #BabyZippy .baby-zippy-logo {\n            width: 50%;\n        }\n\n        #BabyZippy h1 {\n            font-size: 2.188rem;\n            letter-spacing: 0.04rem;\n        }\n        #BabyZippy h2 {\n            font-size: 1.563rem;\n            letter-spacing: 0.025rem;\n        }\n\n        #BabyZippy p {\n            font-size: 1rem;\n        }\n    }\n</style>\n<div id=\"BabyZippy\">\n    <section class=\"container-fluid zyBgBeige\">\n        <div class=\"main-container-text\"><img class=\"baby-zippy-logo\" alt=\"Programa Baby Zippy\"\n                src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/logo_baby-zippy.png?v=1725461756\">\n            <h1>We go together, <br><span>desde o mês -9</span></h1>\n            <p>Vamos estar ao seu lado e ajudar a sua família em cada etapa da preparação e chegada de um bebé. Para\n                isso, conte-nos mais sobre si:</p>\n        </div>\n    </section>\n    <section class=\"container-fluid zyBgWhite\">\n        <div class=\"row-containers\">\n            <div class=\"img-container\">\n                <picture> <img alt=\"programa baby zippy\"\n                        src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/LP-Principal-Baby-Zippy.jpg?v=1727038426\">\n                </picture>\n            </div>\n            <div class=\"options-container\">\n                <h2>Bebé a caminho?</h2>\n                <div class=\"baby-options\">\n                    <div class=\"baby-option\">\n                        <h3>Estou grávida / Já nasceu:</h3>\n                        <a href=\"{{ pages['programa-baby-zippy-lista-de-nascimento'].url }}\"> <button>lista de nascimento</button> </a>\n                    </div>\n                    <div class=\"baby-option\">\n                        <h3>Estou a tentar engravidar:</h3>\n                        <a href=\"{{ pages['bolsa-baby-zippy'].url }}\"> <button>bolsa baby zippy</button> </a>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </section>\n</div>",
+        "color_scheme": "",
+        "header-a9053fdb17e96c67b53312229b36ca02": null,
+        "padding_top": 0,
+        "padding_bottom": 0
+      },
+      "blocks": {},
+      "block_order": []
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_KWh9F"
+  ]
+}

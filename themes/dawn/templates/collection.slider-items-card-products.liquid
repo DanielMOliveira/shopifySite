@@ -1,0 +1,18 @@
+{% layout none %}
+
+{%- paginate collection.products by 10 -%}
+  <div id="slider-items-card-products">
+    {%- for product in collection.products -%}
+      {% if product.available %}
+        {% render 'card-product',
+          card_product: product,
+          lazy_load: 'lazy',
+          section_id: 'card-products-only',
+          index: forloop.index,
+          without_image_slider: true,
+          desktop_offcanvas: true
+        %}
+      {% endif %}
+    {%- endfor -%}
+  </div>
+{%- endpaginate -%}

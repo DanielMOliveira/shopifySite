@@ -1,0 +1,168 @@
+<div data-address>
+  <button
+    type="button"
+    class="button secondary"
+    aria-expanded="false"
+    aria-controls="AddAddress"
+  >
+    {% render 'icon', icon: 'plus', class: 'w-5 h-5' %}
+    {{ 'customer.account.shipping_data.add_address' | t }}
+  </button>
+  <div class="popupscreen" id="AddAddress">
+    <div class="popupscreen-inner bg-white p-4 md:p-10">
+      <h2 class="mb-5 font-medium" id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
+      {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
+        <div class="popupscreen-close absolute right-4 top-4 md:right-10 md:top-10">
+          <button
+            type="reset"
+            class="secondary h-10 w-10 !p-0"
+          >
+            {% render 'icon', icon: 'cross' %}
+          </button>
+        </div>
+        <div class="fields mb-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
+          <div class="col-span-full grid grid-cols-1 gap-4 lg:grid-cols-3">
+            <div class="input-group">
+              <input
+                type="text"
+                id="AddressFirstNameNew"
+                class="peer"
+                name="address[first_name]"
+                autocomplete="given-name"
+                required
+                placeholder=" "
+              >
+              <label for="AddressFirstNameNew">{{ 'customer.addresses.first_name' | t }}</label>
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="AddressLastNameNew"
+                class="peer"
+                name="address[last_name]"
+                autocomplete="family-name"
+                required
+                placeholder=" "
+              >
+              <label for="AddressLastNameNew">{{ 'customer.addresses.last_name' | t }}</label>
+            </div>
+            <div class="input-group">
+              <input
+                type="text"
+                id="AddressCompanyNew"
+                class="peer"
+                name="address[company]"
+                autocomplete="organization"
+                placeholder=" "
+              >
+              <label for="AddressCompanyNew">{{ 'customer.addresses.company' | t }}</label>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressAddress1New"
+              class="peer"
+              name="address[address1]"
+              autocomplete="address-line1"
+              required
+              placeholder=" "
+            >
+            <label for="AddressAddress1New">{{ 'customer.addresses.address1' | t }}</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressAddress2New"
+              class="peer"
+              name="address[address2]"
+              autocomplete="address-line2"
+              placeholder=" "
+            >
+            <label for="AddressAddress2New">{{ 'customer.addresses.address2' | t }}</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressCityNew"
+              class="peer"
+              name="address[city]"
+              autocomplete="address-level2"
+              required
+              placeholder=" "
+            >
+            <label for="AddressCityNew">{{ 'customer.addresses.city' | t }}</label>
+          </div>
+          <div class="input-group">
+            <label class="select-label" for="AddressCountryNew">{{ 'customer.addresses.country' | t }}</label>
+            <div class="select">
+              <select
+                id="AddressCountryNew"
+                class="!pb-2.5 !pr-8 !pt-5"
+                name="address[country]"
+                data-default="{{ form.country }}"
+                autocomplete="country"
+                required="required"
+              >
+                {{ all_country_option_tags }}
+              </select>
+            </div>
+            <script type="application/json" class="form-alerts">
+              {
+                "error": "{{ 'customer.account.personal_data.select_country' | t }}"
+              }
+            </script>
+            <div class="d-none mb-2" data-alert="status"></div>
+          </div>
+          <div class="input-group" id="AddressProvinceContainerNew" style="display: none">
+            <label for="AddressProvinceNew">{{ 'customer.addresses.province' | t }}</label>
+            <div class="select">
+              <select
+                id="AddressProvinceNew"
+                class="!pb-2.5 !pr-8 !pt-5"
+                name="address[province]"
+                data-default="{{ form.province }}"
+                autocomplete="address-level1"
+              ></select>
+            </div>
+          </div>
+          <div class="input-group">
+            <input
+              type="text"
+              id="AddressZipNew"
+              class="peer"
+              name="address[zip]"
+              autocapitalize="characters"
+              autocomplete="postal-code"
+              required
+              placeholder=" "
+            >
+            <label for="AddressZipNew">{{ 'customer.addresses.zip' | t }}</label>
+          </div>
+          <div class="input-group">
+            <input
+              type="tel"
+              id="AddressPhoneNew"
+              class="peer"
+              name="address[phone]"
+              autocomplete="tel"
+              required
+              placeholder=" "
+            >
+            <label for="AddressPhoneNew">{{ 'customer.addresses.phone' | t }}</label>
+          </div>
+        </div>
+        <div class="popupscreen-footer flex justify-end gap-4">
+          <button class="secondary" type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+          <button>{{ 'customer.addresses.add' | t }}</button>
+        </div>
+
+        {% if localization.language.endonym_name != 'English' %}
+          <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+        {% else %}
+          <input type="hidden" name="country_code" value="">
+        {% endif %}
+      {%- endform -%}
+    </div>
+  </div>
+</div>

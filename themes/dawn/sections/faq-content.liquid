@@ -1,0 +1,195 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% assign faq_item = section.blocks | where: 'type', 'faq_item' %}
+
+{% if faq_item.size > 0 %}
+  <div
+    class="container-valantic faq-section--{{ section.id }} pt-12 md:pt-15"
+    id="section-{{ section.id }}"
+  >
+    <div class="mx-auto w-full">
+      <div
+        class="faq-block-wrapper pb-12 md:px-0"
+        data-section="{{ section.settings.faq_section_id | strip | replace: ' ', '_' | downcase }}"
+      >
+        <div class="faq-block px-3 font-bold md:px-0">
+          <h3 class="text-2_5xl pb-4">{{ section.settings.heading }}</h3>
+        </div>
+
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'faq_item' -%}
+              {% liquid
+                assign faq_question = block.settings.heading
+                assign faq_answer = block.settings.faq_answer
+                assign faq_image_1 = block.settings.faq_image_1
+                assign faq_image_2 = block.settings.faq_image_2
+                assign faq_image_3 = block.settings.faq_image_3
+                assign faq_image_4 = block.settings.faq_image_4
+                assign faq_image_5 = block.settings.faq_image_5
+                assign list_1 = block.settings.list_1
+                assign table_1 = block.settings.table_1
+              %}
+
+              {% render 'faq-item',
+                faq_question: faq_question,
+                faq_answer: faq_answer,
+                faq_image_1: faq_image_1,
+                faq_image_2: faq_image_2,
+                faq_image_3: faq_image_3,
+                faq_image_4: faq_image_4,
+                faq_image_5: faq_image_5,
+                list_1: list_1,
+                table_1: table_1
+              %}
+          {% endcase %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "FAQ Section",
+  "class": "faq-content",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "FAQs Search"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Section Title"
+    },
+    {
+      "type": "text",
+      "id": "faq_section_id",
+      "label": "Section Id",
+      "info": "This is used to identify the section for the navigation functionality. Must have the same name as the navigation link label of the items in the FAQ navigation"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_item",
+      "name": "Section Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Question",
+          "default": "<p>Question</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_answer",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        },
+        {
+          "type": "header",
+          "content": "Item Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_1",
+          "label": "Image 1",
+          "info": "Use [image1] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_2",
+          "label": "Image 2",
+          "info": "Use [image2] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_3",
+          "label": "Image 3",
+          "info": "Use [image3] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_4",
+          "label": "Image 4",
+          "info": "Use [image4] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_5",
+          "label": "Image 5",
+          "info": "Use [image5] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "header",
+          "content": "Item List"
+        },
+        {
+          "type": "richtext",
+          "id": "list_1",
+          "label": "List 1",
+          "info": "Create the list and use [list1] in the 'Answer' field to display this list"
+        },
+        {
+          "type": "header",
+          "content": "Item Table"
+        },
+        {
+          "type": "html",
+          "id": "table_1",
+          "label": "Table 1",
+          "info": "Paste the HTML code of the table and use [table1] in the 'Answer' field to display this image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Section"
+    }
+  ]
+}
+{% endschema %}

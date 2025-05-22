@@ -1,0 +1,56 @@
+{% comment %}
+  Renders product variant options
+
+    Accepts:
+    - product: {Object} product object.
+    - option: {Object} current product_option object.
+
+    Usage:
+        {% render 'product-variant-options',
+            product: product,
+            option: option
+        %}
+{% endcomment %}
+
+{% # theme-check-disable UnusedAssign %}
+{% assign product_form_id = 'product-form-' | append: section.id %}
+
+{% for value in option.values %}
+  {% liquid
+    assign option_disabled = true
+
+    if value.available
+      assign option_disabled = false
+    endif
+  %}
+
+  {% capture input_id %}
+    {{ section.id }}-{{ option.position }}-{{ forloop.index0 }}
+  {% endcapture %}
+
+  {% capture input_name %}
+    {{ option.name }}-{{ option.position }}
+  {% endcapture %}
+
+  {% capture input_dataset %}
+    data-product-url="{{ value.product_url }}"
+    data-option-value-id="{{ value.id }}"
+  {% endcapture %}
+
+  {% capture help_text %}
+    <span >{{ value | escape }}</span>
+  {% endcapture %}
+
+  {%
+    render 'swatch-input',
+    id: input_id,
+    name: input_name,
+    value: value | escape,
+    product_form_id: product_form_id,
+    checked: value.selected,
+    disabled: option_disabled,
+    help_text: help_text,
+    additional_props: input_dataset
+  %}
+{% endfor %}
+{% # theme-check-enable UnusedAssign %}

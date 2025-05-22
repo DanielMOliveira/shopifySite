@@ -1,0 +1,235 @@
+{% comment %}
+  Renders a product media gallery
+
+  Accepts:
+  - product: {Object} Product liquid object
+  - max_height_mobile: {String}
+  - max_height_desktop: {String}
+
+  Usage:
+      {% render 'product-media-gallery' %}
+{% endcomment %}
+
+{% liquid
+  assign featured_media = product.selected_or_first_available_variant.featured_media
+  assign media_count = 0
+
+  if featured_media != blank
+    assign media_count = media_count | plus: 1
+  endif
+
+  if product.media.size > 0
+    assign media_count = media_count | plus: product.media.size
+  endif
+%}
+
+<div
+  class="product-media-gallery lg:flex lg:gap-5"
+  id="MediaGallery-{{ section.id }}"
+  role="region"
+  aria-label="{{ 'products.product.media.gallery_viewer' | t }}"
+>
+  <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
+
+  {% comment %} START: THUMBNAILS {% endcomment %}
+  <div class="hidden xl:block">
+    <div
+      class="swiper main-thumbs group h-full max-w-[95px]"
+      data-slider='
+        {
+            "direction": "vertical",
+            "slidesPerView": "auto",
+            "spaceBetween": 8,
+            "mousewheel": true,
+            "navigation": {
+                "prevEl": ".main-thumbs .swiper-button-prev",
+                "nextEl": ".main-thumbs .swiper-button-next"
+            }
+        }
+      '
+    >
+      <div class="swiper-wrapper flex-col gap-2 group-[.swiper-initialized]:gap-0">
+        {% if featured_media != null %}
+          <div class="swiper-slide group relative !h-[120px] !w-[95px] cursor-pointer">
+            <div class="box-border h-full rounded border border-transparent bg-gray-100">
+              {%
+                render 'product-thumbnail',
+                media: featured_media,
+                lazy_load: false,
+                class: 'rounded mix-blend-darken'
+                {% endif
+              %}
+
+              {% if media.media_type contains 'video' %}
+                <span class="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded bg-black/20 text-white">
+                  {% render 'icon', icon: 'play-circle', class: '!h-14 !w-14' %}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% for media in product.media %}
+          <div class="swiper-slide group relative !h-[120px] !w-[95px] cursor-pointer">
+            <div class="box-border h-full rounded border border-transparent bg-gray-100">
+              {%
+                render 'product-thumbnail',
+                media: media,
+                lazy_load: false,
+                class: 'rounded mix-blend-darken'
+                {% endif
+              %}
+
+              {% if media.media_type contains 'video' %}
+                <span class="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded bg-black/20 text-white">
+                  {% render 'icon', icon: 'play-circle', class: '!h-14 !w-14' %}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if media_count > 1 %}
+        <div class="swiper-button-prev !left-1/2 !top-7 !-ml-6 !hidden !rotate-90 !bg-white shadow-[-3px_0px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:text-white lg:!inline-flex">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next !-bottom-5 !right-1/2 !top-auto !-mr-6 !hidden !rotate-90 !bg-white shadow-[3px_0px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:text-white lg:!inline-flex">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% comment %} END: THUMBNAILS {% endcomment %}
+
+  {% comment %} START: MAIN SLIDER {% endcomment %}
+  <div
+    class="swiper max-w-[700px]"
+    id="GalleryViewer-{{ section.id }}"
+    {% if media_count > 1 %}
+      data-slider='
+        {
+            "slidesPerView": 1,
+            "spaceBetween": 20,
+            "navigation": {
+                "prevEl": "#GalleryViewer-{{ section.id }} .swiper-button-prev",
+                "nextEl": "#GalleryViewer-{{ section.id }} .swiper-button-next"
+            },
+            "pagination": {
+                "el": "#GalleryViewer-{{ section.id }} .swiper-pagination",
+                "type": "fraction"
+            },
+            "thumbs": {
+                "swiperSelector": ".product-media-gallery .main-thumbs"
+            }
+        }
+      '
+    {% endif %}
+  >
+    <div class="swiper-wrapper">
+      {% if featured_media != null %}
+        <div
+          class="swiper-slide group relative !h-auto !w-full cursor-pointer lg:rounded"
+          id="Slide-{{ section.id }}-{{ featured_media.id }}"
+          data-media-id="{{ section.id }}-{{ featured_media.id }}"
+        >
+          {% if featured_media.media_type == 'image' %}
+            {% render 'product-thumbnail',
+              media: featured_media,
+              lazy_load: false,
+              class: '!h-auto !w-auto lg:rounded'
+            %}
+          {% else %}
+            <div class="h-full">
+              {% render 'product-thumbnail', media: featured_media, lazy_load: true, show_image: false %}
+            </div>
+          {% endif %}
+
+          <div class="absolute bottom-6 right-6 hidden h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] transition-all hover:scale-105 xl:inline-flex">
+            {% render 'icon', icon: 'search' %}
+          </div>
+        </div>
+      {% endif %}
+
+      {% for media in product.media %}
+        <div
+          class="swiper-slide group relative !h-auto !w-full cursor-pointer lg:rounded"
+          id="Slide-{{ section.id }}-{{ media.id }}"
+          data-media-id="{{ section.id }}-{{ media.id }}"
+        >
+          {% if media.media_type == 'image' %}
+            {% render 'product-thumbnail', media: media, lazy_load: true, class: '!h-auto !w-auto lg:rounded' %}
+          {% else %}
+            <div class="flex h-full items-center justify-center">
+              {% render 'product-thumbnail', media: media, lazy_load: true, show_image: false %}
+            </div>
+          {% endif %}
+
+          <div class="absolute bottom-6 right-6 hidden h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] transition-all hover:scale-105 xl:inline-flex">
+            {% render 'icon', icon: 'search' %}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if media_count > 1 %}
+      <div class="swiper-pagination !absolute !bottom-[22px] !left-4 !flex gap-1 text-2xs !text-gray-500 xl:!hidden">
+        <div class="swiper-pagination-current text-gray-800">1</div>
+        /
+        <div class="swiper-pagination-total">{{ media_count }}</div>
+      </div>
+
+      <div class="swiper-button-prev !left-4 !h-4/5 !w-6 !bg-transparent xl:!left-8">
+        {% render 'icon', icon: 'chevron-left' %}
+      </div>
+      <div class="swiper-button-next !right-4 !h-4/5 !w-6 !bg-transparent xl:!right-8">
+        {% render 'icon', icon: 'chevron-right' %}
+      </div>
+    {% endif %}
+  </div>
+  {% comment %} END: MAIN SLIDER {% endcomment %}
+
+  {% style %}
+    #MediaGallery-{{ section.id }} iframe {
+        height: 80%;
+        width: 75%;
+    }
+
+
+    #MediaGallery-{{ section.id }} video {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+    }
+
+    #MediaGallery-{{ section.id }} .swiper.main-thumbs .swiper-slide-thumb-active > div {
+        border-color: rgb(var(--color-primary));
+    }
+
+    #MediaGallery-{{ section.id }} .swiper-slide img {
+        max-height: {{ max_height_mobile }};
+    }
+
+    #MediaGallery-{{ section.id }} .swiper-pagination .swiper-pagination-current {
+        color: rgb(var(--color-gray-800));
+    }
+
+    @media screen and (min-width: 768px) {
+        #MediaGallery-{{ section.id }} .swiper-slide img,
+        #MediaGallery-{{ section.id }} .swiper.main-thumbs {
+            max-height: {{ max_height_desktop }};
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        #MediaGallery-{{ section.id }} video {
+            height: auto;
+            width: auto;
+            position: relative;
+            object-fit: inherit;
+        }
+    }
+  {% endstyle %}
+</div>

@@ -1,0 +1,35 @@
+{% comment %}
+  Renders custom shipping price
+
+  Accepts:
+  - product: {Object} Product
+
+  Usage:
+      {% render 'product-shipping-custom', product: product %}
+{% endcomment %}
+
+{% if product != blank %}
+  {% liquid
+    if localization.country.iso_code == 'PT'
+      if product.metafields.custom['shipping-pt'] != null
+        assign message_data = product.metafields.custom['shipping-pt'] | prepend: '€'
+      endif
+    elsif localization.country.iso_code == 'ES'
+      if product.metafields.custom['shipping-es'] != null
+        assign message_data = product.metafields.custom['shipping-es'] | prepend: '€'
+      endif
+    else
+      if product.metafields.custom['shipping-international'] != null
+        assign message_data = product.metafields.custom['shipping-international'] | prepend: '€'
+      endif
+    endif
+  %}
+
+  {% if message_data != blank %}
+    <div class="heavy-nursery-text inline-flex items-center gap-1 text-2xs leading-6 text-gray-600">
+      {% render 'icon', icon: 'info-circle-v2', class: '!h-4 !w-4 -mt-px' %}
+      {{ 'products.product.childcare_text' | t }}
+      {{ message_data }}
+    </div>
+  {% endif %}
+{% endif %}

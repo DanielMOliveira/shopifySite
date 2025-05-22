@@ -1,0 +1,164 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "cart_recommended_products_N8Xrfn": {
+      "type": "cart-recommended-products",
+      "settings": {
+        "title": "Recommended Products",
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 24,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "cross_selling_products_Wm4qM4": {
+      "type": "cross-selling-products",
+      "blocks": {
+        "product_RwzYTx": {
+          "type": "product",
+          "settings": {
+            "product": "jogo-de-cartas-sobre-emocoes-como-te-sentes-3a"
+          }
+        },
+        "product_yNdNRP": {
+          "type": "product",
+          "settings": {
+            "product": "colouring-pyjamas-for-babies-and-children-emotions-white"
+          }
+        },
+        "product_KFMenq": {
+          "type": "product",
+          "settings": {
+            "product": "pack-of-5-water-based-markers"
+          }
+        }
+      },
+      "block_order": [
+        "product_RwzYTx",
+        "product_yNdNRP",
+        "product_KFMenq"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "<p>Cross-selling items</p>",
+        "title_font_size_mobile": 22,
+        "title_font_size_desktop": 24,
+        "subtitle": "<p>Cross-selling products subtitle</p>",
+        "subtitle_font_size_mobile": 12,
+        "subtitle_font_size_desktop": 14,
+        "padding_top_mobile": 16,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        },
+        "payment_icons_FmL36P": {
+          "type": "payment_icons",
+          "settings": {
+            "payment_title": "Payment methods",
+            "payment_icon_1": "shopify://shop_images/visa.svg",
+            "payment_icon_2": "shopify://shop_images/paypal.svg",
+            "payment_icon_3": "shopify://shop_images/mastercard-icon.svg"
+          }
+        },
+        "gift_bag_products_ypyXKK": {
+          "type": "gift_bag_products",
+          "settings": {
+            "title": "<p>Gift bag products</p>",
+            "title_font_size_mobile": 22,
+            "title_font_size_desktop": 24,
+            "subtitle": "<p>Gift bag products products subtitle</p>",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 14,
+            "product_1": "small-gift-box-zippy-x-mariana-malhao",
+            "product_2": "small-gift-box-zippy-x-lourenco-providencia",
+            "product_3": "big-gift-box-zippy-x-lourenco-providencia"
+          }
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons",
+        "payment_icons_FmL36P",
+        "gift_bag_products_ypyXKK"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "popular_categories_xHE9Mx": {
+      "type": "popular-categories",
+      "blocks": {
+        "category_azfGtL": {
+          "type": "category",
+          "settings": {
+            "mobile_image": "shopify://shop_images/Frame_30_2.png",
+            "desktop_image": "shopify://shop_images/Frame_30_2.png",
+            "kid_type": "Nursery",
+            "category": "",
+            "category_name": "Boys"
+          }
+        },
+        "category_Ygrz8Y": {
+          "type": "category",
+          "settings": {
+            "kid_type": "Girls",
+            "category": "",
+            "category_name": ""
+          }
+        }
+      },
+      "block_order": [
+        "category_azfGtL",
+        "category_Ygrz8Y"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Popular categories",
+        "view_all_categories_text": "View all categories",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart_recommended_products_N8Xrfn",
+    "cross_selling_products_Wm4qM4",
+    "cart-footer",
+    "popular_categories_xHE9Mx"
+  ]
+}

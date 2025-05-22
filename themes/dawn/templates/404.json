@@ -1,0 +1,65 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-404",
+      "blocks": {
+        "links_e6AekP": {
+          "type": "links",
+          "settings": {
+            "link_label_1": "Girl",
+            "link_url_1": "shopify://collections/girl",
+            "link_label_2": "Boy",
+            "link_url_2": "shopify://collections/boy",
+            "link_label_3": "Baby girl",
+            "link_url_3": "shopify://collections/baby-girl",
+            "link_label_4": "Baby boy",
+            "link_url_4": "shopify://collections/baby-boy",
+            "link_label_5": "Newborn",
+            "link_url_5": "shopify://collections/socks-tights-baby-girl",
+            "link_label_6": "Nursery",
+            "link_url_6": "shopify://collections/nursery"
+          }
+        }
+      },
+      "block_order": [
+        "links_e6AekP"
+      ],
+      "custom_css": [
+        "h1 {font-size: 1.125rem;}",
+        "h1 > span > strong {font-size: 2.25rem; font-weight: 500;}",
+        "@media (max-width: 788px) {h1 {line-height: 1.9rem; } h1 > span > strong {font-size: 1.875rem; line-height: 2.5rem; }}"
+      ],
+      "settings": {
+        "page_heading": "<strong>Ooops... It seems that this page doesn't exist! </strong>",
+        "page_sub_heading": "Please use our search option or browse through our wide range of categories to find what you're looking for:",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 40,
+        "padding_bottom_desktop": 40
+      }
+    },
+    "custom_liquid_Ai7et4": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style>\n  @import url(\"https://use.typekit.net/lzx1rlw.css\");\n\n  .top-notification {\n    display: none;\n  }\n\n  #Zippy-404 {\n    overflow: hidden;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n    width: 100%;\n    margin: 0 auto;\n  }\n\n  #Zippy-404 div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #Zippy-404 img {\n    width: 100%;\n  }\n\n  #Zippy-404 .zyBgBeige {\n    background-color: #fff;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    width: 100%;\n    padding-top: 25rem;\n    padding-bottom: 25rem;\n    flex-wrap: wrap;\n  }\n\n  #Zippy-404 a {\n    text-decoration: underline;\n  }\n\n  #Zippy-404 h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-size: 1.7rem;\n    color: #221f20;\n    line-height: 2.5rem;\n    margin: 0;\n    text-align: center;\n  }\n  #Zippy-404 h2 > span {\n    font-size: 2.2rem;\n    font-family: \"ff-providence-sans-web-pro\", sans-serif;\n  }\n\n  #Zippy-404 p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-size: 1rem;\n    color: #221f20;\n    line-height: 1.4;\n    margin: 0;\n    text-align: center;\n    margin-top: 1rem;\n    margin-bottom: 1.5rem;\n  }\n\n  #Zippy-404 .container-text {\n    position: absolute;\n    top: 50%;\n    left: 35%;\n    transform: translate(-50%, -50%);\n    width: 45%;\n    z-index: 1;\n  }\n\n  #Zippy-404 .container-img {\n    position: absolute;\n    display: flex;\n    justify-content: right;\n    bottom: 0%;\n    width: 100%;\n  }\n\n  #Zippy-404 .title {\n    width: 15%;\n    margin: 0 auto;\n    margin-bottom: 3rem;\n  }\n\n  #Zippy-404 .boneco {\n    width: 60%;\n    position: relative;\n    left: 40%;\n    z-index: 0;\n  }\n\n  #Zippy-404 .cta-grid {\n    display: grid;\n    grid-template-columns: repeat(3, 10rem);\n    grid-template-rows: repeat(2, 1fr);\n    gap: 0.7rem;\n    justify-content: center;\n    scrollbar-width: none;\n  }\n\n  #Zippy-404 .cta {\n    min-width: 10rem;\n  }\n\n  @media (max-width: 1300px) {\n    #Zippy-404 .boneco {\n      width: 50%;\n      left: 50%;\n    }\n  }\n\n  @media (max-width: 992px) {\n    #Zippy-404 .container-text {\n      top: 30%;\n      left: 50%;\n      width: 85%;\n    }\n\n    #Zippy-404 .title {\n      width: 30%;\n    }\n\n    #Zippy-404 h2 {\n      font-size: 1.2rem;\n      line-height: 1.4;\n    }\n    #Zippy-404 h2 > span {\n      font-size: 1.6rem;\n      line-height: 1.2;\n    }\n    #Zippy-404 .boneco {\n      width: 50%;\n      left: 50%;\n      bottom: 5%;\n      margin: 0;\n    }\n\n    #Zippy-404 .cta-grid {\n      grid-template-columns: repeat(2, 10rem) !important;\n      grid-template-rows: repeat(3, 1fr) !important;\n      margin: 0.3rem;\n    }\n  }\n\n  @media (max-width: 768px) {\n  }\n\n  @media (max-width: 576px) {\n    #Zippy-404 .zyBgBeige {\n      padding-top: 23rem;\n      padding-bottom: 20rem;\n    }\n  }\n</style>\n\n<section id=\"Zippy-404\">\n  <div class=\"zyBgBeige\">\n    <div class=\"container-text\">\n      <h2>\n        <span>Oops… How Embarrassing!</span><br />\n        We couldn’t find the page...\n      </h2>\n      <p>But don’t worry, we have plenty of other amazing pages to discover:</p>\n      <div class=\"cta-grid\">\n        <a href=\"{{ collections['girl'].url }}\"> <button class=\"cta\">Girl</button></a>\n        <a href=\"{{ collections['boy'].url }}\"><button class=\"cta\">Boy</button></a>\n        <a href=\"{{ collections['baby-girl'].url }}\"> <button class=\"cta\">Baby Girl</button></a>\n        <a href=\"{{ collections['baby-boy'].url }}\"> <button class=\"cta\">Baby Boy</button></a>\n        <a href=\"{{ collections['newborn'].url }}\"> <button class=\"cta\">Newborn</button></a>\n        <a href=\"{{ collections['nursery'].url }}\"> <button class=\"cta\">Nursery</button></a>\n      </div>\n    </div>\n    <div class=\"container-img\">\n      <picture>\n        <source media=\"(max-width: 991px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404_mobile.png?v=1726764250\" />\n        <source media=\"(min-width: 992px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\" />\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\" alt=\"Página 404 Not Found - Zippy\" class=\"boneco\" />\n      </picture>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_Ai7et4"
+  ]
+}

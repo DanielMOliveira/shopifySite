@@ -1,0 +1,67 @@
+{% comment %}
+  Renders a swatch input component.
+  Accepts:
+  - id: {String} unique input id
+  - type: {String} input type. Accepts 'radio' or 'checkbox', defaults to 'radio' (optional)
+  - name: {String} input name,
+  - value: {ProductOptionValueDrop} input value
+  - product_form_id: {String} id of the form associted with the input
+  - checked: {Boolean} default checked status
+  - disabled: {Boolean} default disabled status (optional)
+  - help_text: {String} additional content to render inside the label (optional)
+  - additional_props: {String} (optional) additional properties to attach to the input
+
+  Usage:
+  {% render 'swatch-input',
+      id: input_id,
+      name: input_name,
+      value: input_value,
+      product_form_id: product_form_id,
+      checked: checked
+  %}
+{% endcomment %}
+
+<label
+  for="{{ id }}"
+  title="{{ value }}"
+  class="inline-flex cursor-pointer items-center justify-between gap-1 border-b border-gray-200 py-4 text-sm text-gray-800 transition-colors has-[:checked]:font-medium md:rounded md:border md:border-gray-300 md:px-[11px] md:py-[7px] md:text-2xs md:has-[:checked]:border-primary xl:hover:border-primary{% if disabled %} !font-normal !text-gray-500 !cursor-not-allowed md:!text-gray-400 md:!border-gray-300{% endif %}{% if checked %} checked{% endif %}"
+>
+  {{ help_text }}
+
+  <input
+    type="{{ type | default: 'radio' }}"
+    id="{{ id }}"
+    name="{{ name }}"
+    value="{{ value }}"
+    form="{{ product_form_id }}"
+    class="swatch-input__input !hidden{% if disabled %} visually-disabled{% endif %}"
+    {% if value.variant.barcode != blank %}
+      data-ean="{{ value.variant.barcode }}"
+    {% endif %}
+    {% if value.variant.sku != blank %}
+      data-sku="{{ value.variant.sku }}"
+    {% endif %}
+    {% if checked %}
+      checked
+    {% endif %}
+    {% if disabled %}
+      disabled
+    {% endif %}
+    {% if additional_props %}
+      {{ additional_props }}
+    {% endif %}
+  >
+
+  {% if disabled %}
+    <span class="text-2xs font-medium text-gray-500 md:hidden">
+      {{- 'products.product.inventory_out_of_stock' | t -}}
+    </span>
+  {% endif %}
+
+  {% if value.variant.inventory_quantity == 1 %}
+    <div class="flex items-center gap-1.5 text-2xs text-primary">
+      <span class="!inline-flex h-2 w-2 rounded-full bg-red-500"></span>
+      <span class="font-medium md:hidden">{{ 'products.product.last_items' | t }}</span>
+    </div>
+  {% endif %}
+</label>

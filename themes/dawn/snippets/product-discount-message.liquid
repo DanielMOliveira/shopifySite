@@ -1,0 +1,58 @@
+{% comment %}
+  Renders collection message
+
+  Accepts:
+  - product: {Object} Product
+
+  Usage:
+      {% render 'product-collection-message', product: product %}
+{% endcomment %}
+
+{% if product != blank %}
+  {% liquid
+    for collection in product.collections
+      assign message_data = collection.metafields.custom.discount_message.value
+
+      if message_data != blank
+        break
+      endif
+    endfor
+  %}
+
+  {% if message_data != blank %}
+    <div
+      id="discount-message-{{ product.id }}"
+      class="inline-flex items-center gap-1 text-2xs leading-6 text-gray-600"
+    >
+      {% render 'icon', icon: 'info-circle-v2', class: '!h-4 !w-4 -mt-px' %}
+      {{ message_data.text | metafield_tag }}
+    </div>
+
+    {% style %}
+      #discount-message-{{ product.id }} * {
+        font-size: inherit;
+        line-height: inherit;
+      }
+
+      #discount-message-{{ product.id }} > div {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+      }
+
+      #discount-message-{{ product.id }} ul,
+      #discount-message-{{ product.id }} ol {
+          margin-bottom: 4px;
+          padding-left: 20px;
+      }
+
+      #discount-message-{{ product.id }} ul {
+          list-style-type: disc;
+      }
+
+      #discount-message-{{ product.id }} ol {
+          list-style-type: decimal;
+      }
+    {% endstyle %}
+  {% endif %}
+{% endif %}

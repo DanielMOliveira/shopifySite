@@ -1,0 +1,678 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.faq.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "faq_content_kQygw": {
+      "type": "faq-content",
+      "disabled": false,
+      "settings": {
+        "header-1e06609c83146c336bc2990bea2c00aa": null,
+        "heading": "Birth Listas",
+        "faq_section_id": "Listas",
+        "header-ee9fbdc8b5474edf65c191cb1c5f9928": null,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      },
+      "blocks": {
+        "faq_item_LKzen": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Can I create an Online Birth List?",
+            "faq_answer": "<p>To create a Birth List online, all you have to do is register on the Birth List page of the website (here) and fill in the required fields. You will then receive an email confirming the creation of your Birth List and the corresponding regulations.</p>",
+            "header-459a9d4a5e85c0e882c9a6f6c9f98de5": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-67d388b4ae5fa57526d7279ab7aa0aab": null,
+            "list_1": "",
+            "header-979db19d0fb05191678c2e02f96de056": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_bABM8": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I find out my Birth List ID?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024</strong>: To find out the Birth List ID you should contact customer support using the form or chat available on the website, indicating the telephone number associated with the List. You can also find out the Birth List ID if you contact a physical shop and indicate the telephone number associated with it. <br/><strong>Birth Lists created after October 10, 2024: </strong>Not applicable.</p>",
+            "header-3f5ad06c55032e85ac0bcdd4f90ffcfa": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-901fe20acab660eb779f0db0c37b0a3e": null,
+            "list_1": "",
+            "header-13f834150c9fa40dff711e5e77bdb5fc": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_mr9gc": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Which items can I add to my Birth List?",
+            "faq_answer": "<p>The Birth List includes nursery items, mum and baby products up to size 24/36 months in clothing and size 24 in footwear.</p>",
+            "header-fbc8682f86858e3995fea34d1d9b5ea6": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-a627f67f8794c4bf42592c39652bee32": null,
+            "list_1": "",
+            "header-2d3ad4bd628bcfb4ab3ad1ede8679fb9": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_awbdM": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "I've opened a Birth List in a physical Zippy shop, can I connect it to my Zippy Online orders?",
+            "faq_answer": "<p>Zippy Online orders also count towards the cumulative purchase value of your Birth List.</p>",
+            "header-8d75305df8279887797edbced6e7bed2": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-de48ab46643fe928a6066c9465ee89c2": null,
+            "list_1": "",
+            "header-bf11cfbde2a2109cd888d6d282e5fcc0": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_p4Y69": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I associate a Zippy Online order with my Birth List?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024:</strong> To link an order placed at Zippy Online to your Birth List you should contact Customer Support and identify the order number you want to link to your Birth List (Link form).<br/><strong>Birth Lists created after October 10, 2024:</strong> Online orders placed with the email address used to create the Birth List are automatically associated with your Birth List.</p>",
+            "header-42173800bfe2ced916216b0111b5aef1": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-ef1f2d6ea58e8aeca3a46269334531e8": null,
+            "list_1": "",
+            "header-77b833b9f036bdbb2f308ab8797c75da": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_PYcLM": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I recover the Birth List membership of an order that has already been received?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024:</strong> If you have registered an order with an e-mail address other than the one on the Birth List and without its ID in the promotional field, you can still ask to associate it with your Birth List by contacting Customer Service via the form or chat available on the website. You should indicate the telephone number associated with your Birth List and the number of the order already received.<br/><strong>Birth Lists created after October 10, 2024: </strong>Not applicable because when shopping with another email I can't associate it with the list. </p>",
+            "header-aee3dd0e9d98c3490ddf154013b369f6": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-5553b169789e583ae445d295af8a8d12": null,
+            "list_1": "",
+            "header-fd47727cbfafc818caca548d14ec44c9": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_cxfbT": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I check the accumulated value of my Birth List?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024:</strong> You can request the list of accumulated purchases via the customer service form or chat available on the website. You must indicate the List ID or telephone number associated with it.<br/><strong>Birth Lists created after October 10, 2024: </strong>You can request the list of accumulated purchases via the customer service form or chat available on the website. You must indicate the email address associated with the List.</p>",
+            "header-3b32a08191a508502e0e9f5d71173427": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-3e3c729b189f53aeacca1676256b1f2a": null,
+            "list_1": "",
+            "header-7a3cad58c81f620355362ba73d4a68f6": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_Lqwer": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I close my Birth List?",
+            "faq_answer": "<p>The List will be closed 12 months after its opening date and cannot be requested to be closed earlier than that.</p>",
+            "header-5aed3846f7b523402499c29bfacfedb0": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-fcd0371a00042c700fad437b341cd2e2": null,
+            "list_1": "",
+            "header-0987d164b27752bb91b565136ceb6455": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_VWjiq": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "What is the discount on my Birth List?",
+            "faq_answer": "<p>The value of the discount promise to be received by the holder of the List is 10% of the value of purchases of eligible items made in the 12 months of the mandatory duration of the Birth List. The value of the items purchased to be included in the List may not exceed €4,000.</p>",
+            "header-f00bdf42644d32ebd766ca5d51a17b8b": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-53fdcddc06f7279d0931d3452e5a40fa": null,
+            "list_1": "",
+            "header-9e40bf43571758b7b0d1c8b4c8c6e679": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_ECKgp": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I redeem and use the Birth Lists prize?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024: </strong>The discount promise can only be requested and redeemed in physical shops. It will be delivered in the form of a discount voucher, Zippy gift card or other equivalent means, excluding the promise of a discount in cash. For the holder of the Birth List to be able to access the discount promise after the List has been closed, they must go to a physical shop accompanied by their ID card. The value of the promised discount can be redeemed up to 6 months after the List's closing date, i.e. 18 months after its opening date. After this period, the List is deleted and the discount pledge cannot be redeemed. The prize can only be used in physical Zippy shops. The value of the discount promise will be valid for 1 (one) year after it is issued.<br/><strong>Birth Lists created after October 10, 2024: </strong>When your list is closed, in order to request the discount promise you must send an email to customer service so that the amount to be discounted can be calculated and you must indicate in which physical shop you wish to collect the discount promise. Subsequently, the holder of the Birth List must go to the identified physical shop accompanied by their ID card. It will be delivered in the form of a discount voucher, Zippy gift card or other equivalent means, excluding the promise of a discount in cash. The value of the discount promise can be redeemed up to 6 months after the List's closing date, i.e. 18 months after its opening date. After this period, the List is deleted and the discount promise cannot be redeemed. The prize can be used in Zippy shops. The value of the discount promise awarded will be valid for 1 (one) year after it is issued.</p>",
+            "header-3546a8bb6c0c26be8b9c205dbefa2ad0": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-ee82051aae51fc06d0399aef8cfe6ad5": null,
+            "list_1": "",
+            "header-43bce37cab193fe043452de86f23d6c9": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_A4rhb": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I link purchases made in a physical shop to my Birth List?",
+            "faq_answer": "<p><strong>Birth Lists created before October 10, 2024: </strong>The addition of new products to the Birth List can be requested by any person in physical shops at the time of purchase, indicating the telephone number associated with the List or the List ID.<br/><strong>Birth Lists created after October 10, 2024:</strong> The addition of new products to the Birth List can be requested by any person in physical shops at the time of purchase, indicating the telephone number associated with the List.</p>",
+            "header-4fb677cd11ad16ac6327d0e20377dccd": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-b5cf3f5f33a4cae87c29d6eae9e9e728": null,
+            "list_1": "",
+            "header-ba3d9edeb166fd09b72bee9c33aa0156": null,
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_LKzen",
+        "faq_item_bABM8",
+        "faq_item_mr9gc",
+        "faq_item_awbdM",
+        "faq_item_p4Y69",
+        "faq_item_PYcLM",
+        "faq_item_cxfbT",
+        "faq_item_Lqwer",
+        "faq_item_VWjiq",
+        "faq_item_ECKgp",
+        "faq_item_A4rhb"
+      ]
+    },
+    "faq_content_ni9K7": {
+      "type": "faq-content",
+      "disabled": false,
+      "settings": {
+        "header-a85fc1f6937e50879e006e3812dba653": null,
+        "heading": "Other Informations",
+        "faq_section_id": "Maisinfo",
+        "header-594a9c7a7e2bbcd6856e488c21f05969": null,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      },
+      "blocks": {
+        "faq_item_9iLmG": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "How can I subscribe to the newsletter?",
+            "faq_answer": "<p>If you don't want to miss out on any of our promotions and new collections, you can sign up for our free newsletter. Simply enter your e-mail address in the ‘Subscribe to Newsletter’ section at the bottom of the page.</p><p>You'll receive an email shortly after with a 10% offer to use on your first order.</p>",
+            "header-9e107bf499555a9d3987932a7b1c2813": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-119adeb6ff65a2f91bd874c550941b4c": null,
+            "list_1": "",
+            "header-d23513dd28ba97fa00c1d5bb5eaf9de2": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_r48tL": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Where can I lodge a complaint?",
+            "faq_answer": "<p>We regret that your shopping experience with Zippy was not a positive one. If you wish to make a complaint, please contact our Customer Service department by filling in the following <a href=\"https://zippyonline.com/pages/contact/\">form</a>, so that we can resolve your request as quickly as possible. </p><p>If you are still not satisfied, you can lodge an official complaint <a href=\"https://www.livroreclamacoes.pt/Inicio/\" target=\"_blank\">here</a> in our Complaints Book (Livro de Reclamações). We will continue to work hard to guarantee the best service for our customers!</p>",
+            "header-1aa573d832cbda3fc90a5e6f032eceab": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-bf847f417d48d4c62f9623b18e9b89f3": null,
+            "list_1": "",
+            "header-a186f18b6c9ed7ee4f2e835271fb4d80": null,
+            "table_1": ""
+          }
+        },
+        "faq_item_MpqAA": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Reporting Irregularities",
+            "faq_answer": "<p>Zeitreel has approved its Whistleblowing Regulations and its Policy for the Prevention of Corruption and Related Offences.<br/><br/></p><p><strong>For further information:</strong></p><p>- Whistleblowing Regulations, click <a href=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Whistleblowing_Regulation_eng_Zeitreel_2022.pdf?v=1730983003\" title=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Whistleblowing_Regulation_eng_Zeitreel_2022.pdf?v=1730983003\"><strong>here</strong></a>;</p><p>- Policy for the Prevention of Corruption and Related Offences click <a href=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Policy_on_Prevention_of_Corruption_eng_zeitreel_2022_fbf07141-fafa-42ef-8143-846b2300e529.pdf?v=1730983001\" title=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Policy_on_Prevention_of_Corruption_eng_zeitreel_2022_fbf07141-fafa-42ef-8143-846b2300e529.pdf?v=1730983001\"><strong>here</strong></a>.<br/><br/></p><p><strong>To report irregularities:</strong></p><p>- Whistleblowing: breaches of EU law, based on information obtained in the course of their professional activity, as provided for in the respective Regulation;</p><p>- Prevention of Corruption and Related Offences: crimes of corruption and related offences as provided for in the Policy for the Prevention of Corruption and Offences.</p><p>You can use one of the following channels:</p><p>- Email address: comunicacao.irregularidades@zeitreel.com. </p><p>- Zeitreel's Whistleblowing & Anticorruption Officer: Sonae Maia Business Centre, Edificio 2E, Lugar do Espido - Via Norte, 4470-179 Maia, Portugal.<br/></p><p>Zeitreel has approved its Whistleblowing Regulations and its Policy for the Prevention of Corruption and Related Offences.</p>",
+            "header-b794a1a006ac3fc45b74301eadabe2d6": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-c8f48a0103c94a07d0d6e1a2d8022bd7": null,
+            "list_1": "",
+            "header-2c92dd6c74b188af8f1dd967f00be1df": null,
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_9iLmG",
+        "faq_item_r48tL",
+        "faq_item_MpqAA"
+      ]
+    },
+    "faq_navigation_nCQVUy": {
+      "settings": {},
+      "blocks": {
+        "faq_section_id_eggL8a": {
+          "settings": {
+            "heading": "FAQ"
+          }
+        },
+        "faq_section_id_DfwYXd": {
+          "settings": {
+            "heading": "Delivery",
+            "navigation_link": "Entregas"
+          }
+        },
+        "faq_section_id_n3DDLE": {
+          "settings": {
+            "heading": "Returns & Refunds",
+            "navigation_link": "Devolucoes"
+          }
+        },
+        "faq_section_id_rC4nLB": {
+          "disabled": false,
+          "settings": {
+            "heading": "Promotions & Campaigns",
+            "navigation_link": "Campanhas"
+          }
+        },
+        "faq_section_id_YAAMc": {
+          "type": "faq_section_id",
+          "disabled": false,
+          "settings": {
+            "heading": "Birth Lists",
+            "navigation_link": "Listas"
+          }
+        },
+        "faq_section_id_9TNXqi": {
+          "settings": {
+            "heading": "Orders",
+            "navigation_link": "Encomendas"
+          }
+        },
+        "faq_section_id_zQtRjL": {
+          "settings": {
+            "heading": "Payment Options",
+            "navigation_link": "Métodos de Pagamento"
+          }
+        },
+        "faq_section_id_eefEhP": {
+          "settings": {
+            "heading": "Products",
+            "navigation_link": "Produto"
+          }
+        },
+        "faq_section_id_m9ehyA": {
+          "settings": {
+            "heading": "Other Informations",
+            "navigation_link": "Maisinfo"
+          }
+        },
+        "faq_section_id_c9MdK7": {
+          "settings": {
+            "heading": "Contacts",
+            "navigation_link": "Contactos"
+          }
+        }
+      },
+      "block_order": [
+        "faq_section_id_eggL8a",
+        "faq_section_id_DfwYXd",
+        "faq_section_id_n3DDLE",
+        "faq_section_id_rC4nLB",
+        "faq_section_id_YAAMc",
+        "faq_section_id_9TNXqi",
+        "faq_section_id_zQtRjL",
+        "faq_section_id_eefEhP",
+        "faq_section_id_m9ehyA",
+        "faq_section_id_c9MdK7"
+      ]
+    },
+    "faq_content_BjUGR4": {
+      "settings": {
+        "heading": "Delivery",
+        "faq_section_id": "Entregas"
+      },
+      "blocks": {
+        "faq_item_TNeDXf": {
+          "settings": {
+            "heading": "What are the delivery times?",
+            "faq_answer": "<p>[table1]</p><p>*Bulky nursery items will have a fixed cost of €5.99, advertised on the product page and in your shopping basket.</p><p>**In addition to the times above, there are between 5 and 10 working days for the Azores and between 5 and 7 working days for Madeira. For the islands, deliveries always have a fixed cost of €5.50.</p>",
+            "table_1": "<style>\n    .shopify-section.faq-content table,\n    .shopify-section.faq-content th,\n    .shopify-section.faq-content tr, .shopify-section.faq-content td {\n      border: 1px solid #E4E4E4;\n      text-align: center;\n      vertical-align: middle;\n    }\n  \n    .shopify-section.faq-content table {\n      width: 100%;\n    }\n  \n    .shopify-section.faq-content th {\n      background-color: #F7F7F7;\n      padding: 1rem\n    }\n  \n    .shopify-section.faq-content td {\n      padding: 1rem;\n    }\n  </style>\n  <div style=\"overflow-x: auto\">\n    <table>\n      <tbody>\n        <tr style=\"background-color: #f7f7f7\">\n          <td style=\"width: 22.5%\"><b>Shipping Type</b></td>\n          <td style=\"width: 22.5%\"><b>Shipping Cost</b></td>\n          <td style=\"width: 22.5%\"><b>Delivery Time</b></td>\n        </tr>\n        <tr>\n          <td>ZIPPY Stores</td>\n          <td>Free</td>\n          <td>3 to 5 working days</td>\n        </tr>\n        <tr>\n          <td>Home Delivery</td>\n          <td>3,99€ (Free from 34,99€*)</td>\n          <td>2 to 4 working days**</td>\n        </tr>\n      </tbody>\n    </table>\n  </div>\n  <br><br>"
+          }
+        },
+        "faq_item_3aHJzG": {
+          "settings": {
+            "heading": "How does Zippy's delivery service work?",
+            "faq_answer": "<p>As soon as your order leaves our distribution centre, you will receive an email informing you of the tracking of your order.</p><p>This email will provide you with the tracking code and a link so that you can access the carrier's website and follow the delivery of your package to the desired address.</p><p>Delivery to the desired address is guaranteed between 9am and 7pm for mainland Portugal and the islands.</p>"
+          }
+        },
+        "faq_item_LaRMDg": {
+          "settings": {
+            "heading": "Can my order be sent to another country?",
+            "faq_answer": "<p>No, the parcel must always be sent to the country in which the purchase was made.</p>"
+          }
+        },
+        "faq_item_firh6V": {
+          "disabled": false,
+          "settings": {
+            "heading": "How does collecting a Zippy order from a physical store work?",
+            "faq_answer": "<p>As soon as your order leaves our distribution centre, you will be notified by e-mail. You will then receive another e-mail informing you when your order is available for collection.</p><p>Your order will be available for collection in the selected shop for 10 days. If you wish, your order can be picked up by a third party, provided they are properly identified. The person in question will need to present the e-mail confirming that the order is available for collection, as well as their own ID card.</p>"
+          }
+        },
+        "faq_item_36hVfD": {
+          "disabled": false,
+          "settings": {
+            "heading": "What is the shipping cost for furniture and bulky items?",
+            "faq_answer": "<p>Deliveries of furniture and bulky nursery items have a <strong>fixed cost of €5.99</strong>, as advertised on the product page. You can check the shipping costs in your shopping basket.</p>"
+          }
+        }
+      }
+    },
+    "faq_content_BEGrDX": {
+      "settings": {
+        "heading": "Returns & Refunds",
+        "faq_section_id": "Devolucoes"
+      },
+      "blocks": {
+        "faq_item_XQNBHt": {
+          "settings": {
+            "heading": "What are the return conditions?",
+            "faq_answer": "<p>Returns are always free at Zippy!</p><p>Online orders can only be returned, exchanges are not possible.</p><p>To return your order, you can go to one of our physical stores or schedule home pickup using the <a href=\"https://zippyonline.com/pages/return-request/\">return form.</a></p><p>You have <strong>30 days to return your parcel</strong> from the day it is received at your home or arrives at the intended shop.</p>"
+          }
+        },
+        "faq_item_y8gqML": {
+          "settings": {
+            "heading": "How do returns work for online purchases in physical shops?",
+            "faq_answer": "<p>Online orders can be returned to Zippy stores and no exchanges are possible. </p><p>However, please note that returns are not allowed in Zippy stores (except Zippy Outlet stores) for products purchased in Zippy Outlet stores. </p><p>Refunds are processed centrally to the original means of payment and not in-store. </p><p>Refunds on returns to Zippy Outlet shops are made within 14 days of the date of delivery of the items to the shop and validation of their conformity. Once the return has been processed, you will receive an email with the credit note. </p>"
+          }
+        },
+        "faq_item_tmMD6r": {
+          "settings": {
+            "heading": "How do returns with home collection work?",
+            "faq_answer": "<p>If you wish, we will collect your parcel free of charge from the address you want.<br/>You can request home collection using the <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact form</a><strong>, </strong>choosing ‘Return’ as the reason.</p><p>Fill in the personal details requested and tell us the number of the parcel you wish to return. You will then receive an e-mail from our Customer Service department confirming the<br/>collection.</p><p>Pick-ups are carried out by<strong> CTT on working days, between 9am and 7pm, </strong>and it is not possible to set a time window.</p><p>Refunds for returns with home pick-up are made within 14 days from the day the items are received at our centre and checked for conformity.</p><p>Refunds via home collection are always made to the original means of payment. As soon as the return is processed, you will receive an e-mail with the credit note.</p>"
+          }
+        },
+        "faq_item_yGYgmj": {
+          "settings": {
+            "heading": "How and when will I receive my refund?",
+            "faq_answer": "<p>Refunds are always made to the <strong>original means of payment</strong> and processed within <strong>14 days </strong>of receiving the items at the returns centre.</p><p>You will receive an email notification confirming that your order has arrived at our centre, as well as a new notification when it has been returned.</p><p>If the original method of payment was Multibanco, you should allow 1-3 working days for the money to be available in your bank account.</p>"
+          }
+        },
+        "faq_item_eQckar": {
+          "disabled": true,
+          "settings": {
+            "heading": "Can I return an online order to a Zippy shop?",
+            "faq_answer": "<p>Online orders can be returned to Zippy stores and no exchanges are possible. </p><p>However, please note that returns are not allowed in Zippy stores (except Zippy Outlet stores) for products purchased in Zippy Outlet stores. </p><p>Refunds are processed centrally to the original means of payment and not in-store. </p><p>Refunds on returns to Zippy Outlet shops are made within 14 days of the date of delivery of the items to the shop and validation of their conformity. Once the return has been processed, you will receive an email with the credit note. </p><p>You have 30 days to make the return from the day you receive your order at home or the day it arrives at the desired shop.</p>"
+          }
+        },
+        "faq_item_3AnNPL": {
+          "disabled": true,
+          "settings": {}
+        },
+        "faq_item_nHDk49": {
+          "disabled": true,
+          "settings": {}
+        },
+        "faq_item_jGt3mV": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    },
+    "faq_content_KBWJAX": {
+      "settings": {
+        "heading": "Payment Options",
+        "faq_section_id": "Métodos de Pagamento"
+      },
+      "blocks": {
+        "faq_item_edBdbP": {
+          "settings": {
+            "heading": "What payment methods are available?",
+            "faq_answer": "<p>We have the following payment methods at your disposal:</p><ul><li><strong>Mbway </strong> </li><li><strong>Multibanco </strong></li><li><strong>Visa</strong></li><li><strong>Mastercard</strong></li><li><strong>Paypal</strong></li></ul>",
+            "faq_image_1": "shopify://shop_images/multibanco_d8f2bab6-4123-4f71-9bc3-a69202aaa133.svg",
+            "faq_image_2": "shopify://shop_images/mbway_e7d888ed-dcf9-4bbe-af36-134e118ae4ec.svg"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_edBdbP"
+      ]
+    },
+    "faq_content_iXMDQQ": {
+      "settings": {
+        "heading": "Orders",
+        "faq_section_id": "Encomendas"
+      },
+      "blocks": {
+        "faq_item_ti6gLg": {
+          "settings": {
+            "heading": "How can I track the status of my order?",
+            "faq_answer": "<p>You can check the status of your order at any time from our chat window, which is always visible at the bottom of your screen. Click on the chat icon, enter your details (name and e-mail address) and a menu will automatically appear where you can select ‘<strong>Order Status</strong>’. Enter your order number and you'll immediately know the status of your order.</p><p>You can also log in to your Personal Area and, by looking at ‘<strong>Purchases</strong>’, check the orders you have in progress and their status. If you have any questions, please contact cliente@zippy.pt.</p>"
+          }
+        },
+        "faq_item_LDXdmw": {
+          "disabled": false,
+          "settings": {
+            "heading": "Can I cancel an order?",
+            "faq_answer": "<p>No changes or cancellations are possible after the order has been completed. You can return items to one of our physical stores or through the free home collection service. You must return it in accordance with the conditions. </p>"
+          }
+        },
+        "faq_item_jqmeXT": {
+          "disabled": false,
+          "settings": {
+            "heading": "How can I make a purchase at Zippy?",
+            "faq_answer": "<p>It's very simple to shop at Zippy. You should start by selecting the area (Girl, Boy, Baby Girl, Baby Boy, Newborn or Childcare). When you enter the category, you can choose the type of product you want, for example: Shoes, Dresses, Trousers, etc.</p><p>View the items you prefer. When you click on the item, the detail page will appear where you will find the item in detail, with price, reference, composition, care and delivery time.<br/></p><p>Choose a size/item and click Add to Cart. You can then choose to continue viewing items following the previous sequence or start the ordering process. To start the ordering process, click on View my purchases. If you have a promotional code that you would like to deduct from your purchase, enter the code and click Apply.<br/></p><p>To process your order, click on Checkout.<br/></p><p>To continue, you must log in to your account by entering your credentials (e-mail and password) or you can Create account.</p><p>Select the delivery method you want (home delivery or shipping to a Zippy store) and click Continue.</p><p>Next, fill in the details for issuing the invoice, as well as the desired payment method (Credit Card, Paypal, Multibanco, Continente Card or select, if available, a receipt associated with your account).<br/></p><p>Confirm the purchase. As soon as the order has been successfully placed, you will receive a message informing you that the order has been successfully placed.<br/></p><p>Within a few moments you will also receive an e-mail confirming your order.</p>"
+          }
+        },
+        "faq_item_qcz6kp": {
+          "disabled": false,
+          "settings": {
+            "heading": "Do I need to create an account to place an order?",
+            "faq_answer": "<p>To finalize your order, you can either log in with your account or choose to finalize as a guest.</p><p>If you choose to create an account to finalize your order, click on the icon in the top right-hand corner and then choose Create Account. Enter your login details (name, e-mail address, date of birth and choose a password). You will then see a page with information about personal data and all the processing that Zippy can do with it. Please read it and at the end, select the authorizations you want. Once your account has been successfully created, you will receive a link in your e-mail which you must click to confirm your registration. From here you can access your <strong>My Account </strong>area by entering your e-mail credentials and password.</p>"
+          }
+        },
+        "faq_item_LqVPdN": {
+          "disabled": false,
+          "settings": {
+            "heading": "Can I change my delivery address for an order that has already been confirmed?",
+            "faq_answer": "<p>If you want to change the address for an order, you will need to register a new order. To do this, please send an e-mail to <a href=\"mailto:cliente@zippy.pt\" target=\"_blank\"><span style=\"text-decoration:underline\">cliente@zippy.pt </span></a>as soon as possible so that we can check whether the current order can be cancelled.</p>"
+          }
+        }
+      }
+    },
+    "faq_content_XG3GGr": {
+      "settings": {
+        "heading": "Promotions & Campaigns",
+        "faq_section_id": "Campanhas"
+      },
+      "blocks": {
+        "faq_item_EWmxKW": {
+          "settings": {
+            "heading": "Am I entitled to a birthday gift?",
+            "faq_answer": "<p>Yes. The birthday special offer consists of a newsletter with a <strong>promotional code for a €5 </strong>discount on a purchase of €5 or more in the Zippy online shop, within the time period set for this purpose.<br/>The birthday offer can only be used on a single purchase in the Zippy online shop and cannot be combined with other campaigns in place.<br/>The return/cancellation of the transaction in which this discount was used will result in the amount of the promotional code being returned in the form of a voucher. The voucher will be available to view in the <strong>\"Personal Area\" </strong>and can be used as a means of payment. To take advantage of this offer, you must be a subscriber to Zippy's newsletters and have authorised the sending of communications by e-mail. You must also have up-to-date information on your child(ren)'s date of birth in your <strong>\"Personal Area\"</strong>.<br/>This offer will be available by e-mail 7 days before each child's birthday, up to and including their 12th birthday.</p>"
+          }
+        },
+        "faq_item_7ghWcM": {
+          "disabled": false,
+          "settings": {
+            "heading": "How can I use a promotional code?",
+            "faq_answer": "<p>A promotional code is an offer code provided by Zippy. It must be used on the <strong>‘Checkout'</strong> and before finalising the purchase, by applying it in the <strong>‘Promotional Code’</strong> field.<br/>The period of use varies from offer to offer and is duly communicated. Pay attention to its expiry date.</p>"
+          }
+        },
+        "faq_item_Khcfff": {
+          "disabled": false,
+          "settings": {
+            "heading": "What campaigns are currently running?",
+            "faq_answer": "<p><strong>Mid Season Sale</strong><br/>Up to -50% on selected items in force from 13/05/2025 to 02/06/2025 and limited to existing stock.<br/><br/><br/><strong>\"Emotions Markers\" Offer </strong><br/>When purchasing the \"Emotions Pajamas\" (ref. 31068887041), you are entitled to the \"Emotions Markers\" offer (ref. 31075342035). Bookmarks must be added to the cart and the discount is automatically applied at checkout. Offer valid from 02/19/2025 to 12/31/2025, limited to existing stock.</p>"
+          }
+        },
+        "faq_item_wGeAj": {
+          "type": "faq_item",
+          "disabled": false,
+          "settings": {
+            "heading": "Continente Card, can I use it online?",
+            "faq_answer": "<p>In Zippy physical stores you can benefit from all the benefits inherent to Continente Card loyalty:<br/>- Make payments, refund the balance in whole or in part;<br/>- Accumulate points and use the coupons issued by this brand.<br/><br/>See all the information, offers and benefits in the General Conditions of the Continente Card here.<br/><br/>It will not be possible to use the Continente Card in the online store.</p>",
+            "header-ea96d3f4983a351067809d8c94b6deff": null,
+            "faq_image_1": null,
+            "faq_image_2": null,
+            "faq_image_3": null,
+            "faq_image_4": null,
+            "faq_image_5": null,
+            "header-472a9376d711d5a2cf34fa29df0bd925": null,
+            "list_1": "",
+            "header-c06cbee67821f608c3b96b4428cf2c11": null,
+            "table_1": ""
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_EWmxKW",
+        "faq_item_7ghWcM",
+        "faq_item_Khcfff",
+        "faq_item_wGeAj"
+      ]
+    },
+    "faq_content_HtActz": {
+      "settings": {
+        "heading": "Products",
+        "faq_section_id": "Produto"
+      },
+      "blocks": {
+        "faq_item_meDM7C": {
+          "settings": {
+            "heading": "What care should I take with my clothes?",
+            "faq_answer": "<p>We advise you to check the information available on the product pages regarding composition and washing care. However, we do have a few recommendations for maintaining the integrity of your items: <br/>- When washing your clothes, you should separate them into different colours and, depending on how dirty they are, avoid exposing them to longer cycles than necessary; <br/>- Washing at high temperatures damages the integrity of fabrics and makes colours less vibrant, so try to wash at low temperatures;<br/>- Exposure to direct sunlight causes colours to wear out, so try to dry them in environments that are protected from sunlight;<br/>- Detergent is a cleaning agent, but it can also cause abrasion to fabrics, so try to use the recommended doses and never too much; <br/>- For best results in a wash cycle, try not to fill the drum completely, so that the clothes can move freely, allowing for better sanitising and washing. </p>"
+          }
+        },
+        "faq_item_tQfYxe": {
+          "disabled": false,
+          "settings": {
+            "heading": "Do Zippy items have a guarantee?",
+            "faq_answer": "<p>In the event of a manufacturing defect up to 3 years from the date of purchase, Zippy agrees, in accordance with current legislation, to repair, replace, reduce the price or terminate the contract.<br/>The guarantee must be activated in Zippy's physical shops or via <a href=\"mailto:cliente@zippy.pt\" target=\"_blank\"><span style=\"text-decoration:underline\">cliente@zippy.pt </span></a>for online purchases and if it is impossible to visit the physical shop.<br/>Zippy offers an after-sales repair service for most of its nursery articles. Therefore, for incidents related to nursery, the items will be sent to the manufacturer for quality control and repair.<br/>Once the item has been found to be non-compliant, the consumer must inform Zippy within two months.</p>"
+          }
+        },
+        "faq_item_LxMzdc": {
+          "disabled": false,
+          "settings": {
+            "heading": "Do Zippy products undergo quality control?",
+            "faq_answer": "<p>Zippy's main objective is to offer safe products. In order to guarantee the highest standards, our controls are meticulous and responsible.<br/>We monitor the entire production process, subjecting our products to various tests to ensure physical, mechanical and chemical safety.<br/>If you have any questions or would like more information about a specific item, you can contact us in the<a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\"> <span style=\"text-decoration:underline\"><strong>Customer Support</strong></span></a> section.</p>"
+          }
+        }
+      }
+    },
+    "faq_content_N7DKKQ": {
+      "settings": {
+        "heading": "Contacts",
+        "faq_section_id": "Contactos"
+      },
+      "blocks": {
+        "faq_item_QjnYiU": {
+          "settings": {
+            "heading": "Contact Form",
+            "faq_answer": "<p>You can contact us directly using our <a href=\"/pages/contact\" target=\"_blank\" title=\"Contact\">contact form</a>.</p>"
+          }
+        },
+        "faq_item_AAPCdq": {
+          "disabled": false,
+          "settings": {
+            "heading": "Telephone Number",
+            "faq_answer": "<p><strong>222 454 078</strong> (local call rate)<br/>Monday to Friday from 9.30am to 1pm, working days only.</p>"
+          }
+        },
+        "faq_item_3MMwDC": {
+          "disabled": false,
+          "settings": {
+            "heading": "Address",
+            "faq_answer": "<p>Customer Care – ZIPPY<br/>Estrada Nacional 13, km 6,78<br/>Edifício SONAE 2.D 2º Pis<br/>Lugar do Espido – Via Norte<br/>4470-179 Maia, Portugal</p>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_QjnYiU",
+        "faq_item_AAPCdq",
+        "faq_item_3MMwDC"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "faq_search_F9nejq",
+    "faq_navigation_nCQVUy",
+    "faq_content_BjUGR4",
+    "faq_content_BEGrDX",
+    "faq_content_KBWJAX",
+    "faq_content_iXMDQQ",
+    "faq_content_kQygw",
+    "faq_content_ni9K7",
+    "faq_content_XG3GGr",
+    "faq_content_HtActz",
+    "faq_content_N7DKKQ"
+  ]
+}

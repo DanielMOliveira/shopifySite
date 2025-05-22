@@ -1,0 +1,7 @@
+<span class="dropdown-item">
+  {% render 'icon', icon: 'bag', class: 'w-6 h-6 transition-all group-hover:scale-110' %}
+</span>
+
+{% if cart.item_count > 0 %}
+  <span class="text-2xs">{{ cart.item_count }}</span>
+{% endif %}

@@ -1,0 +1,75 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.zippy-wholesale.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "page_navigation_GAaRWF": {
+      "disabled": false,
+      "settings": {
+        "padding_top_mobile": 30,
+        "padding_bottom_mobile": 30,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30
+      },
+      "blocks": {
+        "heading_gWTGfx": {
+          "settings": {
+            "title_alignment": "left"
+          }
+        },
+        "text_ACUww6": {
+          "settings": {
+            "content_alignment": "left"
+          }
+        },
+        "text_eqedn": {
+          "type": "text",
+          "disabled": false,
+          "settings": {
+            "text": "<h4><strong>Do you want to sell Zippy in your shop?</strong></h4><ul><li><h6>We're present in the multi-branding channel in several countries</h6></li><li><h6>Excellent price-quality ratio</h6></li><li><h6>Segment from zero months to 14 years old</h6></li></ul><h6>Please fill out this short form and we will contact you.</h6>",
+            "content_alignment": "left",
+            "header-d54648793e6d9d2f64490aaa2af18ebe": null,
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "contact_ffLRrH": {
+          "settings": {
+            "form_id": "fspuy",
+            "language_id": "54359"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gWTGfx",
+        "text_ACUww6",
+        "text_eqedn",
+        "contact_ffLRrH"
+      ]
+    },
+    "custom_liquid_AifGrF": {
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n  .breadcrumbs {\n    display: none;\n  }\n\n  #shopify-section-template--16311520493777__page_navigation_GAaRWF .container-valantic {\n    margin-top: 2rem;\n  }\n  #shopify-section-template--16311520493777__page_navigation_GAaRWF {\n    background-color: #fbfbf8;\n  }\n  h4 {\n    margin-top: 3rem;\n  }\n</style>"
+      },
+      "blocks": {
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "page_navigation_GAaRWF",
+    "custom_liquid_AifGrF"
+  ]
+}

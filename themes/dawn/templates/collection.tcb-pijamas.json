@@ -1,0 +1,88 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collections_slider_tr38BG": {
+      "type": "collections-slider",
+      "disabled": true,
+      "settings": {
+        "collections_list": "{{ collection.metafields.custom.subcateories.value.subcategories_list.value }}",
+        "show_collection_name": true,
+        "banner_bg_color": "{{ collection.metafields.custom.subcateories.value.item_background.value }}",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 16
+      }
+    },
+    "custom_liquid_ynzARE": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  .homepage-content {\n    padding: 0;\n  }\n\n  ::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n  }\n\n  ::-webkit-scrollbar-track {\n    background: #fff;\n  }\n\n  ::-webkit-scrollbar-thumb {\n    background-color: #bcbcbc;\n    border-radius: 0;\n    border: 1px solid #bcbcbc;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #zyTCB-BS a {\n    text-decoration: none !important;\n  }\n\n  #zyTCB-BS a:hover {\n    text-decoration: none !important;\n  }\n\n  #zyTCB-BS {\n    overflow: hidden;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  #zyTCB-BS div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #zyTCB-BS img {\n    width: 100%;\n  }\n\n  #zyTCB-BS .container-img {\n    position: relative;\n  }\n\n  #zyTCB-BS button {\n    border-radius: 3rem;\n    font-family: CentraNo1-Medium, sans-serif;\n    font-size: 1rem;\n    letter-spacing: 0.05rem;\n    text-transform: uppercase;\n    text-align: center;\n    cursor: pointer;\n    padding: 0.8rem;\n    min-width: 15rem;\n    background-color: #221f20;\n    border: #221f20 0.071rem solid;\n    color: #fff;\n    transform: translate(-50%, -50%);\n    transition-timing-function: ease-out;\n    transition-duration: 250ms;\n    -webkit-transform: scale(1, 1);\n    -webkit-transition-timing-function: ease-out;\n    -webkit-transition-duration: 250ms;\n    -moz-transform: scale(1, 1);\n    -moz-transition-timing-function: ease-out;\n    -moz-transition-duration: 250ms;\n  }\n\n  #zyTCB-BS button:hover {\n    transform: scale(1.05, 1.02);\n    transition-timing-function: ease-out;\n    transition-duration: 250ms;\n    -webkit-transform: scale(1.05, 1.02);\n    -webkit-transition-timing-function: ease-out;\n    -webkit-transition-duration: 250ms;\n    -moz-transform: scale(1.05, 1.02);\n    -moz-transition-timing-function: ease-out;\n    -moz-transition-duration: 250ms;\n  }\n\n  #zyTCB-BS .img-title {\n    width: 23vw;\n  }\n\n  #zyTCB-BS .container-title {\n    position: absolute;\n    width: 25%;\n    bottom: 10%;\n    right: 25%;\n    transform: translate(50%, -50%);\n    text-align: center;\n  }\n\n  #zyTCB-BS .container-button {\n    position: absolute;\n    width: 100%;\n    bottom: 18%;\n    left: 25%;\n    transform: translate(-50%, -50%);\n    text-align: center;\n  }\n\n  \n\n  /* Custom CSS in place of Bootstrap grid classes */\n  .container-fluid {\n    width: 100%;\n    padding-right: 0;\n    padding-left: 0;\n    margin-right: auto;\n    margin-left: auto;\n  }\n\n  .row {\n    display: flex;\n    flex-wrap: wrap;\n    margin-right: -15px;\n    margin-left: -15px;\n  }\n\n  .col-12 {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .justify-content-center {\n    justify-content: center;\n  }\n\n  .align-items-center {\n    align-items: center;\n  }\n\n  .mb-2 {\n    margin-bottom: 0.5rem;\n  }\n\n  .p-0 {\n    padding: 0 !important;\n  }\n  @media (max-width: 992px) {\n    #zyTCB-BS .img-title {\n      width: 60vw;\n    }\n\n    #zyHP-BS .container-title {\n      width: 50% !important;\n      bottom: -10% !important;\n      left: 50% !important;\n      transform: translate(-50%, -50%) !important;\n    }\n    #zyTCB-BS .container-button {\n      bottom: 10%;\n      left: 50%;\n    }\n   \n  }\n</style>\n\n<section class=\"container-fluid p-0 mb-2\" id=\"zyTCB-BS\">\n  <div class=\"row justify-content-center align-items-center\">\n    <div class=\"col-12\">\n      <div class=\"container-img\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <a href=\"$url('Search-ShowContent','fdid','halloween-collection')$\">\n              <picture>\n                <source media=\"(max-width: 991px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/TCB_BS_mobile.jpg?v=1728396278\" />\n                <source media=\"(min-width: 992px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/TCB_BS_desktop.jpg?v=1728396279\" />\n                <!--fallback-->\n                <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/TCB_BS_desktop.jpg?v=1728396279\" alt=\"Coleção Brothers & Sisters | Zippy Online\" />\n              </picture>\n            </a>\n          </div>\n          <div class=\"container-title\">\n            <a href=\"$url('Search-ShowContent','fdid','halloween-collection')$\">\n              <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/banner_bs_0e25e05a-44c3-487e-af71-0947fe26034d.png?v=1728396332\" class=\"img-title\" alt=\"Coleção Brothers & Sisters | Zippy Online\" />\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "collection_promo_QmPhJq": {
+          "type": "collection_promo",
+          "settings": {
+            "product_number_to_show_after": 8,
+            "background_color": "#ffbf00",
+            "circle_first_color": "#83dbcb",
+            "circle_second_color": "#ff4141",
+            "content_width_mobile": 305,
+            "content_width_desktop": 1080,
+            "title": "promotions",
+            "subtitle": "up to",
+            "percent_amount": "50",
+            "link_text": "",
+            "link_url": "",
+            "note": "<p>Promotion valid from 14/05/2024 to 03/06/2024 on the highlighted items. <br/>Not combinable with other existing discounts or promotions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_promo_QmPhJq"
+      ],
+      "settings": {
+        "products_per_page": 36,
+        "enable_sorting": true,
+        "size_in_months": "<p>0/3M,0/6M,6/18M,00 Meses,0-0 Months,0-1 Months,1-3 Months,1-6 Months,3-6 Months,6-9 Months,6-12 Months,9-12 Months,12-18 Months,12-24 Months,18-24 Months,24-36 Months</p>",
+        "size_in_years": "<p>2 Year,3 Year,1-3 Years,2-3 Years,3-4 Years,3-5 Years,4 Years,4-5 Years,5 Years,5-6 Years,5-9 Years,6 Years,6-7Y,6-7 Years,6-9 Years,7 Years,7-8 Years,7-9 Years,8 Years,8-9 Years,9 Years,9-10 Years,10 Years,10-12 Years,10-14 Years,11-12 Years,12 Years,12-14 Years,13-14 Years,14 Years,16 Years,ONE SIZE FITS ALL,SMS,ÚNICO</p>",
+        "international_sizes": "<p>3XS,XS,S,M,L,XL,XXL,XXXL,4XL,5XL,6XL,L- 9/12Y,L-XL,S-M,XL-12/14Y</p>",
+        "european_sizes": "<p>1,11,13,18,19,19.5,20,21,21.5,22,22.5,23,23.5,24,25,25.5,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,50,52,53,54,56,58,60,85,90,95,100,105,110,85B,90B,95B,100B,90C,95C,100C,105C,95D,100D,105D,2-3,4-5,6-7,8-10,11-14,12-14,14-15,15-17,15-18,16-17,17/18,17-19,18-19,19-20,19-22,20-21,20-22,21-22,21-24,22-23,22-24,23-24,23-26,24-25,25-26,25-28,26-27,27-28,27-30,27/34,28-29,29-30,29-32,30-31,31-32,31-34,32-33,33-34,33-36,34-35,34-36,35-36,35-37,35-38,35/39,35/40,36/37,37-38,37-39,38/39,38-40,39-40,39-42,39/46,40-41,40/46,41-42,42-43,43-44,43-46,44-45,45-46</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collections_slider_tr38BG",
+    "custom_liquid_ynzARE",
+    "product-grid"
+  ]
+}

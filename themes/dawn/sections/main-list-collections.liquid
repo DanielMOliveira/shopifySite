@@ -1,0 +1,226 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign title = section.settings.title
+  assign image_placeholder = 'collection-1' | placeholder_svg_tag
+  assign show_products_count = section.settings.show_products_count
+%}
+
+<section id="section-{{ section.id }}">
+  <div class="container-valantic">
+    <h1 class="title title--primary inline-richtext{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
+      {% if title != blank %}
+        <h1 class="mb-6 text-lg uppercase md:text-3_5xl">{{ title }}</h1>
+      {% endif %}
+    </h1>
+    {% liquid
+      case section.settings.sort
+        when 'products_high', 'products_low'
+          assign collections = collections | sort: 'all_products_count'
+        when 'date', 'date_reversed'
+          assign collections = collections | sort: 'published_at'
+      endcase
+
+      if section.settings.sort == 'products_high' or section.settings.sort == 'date_reversed' or section.settings.sort == 'alphabetical_reversed'
+        assign collections = collections | reverse
+      endif
+
+      assign paginate_by = 30
+    %}
+    {% paginate collections by paginate_by %}
+      <ul
+        class="collection-list grid grid-cols-2 gap-x-1 gap-y-4 md:grid-cols-3 md:gap-x-2 md:gap-y-4 lg:grid-cols-4"
+        role="list"
+      >
+        {% for collection in collections %}
+          {% liquid
+            assign url = collection.url
+            assign title = collection.title
+            assign products_count = collection.products_count
+            assign featured_image = collection.featured_image
+          %}
+
+          <li>
+            <a href="{{ url }}" title="{{ title }}" class="collection-card__link block">
+              <div class="collection-card__media overflow-hidden">
+                <div class="collection-card__image !transition-all">
+                  {%- if featured_image -%}
+                    <img
+                      src="{{ featured_image | image_url }}"
+                      alt="{{ featured_image.alt | escape }}"
+                      height="{{ featured_image.height }}"
+                      width="{{ featured_image.width }}"
+                      loading="lazy"
+                      class="motion-reduce"
+                    >
+                  {%- else -%}
+                    {% render 'picture',
+                      placeholder: image_placeholder,
+                      class: 'block w-full h-full object-cover rounded',
+                      id: collection.id
+                    %}
+                  {% endif %}
+                </div>
+              </div>
+              <h2 class="absolute left-2/4 top-2/4 z-10  flex w-full max-w-[80%] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-between text-white ">
+                <span class="text-center text-sm md:text-base md:!leading-5 lg:text-lg lg:!leading-5">
+                  {{- collection.title -}}
+                </span>
+
+                {% if show_products_count and products_count > 0 %}
+                  {% if products_count > 1 %}
+                    <span class="text-2xs">
+                      {{- 'sections.collection_list.products.other' | t: count: products_count -}}
+                    </span>
+                  {% else %}
+                    <span class="text-2xs">
+                      {{- 'sections.collection_list.products.one' | t: count: products_count -}}
+                    </span>
+                  {% endif %}
+                {% endif %}
+              </h2>
+            </a>
+          </li>
+        {% endfor %}
+      </ul>
+
+      {% render 'pagination', paginate: paginate %}
+    {% endpaginate %}
+  </div>
+  <style>
+    #section-{{ section.id }} .collection-card__link,
+    #section-{{ section.id }} .collection-card__media {
+        position: relative;
+    }
+
+    #section-{{ section.id }} .collection-card__media:before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: opacity .15s;
+        background: rgba(0, 0, 0, 0.35);
+        pointer-events: none;
+    }
+
+    .collection-card__image:before {
+        content: '';
+        display: block;
+        padding-top: calc(100%/max(0.8,.6));
+    }
+
+    .collection-card__image svg,
+    .collection-card__image img {
+        transition: all .15s;
+        position: absolute;
+        top: 0;
+        left: 0;
+        object-position: center center;
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .collection-card__link:hover .collection-card__image svg,
+    .collection-card__link:hover .collection-card__image img {
+        transform: scale(1.02);
+    }
+  </style>
+</section>
+
+{% schema %}
+{
+  "name": "Collections List",
+  "class": "section",
+  "settings": [
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "t:sections.main-list-collections.settings.title.label",
+      "default": "t:sections.main-list-collections.settings.title.default"
+    },
+    {
+      "type": "select",
+      "id": "sort",
+      "options": [
+        {
+          "value": "alphabetical",
+          "label": "t:sections.main-list-collections.settings.sort.options__1.label"
+        },
+        {
+          "value": "alphabetical_reversed",
+          "label": "t:sections.main-list-collections.settings.sort.options__2.label"
+        },
+        {
+          "value": "date_reversed",
+          "label": "t:sections.main-list-collections.settings.sort.options__3.label"
+        },
+        {
+          "value": "date",
+          "label": "t:sections.main-list-collections.settings.sort.options__4.label"
+        },
+        {
+          "value": "products_high",
+          "label": "t:sections.main-list-collections.settings.sort.options__5.label"
+        },
+        {
+          "value": "products_low",
+          "label": "t:sections.main-list-collections.settings.sort.options__6.label"
+        }
+      ],
+      "default": "alphabetical",
+      "label": "t:sections.main-list-collections.settings.sort.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_products_count",
+      "label": "Show Products Count",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 60,
+      "info": "From 768px"
+    }
+  ]
+}
+{% endschema %}

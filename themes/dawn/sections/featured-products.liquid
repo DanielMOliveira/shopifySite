@@ -1,0 +1,254 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign title = section.settings.title
+  assign show_kids_type = section.settings.show_kids_type
+  assign tabs = ''
+
+  for block in section.blocks
+    if block.settings.product != blank
+      assign tabs = tabs | append: block.settings.kid_type | append: ','
+    endif
+  endfor
+
+  assign tabs = tabs | split: ',' | uniq
+%}
+
+{% if section.blocks.size > 0 %}
+  <section id="section-{{ section.id }}" class="featured-products relative overflow-hidden">
+    <div class="container-valantic lg:relative">
+      {% if title != blank %}
+        <h3 class="title mb-4 text-[20px] leading-[normal] text-gray-800 md:mb-7 md:text-3_5xl lg:pt-1.5">
+          {{ title }}
+        </h3>
+      {% endif %}
+
+      {% if show_kids_type %}
+        {% render 'kid-types-tabs',
+          tabs: tabs,
+          section_id: section.id,
+          class: 'featured-products-tabs !mb-4 lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:top-1.5 lg:!mb-0'
+        %}
+      {% endif %}
+
+      <div
+        class="swiper group !overflow-visible lg:!static lg:transition-all{% if section.blocks.size > 4 %} has-prev-next-half-slides{% endif %}"
+        data-slider='
+          {
+              "spaceBetween": 16,
+              "slidesPerView": 1.35,
+              "breakpoints": {
+                  "768": {
+                      "slidesPerView": 3.3
+                  },
+                  "1024": {
+                      {% if section.blocks.size > 4 %}"initialSlide": 1,{% endif %}
+                      "slidesPerView": 4.5,
+                      "spaceBetween": 20
+                  }
+              },
+              "navigation": {
+                  "prevEl": "#section-{{ section.id }} .swiper-button-prev",
+                  "nextEl": "#section-{{ section.id }} .swiper-button-next"
+              },
+              "scrollbar": {
+                  "el": "#section-{{ section.id }} .swiper-scrollbar"
+              }
+          }
+        '
+      >
+        <div class="swiper-wrapper{% if section.blocks.size > 4 %} lg:ml-[5%]{% endif %}">
+          {% for block in section.blocks %}
+            {% liquid
+              assign product = block.settings.product
+              assign kid_type = block.settings.kid_type
+            %}
+
+            {% if product != blank %}
+              <div
+                class="swiper-slide mr-4 lg:mr-5{% if show_kids_type and tabs[0] != kid_type %} !hidden{% endif %}"
+                data-tab="{{ kid_type }}"
+              >
+                {% render 'card-product',
+                  card_product: product,
+                  lazy_load: true,
+                  section_id: section.id,
+                  index: forloop.index
+                %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+
+        <div class="swiper-button-prev !top-[152px] !transform-none hover:!bg-primary hover:!text-white max-[1023px]:!bg-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] lg:!left-full lg:!top-0 lg:!-ml-[116px] xl:!-ml-35">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next !right-0 !top-[152px] !transform-none hover:!bg-primary hover:!text-white max-[1023px]:!bg-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] lg:!right-4 lg:!top-0 xl:!right-10">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+
+        <div class="swiper-scrollbar !static mt-4 !block !h-1.5 !w-full !bg-gray-200 lg:!hidden"></div>
+      </div>
+    </div>
+
+    {% style %}
+      #section-{{ section.id }}:has(.offcanvas-card-product.is-open) {
+        position: relative;
+        z-index: 1000;
+      }
+
+      #section-{{ section.id }} .swiper-scrollbar .swiper-scrollbar-drag {
+          background-color: rgb(var(--color-gray-500));
+          border-radius: 100px;
+          display: block !important;
+      }
+
+      #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-wrapper:not(.swiper-wrapper-card-product) > .swiper-slide {
+          width: 73%;
+      }
+
+      @media screen and (min-width: 768px) {
+          #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-wrapper:not(.swiper-wrapper-card-product) > .swiper-slide {
+              width: 29%;
+          }
+      }
+
+      @media screen and (min-width: 1024px) {
+          {% if section.blocks.size > 4 %}
+              #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-wrapper:not(.swiper-wrapper-card-product) {
+                  transform: translateX(-27%);
+              }
+
+              #section-{{ section.id }} .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {
+                  margin-left: 0;
+              }
+
+              #section-{{ section.id }} .swiper.slider-end .swiper-wrapper:not(.swiper-wrapper-card-product) {
+                  margin-left: 0;
+              }
+          {% endif %}
+
+          #section-{{ section.id }} .swiper:not(.swiper-initialized) .swiper-wrapper:not(.swiper-wrapper-card-product) > .swiper-slide {
+              width: 25%;
+          }
+
+          #section-{{ section.id }} .featured-products-tabs {
+              border-bottom: 1px solid rgb(var(--color-gray-300));
+              gap: 24px;
+          }
+
+          #section-{{ section.id }} .featured-products-tabs .tab {
+              font-size: 14px;
+              padding-bottom: 5px;
+              padding-left: 0;
+              padding-right: 0;
+          }
+
+          #section-{{ section.id }} .featured-products-tabs .tab:not(.active) {
+              border-bottom: none;
+          }
+
+          #section-{{ section.id }} .featured-products-tabs .tab.active {
+              position: relative;
+              top: 1px;
+          }
+
+          #section-{{ section.id }} .featured-products-tabs .tab.active span {
+              position: relative;
+              top: -1px;
+          }
+      }
+    {% endstyle %}
+
+    <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+    <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Title"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_kids_type",
+      "label": "Show Kids Type",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 80,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        },
+        {
+          "type": "select",
+          "id": "kid_type",
+          "label": "Kid Type",
+          "default": "Girls",
+          "options": [
+            { "value": "Girls", "label": "Girls" },
+            { "value": "Boys", "label": "Boys" },
+            { "value": "Nursery", "label": "Nursery" }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Products"
+    }
+  ]
+}
+{% endschema %}

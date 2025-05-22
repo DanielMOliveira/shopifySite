@@ -1,0 +1,27 @@
+{% comment %}
+  Renders estimated delivery.
+
+  Usage:
+      {% render 'estimated-delivery' %}
+{% endcomment %}
+
+<div
+  class="custom-estimated-delivery pointer-events-none opacity-0 transition-opacity"
+  data-min-max="{%- render 'delivery-dates', country_code: localization.country.iso_code -%}"
+  data-days="{{ 'products.estimate_days' | t  }}"
+  data-months="{{ 'products.estimate_months' | t  }}"
+>
+  {{ 'products.estimated_delivery' | t }}
+  <span data-text></span>
+</div>
+
+<script>
+  if (!window.estimate_delivery_initialized) {
+      window.estimate_delivery_initialized = true;
+
+      const script = document.createElement('script');
+
+      script.src = '{{ 'estimated-delivery.js' | asset_url }}';
+      document.body.appendChild(script);
+  }
+</script>

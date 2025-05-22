@@ -1,0 +1,45 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "collection.tcb-pijamas.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_ynzARE": {
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  .homepage-content {\n    padding: 0;\n  }\n\n  ::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n  }\n\n  ::-webkit-scrollbar-track {\n    background: #fff;\n  }\n\n  ::-webkit-scrollbar-thumb {\n    background-color: #bcbcbc;\n    border-radius: 0;\n    border: 1px solid #bcbcbc;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #zyTCB-ZIGGY a {\n    text-decoration: none !important;\n  }\n\n  #zyTCB-ZIGGY a:hover {\n    text-decoration: none !important;\n  }\n\n  #zyTCB-ZIGGY {\n    overflow: hidden;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  #zyTCB-ZIGGY div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #zyTCB-ZIGGY img {\n    width: 100%;\n  }\n\n  #zyTCB-ZIGGY .container-img {\n    position: relative;\n  }\n\n  #zyTCB-ZIGGY button {\n    border-radius: 3rem;\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-size: 0.9rem;\n    letter-spacing: 0.05rem;\n    text-align: center;\n    cursor: pointer;\n    padding: 0.6rem;\n    min-width: 11rem;\n    background-color: #fee581;\n    border: #fee581 0.071rem solid;\n    color: #ff3b1a;\n    margin-top: 1rem;\n    transform: translate(-50%, -50%);\n    transition-timing-function: ease-out;\n    transition-duration: 250ms;\n    -webkit-transform: scale(1, 1);\n    -webkit-transition-timing-function: ease-out;\n    -webkit-transition-duration: 250ms;\n    -moz-transform: scale(1, 1);\n    -moz-transition-timing-function: ease-out;\n    -moz-transition-duration: 250ms;\n  }\n\n  #zyTCB-ZIGGY button:hover {\n    transform: scale(1.05, 1.02);\n    transition-timing-function: ease-out;\n    transition-duration: 250ms;\n    -webkit-transform: scale(1.05, 1.02);\n    -webkit-transition-timing-function: ease-out;\n    -webkit-transition-duration: 250ms;\n    -moz-transform: scale(1.05, 1.02);\n    -moz-transition-timing-function: ease-out;\n    -moz-transition-duration: 250ms;\n  }\n\n  #zyTCB-ZIGGY .img-title {\n    display: inline;\n    width: 2.1vw;\n    margin-top: -0.5rem;\n  }\n\n  #zyTCB-ZIGGY .container-title {\n    position: absolute;\n    width: 30%;\n    bottom: 10%;\n    left: -10%;\n    transform: translate(50%, 0%);\n    text-align: center;\n  }\n\n  #zyTCB-ZIGGY .container-button {\n    position: absolute;\n    width: 100%;\n    bottom: 18%;\n    left: 20%;\n    transform: translate(-50%, -50%);\n    text-align: center;\n  }\n\n  #zyTCB-ZIGGY .container-text {\n    position: absolute;\n    width: 30%;\n    bottom: 25%;\n    left: -12%;\n    transform: translate(50%, 0%);\n    text-align: center;\n  }\n\n  #zyTCB-ZIGGY p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #fff;\n    font-size: 1.4rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: center;\n    font-weight: 700;\n  }\n\n  /* Custom CSS in place of Bootstrap grid classes */\n  .container-fluid {\n    width: 100%;\n    padding-right: 0;\n    padding-left: 0;\n    margin-right: auto;\n    margin-left: auto;\n  }\n\n  .row {\n    display: flex;\n    flex-wrap: wrap;\n    margin-right: -15px;\n    margin-left: -15px;\n  }\n\n  .col-12 {\n    width: 100%;\n    padding-right: 15px;\n    padding-left: 15px;\n  }\n\n  .justify-content-center {\n    justify-content: center;\n  }\n\n  .align-items-center {\n    align-items: center;\n  }\n\n  .mb-2 {\n    margin-bottom: 0.5rem;\n  }\n\n  .p-0 {\n    padding: 0 !important;\n  }\n  .d-lg-block {\n    display: block;\n  }\n  .d-lg-none {\n    display: none;\n  }\n  .text-3_5xl {\n    font-size: 1rem;\n    position: relative;\n    top: 0.3rem;\n  }\n  @media (max-width: 992px) {\n    #main-collection-filters .text-xl {\n      font-size: 0.9rem;\n    }\n    .d-block {\n      display: block;\n    }\n    .d-none {\n      display: none;\n    }\n    #zyTCB-ZIGGY p {\n      font-size: 1rem;\n      line-height: 1.2;\n      letter-spacing: 0.02rem;\n    }\n    #zyTCB-ZIGGY .container-text {\n      width: 50%;\n      bottom: 18%;\n      left: -22%;\n    }\n    #zyTCB-ZIGGY button {\n      font-size: 0.8rem;\n      padding: 0.5rem;\n      min-width: 9rem;\n    }\n    #zyTCB-ZIGGY .img-title {\n      width: 5.5vw;\n      margin-top: -0.2rem;\n      margin-left: 0.2rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid p-0 mb-2\" id=\"zyTCB-ZIGGY\">\n  <div class=\"row justify-content-center align-items-center\">\n    <div class=\"col-12\">\n      <div class=\"container-img\">\n        <div class=\"row\">\n          <div class=\"col-12\">\n            <a href=\"https://zippyonline.com/pt/pages/como-te-sentes#ziggy\">\n              <picture>\n                <source media=\"(max-width: 991px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/plp_ziggy_mobile.jpg?v=1730991643\" />\n                <source media=\"(min-width: 992px)\" type=\"image/png\" srcset=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/plp_ziggy_desktop.jpg?v=1730991642\" />\n                <!--fallback-->\n                <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/plp_ziggy_desktop.jpg?v=1730991642\" alt=\"ZIGGY: o amigo das crianças | Zippy Online | Zippy Online\" />\n              </picture>\n            </a>\n          </div>\n\n          <div class=\"container-text\">\n            <p class=\"d-lg-block d-none\">Conheça o ZIGGY <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/plp_ziggy_icon_9dc44e43-2aef-4ff0-a480-1353237bbbd4.png?v=1730991642\" class=\"img-title\" alt=\"ZIGGY: o amigo das crianças | Zippy Online | Zippy Online\" /> <br />um novo amigo que vai aconchegar<br />as noites dos mais pequenos</p>\n            <p class=\"d-block d-lg-none\">\n              Conheça o ZIGGY<img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/plp_ziggy_icon_9dc44e43-2aef-4ff0-a480-1353237bbbd4.png?v=1730991642\" class=\"img-title\" alt=\"ZIGGY: o amigo das crianças | Zippy Online | Zippy Online\" /> <br />um novo amigo que<br />vai aconchegar<br />\n              as noites dos mais<br />pequenos\n            </p>\n            <a href=\"https://zippyonline.com/pt/pages/como-te-sentes#ziggy\">\n              <button>Saber Mais</button>\n            </a>\n          </div>\n        </div>\n      </div>\n    </div>\n  </div> \n</section>"
+      },
+      "blocks": {}
+    },
+    "product-grid": {
+      "disabled": false,
+      "settings": {},
+      "blocks": {
+        "collection_promo_QmPhJq": {
+          "disabled": true,
+          "settings": {}
+        }
+      }
+    },
+    "collections_slider_tr38BG": {
+      "disabled": false,
+      "settings": {},
+      "blocks": {}
+    }
+  },
+  "order": [
+    "custom_liquid_ynzARE",
+    "banner",
+    "collections_slider_tr38BG",
+    "product-grid"
+  ]
+}

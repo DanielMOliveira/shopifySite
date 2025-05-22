@@ -1,0 +1,158 @@
+{%- comment -%}
+  Renders the language picker for the localization form
+
+  Accepts:
+    - localPosition: pass in the position in which the form is coming up to create specific IDs
+{%- endcomment -%}
+
+{% liquid
+  assign current_country_icon_iso_code = localization.country.iso_code | split: '-' | first | downcase
+  assign current_country_icon = 'icon-' | append: current_country_icon_iso_code | append: '.svg'
+%}
+
+<div class="language-switcher language-switcher-group">
+  <div
+    class="language-switcher-open-button grid w-full grid-cols-[16px_1fr_16px] items-center justify-center gap-x-2 text-left text-sm hover:cursor-pointer"
+    aria-expanded="false"
+    aria-controls="{{ localPosition }}List"
+    aria-describedby="{{ localPosition }}Label"
+  >
+    <img
+      src="{{ current_country_icon | asset_url }}"
+      alt="{{ current_country_icon_iso_code }}"
+      class="h-4 w-4"
+      height="{{ current_country_icon.height }}"
+      width="{{ current_country_icon.width }}"
+      loading="lazy"
+    >
+    <span>
+      {{ localization.country.name }} | {{ localization.language.endonym_name | split: '(' | first | capitalize }}
+    </span>
+
+    {% render 'icon', icon: 'chevron-down', class: 'chevron-icon' %}
+  </div>
+  <div class="language-switcher-content fixed bottom-0 left-0 right-0 z-[1001] !hidden h-0 w-full translate-y-full overflow-y-hidden rounded-tl-2xl rounded-tr-2xl bg-white transition-all md:w-95 ">
+    <div class="language-switcher-header flex items-center justify-between px-6 py-4">
+      <span class="text-xl text-gray-800">{{ 'localization.menu_country_label' | t }}</span>
+      <span class="language-switcher-close flex items-center justify-center hover:cursor-pointer">
+        {%- render 'icon', icon: 'cross' -%}
+      </span>
+    </div>
+
+    <ul id="{{ localPosition }}List" role="list" class="language-switcher-list max-h-[50vh] overflow-auto px-6 pb-4">
+      {%- for country in localization.available_countries -%}
+        {% liquid
+          assign country_iso_code = country.iso_code | downcase
+          assign country_icon_iso_code = country_iso_code | split: '-' | first
+          assign country_icon = 'icon-' | append: country_icon_iso_code | append: '.svg'
+        %}
+
+        {%- for language in localization.available_languages -%}
+          {% liquid
+            assign language_iso_code = language.iso_code | split: '-' | first
+
+            if language.iso_code == localization.language.iso_code and country.iso_code == localization.country.iso_code
+              assign is_current_country = true
+            else
+              assign is_current_country = false
+            endif
+          %}
+
+          {% if forloop.first %}
+            <li class="language-switcher-item" tabindex="-1">
+              <a
+                class="language-switcher-item flex py-2.5 text-md{% if is_current_country %} font-bold{% endif %}"
+                href="#"
+                data-country-code="{{ country.iso_code }}"
+                data-locale-code="{{ language.iso_code }}"
+                {% if is_current_country %}
+                  aria-current="true"
+                {% endif %}
+              >
+                <div class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                  <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                    <img
+                      src="{{ country_icon | asset_url }}"
+                      class="object-cover"
+                      alt="{{ country_icon_iso_code }}"
+                      height="{{ country_icon.height }}"
+                      width="{{ country_icon.width }}"
+                      loading="lazy"
+                    >
+                  </span>
+
+                  {{ country.name }} | {{ language.endonym_name | split: '(' | first | capitalize }}
+
+                  {% if is_current_country %}
+                    {%- render 'icon', icon: 'success-circle' -%}
+                  {% endif %}
+                </div>
+              </a>
+            </li>
+          {% endif %}
+
+          {%- if language_iso_code == country_iso_code -%}
+            <li class="language-switcher-item" tabindex="-1">
+              <a
+                class="language-switcher-item flex py-2.5 text-md{% if language.iso_code == localization.language.iso_code and country.iso_code == localization.country.iso_code %} font-bold{% endif %}"
+                href="#"
+                data-country-code="{{ country.iso_code }}"
+                data-locale-code="{{ language.iso_code }}"
+                {% if language.iso_code == localization.language.iso_code %}
+                  aria-current="true"
+                {% endif %}
+              >
+                <div class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                  <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                    <img
+                      src="{{ country_icon | asset_url }}"
+                      alt="{{ country_icon_iso_code }}"
+                      height="{{ country_icon.height }}"
+                      width="{{ country_icon.width }}"
+                      loading="lazy"
+                    >
+                  </span>
+
+                  {{ country.name }} | {{ language.endonym_name | split: '(' | first | capitalize }}
+
+                  {% if language.iso_code == localization.language.iso_code
+                    and country.iso_code == localization.country.iso_code
+                  %}
+                    {%- render 'icon', icon: 'success-circle' -%}
+                  {% endif %}
+                </div>
+              </a>
+            </li>
+          {% endif %}
+        {%- endfor -%}
+      {%- endfor -%}
+    </ul>
+  </div>
+
+  <div
+    class="language-switcher-overlay language-switcher-close pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-[1000] !block bg-black/30 opacity-0"
+  ></div>
+
+  {% style %}
+    .language-switcher.language-switcher-open .language-switcher-overlay {
+      pointer-events: initial;
+    }
+
+    .language-switcher.language-switcher-open .language-switcher-content {
+      display: block !important;
+    }
+
+    .language-switcher.language-switcher-open .language-switcher-content {
+      transform: translateY(0);
+      height: auto;
+      opacity: 1;
+    }
+
+    .language-switcher.language-switcher-open .language-switcher-overlay {
+      opacity: 1;
+    }
+  {% endstyle %}
+</div>
+
+<input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
+<input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">

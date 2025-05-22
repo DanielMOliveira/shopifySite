@@ -1,0 +1,67 @@
+{% comment %}
+  Renders buttons
+
+  Usage:
+      {% render 'ui-buttons' %}
+{% endcomment %}
+
+<div class="grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-12">
+  <div class="col-span-2 lg:col-span-12">
+    <div class="flex flex-wrap items-center gap-5">
+      <h2 class="font-mono text-base tracking-normal">Use this class to reset button styles:</h2>
+      <div class="rounded bg-stone-300/40 px-2 py-1 font-mono text-sm italic">.button-reset-styles</div>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-6 xl:col-span-4">
+    <div class="flex w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      <button class="button"><span>Primary button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >button, .button</span
+      >
+      <button class="button small"><span>Primary small button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >button, .button.small</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-6 xl:col-span-4">
+    <div class="flex w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      <button class="button secondary"><span>Secondary button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button.secondary</span
+      >
+      <button class="button secondary small"><span>Secondary small button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button.secondary.small</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-6 xl:col-span-4">
+    <div class="flex w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      <button class="button tertiary"><span>Tertiary button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button.tertiary</span
+      >
+      <button class="button tertiary small"><span>Tertiary small button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button.tertiary.small</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-6 xl:col-span-4">
+    <div class="flex w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      <button class="button" disabled><span>Disabled button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button:disabled</span
+      >
+      <button class="button small" disabled><span>Disabled small button</span></button>
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >.button.small:disabled</span
+      >
+    </div>
+  </div>
+</div>

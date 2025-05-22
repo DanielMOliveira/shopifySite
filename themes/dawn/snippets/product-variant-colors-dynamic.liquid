@@ -1,0 +1,88 @@
+{% comment %}
+  Renders a colors in the collection card
+    Accepts:
+    - product: {Object} Product Liquid object
+    - class: {String} (optional)
+
+  Usage:
+  {% render 'product-variant-colors-dynamic', product: product, is_product_page: false  %}
+{% endcomment %}
+
+{% liquid
+  assign matched_products = ''
+  assign refdesign = ''
+  assign refdesign = product.metafields.custom.refdesign | escape
+
+  assign product_color_data = product.metafields.custom.colorswatches.value
+  assign product_color = product_color_data.color_hex_code.value[0]
+  assign product_color_label = product_color_data.color_name | default: 'Label is not configured'
+
+  assign color_swatches_visible_count = 4
+  assign matched_products_visible = color_swatches_visible_count | minus: 1
+%}
+
+{% if refdesign != blank %}
+  <div class="product-variant__colors hidden flex-wrap items-center gap-1{% if is_product_page %} product-detail-page-variant__colors{% endif %}{% if class != blank %} {{ class }}{% endif %}">
+    <a
+      class="product-variant__color active relative z-[2] inline-flex h-3 w-3 rounded-full text-[0]"
+      href="{{ product.url }}"
+      title="{{ product.title }}"
+      {% if product_color != blank %}
+        style="background-color: {{ product_color }};"
+      {% endif %}
+    >
+      {{ product_color_label }}
+    </a>
+
+    {% for collection in product.collections %}
+      {% for collection_product in collection.products %}
+        {% liquid
+          assign collection_product_refdesign = ''
+          assign collection_product_refdesign = collection_product.metafields.custom.refdesign
+
+          assign collection_product_color_data = collection_product.metafields.custom.colorswatches.value
+          assign collection_product_color = collection_product_color_data.color_hex_code.value[0]
+          assign collection_product_label = collection_product_color_data.color_name
+        %}
+
+        {% if refdesign == collection_product_refdesign and collection_product.id != product.id %}
+          {% unless matched_products contains collection_product.id %}
+            {% liquid
+              assign matched_products = matched_products | append: collection_product.id | append: ','
+              assign matched_products_size = matched_products | split: ',' | size
+            %}
+
+            <a
+              class="product-variant__color relative z-[2] inline-flex w-3 rounded-full text-[0] h-3{% if matched_products_size > matched_products_visible and is_product_page != true %} !hidden{% endif %}"
+              {% if collection_product_color != blank %}
+                style="background-color: {{ collection_product_color }};"
+              {% endif %}
+              href="{{ collection_product.url }}"
+              title="{{ collection_product.title }}"
+            >
+              {{ collection_product_label }}
+            </a>
+          {% endunless %}
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+
+    {% unless is_product_page %}
+      {% if matched_products_size > matched_products_visible %}
+        <span class="product-variant__size ml-1 text-2xs font-medium">
+          + {{ matched_products_size | minus: matched_products_visible }}
+        </span>
+      {% endif %}
+    {% endunless %}
+
+    <style>
+      .custom-pdp-colors .product-variant__colors:has(.product-variant__color.active) {
+        display: flex;
+      }
+
+      .product-variant__colors:has(.product-variant__color:not(.active)) {
+        display: flex;
+      }
+    </style>
+  </div>
+{% endif %}

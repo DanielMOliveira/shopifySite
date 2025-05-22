@@ -1,0 +1,79 @@
+{% comment %}
+  Contains only card images for loading after selecting a color on product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+
+  Usage:
+      {% render 'card-product-only-images', card_product: product %}
+{% endcomment %}
+
+<div>
+  <div class="product-image-mobile relative h-auto{% unless without_image_slider %}{% if card_product.media.size > 1 %} lg:hidden{% endif %}{%endunless%}">
+    {% if card_product.featured_media %}
+      <a
+        href="{{ card_product.url }}"
+        class="card__media group relative block h-full"
+        title="{{ card_product.title | escape }}"
+        style="background-color: {{ settings.card_background }}"
+      >
+        {% if card_product.featured_media.media_type == 'video' %}
+          <div class="align-center relative mx-auto flex h-full justify-center overflow-hidden">
+            {% render 'img-placeholder' %}
+            <img
+              src="{{ card_product.featured_media | image_url : width: 363, height: 467 }}"
+              alt="{{ card_product.featured_media.alt | default: card_product.title }}"
+              class="mx-auto h-full object-contain opacity-0 mix-blend-darken lg:hidden"
+              width="{{ card_product.featured_media.width }}"
+              height="{{ card_product.featured_media.height }}"
+              loading="lazy"
+            >
+            {{
+              card_product.featured_media
+              | video_tag:
+                image_size: '400x',
+                class: 'mx-auto w-full video-item',
+                width: 600,
+                height: 600,
+                autoplay: true,
+                loop: true,
+                muted: true
+            }}
+          </div>
+        {% else %}
+          <img
+            src="{{ card_product.featured_media | image_url }}"
+            alt="{{ card_product.featured_media.alt | default: card_product.title }}"
+            class="mx-auto h-full object-contain mix-blend-darken"
+            width="{{ card_product.featured_media.width }}"
+            height="{{ card_product.featured_media.height }}"
+            loading="lazy"
+          >
+        {% endif %}
+      </a>
+    {% else %}
+      <a
+        href="{{ card_product.url }}"
+        class="card__media group relative block"
+        title="{{ card_product.title | escape }}"
+        style="background-color: {{ settings.card_background }}"
+      >
+        {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      </a>
+    {% endif %}
+
+    {% unless is_bundle %}
+      <offcanvas-toggle-button
+        class="offcanvas-open-button absolute bottom-4 right-4 inline-flex !h-10 !w-10 items-center justify-center rounded-full !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:cursor-pointer{% unless desktop_offcanvas %}  lg:hidden{% endunless %}"
+        data-target-id="{{ card_product.id }}"
+      >
+        {% render 'icon', icon: 'bag', class: '!w-4 !h-4' %}
+      </offcanvas-toggle-button>
+    {% endunless %}
+  </div>
+  <div class="desktop-images">
+    {% if card_product.media.size > 1 %}
+      {% render 'card-product-image-slider', product: card_product %}
+    {% endif %}
+  </div>
+</div>

@@ -1,0 +1,193 @@
+{%
+  render 'offset',
+  id: block.id,
+  padding_top_mobile: block.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: block.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: block.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: block.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign background_color = block.settings.background_color
+  assign circle_first_color = block.settings.circle_first_color
+  assign circle_second_color = block.settings.circle_second_color
+
+  assign title = block.settings.title
+  assign subtitle = block.settings.subtitle
+  assign percent_amount = block.settings.percent_amount
+
+  assign content_width_mobile = block.settings.content_width_mobile | append: 'px'
+  assign content_width_desktop = block.settings.content_width_desktop | append: 'px'
+
+  assign link_text = block.settings.link_text
+  assign link_url = block.settings.link_url
+
+  assign note = block.settings.note
+%}
+
+<div id="block-{{ block.id }}" class="collection-promo relative overflow-hidden rounded-lg">
+  <div class="promo" style="background-color: {{ background_color }};">
+    <div
+      class="container-valantic promo-text relative z-10"
+      data-id="{{ section.id }}"
+    >
+      <div class="py-5 lg:pb-0 lg:pt-[46px]">
+        <div class="content mx-auto text-center font-medium md:flex md:gap-2.5 lg:items-center xl:gap-7">
+          <span class="text-[56px] leading-[normal] md:text-[60px] md:leading-[60px] lg:text-[80px] lg:leading-[80px]">
+            {{ title }}
+          </span>
+
+          <div class="flex items-center gap-1.25 md:w-full md:gap-2.5 xl:gap-5">
+            <span class="bottom-line -mt-5 ml-1.25 text-right text-xl !leading-5 after:mt-1.25 after:block after:h-0.5 after:w-full after:bg-primary md:-mt-3 md:ml-0 md:!w-full lg:-mt-7 lg:text-4_25xl lg:!leading-10 lg:after:h-1">
+              {{ subtitle }}
+            </span>
+
+            <span class="inline-flex items-start text-[60px] leading-[60px] md:relative md:top-1 lg:text-[120px] lg:leading-[120px]">
+              <span>{{ percent_amount }}</span>
+              <span class="mt-[7px] text-xl !leading-5 lg:mt-3.25 lg:text-4_25xl lg:!leading-10">%</span>
+            </span>
+          </div>
+        </div>
+
+        {% if link_text != blank %}
+          <div class="mt-4.5 flex justify-center lg:mt-0">
+            <a
+              href="{{ link_url }}"
+              title="{{ link_text }}"
+              class="button tertiary scale-on-hover !py-[9px] !text-[12px] md:!py-3.25 md:!text-sm"
+            >
+              <span>{{ link_text }}</span>
+            </a>
+          </div>
+        {% endif %}
+
+        {% if note != blank %}
+          <div class="note mt-8 text-center text-[10px] font-medium leading-[10px] text-gray-800 md:mt-7.5 lg:text-2xs">
+            {{ note }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    @keyframes circle1 {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-66%, -13%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes circle-md-1 {
+        0% {
+            left: -225px;
+            top: calc(50% - 400px);
+        }
+        50% {
+            left: calc(50% - 575px);
+            top: calc(50% - 320px);
+        }
+        100% {
+            left: -225px;
+            top: calc(50% - 400px);
+        }
+    }
+
+    @keyframes circle2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-51%, -25%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes circle-md-2 {
+        0% {
+            right: -225px;
+            top: calc(50% - 140px);
+        }
+        50% {
+            right: calc(50% - 575px);
+            top: calc(50% - 320px);
+        }
+        100% {
+            right: -225px;
+            top: calc(50% - 140px);
+        }
+    }
+
+    #block-{{ block.id }} {
+        flex-basis: 100%;
+    }
+
+    #block-{{ block.id }} .content {
+        width: {{ content_width_mobile }};
+    }
+
+    #block-{{ block.id }} .bottom-line {
+        width: {{ content_width_mobile }};
+    }
+
+    #block-{{ block.id }} .promo:before {
+        animation: 6s infinite ease-out circle1;
+        background-color: {{ circle_first_color }};
+        border-radius: 100%;
+        content: '';
+        height: 440px;
+        left: calc(50% - 220px);
+        position: absolute;
+        top: -83%;
+        width: 440px;
+    }
+
+    #block-{{ block.id }} .promo:after {
+        animation: 6s infinite ease-out circle2;
+        background-color: {{ circle_second_color }};
+        border-radius: 100%;
+        content: '';
+        height: 440px;
+        position: absolute;
+        right: -84%;
+        top: 50%;
+        width: 440px;
+    }
+
+    @media screen and (min-width: 768px) {
+        #block-{{ block.id }} .content {
+            max-width: {{ content_width_desktop }};
+            width: 100%;
+        }
+
+        #block-{{ block.id }} .promo:before {
+            animation-name: circle-md-1;
+            height: 560px;
+            left: -225px;
+            top: calc(50% - 400px);
+            width: 560px;
+        }
+
+        #block-{{ block.id }} .promo:after {
+            animation-name: circle-md-2;
+            height: 560px;
+            right: -225px;
+            top: calc(50% - 140px);
+            width: 560px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        #block-{{ block.id }} .note br {
+            display: none;
+        }
+    }
+  {% endstyle %}
+</div>

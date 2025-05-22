@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_ynzARE": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% assign current_time = 'now' | date: '%Y-%m-%d %H:%M' %} {% assign start_time = '2025-01-20 02:00' %} {% assign end_time = '2025-02-04 23:59' %} {% if current_time >= start_time and current_time <= end_time %}\n\n<link rel=\"stylesheet\" href=\"https://use.typekit.net/qxh4eep.css\" />\n<style media=\"screen\" type=\"text/css\">\n  #section-template--23834743144775__product-grid {\n    padding-top: 1rem !important;\n  }\n\n  .collection-grid-header .text-3_5xl {\n    font-size: 1rem;\n    position: relative;\n    top: 0.3rem;\n  }\n\n  .collection-grid-header .text-xl {\n    font-size: 1rem;\n  }\n\n  #section-template--23601076928839__main h1 {\n    font-size: 1.25rem !important;\n  }\n\n  #zyPLP-Sale {\n    overflow: hidden;\n    background-color: #bb9d87;\n  }\n\n  #zyPLP-Sale .container-fluid {\n    max-width: 100%;\n  }\n\n  #zyPLP-Sale .plp-container {\n    width: 100%;\n    margin: 2rem auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #zyPLP-Sale h2 {\n    font-family: \"input-mono\", monospace;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 4.688rem;\n    line-height: 1.2;\n    color: #fff;\n    text-transform: uppercase;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #zyPLP-Sale h2 > img {\n    display: inline-block;\n    width: 75px;\n    height: auto;\n  }\n\n  #zyPLP-Sale .img-2,\n  #zyPLP-Sale .img-3 {\n    margin: 0 1rem;\n  }\n\n  #zyPLP-Sale .img-2-en {\n    margin: 0 1rem 0 0;\n  }\n\n  #zyPLP-Sale .sale-date {\n    font-family: \"input-mono\", monospace;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 1.188rem;\n    line-height: 1.2;\n    display: inline-block;\n    text-align: right;\n    padding: 0 2rem;\n  }\n\n  #zyPLP-Sale .off {\n    position: relative;\n    left: 1rem;\n  }\n\n  #zyPLP-Sale .minus {\n    font-size: 2.938rem;\n  }\n\n  #zyPLP-Sale .container-conditions {\n    width: 95%;\n    margin: 0 auto 0.5rem;\n  }\n\n  #zyPLP-Sale .conditions {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    color: #fff;\n    text-align: center;\n    font-size: 0.75rem;\n    line-height: 1.2;\n  }\n\n  #zyPLP-Sale .d-lg-none {\n    display: none;\n  }\n\n  #zyPLP-Sale .less-space {\n    margin-left: -0.1rem;\n  }\n\n  @media only screen and (max-width: 991px) {\n    #section-template--24136648819015__collections_slider_tr38BG {\n      padding-top: 1.2rem !important;\n    }\n    #zyPLP-Sale .plp-container {\n      width: 100%;\n      padding: 1rem 0 0 0;\n      display: flex;\n      justify-content: space-around;\n      align-items: center;\n      flex-direction: column;\n    }\n\n    #zyPLP-Sale .d-lg-none {\n      display: block;\n    }\n\n    #zyPLP-Sale .d-mobile {\n      display: none;\n    }\n\n    #zyPLP-Sale h2 {\n      display: block;\n    }\n\n    #zyPLP-Sale .img-2 {\n      margin: 0 -0.5rem 0 1rem;\n    }\n\n    #zyPLP-Sale .img-2-en {\n      margin: 0 1rem;\n    }\n\n    #zyPLP-Sale .img-3 {\n      display: none;\n    }\n\n    #zyPLP-Sale .sale-date {\n      padding: 0;\n    }\n\n    #zyPLP-Sale .off {\n      font-family: \"input-mono\", monospace;\n      font-weight: 400;\n      font-style: normal;\n      font-size: 1.188rem;\n      line-height: 1.2;\n      display: inline-block;\n      position: relative;\n      left: -1.5rem;\n      top: -1rem;\n    }\n\n    #zyPLP-Sale .minus {\n      position: relative;\n      top: -0.6rem;\n    }\n\n    #zyPLP-Sale .img-1,\n    #zyPLP-Sale .img-2 {\n      position: relative;\n      top: -0.2rem;\n    }\n  }\n\n  @media only screen and (max-width: 576px) {\n    #zyPLP-Sale h2 {\n      font-size: 3.625rem;\n      line-height: 1.4;\n    }\n\n    #zyPLP-Sale .off,\n    #zyPLP-Sale .sale-date {\n      font-size: 1rem;\n    }\n\n    #zyPLP-Sale .minus {\n      font-size: 2.5rem;\n    }\n\n    #zyPLP-Sale h2 > img {\n      width: 65px;\n    }\n  }\n\n  @media only screen and (max-width: 390px) {\n    #zyPLP-Sale h2 {\n      font-size: 3.25rem;\n    }\n  }\n\n  @media only screen and (max-width: 330px) {\n    #zyPLP-Sale h2 {\n      font-size: 2.8rem;\n    }\n  }\n</style>\n\n<div id=\"zyPLP-Sale\">\n  <section class=\"container-fluid\">\n    {% assign locale = shop.locale %} {% if locale == 'fr' %}\n    <div class=\"plp-container\">\n      <div class=\"sale-content\">\n        <h2>\n          S<img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM1.gif?v=1734949102\" class=\"img-1\" alt=\"Saldos Zippy\" />ldes <span class=\"sale-date d-mobile\">08.01<br />-04.02</span><br class=\"d-lg-none\" />Jusqu'à <br class=\"d-lg-none\" /><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM3.gif?v=1734949102\" class=\"img-2\" alt=\"Saldos Zippy\" /> <span class=\"minus\">-</span>70%<img\n            src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM4.gif?v=1734949102\"\n            class=\"img-3\"\n            alt=\"Saldos Zippy\"\n          />\n        </h2>\n      </div>\n    </div>\n    <div class=\"container-conditions\">\n      <p class=\"conditions\">Soldes en vigueur du 08/01/2025 au 04/02/2025. Non cumulable avec d'autres réductions ou promotions existantes.</p>\n    </div>\n    {% elsif locale == 'en' %}\n    <div class=\"plp-container\">\n      <div class=\"sale-content\">\n        <h2>\n          s<img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM1.gif?v=1734949102\" class=\"img-1\" alt=\"Sale Zippy\" />le <span class=\"sale-date\">08.01<br />-04.02</span><br class=\"d-lg-none\" /><span class=\"sale-date\">up<br />to</span><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM3.gif?v=1734949102\" class=\"img-2-en\" alt=\"Sale Zippy\" />70% <span class=\"off\"> off</span\n          ><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/PLP-Saldos-IM4.gif?v=1734949102\" class=\"img-3\" alt=\"Sale Zippy\" />\n        </h2>\n      </div>\n    </div>\n    <div class=\"container-conditions\">\n      <p class=\"conditions\">Sale valid from 08/01/2025 to 04/02/2025. Not combinable with any other ongoing discounts or promotions.</p>\n    </div>\n    {% endif %}\n  </section>\n</div>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "collections_slider_tr38BG": {
+      "type": "collections-slider",
+      "disabled": true,
+      "settings": {
+        "collections_list": "{{ collection.metafields.custom.subcateories.value.subcategories_list.value }}",
+        "show_collection_name": true,
+        "banner_bg_color": "{{ collection.metafields.custom.subcateories.value.item_background.value }}",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 16
+      }
+    },
+    "custom_liquid_wnKhqp": {
+      "type": "custom-liquid",
+      "disabled": true,
+      "settings": {
+        "custom_liquid": "{% assign current_time = 'now' | date: '%Y-%m-%d %H:%M' %} {% assign start_time = '2024-12-27 18:00' %} {% assign end_time = '2024-12-26 23:59' %} {% if current_time >= start_time and current_time <= end_time %}\n<link rel=\"stylesheet\" href=\"https://use.typekit.net/qxh4eep.css\">\n<style media=\"screen\" type=\"text/css\">\n  #section-template--23834743144775__product-grid {\n    padding-top: 1rem !important;\n  }\n\n  .collection-grid-header .text-3_5xl {\n    font-size: 1rem;\n    position: relative;\n    top: 0.3rem;\n  }\n\n  .collection-grid-header .text-xl {\n    font-size: 1rem;\n  }\n\n  #section-template--23601076928839__main h1 {\n    font-size: 1.25rem !important;\n  }\n\n  #zyPLP-Sale {\n    overflow: hidden;\n    background-color: #BB9D87;\n  }\n\n  #zyPLP-Sale .container-fluid {\n    max-width: 100%;\n  }\n\n  #zyPLP-Sale .plp-container {\n    width: 100%;\n    margin: 2rem auto;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #zyPLP-Sale h2 {\n    font-family: \"input-mono\", monospace;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 2.5rem;\n    line-height: 1.5;\n    color: #fff;\n    text-align: center;\n    text-transform: uppercase;\n  }\n\n  #zyPLP-Sale .sale-date {\n    font-family: \"input-mono\", monospace;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 1.5rem;\n    line-height: 1.5;\n    width: 100%;\n  }\n\n  #zyPLP-Sale .countdown {\n    font-family: \"input-mono\", monospace;\n    font-weight: 400;\n    font-style: normal;\n    font-size: 2rem;\n    line-height: 1.5;\n    padding-top: 1rem;\n    width: 100%;\n  }\n\n  #zytimer {\n    display: block;\n    width: 5rem;\n    text-align: center;\n  }\n\n  @media only screen and (max-width: 576px) {\n    #zyPLP-Sale h2, #zyPLP-Sale .countdown {\n      font-size: 1.5rem;\n    }\n\n    #zyPLP-Sale .countdown {\n      padding-top: 0.5rem;\n    }\n\n    #zyPLP-Sale .sale-date {\n      font-size: 1rem;\n    }\n  }\n</style>\n\n<div id=\"zyPLP-Sale\">\n  <section class=\"container-fluid\">\n    {% assign locale = shop.locale %}\n    {% if locale == 'pt-PT' %}\n    <div class=\"plp-container\">\n      <div class=\"sale-content\">\n        <h2><span class=\"sale-date\">Prepare já o seu carrinho!</span><br> Os Saldos começam em:<br>\n          <span id=\"zytimer\" class=\"countdown\"></span>\n        </h2>\n      </div>\n    </div>\n    {% elsif locale == 'en' %}\n    <div class=\"plp-container\">\n      <div class=\"sale-content\">\n        <h2><span class=\"sale-date\">Prepare your cart now!</span><br> Sale begins in:<br>\n          <span id=\"zytimer\" class=\"countdown\"></span>\n        </h2>\n      </div>\n    </div>\n    {% endif %}\n  </section>\n</div>\n\n<script type=\"text/javascript\">\n  var endDate = new Date(\"{{ '2024-12-27T00:00:00Z' | date: '%Y-%m-%dT%H:%M:%SZ' }}\").getTime();\n\n  var countdownFunction = setInterval(function () {\n    var now = new Date().getTime();\n    var timeLeft = endDate - now;\n\n    // var days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));\n    var hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));\n    var minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));\n    var seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);\n\n    document.getElementById(\"zytimer\").innerHTML = hours + \"h \" + minutes + \"m \" + seconds + \"s \";\n\n    if (timeLeft < 0) {\n      clearInterval(countdownFunction);\n      document.getElementById(\"zytimer\").innerHTML = \"Começou!\";\n    }\n  }, 1000);\n</script>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 36,
+        "enable_sorting": true,
+        "size_in_months": "<p>0/3M,0/6M,6/18M,00 Meses,0-0 Months,0-1 Months,1-3 Months,1-6 Months,3-6 Months,6-9 Months,6-12 Months,9-12 Months,12-18 Months,12-24 Months,18-24 Months,24-36 Months</p>",
+        "size_in_years": "<p>2 Year,3 Year,1-3 Years,2-3 Years,3-4 Years,3-5 Years,4 Years,4-5 Years,5 Years,5-6 Years,5-9 Years,6 Years,6-7Y,6-7 Years,6-9 Years,7 Years,7-8 Years,7-9 Years,8 Years,8-9 Years,9 Years,9-10 Years,10 Years,10-12 Years,10-14 Years,11-12 Years,12 Years,12-14 Years,13-14 Years,14 Years,16 Years,ONE SIZE FITS ALL,SMS,ÚNICO</p>",
+        "international_sizes": "<p>3XS,XS,S,M,L,XL,XXL,XXXL,4XL,5XL,6XL,L- 9/12Y,L-XL,S-M,XL-12/14Y</p>",
+        "european_sizes": "<p>1,11,13,18,19,19.5,20,21,21.5,22,22.5,23,23.5,24,25,25.5,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,50,52,53,54,56,58,60,85,90,95,100,105,110,85B,90B,95B,100B,90C,95C,100C,105C,95D,100D,105D,2-3,4-5,6-7,8-10,11-14,12-14,14-15,15-17,15-18,16-17,17/18,17-19,18-19,19-20,19-22,20-21,20-22,21-22,21-24,22-23,22-24,23-24,23-26,24-25,25-26,25-28,26-27,27-28,27-30,27/34,28-29,29-30,29-32,30-31,31-32,31-34,32-33,33-34,33-36,34-35,34-36,35-36,35-37,35-38,35/39,35/40,36/37,37-38,37-39,38/39,38-40,39-40,39-42,39/46,40-41,40/46,41-42,42-43,43-44,43-46,44-45,45-46</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_ynzARE",
+    "collections_slider_tr38BG",
+    "custom_liquid_wnKhqp",
+    "banner",
+    "product-grid"
+  ]
+}

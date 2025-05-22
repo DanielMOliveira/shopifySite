@@ -1,0 +1,11 @@
+{% layout none %}
+
+<div id="section-color-swatches">
+    {%- paginate collection.products by 15 -%}
+        {%- for card_product in collection.products -%}
+            {% render 'product-simple-colors-only',
+                card_product: card_product
+            %}
+        {%- endfor -%}
+    {%- endpaginate -%}
+</div>

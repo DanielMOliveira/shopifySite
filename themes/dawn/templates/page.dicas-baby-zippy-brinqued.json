@@ -1,0 +1,185 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_iw7Y3Q": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz .row {\n    display: flex;\n    justify-content: space-around;\n    align-items: center;\n  }\n\n  #dbz .container-image {\n    width: 50%;\n  }\n\n  #dbz .container-text {\n    width: 50%;\n    margin: 0;\n  }\n\n  #dbz .container-text .text-inside {\n    width: 60%;\n    margin: auto;\n  }\n\n  #dbz h1 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 2rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.2;\n    text-align: left;\n    text-transform: uppercase;\n    margin: 0.5rem 0 1rem 0;\n  }\n\n  #dbz h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.143rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: left;\n    text-transform: uppercase;\n  }\n\n  #dbz h3 {\n    font-family: \"Newzald\", serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0.02rem;\n    text-align: left;\n    text-transform: uppercase;\n    margin-bottom: 2rem;\n  }\n\n  #dbz h3 > span {\n    font-weight: 600;\n    letter-spacing: 0;\n    text-transform: none;\n  }\n\n  #dbz p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz .row {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n    }\n\n    #dbz .container-image {\n      width: 100%;\n    }\n\n    #dbz .container-text {\n      width: 100%;\n    }\n\n    #dbz .container-text .text-inside {\n      width: 80%;\n      margin: 1rem auto 2rem auto;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz h1 {\n      font-size: 1.563rem;\n      letter-spacing: 0.05rem;\n    }\n\n    #dbz h2 {\n      font-size: 0.875rem;\n      letter-spacing: 0.03rem;\n    }\n\n    #dbz p {\n      margin-top: 1rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz\">\n  <div class=\"row\">\n    <div class=\"container-image\">\n      <a href=\"{{ collections['primeiros-brinquedos'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_banner.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text\">\n      <div class=\"text-inside\">\n        <h3>Dicas Baby Zippy — <span>Brinquedos</span></h3>\n        <h2>Brinquedos, brinquedos everywhere!</h2>\n        <h1>Os primeiros brinquedos do bebé</h1>\n        <p>Brincar é a nossa primeira profissão! A energia inesgotável dos bebés leva-os a quererem mexer-se e brincar com tudo. Para os pais, porém, quando a diversão começa, o descanso acaba!</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_Ec6kQ6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgWhite {\n    background-color: #fafafa;\n  }\n\n  #dbz-text .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-text .row {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #dbz-text .container-text {\n    max-width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-text p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: center;\n    padding-top: 1rem;\n  }\n  #dbz-text p > span {\n    text-transform: uppercase;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-text .container-text {\n      max-width: 80%;\n      margin: 2rem 0;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Os primeiros brinquedos do bebé — como o primeiro doudou, o primeiro móbile ou o primeiro cavalinho — são brinquedos detentores de uma grande estima e valor sentimental, primeiro por parte dos pais e, mais tarde, por parte dos filhos, acompanhando-os ao longo da vida como uma recordação da infância.</p>\n      <p>Para cada etapa do crescimento pode encontrar brinquedos adequados e com objetivos específicos, para ajudar a estimular e desenvolver as capacidades sensoriais, cognitivas e motoras. Brincar é o reflexo natural da vontade que os bebés têm de explorar o mundo e isso deve ser celebrado e incentivado!</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_acrTpQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Peluches para Bebé</h2>\n        <p>Amorosos, delicados e macios, os peluches são os primeiros companheiros dos bebés. Ajudam a confortar o bebé desde o primeiro dia, fazendo-lhe companhia durante o sono, seja no berço ou durante o passeio no seu carrinho. Na sua versão musical, os peluches para bebé estimulam o desenvolvimento sensorial e cognitivo, sendo igualmente uma fonte de diversão até à próxima sesta, onde o suave doudou ganha protagonismo.</p>\n        <a href=\"{{ collections['peluches'].url }}\"> <button>Ver peluches</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['peluches'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_01.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['rocas-mordedores'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_02.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Rocas e Mordedores para Bebé</h2>\n        <p>\n          As rocas e mordedores têm a importante função de ajudar a aliviar as gengivas sensíveis e doloridas quando começam a nascer os primeiros dentes. Porém, são também uma fonte de entretenimento através dos seus variados sons, cores e diferentes texturas, promovendo a exploração natural de diferentes objetos de forma segura. Leves e fáceis de agarrar pelas mãos pequeninas dos bebés, são brinquedos úteis e facilmente transportáveis, estando sempre presentes nas malas e mochilas do bebé.\n        </p>\n        <a href=\"{{ collections['rocas-mordedores'].url }}\"> <button>Ver rocas e mordedores</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Centros e Tapetes de Atividades para Bebé</h2>\n        <p>Os centros e tapetes de atividades para bebés, também conhecidos por ginásios de atividades, são uma verdadeira fonte de brincadeira e diversão para os mais pequeninos, com atividades interativas e sensoriais que promovem a autonomia e ajudam no desenvolvimento cognitivo do bebé. Estas áreas de lazer, com diferentes melodias, texturas e cores, ajudam a captar a atenção do bebé, divertindo-o, estimulando e desenvolvimento os sentidos, a motricidade e a curiosidade.</p>\n        <a href=\"{{ collections['centros-tapetes-atividades'].url }}\"> <button>Ver centros e tapetes de atividades</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['centros-tapetes-atividades'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_03.jpg?v=1726052892\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['brinquedos-musicais-mobiles'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_04.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Brinquedos Musicais para Bebé</h2>\n        <p>\n          Os brinquedos musicais são dos brinquedos mais procurados para os primeiros meses. Quem nunca ofereceu um brinquedo musical aquando do nascimento de um bebé? Os móbiles, por exemplo, são os brinquedos ideais para colocar no berço ou para decorar o quarto do bebé, ajudando a acalmar e a adormecer o bebé através das suas suaves e harmoniosas melodias. Por sua vez, os brinquedos musicais lúdicos, como os pequenos pianos, o primeiro telemóvel ou as chaves de brincar, ajudam a desenvolver a\n          motricidade, a atividade sensorial e a capacidade cognitiva através dos sons, luzes e cores.\n        </p>\n        <a href=\"{{ collections['brinquedos-musicais-mobiles'].url }}\"> <button>Ver brinquedos musicais</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Espreguiçadeiras & Andadores</h2>\n        <p>As espreguiçadeiras para bebé são um tipo de brinquedo muito procurado para os primeiros meses. Adequadas para uso desde o nascimento, servem de cadeira de repouso e de baloiço, uma função muito apreciada pelos mais pequeninos. A maioria dos modelos de espreguiçadeiras para bebé possuem elementos visuais e auditivos integrados, entretendo-o e estimulando o seu desenvolvimento sensorial.</p>\n        <p>Quando o bebé cresce e começa a ganhar alguma autonomia, já ninguém o para! Alimente essa independência e deixe-o explorar novos cantos da casa. Os andadores para bebé são um excelente aliado para esses momentos de independência, permitindo-os partir à descoberta e desenvolver a autonomia de forma segura. Os tabuleiros de atividades geralmente integrados nos andadores são também uma fonte de diversão e de desenvolvimento sensorial dos bebés.</p>\n        <a href=\"{{ collections['andadores-espreguicadeiras'].url }}\"> <button>Ver espreguiçadeiras e andadores</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['andadores-espreguicadeiras'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_05.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['parques-para-bebe'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-brinquedos_06.jpg?v=1726052891\" alt=\"Dicas Baby Zippy - Primeiros Brinquedos\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Parques para Bebé</h2>\n        <p>Os parques para bebé são o recreio perfeito para poderem brincar à vontade, uma área delimitada, ampla e segura, onde o bebé pode divertir-se sem riscos de quedas dolorosas, dada a sua construção confortável e almofadada. São um artigo essencial que permite dar algum descanso aos pais, que podem ocupar-se de outros afazeres sem perderem o bebé de vista. Alguns modelos podem ser utilizados também como camas de viagem, dada a sua versatilidade e facilidade de transporte.</p>\n        <a href=\"{{ collections['parques-para-bebe'].url }}\"> <button>Ver parques para bebés</button></a>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_products_936EHy": {
+      "type": "featured-products",
+      "blocks": {
+        "product_mNYWWT": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_rtadar": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_LRbY6y": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_PmAX6m": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_EPQqyw": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_aVe7RP": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "kid_type": "Girls"
+          }
+        },
+        "product_9TWVer": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_egHET4": {
+          "type": "product",
+          "settings": {
+            "product": "31065082",
+            "kid_type": "Girls"
+          }
+        },
+        "product_ce8z8k": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4",
+        "product_ce8z8k"
+      ],
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "ALTERAR ESTE CARROSSEL",
+        "show_kids_type": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_eNGpb6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n    text-align: center;\n    align-items: center;\n  }\n\n  #dbz-text .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n</style>\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>\n        Quando crescem, os brinquedos passam a ser outros. Entram as bicicletas, as casinhas de brincar ou os puzzles, adequados a cada idade e etapa de crescimento. Descubra toda a gama de <a href=\"{{ collections['brinquedos'].url }}\"> <span class=\"button\">brinquedos</span></a> para bebés e crianças.\n      </p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "divider_fullwidth_T6wrRL": {
+      "type": "divider-fullwidth",
+      "disabled": true,
+      "settings": {}
+    },
+    "divider_rJpcW4": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_liquid_dNyfL6": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-cat div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #dbz-cat img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-cat .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-cat .container-title {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0 1.5rem 0;\n  }\n\n  #dbz-cat .menu-grid {\n    display: grid;\n    grid-template-columns: repeat(6, 1fr);\n    justify-content: center;\n    gap: 0.5rem;\n    padding: 0 3rem 3rem 3rem;\n  }\n\n  #dbz-cat h2 {\n    font-family: \"Newzald\", serif;\n    font-size: 1.375rem;\n    letter-spacing: 0;\n    line-height: 1.2;\n    color: #221f20;\n  }\n\n  #dbz-cat a:hover {\n    text-decoration: none;\n  }\n\n  #dbz-cat button {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    font-size: 0.75rem;\n    color: #221f20;\n    letter-spacing: 0;\n    line-height: 1.2;\n    text-align: left;\n    cursor: pointer;\n    display: block;\n    text-transform: none;\n    padding: 0;\n    opacity: 0.9;\n    margin: 0.2rem 0 0 0;\n    border: none;\n    background-color: transparent;\n  }\n\n  #dbz-cat button:after {\n    content: \"\\2192\";\n    color: #221f20;\n    font-size: 1rem;\n    position: relative;\n    margin-left: 0.2rem;\n    top: 0.1rem;\n  }\n\n  #dbz-cat button:hover:after {\n    transition: 0.3s ease-in-out;\n    margin-left: 0.5rem;\n  }\n\n  #dbz-cat button:hover {\n    transform: none;\n  }\n\n  #dbz-cat .img-hover:hover {\n    opacity: 0.9;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-cat .menu-grid {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      padding: 0 1rem 3rem 1rem;\n      gap: 0.5rem;\n      scrollbar-width: none;\n    }\n\n    #dbz-cat .menu-grid .cat-container {\n      width: 60%;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-cat\">\n  <div class=\"container-title\">\n    <h2>Descubra todas as Dicas Baby Zippy</h2>\n  </div>\n  <div class=\"menu-grid\">\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-enxoval-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_enxoval.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Enxoval do Bebé\" class=\"img-hover\" />\n        <button>O Enxoval do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-quarto-para-a-chegada-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_quarto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Quarto para a chegada do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Quarto</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-o-carrinho-de-passeio\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_carrinhos-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher o Carrinho de Passeio\" class=\"img-hover\" />\n        <button>Escolher o Carrinho de Passeio</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-a-cadeirinha-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_cadeiras-auto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher a Cadeirinha do Bebé\" class=\"img-hover\" />\n        <button>Escolher a Cadeirinha do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-na-mala-de-maternidade\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_mala-maternidade.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar na Mala de Maternidade\" class=\"img-hover\" />\n        <button>Preparar a Mala de Maternidade</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-o-banho-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_banho.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como preparar o Banho do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Banho</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-mitos-verdades-e-essenciais-para-a-amamentacao\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_amamentacao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Mitos, Verdades e Essenciais para a Amamentação\" class=\"img-hover\" />\n        <button>Essenciais para a Amamentação</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-as-rotinas-de-sono-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_sono.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - As Rotinas de Sono do Bebé\" class=\"img-hover\" />\n        <button>Rotinas de Sono</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-a-hora-da-refeicao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_refeicao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar a Hora da Refeição do Bebé\" class=\"img-hover\" />\n        <button>Preparar a Hora da Refeição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-dicas-e-essenciais-para-a-denticao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_denticao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Dicas e Essenciais para a Dentição do Bebé\" class=\"img-hover\" />\n        <button>Essenciais para a Dentição</button>\n      </a>\n    </div>\n    <!--     <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-escolher-os-primeiros-brinquedos-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_brinquedos.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Escolher os Primeiros Brinquedos do Bebé\" class=\"img-hover\" />\n        <button>Os Primeiros Brinquedos</button>\n      </a>\n    </div> -->\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-tornar-a-casa-segura-para-o-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_seguranca.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como tornar a Casa Segura para o Bebé\" class=\"img-hover\" />\n        <button>Segurança em Casa</button>\n      </a>\n    </div>\n    <div class=\"cat-container mr-3\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-nas-viagens-com-bebes\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_viajar-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar nas Viagens com Bebés\" class=\"img-hover\" />\n        <button>Viajar com Bebés</button>\n      </a>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_iw7Y3Q",
+    "custom_liquid_Ec6kQ6",
+    "custom_liquid_acrTpQ",
+    "featured_products_936EHy",
+    "custom_liquid_eNGpb6",
+    "divider_fullwidth_T6wrRL",
+    "divider_rJpcW4",
+    "custom_liquid_dNyfL6"
+  ]
+}

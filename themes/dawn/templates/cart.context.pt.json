@@ -1,0 +1,50 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "cart.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "cart_recommended_products_N8Xrfn": {
+      "settings": {
+        "title": "Também poderá gostar:"
+      },
+      "blocks": {}
+    },
+    "cross_selling_products_Wm4qM4": {
+      "settings": {
+        "title": "<p>Complete a sua encomenda</p>",
+        "subtitle": "<p>Para dias de chuva divertidos, dentro e fora de casa: </p>"
+      },
+      "blocks": {}
+    },
+    "cart-footer": {
+      "settings": {},
+      "blocks": {
+        "payment_icons_FmL36P": {
+          "settings": {
+            "payment_icon_1": "shopify://shop_images/mbway_c64bcfab-f949-4f60-9191-3a0c6e75db95.svg",
+            "payment_icon_2": "shopify://shop_images/multibanco_18e21a44-b542-4acd-99e5-527366e79fd7.svg",
+            "payment_icon_3": "shopify://shop_images/visa_05a862ce-e00e-43f1-ac20-be89a0005c89.svg",
+            "payment_icon_4": "shopify://shop_images/mastercard_f502e345-ca74-43b5-90ba-4ad56e8aa355.svg",
+            "payment_icon_5": "shopify://shop_images/paypal_f72dff7f-b36f-48d5-be98-782799aa5cd7.svg"
+          }
+        },
+        "gift_bag_products_ypyXKK": {
+          "settings": {
+            "title": "<p>É para oferecer?</p>",
+            "subtitle": "<p>Escolha a sua caixa presente favorita:</p>"
+          }
+        }
+      }
+    }
+  }
+}

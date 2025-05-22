@@ -1,0 +1,212 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_QRK6GU": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "skeepers_ratings_reviews_rating_stars_block_eXLtKW": {
+          "type": "shopify://apps/skeepers-verified-reviews/blocks/rating-stars-block/0cea8051-22ff-4d3e-b394-9a2721507c49",
+          "settings": {}
+        },
+        "payment_method_FGtULc": {
+          "type": "payment_method",
+          "settings": {
+            "image": "shopify://shop_images/visa_923f6d1a-5a63-4c4c-82b1-9ae773589daa.svg"
+          }
+        },
+        "payment_method_8JMq6w": {
+          "type": "payment_method",
+          "settings": {
+            "image": "shopify://shop_images/mastercard.svg"
+          }
+        },
+        "payment_method_7JtTVC": {
+          "type": "payment_method",
+          "settings": {
+            "image": "shopify://shop_images/paypal_0adc5886-9d53-4538-87d0-49d1fbff8d2c.svg"
+          }
+        },
+        "payment_method_enzwVc": {
+          "type": "payment_method",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/mbway.svg"
+          }
+        },
+        "payment_method_hFwbXf": {
+          "type": "payment_method",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/multibanco.svg"
+          }
+        }
+      },
+      "block_order": [
+        "skeepers_ratings_reviews_rating_stars_block_eXLtKW",
+        "payment_method_FGtULc",
+        "payment_method_8JMq6w",
+        "payment_method_7JtTVC",
+        "payment_method_enzwVc",
+        "payment_method_hFwbXf"
+      ],
+      "settings": {
+        "estimated_delivery_enabled": false,
+        "care_guide_title": "Care guide",
+        "payments_title": "Secured Payment Methods",
+        "delivery_title": "Delivery",
+        "delivery_content": "<p>For details on delivery times, please visit our <a href=\"/pages/faq/#faq_shipping_&_delivery\" title=\"/pages/faq/#faq_shipping_&_delivery\"><strong>delivery</strong></a><strong> </strong>page.</p>",
+        "delivery_columns": 1,
+        "delivery_rows": 1,
+        "delivery_cell_text_1_1": "",
+        "delivery_cell_text_1_2": "",
+        "delivery_cell_text_1_3": "",
+        "delivery_cell_text_2_1": "",
+        "delivery_cell_text_2_2": "",
+        "delivery_cell_text_2_3": "",
+        "delivery_cell_text_3_1": "",
+        "delivery_cell_text_3_2": "",
+        "delivery_cell_text_3_3": "",
+        "delivery_cell_text_4_1": "",
+        "delivery_cell_text_4_2": "",
+        "delivery_cell_text_4_3": "",
+        "return_title": "Return policy",
+        "return_text": "<p><strong>Term</strong></p><p>You have 30 days for any return, counting from the day your order is received at your home or the order arrives at the desired store.</p><p><strong>Free home return</strong></p><p>You can request the collection of items to be returned from your home, through your personal area.</p><p>You can schedule a return using our Customer Support <a href=\"/pages/contact\" title=\"Contact\">contact form</a>. Note: the home collection request in the Personal Area is temporarily unavailable.</p>",
+        "description_title": "Description",
+        "specifications_title": "Technical Information",
+        "reviews_title": "Reviews",
+        "faq_title": "Frequently Asked Questions",
+        "faq_subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus lectus, sollicitudin sed ex at, blandit accumsan nisl. Pellentesque eu ullamcorper sem.",
+        "max_height_mobile": 550,
+        "max_height_desktop": 898,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "settings": {
+        "title": "You may also like",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 24,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "recently_viewed_4gaUBR": {
+      "type": "recently-viewed",
+      "settings": {
+        "title": "Recently Viewed",
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 24,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    },
+    "featured_products_WtBxhq": {
+      "type": "featured-products",
+      "blocks": {
+        "product_JfCkpY": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-with-ruffles-for-girls-white",
+            "kid_type": "Girls"
+          }
+        },
+        "product_Xr7wUM": {
+          "type": "product",
+          "settings": {
+            "product": "knit-jumper-with-ruffles",
+            "kid_type": "Girls"
+          }
+        },
+        "product_rVRbeh": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-with-ruffles-for-girls-white",
+            "kid_type": "Girls"
+          }
+        },
+        "product_w4zc93": {
+          "type": "product",
+          "settings": {
+            "product": "knit-jumper-with-ruffles",
+            "kid_type": "Girls"
+          }
+        },
+        "product_V8nn6D": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-with-ruffles-for-girls-white",
+            "kid_type": "Girls"
+          }
+        },
+        "product_LTNK6M": {
+          "type": "product",
+          "settings": {
+            "product": "knit-jumper-with-ruffles",
+            "kid_type": "Girls"
+          }
+        },
+        "product_RfAbCT": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-with-ruffles-for-girls-white",
+            "kid_type": "Girls"
+          }
+        },
+        "product_9DWBxE": {
+          "type": "product",
+          "settings": {
+            "product": "knit-jumper-with-ruffles",
+            "kid_type": "Girls"
+          }
+        }
+      },
+      "block_order": [
+        "product_JfCkpY",
+        "product_Xr7wUM",
+        "product_rVRbeh",
+        "product_w4zc93",
+        "product_V8nn6D",
+        "product_LTNK6M",
+        "product_RfAbCT",
+        "product_9DWBxE"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Recently Viewed",
+        "show_kids_type": false,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 24,
+        "padding_top_desktop": 60,
+        "padding_bottom_desktop": 60
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_QRK6GU",
+    "main",
+    "related-products",
+    "recently_viewed_4gaUBR",
+    "featured_products_WtBxhq"
+  ]
+}

@@ -1,0 +1,606 @@
+{% comment %}
+  Renders icons
+
+  Usage:
+      {% render 'ui-icons' %}
+{% endcomment %}
+
+<div class="grid grid-cols-2 gap-x-5 gap-y-8 lg:grid-cols-12">
+  <div class="col-span-2 lg:col-span-12">
+    <div class="mb-2.5 flex flex-wrap items-center gap-5">
+      <h2 class="!text-xl !font-bold uppercase">Path:</h2>
+      <div class="rounded bg-stone-300/40 px-2 py-1 font-mono text-sm italic">snippets/icon.liquid</div>
+    </div>
+
+    <div class="mb-2.5 flex flex-wrap items-center gap-5">
+      <h2 class="!text-xl !font-bold uppercase">Usage:</h2>
+      <div class="rounded bg-stone-300/40 px-2 py-1 font-mono text-sm italic">
+        {% raw %}
+                    {% render 'icon', icon: 'not-bleach', class: '!h-10 !w-10' %}
+                {% endraw %}
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'not-bleach' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">not-bleach</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'not-tumble-dry' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >not-tumble-dry</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'not-dry-clean' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >not-dry-clean</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'iron-max' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">iron-max</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'star-full' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">star-full</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'star' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">star</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'search' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">search</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'heart' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">heart</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'heart-full' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">heart-full</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'account' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">account</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'newsletter' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">newsletter</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'bag' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">bag</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'plus' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">plus</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'plus-bold' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">plus-bold</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'minus' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">minus</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'minus-bold' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">minus-bold</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-left' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">chevron-left</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-right' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >chevron-right</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-down' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">chevron-down</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-up' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">chevron-up</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-long-left' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >chevron-long-left</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chevron-long-right' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >chevron-long-right</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'cross' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">cross</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'cross-small' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">cross-small</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'cross-bold' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">cross-bold</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'plus-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">plus-circle</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'cross-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">cross-circle</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'info-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">info-circle</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'info-circle-v2' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >info-circle-v2</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'question-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >question-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'warning-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >warning-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'error-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">error-circle</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'success-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >success-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'calendar' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">calendar</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'store-delivery' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >store-delivery</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'home-delivery' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >home-delivery</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'secure-payment' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >secure-payment</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'country' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">country</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 't-shirt' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">t-shirt</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'returns-left' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">returns-left</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'returns-right' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >returns-right</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'percent' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">percent</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'note' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">note</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'card' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">card</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'upload-arrow' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">upload-arrow</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chat-full' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">chat-full</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'chat' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">chat</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'tiktok-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >tiktok-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'youtube-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >youtube-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'facebook-circle' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >facebook-circle</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'instagram' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">instagram</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'grid-4' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">grid-4</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'grid-4-full' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">grid-4-full</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'grid-2' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">grid-2</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'grid-single' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">grid-single</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'grid-single-full' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >grid-single-full</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'filter' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">filter</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'arrow-left' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">arrow-left</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'arrow-right' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">arrow-right</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'checkmark' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">checkmark</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'checkmark-thin' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic"
+        >checkmark-thin</span
+      >
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'hamburger' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">hamburger</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'bell' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">bell</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'share' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">share</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'ruler' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">ruler</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'mail' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">mail</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'shield' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">shield</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'thumb-up' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">thumb-up</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'thumb-down' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">thumb-down</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'eye' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">eye</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'pencil' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">pencil</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'lock' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">lock</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'log-out' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">log-out</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'quote' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 text-center font-mono text-xs italic">quote</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'trash' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 font-mono text-xs italic">trash</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'reset' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 font-mono text-xs italic">reset</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'phone' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 font-mono text-xs italic">phone</span>
+    </div>
+  </div>
+
+  <div class="col-span-2 flex flex-col items-center bg-stone-300/20 lg:col-span-4 xl:col-span-3">
+    <div class="flex h-28 w-full flex-col items-center justify-center space-y-4 rounded border border-dashed border-primary p-4">
+      {% render 'icon', icon: 'gift' %}
+      <span class="mb-1 mt-2 rounded bg-stone-300/40 px-2 py-1 font-mono text-xs italic">gift</span>
+    </div>
+  </div>
+</div>

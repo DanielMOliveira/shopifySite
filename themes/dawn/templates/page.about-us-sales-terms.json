@@ -1,0 +1,238 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "About Zippy",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Quality",
+            "link_url": "shopify://pages/quality"
+          }
+        },
+        "navigation_item_GGBDWJ": {
+          "type": "navigation_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Sustainability",
+            "link_url": "shopify://pages/sustainability"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sonae Group",
+            "link_url": "shopify://pages/sonae-group"
+          }
+        },
+        "navigation_item_kx43RP": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sales Terms & Conditions",
+            "link_url": "shopify://pages/sales-terms-and-conditions"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>Sales Terms & Conditions</strong></h6>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "faq_item_KBfPYw": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Intellectual Property",
+            "faq_answer": "<p>The Intellectual Property rights regarding the Zippy website, including its content and information, belong to ZIPPY.<br/> <br/>All the intellectual property rights on text, images, sound, software and other website content belong to ZIPPY. Users can search the Zippy website and reproduce excerpts by printing, downloading either to a disc or by distributing to third parties, but never for commercial purposes.<br/> <br/>The website contents can only be used for personal purposes. No part of the website can be used or distributed for commercial purposes, and, in the same way, it cannot be Zippy defied or used in any essay or publication, regardless of format, and particularly be transferred to other website(s). By allowing access to its website, ZIPPY is not granting its users any rights or license.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_nRFyDU": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Conditions of Use",
+            "faq_answer": "<p>The user is responsible for using this website in compliance with that laid down by the law, refraining from any unlawful or immoral activity, or any activity that goes against the best practices or rights of third parties.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_aWG7qk": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Information on products and prices",
+            "faq_answer": "<p>The prices provided by ZIPPY include the tax applicable by law (VAT). Any changes to the said tax will reflect immediately on the prices practiced by the brand. Nevertheless, ZIPPY reserves the right to change its prices at any given time, and items may be available for limited periods of time established by the brand.<br/> <br/>The user is responsible for any shipping costs, unless otherwise established by the brand.<br/> <br/>Considering that ZIPPY is responsible for a wide range of articles, keep in mind that labelling is not error-free. In cases where errors are detected during the order treatment process, the buyer is free to reconfirm his order at the correct price or cancel such order.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_bnFVHy": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Purchasing Process",
+            "faq_answer": "<p>The purchasing process with ZIPPY is very simple. After creating an account, you’ll have access to a personal area where you can see your shopping and your returns history.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_diw9nJ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Payment Method",
+            "faq_answer": "<p>Shoppers can choose which payment method they prefer from the following options: Visa or Mastercard Credit Cards, or Paypal. <br/> <br/>We use the Zippy most advanced coding systems (SSL) to guarantee that your purchase is secure. All payments with Visa and Mastercard only accept transactions via the SET (Secure Electronic Trading) system. Once the card has been verified, the SET system will contact the issuing card authority so that the buyer may authorize the purchase. The amount will only be debited to the card once the bank has confirmed that the card and user are authentic. Should this not be the case, the request is cancelled.<br/><br/>The CVV (Card Verification Value) is a security guarantee against credit card fraud. The encrypted code corresponds to the card number and expiry date, and is requested when carrying out a transaction to ensure that the buyer is in possession of the card.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_6UTCMf": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Warranty",
+            "faq_answer": "<p>The warranty period begins from the date the product is delivered. Should the buyer verify any defect to the product, s/he must e-mail the customer support service at: <a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com </a>referring the order number whenever possible.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_8eUP4L": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Returns",
+            "faq_answer": "<p>Returns are made within 14 days from the day the order was received. Returns must be sent to our returns center and costs are from customer’s responsibility. Zippy will refund you the order shipping costs originally paid via store credit.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_DmrLhx": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Returns Policy",
+            "faq_answer": "<p>Only returns in perfect condition will be accepted and must include the corresponding receipt and original sealed packaging (in the case of perfumes and cosmetics). We do not accept underwear returns or exchanges.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_mipJk7": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Customer Support",
+            "faq_answer": "<p>ZIPPY will clarify your queries and/or respond to any requests for information sent to the following e-mail: <a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_e8QCzD": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Liability",
+            "faq_answer": "<p>ZIPPY is not liable for any viruses or other similar elements to its website, present in electronic documents and/or files stored on your computer.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_3DWjhE": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Law and Court",
+            "faq_answer": "<p>These general conditions of sale have been drawn up under Portuguese law. However, in the event of a dispute, the consumer may appeal to the Portuguese courts or to the courts of the country of the consumer.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_tQhm6M": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Coupons",
+            "faq_answer": "<p>- Conditions of use:</p><p>Coupons used on the Zippy website are only valid for the online store and for a single purchase made within the period indicated in the e-mail. The discount does not apply to the dispatch costs of the order. Coupon credits are immediately allocated once the order is invoiced and sent by e-mail. Such amount can only be used by the owner of the account.<br/><br/>- Return conditions:</p><p>The value of the coupon used is divided in equal parts for each item in an order. When an order for which a coupon was issued is returned, such coupon will immediately become null and void. Should an order which originated a coupon be returned and said coupon has already been used, the proportional value gained with the coupon for each item will be deducted from the amount to be refund. Should an order paid in full or partially with a coupon be returned, the client shall be refund via the method of payment originally used. With regard to the amount paid with a coupon, the amount refund is the proportional amount for each article.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_BaNmMW": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Stock-outs",
+            "faq_answer": "<p>In the case of unavailable products and/or stock-out, the client will be informed that the order will be completely or partially cancelled and the customer won’t be charged for the stock-out products.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "navigation_item_E8BfPN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Privacy Policy",
+            "link_url": "shopify://pages/privacy-policy"
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Cookies Policy",
+            "link_url": "shopify://pages/cookies-policy"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "navigation_item_YdmhFw",
+        "navigation_item_GGBDWJ",
+        "navigation_item_eJDVpT",
+        "navigation_item_kx43RP",
+        "text_ndbx44",
+        "faq_item_KBfPYw",
+        "faq_item_nRFyDU",
+        "faq_item_aWG7qk",
+        "faq_item_bnFVHy",
+        "faq_item_diw9nJ",
+        "faq_item_6UTCMf",
+        "faq_item_8eUP4L",
+        "faq_item_DmrLhx",
+        "faq_item_mipJk7",
+        "faq_item_e8QCzD",
+        "faq_item_3DWjhE",
+        "faq_item_tQhm6M",
+        "faq_item_BaNmMW",
+        "navigation_item_E8BfPN",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}

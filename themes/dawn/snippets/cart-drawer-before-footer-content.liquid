@@ -1,0 +1,111 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - section_id: {String} The ID of the section that contains this card
+
+  Usage:
+      {% render 'cart-drawer-before-footer-content', section_id: id %}
+{% endcomment %}
+
+{% liquid
+  assign cart_drawer_bottom_products = settings.cart_drawer_bottom_products
+
+  assign cross_selling_product_1 = settings.cross_selling_product_1.url
+  assign cross_selling_product_2 = settings.cross_selling_product_2.url
+  assign cross_selling_product_3 = settings.cross_selling_product_3.url
+  assign cross_selling_product_4 = settings.cross_selling_product_4.url
+  assign cross_selling_product_5 = settings.cross_selling_product_5.url
+  assign cross_selling_product_6 = settings.cross_selling_product_6.url
+
+  if cross_selling_product_1 or cross_selling_product_2 or cross_selling_product_3 or cross_selling_product_4 or cross_selling_product_5 or cross_selling_product_6
+    assign show_cart_cross_selling_products = true
+  endif
+%}
+
+<collapsible-elements>
+  {% case cart_drawer_bottom_products %}
+    {% when 'cross-selling' %}
+      {% if show_cart_cross_selling_products %}
+        <div class="cross-selling-grid grid gap-x-2 gap-y-3">
+          <div data-collapsible-item="true">
+            <h2
+              class="relative cursor-pointer border-t border-gray-200 py-5 pb-[19px] !font-body text-base font-medium leading-none"
+              data-collapsible-trigger="true"
+            >
+              <span>
+                {{ 'general.cart.cross_selling_products_title' | t }}
+              </span>
+
+              {% render 'icon',
+                icon: 'chevron-down',
+                class: 'icon-animation absolute top-4 right-0 transition-transform duration-300 ease'
+              %}
+            </h2>
+            <div
+              class="ease open overflow-hidden transition-all duration-300"
+              data-collapsible-content="true"
+            >
+              {% render 'cart-drawer-cross-selling' %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+
+    {% when 'best-selling' %}
+      <div class="best-selling-wrapper grid">
+        <div data-collapsible-item="true">
+          <h2
+            class="relative cursor-pointer border-t border-gray-200 py-5 pb-[19px] !font-body text-base font-medium leading-none"
+            data-collapsible-trigger="true"
+          >
+            <span>
+              {{ 'general.cart.best_selling_title' | t }}
+            </span>
+
+            {% render 'icon',
+              icon: 'chevron-down',
+              class: 'icon-animation absolute top-4 right-0 transition-transform duration-300 ease'
+            %}
+          </h2>
+          <div
+            class="ease open overflow-hidden transition-all duration-300"
+            data-collapsible-content="true"
+          >
+            {% render 'cart-drawer-best-selling' %}
+          </div>
+        </div>
+      </div>
+
+    {% when 'recently-viewed' %}
+      <div class="recently-viewed-wrapper grid">
+        <div data-collapsible-item="true">
+          <h2
+            class="relative cursor-pointer border-t border-gray-200 py-5 pb-[19px] !font-body text-base font-medium leading-none"
+            data-collapsible-trigger="true"
+          >
+            <span>
+              {{ 'general.cart.recently_viewed_title' | t }}
+            </span>
+
+            {% render 'icon',
+              icon: 'chevron-down',
+              class: 'icon-animation absolute top-4 right-0 transition-transform duration-300 ease'
+            %}
+          </h2>
+          <div
+            class="ease open overflow-hidden transition-all duration-300"
+            data-collapsible-content="true"
+          >
+            {% render 'cart-drawer-recently-viewed' %}
+          </div>
+        </div>
+      </div>
+  {% endcase %}
+
+  {{ 'component-cart-drawer-footer.css' | asset_url | stylesheet_tag }}
+
+  {% if cart_drawer_bottom_products == 'best-selling' %}
+    <script src="{{ 'best-selling-products.js' | asset_url }}" defer></script>
+  {% endif %}
+</collapsible-elements>

@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collection_banner_2_Uwfi3w": {
+      "type": "collection-banner-2",
+      "settings": {
+        "banner_bg_color": "{{ collection.metafields.custom.collection_banner.value.background_color.value }}",
+        "title_image": "{{ collection.metafields.custom.collection_banner.value.title_image.value }}",
+        "title": "{{ collection.metafields.custom.collection_banner.value.title | metafield_tag }}",
+        "title_font_size_mobile": 49,
+        "title_font_size_desktop": 88,
+        "title_color": "{{ collection.metafields.custom.collection_banner.value.title_color.value }}",
+        "subtitle": "{{ collection.metafields.custom.collection_banner.value.subtitle | metafield_tag }}",
+        "subtitle_font_size_mobile": 12,
+        "subtitle_font_size_desktop": 24,
+        "subtitle_color": "{{ collection.metafields.custom.collection_banner.value.subtitle_color.value }}",
+        "sub_banner_font_size_mobile": 12,
+        "sub_banner_font_size_desktop": 40,
+        "image_banner_1": "{{ collection.metafields.custom.collection_banner.value[\"1_banner_image\"].value }}",
+        "text_banner_1": "{{ collection.metafields.custom.collection_banner.value[\"1_banner_text\"] | metafield_tag }}",
+        "url_banner_1": "{{ collection.metafields.custom.collection_banner.value[\"1_banner_link\"].value }}",
+        "image_banner_2": "{{ collection.metafields.custom.collection_banner.value[\"2_banner_image\"].value }}",
+        "text_banner_2": "{{ collection.metafields.custom.collection_banner.value[\"2_banner_text\"] | metafield_tag }}",
+        "url_banner_2": "{{ collection.metafields.custom.collection_banner.value[\"2_banner_link\"].value }}",
+        "image_banner_3": "{{ collection.metafields.custom.collection_banner.value[\"3_banner_image\"].value }}",
+        "text_banner_3": "{{ collection.metafields.custom.collection_banner.value[\"3_banner_text\"] | metafield_tag }}",
+        "url_banner_3": "{{ collection.metafields.custom.collection_banner.value[\"3_banner_link\"].value }}",
+        "padding_top_mobile": 28,
+        "padding_bottom_mobile": 28,
+        "padding_top_desktop": 30,
+        "padding_bottom_desktop": 30
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "blocks": {
+        "collection_promo_QmPhJq": {
+          "type": "collection_promo",
+          "settings": {
+            "product_number_to_show_after": 8,
+            "background_color": "#ffbf00",
+            "circle_first_color": "#83dbcb",
+            "circle_second_color": "#ff4141",
+            "content_width_mobile": 305,
+            "content_width_desktop": 1080,
+            "title": "promotions",
+            "subtitle": "up to",
+            "percent_amount": "50",
+            "link_text": "",
+            "link_url": "",
+            "note": "<p>Promotion valid from 14/05/2024 to 03/06/2024 on the highlighted items. <br/>Not combinable with other existing discounts or promotions.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "collection_promo_QmPhJq"
+      ],
+      "settings": {
+        "products_per_page": 16,
+        "enable_sorting": true,
+        "size_in_months": "<p>0/3M,0/6M,6/18M,00 Meses,0-0 Months,0-1 Months,1-3 Months,1-6 Months,3-6 Months,6-9 Months,6-12 Months,9-12 Months,12-18 Months,12-24 Months,18-24 Months,24-36 Months</p>",
+        "size_in_years": "<p>1-2 Years,1-3 Years,2 Year,2 Years,2-3 Years,3 Year,3-4 Years,3-5 Years,4 Years,4-5 Years,5 Years,5-6 Years,5-9 Years,6 Years,6-7Y,6-7 Years,6-9 Years,7 Years,7-8 Years,7-9 Years,8 Years,8-9 Years,9 Years,9-10 Years,10 Years,10-12 Years,10-14 Years,11-12 Years,12 Years,12-14 Years,13-14 Years,14 Years,16 Years</p>",
+        "international_sizes": "<p>ONE SIZE FITS ALL,XS,S,M,L,XL,XXL,M/L,XXXL</p>",
+        "european_sizes": "<p>2,11,11-14,13,14-15,15-17,15-18,16-17,17-19,18,18-19,18/24,19,19-20,19.5,19-22,20,20-22,21-22,21,21.5,22,22-23,22-24,22.5,23,23.5,23-24,23-26,24,24-25,24.5,24/36,25-26,25,25.5,26-27,26.5,26,27,27-28,27.5,27-30,28,28-29,28-32,29,29-30,30,30,5,30-31,31,31-32,31.5,31/33,31-34,32,32-33,32-36,33,33-34,34,34-35,34.5,35,35-36,35-37,35/39,35/40,36,36/37,36-40,37,37 1/3,37-38,38,38/39,38-40,39,39-42,39/46,40,40-41,40/46,41,41-42,42,42-43,43,43-44,43-46,44,44-45,46,48,50,52,53,54,56,58,60,105,95D</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "divider_JmAKFp": {
+      "type": "divider",
+      "settings": {
+      }
+    },
+    "rich_text_dN8HVe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_tcEWkp": {
+          "type": "heading",
+          "settings": {
+            "heading": "Girl's Collection",
+            "heading_size": "text-[20px] md:text-3_5xl"
+          }
+        },
+        "text_h8mdPy": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p>Share<strong> </strong><a href=\"/collections/view-all-baby-boy\" title=\"Baby Boy\"><strong>information</strong> </a>about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p><p></p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_tcEWkp",
+        "text_h8mdPy"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "collection_banner_2_Uwfi3w",
+    "product-grid",
+    "divider_JmAKFp",
+    "rich_text_dN8HVe"
+  ]
+}

@@ -1,0 +1,84 @@
+trigger:
+  branches:
+    include:
+      - master
+      - dev
+
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - group: shopify-credentials
+
+steps:
+  - task: NodeTool@0
+    inputs:
+      versionSpec: '20.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install -g @shopify/cli @shopify/theme
+      npm install --save-dev eslint stylelint stylelint-config-standard prettier @shopify/prettier-plugin-liquid
+    displayName: 'Install Shopify CLI and linting tools'
+
+  - script: |
+      npx prettier --check "$THEME_FOLDER/**/*.{liquid,js,css,json}"
+    displayName: 'Check formatting with Prettier'
+    continueOnError: true #Verificar como alterar para false no master
+
+  - script: |
+      npx eslint "$THEME_FOLDER/assets/*.js" || true
+    displayName: 'Run ESLint on JavaScript files'
+
+  - script: |
+      npx stylelint "$THEME_FOLDER/assets/*.css" || true
+    displayName: 'Run Stylelint on CSS files'
+
+  - script: |
+      cd "$THEME_FOLDER"
+      shopify theme check || true
+    displayName: 'Run Shopify Theme Check'
+    continueOnError: true
+
+  - script: |
+      echo "Current branch: $BUILD_SOURCEBRANCH"
+      if [ "$BUILD_SOURCEBRANCH" = "refs/heads/master" ]; then
+        echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_PROD"
+      else
+        echo "##vso[task.setvariable variable=THEME_ID]$SHOPIFY_THEME_ID_STAGING"
+      fi
+    displayName: 'Set theme ID based on branch'
+    env:
+      SHOPIFY_THEME_ID_PROD: $(SHOPIFY_THEME_ID_PROD)
+      SHOPIFY_THEME_ID_STAGING: $(SHOPIFY_THEME_ID_STAGING)
+      BUILD_SOURCEBRANCH: $(Build.SourceBranch)
+
+  - script: |
+      echo "Working directory before cd:"
+      pwd
+      echo "Listing current files:"
+      ls -al
+      echo "Changing to theme folder: $THEME_FOLDER"
+      cd "$THEME_FOLDER"
+      echo "Inside theme folder:"
+      pwd
+      ls -al
+      shopify theme push --store "$SHOPIFY_STORE_URL" --theme "$THEME_ID" --password "$SHOPIFY_THEME_TOKEN" --allow-live
+    displayName: 'Push theme to Shopify store'
+    env:
+      SHOPIFY_STORE_URL: $(SHOPIFY_STORE_URL)
+      SHOPIFY_THEME_TOKEN: $(SHOPIFY_THEME_TOKEN)
+      THEME_ID: $(THEME_ID)
+      THEME_FOLDER: $(THEME_FOLDER)
+
+  - script: |
+      echo "Publishing theme $THEME_ID to store $SHOPIFY_STORE_URL"
+      cd "$THEME_FOLDER"
+      shopify theme publish --store "$SHOPIFY_STORE_URL" --theme "$THEME_ID" --password "$SHOPIFY_THEME_TOKEN" --allow-live
+    displayName: 'Publish theme to Shopify (production)'
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'), eq(variables['PUBLISH_THEME'], 'true'))
+    env:
+      SHOPIFY_STORE_URL: $(SHOPIFY_STORE_URL)
+      SHOPIFY_THEME_TOKEN: $(SHOPIFY_THEME_TOKEN)
+      THEME_ID: $(SHOPIFY_THEME_ID_PROD)
+      THEME_FOLDER: $(THEME_FOLDER)

@@ -1,0 +1,110 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.faq.json",
+  "context": {
+    "market": "spain"
+  },
+  "sections": {
+    "faq_navigation_nCQVUy": {
+      "settings": {},
+      "blocks": {
+        "faq_section_id_rC4nLB": {
+          "disabled": false,
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "faq_section_id_DfwYXd",
+        "faq_section_id_n3DDLE",
+        "faq_section_id_rC4nLB",
+        "faq_section_id_9TNXqi",
+        "faq_section_id_zQtRjL",
+        "faq_section_id_c9MdK7",
+        "faq_section_id_eefEhP",
+        "faq_section_id_m9ehyA"
+      ]
+    },
+    "faq_content_BjUGR4": {
+      "settings": {},
+      "blocks": {
+        "faq_item_TNeDXf": {
+          "settings": {
+            "table_1": "<style>\n  .shopify-section.faq-content table,\n  .shopify-section.faq-content th,\n  .shopify-section.faq-content tr, .shopify-section.faq-content td {\n    border: 1px solid #E4E4E4;\n    text-align: center;\n    vertical-align: middle;\n  }\n\n  .shopify-section.faq-content table {\n    width: 100%;\n  }\n\n  .shopify-section.faq-content th {\n    background-color: #F7F7F7;\n    padding: 1rem\n  }\n\n  .shopify-section.faq-content td {\n    padding: 1rem;\n  }\n</style>\n<div style=\"overflow-x:auto;\">\n<table>\n  <tbody>\n    <tr>\n      <th rowspan=\"2\" style=\"width: 10%;\">Country</th>\n      <th colspan=\"2\">Fashion, Footwear &amp; Small Nursery</th>\n      <th colspan=\"2\">Heavy Nursery* </th>\n    </tr>\n    <tr style=\"background-color:#F7F7F7\">\n      <td style=\"width: 22.5%\"><b>Cost</b></td>\n      <td style=\"width: 22.5%\"><b>Shipping Times</b></td>\n      <td style=\"width: 22.5%\"><b>Cost</b></td>\n      <td style=\"width: 22.5%\"><b>Shipping Times**</b></td>\n    </tr>\n    <tr>\n      <td>Austria</td>\n      <td>€6,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Belgium</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Denmark</td>\n      <td>€7,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Estonia</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Finland</td>\n      <td>€14,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>France</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Germany</td>\n      <td>€5,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Italy</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Lithuania</td>\n      <td>€7,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Monaco</td>\n      <td>€6,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Netherlands</td>\n      <td>€6,99 (free over 49,99€)</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Romania</td>\n      <td>€14,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n    <tr>\n      <td>Spain</td>\n      <td>3,99€ (free over 39,99€)</td>\n      <td>3-6 business days</td>\n      <td>€5,99</td>\n      <td>3-6 business days</td>\n    </tr>\n    <tr>\n      <td>Sweden</td>\n      <td>€8,99</td>\n      <td>4-7 business days</td>\n      <td>-</td>\n      <td>-</td>\n    </tr>\n  </tbody>\n</table>\n</div>\n<br><br>"
+          }
+        }
+      },
+      "block_order": [
+        "faq_item_TNeDXf",
+        "faq_item_3aHJzG",
+        "faq_item_LaRMDg"
+      ]
+    },
+    "faq_content_BEGrDX": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_XQNBHt",
+        "faq_item_y8gqML",
+        "faq_item_tmMD6r",
+        "faq_item_yGYgmj"
+      ]
+    },
+    "faq_content_KBWJAX": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_edBdbP"
+      ]
+    },
+    "faq_content_iXMDQQ": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_ti6gLg"
+      ]
+    },
+    "faq_content_XG3GGr": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_EWmxKW"
+      ]
+    },
+    "faq_content_HtActz": {
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_meDM7C"
+      ]
+    },
+    "faq_content_N7DKKQ": {
+      "disabled": false,
+      "settings": {},
+      "blocks": {},
+      "block_order": [
+        "faq_item_QjnYiU"
+      ]
+    }
+  },
+  "order": [
+    "main",
+    "faq_search_F9nejq",
+    "faq_navigation_nCQVUy",
+    "faq_content_BjUGR4",
+    "faq_content_BEGrDX",
+    "faq_content_KBWJAX",
+    "faq_content_iXMDQQ",
+    "faq_content_XG3GGr",
+    "faq_content_jDfR76",
+    "faq_content_HtActz",
+    "faq_content_N7DKKQ"
+  ]
+}

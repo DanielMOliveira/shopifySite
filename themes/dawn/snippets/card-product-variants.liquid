@@ -1,0 +1,116 @@
+{% comment %}
+  Renders a variants on collection card
+  Accepts:
+  - product: {Object} Product Liquid object
+  - desktop_offcanvas: {Boolean} Offcanvas should be rendered on desktop, Default: false
+
+  Usage:
+  {% render 'card-product-variants', product: product %}
+{% endcomment %}
+{% liquid
+  assign count_of_variants = product.variants.size
+%}
+
+<card-product-add-to-cart
+  class="product-form w-max pb-6{% if desktop_offcanvas %} desktop-offcanvas{% endif %}{% unless desktop_offcanvas %} lg:w-full lg:max-w-[calc(100%-16px)] lg:p-2 lg:absolute lg:left-1/2 lg:bottom-2 lg:-translate-x-1/2 lg:bg-white/75 lg:rounded-lg lg:opacity-0 lg:transition-all z-10{% endunless %}"
+  data-section-id="{{ product.id }}"
+>
+  {% form 'product',
+    product,
+    id: product.id,
+    class: 'form flex items-center justify-center gap-2',
+    novalidate: 'novalidate',
+    data-type: 'add-to-cart-form'
+  %}
+    <input type="hidden" name="id" value="">
+
+    <div
+      class="product-variants align-center flex w-full flex-col flex-wrap justify-center text-2xs gap-1{% unless desktop_offcanvas %} max-[1023px]:pb-3 lg:flex-row{% endunless %}"
+      id="product-variants-{{ product.id }}"
+    >
+      {% if count_of_variants > 0 %}
+        {% for variant in product.variants %}
+          {% if variant.available %}
+            <div
+              class="product-form__variant-button relative flex w-full items-center justify-between border-b border-gray-300 py-4 text-sm font-normal hover:cursor-pointer{% unless desktop_offcanvas %} lg:w-auto lg:px-3 lg:py-0.5 lg:text-2xs lg:font-medium lg:uppercase lg:bg-white lg:border lg:border-gray-300 lg:rounded lg:cursor-pointer lg:transition-all lg:hover:!border-gray-800{% endunless %}"
+              data-variant-id="{{ variant.id }}"
+            >
+              <span>
+                {%- if count_of_variants > 1 -%}
+                  {{- variant.title -}}
+                {%- else -%}
+                  {{- 'products.product.add_to_cart_single_variant' | t -}}
+                {%- endif -%}
+              </span>
+
+              {% if variant.inventory_quantity == 1 %}
+                <div class="flex items-center justify-between lg:hidden">
+                  <span class="mr-1.5 inline-flex h-2 w-2 rounded bg-red-500"></span>
+                  <span class="text-2xs font-medium text-gray-900">
+                    {{- 'products.product.inventory_low_stock' | t -}}
+                  </span>
+                </div>
+              {% endif %}
+            </div>
+          {% else %}
+            <div
+              class="product-form__variant-button-disabled relative flex w-full items-center justify-between border-b border-gray-300 py-4 text-sm font-normal text-gray-500 hover:cursor-pointer{% unless desktop_offcanvas %}  lg:w-auto lg:px-3 lg:py-0.5 lg:text-2xs lg:font-medium lg:uppercase lg:bg-white lg:border lg:border-gray-300 lg:rounded lg:cursor-pointer lg:transition-all lg:hover:!border-gray-500 lg:hover:!cursor-not-{% endunless %}"
+              data-variant-id="{{ variant.id }}"
+            >
+              <span>
+                {%- if count_of_variants > 1 -%}
+                  {{- variant.title -}}
+                {%- else -%}
+                  {{- 'products.product.add_to_cart_single_variant' | t -}}
+                {%- endif -%}
+              </span>
+              <span class="text-2xs{% unless desktop_offcanvas %}  lg:hidden{% endunless %}">
+                {{- 'products.product.inventory_out_of_stock' | t -}}
+              </span>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endif %}
+    </div>
+  {% endform %}
+
+  <div
+    class="product-form__error-message-wrapper mt-2.5 rounded border border-red-500 p-2.5 text-xs leading-3"
+    role="alert"
+    hidden
+  >
+    <div class="flex items-center gap-2" tabindex="-1" autofocus>
+      {% render 'icon', icon: 'error-circle' %}
+
+      <span class="product-form__error-message"></span>
+    </div>
+  </div>
+
+  {% style %}
+    .product-form__variant-button.loading {
+      color: rgb(var(--color-gray-500));
+      pointer-events: none;
+    }
+
+    .product-form__variant-button.loading .loading__spinner {
+      display: flex !important;
+      width: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .product-form__variant-button.loading .loading__spinner svg .path {
+      stroke: rgb(var(--color-gray-800)) !important;
+    }
+
+    @media screen and (min-width: 1024px) {
+      body:has(cart-drawer.active) card-product-add-to-cart:not(.desktop-offcanvas) {
+        display: none !important;
+      }
+
+      .card-wrapper:hover card-product-add-to-cart:not(.desktop-offcanvas) {
+        opacity: 1 !important;
+      }
+    }
+  {% endstyle %}
+</card-product-add-to-cart>

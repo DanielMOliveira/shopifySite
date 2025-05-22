@@ -1,0 +1,175 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign title = section.settings.title
+  assign title_font_size_desktop = section.settings.title_font_size_desktop | append: 'px'
+  assign title_font_size_mobile = section.settings.title_font_size_mobile | append: 'px'
+
+  assign subtitle = section.settings.subtitle
+  assign subtitle_font_size_desktop = section.settings.subtitle_font_size_desktop | append: 'px'
+  assign subtitle_font_size_mobile = section.settings.subtitle_font_size_mobile | append: 'px'
+%}
+
+{% unless cart == empty %}
+  {% if section.blocks.size > 0 %}
+    <section id="section-{{ section.id }}" class="cross-selling-products">
+      <div class="container-valantic">
+        {% if title != blank %}
+          <h3 class="title mb-1 text-2xl leading-[normal] text-gray-800 md:mb-2 lg:pt-1.5">{{ title }}</h3>
+        {% endif %}
+
+        {% if subtitle != blank %}
+          <div class="title mb-4 text-base leading-[normal] text-gray-800 md:mb-7">{{ subtitle | strip_html }}</div>
+        {% endif %}
+
+        <div class="grid grid-cols-1 md:grid-cols-2{% if section.blocks.size == 3 %} lg:grid-cols-3{% elsif section.blocks.size == 4 %} xl:grid-cols-4{% endif %} flex-col gap-4 md:flex-row md:flex-wrap">
+          {% for block in section.blocks %}
+            {% assign product = block.settings.product %}
+
+            {% if product != blank %}
+              {% render 'card-product-line-view',
+                card_product: product,
+                lazy_load: true,
+                section_id: section.id,
+                index: forloop.index
+              %}
+            {% endif %}
+          {% endfor %}
+        </div>
+      </div>
+
+      {% style %}
+        #section-{{ section.id }} .product-image-mobile {
+            position: static;
+        }
+
+        #section-{{ section.id }} .title > * {
+            font-size: {{ title_font_size_mobile }};
+            line-height: 1.2;
+        }
+
+        #section-{{ section.id }}.subtitle > * {
+            font-size: {{ subtitle_font_size_mobile }};
+            line-height: 1.2;
+        }
+
+        @media screen and (min-width: 768px) {
+            #section-{{ section.id }} .title > * {
+                font-size: {{ title_font_size_desktop }};
+            }
+
+            #section-{{ section.id }} .subtitle > * {
+                font-size: {{ subtitle_font_size_desktop }};
+            }
+        }
+      {% endstyle %}
+    </section>
+  {% endif %}
+
+  <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+{% endunless %}
+
+{% schema %}
+{
+  "name": "Cross-Selling Products",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "number",
+      "id": "title_font_size_mobile",
+      "label": "Title Font Size Mobile (px)",
+      "default": 22,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "title_font_size_desktop",
+      "label": "Title Font Size Desktop (px)",
+      "default": 24,
+      "info": "From 768px"
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "number",
+      "id": "subtitle_font_size_mobile",
+      "label": "Subtitle Font Size Mobile (px)",
+      "default": 12,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "subtitle_font_size_desktop",
+      "label": "Subtitle Font Size Desktop (px)",
+      "default": 14,
+      "info": "From 768px"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 16,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 60,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 60,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "limit": 4,
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "Product"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cross-Selling Products"
+    }
+  ]
+}
+{% endschema %}

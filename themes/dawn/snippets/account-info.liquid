@@ -1,0 +1,217 @@
+{% liquid
+  assign chevron_class = chevron_class
+%}
+
+<div class="account-info border-b border-t md:border-none">
+  <a
+    href="#"
+    data-nav-button="true"
+    data-id="account"
+    class="customer-nav__item active open flex flex-1 py-5 md:hidden md:justify-center md:px-10"
+  >
+    {{ 'customer.account.navigation.account' | t }}
+    {% render 'icon', icon: 'chevron-down', class: chevron_class %}
+  </a>
+  <div
+    class="max-[767px]:overflow-hidden max-[767px]:transition-all"
+    data-nav-content="true"
+    data-id="account"
+  >
+    <div class="grid auto-rows-auto grid-cols-1 gap-5 lg:grid-cols-3">
+      <div class="customer-personal-data">
+        <h2 class="mb-3 text-base">{{ 'customer.account.personal_data.title' | t }}</h2>
+        <div class="grid grid-cols-2 gap-4 rounded border p-6">
+          <div class="first-name col-span-1">
+            <p class="font-medium leading-6">{{ 'customer.account.personal_data.first_name' | t }}</p>
+            <p>{{ customer.first_name }}</p>
+          </div>
+          <div class="last-name col-span-1">
+            <p class="font-medium leading-6">{{ 'customer.account.personal_data.last_name' | t }}</p>
+            <p>{{ customer.last_name }}</p>
+          </div>
+          <div class="email col-span-full pb-3 md:pb-4">
+            <p class="font-medium leading-6">{{ 'customer.account.personal_data.email' | t }}</p>
+            <p>{{ customer.email }}</p>
+          </div>
+        </div>
+        <form
+          class="my-4 grid grid-cols-2 gap-4 rounded border p-6"
+          {% render 'form-action' %}
+          method="post"
+        >
+          <div class="input-group col-span-full lg:col-span-1">
+            <label class="select-label mb-[4px]" for="CustomerGender">{{ 'customer.addresses.family_sex' | t }}</label>
+            <div class="select w-full">
+              <select
+                class="mt-[2px] w-60 !pt-[20px] md:w-full lg:h-[54px]"
+                id="CustomerGender"
+                name="gender"
+              >
+                <option
+                  value=""
+                  {% if customer.metafields.custom.gender != 'Male' and customer.metafields.custom.gender != 'Female' %}
+                    selected
+                  {% endif %}
+                >
+                  {{ 'customer.account.personal_data.select_gender' | t }}
+                </option>
+                <option
+                  value="Male"
+                  {% if customer.metafields.custom.gender == 'Male' %}
+                    selected
+                  {% endif %}
+                >
+                  {{ 'customer.addresses.family_sex_male' | t }}
+                </option>
+                <option
+                  value="Female"
+                  {% if customer.metafields.custom.gender == 'Female' %}
+                    selected
+                  {% endif %}
+                >
+                  {{ 'customer.addresses.family_sex_female' | t }}
+                </option>
+              </select>
+            </div>
+          </div>
+          <div class="input-group input-group-date col-span-full lg:col-span-1">
+            <input
+              type="date"
+              id="DOB"
+              class="md:appearnace-auto peer mt-[2px] h-[54px] w-60 appearance-none !text-left md:w-full lg:h-auto"
+              name="date_of_birth"
+              placeholder=" "
+              value="{{ customer.metafields.custom.date_of_birth }}"
+            >
+            <label for="DOB">{{ 'customer.addresses.family_dob' | t }}</label>
+          </div>
+          <div class="input-group input-group-date col-span-full">
+            <input
+              type="text"
+              id="Phone"
+              class="peer w-60 md:w-full"
+              name="phone"
+              placeholder=" "
+              value="{{ customer.metafields.custom.customer_mobile | prepend: '+' }}"
+            >
+            <label for="Phone">{{ 'customer.addresses.phone' | t }}</label>
+          </div>
+
+          <input type="hidden" name="form_type" value="customer_details">
+          <input type="hidden" name="customer_id" value="{{ customer.id }}">
+          <input
+            type="hidden"
+            name="sms_marketing_consent"
+            value="{{ customer.metafields.custom.sms_marketing_consent }}"
+          >
+          {% if localization.language.endonym_name != 'English' %}
+            <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+          {% else %}
+            <input type="hidden" name="country_code" value="">
+          {% endif %}
+
+          {% render 'hidden-form-fields' %}
+
+          <script type="application/json" class="form-alerts">
+            {
+              "error": "{{ 'customer.account.personal_data.error_occured' | t }}",
+              "success": "{{ 'customer.account.personal_data.saved_success' | t }}"
+            }
+          </script>
+
+          <div class="d-none" data-alert="status"></div>
+
+          <div class="col-span-full">
+            <button
+              data-update="{{ 'customer.account.personal_data.update_details' | t }}"
+              data-wait="{{ 'customer.account.personal_data.please_wait' | t }}"
+              type="submit"
+            >
+              {{ 'customer.account.personal_data.update_details' | t }}
+            </button>
+          </div>
+        </form>
+
+        <div class="grid auto-rows-auto grid-cols-1 gap-5 lg:grid-cols-3">
+          {% form 'recover_customer_password', class: 'col-span-full recover_customer_password' %}
+            <input type="hidden" value="{{ customer.email }}" name="email" id="RecoverEmail">
+
+            {% assign recover_success = form.posted_successfully? %}
+
+            {% if form.errors %}
+              <div class="mb-3 rounded border border-red-500/40 bg-red-500/15 px-4 py-2 text-[11px] leading-3">
+                <ul class="errors flex list-disc flex-col gap-0.5 pl-3">
+                  <li>{{ form.errors.messages.form }}</li>
+                </ul>
+              </div>
+            {% endif %}
+
+            {% if recover_success == true %}
+              <div class="mb-3 rounded border border-green-100/40 bg-green-100/15 px-4 py-2 text-[11px] leading-3">
+                <ul class="flex list-disc flex-col gap-0.5 pl-3">
+                  <li>{{ 'customer.recover_password.success' | t }}</li>
+                </ul>
+              </div>
+            {% endif %}
+
+            <div class="flex flex-col">
+              <button class="password-recovery button secondary mb-4 w-full lg:w-auto lg:flex-1">
+                {% render 'icon', icon: 'lock', class: 'w-5 h-5' %}
+
+                {{ 'customer.account.personal_data.change_password' | t }}
+
+                {% render 'loading-spinner' %}
+              </button>
+              <div class="password-recovery-message flex hidden items-start gap-1 text-2xs leading-normal text-gray-600">
+                {% render 'icon', icon: 'info-circle-v2', class: '!w-4 !h-4' %}
+
+                <span class="flex-1">{{ 'customer.reset_password.note' | t }}</span>
+              </div>
+            </div>
+          {% endform %}
+        </div>
+      </div>
+
+      {% render 'account-address-info' %}
+
+      {% render 'account-subscription' %}
+    </div>
+  </div>
+
+  {% style %}
+    .password-recovery-message {
+      padding: 16px;
+      background-color: rgba(0, 255, 0, 0.1);
+      border-radius: 4px;
+    }
+
+    .password-recovery.loading {
+      pointer-events: none;
+      color: rgba(var(--color-gray-600) / 0.25) !important;
+    }
+
+    .password-recovery.loading .loading__spinner svg {
+      stroke: rgb(var(--color-gray-600)) !important;
+    }
+  {% endstyle %}
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const passwordRecoveryBtn = document.querySelector('.password-recovery');
+
+      if (passwordRecoveryBtn) {
+        passwordRecoveryBtn.addEventListener('click', () => {
+          passwordRecoveryBtn.classList.add('loading');
+          localStorage.setItem('password-recovery-accepted', 'true');
+        });
+      }
+
+      if (localStorage.getItem('password-recovery-accepted') === 'true') {
+        const passwordRecoveryMessage = document.querySelector('.password-recovery-message');
+        localStorage.removeItem('password-recovery-accepted');
+
+        passwordRecoveryMessage.classList.remove('hidden');
+      }
+    });
+  </script>
+</div>

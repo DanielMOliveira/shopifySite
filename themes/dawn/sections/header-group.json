@@ -1,0 +1,73 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "name": "t:sections.header.name",
+  "type": "header",
+  "sections": {
+    "header": {
+      "type": "header",
+      "blocks": {
+        "notification_bar_bYXnTR": {
+          "type": "notification_bar",
+          "disabled": true,
+          "settings": {
+            "is_enabled": false,
+            "background_color": "#ffffff",
+            "content": "<p><strong>Promotions up to 50% </strong><a href=\"https://zippy-development.myshopify.com/pages/styleguide\" title=\"Style Guide\">Enjoy your discount!</a>[icon]</p>",
+            "color": "#232323",
+            "icon": "shopify://shop_images/top_bar_arrow.svg"
+          }
+        },
+        "menu_collections_mmK9EK": {
+          "type": "menu_collections",
+          "settings": {
+            "collections_label": "Collections",
+            "collections_url": "",
+            "collections_show_all_label": "",
+            "collection_1": "shopify://collections/christmas",
+            "collection_1_label": "Christmas",
+            "collection_2": "shopify://collections/you-me",
+            "collection_2_label": "You & Me",
+            "collection_2_thumbnail": "shopify://shop_images/Bolinha_YM.jpg",
+            "collection_3": "shopify://collections/brothers-and-sisters",
+            "collection_3_label": "Brothers & Sisters",
+            "collection_3_thumbnail": "shopify://shop_images/Bolinha_BS.jpg"
+          }
+        },
+        "menu_top_bar_b8drbi": {
+          "type": "menu_top_bar",
+          "disabled": true,
+          "settings": {
+            "background_color": "#f2f0e9",
+            "icon": "shopify://shop_images/mail.svg",
+            "text": "<p>Subscribe to our newsletter and get 10% discount</p>",
+            "link": "shopify://pages/newsletter-delete",
+            "content_font_weight": "500"
+          }
+        }
+      },
+      "block_order": [
+        "notification_bar_bYXnTR",
+        "menu_collections_mmK9EK",
+        "menu_top_bar_b8drbi"
+      ],
+      "custom_css": [],
+      "settings": {
+        "menu_1": "main-menu",
+        "menu_1_title": "Clothing & Footwear",
+        "menu_2": "clothing-footwear",
+        "menu_2_title": "Nursery"
+      }
+    }
+  },
+  "order": [
+    "header"
+  ]
+}

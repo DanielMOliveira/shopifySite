@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-viagens.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_acrTpQ": {
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips h2 > span {\n    font-family: \"Newzald\", serif;\n    font-size: 1.3rem;\n    margin-bottom: 1rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 1rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20; \n    font-weight: 400;\n    margin-top: 2rem;\n    margin-bottom: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Marsúpio</h2>\n        <p>Para passeios em que não pode levar o carrinho de passeio, um marsúpio ajuda a carregar o bebé com menor esforço físico. Assegure-se que escolhe um marsúpio ergonómico e confortável para ambos e que garante a correta distribuição do peso do seu bebé entre os ombros, quadris e coluna, que deverá estar sempre apoiada. Por sua vez, as pernas não devem ficar penduradas e o bebé deverá estar numa posição sentada.</p>\n        <p>A cara do bebé deve ficar sempre bem visível, com o queixo levantado e a boca e o nariz destapados, para garantir que respira bem. Para evitar o sobreaquecimento, sobretudo no verão, vista o bebé com roupa adequada ao clima.</p>\n        <a href=\"{{ collections['marsupios-slings'].url }}\"> <button>Ver Marsúpios</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['marsupios-slings'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-viajar_01.jpg?v=1726060707\" alt=\"Dicas Baby Zippy - Viagens\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['banheiras-vestidores'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/dicas_lp-viajar_02.jpg?v=1728481870\" alt=\"Dicas Baby Zippy - Viagens\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Almofada de Viagem</h2>\n        <p>Em forma de ferradura, proporciona um maior conforto ao bebé durante a viagem, pois evita que a cabeça tombe sobre o peito, quando se utiliza com a abertura para trás. Deverá optar por uma almofada adequada à idade e tamanho do bebé.</p>\n        <a href=\"{{ collections['cadeiras-auto-acessorios'].url }}\"> <button>Ver acessórios para cadeiras auto</button></a>\n        <h2>Banheira de Viagem</h2>\n        <p>Leve e de fácil transporte, é bastante útil para poder dar banho fora de casa quando o bebé é ainda pequeno. Para maior segurança nunca deixe o bebé sozinho dentro de água e despeje a banheira imediatamente após a utilização.</p>\n        <a href=\"{{ collections['banheiras-vestidores'].url }}\"> <button>Ver Banheiras</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Cama de Viagem</h2>\n        <p>Fácil de transportar, é um artigo essencial para o bebé dormir com todo o conforto necessário fora de casa, servindo também como parque para os momentos de brincadeira. Verifique a facilidade de acionar o sistema de montagem e de bloqueio, se este fica fora do alcance do bebé e garanta que não se fecha com a criança lá dentro.</p>\n        <a href=\"{{ collections['camas-viagem'].url }}\"> <button>Ver Camas de Viagem</button></a>\n        <h2>Chupetas</h2>\n        <p>Se, muitas vezes, as chupetas se perdem por casa, o mesmo pode acontecer em viagem. O melhor será prevenir-se com uma ou duas chupetas extra.</p>\n        <a href=\"{{ collections['chupetas-acessorios'].url }}\"> <button>Ver Chupetas</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['camas-viagem'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/dicas_lp-banho_03.jpg?v=1728481871\" alt=\"Dicas Baby Zippy - Viagens\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n</section>"
+      }
+    },
+    "featured_products_936EHy": {
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "pushchair-bebe-confort-booster-graphite"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "copo-com-pegas-natural-response-philips-avent-4m"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "2-chupetas-chicco-physio-soft-6-16m-crystal"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "cama-de-viagem-asalvo-mix-plus-zeppelin"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "mattress-for-travel-beds-zy-baby-120x60cm"
+          }
+        },
+        "product_aVe7RP": {
+          "settings": {
+            "product": "walking-mum-eco-mum-nappy-bag-apricot",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_9TWVer": {
+          "settings": {
+            "product": "baby-carrier-embrace-ergobaby-black-0m",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_egHET4": {
+          "settings": {
+            "product": "3-nappy-squares-dots-65x65-grey-zy-baby",
+            "kid_type": "Nursery"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4"
+      ],
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601076437319__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões para as Viagens com Bebés"
+      }
+    }
+  }
+}

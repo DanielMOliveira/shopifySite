@@ -1,0 +1,197 @@
+{% comment %}
+  Renders a product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - lazy_load: {Boolean} Image should be lazy loaded
+  - section_id: {String} The ID of the section that contains this card
+  - class: {String} Additional classes to be added to the card
+
+  Usage:
+      {% render 'card-product-cross-sell', card_product: product, lazy_load: false, section_id: id, index: forloop.index, class: 'class_list' %}
+{% endcomment %}
+
+{% liquid
+  if lazy_load
+    assign lazy_load = 'lazy'
+  else
+    assign lazy_load = 'eager'
+  endif
+%}
+
+{% if card_product and card_product != empty %}
+  <div id="card-{{ card_product.id }}" class="card-wrapper product-card-wrapper group h-full {{ class }}">
+    <div class="card relative h-full">
+      {% render 'badges', product: card_product %}
+
+      <offcanvas-item class="offcanvas-card-product relative flex">
+        <div class="product-image-mobile relative w-25 min-w-25">
+          {% if card_product.media.size > 0 and card_product.featured_media %}
+            <a
+              href="{{ card_product.url }}"
+              class="card__media group relative block"
+              title="{{ card_product.title | escape }}"
+              style="background-color: {{ settings.card_background }}"
+            >
+              <img
+                src="{{ card_product.featured_media | image_url }}"
+                alt="{{ card_product.featured_media.alt | default: card_product.title }}"
+                class="mx-auto h-full object-contain mix-blend-darken"
+                width="{{ card_product.featured_media.width }}"
+                height="{{ card_product.featured_media.height }}"
+                loading="{{ lazy_load }}"
+              >
+            </a>
+          {% else %}
+            <a
+              href="{{ card_product.url }}"
+              class="card__media group relative block"
+              title="{{ card_product.title | escape }}"
+              style="background-color: {{ settings.card_background }}"
+            >
+              {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+            </a>
+          {% endif %}
+
+          <offcanvas-toggle-button class="offcanvas-open-button absolute bottom-4 right-4 inline-flex !h-10 !w-10 items-center justify-center rounded-full !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:cursor-pointer">
+            {% render 'icon', icon: 'bag', class: '!w-4 !h-4' %}
+          </offcanvas-toggle-button>
+        </div>
+        <div
+          class="offcanvas-content-wrapper fixed bottom-0 left-0 right-0 z-[1001] h-0 translate-y-full overflow-y-hidden rounded-tl-2xl rounded-tr-2xl bg-white transition-all max-[990px]:!hidden lg:bottom-auto lg:left-full lg:top-0 lg:!h-full lg:!max-h-full lg:w-[400px] lg:!translate-x-full lg:!translate-y-0 lg:rounded-tl-none lg:rounded-tr-none"
+          data-variants-count="{{ card_product.variants.size }}"
+        >
+          <div class="offcanvas-header flex items-center justify-between p-6 pb-5 ">
+            <span class="text-2xl text-gray-800">{{ 'products.product.quick_add' | t }}</span>
+            <span class="offcanvas-close flex items-center justify-center hover:cursor-pointer">
+              {% render 'icon', icon: 'cross', class: '!w-5 !h-5' %}
+            </span>
+          </div>
+          <div class="offcanvas-header-content product-image-desktop relative max-h-[calc(100vh_-_250px)] overflow-y-auto px-6">
+            {% if card_product.media.size > 1 %}
+              {% render 'card-product-image-slider', product: card_product %}
+            {% else %}
+              {% if card_product.media.size > 0 and card_product.featured_media %}
+                <a
+                  href="{{ card_product.url }}"
+                  class="card__media group relative block"
+                  title="{{ card_product.title | escape }}"
+                  style="background-color: {{ settings.card_background }}"
+                >
+                  <img
+                    src="{{ card_product.featured_media | image_url }}"
+                    alt="{{ card_product.featured_media.alt | default: card_product.title }}"
+                    class="mx-auto h-full object-contain mix-blend-darken"
+                    width="{{ card_product.featured_media.width }}"
+                    height="{{ card_product.featured_media.height }}"
+                    loading="{{ lazy_load }}"
+                  >
+                </a>
+              {% else %}
+                <a
+                  href="{{ card_product.url }}"
+                  class="card__media group relative block"
+                  title="{{ card_product.title | escape }}"
+                  style="background-color: {{ settings.card_background }}"
+                >
+                  {{ 'product-apparel-2' | placeholder_svg_tag: 'placeholder-svg' }}
+                </a>
+              {% endif %}
+            {% endif %}
+
+            <div class="flex items-center justify-between border-b border-gray-300 pb-4 pt-5 ">
+              <span class="text-xl text-gray-800">{{ 'products.product.select_size' | t }}</span>
+              <a href="{{ card_product.url }}" class="text-2xs font-medium underline">
+                <span>{{ 'products.product.show_product' | t }}</span>
+              </a>
+            </div>
+
+            {% render 'card-product-variants', product: card_product, desktop_offcanvas: true %}
+          </div>
+        </div>
+        <div class="card__content mt-3 flex flex-col items-start justify-center px-4">
+          <div class="mb-3.25 flex items-start justify-between">
+            <h3 class="card__heading text-sm">
+              <a
+                href="{{ card_product.url }}"
+                id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}"
+                title="{{ card_product.title | escape }}"
+                aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
+              >
+                {{ card_product.title | escape }}
+              </a>
+            </h3>
+          </div>
+
+          <div class="cart__price mb-3.25">
+            {% render 'price', product: card_product, currency_enabled: true, class: 'card-price' %}
+          </div>
+
+          {% render 'product-variant-colors', product: card_product %}
+        </div>
+        <div
+          class="offcanvas-overlay offcanvas-close pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-[1000] !block bg-black/30 opacity-0"
+        ></div>
+      </offcanvas-item>
+    </div>
+
+    {% render 'datalayer-product', product: card_product, section_id: section.id, index: index %}
+  </div>
+
+  {% style %}
+    @media screen and (max-width: 990px) {
+      .offcanvas-card-product.is-open.offcanvas-card-product-cloned {
+        display: block !important;
+      }
+    }
+
+    {% if request.path == routes.root_url %}
+        body:has(.offcanvas-card-product.is-open) .header.drawer-menu:after  {
+            content: '';
+            background: rgba(0,0,0, 0.3) !important;
+            display: block !important;
+            width: 100% !important;
+            height: calc(100% + 58px) !important;
+            position: absolute !important;
+            bottom: 0 !important;
+            top: 0 !important;
+            left: 0 !important;
+            right:0 !important;
+        }
+    {% endif %}
+
+    .offcanvas-card-product.is-open .offcanvas-content-wrapper {
+        transform: translateX(0);
+        height: auto;
+        max-height: calc(100vh - 175px);
+        opacity: 1;
+    }
+
+    @media screen and (min-width: 1024px) {
+        .offcanvas-card-product.is-open .offcanvas-content-wrapper {
+            transform: translateX(0) !important;
+            left: auto !important;
+            opacity: 1 !important;
+        }
+    }
+
+    .offcanvas-card-product.is-open .offcanvas-overlay {
+        opacity: 1;
+        pointer-events: initial;
+    }
+
+    .card-wrapper .placeholder-svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    .group:hover .product-card-wishlist > span {
+        transform: scale(1) !important;
+    }
+
+    .product-card-wishlist:hover svg {
+        transition: transform 0.15s ease;
+        transform: scale(1.1) !important;
+    }
+  {% endstyle %}
+{% endif %}

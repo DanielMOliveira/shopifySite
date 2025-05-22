@@ -1,0 +1,227 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "About Zippy",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Quality",
+            "link_url": "shopify://pages/quality"
+          }
+        },
+        "navigation_item_GGBDWJ": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sustainability",
+            "link_url": "shopify://pages/sustainability"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "settings": {
+            "text": "<h6><strong>Environmental Policy</strong></h6>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "text_Dyj6Kd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>At Zippy, we firmly believe that striving for exceptional environmental performance is not just a distinguishing feature but an essential prerequisite for the enduring and sustainable growth of our business.</p><p>We recognize that our commitment to environmental excellence is integral to our overall business strategy. By prioritizing sustainability, we not only fulfill our corporate responsibility but also ensure the longevity and resilience of our operations. We understand that sustainable development goes hand in hand with environmental stewardship, and we are dedicated to integrating eco-conscious practices into every facet of our business.</p><p>Through continuous innovation and improvement, we aim to set new benchmarks for environmental performance within the fashion industry. By fostering a culture of environmental responsibility, we seek to inspire positive change and contribute to the collective effort towards a more sustainable future.</p>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "faq_item_ebFhXj": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Zippy Statement",
+            "faq_answer": "<p>Our commitment to environmental stewardship is rooted in the recognition that science unequivocally identifies climate change and resource depletion as among the most pressing issues of our time. These phenomena not only imperil ecosystems but also jeopardize the well-being and rights of countless individuals around the globe. By embracing sustainability, we aim to mitigate these threats and contribute to a more sustainable and equitable future for all.</p><p></p><p>We pledge to conduct all aspects of our business in strict adherence to local, national, and international regulations, as well as best practices, to prevent, mitigate, and remediate any negative impacts on the environment. However, we recognize that mere compliance is insufficient. At Zippy, we are committed to driving continuous improvement and accelerating the implementation of best practices across the fashion industry.</p><p></p><p>Embracing a value chain approach informed by the latest developments and comprehensive consideration of social and human rights implications, we integrate environmental considerations into all our policies and strategies.</p><p></p><p>The areas addressed in this policy have been carefully chosen through collaborative efforts with internal and external stakeholders, drawing upon our extensive experience and insights gained from addressing these issues. Our selection process is informed by rigorous risk and impact assessments conducted across the entirety of our value chain.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_DN3nKd": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Climate",
+            "faq_answer": "<p>Our commitment extends to reducing our carbon footprint and mitigating our impact on the climate. We are dedicated to setting ambitious goals to contribute meaningfully to limiting global temperature rise. Through proactive measures and sustainable practices implemented across our operations, we aim to significantly decrease our carbon footprint and contribute positively to combating climate change.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_rKGYQC": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Biodiversity ",
+            "faq_answer": "<p>Biodiversity is fundamental to the health of our planet and the well-being of communities worldwide. At Zippy & Losan, we recognize its critical importance and are dedicated to protecting and preserving biodiversity across our operations and supply chain. By prioritizing biodiversity conservation efforts and implementing a roadmap for nature, we aim to contribute to a more resilient and vibrant natural world for future generations.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_aCphVV": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Water management and wastewater treatment",
+            "faq_answer": "<p>At Zippy, we recognize water as a scarce resource and understand the importance of using it efficiently. We are committed to implementing measures to reduce water consumption and to ensure proper wastewater treatment across our operations and supply chain. By prioritizing water conservation efforts, we aim to minimize our environmental impact and contribute to the sustainability of local ecosystems.</p><p></p><p>Furthermore, we believe in sharing knowledge and best practices with our suppliers to support them in improving their water management practices. Through collaboration and education, we empower our partners to adopt more sustainable approaches to water use and wastewater treatment, thereby fostering positive change within our industry and beyond. </p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_iErxwJ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Chemicals",
+            "faq_answer": "<p>At Zippy we prioritize the safe and responsible management of chemicals throughout our supply chain. Our suppliers are required to adhere to stringent guidelines and practices aimed at minimizing the environmental and health impacts of chemical usage.</p><p></p><p>We strongly encourage the implementation of systems such as Material Safety Data Sheets (MSDS) and programs for the recycling, reutilization, and recovery of by-products. Compliance with our brand's quality standards, as well as regulatory requirements such as the REACH list for substance restrictions, is mandatory for all our suppliers. </p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_awmLrk": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Resources Used and Circularity ",
+            "faq_answer": "<p>We recognize the critical importance of natural resources in our supply chain and the urgent need to address the growing pressure on global ecosystems. Unsustainable practices such as deforestation, agricultural expansion, and land conversion threaten biodiversity and contribute to climate change.</p><p></p><p>At Zippy, we are firmly committed to responsibly sourcing all fibers and materials used in the productions. In our selection process, we prioritize raw materials and consumables that have a reduced environmental impact. Additionally, we strictly prohibit the use of wood, non-timber forest products (like rubber and cattle leather), or man-made cellulosic fiber originating from ancient or endangered forests, or those obtained through illegal harvesting or human rights violations.</p><p></p><p>Furthermore, we have stringent requirements regarding the sourcing of cotton, refusing any material from regions associated with high risks of child labor, forced labor, or other human rights violations. By upholding these standards, we ensure that our supply chain reflects our commitment to ethical and sustainable practices, fostering a positive impact on both people and the environment.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_zfkJJr": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Waste management, local pollution, and air emissions ",
+            "faq_answer": "<p>At Zippy, we are dedicated to environmental stewardship throughout our supply chain. To safeguard against soil contamination, our suppliers are mandated to implement comprehensive control systems and procedures, including measures to prevent accidental pollution during activities such as unloading and repotting, and the proper handling of hazardous oils and industrial products. Compliance with local laws for dust extraction, odor and noise control is paramount.</p><p></p><p>Furthermore, we encourage proactive waste reduction, reuse, and recycling initiatives among our suppliers. In alignment with our commitment to transparency and sustainability, we continuously monitor and manage greenhouse gas emissions across all scopes. Suppliers must adhere to local regulations and equip emissions sources with monitoring devices to filter contaminants before release. We advocate for the use of renewable energy sources and require suppliers to maintain documentation and inventories. These measures underscore our commitment to minimizing environmental impact and promoting sustainable practices throughout our operations.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_y6Uj9m": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Animal welfare ",
+            "faq_answer": "<p>Cognizant of our global footprint, we hold ourselves to the highest ethical standards, prioritizing transparency and responsibility in all our actions. Upholding animal welfare as a core value, we adamantly ensure that no harm comes to animals in the production of our products. Our enduring dedication to enhancing animal welfare spans our global supply chains, as we diligently strive to source all animal-derived materials from farms adhering to stringent animal welfare standards.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_iiLmzq": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Due Diligence",
+            "faq_answer": "<p>To ensure our environmental standards are upheld throughout our supply chain, we conduct comprehensive supplier site audits and rigorous due diligence processes. These audits are designed to assess compliance with our environmental policies, including responsible sourcing, waste management, and others. Our due diligence procedures include evaluating the supplier's environmental practices, risk management strategies, and adherence to local and international regulations. Through these measures, we not only identify areas for improvement but also provide support and resources to help suppliers enhance their environmental performance. By maintaining close partnerships with our suppliers and regularly monitoring their practices, we aim to foster a culture of continuous improvement and accountability in our supply chain.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_XRa4n8": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Eco Design",
+            "faq_answer": "<p><em>A Genuine Commitment to Sustainability and Ecodesign</em></p><p></p><p>We recognize the need to include environmental performance in our products to reduce impacts, improve resource efficiency and promote sustainable-based solutions through circular design and a lifecycle thinking approach.</p><p></p><p>Based on this principle, we identified some actions to promote Ecodesign:</p><p></p><ul><li>Analyze the materials and their suppliers;</li><li>Select materials with lower environmental impact;</li><li>Reduce the use of virgin materials;</li><li>Reuse the waste generated;</li><li>Rethink product packaging</li></ul><p></p><p>The Design and Development processes with ecodesign include the establishment of relevant environmental goals to develop eco-efficient solutions, ensuring compliance with legal requirements and market expectations. Collaboration with suppliers and authorities promotes<br/>the achievement of our environmental goals. The involvement of all employees in the processes is crucial to achieving the benefits of eco-design. The environmental performance of solutions and products is tracked and communicated to our Stakeholders.</p><p></p><p>In order to control its commitments, Zippy has established objectives, indicators and action plans to improve the environmental performance of its products through use of ecological, recyclable or natural materials that are more environmentally friendly; Reduction of Carbon Footprint, Ecodesign, and Circular Economy.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_cNgfKR": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Symbology of our labels",
+            "faq_answer": "<p>[table1]</p>",
+            "list_1": "",
+            "table_1": "<style media=\"screen\" type=\"text/css\">\n  table,\n  th,\n  tr,\n  td {\n    border: 1px solid #E4E4E4;\n    text-align: center;\n    vertical-align: middle;\n  }\n\n  table {\n    width: 100%;\n  }\n\n  th {\n    background-color: #F7F7F7;\n    padding: 1rem\n  }\n\n  td {\n    padding: 1rem;\n  }\n\n  .faq-answer .th-1 {\n    width: 25%;\n  }\n\n  .faq-answer .th-2 {\n    width: 15%;\n  }\n\n  .faq-answer .th-3 {\n    width: 60%;\n  }\n\n  .faq-answer .logo-1 {\n    width: 50%;\n    height: auto;\n    margin: auto;\n  }\n\n  .faq-answer .logo-0,\n  .faq-answer .logo-2 {\n    width: 40%;\n    height: auto;\n    margin: auto;\n  }\n\n  .faq-answer .logo-1-2 {\n    width: 57%;\n    height: auto;\n    margin: auto;\n  }\n\n  .faq-answer .logo-3 {\n    width: 25%;\n    height: auto;\n    margin: auto;\n  }\n\n  .faq-answer .logo-4 {\n    width: 100%;\n    height: auto;\n    margin: auto;\n  }\n\n  td {\n      font-size: 0.85rem;\n    }\n\n\n  @media (max-width: 576px) {\n    td {\n      padding: 1rem 0.5rem;\n      font-size: 80%;\n      line-height: 1.3;\n    }\n\n    .faq-answer .th-1 {\n      width: 40%;\n    }\n\n    .faq-answer .th-2 {\n      width: 20%;\n    }\n\n    .faq-answer .th-3 {\n      width: 40%;\n    }\n\n    .faq-answer .logo-1 {\n      width: 100%;\n    }\n\n    .faq-answer .logo-1-2 {\n      width: 105%;\n    }\n\n    .faq-answer .logo-0,\n    .faq-answer .logo-2 {\n      width: 95%;\n    }\n\n    .faq-answer .logo-3 {\n      width: 60%;\n    }\n\n    .faq-answer .logo-4 {\n      width: 100%;\n    }\n  }\n</style>\n<div style=\"overflow-x:auto;\">\n  <table>\n    <tbody>\n      <tr>\n        <th class=\"th-1\">Logo</th>\n        <th class=\"th-2\">Country</th>\n        <th class=\"th-3\">Description</th>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_fsc.png?v=1726137461\" alt=\"logótipo\" class=\"logo-1\"></td>\n        <td>Worldwide</td>\n        <td>The FSC is an international non-profit organisation dedicated to promoting environmentally appropriate,\n          socially beneficial and economically viable forest management.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/sustentabilidade_logo_fr.png?v=1726137461\" alt=\"logótipo\" class=\"logo-1\"></td>\n        <td>France</td>\n        <td>The component must be placed in a container designated for paper recycling.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/sustentabilidade_logo_fr_2.jpg?v=1735212379\" alt=\"logótipo\" class=\"logo-1\"></td>\n        <td>France</td>\n        <td>The product can be donated to an organisation or placed in a bin designated for the collection of clothing\n          and footwear.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/sustentabilidade_logo_fr_3.jpg?v=1735212380\" alt=\"logótipo\" class=\"logo-1\"></td>\n        <td>France</td>\n        <td>The component must be placed in a container designated for plastic recycling.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/sustentabilidade_logo_fr_4.png?v=1735216136\" alt=\"logótipo\" class=\"logo-1-2\"></td>\n        <td>France</td>\n        <td>The component must be placed in a container designated for paper recycling.</td>\n      </tr>\n      <tr>\n        <td>\n<img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/logo_it_4.jpg?v=1735212380\" alt=\"logótipo\" class=\"logo-2\">\n        </td>\n        <td>Italy</td>\n        <td>The component shall be sent for plastic collection.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/logo_it_21.png?v=1735212380\" alt=\"logótipo\" class=\"logo-3\"></td>\n        <td>Italy</td>\n        <td>The component shall be sent for paper collection.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/logo_it_60.png?v=1735212379\" alt=\"logótipo\" class=\"logo-2\"></td>\n        <td>Italy</td>\n        <td>The component should be disposed of in general waste collection.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/logo_it_5-21.jpg?v=1735212380\" alt=\"logótipo\" class=\"logo-4\"></td>\n        <td>Italy</td>\n        <td>The components must be separated and sent for the designated collection.</td>\n      </tr>\n      <tr>\n        <td><img src=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/logo_it_21-60.jpg?v=1735212380\" alt=\"logótipo\" class=\"logo-4\"></td>\n        <td>Italy</td>\n        <td>The components must be separated and sent for the designated collection.</td>\n      </tr>\n    </tbody>\n  </table>\n</div>"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sonae Group",
+            "link_url": "shopify://pages/sonae-group"
+          }
+        },
+        "navigation_item_MVUaM7": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sales Terms & Conditions",
+            "link_url": "shopify://pages/sales-terms-and-conditions"
+          }
+        },
+        "navigation_item_E8BfPN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Privacy Policy",
+            "link_url": "shopify://pages/privacy-policy"
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Cookies Policy",
+            "link_url": "shopify://pages/cookies-policy"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "navigation_item_YdmhFw",
+        "navigation_item_GGBDWJ",
+        "text_ndbx44",
+        "text_Dyj6Kd",
+        "faq_item_ebFhXj",
+        "faq_item_DN3nKd",
+        "faq_item_rKGYQC",
+        "faq_item_aCphVV",
+        "faq_item_iErxwJ",
+        "faq_item_awmLrk",
+        "faq_item_zfkJJr",
+        "faq_item_y6Uj9m",
+        "faq_item_iiLmzq",
+        "faq_item_XRa4n8",
+        "faq_item_cNgfKR",
+        "navigation_item_eJDVpT",
+        "navigation_item_MVUaM7",
+        "navigation_item_E8BfPN",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}

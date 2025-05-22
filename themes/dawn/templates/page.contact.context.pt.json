@@ -1,0 +1,27 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.contact.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "page_navigation_GAaRWF": {
+      "settings": {},
+      "blocks": {
+        "text_PKiDhM": {
+          "settings": {
+            "text": "<h1><strong>Contact Us</strong></h1><p>We are always happy to help!</p><p>Monday to Friday from 9am to 6pm (WET Time). Only business days.</p>"
+          }
+        }
+      }
+    }
+  }
+}

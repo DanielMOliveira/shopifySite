@@ -1,0 +1,99 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "ABOUT ZIPPY",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Test content</p>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "navigation_item_xUj3rX": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "FAQ",
+            "link_url": "shopify://pages/faq"
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "QUALITY",
+            "link_url": "shopify://pages/contact"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "SONAE GROUP",
+            "link_url": "shopify://pages/cms"
+          }
+        },
+        "navigation_item_E8BfPN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "PRIVACY POLICY",
+            "link_url": "shopify://pages/cms"
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "COOKIE POLICY",
+            "link_url": "shopify://pages/cookies-policy"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "text_ndbx44",
+        "navigation_item_xUj3rX",
+        "navigation_item_YdmhFw",
+        "navigation_item_eJDVpT",
+        "navigation_item_E8BfPN",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}

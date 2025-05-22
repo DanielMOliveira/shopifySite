@@ -1,0 +1,104 @@
+{% comment %}
+  Renders product buy-buttons.
+  Accepts:
+  - product: {Object} product object.
+  - product_form_id: {String} product form id.
+  - section_id: {String} id of section to which this snippet belongs.
+  - class: {String} (optional)
+  - show_final_price: {Boolean} (optional)
+
+  Usage:
+      {% render 'buy-buttons', product: product, product_form_id: product_form_id, section_id: section.id %}
+{% endcomment %}
+
+{% liquid
+  assign target = product.selected_or_first_available_variant
+  assign check_against_inventory = true
+
+  if target.inventory_management != 'shopify' or target.inventory_policy == 'continue'
+    assign check_against_inventory = false
+  endif
+
+  if target.quantity_rule.min > target.inventory_quantity and check_against_inventory
+    assign quantity_rule_soldout = true
+  endif
+%}
+
+<div class="buy-buttons">
+  {% if product != blank %}
+    <product-form class="product-form" data-section-id="{{ section.id }}">
+      {% form 'product',
+        product,
+        id: product_form_id,
+        class: 'form flex items-center justify-end gap-2',
+        novalidate: 'novalidate',
+        data-type: 'add-to-cart-form'
+      %}
+        <input
+          type="hidden"
+          name="id"
+          value="{{ target.id }}"
+          {% if target.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+          class="product-variant-id"
+        >
+
+        <button
+          class="button !gap-2 !px-[37px] !py-[7px] !text-2xs max-[450px]:!px-4 md:w-full md:!py-3.25 md:!text-sm md:!px-7.5{% if class != blank %} {{ class }}{% endif %}"
+          id="ProductSubmitButton-{{ section_id }}"
+          type="submit"
+          name="add"
+          {% if target.available == false or quantity_rule_soldout %}
+            disabled
+          {% endif %}
+        >
+          {% if show_final_price and target.available != false %}
+            <span class="fixed-info__price mr-1 border-r border-white/50 pr-3 leading-[100%]">
+              <span class="price">
+                {{ cart.currency.symbol }}
+                {{ product.price | money_without_currency | replace: ',', '.' }}
+              </span>
+            </span>
+          {% endif %}
+          <span class="h-4 w-4 min-w-4 md:h-5 md:w-5 md:min-w-5">
+            {% render 'icon', icon: 'bag', class: '!h-4 !w-4 md:!h-5 md:!w-5' %}
+          </span>
+          <span data-text>
+            {% if target.available == false or quantity_rule_soldout %}
+              {{ 'products.product.sold_out' | t }}
+            {% else %}
+              {{ 'products.product.add_to_cart' | t }}
+            {% endif %}
+          </span>
+          {% render 'loading-spinner' %}
+        </button>
+
+        {% render 'datalayer-product', product: product, section_id: 'main', index: 0 %}
+      {% endform %}
+
+      <div
+        class="product-form__error-message-wrapper mt-2.5 rounded border border-red-500 p-2.5 text-xs leading-3"
+        role="alert"
+        hidden
+      >
+        <div class="flex items-center gap-2" tabindex="-1" autofocus>
+          {% render 'icon', icon: 'error-circle' %}
+          <span class="product-form__error-message"></span>
+        </div>
+      </div>
+    </product-form>
+  {% else %}
+    <button
+      type="submit"
+      name="add"
+      class="button !gap-2 !px-[37px] !py-[7px] !text-2xs md:w-full md:!px-7.5 md:!py-3.25 md:!text-sm"
+      disabled
+    >
+      <span class="h-4 w-4 min-w-4 md:h-5 md:w-5 md:min-w-5">
+        {% render 'icon', icon: 'bag', class: '!h-4 !w-4 md:!h-5 md:!w-5' %}
+      </span>
+      <span>{{ 'products.product.sold_out' | t }}</span>
+    </button>
+  {% endif %}
+</div>

@@ -1,0 +1,51 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "parent": "404.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "main": {
+      "disabled": true,
+      "custom_css": [
+        "h1 {font-size: 1.125rem;}",
+        "h1 > span > strong {font-size: 2.25rem; font-weight: 500;}",
+        "@media (max-width: 788px) {h1 {line-height: 1.9rem; } h1 > span > strong {font-size: 1.875rem; line-height: 2.5rem; }}"
+      ],
+      "settings": {
+        "page_heading": "<strong>Ooops... It seems that this page doesn't exist!</strong>",
+        "page_sub_heading": "Please use our search option or browse through our wide range of categories to find what you're looking for:",
+        "padding_top_desktop": 40
+      },
+      "blocks": {
+        "links_e6AekP": {
+          "disabled": true,
+          "settings": {
+            "link_label_1": "Girl",
+            "link_label_2": "Boy",
+            "link_label_3": "Baby Girl",
+            "link_label_4": "Baby Boy",
+            "link_label_5": "Newborn",
+            "link_label_6": "Nursery"
+          }
+        }
+      }
+    },
+    "custom_liquid_Ai7et4": {
+      "disabled": false,
+      "settings": {
+        "custom_liquid": "<style>\n    @import url(\"https://use.typekit.net/lzx1rlw.css\");\n\n    #Zippy-404 {\n        overflow: hidden;\n        margin: 0 auto;\n        background-color: #fff;\n        width: 100%;\n    }\n\n    #Zippy-404 img {\n        max-width: 100%;\n        height: auto;\n    }\n\n    #Zippy-404 .row {\n        display: flex;\n        justify-content: center;\n        align-items: center;\n        max-width: 100%;\n    }\n\n    #Zippy-404 .container-text {\n        width: 50%;\n    }\n\n    #Zippy-404 .container-text .text-inside {\n        width: 90%;\n        margin: auto;\n        margin-left: 10%;\n    }\n\n    #Zippy-404 .container-img {\n        width: 50%;\n    }\n\n    #Zippy-404 h1 {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-size: 1.6rem;\n        color: #221f20;\n        line-height: 1.3;\n        padding: 0 0 1rem 0;\n        text-align: center;\n    }\n\n    #Zippy-404 h1>span {\n        font-size: 2.2rem;\n        font-family: \"ff-providence-sans-web-pro\", sans-serif;\n    }\n\n    #Zippy-404 p {\n        font-family: \"CentraNo1\", Assistant, sans-serif;\n        font-size: 1rem;\n        color: #221f20;\n        line-height: 1.4;\n        margin: 0;\n        text-align: center;\n        margin-top: 1rem;\n        margin-bottom: 1.5rem;\n    }\n\n    #Zippy-404 .gulp {\n        width: 80%;\n        z-index: 0;\n        position: relative;\n        float: inline-end;\n\n    }\n\n    #Zippy-404 .cta-grid {\n        display: grid;\n        grid-template-columns: repeat(3, 10rem);\n        grid-template-rows: repeat(2, 1fr);\n        gap: 0.7rem;\n        justify-content: center;\n        scrollbar-width: none;\n        padding-top: 0.5rem;\n    }\n\n    #Zippy-404 .cta {\n        min-width: 10rem;\n    }\n\n    @media only screen and (max-width: 991px) {\n\n        #Zippy-404 .row {\n            flex-direction: column;\n        }\n\n        #Zippy-404 .container-text {\n            width: 100%;\n        }\n\n        #Zippy-404 .container-text .text-inside {\n            margin: auto;\n        }\n\n        #Zippy-404 .container-img {\n            width: 100%;\n            padding-top: 1.5rem;\n        }\n\n        #Zippy-404 .container-img .gulp {\n            width: 60%;\n        }\n\n        #Zippy-404 .cta-grid {\n            grid-template-columns: repeat(2, 10rem);\n            gap: 0.5rem;\n            padding-top: 0;\n        }\n    }\n\n    @media only screen and (max-width: 576px) {\n\n        #Zippy-404 h1 {\n            font-size: 1.2rem;\n        }\n\n        #Zippy-404 h1>span {\n            font-size: 2rem;\n        }\n    }\n</style>\n\n{% assign locale = shop.locale %}\n{% if locale == 'pt-PT' %}\n<section id=\"Zippy-404\">\n    <div class=\"row\">\n        <div class=\"container-text\">\n            <div class=\"text-inside\">\n                <h1>\n                    <span>Oops… Que Vergonha!</span><br />\n                    Não conseguimos encontrar a página...\n                </h1>\n                <p>Parece que esta página não existe! Mas não se preocupe, temos muitas outras páginas incríveis para\n                    descobrir:</p>\n                <div class=\"cta-grid\">\n                    <a href=\"{{ collections['menina'].url }}\"> <button class=\"cta\">Menina</button></a>\n                    <a href=\"{{ collections['menino'].url }}\"><button class=\"cta\">Menino</button></a>\n                    <a href=\"{{ collections['bebe-menina'].url }}\"> <button class=\"cta\">Bebé Menina</button></a>\n                    <a href=\"{{ collections['bebe-menino'].url }}\"> <button class=\"cta\">Bebé Menino</button></a>\n                    <a href=\"{{ collections['recem-nascido'].url }}\"> <button class=\"cta\">Recém-Nascido</button></a>\n                    <a href=\"{{ collections['puericultura'].url }}\"> <button class=\"cta\">Puericultura</button></a>\n                </div>\n            </div>\n        </div>\n        <div class=\"container-img\">\n            <picture>\n                <source media=\"(max-width: 991px)\" type=\"image/png\"\n                    srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404_mobile.png?v=1726764250\" />\n                <source media=\"(min-width: 992px)\" type=\"image/png\"\n                    srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\" />\n                <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\"\n                    alt=\"Página 404 Not Found - Zippy\" class=\"gulp\" />\n            </picture>\n        </div>\n    </div>\n</section>\n{% elsif locale == 'en' %}\n<section id=\"Zippy-404\">\n    <div class=\"row\">\n        <div class=\"container-text\">\n            <div class=\"text-inside\">\n                <h1>\n                    <span>Oops… How Embarrassing!</span><br />\n                    We couldn't find the page...\n                </h1>\n                <p>It seems this page doesn't exist! But don't worry, we have many other amazing pages for you to discover:</p>\n                <div class=\"cta-grid\">\n                    <a href=\"{{ collections['girl'].url }}\"> <button class=\"cta\">Girl</button></a>\n                    <a href=\"{{ collections['boy'].url }}\"><button class=\"cta\">Boy</button></a>\n                    <a href=\"{{ collections['baby-girl'].url }}\"> <button class=\"cta\">Baby Girl</button></a>\n                    <a href=\"{{ collections['baby-boy'].url }}\"> <button class=\"cta\">Baby Boy</button></a>\n                    <a href=\"{{ collections['newborn'].url }}\"> <button class=\"cta\">Newborn</button></a>\n                    <a href=\"{{ collections['nursery'].url }}\"> <button class=\"cta\">Nursery</button></a>\n                </div>\n            </div>\n        </div>\n        <div class=\"container-img\">\n            <picture>\n                <source media=\"(max-width: 991px)\" type=\"image/png\"\n                    srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404_mobile.png?v=1726764250\" />\n                <source media=\"(min-width: 992px)\" type=\"image/png\"\n                    srcset=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\" />\n                <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/img_vergonha_site-404.png?v=1726764249\"\n                    alt=\"Page 404 Not Found - Zippy\" class=\"gulp\" />\n            </picture>\n        </div>\n    </div>\n</section>\n{% endif %}"
+      },
+      "blocks": {
+      }
+    }
+  }
+}

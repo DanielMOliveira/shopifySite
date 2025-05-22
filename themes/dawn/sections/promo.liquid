@@ -1,0 +1,301 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign background_color = section.settings.background_color
+  assign circle_first_color = section.settings.circle_first_color
+  assign circle_second_color = section.settings.circle_second_color
+
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign percent_amount = section.settings.percent_amount
+
+  assign content_width_mobile = section.settings.content_width_mobile | append: 'px'
+  assign content_width_desktop = section.settings.content_width_desktop | append: 'px'
+
+  assign link_text = section.settings.link_text
+  assign link_url = section.settings.link_url
+
+  assign note = section.settings.note
+%}
+
+<section id="section-{{ section.id }}" class="relative overflow-hidden">
+  <div class="promo" style="background-color: {{ background_color }};">
+    <div
+      class="container-valantic promo-text relative z-10"
+      data-id="{{ section.id }}"
+    >
+      <div class="py-5 lg:pb-0 lg:pt-[46px]">
+        <div class="content mx-auto text-center font-medium md:flex md:gap-2.5 lg:items-center xl:gap-7">
+          <span class="text-[56px] leading-[normal] md:text-[60px] md:leading-[60px] lg:text-[80px] lg:leading-[80px]">
+            {{ title }}
+          </span>
+
+          <div class="flex items-center gap-1.25 md:w-full md:gap-2.5 xl:gap-5">
+            <span class="bottom-line -mt-5 ml-1.25 text-right text-xl !leading-5 after:mt-1.25 after:block after:h-0.5 after:w-full after:bg-primary md:-mt-3 md:ml-0 md:!w-full lg:-mt-7 lg:text-4_25xl lg:!leading-10 lg:after:h-1">
+              {{ subtitle }}
+            </span>
+
+            <span class="inline-flex items-start text-[60px] leading-[60px] md:relative md:top-1 lg:text-[120px] lg:leading-[120px]">
+              <span>{{ percent_amount }}</span>
+              <span class="mt-[7px] text-xl !leading-5 lg:mt-3.25 lg:text-4_25xl lg:!leading-10">%</span>
+            </span>
+          </div>
+        </div>
+
+        {% if link_text != blank %}
+          <div class="mt-4.5 flex justify-center lg:mt-0">
+            <a
+              href="{{ link_url }}"
+              title="{{ link_text }}"
+              class="button tertiary scale-on-hover !py-[9px] !text-[12px] md:!py-3.25 md:!text-sm"
+            >
+              <span>{{ link_text }}</span>
+            </a>
+          </div>
+        {% endif %}
+
+        {% if note != blank %}
+          <div class="note mt-8 text-center text-[10px] font-medium leading-[10px] text-gray-800 md:mt-7.5 lg:text-2xs">
+            {{ note }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    @keyframes circle1 {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-66%, -13%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes circle-md-1 {
+        0% {
+            left: -225px;
+            top: calc(50% - 400px);
+        }
+        50% {
+            left: calc(50% - 575px);
+            top: calc(50% - 320px);
+        }
+        100% {
+            left: -225px;
+            top: calc(50% - 400px);
+        }
+    }
+
+    @keyframes circle2 {
+        0% {
+            transform: translate(0, 0);
+        }
+        50% {
+            transform: translate(-51%, -25%);
+        }
+        100% {
+            transform: translate(0, 0);
+        }
+    }
+
+    @keyframes circle-md-2 {
+        0% {
+            right: -225px;
+            top: calc(50% - 140px);
+        }
+        50% {
+            right: calc(50% - 575px);
+            top: calc(50% - 320px);
+        }
+        100% {
+            right: -225px;
+            top: calc(50% - 140px);
+        }
+    }
+
+    #section-{{ section.id }} .content {
+        width: {{ content_width_mobile }};
+    }
+
+    #section-{{ section.id }} .bottom-line {
+        width: {{ content_width_mobile }};
+    }
+
+    #section-{{ section.id }} .promo:before {
+        animation: 6s infinite ease-out circle1;
+        background-color: {{ circle_first_color }};
+        border-radius: 100%;
+        content: '';
+        height: 440px;
+        left: calc(50% - 220px);
+        position: absolute;
+        top: -83%;
+        width: 440px;
+    }
+
+    #section-{{ section.id }} .promo:after {
+        animation: 6s infinite ease-out circle2;
+        background-color: {{ circle_second_color }};
+        border-radius: 100%;
+        content: '';
+        height: 440px;
+        position: absolute;
+        right: -84%;
+        top: 50%;
+        width: 440px;
+    }
+
+    @media screen and (min-width: 768px) {
+        #section-{{ section.id }} .content {
+            max-width: {{ content_width_desktop }};
+            width: 100%;
+        }
+
+        #section-{{ section.id }} .promo:before {
+            animation-name: circle-md-1;
+            height: 560px;
+            left: -225px;
+            top: calc(50% - 400px);
+            width: 560px;
+        }
+
+        #section-{{ section.id }} .promo:after {
+            animation-name: circle-md-2;
+            height: 560px;
+            right: -225px;
+            top: calc(50% - 140px);
+            width: 560px;
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        #section-{{ section.id }} .note br {
+            display: none;
+        }
+    }
+  {% endstyle %}
+</section>
+
+{% schema %}
+{
+  "name": "Promo",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#FFBF00"
+    },
+    {
+      "type": "color",
+      "id": "circle_first_color",
+      "label": "1 Circle Color",
+      "default": "#83dbcb"
+    },
+    {
+      "type": "color",
+      "id": "circle_second_color",
+      "label": "2 Circle Color",
+      "default": "#FF4141"
+    },
+    {
+      "type": "number",
+      "id": "content_width_mobile",
+      "label": "Content Width Mobile (px)",
+      "default": 305,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "content_width_desktop",
+      "label": "Content Width Desktop (px)",
+      "default": 1080,
+      "info": "From 768px"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "promotions"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "up to"
+    },
+    {
+      "type": "text",
+      "id": "percent_amount",
+      "label": "Percent Amount",
+      "default": "50"
+    },
+    {
+      "type": "text",
+      "id": "link_text",
+      "label": "Link Text",
+      "default": "Enjoy your discount!"
+    },
+    {
+      "type": "url",
+      "id": "link_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "richtext",
+      "id": "note",
+      "label": "Note",
+      "default": "<p>Promotion valid from 14/05/2024 to 03/06/2024 on the highlighted items. \nNot combinable with other existing discounts or promotions.</p>"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Promo"
+    }
+  ]
+}
+{% endschema %}

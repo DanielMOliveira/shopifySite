@@ -1,0 +1,100 @@
+{% liquid
+  assign subscribed = customer.accepts_marketing
+%}
+
+<div class="customer-subscription">
+  <h2 class="mb-3 text-base">{{ 'customer.account.subscription.title' | t }}</h2>
+  <div class="account-block flex flex-col rounded border p-6">
+    <p class="mb-8.5">{{ 'customer.account.subscription.text' | t }}</p>
+
+    <form
+      class="my-4"
+      {% render 'form-action' %}
+      method="post"
+    >
+      <div class="mb-8 flex flex-col gap-4 md:flex-row">
+        <div class="buttons w-full rounded border p-6 lg:w-1/2">
+          <div class="input-group">
+            <input
+              type="checkbox"
+              class="peer"
+              id="subscribe_sms_checkbox"
+              name="subscribe_sms_checkbox"
+              {% if customer.metafields.custom.sms_marketing_consent == 'yes' %}
+                checked
+              {% endif %}
+            >
+            <label for="subscribe_sms_checkbox">
+              {% render 'icon', icon: 'checkmark', class: 'icon-wrapper' %}
+              <span>{{ 'customer.account.subscription.sms' | t }}</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="buttons w-full rounded border p-6 lg:w-1/2">
+          <div class="input-group">
+            <input
+              type="checkbox"
+              class="peer"
+              id="subscribe_email_checkbox"
+              name="subscribe_email_checkbox"
+              {% if subscribed == true %}
+                checked
+              {% endif %}
+            >
+            <label for="subscribe_email_checkbox">
+              {% render 'icon', icon: 'checkmark', class: 'icon-wrapper' %}
+              <span>{{ 'customer.account.subscription.email' | t }}</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <input type="hidden" name="form_type" value="subscribe_consent">
+      <input
+        id="sms_consent_hidden"
+        type="hidden"
+        name="sms_marketing_consent"
+        {% if customer.metafields.custom.sms_marketing_consent == 'yes' %}
+          value="yes"
+        {% endif %}
+      >
+      <input
+        id="email_consent_hidden"
+        type="hidden"
+        name="email_marketing_consent"
+        {% if subscribed == true %}
+          value="yes"
+        {% endif %}
+      >
+      <input type="hidden" name="customer_id" value="{{ customer.id }}">
+      {% if localization.language.endonym_name != 'English' %}
+        <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+      {% else %}
+        <input type="hidden" name="country_code" value="">
+      {% endif %}
+
+      {% render 'hidden-form-fields' %}
+      <script type="application/json" class="form-alerts">
+        {
+          "error": "{{ 'customer.account.personal_data.error_occured' | t }}",
+          "success": "{{ 'customer.account.personal_data.saved_success' | t }}"
+        }
+      </script>
+
+      <div class="d-none" data-alert="status"></div>
+
+      <button
+        class="w-full"
+        data-update="{{ 'customer.account.subscription.confirm' | t }}"
+        data-wait="{{ 'customer.account.personal_data.please_wait' | t }}"
+        type="submit"
+      >
+        {{ 'customer.account.subscription.confirm' | t }}
+      </button>
+    </form>
+
+    <p class="text-center text-2xs text-gray-600">
+      {{ 'customer.account.subscription.confirm_text' | t }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,126 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% if section.blocks.size > 0 %}
+  {% capture sidebar_navigation %}
+        <ul class="flex flex-row gap-3 whitespace-nowrap px-3 md:w-auto md:flex-col md:gap-0 md:whitespace-normal md:px-0 lg:w-auto lg:flex-col">
+            {% if section.blocks.size > 1 %}
+                <li class="faq-nav__item pb:md:pt-4 md:border-beige-50 active relative px-3 pl-0 text-[13px] uppercase leading-4 after:absolute after:bottom-0 after:left-0 after:z-[1] after:h-px after:w-0 after:bg-primary after:transition-all hover:cursor-pointer hover:after:w-full md:border-b md:px-0 md:pb-3 md:pt-4 md:hover:font-bold"
+                    data-target-section="all">
+                    {{ 'templates.faq.show_all' | t }}
+                </li>
+            {% endif %}
+
+            {% for block in section.blocks %}
+                <li class="faq-nav__item relative px-3 text-[13px] leading-4{% if section.blocks.size == 1 %} active{% endif %} md:border-beige-50 uppercase after:absolute after:bottom-0 after:left-0 after:z-[1] after:h-px after:w-0 after:bg-primary after:transition-all hover:cursor-pointer hover:after:w-full md:border-b md:px-0 md:pb-3 md:pt-4 md:hover:font-bold"
+                    data-target-section="{{ block.settings.navigation_link | strip | replace: ' ', '_' | downcase }}">
+                    {{ block.settings.heading }}
+                </li>
+            {% endfor %}
+        </ul>
+    {% endcapture %}
+{% endif %}
+
+<div
+  class="container-valantic faq-section--{{ section.id }}"
+  id="section-{{ section.id }}"
+>
+  {% if section.blocks.size > 0 %}
+    <div class="faq-navigation__wrapper border-beige-50 mb-15 block overflow-x-auto border-b border-t py-6 md:mb-20 md:border-none md:py-0">
+      {{ sidebar_navigation }}
+    </div>
+  {% endif %}
+
+  {% style %}
+    .faq-nav__item {
+      transition: all 0.15s ease;
+    }
+
+    .faq-nav__item.active {
+      font-weight: 700;
+    }
+
+    .faq-nav__item.active:after {
+      width: 100%;
+    }
+  {% endstyle %}
+</div>
+
+<script src="{{ 'faq.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "FAQ Navigation",
+  "class": "faq-navigation",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "faq_section_id",
+      "name": "Navigation Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Label",
+          "default": "Section title"
+        },
+        {
+          "type": "text",
+          "id": "navigation_link",
+          "label": "Navigation Link Label",
+          "default": "navigation link",
+          "info": "The navigation link label is using to navigate through a FAQ sections from any place of the store, using a link. The text from label will be transformed to the lowercase with underscores, for example - 'returns_&_exchanges'. To use it set any URL link to - '/pages/faq/#faq_YOUR_LABEL_HERE'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "FAQ Navigation"
+    }
+  ]
+}
+{% endschema %}

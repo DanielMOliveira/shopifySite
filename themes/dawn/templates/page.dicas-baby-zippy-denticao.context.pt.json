@@ -1,0 +1,104 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-denticao.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_acrTpQ": {
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips h2 > span {\n    font-family: \"Newzald\", serif;\n    font-size: 1.3rem;\n    margin-bottom: 1rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 1rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20; \n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Utilize o seu dedo para coçar a gengiva:</h2>\n        <p>limpe-o previamente e passe suavemente pelas gengivas. É um dos métodos mais tradicionais e ajuda a aliviar o incómodo.</p>\n        <h2>Ofereça-lhe alimentos frescos:</h2>\n        <p>gelado de leite (materno ou de fórmula) ou alimentos frios, como uma maçã ou cenouras frescas, ajudam a aliviar o desconforto provocado pelas dores de dentes.</p>\n        <h2>Opte por rocas e mordedores:</h2>\n        <p>se o bebé não para de colocar a mão ou levar objetos à boca para os mastigar, considere os mordedores ou anéis de dentição: são uma excelente opção para aliviar e refrescar as gengivas do bebé.</p>\n        <a href=\"{{ collections['rocas-mordedores'].url }}\"> <button>Ver Rocas e Mordedores</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['rocas-mordedores'].url }}\" alt=\"Dicas Baby Zippy - Dentição\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-denticao_01.jpg?v=1726050584\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n</section>"
+      },
+      "blocks": {}
+    },
+    "featured_products_936EHy": {
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601076863303__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões de Rocas e Mordedores"
+      },
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "sophie-la-girafe-classic-0m"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "teether-so-pure-gift-box-sophie-la-girafe-0m"
+          }
+        },
+        "product_LRbY6y": {
+          "disabled": false,
+          "settings": {
+            "product": "teether-giraffe-jerry-playgro-3m"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "silicone-teething-ring-elephant-duck-nattou"
+          }
+        },
+        "product_EPQqyw": {
+          "disabled": false,
+          "settings": {
+            "product": "rattle-ball-playgro-6m"
+          }
+        },
+        "product_aVe7RP": {
+          "disabled": false,
+          "settings": {
+            "product": "teether-so-pure-gift-box-sophie-la-girafe-0m",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_9TWVer": {
+          "disabled": false,
+          "settings": {
+            "product": "chocalho-giratorio-playgro-3m",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_egHET4": {
+          "disabled": false,
+          "settings": {
+            "product": "bee-water-teether-by-playgro-2-pieces",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_jC4FF": {
+          "type": "product",
+          "disabled": false,
+          "settings": {
+            "product": "super-shaker-rattle-playgro",
+            "kid_type": "Nursery"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_jC4FF",
+        "product_9TWVer",
+        "product_egHET4"
+      ]
+    }
+  }
+}

@@ -1,0 +1,147 @@
+{% comment %}
+  Renders a header search modal. Should be used with 'header.liquid'
+
+  Accepts:
+  - input_id: {String} Id for the search input element (required)
+
+  Usage:
+  {% render 'header-search', input_id: 'My-Id'%}
+{% endcomment %}
+
+<search-modal class="header__search">
+  <div class="header__search-container" data-content="true">
+    <div
+      class="header__search-trigger header__icon header__icon--search header__icon--summary link focus-inset modal__toggle"
+      aria-haspopup="dialog"
+      data-trigger="true"
+      aria-label="{{ 'general.search.search' | t }}"
+    >
+      <span class="related input-group header__search-input h-12">
+        <input
+          id="search"
+          type="text"
+          class="peer pointer-events-none !h-full !rounded-full border-none !bg-neutral-100 !py-3.75 !pr-14"
+          placeholder=" "
+        >
+        <label for="search" class="!top-1/2 !text-2xs !text-gray-800">{{ 'general.search.search' | t }}</label>
+        <span
+          class="icon-search absolute right-4 top-1/2 flex !h-10 -translate-y-1/2 items-center !p-0 !leading-none"
+          aria-hidden="true"
+          focusable="false"
+        >
+          {% render 'icon', icon: 'search', class: 'w-6 h-6' %}
+        </span>
+      </span>
+    </div>
+
+    <div
+      class="search-modal modal__content !top-full min-h-[58px] lg:!top-[calc(100%+1px)] lg:min-h-32 {% if isMobileSearch %} !static !opacity-100 md:hidden{% endif %}"
+      role="dialog"
+      aria-modal="true"
+      aria-label="{{ 'general.search.search' | t }}"
+    >
+      <div class="modal-overlay"></div>
+      <div
+        class="search-modal__content"
+        tabindex="-1"
+      >
+        {%- if settings.predictive_search_enabled -%}
+          <predictive-search
+            class="search-modal__form w-full pb-2.5 lg:pb-[52px] lg:pt-5 "
+            data-loading-text="{{ 'accessibility.loading' | t }}"
+          >
+        {%- else -%}
+          <search-form class="search-modal__form w-full pb-2.5 lg:pb-[52px] lg:pt-5">
+        {%- endif -%}
+        <form
+          action="{{ routes.search_url }}"
+          method="get"
+          role="search"
+          class="search search-modal__form px-3 lg:px-12"
+        >
+          <div class="field input-group">
+            <input
+              class="search__input field__input peer !m-0 !h-12 !rounded-full border-none !bg-neutral-100 !px-5 lg:!h-14 lg:!pl-14 lg:!pr-15"
+              id="{{ input_id }}"
+              type="search"
+              name="q"
+              value="{{ search.terms | escape }}"
+              placeholder=" "
+              {%- if settings.predictive_search_enabled -%}
+                role="combobox"
+                aria-expanded="false"
+                aria-owns="predictive-search-results"
+                aria-controls="predictive-search-results"
+                aria-haspopup="listbox"
+                aria-autocomplete="list"
+                autocorrect="off"
+                autocomplete="off"
+                autocapitalize="off"
+                spellcheck="false"
+              {%- endif -%}
+            >
+            <label
+              class="left-0 text-2xs lg:!left-14"
+              for="{{ input_id }}"
+            >
+              {{- 'general.search.search' | t -}}
+            </label>
+            <input type="hidden" name="options[prefix]" value="last">
+            <button
+              type="reset"
+              class="reset__button field__button !hidden"
+              aria-label="{{ 'general.search.reset' | t }}"
+            >
+              {% render 'icon', icon: 'cross', class: 'w-6 h-6' %}
+            </button>
+            <button
+              class="search__button lg:!right-unset button-reset-styles absolute !right-4 !top-1/2 h-6 w-6 -translate-y-1/2 lg:!left-5"
+              aria-label="{{ 'general.search.search' | t }}"
+            >
+              {% render 'icon', icon: 'search', class: 'w-5 h-5' %}
+            </button>
+            <button
+              type="button"
+              data-close="true"
+              class="search-modal__close-button button-reset-styles absolute right-5 top-1/2 m-0 hidden h-6 w-6 -translate-y-1/2 lg:block"
+              aria-label="{{ 'accessibility.close' | t }}"
+            >
+              {% render 'icon', icon: 'cross-circle', class: 'w-5 h-5' %}
+            </button>
+          </div>
+
+          {%- if settings.predictive_search_enabled -%}
+            <div
+              class="predictive-search predictive-search--header"
+              tabindex="-1"
+              data-predictive-search
+            >
+              {%- render 'loading-spinner', class: 'predictive-search__loading-state' -%}
+            </div>
+
+            <span
+              class="predictive-search-status visually-hidden"
+              role="status"
+              aria-hidden="true"
+            ></span>
+          {%- endif -%}
+        </form>
+        {%- if settings.predictive_search_enabled -%}
+          </predictive-search>
+        {%- else -%}
+          </search-form>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    body.password .predictive-search__loading-state {
+      width: 24px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  {% endstyle %}
+</search-modal>

@@ -1,0 +1,38 @@
+{%- comment -%}
+  Renders a product card
+
+  Accepts:
+  - card_product: {Object} Product Liquid object
+  - lazy_load: {Boolean} Image should be lazy loaded
+  - section_id: {String} The ID of the section that contains this card.
+  - index: {Number} The index of the product in the array.
+
+  Usage:
+      {%- render 'card-product', card_product: product, lazy_load: false, section_id: id, index: forloop.index -%}
+{%- endcomment -%}
+
+{%- if card_product and card_product != empty -%}
+  {%- liquid
+    assign refdesign = card_product.metafields.custom.refdesign | escape
+
+    assign product_color_data = card_product.metafields.custom.colorswatches.value
+    assign product_color = product_color_data.color_hex_code.value[0]
+    assign product_color_label = product_color_data.color_name | default: 'Label is not configured'
+
+    assign color_swatches_visible_count = 4
+    assign matched_products_visible = color_swatches_visible_count | minus: 1
+  -%}
+  {%- if refdesign != blank -%}
+    <a
+      class="product-variant__color relative z-[2] inline-flex h-3 w-3 rounded-full text-[0]"
+      data-refdesign="{{ refdesign }}"
+      {%- if product_color != blank -%}
+        style="background-color: {{ product_color }};"
+      {%- endif -%}
+      href="{{ card_product.url | split: '?' | first }}"
+      title="{{ card_product.title }}"
+    >
+      {{ product_color_label }}
+    </a>
+  {%- endif -%}
+{%- endif -%}

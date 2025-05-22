@@ -1,0 +1,220 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign background_color = section.settings.background_color
+  assign logo = section.settings.logo
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign button_text = section.settings.button_text
+%}
+
+<section id="section-{{ section.id }}" class="overflow-hidden">
+  <div class="px-6 pb-10 pt-8 lg:px-0 lg:py-15" style="background-color: {{ background_color }};">
+    <div class="container-valantic">
+      {% if title != blank %}
+        <div class="heading mb-3 text-center">{{ title }}</div>
+      {% endif %}
+
+      {% if subtitle != blank %}
+        <div class="text-center text-base uppercase !leading-[22px] tracking-[1.28px] text-gray-700">
+          {{ subtitle }}
+        </div>
+      {% endif %}
+
+      <div class="flex flex-col items-center lg:mt-8.5 lg:flex-row lg:justify-center lg:gap-2.5 xl:justify-between xl:gap-0">
+        {% if logo != blank %}
+          <img
+            class="hidden xl:block"
+            src="{{ logo | image_url }}"
+            height="{{ logo.height }}"
+            width="{{ logo.width }}"
+            alt="{{ logo.alt | default: 'Logo' }}"
+          >
+        {% endif %}
+
+        {% if section.blocks.size > 0 %}
+          <div class="mt-6 flex flex-col gap-2 lg:mt-0 lg:flex-row lg:items-center lg:gap-2.5 xl:gap-6">
+            {% for block in section.blocks %}
+              {% liquid
+                assign title = block.settings.title
+                assign text = block.settings.text
+                assign link_text = block.settings.link_text
+                assign link_url = block.settings.link_url
+              %}
+
+              <div class="mx-auto flex h-[142px] w-50 flex-col items-center justify-center rounded-full bg-white px-10 text-center lg:h-auto lg:p-10{% if link_text == blank %} lg:!py-12{% endif %}">
+                {% if title != blank %}
+                  <h3 class="mb-1 px-1.25 text-base font-bold leading-[19px]">
+                    {{ title }}
+                  </h3>
+                {% endif %}
+
+                {% if text != blank %}
+                  <div class="text-sm leading-5 text-gray-600">
+                    {{ text }}
+                  </div>
+                {% endif %}
+
+                {% if link_text != blank %}
+                  <a
+                    href="{{ link_url }}"
+                    title="{{ link_text }}"
+                    class="mt-3 text-2xs underline transition-colors hover:text-red-500"
+                  >
+                    {{ link_text }}
+                  </a>
+                {% endif %}
+              </div>
+
+              {% unless forloop.last %}
+                <div class="flex justify-center text-gray-600">
+                  {% render 'icon', icon: 'plus-circle', class: '!h-6 !w-6' %}
+                </div>
+              {% endunless %}
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        {% if button_text != blank %}
+          <a
+            href="#"
+            title="{{ button_text }}"
+            class="button mt-6 !border-red-500 !bg-red-500 !text-white hover:!bg-transparent hover:!text-red-500 lg:mt-0"
+            onclick="event.preventDefault(); alert('Functionality coming soon...')"
+          >
+            <span>{{ button_text }}</span>
+          </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    #section-{{ section.id }} .heading > * {
+        font-size: var(--font-size-3_5xl);
+        font-weight: 700;
+        line-height: 38px;
+    }
+
+    @media screen and (min-width: 1024px) {
+        #section-{{ section.id }} .heading br {
+            display: none;
+        }
+
+        #section-{{ section.id }} .heading > * {
+            font-size: var(--font-size-4_25xl);
+            line-height: 48px;
+        }
+    }
+  {% endstyle %}
+</section>
+
+{% schema %}
+{
+  "name": "Join Zippy",
+  "settings": [
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#F7F6F0"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<h2>Join the \nZippy Birth List!</h2>"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Get exclusive benefits for you and your baby!"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Join now and claim benefits"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    }
+  ],
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "link_text",
+          "label": "Link Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Join Zippy"
+    }
+  ]
+}
+{% endschema %}

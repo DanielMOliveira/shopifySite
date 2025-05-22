@@ -1,0 +1,76 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-sono.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "featured_products_936EHy": {
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601079222599__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões para um sono mais tranquilo"
+      },
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "nightkight-and-orientation-light-saro"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "musical-plush-nattou-star-0m"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "supreme-sleep-plus-pillow-doomoo"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "ergonomic-cushion-doomoo"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "anti-allergy-pillow-44x35cm-by-zy-baby"
+          }
+        },
+        "product_aVe7RP": {
+          "settings": {
+            "product": "pack-2-muslin-squares-gloop-70x70cm-green"
+          }
+        },
+        "product_9TWVer": {
+          "disabled": false,
+          "settings": {
+            "product": "knitted-blanket-75x90cm-zy-baby-grey-melange"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer"
+      ]
+    }
+  }
+}

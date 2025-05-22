@@ -1,0 +1,62 @@
+{% layout none %}
+
+{%- paginate search.results by settings.infinity_loading_products_count_search -%}
+  {% liquid
+    assign current_page = paginate.current_page | minus: 1
+    assign start_index = settings.infinity_loading_products_count_collection | times: current_page
+    assign product_index = start_index
+  %}
+
+  <ul
+    id="product-grid"
+    data-id="{{ section.id }}"
+    class="flex flex-wrap gap-2 md:gap-5"
+  >
+    {% for item in search.results %}
+      <li>
+        {% case item.object_type %}
+          {% when 'product' %}
+            {%- assign product_index = product_index | plus: 1 -%}
+
+            {% render 'card-product', card_product: item, lazy_load: true, section_id: 'main', index: product_index %}
+          {% when 'article' %}
+            {% render 'article-card',
+              article: item,
+              show_image: true,
+              show_date: section.settings.article_show_date,
+              show_author: section.settings.article_show_author,
+              show_badge: true,
+              media_aspect_ratio: 1,
+              lazy_load: lazy_load
+            %}
+          {% when 'page' %}
+            <div class="article-card-wrapper card-wrapper underline-links-hover relative h-full">
+              <div
+                class="card card--card card--text h-full"
+                style="background-color: {{ settings.card_background }}"
+              >
+                <div class="card__content grid h-full w-full flex-grow grid-rows-[minmax(0,1fr)_max-content_minmax(0,1fr)] p-4">
+                  <div class="card__information row-start-2">
+                    <h3 class="card__heading !leading-6">
+                      <a href="{{ item.url }}" class="full-unstyled-link !text-base uppercase md:!text-xl">
+                        {{ item.title | truncate: 50 | escape }}
+                      </a>
+                    </h3>
+                  </div>
+                  <div class="card__badge row-start-3 pt-4">
+                    <span class="badge !px-3 !py-1 !text-sm">
+                      {{- 'templates.search.page' | t -}}
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+        {% endcase %}
+      </li>
+    {% endfor %}
+  </ul>
+
+  <div class="collection-pagination pt-6 md:pt-10" data-page="{{ paginate.current_page }}">
+    {% render 'pagination-infinite', paginate: paginate, anchor: '' %}
+  </div>
+{%- endpaginate -%}

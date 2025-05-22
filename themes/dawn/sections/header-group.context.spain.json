@@ -1,0 +1,35 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "header-group.json",
+  "context": {
+    "market": "spain"
+  },
+  "sections": {
+    "header": {
+      "settings": {
+        "menu_1": "clothing-es",
+        "menu_2": "nursery-es"
+      },
+      "blocks": {
+        "menu_collections_mmK9EK": {
+          "settings": {
+            "collection_1_thumbnail": "shopify://shop_images/Bolinha_Menu_12.jpg",
+            "collection_2": "shopify://collections/ceremony-clothing",
+            "collection_2_label": "Ceremony",
+            "collection_3": "shopify://collections/swimwear",
+            "collection_3_label": "Swimwear",
+            "collection_3_thumbnail": "shopify://shop_images/Bolinha_Geral_156b2fbe-3539-4284-8e0c-0cef1bd7cb22.jpg"
+          }
+        }
+      }
+    }
+  }
+}

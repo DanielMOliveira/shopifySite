@@ -1,0 +1,34 @@
+{% comment %}
+  Renders section paddings.
+
+  Accepts:
+  - id : {String} Section id
+  - padding_top_mobile: {Number}
+  - padding_bottom_mobile: {Number}
+  - padding_top_desktop: {Number}
+  - padding_bottom_desktop: {Number}
+
+  Usage:
+      {% render 'offset', id:  ,padding_top_mobile: 15, padding_bottom_mobile: 15, padding_top_desktop: 30, padding_bottom_desktop: 30 %}
+{% endcomment %}
+
+{% liquid
+  assign padding_top_mobile = padding_top_mobile | default: 0 | append: 'px'
+  assign padding_bottom_mobile = padding_bottom_mobile | default: 0 | append: 'px'
+  assign padding_top_desktop = padding_top_desktop | default: 0 | append: 'px'
+  assign padding_bottom_desktop = padding_bottom_desktop | default: 0 | append: 'px'
+%}
+
+{% style %}
+  #section-{{ id }} {
+      padding-bottom: {{ padding_bottom_mobile }};
+      padding-top: {{ padding_top_mobile }};
+  }
+
+  @media screen and (min-width: 768px) {
+      #section-{{ id }} {
+          padding-bottom: {{ padding_bottom_desktop }};
+          padding-top: {{ padding_top_desktop }};
+      }
+  }
+{% endstyle %}

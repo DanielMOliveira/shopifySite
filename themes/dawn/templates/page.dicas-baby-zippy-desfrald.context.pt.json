@@ -1,0 +1,89 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-desfrald.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_x39PbC": {
+      "settings": {
+        "custom_liquid": "<style>\n  #DBZ-cat-slider,\n  #DBZ-prod,\n  #DBZ {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    background-color: #f2f0e9;\n  }\n\n  #DBZ-cat-slider .container {\n    width: 100%;\n    max-width: 1600px;\n    margin: 0 auto;\n    padding: 0 15px;\n  }\n\n  #DBZ-cat-slider .container {\n    padding-top: 2rem;\n  }\n\n  #DBZ-cat-slider .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n  }\n\n  #DBZ-cat-slider h3 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 500;\n    color: #221f20;\n    font-size: 1.3rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: left;\n    margin-bottom: 0.5rem;\n  }\n\n  /* Botões de navegação */\n  #DBZ-cat-slider .cat-navigation {\n    text-align: center;\n    padding-top: 30px;\n    padding-bottom: 15px;\n  }\n\n  #DBZ-cat-slider .cat-navigation button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    font-weight: 400;\n  }\n\n  #DBZ-cat-slider .cat-navigation .active {\n    text-decoration: underline;\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider .DBZ-cat-slider-content {\n    padding-top: 30px;\n    padding-bottom: 30px;\n    width: 100%;\n  }\n\n  .cat-slider-1,\n  .cat-slider-2,\n  .cat-slider-3,\n  .cat-slider-4,\n  .cat-slider-5 {\n    display: none;\n  }\n\n  #DBZ-cat-slider .cat-slider-1.active,\n  #DBZ-cat-slider .cat-slider-2.active,\n  #DBZ-cat-slider .cat-slider-3.active,\n  #DBZ-cat-slider .cat-slider-4.active,\n  #DBZ-cat-slider .cat-slider-5.active {\n    display: block;\n  }\n\n  #DBZ-cat-slider .content-row {\n    display: flex;\n    flex-direction: column-reverse;\n    align-items: center;\n    justify-content: center;\n    gap: 3rem;\n  }\n\n  #DBZ-cat-slider .content-row img {\n    width: 100%;\n    max-width: 650px;\n  }\n\n  #DBZ-cat-slider .content-text {\n    max-width: 600px;\n    margin-bottom: 15px;\n  }\n\n  #DBZ-cat-slider button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    border: none;\n    cursor: pointer;\n    background-color: transparent;\n  }\n\n  #DBZ-cat-slider .cta {\n    font-size: 0.9rem;\n    color: #221f20;\n    border: solid #221f20 1px;\n    border-radius: 100px;\n    text-decoration: none;\n    background-color: transparent; \n    font-weight: 400;\n    margin-bottom: 1rem;\n  }\n\n  #DBZ-cat-slider .content-text p {\n    margin-bottom: 15px;\n    line-height: 1.4rem;\n    font-size: 0.9rem;\n  }\n\n  #DBZ-cat-slider b {\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider a {\n    text-decoration: underline;\n  }\n\n  @media (max-width: 1300px) {\n    #DBZ-cat-slider .container {\n      width: 100%;\n      max-width: 1300px;\n      margin: 0 auto;\n      padding: 0 15px;\n    }\n\n    #DBZ-cat-slider .content-row img {\n      max-width: 500px;\n    }\n\n    #DBZ-cat-slider .content-text {\n      max-width: 500px;\n    }\n  }\n  @media (min-width: 992px) {\n    #DBZ-cat-slider .content-row {\n      flex-direction: row;\n      justify-content: space-between;\n    }\n\n    #DBZ-cat-slider .content-text {\n      text-align: left;\n    }\n  }\n\n  @media (max-width: 992px) {\n    #DBZ-cat-slider .cat-navigation {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      display: -moz-box;\n      padding: 2 0 0 1rem;\n      scrollbar-width: none;\n    }\n    #DBZ-cat-slider .DBZ-cat-slider-content {\n      padding-bottom: 40px;\n    }\n  }\n</style>\n\n<section id=\"DBZ-cat-slider\">\n  <div class=\"container\">\n    <div class=\"row cat-navigation\">\n      <button class=\"DBZ-cat-slider active\" data-show=\".cat-slider-1\">Bacios e Redutores</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-2\">Cuecas de Aprendizagem</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-3\">Roupa e Calçado para Desfralde</button>\n    </div>\n\n    <div class=\"row DBZ-cat-slider-content\">\n      <div class=\"cat-slider-1 active\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Bacios e Redutores</h3>\n            <p>Para começar o desfralde, é preciso escolher o imprescindível bacio (ou pote), que está disponível em vários modelos:</p>\n            <p><b>Bacio simples</b> projetado para a sua função essencial, está disponível em cores lisas ou com as personagens preferidas dos mais pequenos, como o Mickey ou a Minnie, para incentivar a criança a utilizar o bacio. Alguns destes modelos integram música para tornar o momento mais divertido.</p>\n            <p><b>Bacio em forma de sanita</b> simula a sanita dos adultos, estando disponível com tampa, autoclismo, música e/ou som de descarga para tornar o momento mais divertido. Além disso, sendo uma simulação perfeita da sanita, o desfralde é facilitado através da imitação de comportamento dos adultos.</p>\n            <p><b>Bacio multifunções</b> acompanha o crescimento da criança. Numa primeira fase, é utilizado como bacio para o início do desfralde; posteriormente como redutor de sanita, quando a criança já está mais segura e preparada para usar a sanita e, finalmente, como banco de apoio para conseguir usar a sanita autonomamente ou ter altura para chegar ao lavatório.</p>\n            <p>\n              Existem ainda redutores de sanita e bacios multifunções portáteis pensados especialmente para passeios e viagens. Estes são essenciais para que a criança possa continuar o desfralde com segurança e higiene mesmo fora de casa. No caso dos bacios multifunções, dada a sua elevada portabilidade e possibilidade de utilização de recargas, podem ser usados em qualquer lugar e a qualquer momento, como na praia ou numa paragem a meio da viagem. Para proteger a cadeira auto, existem capas\n              impermeáveis próprias para o efeito, que garantem que a cadeira auto se mantém seca e sem odores.\n            </p>\n            <p>\n              <b>Redutor de sanita</b> numa segunda fase do desfralde, os redutores de sanita são ideais para que a criança deixe o bacio e passe a utilizar diretamente a sanita dos adultos, com um apoio que a deixe segura e tranquila durante a utilização. Existem modelos ergonómicos, almofadados e/ou com pegas laterais que promovem uma maior segurança, estabilidade e conforto. Os redutores de sanita são também úteis e muito práticos para viagens ou simples saídas de casa, garantindo que a\n              criança possa utilizar a casa de banho com total higiene e segurança.\n            </p>\n            <a href=\"{{ collections['bacios-redutores'].url }}\"> <button class=\"cta\">Ver Bacios e Redutores de Sanita</button></a>\n          </div>\n          <a href=\"{{ collections['bacios-redutores'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-desfralde_prod-01_vd_7d9d3d56-d315-4edb-b6f2-ab5400dfbee3.jpg?v=1726742816\" alt=\"Dicas Baby Zippy - Desfralde\" />\n          </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-2\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Cuecas de Aprendizagem</h3>\n            <p>As <b>cuecas de aprendizagem</b> são igualmente essenciais para o processo desfralde. São a roupa interior perfeita para a transição entre as fraldas e as cuecas normais.</p>\n            <p>A camada exterior das cuecas de aprendizagem é resistente à água e a proteção interior ligeiramente almofadada retém pequenas fugas - mas não absorve fluxos elevados - pelo que são ideais para relembrar a criança quando precisa de ir ao bacio.</p>\n            <p>Como se vestem como as cuecas normais, promovem igualmente a autonomia da criança, podendo trocá-las sozinha ou com uma pequena ajuda. Geralmente apresentam estampados divertidos que incentivam a criança a querer utilizá-las e a aceitar melhor o processo de deixar as fraldas.</p>\n            <p>Por sua vez, as <b>fraldas de natação</b> reutilizáveis podem também ser um aliado perfeito para iniciar o desfralde. Projetadas para uma utilização na praia ou na piscina, possuem uma camada resistente à água e são revestidas nas pernas, impedindo o vazamento de quaisquer descuidos.</p>\n            <a href=\"{{ collections['fraldas-e-cuecas-de-aprendizagem'].url }}\"> <button class=\"cta\">Ver Cuecas de Aprendizagem</button></a>\n          </div>\n          <a href=\"{{ collections['ffraldas-e-cuecas-de-aprendizagem'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-desfralde_prod-02_vd_68fea006-4e99-4a4d-a82f-0db6e90fafc0.jpg?v=1726742816\" alt=\"Dicas Baby Zippy - Desfralde\" />\n          </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-3\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Roupa e Calçado para Desfralde</h3>\n            <p>Ao trabalhar a autonomia da criança durante o desfralde, opte sempre por roupas fáceis de vestir e despir. É importante que a criança consiga tirar as calças ou os calções rapidamente. Assim, nesta fase, evite as jardineiras, macacões, bodies e outras peças de roupa mais complicadas que podem comprometer a destreza da criança.</p>\n            <p>Algumas mudas de roupa serão também essenciais durante o processo de desfralde. Se o desfralde for realizado nos meses de verão, os <b>conjuntos de t-shirt e calções em algodão</b> são os mais práticos e leves para levar e trocar a qualquer momento. Já na fase final do desfralde, os <b>packs de cuecas de algodão</b> são os melhores para levar na mala e trocar a cada possível descuido.</p>\n            <p>Não podemos falar de desfralde sem falar nas <b>sandálias de borracha</b> ou <b>clogs</b>. Dada a sua facilidade de limpeza e rapidez de secagem, as sandálias de borracha são o calçado ideal para utilizar durante o desfralde, sendo práticas e rápidas de higienizar após algum descuido ou acidente durante o processo</p>\n            <a href=\"{{ collections['desfralde'].url }}\"> <button class=\"cta\">Ver Artigos de Desfralde</button></a>\n          </div>\n          <a href=\"{{ collections['desfralde'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-desfralde_prod-03_vd_953fdade-8840-45e1-a0d8-257d56bb0cb5.jpg?v=1726742816\" alt=\"Dicas Baby Zippy - Desfralde\" />\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<script>\n  // slider cat-slider //\n  document.querySelectorAll(\".DBZ-cat-slider\").forEach((button) => {\n    button.addEventListener(\"click\", function () {\n      document.querySelectorAll(\".DBZ-cat-slider\").forEach((btn) => btn.classList.remove(\"active\"));\n      this.classList.add(\"active\");\n\n      document.querySelectorAll(\".DBZ-cat-slider-content > div\").forEach((content) => content.classList.remove(\"active\"));\n      document.querySelector(this.dataset.show).classList.add(\"active\");\n    });\n  });\n</script>"
+      }
+    },
+    "featured_products_936EHy": {
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "potty-reducer-roady-ok-baby-grey"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "potty-nattou-3-in-1-sand"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "potty-mickey-disney"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "mini-potty-bebe-confort-fox-sand"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "potty-spidy-ok-baby-grey"
+          }
+        },
+        "product_aVe7RP": {
+          "settings": {
+            "product": "potty-nattou-3-in-1-green",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_9TWVer": {
+          "settings": {
+            "product": "cueca-de-aprendizagem-bambino-mio-3-4a-chomp",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_egHET4": {
+          "settings": {
+            "product": "toilet-seat-reducer-ok-baby-ecru",
+            "kid_type": "Nursery"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4"
+      ],
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601079025991__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões de artigos para o Desfralde"
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{% layout none %}
+
+{% if product.available %}
+  {% render 'card-product',
+    card_product: product,
+    lazy_load: true,
+    without_image_slider: true,
+    desktop_offcanvas: true
+  %}
+{% endif %}

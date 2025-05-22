@@ -1,0 +1,206 @@
+{% comment %}
+  Renders a product media modal.
+
+  Accepts:
+  - product: {Object} Product liquid object
+
+  Usage:
+      {% render 'product-media-modal' %}
+{% endcomment %}
+
+{% liquid
+  assign featured_media = product.selected_or_first_available_variant.featured_media
+  assign media_count = 0
+
+  if featured_media != blank
+    assign media_count = media_count | plus: 1
+  endif
+
+  if product.media.size > 0
+    assign media_count = media_count | plus: product.media.size
+  endif
+%}
+
+<div class="product-media-modal fixed inset-0 z-30 flex -translate-x-full flex-col overflow-hidden bg-white pt-5 transition-transform lg:flex-row lg:py-0">
+  <button class="button-reset-styles absolute right-4 top-4 z-10" title="{{ 'accessibility.close' | t }}" data-close>
+    {% render 'icon', icon: 'cross' %}
+  </button>
+
+  {% comment %} START: MAIN SLIDER {% endcomment %}
+  <div
+    class="swiper mb-5 h-full w-full lg:mb-0 lg:!py-5"
+    id="ProductModal-{{ section.id }}"
+    data-slider='
+      {
+          "allowTouchMove": false,
+          "slidesPerView": 1,
+          "spaceBetween": 8,
+          "navigation": {
+              "prevEl": "#ProductModal-{{ section.id }} .swiper-button-prev",
+              "nextEl": "#ProductModal-{{ section.id }} .swiper-button-next"
+          },
+          "thumbs": {
+              "swiperSelector": ".product-media-modal .swiper.thumbs"
+          }
+      }
+    '
+  >
+    <div class="swiper-wrapper">
+      {% if featured_media != null %}
+        <div
+          class="swiper-slide"
+          id="ModalSlide-{{ section.id }}-{{ featured_media.id }}"
+          data-media-id="{{ section.id }}-{{ featured_media.id }}"
+        >
+          {% if featured_media.media_type == 'image' %}
+            <div class="zoomist-container h-full w-full overflow-hidden">
+              <div class="zoomist-wrapper h-full">
+                <div class="zoomist-image h-full bg-white">
+                  {% render 'product-thumbnail', media: featured_media, lazy_load: true, class: 'mix-blend-darken' %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="mx-auto flex h-full w-full max-w-[calc(100%-120px)] items-center">
+              {% render 'product-thumbnail', media: media, lazy_load: true, show_image: false %}
+            </div>
+          {% endif %}
+        </div>
+      {% endif %}
+
+      {% for media in product.media %}
+        <div
+          class="swiper-slide"
+          id="ModalSlide-{{ section.id }}-{{ media.id }}"
+          data-media-id="{{ section.id }}-{{ media.id }}"
+        >
+          {% if media.media_type == 'image' %}
+            <div class="zoomist-container h-full w-full overflow-hidden">
+              <div class="zoomist-wrapper h-full">
+                <div class="zoomist-image h-full bg-white">
+                  {% render 'product-thumbnail', media: media, lazy_load: true, class: 'mix-blend-darken' %}
+                </div>
+              </div>
+            </div>
+          {% else %}
+            <div class="mx-auto flex h-full w-full max-w-[calc(100%-120px)] items-center lg:max-w-[60%]">
+              {% render 'product-thumbnail', media: media, lazy_load: true, show_image: false %}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    {% if media_count > 1 %}
+      <div class="swiper-button-prev !left-4 !h-6 !w-6 !bg-transparent xl:!left-10">
+        {% render 'icon', icon: 'chevron-left' %}
+      </div>
+      <div class="swiper-button-next !right-4 !h-6 !w-6 !bg-transparent xl:!right-10">
+        {% render 'icon', icon: 'chevron-right' %}
+      </div>
+    {% endif %}
+  </div>
+  {% comment %} END: MAIN SLIDER {% endcomment %}
+
+  {% comment %} START: THUMBNAILS {% endcomment %}
+  <div class="bg-white p-2 lg:-order-1 lg:p-5">
+    <div
+      class="swiper thumbs max-w-[460px] lg:h-full lg:max-w-[95px]"
+      data-slider='
+        {
+            "mousewheel": true,
+            "slidesPerView": 4.5,
+            "spaceBetween": 8,
+            "navigation": {
+                "prevEl": ".swiper.thumbs .swiper-button-prev",
+                "nextEl": ".swiper.thumbs .swiper-button-next"
+            },
+            "breakpoints": {
+                "1024": {
+                    "slidesPerView": "auto",
+                    "direction": "vertical"
+                }
+            }
+        }
+      '
+    >
+      <div class="swiper-wrapper">
+        {% if featured_media != null %}
+          <div class="swiper-slide !h-auto lg:!h-[120px] lg:!w-[95px]">
+            <div class="box-border h-full rounded border border-transparent bg-gray-100">
+              {% render 'product-thumbnail',
+                media: featured_media,
+                lazy_load: true,
+                class: 'rounded mix-blend-darken'
+              %}
+
+              {% if media.media_type contains 'video' %}
+                <span class="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded bg-black/20 text-white">
+                  {% render 'icon', icon: 'play-circle', class: '!h-14 !w-14' %}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+
+        {% for media in product.media %}
+          <div class="swiper-slide !h-auto lg:!h-[120px] lg:!w-[95px]">
+            <div class="box-border h-full rounded border border-transparent bg-gray-100">
+              {% render 'product-thumbnail', media: media, lazy_load: true, class: 'rounded mix-blend-darken' %}
+
+              {% if media.media_type contains 'video' %}
+                <span class="absolute left-0 top-0 flex h-full w-full items-center justify-center rounded bg-black/20 text-white">
+                  {% render 'icon', icon: 'play-circle', class: '!h-14 !w-14' %}
+                </span>
+              {% endif %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+
+      {% if media_count > 1 %}
+        <div class="swiper-button-prev !left-1/2 !top-7 !-ml-6 !hidden !rotate-90 !bg-white shadow-[-3px_0px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:text-white lg:!inline-flex">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next !-bottom-5 !right-1/2 !top-auto !-mr-6 !hidden !rotate-90 !bg-white shadow-[3px_0px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:text-white lg:!inline-flex">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  {% comment %} END: THUMBNAILS {% endcomment %}
+</div>
+
+<div
+  class="product-media-modal-overlay pointer-events-none fixed inset-0 z-[29] !block translate-x-full bg-black/30 opacity-0 transition-all"
+></div>
+
+{% style %}
+  .product-media-modal iframe,
+  .product-media-modal video {
+    height: 90%;
+    margin: 0 auto;
+  }
+
+  .product-media-modal:not(.-translate-x-full) + .product-media-modal-overlay {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .product-media-modal .swiper.thumbs .swiper-slide-thumb-active > div {
+    border-color: rgb(var(--color-primary));
+  }
+
+  @media screen and (min-width: 1024px) {
+    .product-media-modal iframe {
+      height: 80%;
+      width: 75%;
+    }
+
+    .product-media-modal video {
+      height: auto;
+      margin: 0 auto;
+      width: auto;
+    }
+  }
+{% endstyle %}

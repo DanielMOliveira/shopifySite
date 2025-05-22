@@ -1,0 +1,62 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_liquid_Eq7gxm": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n    .blog-image-block-layout {\n        max-width: 900px;\n        margin: 0 auto;\n        padding: 2rem;\n    }\n\n    .image-row {\n        display: flex;\n        gap: 1rem;\n        margin: 2rem 0;\n        flex-wrap: wrap;\n    }\n\n    .image-row-3 img {\n        flex: 1 1 calc(33.333% - 1rem);\n        object-fit: cover;\n        width: 100%;\n    }\n\n    .image-row-2 img {\n        flex: 1 1 calc(50% - 1rem);\n        object-fit: cover;\n        width: 100%;\n    }\n\n    .text-block {\n        margin: 2rem 0;\n        font-size: 1.1rem;\n        line-height: 1.6;\n    }\n</style>\n\n{% assign layout = article.metafields.custom.template_type | default: 'default' %}\n\n{% if layout == 'image_block' %}\n\n<article class=\"blog-image-block-layout\">\n\n    {% if article.metafields.custom.text_1 != blank %}\n    <div class=\"text-block intro\">\n        {{ article.metafields.custom.text_1 }}\n    </div>\n    {% endif %}\n\n    <div class=\"image-row image-row-3\">\n        {% if article.metafields.custom.image_1 %}\n        <img src=\"{{ article.metafields.custom.image_1 | img_url: '800x' }}\" alt=\"Image 1\">\n        {% endif %}\n        {% if article.metafields.custom.image_2 %}\n        <img src=\"{{ article.metafields.custom.image_2 | img_url: '800x' }}\" alt=\"Image 2\">\n        {% endif %}\n        {% if article.metafields.custom.image_3 %}\n        <img src=\"{{ article.metafields.custom.image_3 | img_url: '800x' }}\" alt=\"Image 3\">\n        {% endif %}\n    </div>\n\n    {% if article.metafields.custom.text_2 != blank %}\n    <div class=\"text-block middle\">\n        {{ article.metafields.custom.text_2 }}\n    </div>\n    {% endif %}\n\n    <div class=\"image-row image-row-2\">\n        {% if article.metafields.custom.image_4 %}\n        <img src=\"{{ article.metafields.custom.image_4 | img_url: '800x' }}\" alt=\"Image 4\">\n        {% endif %}\n        {% if article.metafields.custom.image_5 %}\n        <img src=\"{{ article.metafields.custom.image_5 | img_url: '800x' }}\" alt=\"Image 5\">\n        {% endif %}\n    </div>\n\n    {% if article.metafields.custom.text_3 != blank %}\n    <div class=\"text-block final\">\n        {{ article.metafields.custom.text_3 }}\n    </div>\n    {% endif %}\n\n</article>\n\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_Eq7gxm"
+  ]
+}

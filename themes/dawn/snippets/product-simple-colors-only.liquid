@@ -1,0 +1,45 @@
+{% comment %}
+  Renders a product card as color swatches
+
+  Accepts:
+  - card_product: {Object} Product Liquid object (optional)
+
+  Usage:
+  {% render 'product-simple-colors-only', card_product: card_product %}
+{% endcomment %}
+
+{%- if card_product and card_product != empty -%}
+  {% liquid
+    assign product_refdesign = ''
+    assign product_refdesign = card_product.metafields.custom.refdesign | replace: ' ', '+'
+
+    assign product_color_data = card_product.metafields.custom.colorswatches.value
+    assign product_color = product_color_data.color_hex_code.value[0]
+    assign product_label = product_color_data.color_name
+  %}
+
+  <a
+    class="product-variant__color relative z-[2] inline-flex h-3 w-3 rounded-full text-[0]"
+    {% if product_color != blank %}
+      style="background-color: {{ product_color }};"
+    {% endif %}
+    href="{{ card_product.url }}"
+    title="{{ card_product.title }}"
+    data-url="{{ card_product.url | split: '?' | first }}"
+    data-color-code="{{ product_refdesign }}"
+  >
+    {{ product_label }}
+
+    {% if product_color == blank %}
+      <img
+        class="absolute left-1/2 top-1/2 w-4/5 rounded-full"
+        style="transform: translate(-50%, -50%);"
+        src="{{ 'color-placeholder.svg' | asset_url }}"
+        height="28px"
+        width="28px"
+        loading="lazy"
+        alt="Color Placeholder"
+      >
+    {% endif %}
+  </a>
+{%- endif -%}

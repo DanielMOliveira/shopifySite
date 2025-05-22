@@ -1,0 +1,37 @@
+{% comment %}
+  Renders colors
+
+  Usage:
+      {% render 'colors' %}
+{% endcomment %}
+
+{% style %}
+  :root {
+      --color-white: 255 255 255;
+      --color-black: 0 0 0;
+
+      --color-gray-75: {{ settings.gray_75.red }} {{ settings.gray_75.green }} {{ settings.gray_75.blue }};
+      --color-gray-100: {{ settings.gray_100.red }} {{ settings.gray_100.green }} {{ settings.gray_100.blue }};
+      --color-gray-200: {{ settings.gray_200.red }} {{ settings.gray_200.green }} {{ settings.gray_200.blue }};
+      --color-gray-300: {{ settings.gray_300.red }} {{ settings.gray_300.green }} {{ settings.gray_300.blue }};
+      --color-gray-400: {{ settings.gray_400.red }} {{ settings.gray_400.green }} {{ settings.gray_400.blue }};
+      --color-gray-500: {{ settings.gray_500.red }} {{ settings.gray_500.green }} {{ settings.gray_500.blue }};
+      --color-gray-600: {{ settings.gray_600.red }} {{ settings.gray_600.green }} {{ settings.gray_600.blue }};
+      --color-gray-700: {{ settings.gray_700.red }} {{ settings.gray_700.green }} {{ settings.gray_700.blue }};
+      --color-gray-800: {{ settings.gray_800.red }} {{ settings.gray_800.green }} {{ settings.gray_800.blue }};
+      --color-gray-900: {{ settings.gray_900.red }} {{ settings.gray_900.green }} {{ settings.gray_900.blue }};
+
+      --color-beige-10: {{ settings.beige_10.red }} {{ settings.beige_10.green }} {{ settings.beige_10.blue }};
+      --color-beige-100: {{ settings.beige_100.red }} {{ settings.beige_100.green }} {{ settings.beige_100.blue }};
+
+      --color-green-100: {{ settings.green_100.red }} {{ settings.green_100.green }} {{ settings.green_100.blue }};
+
+      --color-purple-100: {{ settings.purple_100.red }} {{ settings.purple_100.green }} {{ settings.purple_100.blue }};
+
+      --color-pink-100: {{ settings.pink_100.red }} {{ settings.pink_100.green }} {{ settings.pink_100.blue }};
+
+      --color-red-500: {{ settings.red_500.red }} {{ settings.red_500.green }} {{ settings.red_500.blue }};
+
+      --color-primary: {{ settings.primary.red }} {{ settings.primary.green }} {{ settings.primary.blue }};
+  }
+{% endstyle %}

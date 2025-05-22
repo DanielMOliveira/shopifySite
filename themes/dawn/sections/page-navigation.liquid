@@ -1,0 +1,412 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign navigation_block = section.blocks | where: 'type', 'navigation_item'
+%}
+
+{% capture sidebar_navigation %}
+    <ul class="flex flex-row gap-3 whitespace-nowrap px-3 md:w-auto md:flex-col md:gap-0 md:whitespace-normal md:px-0 lg:w-auto lg:flex-col">
+        {% for block in navigation_block %}
+            {% liquid
+                assign index = forloop.index
+                assign url = block.settings.link_url
+                assign title = block.settings.heading
+                assign page_url = request.path
+            %}
+
+            <li class="flex md:w-full">
+                <a href="{{ url }}"
+                    class="page-nav__item relative md:w-full {% if index == 1 %} pl-0 {% endif %} px-3 text-xs leading-4{% if url == page_url %} active{% endif %} md:border-beige-50 uppercase after:absolute after:bottom-0 after:left-0 after:z-[1] after:h-px after:w-0 after:bg-primary after:transition-all hover:cursor-pointer hover:after:w-full md:border-b md:px-0 md:pb-3 md:pt-4 md:hover:font-bold"
+                    data-target-section="{{ block.settings.heading | strip | replace: ' ', '_' | downcase }}"
+                >{{ title }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endcapture %}
+
+<section
+  class="page-section--{{ section.id }} flex-wrap md:flex"
+  id="section-{{ section.id }}"
+>
+  {% if navigation_block.size > 0 %}
+    <div class="container-valantic page-navigation w-full md:w-1/4">
+      <div class="page-navigation__wrapper border-beige-50 mb-15 block overflow-x-auto border-b border-t py-6 md:mb-0 md:border-none md:py-0">
+        {{ sidebar_navigation }}
+      </div>
+    </div>
+  {% endif %}
+
+  <div class="container-valantic page-content flex-1">
+    {%- for block in section.blocks -%}
+      {%- case block.type -%}
+        {%- when 'heading' -%}
+          {% liquid
+            assign heading = block.settings.heading
+            assign alignment = block.settings.title_alignment
+          %}
+
+          <div class="page-content-title text-{{ alignment }} mb-8">
+            {{ heading }}
+          </div>
+
+        {%- when 'text' -%}
+          {% liquid
+            assign text = block.settings.text
+            assign alignment = block.settings.content_alignment
+            assign list_1 = block.settings.list_1
+            assign list_2 = block.settings.list_1
+          %}
+
+          <div class="page-content-text text-{{ alignment }}">
+            {{
+              text
+              | replace: '[list1]', list_1
+              | replace: '[list2]', list_2
+              | replace: '[divider]', '<div class="!block h-px w-full bg-[#dee2e6]"></div>'
+            }}
+          </div>
+        {%- when 'faq_item' -%}
+          {% liquid
+            assign faq_question = block.settings.faq_question
+            assign faq_answer = block.settings.faq_answer
+            assign banner_image_1 = block.settings.faq_image_1
+            assign banner_image_2 = block.settings.faq_image_2
+            assign list_1 = block.settings.list_1
+            assign table_1 = block.settings.table_1
+          %}
+
+          {% render 'faq-item',
+            faq_question: faq_question,
+            faq_answer: faq_answer,
+            banner_image_1_src: banner_image_1,
+            banner_image_2_src: banner_image_2,
+            list_1: list_1,
+            table_1: table_1
+          %}
+        {%- when 'contact' -%}
+          {% liquid
+            assign form_id = block.settings.form_id
+            assign language_id = block.settings.language_id | default: 48966
+          %}
+
+          {%- if form_id != blank -%}
+            <script>
+              var _fo = _fo || [];
+
+              _fo.push({
+                d: 'center',
+                c: '{{ form_id }}',
+                i: {{ language_id }},
+              });
+
+              if (typeof fce == 'undefined') {
+                var s = document.createElement('script');
+
+                s.type = 'text/javascript';
+                s.async = true;
+                s.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'formcrafts.com/js/fc.js';
+
+                var fi = document.getElementsByTagName('script')[0];
+
+                fi.parentNode.insertBefore(s, fi);
+                fce = 1;
+              }
+            </script>
+
+            <div id="{{ form_id }}"></div>
+          {%- endif -%}
+      {%- endcase -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<script src="{{ 'faq-item.js' | asset_url }}" defer></script>
+
+{% style %}
+  .page-nav__item {
+    transition: all 0.15s ease;
+  }
+
+  .page-nav__item.active {
+    font-weight: 700;
+  }
+
+  .page-nav__item.active:after {
+    width: 100%;
+  }
+
+  .page-content-text > * {
+    margin-bottom: 16px;
+  }
+
+  .page-content-text ul {
+    list-style-type: disc;
+  }
+
+  .page-content-text ol {
+    list-style-type: number;
+  }
+
+  .page-content-text ul,
+  .page-content-text ol {
+    margin-bottom: 40px;
+  }
+
+  .page-content-text ul li,
+  .page-content-text ol li {
+    margin-bottom: 8px;
+  }
+
+  .page-content-text ul,
+  .page-content-text ol {
+    padding-left: 40px;
+  }
+
+  .page-content-text ul ol,
+  .page-content-text ol ul {
+    margin-bottom: 40px;
+  }
+{% endstyle %}
+
+{% schema %}
+{
+  "name": "Page & Navigation",
+  "class": "page-navigation",
+  "limit": 1,
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 0,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "navigation_item",
+      "name": "Navigation Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Label",
+          "default": "Link title"
+        },
+        {
+          "type": "url",
+          "id": "link_url",
+          "label": "Link URL"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading",
+          "default": "<h2>Heading</h2>"
+        },
+        {
+          "type": "select",
+          "id": "title_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Title Alignment"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Content",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Content",
+          "default": "<p>Content</p>",
+          "info": "Use [divider] to add divider."
+        },
+        {
+          "type": "select",
+          "id": "content_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Content Alignment"
+        },
+        {
+          "type": "header",
+          "content": "Item List"
+        },
+        {
+          "type": "richtext",
+          "id": "list_1",
+          "label": "List 1",
+          "info": "Create the list and use [list1] in the 'Content' field to display this list"
+        },
+        {
+          "type": "richtext",
+          "id": "list_2",
+          "label": "List 2",
+          "info": "Create the list and use [list2] in the 'Content' field to display this list"
+        }
+      ]
+    },
+    {
+      "type": "faq_item",
+      "name": "FAQ Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "faq_question",
+          "label": "Question",
+          "default": "<p>Question</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "faq_answer",
+          "label": "Answer",
+          "default": "<p>Answer</p>"
+        },
+        {
+          "type": "header",
+          "content": "Item Images"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_1",
+          "label": "Image 1",
+          "info": "Use [image1] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "image_picker",
+          "id": "faq_image_2",
+          "label": "Image 2",
+          "info": "Use [image2] in the 'Answer' field to display this image"
+        },
+        {
+          "type": "header",
+          "content": "Item List"
+        },
+        {
+          "type": "richtext",
+          "id": "list_1",
+          "label": "List 1",
+          "info": "Create the list and use [list1] in the 'Answer' field to display this list"
+        },
+        {
+          "type": "header",
+          "content": "Item Table"
+        },
+        {
+          "type": "html",
+          "id": "table_1",
+          "label": "Table 1",
+          "info": "Paste the HTML code of the table and use [table1] in the 'Answer' field to display this image"
+        }
+      ]
+    },
+    {
+      "type": "contact",
+      "name": "Contact Form",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "form_id",
+          "label": "Form ID",
+          "default": "fb4528",
+          "info": "Required field. Note: if this field hidden, then contact form won't showed."
+        },
+        {
+          "type": "text",
+          "id": "language_id",
+          "label": "Language ID",
+          "default": "48966",
+          "info": "If not set, then use 48966 (English)."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Page & Navigation",
+      "blocks": [
+        {
+          "type": "navigation_item"
+        },
+        {
+          "type": "heading"
+        },
+        {
+          "type": "text"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

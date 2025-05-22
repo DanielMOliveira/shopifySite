@@ -1,0 +1,90 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-mala.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_acrTpQ": {
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n  }\n\n  #dbz-tips h2 > span {\n    font-size: 1.3rem;\n    font-family: \"Newzald\", serif;\n    text-transform: uppercase;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin: 2rem 0 2rem 0;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    font-weight: 400;\n    margin: 0.5rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>A checklist com todos os essenciais da mala de maternidade</h2>\n        <p>\n          Para ajudar, partilhamos de seguida a nossa checklist com duas listas: os essenciais para o bebé e os essenciais para mãe, para que possa preparar a mala de maternidade com a devida calma e antecedência. Pode também fazer o download da lista dos essenciais para a mala da maternidade <a href=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-maternidade_02.jpg?v=1725956053\" target=\"_blank\"><u>aqui</u></a\n          >, para que possa imprimir ou guardar no seu telemóvel e consultá-la em qualquer lugar e sempre que precisar.\n        </p>\n        <a href=\"{{ collections['maternidade-amamentacao'].url }}\"><button>Ver tudo para a Mala de Maternidade</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-maternidade_01.jpg?v=1725956053\" alt=\"Dicas Baby Zippy - Mala de Maternidade\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-maternidade_02.jpg?v=1725956053\" alt=\"Dicas Baby Zippy - Mala de Maternidade\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2><span>Lista de Nascimento para o Bebé</span></h2>\n        <p>\n          — 4 <a href=\"{{ collections['roupa-interior-recem-nascido'].url }}\"><u>bodies interiores</u></a> <br />— 4 <a href=\"{{ collections['camisolas-casacos-recem-nascido'].url }}\"><u>casacos de malha</u></a\n          ><br />— 4 <a href=\"{{ collections['conjuntos-recem-nascido'].url }}\"><u>roupinhas exteriores</u></a\n          ><br />— 4 pares de <a href=\"{{ collections['meias-collants-recem-nascido'].url }}\"><u>botinhas de malha ou meias</u></a\n          ><br />— 2 <a href=\"{{ collections['calcado-acessorios-recem-nascido'].url }}\"><u>gorros</u></a\n          ><br />— 1 <a href=\"{{ collections['mantas-cobertores'].url }}\"><u>manta</u></a\n          ><br />— 3 ou 4 <a href=\"{{ collections['swaddles-fraldas'].url }}\"><u>fraldas de pano</u></a> para a amamentação <br />— <a href=\"{{ collections['toalhas-bebe'].url }}\"><u>Toalha de banho</u></a> <br />— <a href=\"{{ collections['banho-higiene'].url }}\"><u>Acessórios de higiene</u></a> para bebé<br />— Fraldas descartáveis<br />— <a href=\"{{ collections['cadeiras-auto'].url }}\"><u>Cadeira auto</u></a> homologada\n        </p>\n        <a href=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Zippy_Lista_Nascimento_Checklist.pdf?v=1728473734\" target=\"_blank\"><button>Fazer download da Checklist</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <div class=\"text-inside\">\n          <h2><span>Lista de Nascimento para a mãe</span></h2>\n          <p>\n            — Boletim de Saúde da Grávida e exames<br />\n            — Porta-documentos com documentos de identificação<br />\n            — 3 pijamas ou camisas de dormir com abertura frontal para facilitar a amamentação<br />\n            — Roupão e chinelos de quarto<br />\n            — Pensos higiénicos<br />\n            — Cuecas descartáveis<br />\n            — Soutiens de amamentação<br />\n            — Cinta ou faixa pós-parto<br />\n            — Cremes e discos protetores de mamilos<br />\n            — Uma roupa prática e confortável para o dia da alta\n          </p>\n          <!-- <a href=\"https://cdn.shopify.com/s/files/1/0795/2711/7127/files/Zippy_Lista_Nascimento_Checklist.pdf?v=1728473734\" target=\"_blank\"><button>Fazer download da Checklist</button></a> -->\n        </div>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-maternidade_03.jpg?v=1725956053\" alt=\"Dicas Baby Zippy - Mala de Maternidade\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n</section>"
+      }
+    },
+    "custom_liquid_qwUMDX": {
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_products_936EHy": {
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "soutien-keep-cool-sleep-medela-white-l"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "p4-disposable-mesh-panties-one-size-chicco"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "walking-mum-eco-mum-nappy-changer-apricot"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "baby-document-holder-voyage-zy-baby-light-pink"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "travel-changing-mat-voyage-zy-baby-light-pink"
+          }
+        },
+        "product_aVe7RP": {
+          "settings": {
+            "product": "pack-2-diapers-gloop-70x70cm-zebra"
+          }
+        },
+        "product_9TWVer": {
+          "settings": {
+            "product": "knitted-blanket-plain-75x90cm-zy-baby-pink"
+          }
+        },
+        "product_egHET4": {
+          "settings": {
+            "product": "walking-mum-eco-mum-nappy-bag-apricot"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4"
+      ],
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601078862151__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões para a Mala de Maternidade"
+      }
+    }
+  }
+}

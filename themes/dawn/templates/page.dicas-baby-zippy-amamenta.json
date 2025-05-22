@@ -1,0 +1,206 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "custom_css": [],
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_iw7Y3Q": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n    #dbz div {\n      padding: 0;\n      margin: 0;\n    }\n  \n    .zyBgBeige {\n      background-color: #f2f0e9;\n    }\n  \n    #dbz img {\n      max-width: 100%;\n      height: auto;\n    }\n  \n    #dbz .container-fluid {\n      max-width: 100%;\n    }\n  \n    #dbz .row {\n      display: flex;\n      justify-content: space-around;\n      align-items: center;\n    }\n  \n    #dbz .container-image {\n      width: 50%;\n    }\n  \n    #dbz .container-text {\n      width: 50%;\n      margin: 0;\n    }\n  \n    #dbz .container-text .text-inside {\n      width: 60%;\n      margin: auto;\n    }\n  \n    #dbz h1 {\n      font-family: \"Newzald\", serif;\n      color: #221f20;\n      font-size: 2rem;\n      letter-spacing: 0.05rem;\n      line-height: 1.2;\n      text-align: left;\n      text-transform: uppercase;\n      margin: 0.5rem 0 1rem 0;\n    }\n  \n    #dbz h2 {\n      font-family: \"CentraNo1\", Assistant, sans-serif;\n      color: #221f20;\n      font-size: 1.143rem;\n      letter-spacing: 0.05rem;\n      line-height: 1.3;\n      text-align: left;\n      text-transform: uppercase;\n    }\n  \n    #dbz h3 {\n      font-family: \"Newzald\", serif;\n      color: #221f20;\n      font-size: 1rem;\n      letter-spacing: 0.02rem;\n      text-align: left;\n      text-transform: uppercase;\n      margin-bottom: 2rem;\n    }\n  \n    #dbz h3 > span {\n      font-weight: 600;\n      letter-spacing: 0;\n      text-transform: none;\n    }\n  \n    #dbz p {\n      font-family: \"CentraNo1\", Assistant, sans-serif;\n      color: #221f20;\n      font-size: 1rem;\n      letter-spacing: 0;\n      line-height: 1.5;\n      text-align: left;\n      margin-top: 2rem;\n    }\n  \n    @media (max-width: 991px) {\n      #dbz .row {\n        display: flex;\n        flex-direction: column;\n        align-items: center;\n      }\n  \n      #dbz .container-image {\n        width: 100%;\n      }\n  \n      #dbz .container-text {\n        width: 100%;\n      }\n  \n      #dbz .container-text .text-inside {\n        width: 80%;\n        margin: 1rem auto 2rem auto;\n      }\n    }\n  \n    @media (max-width: 576px) {\n      #dbz h1 {\n        font-size: 1.563rem;\n        letter-spacing: 0.05rem;\n      }\n  \n      #dbz h2 {\n        font-size: 0.875rem;\n        letter-spacing: 0.03rem;\n      }\n  \n      #dbz p {\n        margin-top: 1rem;\n      }\n    }\n  </style>\n  \n  <section class=\"container-fluid zyBgBeige\" id=\"dbz\">\n    <div class=\"row\">\n      <div class=\"container-image\">\n        <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n          <picture>\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_banner.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n          </picture>\n        </a>\n      </div>\n      <div class=\"container-text\">\n        <div class=\"text-inside\">\n          <h3>Dicas Baby Zippy — <span>Amamentação</span></h3>\n          <h1>Mitos, verdades e essenciais para a amamentação</h1>\n          <p>Para muitas famílias, a amamentação é um dos momentos mais marcantes e emotivos na relação que se estabelece entre a mãe e o bebé.</p>\n        </div>\n      </div>\n    </div>\n  </section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_Ec6kQ6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgWhite {\n    background-color: #fafafa;\n  }\n\n  #dbz-text .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-text .row {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n  }\n\n  #dbz-text .container-text {\n    max-width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-text p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: center;\n    padding-top: 1rem;\n  }\n  #dbz-text p > span {\n    text-transform: uppercase;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-text .container-text {\n      max-width: 80%;\n      margin: 2rem 0;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p><span>NUm dos rituais de maior ligação entre mãe e filho </span></p>\n      <p>É aqui que a criança encontra o seu refúgio, se acalma e ganha a tão necessária imunidade. Independentemente de todos estarmos cientes disso, estes rituais são vividos de forma diferente por cada mãe e devemos respeitar todas as opções. Quem, como e até quando se deve amamentar são perguntas às quais apenas a mãe e o bebé conseguem responder e as condicionantes são inúmeras. O ideal é que este seja um momento de entrega de ambos e não algo que inflige desconforto ou ansiedade.</p>\n      <p>As opiniões da família e das amigas são certamente muito diversas, o que acaba por causar dúvidas. Se assim for, procure aconselhamento médico e, claro, nunca se esqueça de se ouvir a si mesma. Lembre-se, se for algo incómodo para si, o seu bebé também o sentirá! O ideal é que ambos tirem partido de um momento que se quer que seja especial.</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_acrTpQ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips h2 > span {\n    font-family: \"Newzald\", serif;\n    font-size: 1.3rem;\n    margin-bottom: 1rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2><span>Mitos da Amamentação</span></h2>\n        <h2>Existe leite fraco:</h2>\n        <p>Mais do que alimento, o leite materno é uma excelente nutrição.</p>\n        <h2>Depois dos dois anos, o leite materno deixa de trazer benefícios aos bebés:</h2>\n        <p>Além de aproximar mãe e filho, o leite materno contém nutrientes e proteínas que contribuem para a proteção de infeções.</p>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_01.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['maternidade-amamentacao'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_02.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2><span>Verdades da Amamentação</span></h2>\n        <h2>A ansiedade influencia a produção de leite materno:</h2>\n        <p>A ocitocina, uma das hormonas responsável pela produção do leite, é influenciada por fatores emocionais.</p>\n        <h2>A amamentação é mais do que alimentar o bebé:</h2>\n        <p>É uma demonstração de amor e uma oportunidade de fortalecer os laços afetivos.</p>\n      </div>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_eNGpb6": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-text button {\n    background-color: transparent;\n    color: #221f20;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 2rem;\n    text-align: center;\n    align-items: center;\n  }\n\n  #dbz-text .button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    text-align: center;\n    text-transform: none;\n    text-decoration: underline;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    margin: 0;\n    padding: 0;\n  }\n</style>\n<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Tenha em conta que cada caso e cada bebé são diferentes e que é normal sentir-se insegura, sobretudo se for mãe pela primeira vez. Na dúvida, peça sempre ajuda a um técnico de saúde que poderá orientá-la para qual será a melhor solução para si e para o seu bebé.</p>\n      <p>Existem ainda no mercado alguns produtos essenciais que podem ajudar a tornar o processo de amamentação num momento mais relaxante para ambos, seja antes, durante ou depois da amamentação.</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_x39PbC": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  #DBZ-cat-slider,\n  #DBZ-prod,\n  #DBZ {\n    margin: 0;\n    padding: 0;\n    width: 100%;\n    background-color: #f2f0e9;\n  }\n\n  #DBZ-cat-slider .container {\n    width: 100%;\n    max-width: 1600px;\n    margin: 0 auto;\n    padding: 0 15px;\n  }\n\n  #DBZ-cat-slider .container {\n    padding-top: 2rem;\n  }\n\n  #DBZ-cat-slider .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: space-around;\n    align-items: center;\n    width: 100%;\n  }\n\n  #DBZ-cat-slider h3 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 500;\n    color: #221f20;\n    font-size: 1.3rem;\n    letter-spacing: 0.05rem;\n    line-height: 1.3;\n    text-align: left;\n    margin-bottom: 0.5rem;\n  }\n\n  /* Botões de navegação */\n  #DBZ-cat-slider .cat-navigation {\n    text-align: center;\n    padding-top: 30px;\n    padding-bottom: 15px;\n  }\n\n  #DBZ-cat-slider .cat-navigation button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    cursor: pointer;\n    background-color: transparent;\n    border: none;\n    font-weight: 400;\n  }\n\n  #DBZ-cat-slider .cat-navigation .active {\n    text-decoration: underline;\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider .DBZ-cat-slider-content {\n    padding-top: 15px;\n    padding-bottom: 60px;\n    width: 100%;\n  }\n\n  .cat-slider-1,\n  .cat-slider-2,\n  .cat-slider-3,\n  .cat-slider-4,\n  .cat-slider-5 {\n    display: none;\n  }\n\n  #DBZ-cat-slider .cat-slider-1.active,\n  #DBZ-cat-slider .cat-slider-2.active,\n  #DBZ-cat-slider .cat-slider-3.active,\n  #DBZ-cat-slider .cat-slider-4.active,\n  #DBZ-cat-slider .cat-slider-5.active {\n    display: block;\n  }\n\n  #DBZ-cat-slider .content-row {\n    display: flex;\n    flex-direction: column-reverse;\n    align-items: center;\n    justify-content: center;\n    gap: 3rem;\n  }\n\n  #DBZ-cat-slider .content-row img {\n    width: 100%;\n    max-width: 600px;\n  }\n\n  #DBZ-cat-slider .content-text {\n    max-width: 600px;\n    margin-bottom: 15px;\n  }\n\n  #DBZ-cat-slider button {\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5rem;\n    text-align: center;\n    text-transform: none;\n    border: none;\n    cursor: pointer;\n    background-color: transparent;\n  }\n\n  #DBZ-cat-slider .cta {\n    font-size: 0.9rem;\n    color: #221f20;\n    border: solid #221f20 1px;\n    border-radius: 100px;\n    text-decoration: none;\n    background-color: transparent;\n    text-transform: uppercase;\n    font-weight: 400;\n    margin-top: 1rem;\n  }\n\n  #DBZ-cat-slider .content-text p {\n    margin-bottom: 15px;\n    line-height: 1.4rem;\n    font-size: 0.9rem;\n  }\n\n  #DBZ-cat-slider b {\n    font-weight: 500;\n  }\n\n  #DBZ-cat-slider a {\n    text-decoration: underline;\n  }\n\n  @media (max-width: 1300px) {\n    #DBZ-cat-slider .container {\n      width: 100%;\n      max-width: 1300px;\n      margin: 0 auto;\n      padding: 0 15px;\n    }\n\n    #DBZ-cat-slider .content-row img {\n      max-width: 500px;\n    }\n\n    #DBZ-cat-slider .content-text {\n      max-width: 500px;\n    }\n  }\n  @media (min-width: 992px) {\n    #DBZ-cat-slider .content-row {\n      flex-direction: row;\n      justify-content: space-between;\n    }\n\n    #DBZ-cat-slider .content-text {\n      text-align: left;\n    }\n  }\n\n  @media (max-width: 992px) {\n    #DBZ-cat-slider .cat-navigation {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      display: -moz-box;\n      padding: 2 0 0 1rem;\n      scrollbar-width: none;\n    }\n    #DBZ-cat-slider .DBZ-cat-slider-content {\n      padding-bottom: 40px;\n    }\n  }\n</style>\n\n<section id=\"DBZ-cat-slider\">\n  <div class=\"container\">\n    <div class=\"row cat-navigation\">\n      <button class=\"DBZ-cat-slider active\" data-show=\".cat-slider-1\">Almofadas de Amamentação</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-2\">Bombas Tira-Leite</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-3\">Soutiens de Amamentação</button>\n      <button class=\"DBZ-cat-slider\" data-show=\".cat-slider-4\">Discos de Amamentação</button>\n    </div>\n\n    <div class=\"row DBZ-cat-slider-content\">\n      <div class=\"cat-slider-1 active\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Almofadas de Amamentação</h3>\n            <p>As almofadas de amamentação são um excelente exemplo de um produto essencial para o período pré e pós-parto. Na verdade, este acessório pode acompanhar a mãe desde a gravidez, ajudando-a a manter uma posição mais confortável durante o sono, quando a barriga já torna difícil encontrar uma posição cómoda para dormir.</p>\n            <p>Já durante a amamentação, esta almofada é responsável por assegurar um bom apoio do bebé, para que tanto mãe e filho consigam uma postura correta e confortável, e a amamentação aconteça de forma serena e tranquila para ambos. Dada a sua ergonomia, a almofada de amamentação servirá também como apoio para quando o bebé começar a sentar-se sozinho, sendo um artigo verdadeiramente útil e versátil.</p>\n            <a href=\"{{ collections['almofada-amamentacao'].url }}\"> <button class=\"cta\">Ver almofadas de amamentação</button></a>\n          </div>\n          <a href=\"{{ collections['almofada-amamentacao'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_prod-01.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n          </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-2\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Bombas Tira-Leite</h3>\n            <p>São imprescindíveis para mães ativas, permitindo extrair o leite e armazená-lo no congelador para os momentos em que não têm oportunidade de estar presentes na hora de amamentar. As bombas tira-leite extraem o leite de forma natural e segura, simulando o ritmo de sucção do bebé. Numa fase inicial da amamentação, ajudam ainda a estimular a produção de leite.</p>\n            <p>A extração de leite com a bomba ajuda também a aliviar a pressão quando as glândulas mamárias estão mais sensíveis e doridas devido ao excesso de leite. Além disso, o uso de bombas tira-leite assegura uma maior participação do pai na alimentação do bebé, pois permite que possa dar o biberão com leite materno, estreitando laços com o bebé e libertando a mãe em momentos de maior cansaço.</p>\n            <a href=\"{{ collections['bombas-tira-leite'].url }}\"> <button class=\"cta\">Ver bombas tira-leite</button></a>\n          </div>\n          <a href=\"{{ collections['bombas-tira-leite'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_prod-02.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n          </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-3\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Soutiens de Amamentação</h3>\n            <p>O soutien de amamentação é uma peça essencial ainda antes do nascimento do bebé. Quando os soutiens habituais deixam de servir, geralmente causado pelo normal aumento do peito durante a gravidez, optar por este tipo de soutiens é a melhor solução.</p>\n            <p>\n              Os soutiens de amamentação são normalmente confecionados num material macio e confortável, com alças mais largas e copas mais subidas, de forma a evitar as expectáveis dores de costas durante a gravidez. São também mais maleáveis que os soutiens normais e, dada a maior cobertura, adaptam-se ao crescimento dos seios durante a fase da gravidez, que varia de mulher para mulher. Já na fase pós-parto e na hora de amamentar o bebé, as copas de abertura fácil permitem que a amamentação\n              aconteça de forma discreta em qualquer lugar, sem necessidade de retirar a roupa.\n            </p>\n            <a href=\"{{ collections['cintas-soutiens'].url }}\"> <button class=\"cta\">Ver soutiens de amamentação</button></a>\n          </div>\n          <a href=\"{{ collections['cintas-soutiens'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_prod-03.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n          </a>\n        </div>\n      </div>\n\n      <div class=\"cat-slider-4\">\n        <div class=\"row content-row\">\n          <div class=\"content-text\">\n            <h3>Discos de Amamentação</h3>\n            <p>Os discos de amamentação são um acessório muito útil durante o período em que amamenta, pois são responsáveis por absorver o leite em caso de perda. Estas situações de perda de leite são bastante comuns no início da amamentação, quando o corpo está ainda a adaptar-se de forma natural às necessidades de produção de leite que o bebé precisa.</p>\n            <p>As perdas de leite são também comuns após regressar ao trabalho ou mesmo durante o sono, sendo o uso dos discos de amamentação uma preciosa ajuda para evitar acidentes e manchas na roupa. Utilizados por baixo do soutien, em contacto direto com a pele, os discos de amamentação podem ser reutilizáveis ou descartáveis, consoante as necessidades da mãe e do momento.</p>\n            <a href=\"{{ collections['acessorios-amamentacao'].url }}\"> <button class=\"cta\">Ver acessórios de amamentação</button></a>\n          </div>\n          <a href=\"{{ collections['acessorios-amamentacao'].url }}\">\n            <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-amamentacao_prod-04.jpg?v=1725962485\" alt=\"Dicas Baby Zippy - Amamentação\" />\n          </a>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>\n\n<script>\n  // slider cat-slider //\n  document.querySelectorAll(\".DBZ-cat-slider\").forEach((button) => {\n    button.addEventListener(\"click\", function () {\n      document.querySelectorAll(\".DBZ-cat-slider\").forEach((btn) => btn.classList.remove(\"active\"));\n      this.classList.add(\"active\");\n\n      document.querySelectorAll(\".DBZ-cat-slider-content > div\").forEach((content) => content.classList.remove(\"active\"));\n      document.querySelector(this.dataset.show).classList.add(\"active\");\n    });\n  });\n</script>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "custom_liquid_qwUMDX": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<section class=\"container-fluid zyBgWhite\" id=\"dbz-text\">\n  <div class=\"row\">\n    <div class=\"container-text\">\n      <p>Prepare-se tranquilamente para o momento da amamentação e encontre mais informações e todos os elementos que pode precisar na nossa página de Puericultura dedicada à <span class=\"button\">Maternidade e Amamentação</span>.</p>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "featured_products_936EHy": {
+      "type": "featured-products",
+      "blocks": {
+        "product_mNYWWT": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_rtadar": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_LRbY6y": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_PmAX6m": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_EPQqyw": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_aVe7RP": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "kid_type": "Girls"
+          }
+        },
+        "product_9TWVer": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_egHET4": {
+          "type": "product",
+          "settings": {
+            "product": "31065082",
+            "kid_type": "Girls"
+          }
+        },
+        "product_ce8z8k": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4",
+        "product_ce8z8k"
+      ],
+      "disabled": true,
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "ALTERAR ESTE CARROSSEL",
+        "show_kids_type": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "divider_fullwidth_T6wrRL": {
+      "type": "divider-fullwidth",
+      "disabled": true,
+      "settings": {}
+    },
+    "divider_rJpcW4": {
+      "type": "divider",
+      "disabled": true,
+      "settings": {}
+    },
+    "custom_liquid_dNyfL6": {
+      "type": "custom-liquid",
+      "custom_css": [],
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-cat div {\n    padding: 0;\n    margin: 0;\n  }\n\n  #dbz-cat img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-cat .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-cat .container-title {\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0 1.5rem 0;\n  }\n\n  #dbz-cat .menu-grid {\n    display: grid;\n    grid-template-columns: repeat(6, 1fr);\n    justify-content: center;\n    gap: 0.5rem;\n    padding: 0 3rem 3rem 3rem;\n  }\n\n  #dbz-cat h2 {\n    font-family: \"Newzald\", serif;\n    font-size: 1.375rem;\n    letter-spacing: 0;\n    line-height: 1.2;\n    color: #221f20;\n  }\n\n  #dbz-cat a:hover {\n    text-decoration: none;\n  }\n\n  #dbz-cat button {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    font-size: 0.75rem;\n    color: #221f20;\n    letter-spacing: 0;\n    line-height: 1.2;\n    text-align: left;\n    cursor: pointer;\n    display: block;\n    text-transform: none;\n    padding: 0;\n    opacity: 0.9;\n    margin: 0.2rem 0 0 0;\n    border: none;\n    background-color: transparent;\n  }\n\n  #dbz-cat button:after {\n    content: \"\\2192\";\n    color: #221f20;\n    font-size: 1rem;\n    position: relative;\n    margin-left: 0.2rem;\n    top: 0.1rem;\n  }\n\n  #dbz-cat button:hover:after {\n    transition: 0.3s ease-in-out;\n    margin-left: 0.5rem;\n  }\n\n  #dbz-cat button:hover {\n    transform: none;\n  }\n\n  #dbz-cat .img-hover:hover {\n    opacity: 0.9;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-cat .menu-grid {\n      white-space: nowrap;\n      overflow: hidden;\n      overflow-x: auto;\n      display: -webkit-box;\n      padding: 0 1rem 3rem 1rem;\n      gap: 0.5rem;\n      scrollbar-width: none;\n    }\n\n    #dbz-cat .menu-grid .cat-container {\n      width: 60%;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-cat\">\n  <div class=\"container-title\">\n    <h2>Descubra todas as Dicas Baby Zippy</h2>\n  </div>\n  <div class=\"menu-grid\">\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-enxoval-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_enxoval.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Enxoval do Bebé\" class=\"img-hover\" />\n        <button>O Enxoval do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-preparar-o-quarto-para-a-chegada-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_quarto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar o Quarto para a chegada do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Quarto</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-o-carrinho-de-passeio\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_carrinhos-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher o Carrinho de Passeio\" class=\"img-hover\" />\n        <button>Escolher o Carrinho de Passeio</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-escolher-a-cadeirinha-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_cadeiras-auto.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como escolher a Cadeirinha do Bebé\" class=\"img-hover\" />\n        <button>Escolher a Cadeirinha do Bebé</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-na-mala-de-maternidade\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_mala-maternidade.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar na Mala de Maternidade\" class=\"img-hover\" />\n        <button>Preparar a Mala de Maternidade</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-o-banho-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_banho.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como preparar o Banho do Bebé\" class=\"img-hover\" />\n        <button>Preparar o Banho</button>\n      </a>\n    </div>\n    <!--   <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-mitos-verdades-e-essenciais-para-a-amamentacao\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_amamentacao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Mitos, Verdades e Essenciais para a Amamentação\" class=\"img-hover\" />\n        <button>Essenciais para a Amamentação</button>\n      </a>\n    </div> -->\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-as-rotinas-de-sono-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_sono.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - As Rotinas de Sono do Bebé\" class=\"img-hover\" />\n        <button>Rotinas de Sono</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-preparar-a-hora-da-refeicao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_refeicao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Preparar a Hora da Refeição do Bebé\" class=\"img-hover\" />\n        <button>Preparar a Hora da Refeição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-dicas-e-essenciais-para-a-denticao-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_denticao.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Dicas e Essenciais para a Dentição do Bebé\" class=\"img-hover\" />\n        <button>Essenciais para a Dentição</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-escolher-os-primeiros-brinquedos-do-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_brinquedos.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Escolher os Primeiros Brinquedos do Bebé\" class=\"img-hover\" />\n        <button>Os Primeiros Brinquedos</button>\n      </a>\n    </div>\n    <div class=\"cat-container\">\n      <a href=\"/pt/pages/dicas-baby-zippy-como-tornar-a-casa-segura-para-o-bebe\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_seguranca.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - Como tornar a Casa Segura para o Bebé\" class=\"img-hover\" />\n        <button>Segurança em Casa</button>\n      </a>\n    </div>\n    <div class=\"cat-container mr-3\">\n      <a href=\"/pt/pages/dicas-baby-zippy-o-que-levar-nas-viagens-com-bebes\">\n        <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_viajar-bebe.jpg?v=1724851568\" alt=\"Dicas Baby Zippy - O que levar nas Viagens com Bebés\" class=\"img-hover\" />\n        <button>Viajar com Bebés</button>\n      </a>\n    </div>\n  </div>\n</section>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_liquid_iw7Y3Q",
+    "custom_liquid_Ec6kQ6",
+    "custom_liquid_acrTpQ",
+    "custom_liquid_eNGpb6",
+    "custom_liquid_x39PbC",
+    "custom_liquid_qwUMDX",
+    "featured_products_936EHy",
+    "divider_fullwidth_T6wrRL",
+    "divider_rJpcW4",
+    "custom_liquid_dNyfL6"
+  ]
+}

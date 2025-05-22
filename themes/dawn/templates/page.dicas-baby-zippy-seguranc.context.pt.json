@@ -1,0 +1,93 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "page.dicas-baby-zippy-seguranc.json",
+  "context": {
+    "market": "pt"
+  },
+  "sections": {
+    "custom_liquid_acrTpQ": {
+      "settings": {
+        "custom_liquid": "<style media=\"screen\" type=\"text/css\">\n  #dbz-tips div {\n    padding: 0;\n    margin: 0;\n  }\n\n  .zyBgBeige {\n    background-color: #f2f0e9;\n  }\n\n  #dbz-tips img {\n    max-width: 100%;\n    height: auto;\n  }\n\n  #dbz-tips .container-fluid {\n    max-width: 100%;\n  }\n\n  #dbz-tips .row {\n    display: flex;\n    flex-wrap: wrap;\n    justify-content: center;\n    align-items: center;\n    padding: 3rem 0;\n  }\n\n  #dbz-tips .container-image {\n    width: 50%;\n  }\n\n  #dbz-tips .container-image img {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips .container-text {\n    width: 50%;\n    margin: 3rem 0;\n  }\n\n  #dbz-tips .container-text .text-inside {\n    width: 80%;\n    margin: auto;\n  }\n\n  #dbz-tips h2 {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1.5rem;\n    letter-spacing: 0;\n    line-height: 1.3;\n    text-align: left;\n    margin-top: 2rem;\n  }\n\n  #dbz-tips h2 > span {\n    font-family: \"Newzald\", serif;\n    font-size: 1.3rem;\n    margin-bottom: 1rem;\n  }\n\n  #dbz-tips p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    color: #221f20;\n    font-size: 1rem;\n    letter-spacing: 0;\n    line-height: 1.5;\n    text-align: left;\n    margin-top: 1rem;\n  }\n\n  #dbz-tips button {\n    background-color: transparent;\n    color: #221f20; \n    font-weight: 400;\n    margin-top: 2rem;\n  }\n\n  @media (max-width: 991px) {\n    #dbz-tips .row {\n      flex-direction: column;\n      padding: 0;\n    }\n\n    #dbz-tips h2 {\n      padding-top: 1.5rem;\n    }\n\n    #dbz-tips .pos-1 {\n      order: 1;\n    }\n\n    #dbz-tips .pos-2 {\n      order: 2;\n    }\n\n    #dbz-tips .container-image {\n      width: 100%;\n    }\n\n    #dbz-tips .container-text {\n      width: 100%;\n      margin: 0;\n    }\n\n    #dbz-tips .container-text .text-inside {\n      width: 80%;\n    }\n\n    #dbz-tips .p-top {\n      padding-top: 3rem;\n    }\n\n    #dbz-tips .p-bottom {\n      padding-bottom: 3rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #dbz-tips h2 {\n      font-size: 1.25rem;\n    }\n\n    #dbz-tips-tips p {\n      margin-top: 0.5rem;\n    }\n  }\n</style>\n\n<section class=\"container-fluid zyBgBeige\" id=\"dbz-tips\">\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Nas diversas divisões da casa:</h2>\n        <p>Evite deixar brinquedos espalhados pelo chão para não provocarem quedas, quer de crianças ou mesmo de adultos. Se os guardar numa caixa ou baú, confirme que a tampa não é pesada.</p>\n        <p>\n          Se tiver tapetes pela casa, coloque por baixo um antiderrapante ou prenda-os ao chão. No caso das escadas, proteja-as com uma cancela ou barreira de proteção homologada de forma a prevenir possíveis quedas. Se tiver escadas, instale o tipo de cancelas com fecho sob pressão apenas no primeiro degrau, na base das escadas, à porta da cozinha ou de outro local para limitar o acesso da criança. Isto porque, com o tempo, se a criança empurrar a cancela com frequência, esta pode ganhar folga\n          e tombar. As cancelas instaladas no cimo das escadas devem ser aparafusadas à parede, para evitar o risco de queda.\n        </p>\n        <p>Quanto aos dispositivos eletrónicos, garanta que não há cabos soltos ou no chão, pois podem igualmente provocar quedas. Desligue-os sempre da corrente depois de carregados ou após a utilização.</p>\n        <p>Também é importante que não deixe ao alcance do bebé sacos de plástico pequenos, destinados às fraldas sujas, pois ganham facilmente eletricidade estática e podem colar-se à boca ou ao nariz do bebé, que correrá risco de asfixia.</p>\n        <a href=\"{{ collections['seguranca'].url }}\"> <button>Ver Segurança para a Casa</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['seguranca'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-seguranca_01.jpg?v=1726054952\" alt=\"Dicas Baby Zippy - Segurança em Casa\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-image p-top\">\n      <a href=\"{{ collections['seguranca'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-seguranca_02.jpg?v=1726054953\" alt=\"Dicas Baby Zippy - Segurança em Casa\" />\n        </picture>\n      </a>\n    </div>\n    <div class=\"container-text p-bottom\">\n      <div class=\"text-inside\">\n        <h2>Janelas e Varandas:</h2>\n        <p>Coloque proteções nas varandas com guardas baixas ou com aberturas horizontais e escaláveis. Para limitar o risco de queda, instale nas janelas ou portas-janela, num ponto alto fora do alcance da criança, um limitador de abertura que permita abrir a janela apenas 9 cm, o suficiente para arejar a divisão da casa. Para mais informação, pode consultar o Guia para famílias: Guardas para Proteção de Quedas em Altura da APSI.</p>\n        <h2>Mobiliário:</h2>\n        <p>Coloque travões nas gavetas pesadas ou onde guarda produtos perigosos. Fixe bem à parede todas as cómodas, estantes e armários, sobretudo os mais altos e pesados, para que não caiam sobre a criança se tentar trepá-los.</p>\n        <h2>Tomadas:</h2>\n        <p>Todas as tomadas de casa devem ter protetores próprios. Quando a criança começar a gatinhar ou a arrastar-se poderá alcançar tomadas e fichas triplas, ou puxar fios elétricos. Melhor do que utilizar protetores, é instalar modelos com alvéolos protegidos. Verifique regularmente se não há tomadas partidas, fios elétricos descarnados ou com outros danos.</p>\n        <a href=\"{{ collections['seguranca'].url }}\"> <button>Ver Segurança para a Casa</button></a>\n      </div>\n    </div>\n  </div>\n  <div class=\"row\">\n    <div class=\"container-text pos-2\">\n      <div class=\"text-inside\">\n        <h2>Cozinha</h2>\n        <p>Certifique-se que não tem produtos tóxicos ou de limpeza nem objetos pontiagudos e/ou cortantes ao alcance do bebé. O ideal é estarem fechados em armários altos com trinco ou em gavetas com bloqueador de abertura. Não leve os bebés e crianças para a cozinha e não cozinhe com eles ao colo. Atenção às queimaduras na porta do forno. Cozinhe nos bicos ou placas de trás e vire sempre os cabos das frigideiras para o interior.</p>\n        <h2>Quarto</h2>\n        <p>Após os primeiros 6 meses, quando passar o bebé para um quarto sozinho, ou com os irmãos, evite colocar a cama de grades perto de uma janela, junto de cortinas, fios de estores, candeeiros de parede ou outros cordões pendurados. Se não for possível evitá-los, prenda-os num ponto alto de difícil acesso, não só no quarto, mas também noutras divisões da casa.</p>\n        <a href=\"{{ collections['seguranca'].url }}\"> <button>Ver Segurança para a Casa</button></a>\n      </div>\n    </div>\n    <div class=\"container-image pos-1 p-top\">\n      <a href=\"{{ collections['seguranca'].url }}\">\n        <picture>\n          <img src=\"https://cdn.shopify.com/s/files/1/0640/3217/8385/files/dicas_lp-seguranca_03.jpg?v=1726054953\" alt=\"Dicas Baby Zippy - Segurança em Casa\" />\n        </picture>\n      </a>\n    </div>\n  </div>\n</section>"
+      },
+      "blocks": {}
+    },
+    "featured_products_936EHy": {
+      "custom_css": [
+        ".container-valantic {background-color: #f2f0e9; padding: 2rem 0;}",
+        ".container-valantic .title {text-align: center; font-size: 1.5rem; font-family: \"Newzald\", serif;}",
+        ".swiper-button-prev,.swiper-button-next {border: solid 1px #acacac;}",
+        "#section-template--23601077780807__featured_products_936EHy .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {margin-left: 2rem;}",
+        "@media (max-width: 576px) {.container-valantic .title {font-size: 1.2rem; }}"
+      ],
+      "settings": {
+        "title": "As nossas sugestões para a Segurança do Bebé em Casa"
+      },
+      "blocks": {
+        "product_mNYWWT": {
+          "settings": {
+            "product": "corner-guards-safety-1st"
+          }
+        },
+        "product_rtadar": {
+          "settings": {
+            "product": "p8-euro-socket-insert"
+          }
+        },
+        "product_LRbY6y": {
+          "settings": {
+            "product": "multi-blocker-safety-1st"
+          }
+        },
+        "product_PmAX6m": {
+          "settings": {
+            "product": "automatic-night-light-by-safety-1st"
+          }
+        },
+        "product_EPQqyw": {
+          "settings": {
+            "product": "safety-gate-easy-close-safety-1st"
+          }
+        },
+        "product_aVe7RP": {
+          "disabled": false,
+          "settings": {
+            "kid_type": "Nursery",
+            "product": "7cm-safety-gate-extension-easy-close-by-safety-1st"
+          }
+        },
+        "product_9TWVer": {
+          "disabled": false,
+          "settings": {
+            "kid_type": "Nursery",
+            "product": "14cm-safety-gate-extension-easy-close-safety-1st"
+          }
+        },
+        "product_egHET4": {
+          "disabled": false,
+          "settings": {
+            "kid_type": "Nursery",
+            "product": "28cm-safety-gate-extension-easy-close-safety-1st"
+          }
+        }
+      },
+      "block_order": [
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_aVe7RP",
+        "product_9TWVer",
+        "product_egHET4"
+      ]
+    }
+  }
+}

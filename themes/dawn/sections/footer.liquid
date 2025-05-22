@@ -1,0 +1,538 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign footer_menu = section.settings.menu
+
+  assign enable_newsletter = section.settings.newsletter_enable
+  assign newsletter_heading = section.settings.newsletter_heading
+  assign newsletter_url = section.settings.newsletter_url
+
+  assign show_social = section.settings.show_social
+  assign social_heading = section.settings.social_heading
+  assign payment_heading = section.settings.payment_heading
+  assign reviews_score_image = section.settings.reviews_score_image
+  assign copyright_text = section.settings.copyright_text
+  assign service_links = section.blocks | where: 'type', 'service_links'
+  assign payment_icons = section.blocks | where: 'type', 'payment_icons'
+
+  assign has_social_icons = true
+  if settings.social_facebook_link == blank and settings.social_instagram_link == blank and settings.social_youtube_link == blank and settings.social_tiktok_link == blank and settings.social_twitter_link == blank and settings.social_pinterest_link == blank and settings.social_snapchat_link == blank and settings.social_tumblr_link == blank and settings.social_vimeo_link == blank
+    assign has_social_icons = false
+  endif
+%}
+
+<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  {%- if enable_newsletter -%}
+    <div class="container-valantic footer-block__newsletter w-full border-t">
+      <div class="flex w-full flex-wrap justify-center gap-3 pb-8 pt-7 md:gap-x-10 md:pt-8 lg:gap-x-20">
+        {%- if newsletter_heading != blank -%}
+          <div class="flex items-center text-center text-xl font-bold md:text-left lg:text-2xl">
+            {{ newsletter_heading }}
+          </div>
+        {%- endif -%}
+
+        {%- if newsletter_url != blank -%}
+          <a href="{{ newsletter_url }}" class="button secondary inline-flex text-sm text-gray-800">
+            {{ 'sections.footer.newsletter_button_label' | t }}
+
+            {% render 'icon', icon: 'arrow-right', class: 'w-6 h-6' %}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+  <div class="container-valantic footer-top w-full border-y">
+    <div class="flex flex-wrap justify-between pb-8 pt-3 md:py-15">
+      {% if footer_menu != blank %}
+        <div class="footer-menu__wrapper mb-6 w-full min-w-[75%] flex-1 md:mb-0 md:grid md:grid-cols-4 md:gap-5">
+          {% render 'footer-menu' %}
+        </div>
+      {% endif %}
+
+      <div class="footer-block w-full md:max-w-64 lg:w-1/4">
+        {%- if show_social and has_social_icons -%}
+          <div class="footer-social mb-7 md:mb-8">
+            {%- if social_heading != blank -%}
+              <div class="pb-4 text-center !font-body text-2xs font-medium uppercase leading-none text-gray-800 md:text-left">
+                {{ social_heading }}
+              </div>
+            {%- endif -%}
+
+            {%- render 'social-icons', class: 'footer__list-social' -%}
+          </div>
+        {%- endif -%}
+
+        {% if payment_icons.size > 0 %}
+          <div class="footer__payment mb-7 md:mb-8">
+            {%- if payment_heading != blank -%}
+              <div class="flex w-full items-start justify-center gap-1 pb-3 md:justify-start">
+                {% render 'icon', icon: 'shield', class: 'relative top-0.5' %}
+                <div class="!font-body text-2xs font-medium uppercase text-gray-800 md:flex-1">
+                  {{ payment_heading }}
+                </div>
+              </div>
+            {%- endif -%}
+
+            {% for block in payment_icons %}
+              {% for i in (1..8) %}
+                {% assign img_key = 'payment_icon_' | append: i %}
+                {% if block.settings[img_key] != blank %}
+                  {% assign length = i %}
+                {% endif %}
+              {% endfor %}
+            {% endfor %}
+
+            <ul
+              class="flex grid-cols-4 flex-wrap items-center justify-center gap-2 md:grid {% if length == 5 %} grid-cols-5 {% endif %}"
+              role="list"
+            >
+              {% for block in payment_icons %}
+                {% for i in (1..8) %}
+                  {% assign img_key = 'payment_icon_' | append: i %}
+
+                  {% if block.settings[img_key] != blank %}
+                    <li class="list-payment__item">
+                      <img
+                        src="{{ block.settings[img_key] | image_url }}"
+                        alt="{{ block.settings[img_key].alt | default: 'Payment Icon' }}"
+                        width="{{ block.settings[img_key].width }}"
+                        height="{{ block.settings[img_key].height }}"
+                        class="max-h-8 min-w-14 lg:min-w-12"
+                        loading="lazy"
+                      >
+                    </li>
+                  {% endif %}
+                {% endfor %}
+              {% endfor %}
+            </ul>
+          </div>
+        {% endif %}
+
+        {%- if reviews_score_image -%}
+          <div class="flex justify-center md:justify-start">
+            <img
+              src="{{ reviews_score_image | image_url }}"
+              alt="{{ reviews_score_image.alt | default: 'Review score image Icon' }}"
+              width="{{ reviews_score_image.width }}"
+              height="{{ reviews_score_image.height }}"
+              class="max-w-[170px] md:max-w-50"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+
+  <div class="container-valantic footer-bottom flex w-full flex-wrap items-center justify-center py-6 md:justify-between md:py-4">
+    <div class="flex flex-wrap justify-center gap-x-8 gap-y-5 pb-6 md:justify-between md:gap-0 md:p-0">
+      {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+        {% unless request.design_mode %}
+          <localization-form>
+            {%- form 'localization', id: 'FooterLanguageForm' -%}
+              {%- render 'language-localization-form', localPosition: 'FooterLanguage' -%}
+            {%- endform -%}
+          </localization-form>
+
+          <localization-form-popup class="localization-form-popup">
+            {%- form 'localization', id: 'PopupLanguageForm' -%}
+              {%- render 'language-localization-popup', localPosition: 'PopupLanguage' -%}
+            {%- endform -%}
+          </localization-form-popup>
+        {% endunless %}
+      {%- endif -%}
+
+      <div class="footer-links -order-1 flex flex-wrap items-center justify-center gap-x-8 gap-y-5 leading-normal md:order-1 md:justify-start md:gap-0">
+        {% for links in service_links %}
+          {% for i in (1..4) %}
+            {% assign link_url = 'link_url_' | append: i %}
+            {% assign link_text = 'link_label_' | append: i %}
+
+            {% if links.settings[link_url] != blank %}
+              <span class="lh-1 flex last:border-none md:mr-4 md:border-r md:pr-4">
+                <a
+                  href="{{ links.settings[link_url] }}"
+                  class="hover-underline flex text-2xs font-normal leading-normal !no-underline transition-colors"
+                >
+                  {{ links.settings[link_text] }}
+                </a>
+              </span>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="footer-copyright w-full border-t pt-6 text-center md:w-auto md:border-none md:p-0 md:text-right">
+      <div class="footer__copyright caption">
+        <small class="copyright__content text-2xs leading-normal"
+          >&copy; {{ shop.name | link_to: routes.root_url }}
+          {{ 'now' | date: '%Y' }}. {{ copyright_text }}
+        </small>
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    .footer .shopify-localization-form {
+      justify-content: start;
+      width: auto;
+      display: inline-flex;
+      flex-wrap: wrap;
+    }
+
+    .footer .language-switcher {
+      position: relative;
+      top: 2px;
+      line-height: none;
+    }
+
+    .footer .language-switcher-open-button {
+      font-size: var(--font-size-xs);
+    }
+
+    .footer .language-switcher-open-button .chevron-icon {
+      max-width: 12px;
+      max-height: 12px;
+    }
+
+    @media screen and (min-width: 768px) {
+      .footer .language-switcher {
+        padding-right: 16px;
+        margin-right: 16px;
+        border-right: 1px solid rgb(var(--color-gray-400));
+      }
+
+      .footer .shopify-localization-form {
+        justify-content: start;
+        width: auto;
+      }
+    }
+  {% endstyle %}
+</footer>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "blocks": [
+    {
+      "type": "service_links",
+      "limit": 1,
+      "name": "Service Links",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Service Links"
+        },
+        {
+          "type": "text",
+          "id": "link_label_1",
+          "label": "Link 1 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_1",
+          "label": "Link 1 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_2",
+          "label": "Link 2 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_2",
+          "label": "Link 2 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_3",
+          "label": "Link 3 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_3",
+          "label": "Link 3 URL"
+        },
+        {
+          "type": "text",
+          "id": "link_label_4",
+          "label": "Link 4 Text"
+        },
+        {
+          "type": "url",
+          "id": "link_url_4",
+          "label": "Link 4 URL"
+        }
+      ]
+    },
+    {
+      "type": "payment_icons",
+      "limit": 1,
+      "name": "Payment Icons",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Payment Icons"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_1",
+          "label": "Payment Icon 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_2",
+          "label": "Payment Icon 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_3",
+          "label": "Payment Icon 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_4",
+          "label": "Payment Icon 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_5",
+          "label": "Payment Icon 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_6",
+          "label": "Payment Icon 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_7",
+          "label": "Payment Icon 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "payment_icon_8",
+          "label": "Payment Icon 8"
+        }
+      ]
+    },
+    {
+      "type": "link_list",
+      "name": "t:sections.footer.blocks.link_list.name",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "heading",
+          "default": "t:sections.footer.blocks.link_list.settings.heading.default",
+          "label": "t:sections.footer.blocks.link_list.settings.heading.label"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "default": "footer",
+          "label": "t:sections.footer.blocks.link_list.settings.menu.label",
+          "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Menu"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    },
+    {
+      "type": "header",
+      "content": "Store reviews score"
+    },
+    {
+      "type": "image_picker",
+      "id": "reviews_score_image",
+      "label": "Reviews score image"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.newsletter_enable.label"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "newsletter_heading",
+      "default": "Subscribe to our newsletter and get 10% discount",
+      "label": "t:sections.footer.settings.newsletter_heading.label"
+    },
+    {
+      "type": "url",
+      "id": "newsletter_url",
+      "label": "Newsletter URL"
+    },
+    {
+      "type": "header",
+      "content": "Social icons"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "social_heading",
+      "default": "Follow us on social media",
+      "label": "Social Icons Title"
+    },
+    {
+      "type": "header",
+      "content": "Payment icons"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "payment_heading",
+      "default": "Secure payment methods",
+      "label": "Payment Icons Title"
+    },
+    {
+      "type": "header",
+      "content": "Copyright text"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "copyright_text",
+      "default": "All rights reserved.",
+      "label": "Copyright Text"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__9.content",
+      "info": "t:sections.footer.settings.header__9.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_follow_on_shop",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_follow_on_shop.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social",
+      "default": true,
+      "label": "t:sections.footer.settings.show_social.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__3.content",
+      "info": "t:sections.footer.settings.header__4.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_country_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__5.content",
+      "info": "t:sections.footer.settings.header__6.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.footer.settings.enable_language_selector.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__7.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__8.content",
+      "info": "t:sections.footer.settings.header__8.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_policy",
+      "default": true,
+      "label": "t:sections.footer.settings.show_policy.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.footer.settings.margin_top.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "link_list"
+      },
+      {
+        "type": "service_links"
+      }
+    ]
+  }
+}
+{% endschema %}

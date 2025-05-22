@@ -1,0 +1,104 @@
+/*
+* ------------------------------------------------------------
+* IMPORTANT: The contents of this file are auto-generated.
+*
+* This file may be updated by the Shopify admin theme editor
+* or related systems. Please exercise caution as any changes
+* made to this file may be overwritten.
+* ------------------------------------------------------------
+*/
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "form": {
+      "type": "contact-form",
+      "disabled": true,
+      "settings": {
+        "heading": "",
+        "heading_size": "h1",
+        "color_scheme": "scheme-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "page_navigation_GAaRWF": {
+      "type": "page-navigation",
+      "blocks": {
+        "text_PKiDhM": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>Devolução de Encomendas</strong></h2><p><strong><br/>Na Zippy as devoluções são sempre grátis!</strong></p><p>Apenas é possível efetuar devoluções de encomendas online, não é possível efetuar trocas.  <br/>Para devolver a sua encomenda pode dirigir-se a uma das nossas<strong> lojas físicas </strong>ou agendar a recolha ao domícilio. <br/>Para tal, deve seguir estes passos:</p><p><strong>Pedir a Recolha: </strong>efetue o pedido de recolha preenchendo os dados solicitados no formulário abaixo. Entraremos em contacto para confirmar a disponibilidade de recolha no dia selecionado.</p><p><strong>Empacotar: </strong>coloque os artigos dentro da embalagem original e sele a sua encomenda, conforme indicado. Caso não disponha da embalagem original, deverá utilizar uma que não seja transparente e garantir que os artigos estão bem acondicionados, de modo a evitar danos ou extravios.</p><p><strong>Transportador: </strong>a partir da morada indicada, entregue a encomenda a devolver ao transportador, que se encarregará de colocar as etiquetas no exterior da embalagem.</p><p><strong>Receber o reembolso: </strong>o<strong> </strong>reembolso é processado para o método original de pagamento até 14 dias a contar desde o dia da receção dos artigos no nosso centro de devoluções e validação da conformidade dos mesmos. Assim que a devolução for processada receberá um email com a nota de crédito. Dispõe de 30 dias para devolução a contar do dia de receção da sua encomenda no domicílio ou chegada da encomenda à loja pretendida.​​</p><p></p><h4></h4>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "heading_zmAQDa": {
+          "type": "heading",
+          "settings": {
+            "heading": "<h4><br/>Formulário de Recolha</h4>",
+            "title_alignment": "left"
+          }
+        },
+        "contact_ffLRrH": {
+          "type": "contact",
+          "settings": {
+            "form_id": "fb4528",
+            "language_id": "61132"
+          }
+        },
+        "text_Ee7yF4": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong><br/><br/>Nota:</strong> Não são permitidas devoluções nas lojas físicas Zippy (exceto OUTLET) de produtos adquiridos nas lojas Zippy Outlet. O contrário também se aplica.</p><h1></h1>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_PKiDhM",
+        "heading_zmAQDa",
+        "contact_ffLRrH",
+        "text_Ee7yF4"
+      ],
+      "custom_css": [
+        ".container-valantic {margin: 2vw 20vw;}",
+        "@media only screen and (max-width: 991px) {.container-valantic {margin: 2vw; }}"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "custom_liquid_BDpqMh": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style> \n.breadcrumbs { display: none; }\n\n#shopify-section-template--16308172587217__page_navigation_GAaRWF .container-valantic {\n    text-align: center;\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    background-color: #fbfbf8;\n    align-items: center;\n}\n  h4 {\n    margin-top: 2rem;\n  }\n</style>",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "form",
+    "page_navigation_GAaRWF",
+    "custom_liquid_BDpqMh"
+  ]
+}

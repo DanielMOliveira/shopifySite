@@ -1,0 +1,45 @@
+{% comment %}
+  Renders fonts links and variables.
+
+  Usage:
+      {% render 'typography' %}
+{% endcomment %}
+
+{{ 'typography.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign body_font_bold = settings.type_body_font | font_modify: 'weight', 'bold'
+  assign body_font_italic = settings.type_body_font | font_modify: 'style', 'italic'
+  assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
+%}
+
+{% style %}
+  {{ settings.type_body_font | font_face: font_display: 'swap' }}
+  {{ body_font_bold | font_face: font_display: 'swap' }}
+  {{ body_font_italic | font_face: font_display: 'swap' }}
+  {{ body_font_bold_italic | font_face: font_display: 'swap' }}
+  {{ settings.type_header_font | font_face: font_display: 'swap' }}
+
+  :root {
+      --font-body-family: 'CentraNo1', {{ settings.type_body_font.family }}, {{ settings.type_body_font.fallback_families }};
+      --font-body-style: {{ settings.type_body_font.style }};
+      --font-body-weight: {{ settings.type_body_font.weight }};
+      --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+
+      --font-heading-family: 'CentraNo1', {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
+      --font-heading-style: {{ settings.type_header_font.style }};
+      --font-heading-weight: {{ settings.type_header_font.weight }};
+
+      --font-heading-additional-family: 'Newzald';
+
+      --font-body-scale: {{ settings.body_scale | divided_by: 100.0 }};
+      --font-heading-scale: {{ settings.heading_scale | times: 1.0 | divided_by: settings.body_scale }};
+
+      --font-size-4xs: calc(var(--font-body-scale) * 0.625rem); {% comment %} 10px {% endcomment %}
+      --font-size-2xs: calc(var(--font-body-scale) * 0.75rem); {% comment %} 12px {% endcomment %}
+      --font-size-xs: calc(var(--font-body-scale) * 0.8125rem); {% comment %} 13px {% endcomment %}
+      --font-size-base: calc(var(--font-body-scale) * 1rem); {% comment %} 16px {% endcomment %}
+      --font-size-3_5xl: calc(var(--font-body-scale) * 2rem); {% comment %} 32px {% endcomment %}
+      --font-size-4_25xl: calc(var(--font-body-scale) * 2.5rem); {% comment %} 40px {% endcomment %}
+  }
+{% endstyle %}

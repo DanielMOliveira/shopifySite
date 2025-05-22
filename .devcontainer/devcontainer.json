@@ -1,0 +1,36 @@
+// This file is used to define the development container configuration for the Shopify Dev Environment.
+{
+  "name": "Shopify Dev Environment",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": "."
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "Shopify.theme-check-vscode",
+        "Shopify.shopify-liquid",
+        "stylelint.vscode-stylelint",
+        "redhat.vscode-yaml",
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  },
+  "runArgs": [
+    "--userns=host"
+  ],
+  "containerUser": "shopifydev",
+  "updateRemoteUserUID": true,
+  "postCreateCommand": "npm install",
+  "portsAttributes": {
+    "9292": {
+      "label": "Shopify Dev Server",
+      "onAutoForward": "notify"
+    }
+  },
+  "forwardPorts": [
+    9292
+  ]
+}

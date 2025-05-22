@@ -1,0 +1,105 @@
+{% comment %}
+  Renders a best-selling products
+
+  Usage:
+      {% render 'cart-drawer-best-selling' %}
+{% endcomment %}
+<section
+  id="section-cross-selling"
+  class="w-[520px] max-w-[calc(100vw-110px)] overflow-hidden pb-6 transition-opacity md:w-[355px]"
+>
+  <div class="lg:relative">
+    <div
+      class="swiper best-selling-swiper group !overflow-visible lg:!static lg:transition-all"
+      data-slider='
+        {
+            "spaceBetween": 16,
+            "slidesPerView": 1,
+            "breakpoints": {
+                "468": {
+                    "slidesPerView": 1
+                },
+                "1024": {
+                    "spaceBetween": 20
+                }
+            },
+            "navigation": {
+                "prevEl": "#section-cross-selling .swiper-button-prev",
+                "nextEl": "#section-cross-selling .swiper-button-next"
+            }
+        }
+      '
+    >
+      <div class="cross-selling-products swiper-wrapper flex">
+        {% for i in (1..4) %}
+          {% assign cross_selling_product = 'cross_selling_product_' | append: i %}
+          {% if settings[cross_selling_product] %}
+            {% render 'card-product-cross-sell',
+              card_product: settings[cross_selling_product],
+              lazy_load: true,
+              section_id: section_id,
+              class: 'swiper-slide'
+            %}
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <div class="swiper-button-prev -!transform-y-2/4 !left-1.5 !top-2/4 !h-6 !w-6 !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+        {% render 'icon', icon: 'chevron-left' %}
+      </div>
+      <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-2/4 !h-6 !w-6 !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] lg:!right-4 xl:!right-10">
+        {% render 'icon', icon: 'chevron-right' %}
+      </div>
+    </div>
+  </div>
+
+  {% style %}
+    #section-cross-selling:has(.offcanvas-card-product.is-open) {
+      position: relative;
+      z-index: 1000;
+    }
+
+    #section-cross-selling:has(.swiper.swiper-initialized .swiper-slide) {
+      opacity: 1;
+    }
+
+    #section-cross-selling .swiper-scrollbar .swiper-scrollbar-drag {
+      background-color: rgb(var(--color-gray-500));
+      border-radius: 100px;
+      display: block !important;
+    }
+
+    #section-cross-selling .swiper:not(.swiper-initialized) .swiper-wrapper.recently-viewed-products .swiper-slide {
+      width: 73%;
+    }
+
+    @media screen and (min-width: 768px) {
+      #section-cross-selling .swiper .swiper-wrapper.recently-viewed-products > .swiper-slide {
+        max-width: 29%;
+        margin-right: 16px;
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      #section-cross-selling
+        .swiper:not(.swiper-initialized)
+        .swiper-wrapper:not(.swiper-wrapper-card-product)
+        .swiper-wrapper {
+        transform: translateX(-27%);
+      }
+
+      #section-cross-selling .swiper.slider-beginning .swiper-wrapper:not(.swiper-wrapper-card-product) {
+        margin-left: 0;
+      }
+
+      #section-cross-selling .swiper.slider-end .swiper-wrapper:not(.swiper-wrapper-card-product) {
+        margin-left: 0;
+      }
+
+      #section-cross-selling .swiper .swiper-wrapper.recently-viewed-products > .swiper-slide {
+        max-width: 23%;
+        margin-right: 16px;
+      }
+    }
+  {% endstyle %}
+</section>

@@ -1,0 +1,1216 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_header_q4FP3m": {
+      "type": "page-header",
+      "settings": {
+        "background_color": "#ffbf00",
+        "circle_first_color": "#83dbcb",
+        "circle_second_color": "#ff4141",
+        "content_width_mobile": 305,
+        "content_width_desktop": 1080,
+        "title": "Content",
+        "subtitle": "",
+        "percent_amount": "page",
+        "link_text": "",
+        "link_url": "",
+        "note": "",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "rich_text_QTE8Xn": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_WHWwaB": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>Lorem ipsum dolor sit amet consectetur adipiscing elit praesent nunc nulla fringilla eu euismod fringilla.</strong>",
+            "heading_size": "h1"
+          }
+        },
+        "text_V4mLr3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. Nulla faucibus cursus iaculis. Aliquam tincidunt luctus lectus, at dapibus quam maximus nec. Maecenas commodo mattis libero, ac sodales ipsum elementum non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec magna enim, dignissim eu velit viverra, molestie aliquet lorem. Donec lacinia arcu elit, nec condimentum magna aliquet eget. Vivamus ultricies posuere fermentum.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_WHWwaB",
+        "text_V4mLr3"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "quote_xx6ywr": {
+      "type": "quote",
+      "blocks": {
+        "text_zXYjKh": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Maecenas commodo mattis libero, ac sodales ipsum elementum non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec magna enim, dignissim eu velit viverra, molestie aliquet lorem.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "text_zXYjKh"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "rich_text_BRyVrW": {
+      "type": "rich-text",
+      "blocks": {
+        "text_jhJbXV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. Nulla faucibus cursus iaculis. Aliquam tincidunt luctus lectus, at dapibus quam maximus nec. Maecenas commodo mattis libero, ac sodales ipsum elementum non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec magna enim, dignissim eu velit viverra, molestie aliquet lorem. Donec lacinia arcu elit, nec condimentum magna aliquet eget. Vivamus ultricies posuere fermentum.</p>"
+          }
+        },
+        "button_4fzdct": {
+          "type": "button",
+          "settings": {
+            "button_label": "Placeholder button",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "text_jhJbXV",
+        "button_4fzdct"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "divider_fullwidth_FfAMBz": {
+      "type": "divider-fullwidth",
+      "custom_css": [
+        ".divider {margin-bottom: 32px;}"
+      ],
+      "settings": {}
+    },
+    "featured_products_936EHy": {
+      "type": "featured-products",
+      "blocks": {
+        "product_m7V6iK": {
+          "type": "product",
+          "settings": {
+            "product": "alice-band-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        },
+        "product_PJAAXM": {
+          "type": "product",
+          "settings": {
+            "product": "alice-band-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_BBAhfF": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-for-girls-white-copy",
+            "kid_type": "Girls"
+          }
+        },
+        "product_ky4Kpm": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_TpK3qw": {
+          "type": "product",
+          "settings": {
+            "product": "12-hair-bands-for-babies-and-girls-multicoloured",
+            "kid_type": "Girls"
+          }
+        },
+        "product_wPTLHD": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_BX7Nnm": {
+          "type": "product",
+          "settings": {
+            "product": "alice-band-for-babies-and-girls-white",
+            "kid_type": "Girls"
+          }
+        },
+        "product_gXXYBf": {
+          "type": "product",
+          "settings": {
+            "product": "knit-jumper-with-ruffles-for-baby-girls-orange",
+            "kid_type": "Girls"
+          }
+        },
+        "product_mhWRHN": {
+          "type": "product",
+          "settings": {
+            "product": "combined-velvet-babygrow-for-newborns-white-light-brown",
+            "kid_type": "Girls"
+          }
+        },
+        "product_mKjJFY": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-joggers-for-boys-dark-blue",
+            "kid_type": "Boys"
+          }
+        },
+        "product_77JjnN": {
+          "type": "product",
+          "settings": {
+            "product": "combined-velvet-babygrow-for-newborns-white-light-brown",
+            "kid_type": "Boys"
+          }
+        },
+        "product_fBpUkJ": {
+          "type": "product",
+          "settings": {
+            "product": "pack-of-12-hair-elastics-for-baby-and-child-black",
+            "kid_type": "Boys"
+          }
+        },
+        "product_mNYWWT": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_rtadar": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_LRbY6y": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_PmAX6m": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_EPQqyw": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_dfbBBP": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_K8xrci": {
+          "type": "product",
+          "settings": {
+            "product": "umbrella-stroller-kubic-green-asalvo",
+            "kid_type": "Nursery"
+          }
+        }
+      },
+      "block_order": [
+        "product_m7V6iK",
+        "product_PJAAXM",
+        "product_BBAhfF",
+        "product_ky4Kpm",
+        "product_TpK3qw",
+        "product_wPTLHD",
+        "product_BX7Nnm",
+        "product_gXXYBf",
+        "product_mhWRHN",
+        "product_mKjJFY",
+        "product_77JjnN",
+        "product_fBpUkJ",
+        "product_mNYWWT",
+        "product_rtadar",
+        "product_LRbY6y",
+        "product_PmAX6m",
+        "product_EPQqyw",
+        "product_dfbBBP",
+        "product_K8xrci"
+      ],
+      "settings": {
+        "title": "Carrousels with options",
+        "show_kids_type": true,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "divider_fullwidth_DapqQ7": {
+      "type": "divider-fullwidth",
+      "settings": {}
+    },
+    "rich_text_tPG7Xb": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_yBM7c6": {
+          "type": "heading",
+          "settings": {
+            "heading": "Etiam gravida commodo enim",
+            "heading_size": "h1"
+          }
+        },
+        "text_bhaNed": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. Nulla faucibus cursus iaculis. Aliquam tincidunt luctus lectus, at dapibus quam maximus nec. Maecenas commodo mattis libero, ac sodales ipsum elementum non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Donec magna enim, dignissim eu velit viverra, molestie aliquet lorem. Donec lacinia arcu elit, nec condimentum magna aliquet eget. Vivamus ultricies posuere fermentum.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_yBM7c6",
+        "text_bhaNed"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "divider_RxX9kR": {
+      "type": "divider",
+      "settings": {}
+    },
+    "multicolumn_JKWdBQ": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_CqFXUn": {
+          "type": "column",
+          "settings": {
+            "title": "Lorem ipsum dolor",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "Palceholder button",
+            "link": ""
+          }
+        },
+        "column_pjxydB": {
+          "type": "column",
+          "settings": {
+            "title": "Lorem ipsum dolor",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "link_label": "Palceholder button",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_CqFXUn",
+        "column_pjxydB"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "divider_fullwidth_T6wrRL": {
+      "type": "divider-fullwidth",
+      "custom_css": [
+        ".divider {margin-bottom: 32px; margin-top: 24px;}"
+      ],
+      "settings": {}
+    },
+    "featured_products_KtrYpd": {
+      "type": "featured-products",
+      "blocks": {
+        "product_yVBNM8": {
+          "type": "product",
+          "settings": {
+            "product": "alice-band-for-babies-and-girls-dark-blue",
+            "kid_type": "Girls"
+          }
+        },
+        "product_mQtNfE": {
+          "type": "product",
+          "settings": {
+            "product": "alice-band-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_zaJ8qD": {
+          "type": "product",
+          "settings": {
+            "product": "cotton-twill-blouse-for-girls-white-copy",
+            "kid_type": "Girls"
+          }
+        },
+        "product_38qihG": {
+          "type": "product",
+          "settings": {
+            "product": "2-hairpins-2-bobbles-with-bow-for-babies-and-girls-red",
+            "kid_type": "Girls"
+          }
+        },
+        "product_tC6yAd": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Boys"
+          }
+        },
+        "product_46jgB3": {
+          "type": "product",
+          "settings": {
+            "product": "car-seat-i-size-zy-safe-premium-with-isofix-76-150-black-grey",
+            "kid_type": "Boys"
+          }
+        },
+        "product_pe4exC": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scooter-by-scoot-and-ride",
+            "kid_type": "Boys"
+          }
+        },
+        "product_WcgRUh": {
+          "type": "product",
+          "settings": {
+            "product": "combined-velvet-babygrow-for-newborns-white-light-brown",
+            "kid_type": "Boys"
+          }
+        },
+        "product_wQWgWE": {
+          "type": "product",
+          "settings": {
+            "product": "31064317",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_apTpLA": {
+          "type": "product",
+          "settings": {
+            "product": "aveo-tricycle-by-kinderkraft-pink",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_FJbwpx": {
+          "type": "product",
+          "settings": {
+            "product": "highwaykick-one-scoot-and-ride",
+            "kid_type": "Nursery"
+          }
+        },
+        "product_xLrTem": {
+          "type": "product",
+          "settings": {
+            "product": "umbrella-stroller-kubic-green-asalvo",
+            "kid_type": "Nursery"
+          }
+        }
+      },
+      "block_order": [
+        "product_yVBNM8",
+        "product_mQtNfE",
+        "product_zaJ8qD",
+        "product_38qihG",
+        "product_tC6yAd",
+        "product_46jgB3",
+        "product_pe4exC",
+        "product_WcgRUh",
+        "product_wQWgWE",
+        "product_apTpLA",
+        "product_FJbwpx",
+        "product_xLrTem"
+      ],
+      "settings": {
+        "title": "Carrousel",
+        "show_kids_type": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 80
+      }
+    },
+    "banners_TXWetf": {
+      "type": "banners",
+      "blocks": {
+        "banner_RUezNx": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/7014facf8ccd0a6eae8b2573a83763bd.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 608,
+            "max_height_desktop": 608,
+            "width": 100,
+            "content_vertical_position_mobile": "mobile-y-bottom",
+            "content_horizontal_position_desktop": "desktop-x-right",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "<h3>Summer</h3><h3>begins</h3>",
+            "title_font_size_mobile": 72,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "<p>summer collection ‘24</p>",
+            "subtitle_font_size_mobile": 20,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-auto",
+            "link_first_text": "View collection",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_RUezNx"
+      ],
+      "custom_css": [
+        ".title h3:first-child {left: -7%;}",
+        ".title h3:last-child {left: 10%;}",
+        ".subtitle {margin-top: 34px;}",
+        "@media (min-width: 768px) {.title h3:first-child {left: 0; } .title h3:last-child {left: 20%; } .subtitle * {left: 7%; } .actions {left: 6%; position: relative; bottom: 0; }}",
+        "@media (min-width: 1440px) {.content-wrapper {right: 10% !important; }}"
+      ],
+      "settings": {
+        "space_between_banners_mobile": 8,
+        "space_between_banners_desktop": 8,
+        "is_slider": false,
+        "banners_per_view_mobile": 4,
+        "banners_per_view_tablet": 2,
+        "banners_per_view_desktop": 4,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 8,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 8
+      }
+    },
+    "banners_3WdExy": {
+      "type": "banners",
+      "blocks": {
+        "banner_mAXaNA": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/af7a3ff9374f99d7af75c00531a4e22c.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 25,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "Button to collection page",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_6UY6qt": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/1de6676ba4d1c107ec3f8e850accd996.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 25,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "Button to collection page",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_AEnDaV": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/c1f60c72c551d782ed03b3307a06818e.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 25,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "Button to collection page",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_kFP6WA": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/0af3a460b341bf494f2d462723f56035.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 25,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "Button to collection page",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_mAXaNA",
+        "banner_6UY6qt",
+        "banner_AEnDaV",
+        "banner_kFP6WA"
+      ],
+      "settings": {
+        "space_between_banners_mobile": 8,
+        "space_between_banners_desktop": 8,
+        "is_slider": false,
+        "banners_per_view_mobile": 1,
+        "banners_per_view_tablet": 2,
+        "banners_per_view_desktop": 4,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 8,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 8
+      }
+    },
+    "banners_FaYEBE": {
+      "type": "banners",
+      "blocks": {
+        "banner_mLiVXE": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/d181e2e072a15bb713937b2cd925c5cb.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 50,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "View Summer Shoes",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_mPWBVW": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/d1f5d6d3658e17e25b7dd54285111a57.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 50,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "View Summer Jackets",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_mLiVXE",
+        "banner_mPWBVW"
+      ],
+      "settings": {
+        "space_between_banners_mobile": 8,
+        "space_between_banners_desktop": 8,
+        "is_slider": false,
+        "banners_per_view_mobile": 1,
+        "banners_per_view_tablet": 2,
+        "banners_per_view_desktop": 2,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 8,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 8
+      }
+    },
+    "banners_RidmAc": {
+      "type": "banners",
+      "blocks": {
+        "banner_wKBQ4V": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/d181e2e072a15bb713937b2cd925c5cb.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 50,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "View Summer Shoes",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_AXdrfD": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/d1f5d6d3658e17e25b7dd54285111a57.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 50,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "View Summer Jackets",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        },
+        "banner_dhKiXk": {
+          "type": "banner",
+          "settings": {
+            "desktop_image": "shopify://shop_images/c1f60c72c551d782ed03b3307a06818e.jpg",
+            "lazy_load": "lazy",
+            "max_height_mobile": 648,
+            "max_height_desktop": 588,
+            "width": 50,
+            "content_vertical_position_mobile": "mobile-y-top",
+            "content_horizontal_position_desktop": "desktop-x-center",
+            "content_vertical_position_desktop": "desktop-y-center",
+            "title": "",
+            "title_font_size_mobile": 49,
+            "title_font_size_desktop": 88,
+            "title_color": "#ffffff",
+            "subtitle": "",
+            "subtitle_font_size_mobile": 12,
+            "subtitle_font_size_desktop": 20,
+            "subtitle_color": "#ffffff",
+            "links_vertical_position_desktop": "desktop-y-bottom",
+            "link_first_text": "View Summer Jackets",
+            "link_first_url": "",
+            "link_second_text": "",
+            "link_second_url": "",
+            "link_third_text": "",
+            "link_third_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "banner_wKBQ4V",
+        "banner_AXdrfD",
+        "banner_dhKiXk"
+      ],
+      "settings": {
+        "space_between_banners_mobile": 8,
+        "space_between_banners_desktop": 8,
+        "is_slider": false,
+        "banners_per_view_mobile": 1,
+        "banners_per_view_tablet": 2,
+        "banners_per_view_desktop": 2,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 8,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 8
+      }
+    },
+    "rich_text_36k88r": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PjRMjE": {
+          "type": "heading",
+          "settings": {
+            "heading": "Nunc tellus mauris",
+            "heading_size": "h1"
+          }
+        },
+        "text_dNm8Uj": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. </p>"
+          }
+        },
+        "text_hYMEan": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Lorem ipsum dolor</p><ul><li>Nulla faucibus cursus iaculis</li><li>Aliquam tincidunt luctus lectus</li><li>Dapibus quam maximus nec</li><li>Maecenas commodo mattis libero</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PjRMjE",
+        "text_dNm8Uj",
+        "text_hYMEan"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    },
+    "divider_rJpcW4": {
+      "type": "divider",
+      "settings": {}
+    },
+    "multicolumn_RyNtHF": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_PXrPg8": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Lorem ipsum dolor</strong></p><p>Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis.</p>",
+            "link_label": "Palceholder button",
+            "link": ""
+          }
+        },
+        "column_Q3FQ6y": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Lorem ipsum dolor</strong></p><p>Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis.</p>",
+            "link_label": "Palceholder button",
+            "link": ""
+          }
+        },
+        "column_Q7r6e6": {
+          "type": "column",
+          "settings": {
+            "title": "",
+            "text": "<p><strong>Lorem ipsum dolor</strong></p><p>Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis.</p>",
+            "link_label": "Palceholder button",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "column_PXrPg8",
+        "column_Q3FQ6y",
+        "column_Q7r6e6"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_width": "full",
+        "image_ratio": "adapt",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "background_style": "primary",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "slideshow_hDGhqz": {
+      "type": "slideshow",
+      "blocks": {
+        "slide_QzCm99": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_4191_a97cc40c-ee53-4998-b99c-df0096c33670.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        },
+        "slide_JmWcg3": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Frame_4192.jpg",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_label": "",
+            "link": "",
+            "button_style_secondary": false,
+            "box_align": "middle-center",
+            "show_text_box": true,
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "color_scheme": "",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slide_QzCm99",
+        "slide_JmWcg3"
+      ],
+      "settings": {
+        "layout": "full_bleed",
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5,
+        "image_behavior": "none",
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "multirow_riHjPn": {
+      "type": "multirow",
+      "blocks": {
+        "row_Rt4WXA": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/6d6e43a8cb0b4d9bc7b1cc9d9b22aeaa.png",
+            "caption": "",
+            "heading": "Nunc tellus mauris",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. </p>",
+            "button_label": "",
+            "button_link": "",
+            "button_label_secondary": "",
+            "button_link_secondary": ""
+          }
+        },
+        "row_XPgaUy": {
+          "type": "row",
+          "settings": {
+            "image": "shopify://shop_images/2.jpg",
+            "caption": "",
+            "heading": "Curabitur sodales",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent nunc nulla, fringilla eu euismod fringilla, elementum ac augue. Vivamus maximus a ipsum non aliquet. Aliquam erat volutpat. Morbi et augue elit. Nunc tellus mauris, vestibulum in elit at, pulvinar sollicitudin sapien. Curabitur sodales turpis sit amet purus iaculis, eu iaculis dolor eleifend. Integer dignissim facilisis dolor sed mollis. Etiam gravida commodo enim, vitae tempor eros interdum ut. </p>",
+            "button_label": "Placeholder button",
+            "button_link": "",
+            "button_label_secondary": "Placeholder button",
+            "button_link_secondary": ""
+          }
+        }
+      },
+      "block_order": [
+        "row_Rt4WXA",
+        "row_XPgaUy"
+      ],
+      "settings": {
+        "image_height": "medium",
+        "desktop_image_width": "medium",
+        "heading_size": "h1",
+        "text_style": "body",
+        "button_style": "secondary",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "image_layout": "alternate-right",
+        "section_color_scheme": "",
+        "row_color_scheme": "",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "divider_fullwidth_fgGYeR": {
+      "type": "divider-fullwidth",
+      "settings": {}
+    },
+    "collapsible_content_88Tgmw": {
+      "type": "collapsible-content",
+      "blocks": {
+        "collapsible_row_exdXya": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet?",
+            "icon": "check_mark",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia nulla a hendrerit facilisis. Mauris libero est, faucibus non magna a, porttitor venenatis enim. Nulla facilisi. Sed ornare maximus urna sed dapibus. Nullam est arcu, blandit et consequat a, tempus non nunc.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_wGLKfp": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet?",
+            "icon": "check_mark",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia nulla a hendrerit facilisis. Mauris libero est, faucibus non magna a, porttitor venenatis enim. Nulla facilisi. Sed ornare maximus urna sed dapibus. Nullam est arcu, blandit et consequat a, tempus non nunc.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_RRwUGf": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet?",
+            "icon": "check_mark",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia nulla a hendrerit facilisis. Mauris libero est, faucibus non magna a, porttitor venenatis enim. Nulla facilisi. Sed ornare maximus urna sed dapibus. Nullam est arcu, blandit et consequat a, tempus non nunc.</p>",
+            "page": ""
+          }
+        },
+        "collapsible_row_c3WwEP": {
+          "type": "collapsible_row",
+          "settings": {
+            "heading": "Lorem ipsum dolor sit amet?",
+            "icon": "check_mark",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia nulla a hendrerit facilisis. Mauris libero est, faucibus non magna a, porttitor venenatis enim. Nulla facilisi. Sed ornare maximus urna sed dapibus. Nullam est arcu, blandit et consequat a, tempus non nunc.</p>",
+            "page": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_row_exdXya",
+        "collapsible_row_wGLKfp",
+        "collapsible_row_RRwUGf",
+        "collapsible_row_c3WwEP"
+      ],
+      "settings": {
+        "caption": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent metus lectus, sollicitudin sed ex at, blandit accumsan nisl. Pellentesque eu ullamcorper sem.",
+        "heading": "Frequently Asked Questions",
+        "heading_size": "h1",
+        "heading_alignment": "left",
+        "layout": "none",
+        "color_scheme": "",
+        "container_color_scheme": "",
+        "open_first_collapsible_row": false,
+        "image_ratio": "adapt",
+        "desktop_layout": "image_second",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "join_zippy_ixRACx": {
+      "type": "join-zippy",
+      "blocks": {
+        "block_j789dH": {
+          "type": "block",
+          "settings": {
+            "title": "10% Discount",
+            "text": "For an entire year on all purchases",
+            "link_text": "",
+            "link_url": ""
+          }
+        },
+        "block_4LtRec": {
+          "type": "block",
+          "settings": {
+            "title": "Free Bodysuit",
+            "text": "For your baby's first outfit",
+            "link_text": "More information",
+            "link_url": ""
+          }
+        },
+        "block_rfKxh7": {
+          "type": "block",
+          "settings": {
+            "title": "35% Discount at BébÉvida",
+            "text": "Enjoy great savings",
+            "link_text": "",
+            "link_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "block_j789dH",
+        "block_4LtRec",
+        "block_rfKxh7"
+      ],
+      "settings": {
+        "background_color": "#f7f6f0",
+        "logo": "shopify://shop_images/logo_baby-zippy_1.png",
+        "title": "<h2>Join the <br/>Zippy Birth List!</h2>",
+        "subtitle": "Get exclusive benefits for you and your baby!",
+        "button_text": "Join now and claim benefits",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_header_q4FP3m",
+    "rich_text_QTE8Xn",
+    "quote_xx6ywr",
+    "rich_text_BRyVrW",
+    "divider_fullwidth_FfAMBz",
+    "featured_products_936EHy",
+    "divider_fullwidth_DapqQ7",
+    "rich_text_tPG7Xb",
+    "divider_RxX9kR",
+    "multicolumn_JKWdBQ",
+    "divider_fullwidth_T6wrRL",
+    "featured_products_KtrYpd",
+    "banners_TXWetf",
+    "banners_3WdExy",
+    "banners_FaYEBE",
+    "banners_RidmAc",
+    "rich_text_36k88r",
+    "divider_rJpcW4",
+    "multicolumn_RyNtHF",
+    "slideshow_hDGhqz",
+    "multirow_riHjPn",
+    "divider_fullwidth_fgGYeR",
+    "collapsible_content_88Tgmw",
+    "join_zippy_ixRACx"
+  ]
+}

@@ -1,0 +1,105 @@
+{% comment %}
+  Renders a list of product's price (regular, sale)
+
+  Accepts:
+  - product: {Object} Product Liquid object
+  - currency_enabled: {Boolean} (optional)
+  - show_percents: {Boolean} (optional)
+  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing
+  - class: {String} Adds a price class to the price element (optional)
+
+  Usage:
+      {% render 'price', product: product %}
+{% endcomment %}
+
+{% liquid
+  if use_variant
+    assign target = product.selected_or_first_available_variant
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+
+  assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+
+  assign available = target.available | default: false
+  assign discount_percentage = compare_at_price | minus: price | times: 100.0 | divided_by: compare_at_price | round: 0
+
+  assign money_price = price | money_without_currency
+  assign money_price_min = price_min | money_without_currency
+  assign money_price_max = price_max | money_without_currency
+
+  if target == product and product.price_varies
+    assign money_price = 'products.product.price.from_price_html' | t: price: money_price
+  endif
+%}
+
+{% if target and target != empty %}
+  <div class="price {% if class %} {{ class }}{% endif %}">
+    <div
+      class="
+        price__container group
+        {% if available == false %} price--sold-out{% endif %}
+        {% if compare_at_price > price and product.quantity_price_breaks_configured? != true %} price--on-sale{% endif %}
+        {% if product.price_varies == false and product.compare_at_price_varies %} price--no-compare{% endif %}
+      "
+    >
+      <div class="price__regular text-xs font-medium leading-[13px] text-gray-800 group-[.price--on-sale]:hidden">
+        {% if product.quantity_price_breaks_configured? %}
+          {% if compare_at_price %}
+            {% unless product.price_varies == false and product.compare_at_price_varies %}
+              <span>
+                {% if currency_enabled %}
+                  <span class="currency-symbol currency-symbol--regular">{{ cart.currency.symbol }}</span>
+                {% endif %}
+
+                {{ compare_at_price | money_without_currency | replace: ',', '.' }}
+              </span>
+            {% endunless %}
+          {% endif %}
+
+          <span class="regular">
+            {{ 'products.product.volume_pricing.price_range' | t: minimum: money_price_min, maximum: money_price_max }}
+          </span>
+        {% else %}
+          <span class="regular">
+            {% if currency_enabled %}
+              <span class="currency-symbol currency-symbol--regular">{{ cart.currency.symbol }}</span>
+            {% endif %}
+
+            {{ money_price | replace: ',', '.' }}
+          </span>
+        {% endif %}
+      </div>
+
+      <div class="price__sale hidden leading-[13px] group-[.price--on-sale]:block">
+        {% unless product.price_varies == false and product.compare_at_price_varies %}
+          <span class="regular mr-1 text-xs font-medium leading-3 leading-[13px] text-gray-800">
+            {% if currency_enabled %}
+              <span class="currency-symbol currency-symbol--regular">{{ cart.currency.symbol }}</span>
+            {% endif %}
+
+            <span class="price relative after:absolute after:left-0 after:top-1/2 after:h-px after:w-full after:-translate-y-1/2 after:bg-gray-800">
+              {{ compare_at_price | money_without_currency | replace: ',', '.' }}
+            </span>
+          </span>
+        {% endunless %}
+
+        <span class="sale text-xs font-medium leading-[13px] text-red-500">
+          {% if currency_enabled %}
+            <span class="currency-symbol currency-symbol--sale">{{ cart.currency.symbol }}</span>
+          {% endif %}
+
+          {{ money_price | replace: ',', '.' }}
+
+          {% if show_percents == true %}
+            <span class="percentage ml-1 text-base font-normal leading-4">-{{ discount_percentage }}%</span>
+          {% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+{% endif %}

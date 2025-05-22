@@ -1,0 +1,169 @@
+{% comment %}
+  Renders forms
+
+  Usage:
+      {% render 'ui-forms' %}
+{% endcomment %}
+
+<div class="grid grid-cols-2 gap-5 lg:grid-cols-12">
+  <div class="col-span-2 lg:col-span-12">
+    <div class="flex flex-wrap items-center gap-5">
+      <h2 class="font-mono text-base tracking-normal">Use this class to reset input styles:</h2>
+      <div class="rounded bg-stone-300/40 px-2 py-1 font-mono text-sm italic">.input-reset-styles</div>
+    </div>
+  </div>
+
+  <div class="col-span-2 rounded border border-dashed border-primary bg-stone-300/20 p-8 lg:col-span-6">
+    <div class="mb-3 flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Default</span>
+      <div class="input-group">
+        <input class="peer" type="text" placeholder=" ">
+        <label>Username</label>
+      </div>
+    </div>
+
+    <div class="mb-3 flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Default with icon</span>
+      <div class="input-group">
+        <input class="peer" type="text" placeholder=" ">
+        <label>First name</label>
+        {% render 'icon', icon: 'calendar', class: 'absolute top-1/2 -translate-y-1/2 right-4' %}
+      </div>
+    </div>
+
+    <div class="mb-3 flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Disabled</span>
+      <div class="input-group">
+        <input class="peer" type="email" placeholder=" " disabled>
+        <label>E-mail</label>
+        {% render 'icon', icon: 'mail', class: 'absolute top-1/2 -translate-y-1/2 right-4' %}
+      </div>
+    </div>
+
+    <div class="mb-3 flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Error</span>
+      <div class="input-group error">
+        <input class="peer" type="text" placeholder=" ">
+        <label>Last name</label>
+        {% render 'icon', icon: 'error-circle', class: 'absolute top-1/2 -translate-y-1/2 right-4' %}
+      </div>
+    </div>
+
+    <div class="mb-3 flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Select</span>
+      <div class="input-group">
+        <select>
+          <option>Netherlands</option>
+          <option>Ukraine</option>
+          <option>United States</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="flex items-center gap-3">
+      <span class="w-25 font-mono text-sm tracking-normal">Textarea</span>
+      <div class="input-group">
+        <textarea class="peer" placeholder=" "></textarea>
+        <label>Additional information</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-span-2 lg:col-span-6">
+    <div class="mb-5 rounded border border-dashed border-primary bg-stone-300/20 p-8">
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="checkbox" class="peer" id="checkbox-1">
+          <label for="checkbox-1">
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper' %}
+            <span>Unchecked checkbox</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="checkbox" class="peer" id="checkbox-2" checked>
+          <label for="checkbox-2">
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper' %}
+            <span>Checked checkbox</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="checkbox" class="peer" id="checkbox-3" disabled>
+          <label for="checkbox-3">
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper' %}
+            <span>Disabled checkbox</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="mb-5 rounded border border-dashed border-primary bg-stone-300/20 p-8">
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="radio" class="peer" id="radio-1">
+          <label for="radio-1">
+            <span>Unchecked radio</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group">
+          <input type="radio" class="peer" id="radio-2" checked>
+          <label for="radio-2">
+            <span>Checked radio</span>
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="input-group">
+          <input type="radio" class="peer" id="radio-3" disabled>
+          <label for="radio-3">
+            <span>Disabled radio</span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded border border-dashed border-primary bg-stone-300/20 p-8">
+      <div class="mb-3">
+        <div class="input-group switcher">
+          <input type="checkbox" class="peer" id="switcher-1">
+          <label for="switcher-1">
+            <span>Default switcher</span>
+            {% render 'icon', icon: 'cross-circle', class: 'icon-wrapper cross' %}
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper success' %}
+          </label>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <div class="input-group switcher">
+          <input type="checkbox" class="peer" id="switcher-2" checked>
+          <label for="switcher-2">
+            <span>Active switcher</span>
+            {% render 'icon', icon: 'cross-circle', class: 'icon-wrapper cross' %}
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper success' %}
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <div class="input-group switcher">
+          <input type="checkbox" class="peer" id="switcher-3" disabled>
+          <label for="switcher-3">
+            <span>Disabled switcher</span>
+            {% render 'icon', icon: 'cross-circle', class: 'icon-wrapper cross' %}
+            {% render 'icon', icon: 'checkmark', class: 'icon-wrapper success' %}
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,178 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{{ 'customer.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign logout_text = 'customer.log_out' | t
+  assign navigation_continent_card = 'customer.account.navigation.continent_card' | t
+  assign navigation_family_data = 'customer.account.navigation.family_data' | t
+  assign chevron_class = 'w-6 h-6 icon-animation md:hidden absolute top-5 right-0 transition-transform duration-300 ease'
+%}
+
+{% capture chevron_down_icon %}
+  {% render 'icon', icon: 'chevron-down', class: chevron_class %}
+{% endcapture %}
+
+<div id="loading" class="text-center text-white">
+  <p class="mt-[200px]">{{ 'customer.account.personal_data.please_wait' | t }}</p>
+</div>
+
+<div
+  class="container-valantic account page-section--{{ section.id }} pb-8 pt-7 md:pb-20 md:pt-10"
+  data-nav="true"
+>
+  <div class="mb-5 flex w-full justify-between">
+    <h1 class="customer__title text-xl">
+      Hi {{ customer.first_name }}
+      {{ customer.last_name }}!
+    </h1>
+    <a href="{{ routes.account_logout_url }}" class="logout button secondary flex">
+      {% render 'icon', icon: 'log-out', class: 'w-6 h-6' %}
+      {{ logout_text }}
+    </a>
+  </div>
+
+  {% render 'account-navigation', chevron_class: chevron_class %}
+
+  {% render 'account-info', chevron_class: chevron_class %}
+
+  {% render 'account-orders', chevron_class: chevron_class %}
+
+  {% comment %}
+    <div class="account-continent_card border-b md:border-none">
+      <a
+        href="#"
+        data-nav-button="false"
+        data-id="continent_card"
+        class="customer-nav__item flex flex-1 py-5 md:hidden md:justify-center md:px-10"
+      >
+        {{ navigation_continent_card }}
+        {{ chevron_down_icon }}
+      </a>
+      <div
+        class="hidden max-[767px]:overflow-hidden max-[767px]:transition-all"
+        data-nav-content="true"
+        data-id="continent_card"
+      >
+        <div class="w-full md:w-1/2 lg:w-1/3">
+          <h2 class="mb-3 text-base">{{ 'customer.account.continental_card.card' | t }}</h2>
+
+          <form
+            class="my-4 grid grid-cols-2 gap-4 rounded border p-6"
+            {% render 'form-action' %}
+            method="post"
+          >
+            <div class="input-group col-span-full">
+              <input
+                type="text"
+                id="Continente_Card"
+                class="peer w-full"
+                name="continent_card"
+                placeholder=" "
+                value="{{ customer.metafields.custom.continent_card }}"
+              >
+              <label for="Continente_Card">{{ 'customer.account.continental_card.card' | t }}</label>
+            </div>
+
+            <input type="hidden" name="form_type" value="continente">
+            <input type="hidden" name="customer_id" value="{{ customer.id }}">
+            {% if localization.language.endonym_name != 'English' %}
+              <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
+            {% else %}
+              <input type="hidden" name="country_code" value="">
+            {% endif %}
+
+            {% render 'hidden-form-fields' %}
+            <script type="application/json" class="form-alerts">
+              {
+                "error": "{{ 'customer.account.personal_data.error_occured' | t }}",
+                "success": "{{ 'customer.account.personal_data.saved_success' | t }}"
+              }
+            </script>
+
+            <div class="d-none" data-alert="status"></div>
+
+            <div class="col-san-full">
+              <button
+                data-update="{{ 'customer.account.personal_data.update_details' | t }}"
+                data-wait="{{ 'customer.account.personal_data.please_wait' | t }}"
+                type="submit"
+              >
+                {{ 'customer.account.personal_data.update_details' | t }}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  {% endcomment %}
+
+  <div class="account-family_data border-b md:border-none">
+    <a
+      href="#"
+      data-nav-button="false"
+      data-id="family_data"
+      class="customer-nav__item flex flex-1 py-5 md:hidden md:justify-center md:px-10"
+    >
+      {{ navigation_family_data }}
+      {{ chevron_down_icon }}
+    </a>
+    <div
+      class="hidden max-[767px]:overflow-hidden max-[767px]:transition-all"
+      data-nav-content="true"
+      data-id="family_data"
+    >
+      {{ customer.metafields }}
+      {% render 'account-family-data' %}
+    </div>
+  </div>
+</div>
+
+<script src="{{ 'account.js' | asset_url }}" defer="defer"></script>
+
+{% schema %}
+{
+  "name": "t:sections.main-account.name",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 0,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 40,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 40,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 80,
+      "info": "From 768px"
+    }
+  ]
+}
+{% endschema %}

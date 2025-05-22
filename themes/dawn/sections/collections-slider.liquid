@@ -1,0 +1,178 @@
+{%
+  render 'offset',
+  id: section.id,
+  padding_top_mobile: section.settings.padding_top_mobile | default: 0,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile | default: 0,
+  padding_top_desktop: section.settings.padding_top_desktop | default: 0,
+  padding_bottom_desktop: section.settings.padding_bottom_desktop | default: 0
+%}
+
+{% liquid
+  assign collection_list = section.settings.collections_list
+  assign banner_bg_color = section.settings.banner_bg_color
+  assign show_collection_name = section.settings.show_collection_name
+%}
+
+{% if collection_list != blank %}
+  <section id="section-{{ section.id }}">
+    <div class="container-valantic">
+      {% if show_collection_name %}
+        <div class="collection-grid-header mb-4 !hidden md:!flex">
+          <div class="flex items-end justify-between gap-2 md:justify-start">
+            <div class="text-3_5xl">
+              {{ collection.title | escape }}
+            </div>
+            <span id="ProductCountDesktop" class="text-2xs text-gray-600">
+              {% if collection.products_count > 1 %}
+                {{ 'products.facets.product_count_simple.other' | t: count: collection.products_count }}
+              {% elsif collection.products_count == 1 %}
+                {{ 'products.facets.product_count_simple.one' | t: count: collection.products_count }}
+              {% else %}
+                {{ 'products.facets.no_results' | t }}
+              {% endif %}
+            </span>
+          </div>
+        </div>
+
+        {% style %}
+          @media screen and (min-width: 768px) {
+            .collection-grid-header:has(#ProductCount) {
+              display: none;
+            }
+          }
+        {% endstyle %}
+      {% endif %}
+
+      {% if collection_list %}
+        <div class="border-b border-gray-200 pb-4 md:border-none md:pb-0">
+          <div
+            class="swiper"
+            data-slider='
+              {
+                  "navigation": {
+                      "prevEl": "#section-{{ section.id }} .swiper-button-prev",
+                      "nextEl": "#section-{{ section.id }} .swiper-button-next"
+                  },
+                  "slidesPerView": "auto",
+                  "spaceBetween": 0
+              }
+            '
+          >
+            <div class="swiper-wrapper">
+              {%- for collection in collection_list -%}
+                {% liquid
+                  assign collection_name = collection.title
+                  assign image_desktop = collection.metafields.custom.additional_image.value
+                  assign image_mobile = collection.metafields.custom.additional_image.value
+                  assign placeholder = 'collection-1' | placeholder_svg_tag
+                  assign image_class = 'object-contain mb-2 min-h-20 min-w-20 max-h-20 max-w-20 mx-auto bg-gray-100 transition-all group-hover:shadow-[0px_8px_8px_0px_rgba(0,0,0,0.08)] rounded-full'
+                  assign image_id = section.id | append: '-' | append: collection.id
+                %}
+
+                <div class="swiper-slide group mr-3 !w-20">
+                  <a
+                    href="{{ collection.url }}"
+                    title="{{ collection.title }}"
+                    class="block h-full w-full"
+                  >
+                    <span
+                      {% if banner_bg_color %}
+                        style="background: {{ banner_bg_color }}"
+                      {% endif %}
+                    >
+                      {% render 'picture',
+                        image_desktop: image_desktop,
+                        image_mobile: image_mobile,
+                        placeholder: placeholder,
+                        class: image_class,
+                        id: image_id
+                      %}
+                    </span>
+
+                    <h3 class="mt-1 text-center text-2xs font-medium leading-4 text-gray-800 transition-colors">
+                      {{ collection_name }}
+                    </h3>
+                  </a>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="swiper-button-prev !top-10 inline-flex !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:!text-white">
+              {% render 'icon', icon: 'chevron-left' %}
+            </div>
+            <div class="swiper-button-next !top-10 inline-flex !bg-white shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)] hover:!bg-primary hover:!text-white">
+              {% render 'icon', icon: 'chevron-right' %}
+            </div>
+          </div>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Collections Slider",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Configuration"
+    },
+    {
+      "type": "collection_list",
+      "id": "collections_list",
+      "label": "Collections"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_collection_name",
+      "label": "Show Collection Title On Desktop",
+      "default": true,
+      "info": "Show collection title before slider on desktop devices"
+    },
+    {
+      "type": "color",
+      "id": "banner_bg_color",
+      "label": "Collection Item Background Color",
+      "default": "#F7F7F7"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_mobile",
+      "label": "Padding Top Mobile (px)",
+      "default": 32,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_mobile",
+      "label": "Padding Bottom Mobile (px)",
+      "default": 32,
+      "info": "Until 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_top_desktop",
+      "label": "Padding Top Desktop (px)",
+      "default": 32,
+      "info": "From 768px"
+    },
+    {
+      "type": "number",
+      "id": "padding_bottom_desktop",
+      "label": "Padding Bottom Desktop (px)",
+      "default": 32,
+      "info": "From 768px"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collections Slider"
+    }
+  ]
+}
+{% endschema %}

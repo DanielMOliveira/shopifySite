@@ -1,0 +1,58 @@
+{% comment %}
+  Renders footer menu links.
+
+  Accepts:
+  - menu_hide_account: {Boolean} Default: false (optional)
+  - menu_hide_wishlist: {Boolean} Default: false (optional)
+  - menu_hide_help: {Boolean} Default: false (optional)
+  - menu_help_url: {String} Default: blank (optional)
+
+  Usage:
+      {% render "menu-footer-navigation" %}
+{% endcomment %}
+
+<div class="mt-6 flex flex-col justify-center border-t border-gray-300 !bg-white py-6">
+  {% unless menu_hide_account %}
+    <div class="header-menu-account pb-4">
+      <a href="{{ routes.account_login_url }}" class="relative flex items-center gap-x-2 text-sm leading-5">
+        <span class="inline-flex w-4 justify-center">
+          {% render 'icon', icon: 'account', class: '!w-4 !h-4  mx-auto' %}
+        </span>
+
+        {% if customer %}
+          <span>{{ 'general.menu.my_account' | t }}</span>
+        {% else %}
+          <span>{{ 'general.menu.login' | t }}</span>
+        {% endif %}
+      </a>
+    </div>
+  {% endunless %}
+
+  {% unless menu_hide_help %}
+    {% if menu_help_url != blank %}
+      <div class="header-menu-help relative pb-4">
+        <a
+          href="{{ menu_help_url }}"
+          title="{{ 'general.menu.help' | t }}"
+          class="relative flex items-center gap-x-2 text-sm leading-5"
+        >
+          <span class="inline-flex w-4 justify-center">
+            {% render 'icon', icon: 'info-circle', class: '!w-3.5 !h-3.5 mx-auto' %}
+          </span>
+
+          <span>{{ 'general.menu.help' | t }}</span>
+        </a>
+      </div>
+    {% endif %}
+  {% endunless %}
+
+  {%- if localization.available_languages and localization.available_languages.size > 1 -%}
+    <localization-form class="no-js-hidden">
+      {%- form 'localization', id: 'MenuLanguageForm' -%}
+        <div>
+          {%- render 'language-localization-form', localPosition: 'HeaderLanguageMobile' -%}
+        </div>
+      {%- endform -%}
+    </localization-form>
+  {%- endif -%}
+</div>

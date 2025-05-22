@@ -1,0 +1,1790 @@
+<style media="screen" type="text/css">
+
+  .footer-top, .footer-bottom {
+    display: none;
+  }
+  
+  .footer-swiper-flex {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    overflow-y: scroll;
+    margin-top: 11vh;
+  }
+
+  .footer-swiper-flex::-webkit-scrollbar {
+    display: none;
+  }
+
+  .language-switcher {
+    padding: 0 1rem;
+  }
+
+
+  #zyHPsubscription .container-fluid {
+    max-width: 100%;
+  }
+
+  #zyHPsubscription .row {
+    width: 100%;
+    margin: auto;
+    padding: 5rem 0 3rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 5rem;
+  }
+
+  #zyHPsubscription h2 {
+    font-family: 'CentraNo1', Assistant, sans-serif;
+    font-weight: 800;
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    color: #221f20;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  #zyHPsubscription .benefits-title,
+  #zyHPsubscription .benefits-cta {
+    width: 20%;
+    text-align: center;
+    margin: auto;
+  }
+
+  #zyHPsubscription .benefits-slider {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+    width: 50%;
+  }
+
+  #zyHPsubscription .benefits-slider h3 {
+    font-family: 'CentraNo1', Assistant, sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    letter-spacing: 0;
+    color: #221f20;
+    line-height: 1.3;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    margin: 0;
+    width: 150px;
+  }
+
+  #zyHPsubscription .benefits-slider h3>span {
+    font-family: 'CentraNo1', Assistant, sans-serif;
+    font-weight: 800;
+  }
+
+  #zyHPsubscription .benefits-slider h3:last-of-type {
+    padding-top: 1rem;
+  }
+
+  #zyHPsubscription .benefits-slider .plus {
+    font-family: 'CentraNo1', Assistant, sans-serif;
+    font-size: 3rem;
+    letter-spacing: 0;
+    color: #221f20;
+  }
+
+  #zyHPsubscription u {
+    text-underline-offset: 0.25rem;
+    color: #221f20;
+    z-index: 1;
+    font-size: 0.875rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  #zyHPsubscription .benefit {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+  }
+
+  #zyHPsubscription .benefit a,
+  #zyHPsubscription .benefit a:hover {
+    text-decoration: none;
+    color: #221f20;
+  }
+
+  #zyHPsubscription .circle-benefits {
+    position: absolute;
+    background-color: #f2f0e9;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    z-index: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+  }
+
+  #zyHPsubscription button {
+    min-width: 10rem;
+  }
+
+  @media only screen and (max-width: 1200px) {
+    #zyHPsubscription .row {
+      flex-direction: column;
+      padding: 2rem 0;
+      gap: 6rem;
+      margin-bottom: 0;
+    }
+
+    #zyHPsubscription .benefits-title,
+    #zyHPsubscription .benefits-cta,
+    #zyHPsubscription .benefits-slider {
+      display: flex;
+      justify-content: center;
+      width: 90%;
+      gap: 2.5rem;
+    }
+  }
+
+  @media only screen and (max-width: 991px) {
+
+    .footer-swiper-flex {
+      margin-top: 15vh;
+    }
+  }
+
+  @media only screen and (max-width: 576px) {
+    #zyHPsubscription .row {
+      gap: 4rem 0;
+    }
+
+    #zyHPsubscription .benefit {
+      width: 50%;
+    }
+
+    #zyHPsubscription h3,
+    #zyHPsubscription .benefits-slider h3:last-of-type {
+      font-size: 75%;
+      width: 95%;
+      padding-top: 0;
+    }
+
+    #zyHPsubscription u {
+      font-size: 60%;
+    }
+
+    #zyHPsubscription .benefit a {
+      line-height: 0.8;
+    }
+
+    #zyHPsubscription .benefits-title,
+    #zyHPsubscription .benefits-cta,
+    #zyHPsubscription .benefits-slider {
+      width: 90%;
+      gap: 1rem;
+    }
+
+    #zyHPsubscription .benefits-slider .plus {
+      font-size: 2rem;
+    }
+
+    #zyHPsubscription .circle-benefits {
+      position: absolute;
+      background-color: #f2f0e9;
+      border-radius: 50%;
+      width: 28vw;
+      height: 28vw;
+    }
+  }
+
+  @media only screen and (max-width: 390px) {
+
+    #zyHPsubscription h3,
+    #zyHPsubscription .benefits-slider h3:last-of-type {
+      font-size: 70%;
+    }
+  }
+</style>
+
+<div class="footer-swiper-flex">
+
+  <div class="subscription-div">
+
+    {% assign locale = shop.locale %}
+    {% if locale == 'pt-PT' %}
+    <div id="zyHPsubscription">
+      <section class="container-fluid">
+        <div class="row">
+          <div class="benefits-title">
+            <h2>Junte-se à família Zippy!</h2>
+          </div>
+          <div class="benefits-slider">
+            <div class="benefit">
+              <h3>
+                <span>10% desconto</span><br>
+                na 1ª compra online
+              </h3>
+              <div class="circle-benefits"></div>
+            </div>
+            <div class="plus">+</div>
+            <div class="benefit">
+              <h3>
+                <span>Acesso exclusivo</span><br>
+                a descontos e coleções
+              </h3>
+              <div class="circle-benefits"></div>
+            </div>
+            <div class="plus">+</div>
+            <div class="benefit">
+              <h3>
+                <span>Benefícios especiais</span> <br>
+                para grávidas e recém-pais
+              </h3>
+              <a href="{{ pages['programa-baby-zippy-lista-de-nascimento'].url }}">
+                <u>Saber mais</u>
+              </a>
+              <div class="circle-benefits"></div>
+            </div>
+          </div>
+          <div class="benefits-cta">
+            <a href="{{ pages['newsletter'].url }}">
+              <button>Adira Já</button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+    {% elsif locale == 'en' %}
+    <div id="zyHPsubscription">
+      <section class="container-fluid">
+        <div class="row">
+          <div class="benefits-title">
+            <h2>
+              Do you want to be<br>
+              a Zippy member?
+            </h2>
+          </div>
+          <div class="benefits-slider">
+            <div class="benefit">
+              <h3>
+                <span>10% discount</span><br>
+                on 1st online purchase
+              </h3>
+              <div class="circle-benefits"></div>
+            </div>
+            <div class="plus">+</div>
+            <div class="benefit">
+              <h3>
+                <span>Exclusive access</span><br>
+                to discounts and collections
+              </h3>
+              <div class="circle-benefits"></div>
+            </div>
+            <div class="plus">+</div>
+            <div class="benefit">
+              <h3>
+                <span>Special benefits</span> <br>
+                for pregnants and new parents
+              </h3>
+              <a href="{{ pages['programa-baby-zippy-lista-de-nascimento'].url }}">
+                <u>Know more</u>
+              </a>
+              <div class="circle-benefits"></div>
+            </div>
+          </div>
+          <div class="benefits-cta">
+            <a href="{{ pages['newsletter'].url }}">
+              <button>join now</button>
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+    {% endif %}
+  </div>
+
+  <div class="footer-div">
+
+    <footer class="footer-swiper color-scheme-1 gradient">
+      <div class="footer-swiper-top w-full border-y">
+        <div class="flex flex-wrap justify-between pb-8 pt-3 md:py-15">
+
+          <div class="footer-menu__wrapper mb-6 w-full min-w-[75%] flex-1 md:mb-0 md:grid md:grid-cols-4 md:gap-5">
+
+            <div class="footer-menu__item group w-full border-b md:border-none md:col-span-1">
+
+              <div class="footer-menu__content" data-collapsible="
+          {
+              &quot;collapsed&quot;: true,
+              &quot;mobileOnly&quot;: true
+          }
+        ">
+
+                <h2
+                  class="relative cursor-pointer py-5 pb-[19px] !font-body text-base font-medium leading-none md:cursor-text md:pt-0 lg:pb-4"
+                  data-trigger="true">
+                  {% assign locale = shop.locale %}
+                  {% if locale == 'pt-PT' %}
+                  <span>Ajuda</span>
+                  {% elsif locale == 'en' %}
+                  <span>Customer Service</span>
+                  {% endif %}
+                  <span
+                    class="flex h-5 w-5 items-center justify-center icon-animation md:hidden absolute top-4 right-0 transition-transform duration-300 ease"
+                    aria-label="">
+
+                    <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" viewBox="0 0 20 20" fill="none">
+                      <g clip-path="url(#clip0_861_46609)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                          fill="currentColor"></path>
+                      </g>
+                    </svg>
+
+                  </span>
+
+                </h2>
+
+                <div
+                  class="footer-menu__submenu ease duration-300 max-[767px]:h-0 max-[767px]:overflow-hidden max-[767px]:transition-all"
+                  data-content="true">
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/contactos" title="Contactos">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Contactos</span>
+                        {% elsif locale == 'en' %}
+                        <span>Contact Us</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/faq" title="Perguntas Frequentes">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Perguntas Frequentes</span>
+                        {% elsif locale == 'en' %}
+                        <span>FAQ</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/faq/#faq_entregas" title="Entregas">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Entregas</span>
+                        {% elsif locale == 'en' %}
+                        <span>Delivery</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/faq/#faq_devolucoes" title="Devoluções">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Devoluções</span>
+                        {% elsif locale == 'en' %}
+                        <span>Return</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/faq/#faq_campanhas" title="Campanhas &amp; Promoções">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Campanhas & Promoções</span>
+                        {% elsif locale == 'en' %}
+                        <span>Campaigns</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/lojas-zippy" title="Lojas Zippy">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Lojas Zippy</span>
+                        {% elsif locale == 'en' %}
+                        <span>Store Locator</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="footer-menu__item group w-full border-b md:border-none md:col-span-1">
+
+              <div class="footer-menu__content" data-collapsible="
+          {
+              &quot;collapsed&quot;: true,
+              &quot;mobileOnly&quot;: true
+          }
+        ">
+
+                <h2
+                  class="relative cursor-pointer py-5 pb-[19px] !font-body text-base font-medium leading-none md:cursor-text md:pt-0 lg:pb-4"
+                  data-trigger="true">
+                  {% assign locale = shop.locale %}
+                  {% if locale == 'pt-PT' %}
+                  <span>Conta</span>
+                  {% elsif locale == 'en' %}
+                  <span>My Account</span>
+                  {% endif %}
+
+                  <span
+                    class="flex h-5 w-5 items-center justify-center icon-animation md:hidden absolute top-4 right-0 transition-transform duration-300 ease"
+                    aria-label="">
+
+                    <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" viewBox="0 0 20 20" fill="none">
+                      <g clip-path="url(#clip0_861_46609)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                          fill="currentColor"></path>
+                      </g>
+                    </svg>
+
+                  </span>
+
+                </h2>
+
+                <div
+                  class="footer-menu__submenu ease duration-300 max-[767px]:h-0 max-[767px]:overflow-hidden max-[767px]:transition-all"
+                  data-content="true">
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/account/login" title="Fazer Login">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Iniciar Sessão</span>
+                        {% elsif locale == 'en' %}
+                        <span>Login</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/account/register" title="Criar uma Conta">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Criar Conta</span>
+                        {% elsif locale == 'en' %}
+                        <span>Create Account</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/account" title="Ver Encomendas">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Ver Encomendas</span>
+                        {% elsif locale == 'en' %}
+                        <span>My Orders</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="footer-menu__item group w-full border-b md:border-none md:col-span-1">
+
+              <div class="footer-menu__content" data-collapsible="
+          {
+              &quot;collapsed&quot;: true,
+              &quot;mobileOnly&quot;: true
+          }
+        ">
+
+                <h2
+                  class="relative cursor-pointer py-5 pb-[19px] !font-body text-base font-medium leading-none md:cursor-text md:pt-0 lg:pb-4"
+                  data-trigger="true">
+                  {% assign locale = shop.locale %}
+                  {% if locale == 'pt-PT' %}
+                  <span>Marca</span>
+                  {% elsif locale == 'en' %}
+                  <span>Brand</span>
+                  {% endif %}
+
+                  <span
+                    class="flex h-5 w-5 items-center justify-center icon-animation md:hidden absolute top-4 right-0 transition-transform duration-300 ease"
+                    aria-label="">
+
+                    <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" viewBox="0 0 20 20" fill="none">
+                      <g clip-path="url(#clip0_861_46609)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                          fill="currentColor"></path>
+                      </g>
+                    </svg>
+
+                  </span>
+
+                </h2>
+
+                <div
+                  class="footer-menu__submenu ease duration-300 max-[767px]:h-0 max-[767px]:overflow-hidden max-[767px]:transition-all"
+                  data-content="true">
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/sobre-a-zippy" title="Sobre a Zippy">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Sobre a Zippy</span>
+                        {% elsif locale == 'en' %}
+                        <span>About Zippy</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="https://career2.successfactors.eu/career?company=fashiondiv&amp;career%5fns=job%5flisting%5fsummary&amp;navBarLevel=JOB%5fSEARCH&amp;_s.crb=qUXnL4U9L%2bBpK52QNfVXvBkqaSgJ%2bMPGgZsuXN88s4w%3d"
+                        target="_blank" title="Trabalhar na Zippy">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Trabalhar na Zippy</span>
+                        {% elsif locale == 'en' %}
+                        <span>Work at Zippy</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/zippy-franchising" title="Franchising">
+                        Franchising
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/zippy-wholesale" title="Wholesale">
+                        Wholesale
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/zippy-corporate" title="Zippy Corporate">
+                        Zippy Corporate
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div class="footer-menu__item group w-full border-b md:border-none md:col-span-1">
+
+              <div class="footer-menu__content" data-collapsible="
+          {
+              &quot;collapsed&quot;: true,
+              &quot;mobileOnly&quot;: true
+          }
+        ">
+
+                <h2
+                  class="relative cursor-pointer py-5 pb-[19px] !font-body text-base font-medium leading-none md:cursor-text md:pt-0 lg:pb-4"
+                  data-trigger="true">
+                  <span>We are Zippy</span>
+
+                  <span
+                    class="flex h-5 w-5 items-center justify-center icon-animation md:hidden absolute top-4 right-0 transition-transform duration-300 ease"
+                    aria-label="">
+
+                    <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" viewBox="0 0 20 20" fill="none">
+                      <g clip-path="url(#clip0_861_46609)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                          fill="currentColor"></path>
+                      </g>
+                    </svg>
+
+                  </span>
+
+                </h2>
+
+                <div
+                  class="footer-menu__submenu ease duration-300 max-[767px]:h-0 max-[767px]:overflow-hidden max-[767px]:transition-all"
+                  data-content="true">
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/programa-baby-zippy-lista-de-nascimento" title="Lista de Nascimento">
+                        {% assign locale = shop.locale %}
+                        {% if locale == 'pt-PT' %}
+                        <span>Lista de Nascimento</span>
+                        {% elsif locale == 'en' %}
+                        <span>Birthlist</span>
+                        {% endif %}
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/bolsa-baby-zippy" title="Bolsa Baby Zippy">
+                        Bolsa Baby Zippy
+                      </a>
+                    </div>
+
+                  </div>
+
+                  <div class="footer-menu__links mb-3 last:mb-4 xl:mb-4 xl:last:mb-0">
+
+                    <div class="footer-menu__link-wrapper mb-2 leading-none last:mb-4 md:mb-3 xl:last:mb-0">
+                      <a class="hover-underline inline-block pb-1 text-sm leading-none text-gray-800 transition-colors"
+                        href="/pt/pages/dicas-baby-zippy" title="Dicas Baby Zippy">
+                        Dicas Baby Zippy
+                      </a>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="footer-block w-full md:max-w-64 lg:w-1/4">
+            <div class="footer-social mb-7 md:mb-8">
+              <div
+                class="pb-4 text-center !font-body text-2xs font-medium uppercase leading-none text-gray-800 md:text-left">
+                {% assign locale = shop.locale %}
+                {% if locale == 'pt-PT' %}
+                <span>Siga-nos nas Redes Sociais</span>
+                {% elsif locale == 'en' %}
+                <span>Follow us on Social Media</span>
+                {% endif %}
+              </div>
+
+              <ul
+                class="flex flex-wrap items-center justify-center gap-6 md:justify-start md:gap-5  footer__list-social"
+                role="list">
+                <li class="list-social__item">
+                  <a href="https://facebook.com/zykidstore" class="link list-social__link group h-full w-full">
+
+                    <span
+                      class="flex h-5 w-5 items-center justify-center w-7.5 h-7.5 md:w-5 md:h-5 group-hover:scale-110 transition-all"
+                      aria-label="">
+
+                      <svg class="icon h-full w-full facebook-circle" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M10 -3.05176e-05C4.48148 -3.05176e-05 0 4.48145 0 9.99997C0 15.5185 4.48148 20 10 20C15.5185 20 20 15.5185 20 9.99997C20 4.48145 15.5185 -3.05176e-05 10 -3.05176e-05ZM10 18.5185C5.30556 18.5185 1.48148 14.6944 1.48148 9.99997C1.48148 5.30553 5.30556 1.48145 10 1.48145C14.6944 1.48145 18.5185 5.30553 18.5185 9.99997C18.5185 14.6944 14.6944 18.5185 10 18.5185Z"
+                          fill="currentColor"></path>
+                        <path
+                          d="M8.61104 6.62013V8.10161H7.46289V9.98124H8.61104V15.4998H10.824V9.96272H12.3703L12.537 8.11087H10.824V7.05532C10.824 6.62013 10.9073 6.44421 11.3333 6.44421H12.5277V4.51828H10.9999C9.35178 4.51828 8.61104 5.2405 8.61104 6.62939V6.62013Z"
+                          fill="currentColor"></path>
+                      </svg>
+
+                    </span>
+
+                    <span class="visually-hidden">Facebook</span>
+                  </a>
+                </li>
+                <li class="list-social__item">
+                  <a href="https://instagram.com/zippykidstore" class="link list-social__link group h-full w-full">
+
+                    <span
+                      class="flex h-5 w-5 items-center justify-center w-7.5 h-7.5 md:w-5 md:h-5 group-hover:scale-110 transition-all"
+                      aria-label="">
+
+                      <svg class="icon h-full w-full instagram" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M19.4841 3.4146C19.212 2.72042 18.8649 2.17633 18.3396 1.66038C17.8143 1.13505 17.2796 0.787962 16.5854 0.515917C15.8724 0.243872 15.122 0.0937781 14.1651 0.0562546C13.0863 0.00935029 12.7205 -3.05176e-05 10 -3.05176e-05C7.27955 -3.05176e-05 6.92308 0.00935029 5.8349 0.0562546C4.86867 0.103159 4.12758 0.243872 3.41463 0.515917C2.72045 0.787962 2.17636 1.13505 1.66041 1.66038C1.13508 2.18571 0.787992 2.72042 0.515947 3.4146C0.243902 4.12755 0.0938086 4.87802 0.0562851 5.83487C0.00938081 6.90428 0 7.26076 0 9.99997C0 12.7392 0.00938081 13.0863 0.0562851 14.1651C0.103189 15.1313 0.243902 15.8724 0.515947 16.5853C0.787992 17.2795 1.13508 17.8236 1.66041 18.3396C2.18574 18.8649 2.72045 19.212 3.41463 19.484C4.12758 19.7561 4.87805 19.9062 5.8349 19.9437C6.9137 19.9906 7.27017 20 10 20C12.7298 20 13.0863 19.9906 14.1651 19.9437C15.1313 19.8968 15.8724 19.7561 16.5854 19.484C17.2796 19.212 17.8236 18.8649 18.3396 18.3396C18.8649 17.8142 19.212 17.2795 19.4841 16.5853C19.7561 15.8724 19.9062 15.1219 19.9437 14.1651C19.9906 13.0863 20 12.7298 20 9.99997C20 7.27014 19.9906 6.91367 19.9437 5.83487C19.8968 4.86864 19.7561 4.12755 19.4841 3.4146ZM18.3114 14.09C18.2645 15.0938 18.0957 15.6379 17.955 15.9943C17.7674 16.4821 17.5422 16.8292 17.1764 17.1857C16.8105 17.5516 16.4634 17.7767 15.985 17.9643C15.6191 18.105 15.075 18.2739 14.0807 18.3208C13.0206 18.3677 12.7017 18.3771 9.99062 18.3771C7.27955 18.3771 6.96998 18.3677 5.90056 18.3208C4.89681 18.2739 4.35272 18.105 3.99625 17.9643C3.50844 17.7767 3.16135 17.5516 2.80488 17.1857C2.43902 16.8199 2.21388 16.4728 2.02627 15.9943C1.88555 15.6285 1.7167 15.0844 1.66979 14.09C1.62289 13.0206 1.61351 12.7017 1.61351 9.99997C1.61351 7.29828 1.62289 6.98871 1.66979 5.90991C1.7167 4.91554 1.88555 4.37145 2.02627 4.0056C2.21388 3.51779 2.43902 3.1707 2.80488 2.81423C3.17073 2.44837 3.51782 2.22323 3.99625 2.03562C4.3621 1.8949 4.90619 1.72605 5.90056 1.67914C6.9606 1.63224 7.27955 1.62286 9.99062 1.62286C12.7017 1.62286 13.0206 1.63224 14.0807 1.67914C15.0844 1.72605 15.6285 1.8949 15.985 2.03562C16.4728 2.22323 16.8199 2.44837 17.1764 2.81423C17.5422 3.18008 17.7674 3.52717 17.955 4.0056C18.0957 4.37145 18.2645 4.91554 18.3114 5.90991C18.3584 6.97933 18.3677 7.29828 18.3677 9.99997C18.3677 12.7017 18.3584 13.0112 18.3114 14.09Z"
+                          fill="currentColor"></path>
+                        <path
+                          d="M10.0001 4.90601C7.1858 4.90601 4.90625 7.19494 4.90625 9.99981C4.90625 12.8047 7.19518 15.0936 10.0001 15.0936C12.8049 15.0936 15.0939 12.8047 15.0939 9.99981C15.0939 7.19494 12.8049 4.90601 10.0001 4.90601ZM10.0001 13.4614C8.08636 13.4614 6.53852 11.9041 6.53852 9.99981C6.53852 8.0955 8.09574 6.53828 10.0001 6.53828C11.9044 6.53828 13.4616 8.0955 13.4616 9.99981C13.4616 11.9041 11.9044 13.4614 10.0001 13.4614Z"
+                          fill="currentColor"></path>
+                        <path
+                          d="M15.3942 5.72239C16.0107 5.72239 16.5105 5.2226 16.5105 4.60607C16.5105 3.98954 16.0107 3.48975 15.3942 3.48975C14.7776 3.48975 14.2778 3.98954 14.2778 4.60607C14.2778 5.2226 14.7776 5.72239 15.3942 5.72239Z"
+                          fill="currentColor"></path>
+                      </svg>
+
+                    </span>
+
+                    <span class="visually-hidden">Instagram</span>
+                  </a>
+                </li>
+                <li class="list-social__item">
+                  <a href="https://youtube.com/@zippy.kidstore" class="link list-social__link group h-full w-full">
+
+                    <span
+                      class="flex h-5 w-5 items-center justify-center w-7.5 h-7.5 md:w-5 md:h-5 group-hover:scale-110 transition-all"
+                      aria-label="">
+
+                      <svg class="icon h-full w-full youtube-circle" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M10 20C4.48148 20 0 15.5185 0 9.99997C0 4.48145 4.48148 -3.05176e-05 10 -3.05176e-05C15.5185 -3.05176e-05 20 4.48145 20 9.99997C20 15.5185 15.5185 20 10 20ZM10 1.48145C5.30556 1.48145 1.48148 5.30553 1.48148 9.99997C1.48148 14.6944 5.30556 18.5185 10 18.5185C14.6944 18.5185 18.5185 14.6944 18.5185 9.99997C18.5185 5.30553 14.6944 1.48145 10 1.48145Z"
+                          fill="currentColor"></path>
+                        <path
+                          d="M15.6576 7.13872C15.5187 6.62946 15.1206 6.22205 14.6113 6.08316C13.6946 5.83316 10.0002 5.83316 10.0002 5.83316C10.0002 5.83316 6.30574 5.83316 5.38907 6.08316C4.87981 6.22205 4.48166 6.6202 4.34277 7.13872C4.09277 8.06464 4.09277 9.99983 4.09277 9.99983C4.09277 9.99983 4.09277 11.935 4.34277 12.8609C4.48166 13.3702 4.87981 13.7776 5.38907 13.9165C6.30574 14.1665 10.0002 14.1665 10.0002 14.1665C10.0002 14.1665 13.6946 14.1665 14.6113 13.9165C15.1206 13.7776 15.5187 13.3795 15.6576 12.8609C15.9076 11.935 15.9076 9.99983 15.9076 9.99983C15.9076 9.99983 15.9076 8.06464 15.6576 7.13872Z"
+                          fill="currentColor"></path>
+                        <path d="M8.79639 11.759V8.24048L11.8797 9.99974L8.79639 11.759Z" fill="white"></path>
+                      </svg>
+
+                    </span>
+
+                    <span class="visually-hidden">YouTube</span>
+                  </a>
+                </li>
+                <li class="list-social__item">
+                  <a href="https://tiktok.com/@zippykidstore" class="link list-social__link group h-full w-full">
+
+                    <span
+                      class="flex h-5 w-5 items-center justify-center w-7.5 h-7.5 md:w-5 md:h-5 group-hover:scale-110 transition-all"
+                      aria-label="">
+
+                      <svg class="icon h-full w-full tiktok-circle" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                          d="M10 20C4.48148 20 0 15.5185 0 9.99997C0 4.48145 4.48148 -3.05176e-05 10 -3.05176e-05C15.5185 -3.05176e-05 20 4.48145 20 9.99997C20 15.5185 15.5185 20 10 20ZM10 1.48145C5.30556 1.48145 1.48148 5.30553 1.48148 9.99997C1.48148 14.6944 5.30556 18.5185 10 18.5185C14.6944 18.5185 18.5185 14.6944 18.5185 9.99997C18.5185 5.30553 14.6944 1.48145 10 1.48145Z"
+                          fill="currentColor"></path>
+                        <path
+                          d="M15.0832 8.87028C14.9906 8.87954 14.8887 8.8888 14.7869 8.8888C13.7128 8.8888 12.722 8.35176 12.1294 7.45362V12.3425C12.1294 14.3332 10.5091 15.9536 8.51834 15.9536C6.5276 15.9536 4.90723 14.3332 4.90723 12.3425C4.90723 10.3518 6.5276 8.73139 8.51834 8.73139C8.59241 8.73139 8.66649 8.73139 8.74056 8.74065V10.5184C8.66649 10.5184 8.59241 10.4999 8.51834 10.4999C7.49982 10.4999 6.67575 11.324 6.67575 12.3425C6.67575 13.361 7.49982 14.1851 8.51834 14.1851C9.53686 14.1851 10.435 13.3795 10.435 12.361L10.4535 4.06473H12.1572C12.3146 5.59251 13.5461 6.78695 15.0832 6.89806V8.87954"
+                          fill="currentColor"></path>
+                      </svg>
+
+                    </span>
+
+                    <span class="visually-hidden">TikTok</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer__payment mb-7 md:mb-8">
+              <div class="flex w-full items-start justify-center gap-1 pb-3 md:justify-start">
+
+                <span class="flex h-5 w-5 items-center justify-center relative top-0.5" aria-label="">
+
+                  <svg class="icon h-full w-full shield" xmlns="http://www.w3.org/2000/svg" width="21" height="20"
+                    viewBox="0 0 21 20" fill="none">
+                    <g clip-path="url(#clip0_929_20474)">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M9.91483 1.82975C10.2921 1.68826 10.7079 1.68826 11.0852 1.82975L16.9185 4.01725C17.5691 4.26118 18 4.88306 18 5.5778V10.0467C18 12.8875 16.395 15.4845 13.8541 16.755L11.059 18.1525C10.7071 18.3285 10.2929 18.3285 9.941 18.1525L7.1459 16.755C4.60502 15.4845 3 12.8875 3 10.0467V5.5778C3 4.88306 3.43096 4.26118 4.08146 4.01725L9.91483 1.82975ZM10.5 3.3903L4.66667 5.5778V10.0467C4.66667 12.2562 5.91502 14.2761 7.89125 15.2642L10.5 16.5686L13.1087 15.2642C15.085 14.2761 16.3333 12.2562 16.3333 10.0467V5.5778L10.5 3.3903Z"
+                        fill="currentColor"></path>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_929_20474">
+                        <rect width="20" height="20" fill="white" transform="translate(0.5)"></rect>
+                      </clipPath>
+                    </defs>
+                  </svg>
+
+                </span>
+
+                <div class="!font-body text-2xs font-medium uppercase text-gray-800 md:flex-1">
+                  {% assign locale = shop.locale %}
+                  {% if locale == 'pt-PT' %}
+                  Métodos de Pagamento Seguros
+                  {% elsif locale == 'en' %}
+                  Secure Payment Methods
+                  {% endif %}
+                </div>
+              </div>
+
+              <ul class="flex grid-cols-4 flex-wrap items-center justify-center gap-2 md:grid  grid-cols-5 "
+                role="list">
+
+                <li class="list-payment__item">
+                  <img
+                    src="//zippy-development.myshopify.com/cdn/shop/files/mbway_c64bcfab-f949-4f60-9191-3a0c6e75db95.svg?v=1726483818"
+                    alt="Payment Icon" width="42" height="25" class="max-h-8 min-w-14 lg:min-w-12" loading="lazy">
+                </li>
+
+                <li class="list-payment__item">
+                  <img
+                    src="//zippy-development.myshopify.com/cdn/shop/files/multibanco_18e21a44-b542-4acd-99e5-527366e79fd7.svg?v=1726483818"
+                    alt="Payment Icon" width="42" height="25" class="max-h-8 min-w-14 lg:min-w-12" loading="lazy">
+                </li>
+
+                <li class="list-payment__item">
+                  <img
+                    src="//zippy-development.myshopify.com/cdn/shop/files/visa_05a862ce-e00e-43f1-ac20-be89a0005c89.svg?v=1726483818"
+                    alt="Payment Icon" width="42" height="25" class="max-h-8 min-w-14 lg:min-w-12" loading="lazy">
+                </li>
+
+                <li class="list-payment__item">
+                  <img
+                    src="//zippy-development.myshopify.com/cdn/shop/files/mastercard_f502e345-ca74-43b5-90ba-4ad56e8aa355.svg?v=1726483818"
+                    alt="Payment Icon" width="42" height="25" class="max-h-8 min-w-14 lg:min-w-12" loading="lazy">
+                </li>
+
+                <li class="list-payment__item">
+                  <img
+                    src="//zippy-development.myshopify.com/cdn/shop/files/paypal_f72dff7f-b36f-48d5-be98-782799aa5cd7.svg?v=1726483818"
+                    alt="Payment Icon" width="42" height="25" class="max-h-8 min-w-14 lg:min-w-12" loading="lazy">
+                </li>
+
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="footer-swiper-bottom flex w-full flex-wrap items-center justify-center py-6 md:justify-between md:py-4">
+        <div class="flex flex-wrap justify-center gap-x-8 gap-y-5 pb-6 md:justify-between md:gap-0 md:p-0">
+          <localization-form>
+            <form method="post" action="/pt/localization" id="FooterLanguageForm" accept-charset="UTF-8"
+              class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type"
+                value="localization"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="_method"
+                value="put"><input type="hidden" name="return_to" value="/pt">
+
+              <div class="language-switcher language-switcher-group">
+                <div
+                  class="language-switcher-open-button grid w-full grid-cols-[16px_1fr_16px] items-center justify-center gap-x-2 text-left text-sm hover:cursor-pointer"
+                  aria-expanded="false" aria-controls="FooterLanguageList" aria-describedby="FooterLanguageLabel">
+                  <img src="https://zippyonline.com/cdn/shop/t/6/assets/icon-pt.svg?v=145748007533803166931727952358"
+                    alt="pt" class="h-4 w-4" height="" width="" loading="lazy">
+                  <span>
+                    Portugal | Português
+                  </span>
+
+                  <span class="flex h-5 w-5 items-center justify-center chevron-icon" aria-label="">
+
+                    <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg" width="20"
+                      height="20" viewBox="0 0 20 20" fill="none">
+                      <g clip-path="url(#clip0_861_46609)">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                          fill="currentColor"></path>
+                      </g>
+                    </svg>
+
+                  </span>
+
+                </div>
+                <div
+                  class="language-switcher-content fixed bottom-0 left-0 right-0 z-[1001] !hidden h-0 w-full translate-y-full overflow-y-hidden rounded-tl-2xl rounded-tr-2xl bg-white transition-all md:w-95 ">
+                  <div class="language-switcher-header flex items-center justify-between px-6 py-4">
+                    <span class="text-xl text-gray-800">País</span>
+                    <span class="language-switcher-close flex items-center justify-center hover:cursor-pointer">
+
+                      <span class="flex h-5 w-5 items-center justify-center" aria-label="">
+
+                        <svg class="icon h-full w-full cross" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                          viewBox="0 0 24 24" fill="none">
+                          <path
+                            d="M13.1703 12.0245L21.7527 3.4453C22.0772 3.11737 22.0876 2.57787 21.7527 2.24993C21.4283 1.922 20.8945 1.91142 20.57 2.24993L11.9771 10.8397L3.42605 2.29225C3.10159 1.96431 2.5678 1.96431 2.24334 2.29225C1.91889 2.62018 1.91889 3.15968 2.24334 3.48762L10.7839 12.0245L2.29568 20.5084C1.97122 20.8364 1.96075 21.3759 2.29568 21.7038C2.46314 21.8731 2.67247 21.9577 2.89226 21.9577C3.11206 21.9577 3.32138 21.8731 3.47838 21.7144L11.9771 13.2093L20.5281 21.7567C20.6956 21.9154 20.9049 22 21.1143 22C21.3236 22 21.5434 21.9154 21.7109 21.7461C22.0353 21.4182 22.0353 20.8787 21.7109 20.5507L13.1703 12.0139V12.0245Z"
+                            fill="currentColor"></path>
+                        </svg>
+
+                      </span>
+
+                    </span>
+                  </div>
+
+                  <ul id="FooterLanguageList" role="list"
+                    class="language-switcher-list max-h-[50vh] overflow-auto px-6 pb-4">
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="DE"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-de.svg?v=10150392377884647361723116119"
+                              class="object-cover" alt="de" height="" width="" loading="lazy">
+                          </span>
+
+                          Alemanha | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="AT"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-at.svg?v=52378113872280078241723116118"
+                              class="object-cover" alt="at" height="" width="" loading="lazy">
+                          </span>
+
+                          Áustria | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="BE"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-be.svg?v=82745089042350558021723116118"
+                              class="object-cover" alt="be" height="" width="" loading="lazy">
+                          </span>
+
+                          Bélgica | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="BG"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-bg.svg?v=159445976136907329561723116119"
+                              class="object-cover" alt="bg" height="" width="" loading="lazy">
+                          </span>
+
+                          Bulgária | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="DK"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-dk.svg?v=55464135784348086551723116120"
+                              class="object-cover" alt="dk" height="" width="" loading="lazy">
+                          </span>
+
+                          Dinamarca | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="ES"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-es.svg?v=154068391260719133581722328221"
+                              class="object-cover" alt="es" height="" width="" loading="lazy">
+                          </span>
+
+                          Espanha | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="ES"
+                        data-locale-code="es">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-es.svg?v=154068391260719133581722328221"
+                              alt="es" height="" width="" loading="lazy">
+                          </span>
+
+                          Espanha | Español
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="EE"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-ee.svg?v=126059476886375861391723116120"
+                              class="object-cover" alt="ee" height="" width="" loading="lazy">
+                          </span>
+
+                          Estónia | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="FI"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-fi.svg?v=84484336818097061221723116121"
+                              class="object-cover" alt="fi" height="" width="" loading="lazy">
+                          </span>
+
+                          Finlândia | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="FR"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-fr.svg?v=58685284263115849501723116121"
+                              class="object-cover" alt="fr" height="" width="" loading="lazy">
+                          </span>
+
+                          França | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="FR"
+                        data-locale-code="fr">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-fr.svg?v=58685284263115849501723116121"
+                              alt="fr" height="" width="" loading="lazy">
+                          </span>
+
+                          França | Français
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="IT"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-it.svg?v=102733472696429871061723116122"
+                              class="object-cover" alt="it" height="" width="" loading="lazy">
+                          </span>
+
+                          Itália | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="LT"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-lt.svg?v=162147501264835757071723116122"
+                              class="object-cover" alt="lt" height="" width="" loading="lazy">
+                          </span>
+
+                          Lituânia | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="MC"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-mc.svg?v=13587526935421943741723116122"
+                              class="object-cover" alt="mc" height="" width="" loading="lazy">
+                          </span>
+
+                          Mónaco | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="NL"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-nl.svg?v=135624826862067985481723116123"
+                              class="object-cover" alt="nl" height="" width="" loading="lazy">
+                          </span>
+
+                          Países Baixos | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="PT"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-pt.svg?v=145748007533803166931722328223"
+                              class="object-cover" alt="pt" height="" width="" loading="lazy">
+                          </span>
+
+                          Portugal | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md font-bold" href="#" data-country-code="PT"
+                        data-locale-code="pt-PT" aria-current="true">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-pt.svg?v=145748007533803166931722328223"
+                              alt="pt" height="" width="" loading="lazy">
+                          </span>
+
+                          Portugal | Português
+
+                          <span class="flex h-5 w-5 items-center justify-center" aria-label="">
+
+                            <svg class="icon h-full w-full success-circle" xmlns="http://www.w3.org/2000/svg" width="20"
+                              height="20" viewBox="0 0 20 20" fill="none">
+                              <g clip-path="url(#clip0_582_102790)">
+                                <path
+                                  d="M10.0003 1.66666C14.6027 1.66666 18.3337 5.39761 18.3337 9.99999C18.3337 14.6023 14.6027 18.3333 10.0003 18.3333C5.39795 18.3333 1.66699 14.6023 1.66699 9.99999C1.66699 5.39761 5.39795 1.66666 10.0003 1.66666ZM12.9465 6.98446L8.82166 11.1092L7.05392 9.34149C6.72848 9.01607 6.20085 9.01607 5.87541 9.34149C5.54998 9.66691 5.54998 10.1946 5.87541 10.52L8.17351 12.8181C8.53149 13.1761 9.11191 13.1761 9.46991 12.8181L14.125 8.16297C14.4504 7.83753 14.4504 7.30989 14.125 6.98446C13.7996 6.65902 13.2719 6.65902 12.9465 6.98446Z"
+                                  fill="currentColor"></path>
+                              </g>
+                              <defs>
+                                <clipPath id="clip0_582_102790">
+                                  <rect width="20" height="20" fill="white"></rect>
+                                </clipPath>
+                              </defs>
+                            </svg>
+
+                          </span>
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="RO"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-ro.svg?v=51487064244523751541723116124"
+                              class="object-cover" alt="ro" height="" width="" loading="lazy">
+                          </span>
+
+                          Roménia | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                    <li class="language-switcher-item" tabindex="-1">
+                      <a class="language-switcher-item flex py-2.5 text-md" href="#" data-country-code="SE"
+                        data-locale-code="en">
+                        <div
+                          class="grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 text-left">
+                          <span class="inline-flex h-4 w-4 overflow-hidden rounded-full">
+                            <img
+                              src="https://zippyonline.com/cdn/shop/t/6/assets/icon-se.svg?v=7566487214528990851723116124"
+                              class="object-cover" alt="se" height="" width="" loading="lazy">
+                          </span>
+
+                          Suécia | English
+
+                        </div>
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+
+                <div
+                  class="language-switcher-overlay language-switcher-close pointer-events-none fixed bottom-0 left-0 right-0 top-0 z-[1000] !block bg-black/30 opacity-0">
+                </div>
+
+                <style data-shopify="">
+                  .language-switcher.language-switcher-open .language-switcher-overlay {
+                    pointer-events: initial;
+                  }
+
+                  .language-switcher.language-switcher-open .language-switcher-content {
+                    display: block !important;
+                  }
+
+                  .language-switcher.language-switcher-open .language-switcher-content {
+                    transform: translateY(0);
+                    height: auto;
+                    opacity: 1;
+                  }
+
+                  .language-switcher.language-switcher-open .language-switcher-overlay {
+                    opacity: 1;
+                  }
+                </style>
+              </div>
+
+              <input type="hidden" name="locale_code" value="pt-PT">
+              <input type="hidden" name="country_code" value="PT">
+            </form>
+          </localization-form>
+
+          <localization-form-popup class="localization-form-popup">
+            <form method="post" action="/pt/localization" id="PopupLanguageForm" accept-charset="UTF-8"
+              class="shopify-localization-form" enctype="multipart/form-data"><input type="hidden" name="form_type"
+                value="localization"><input type="hidden" name="utf8" value="✓"><input type="hidden" name="_method"
+                value="put"><input type="hidden" name="return_to" value="/pt">
+              <div id="section-sections--16206165934289__footer" style=""
+                class="language-switcher-popup relative !z-10 hidden">
+                <div class="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity">
+                  <span class="hidden"></span>
+                </div>
+
+                <div class="language-switcher-popup-wrapper fixed inset-0 z-10 w-screen overflow-y-auto bg-transparent">
+                  <div class="sm:items-center sm:p-0 flex min-h-full items-center justify-center text-center">
+                    <div
+                      class="language-switcher-popup-content sm:my-8 sm:w-full sm:max-w-sm relative w-full max-w-[500px] transform bg-white text-left shadow-xl transition-all">
+                      <div class="language-switcher-header flex items-center justify-between px-6 py-4">
+                        <span class="text-xl text-gray-800"></span>
+                      </div>
+                      <div class="language-switcher-content flex flex-col p-5">
+                        <div class="pb-3"></div>
+
+                        <div class="form-inner flex flex-wrap">
+                          <div class="mb-2 text-sm font-bold">Selecione o país</div>
+
+                          <div class="disclosure w-full">
+                            <button type="button"
+                              class="disclosure__button localization-form__select localization-selector localization-country-selector link link--text caption-large flex !h-12 !min-h-12 !transform-none !justify-between !px-7 !py-3"
+                              aria-expanded="false" aria-controls="PopupLanguage-country-results"
+                              aria-describedby="PopupLanguageLabel">
+
+                              <span class="disclosure__button-content flex items-center gap-3">
+                                <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                  <img
+                                    src="https://zippyonline.com/cdn/shop/t/6/assets/icon-pt.svg?v=145748007533803166931722328223"
+                                    class="object-cover" alt="pt" height="" width="" loading="lazy">
+                                </span>
+                                <span>Portugal
+                                </span>
+                              </span>
+
+                              <span class="flex h-5 w-5 items-center justify-center" aria-label="">
+
+                                <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg"
+                                  width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                  <g clip-path="url(#clip0_861_46609)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                                      fill="currentColor"></path>
+                                  </g>
+                                </svg>
+
+                              </span>
+
+                            </button>
+                            <div
+                              class="disclosure__list-wrapper !bottom-auto right-0 top-full w-full translate-y-0 !bg-white"
+                              hidden="">
+                              <ul role="list" class="disclosure__list countries px-2" data-target="country_code">
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Alemanha" data-value="DE" data-iso-code="de">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-de.svg?v=10150392377884647361723116119"
+                                        class="object-cover" alt="de" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Alemanha
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Áustria" data-value="AT" data-iso-code="at">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-at.svg?v=52378113872280078241723116118"
+                                        class="object-cover" alt="at" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Áustria
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Bélgica" data-value="BE" data-iso-code="be">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-be.svg?v=82745089042350558021723116118"
+                                        class="object-cover" alt="be" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Bélgica
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Bulgária" data-value="BG" data-iso-code="bg">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-bg.svg?v=159445976136907329561723116119"
+                                        class="object-cover" alt="bg" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Bulgária
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Dinamarca" data-value="DK" data-iso-code="dk">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-dk.svg?v=55464135784348086551723116120"
+                                        class="object-cover" alt="dk" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Dinamarca
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Espanha" data-value="ES" data-iso-code="es">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-es.svg?v=154068391260719133581722328221"
+                                        class="object-cover" alt="es" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Espanha
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Estónia" data-value="EE" data-iso-code="ee">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-ee.svg?v=126059476886375861391723116120"
+                                        class="object-cover" alt="ee" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Estónia
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Finlândia" data-value="FI" data-iso-code="fi">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-fi.svg?v=84484336818097061221723116121"
+                                        class="object-cover" alt="fi" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Finlândia
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="França" data-value="FR" data-iso-code="fr">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-fr.svg?v=58685284263115849501723116121"
+                                        class="object-cover" alt="fr" height="" width="" loading="lazy">
+                                    </span>
+
+                                    França
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Itália" data-value="IT" data-iso-code="it">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-it.svg?v=102733472696429871061723116122"
+                                        class="object-cover" alt="it" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Itália
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Lituânia" data-value="LT" data-iso-code="lt">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-lt.svg?v=162147501264835757071723116122"
+                                        class="object-cover" alt="lt" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Lituânia
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Mónaco" data-value="MC" data-iso-code="mc">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-mc.svg?v=13587526935421943741723116122"
+                                        class="object-cover" alt="mc" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Mónaco
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Países Baixos" data-value="NL" data-iso-code="nl">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-nl.svg?v=135624826862067985481723116123"
+                                        class="object-cover" alt="nl" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Países Baixos
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Portugal" data-value="PT" data-iso-code="pt">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-pt.svg?v=145748007533803166931722328223"
+                                        class="object-cover" alt="pt" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Portugal
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Roménia" data-value="RO" data-iso-code="ro">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-ro.svg?v=51487064244523751541723116124"
+                                        class="object-cover" alt="ro" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Roménia
+                                  </div>
+                                </li>
+
+                                <li>
+                                  <div
+                                    class="disclosure__item grid w-full grid-cols-[16px_1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    id="Suécia" data-value="SE" data-iso-code="se">
+                                    <span class="-mt-0.5 inline-flex h-4 w-4 overflow-hidden rounded-full">
+                                      <img
+                                        src="https://zippyonline.com/cdn/shop/t/6/assets/icon-se.svg?v=145748007533803166931727952358"
+                                        class="object-cover" alt="se" height="" width="" loading="lazy">
+                                    </span>
+
+                                    Suécia
+                                  </div>
+                                </li>
+
+                              </ul>
+                            </div>
+                            <div class="country-selector__overlay"></div>
+                            <input class="popup-country-code" type="hidden" name="country_code" value="PT">
+                          </div>
+
+                          <div class="mb-2 text-sm font-bold">Selecione o idioma</div>
+
+                          <div class="disclosure w-full">
+                            <button type="button"
+                              class="disclosure__button localization-form__select localization-selector localization-language-selector link link--text caption-large flex !h-12 !min-h-12 !transform-none !justify-between !px-7 !py-3"
+                              aria-expanded="false" aria-controls="PopupLanguageList"
+                              aria-describedby="PopupLanguageLabel">
+                              <span class="disclosure__button-content flex items-center gap-3">
+                                Português
+                              </span>
+
+                              <span class="flex h-5 w-5 items-center justify-center" aria-label="">
+
+                                <svg class="icon h-full w-full chevron-down" xmlns="http://www.w3.org/2000/svg"
+                                  width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                  <g clip-path="url(#clip0_861_46609)">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                      d="M10.5893 13.0893C10.2639 13.4147 9.73619 13.4147 9.41077 13.0893L4.69672 8.37519C4.37128 8.04979 4.37128 7.52215 4.69672 7.19671C5.02215 6.87128 5.54979 6.87128 5.87523 7.19671L10 11.3215L14.1248 7.19671C14.4503 6.87128 14.9779 6.87128 15.3034 7.19671C15.6288 7.52215 15.6288 8.04979 15.3034 8.37519L10.5893 13.0893Z"
+                                      fill="currentColor"></path>
+                                  </g>
+                                </svg>
+
+                              </span>
+
+                            </button>
+                            <div
+                              class="disclosure__list-wrapper !bottom-auto right-0 top-full w-full translate-y-0 !bg-white"
+                              hidden="">
+                              <ul id="PopupLanguageList" role="list" class="disclosure__list px-2"
+                                data-target="locale_code">
+
+                                <li>
+                                  <span
+                                    class="disclosure__item grid w-full grid-cols-[1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    data-value="en" data-iso-code="en">
+                                    English
+                                  </span>
+                                </li>
+
+                                <li>
+                                  <span
+                                    class="disclosure__item grid w-full grid-cols-[1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold hidden"
+                                    data-value="fr" data-iso-code="fr">
+                                    Français
+                                  </span>
+                                </li>
+
+                                <li>
+                                  <span
+                                    class="disclosure__item grid w-full grid-cols-[1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold hidden"
+                                    data-value="es" data-iso-code="es">
+                                    Español
+                                  </span>
+                                </li>
+
+                                <li>
+                                  <span
+                                    class="disclosure__item grid w-full grid-cols-[1fr_20px] items-center justify-center gap-x-4 py-2.5 text-left text-sm hover:cursor-pointer hover:font-bold"
+                                    data-value="pt-PT" data-iso-code="pt">
+                                    Português
+                                  </span>
+                                </li>
+
+                              </ul>
+                            </div>
+                            <input class="popup-locale-code" type="hidden" name="locale_code" value="pt-PT">
+                          </div>
+                          <div class="submit">
+                            <button type="submit" class="submit-language-switcher !px-8">
+                              Enviar
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </localization-form-popup>
+          <div
+            class="footer-links -order-1 flex flex-wrap items-center justify-center gap-x-8 gap-y-5 leading-normal md:order-1 md:justify-start md:gap-0">
+
+            <span class="lh-1 flex last:border-none md:mr-4 md:border-r md:pr-4">
+              <a href="/pt/policies/terms-of-service"
+                class="hover-underline flex text-2xs font-normal leading-normal !no-underline transition-colors">
+                {% assign locale = shop.locale %}
+                {% if locale == 'pt-PT' %}
+                Condições Gerais de Venda
+                {% elsif locale == 'en' %}
+                Sales Terms & Conditions
+                {% endif %}
+              </a>
+            </span>
+
+            <span class="lh-1 flex last:border-none md:mr-4 md:border-r md:pr-4">
+              <a href="/pt/policies/privacy-policy"
+                class="hover-underline flex text-2xs font-normal leading-normal !no-underline transition-colors">
+                {% assign locale = shop.locale %}
+                {% if locale == 'pt-PT' %}
+                Política de Privacidade
+                {% elsif locale == 'en' %}
+                Privacy Policy
+                {% endif %}
+              </a>
+            </span>
+
+            <span class="lh-1 flex last:border-none md:mr-4 md:border-r md:pr-4">
+              <a href="/pt/pages/politica-de-cookies"
+                class="hover-underline flex text-2xs font-normal leading-normal !no-underline transition-colors">
+                {% assign locale = shop.locale %}
+                {% if locale == 'pt-PT' %}
+                Política de Cookies
+                {% elsif locale == 'en' %}
+                Cookies Policy
+                {% endif %}
+              </a>
+            </span>
+
+            <span class="lh-1 flex last:border-none md:mr-4 md:border-r md:pr-4">
+              <a href="https://www.livroreclamacoes.pt/Inicio/"
+                class="hover-underline flex text-2xs font-normal leading-normal !no-underline transition-colors">
+                {% assign locale = shop.locale %}
+                {% if locale == 'pt-PT' %}
+                Livro de Reclamações Eletrónico
+                {% elsif locale == 'en' %}
+                Electronic Complaints Book
+                {% endif %}
+              </a>
+            </span>
+
+          </div>
+        </div>
+
+        <div class="footer-copyright w-full border-t pt-6 text-center md:w-auto md:border-none md:p-0 md:text-right">
+          <div class="footer__copyright caption">
+            <small class="copyright__content text-2xs leading-normal">© <a href="/pt" title="">ZIPPY</a>
+              2024. {% assign locale = shop.locale %}
+              {% if locale == 'pt-PT' %}
+              Todos os direitos reservados.
+              {% elsif locale == 'en' %}
+              All rights reserved.
+              {% endif %}
+            </small>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+</div>

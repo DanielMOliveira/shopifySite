@@ -1,0 +1,74 @@
+{% comment %}
+  Renders a breadcrumbs. It is based on the current template and the current page.
+
+  Usage:
+      {% render 'breadcrumbs' %}
+{% endcomment %}
+
+{% unless template == 'index' %}
+  {% liquid
+    assign t = template | split: '.' | first
+    assign class = ''
+
+    if t == 'product' and product.collections.size > 0
+      assign product_first_collection = product.collections[0]
+    endif
+  %}
+
+  <breadcrumbs-list>
+    <nav
+      class="breadcrumbs breadcrumbs-{{ template }} py-3 opacity-0 transition-all md:py-4{% if class != blank %} {{ class }}{% endif %}"
+      {% if product_first_collection != blank %}
+        data-category-url="{{ product_first_collection.url }}"
+      {% endif %}
+    >
+      <div class="container-valantic">
+        <ul class="breadcrumbs-list flex gap-1 overflow-auto whitespace-nowrap text-2xs">
+          <li class="breadcrumbs-home inline-flex items-center">
+            <a class="hover-underline" href="{{ routes.root_url }}" title="{{ 'general.breadcrumbs.home' | t }}">
+              {{- 'general.breadcrumbs.home' | t -}}
+            </a>
+
+            {% render 'icon', icon: 'chevron-right', class: '!h-4 !w-4 ml-1' %}
+          </li>
+
+          {% case t %}
+            {% when 'search' %}
+              <li class="inline-flex items-center">
+                <span>{{ search.terms }}</span>
+              </li>
+            {% when 'product' %}
+              <li class="order-10 inline-flex items-center">
+                <span>{{ product.title }}</span>
+              </li>
+            {% when 'collection' %}
+              <li class="breadcrumb-collection-item inline-flex items-center">
+                <span>{{ collection.title }}</span>
+              </li>
+            {% else %}
+              <li class="inline-flex items-center">
+                <span>{{ page_title }}</span>
+              </li>
+          {% endcase %}
+        </ul>
+      </div>
+    </nav>
+  </breadcrumbs-list>
+
+  {% if t == 'product' or t == 'collection' %}
+    {% style %}
+      .has-divider:after {
+        content: '';
+        margin-left: 4px;
+        display: block;
+        width: 16px;
+        height: 16px;
+        background-image: url('data:image/svg+xml;base64,PHN2ZwogICAgICAgIGNsYXNzPSJpY29uIGgtZnVsbCB3LWZ1bGwge3sgaWNvbiB9fSIKICAgICAgICB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciCiAgICAgICAgd2lkdGg9IjE2IgogICAgICAgIGhlaWdodD0iMTYiCiAgICAgICAgdmlld0JveD0iMCAwIDE2IDE2IgogICAgICAgIGZpbGw9Im5vbmUiPgogICAgPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzc1MF8yOTkxOSkiPgogICAgICAgIDxwYXRoIGZpbGwtcnVsZT0iZXZlbm9kZCIgY2xpcC1ydWxlPSJldmVub2RkIiBkPSJNMTAuNDcxMyA3LjUyODUyQzEwLjczMTcgNy43ODg4NSAxMC43MzE3IDguMjEwOTggMTAuNDcxMyA4LjQ3MTMyTDYuNzAwMDUgMTIuMjQyNkM2LjQzOTczIDEyLjUwMjkgNi4wMTc2MyAxMi41MDI5IDUuNzU3MjcgMTIuMjQyNkM1LjQ5NjkzIDExLjk4MjIgNS40OTY5MyAxMS41NjAxIDUuNzU3MjcgMTEuMjk5N0w5LjA1NzEyIDcuOTk5OTJMNS43NTcyNyA0LjcwMDA4QzUuNDk2OTMgNC40Mzk3NCA1LjQ5NjkzIDQuMDE3NjIgNS43NTcyNyAzLjc1NzI4QzYuMDE3NjMgMy40OTY5MiA2LjQzOTczIDMuNDk2OTIgNi43MDAwNSAzLjc1NzI4TDEwLjQ3MTMgNy41Mjg1MloiIGZpbGw9ImN1cnJlbnRDb2xvciIvPgogICAgPC9nPgogICAgPGRlZnM+CiAgICAgICAgPGNsaXBQYXRoIGlkPSJjbGlwMF83NTBfMjk5MTkiPgogICAgICAgICAgICA8cmVjdCB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIGZpbGw9IiMyMTFmMjAiLz4KICAgICAgICA8L2NsaXBQYXRoPgogICAgPC9kZWZzPgo8L3N2Zz4=');
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    {% endstyle %}
+
+    <script src="{{ 'breadcrumbs.js' | asset_url }}" defer="defer"></script>
+  {% endif %}
+{% endunless %}

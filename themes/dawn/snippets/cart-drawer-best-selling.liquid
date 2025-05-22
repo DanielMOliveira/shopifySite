@@ -1,0 +1,45 @@
+{% comment %}
+  Renders a best-selling products
+
+  Usage:
+      {% render 'cart-drawer-best-selling' %}
+{% endcomment %}
+
+<cart-drawer-best-selling
+  class="best-selling !hidden md:w-[372px]"
+  data-without-image-slider="true"
+  data-root-url="{{ routes.root_url }}"
+>
+  <section
+    id="section-best-selling"
+    class="w-[520px] max-w-[calc(100vw-100px)] overflow-hidden pb-6 opacity-0 transition-opacity md:w-[355px]"
+  >
+    <div class="lg:relative">
+      <div
+        class="swiper best-selling-swiper group !overflow-visible lg:!static lg:transition-all"
+        data-slider='
+          {
+              "spaceBetween": 8,
+              "slidesPerView": 2.2,
+              "navigation": {
+                  "prevEl": "#section-best-selling .swiper-button-prev",
+                  "nextEl": "#section-best-selling .swiper-button-next"
+              }
+          }
+        '
+      >
+        <div class="best-selling-products swiper-wrapper flex"></div>
+
+        <div class="swiper-button-prev -!transform-y-2/4 !left-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-left' %}
+        </div>
+        <div class="swiper-button-next -!transform-y-2/4 !right-0 !top-[calc(50%-35px)] !bg-white hover:!bg-primary hover:!text-white max-[1023px]:shadow-[0px_3px_8px_0px_rgba(0,0,0,0.08)]">
+          {% render 'icon', icon: 'chevron-right' %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="{{ 'card-product-add-to-cart.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'offcanvas-card-product.js' | asset_url }}" defer="defer"></script>
+</cart-drawer-best-selling>

@@ -1,0 +1,64 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "custom_liquid_jjpUeJ": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "{% assign current_time = 'now' | date: '%Y-%m-%d %H:%M' %}\n\n{% assign start_time = '2025-01-23 00:00' %}\n\n{% assign end_time = '2025-01-28 00:00' %}\n\n{% if current_time >= start_time and current_time <= end_time %}\n\n\n<style>\n  * {\n    scrollbar-width: thin;\n    scrollbar-color: #bcbcbc #fff;\n    -webkit-font-smoothing: antialiased;\n    -moz-osx-font-smoothing: grayscale;\n  }\n\n  ::-webkit-scrollbar {\n    width: 5px;\n    height: 5px;\n  }\n\n  ::-webkit-scrollbar-track {\n    background: #fff;\n  }\n\n  ::-webkit-scrollbar-thumb {\n    background-color: #bcbcbc;\n    border-radius: 0;\n    border: 1px solid #bcbcbc;\n  }\n\n  .text-3_5xl {\n    font-weight: 500;\n    line-height: 25px;\n    font-size: 0.8rem;\n    margin-top: 0.5rem;\n  }\n\n  #zyTCB-Pueri {\n    overflow: hidden;\n    background-color: #e4d0bd;\n    margin-bottom: 1rem;\n  }\n\n  #zyTCB-Pueri .container-main {\n    width: 90%;\n    height: 13rem;\n    margin: auto;\n    padding: 2rem 0 0.5rem 0;\n  }\n\n  #zyTCB-Pueri .container-fluid {\n    max-width: 100%;\n    position: relative;\n  }\n\n  #zyTCB-Pueri .container-conditions {\n    width: 95%;\n    text-align: center;\n    position: absolute;\n    left: 50%;\n    bottom: 2%;\n    transform: translateX(-50%);\n  }\n\n  #zyTCB-Pueri .container-promo {\n    width: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    position: absolute;\n    margin-top: 1.5rem;\n    margin-left: -5%;\n    z-index: 1;\n  }\n\n  #zyTCB-Pueri h2 {\n    font-family: \"input-mono\", monospace;\n    font-weight: 500;\n    color: #fff;\n    text-align: center;\n    font-size: 4.375rem;\n    line-height: 0.9;\n  }\n  #zyTCB-Pueri h2 > sup {\n    font-size: 3rem;\n    top: -0.5rem;\n    left: 0rem;\n  }\n\n  #zyTCB-Pueri p {\n    font-family: \"CentraNo1\", Assistant, sans-serif;\n    font-weight: 400;\n    color: #fff;\n    text-align: center;\n    font-size: 0.75rem;\n    line-height: 1.2;\n  }\n\n  #zyTCB-Pueri .minus {\n    width: 20rem;\n    display: inline-flex;\n    border-bottom: solid 0.25rem #fff;\n    position: relative;\n    margin: 0 -2rem 1.2rem -2rem;\n  }\n\n  #zyTCB-Pueri .green-circle {\n    position: absolute;\n    display: inline-flex;\n    background-color: #c9ceb6;\n    float: left;\n    width: 700px;\n    height: 700px;\n    shape-outside: circle(50% at 0%);\n    clip-path: circle(50% at -5%);\n    transform: rotate(-110deg);\n    top: -30rem;\n    left: 9rem;\n    z-index: 0;\n  }\n  #zyTCB-Pueri .moca-circle {\n    position: absolute;\n    display: inline-flex;\n    background-color: #c99b69;\n    float: left;\n    width: 700px;\n    height: 700px;\n    shape-outside: circle(50% at 0%);\n    clip-path: circle(50% at -5%);\n    transform: rotate(70deg);\n    top: 1.15rem;\n    left: 51rem;\n    z-index: 0;\n  }\n  @media (max-width: 991px) {\n    #zyTCB-Pueri .container-main {\n      height: 13rem;\n    }\n    #zyTCB-Pueri .container-promo {\n      margin-top: 2.5rem;\n    }\n    #zyTCB-Pueri h2 {\n      font-size: 3rem;\n    }\n    #zyTCB-Pueri h2 > sup {\n      font-size: 2.5rem;\n      top: -0.1rem;\n      left: 0rem;\n    }\n    #zyTCB-Pueri .minus {\n      width: 5rem;\n      border-bottom: solid 0.22rem #fff;\n      margin: 0 -1.5rem 0.9rem -1.5rem;\n    }\n    #zyTCB-Pueri .green-circle {\n      width: 550px;\n      height: 550px;\n      top: -22rem;\n      left: -9rem;\n    }\n    #zyTCB-Pueri .moca-circle {\n      width: 550px;\n      height: 550px;\n      top: 1.1rem;\n      left: 28rem;\n    }\n  }\n\n  @media (max-width: 576px) {\n    #zyTCB-Pueri .container-main {\n      height: 10rem;\n    }\n    #zyTCB-Pueri .container-promo {\n      margin-top: 1.2rem;\n    }\n    #zyTCB-Pueri h2 {\n      font-size: 1.875rem;\n    }\n    #zyTCB-Pueri h2 > sup {\n      font-size: 1.5rem;\n    }\n    #zyTCB-Pueri .minus {\n      width: 4rem;\n      border-bottom: solid 0.18rem #fff;\n      margin: 0 -0.9rem 0.6rem -0.9rem;\n    }\n    #zyTCB-Pueri .green-circle {\n      width: 450px;\n      height: 450px;\n      top: -18rem;\n      left: -17rem;\n    }\n    #zyTCB-Pueri .moca-circle {\n      width: 350px;\n      height: 350px;\n      top: 1.95rem;\n      left: 13rem;\n    }\n  }\n\n  @media (max-width: 370px) {\n    #zyTCB-Pueri .minus {\n      width: 3rem;\n    }\n  }\n</style>\n<link rel=\"stylesheet\" href=https://use.typekit.net/qxh4eep.css>\n\n<div id=\"zyTCB-Pueri\">\n  <section class=\"container-fluid\">\n    <div class=\"container-main\">\n      <a href=\"{{ collections['nursery'].url }}\">\n        <div class=\"green-circle\"></div>\n        {% assign locale = shop.locale %} {% if locale == 'pt-PT' %}\n        <div class=\"container-promo\">\n          <a href=\"{{ collections['nursery'].url }}\">\n            <h2>\n              puericultura\n              <div class=\"minus\"></div>\n              <span class=\"discount\">20</span><sup>%</sup>\n            </h2>\n          </a>\n        </div>\n        {% elsif locale == 'en' %}\n        <div class=\"container-promo\">\n          <a href=\"{{ collections['nursery'].url }}\">\n            <h2>\n              nursery\n              <div class=\"minus\"></div>\n              <span class=\"discount\">20</span><sup>%</sup>\n            </h2>\n          </a>\n        </div>\n        {% elsif locale == 'es' %}\n        <div class=\"container-promo\">\n          <a href=\"{{ collections['nursery'].url }}\">\n            <h2>\n              puericultura\n              <div class=\"minus\"></div>\n              <span class=\"discount\">20</span><sup>%</sup>\n            </h2>\n          </a>\n        </div>\n        {% elsif locale == 'fr' %}\n        <div class=\"container-promo\">\n          <a href=\"{{ collections['nursery'].url }}\">\n            <h2>\n              puériculture\n              <div class=\"minus\"></div>\n              <span class=\"discount\">20</span><sup>%</sup>\n            </h2>\n          </a>\n        </div>\n        {% endif %}\n        <div class=\"moca-circle\"></div>\n        <div class=\"container-conditions\">\n          {% assign locale = shop.locale %} {% if locale == 'pt-PT' %}\n          <p>Promoção de -20% em Puericultura de 23/01/2025 a 27/01/2025. Desconto aplicado automaticamente no checkout. Não acumulável com outras campanhas existentes.</p>\n          {% elsif locale == 'en' %}\n          <p>Promotion of -20% in Nursery from 01/23/2025 to 01/27/2025. Not combinable with other campaigns.</p>\n          {% elsif locale == 'es' %}\n          <p>Promoción del -20% en Puericultura del 23/01/2025 al 27/01/2025. No acumulable con otras campañas.</p>\n          {% elsif locale == 'fr' %}\n          <p>Promotion de -20% en Puériculture du 23/01/2025 au 27/01/2025. Non cumulable avec d'autres campagnes.</p>\n          {% endif %}\n        </div>\n      </a>\n    </div>\n  </section>\n</div>\n{% endif %}",
+        "color_scheme": "",
+        "padding_top": 0,
+        "padding_bottom": 0
+      }
+    },
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "collections_slider_tr38BG": {
+      "type": "collections-slider",
+      "settings": {
+        "collections_list": "{{ collection.metafields.custom.subcateories.value.subcategories_list.value }}",
+        "show_collection_name": true,
+        "banner_bg_color": "{{ collection.metafields.custom.subcateories.value.item_background.value }}",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 16,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 16
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 36,
+        "enable_sorting": true,
+        "size_in_months": "<p>0/3M,0/6M,6/18M,00 Meses,0-0 Months,0-1 Months,1-3 Months,1-6 Months,3-6 Months,6-9 Months,6-12 Months,9-12 Months,12-18 Months,12-24 Months,18-24 Months,24-36 Months</p>",
+        "size_in_years": "<p>2 Year,3 Year,1-3 Years,2-3 Years,3-4 Years,3-5 Years,4 Years,4-5 Years,5 Years,5-6 Years,5-9 Years,6 Years,6-7Y,6-7 Years,6-9 Years,7 Years,7-8 Years,7-9 Years,8 Years,8-9 Years,9 Years,9-10 Years,10 Years,10-12 Years,10-14 Years,11-12 Years,12 Years,12-14 Years,13-14 Years,14 Years,16 Years,ONE SIZE FITS ALL,SMS,ÚNICO</p>",
+        "international_sizes": "<p>3XS,XS,S,M,L,XL,XXL,XXXL,4XL,5XL,6XL,L- 9/12Y,L-XL,S-M,XL-12/14Y</p>",
+        "european_sizes": "<p>1,11,13,18,19,19.5,20,21,21.5,22,22.5,23,23.5,24,25,25.5,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,48,50,52,53,54,56,58,60,85,90,95,100,105,110,85B,90B,95B,100B,90C,95C,100C,105C,95D,100D,105D,2-3,4-5,6-7,8-10,11-14,12-14,14-15,15-17,15-18,16-17,17/18,17-19,18-19,19-20,19-22,20-21,20-22,21-22,21-24,22-23,22-24,23-24,23-26,24-25,25-26,25-28,26-27,27-28,27-30,27/34,28-29,29-30,29-32,30-31,31-32,31-34,32-33,33-34,33-36,34-35,34-36,35-36,35-37,35-38,35/39,35/40,36/37,37-38,37-39,38/39,38-40,39-40,39-42,39/46,40-41,40/46,41-42,42-43,43-44,43-46,44-45,45-46</p>",
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    }
+  },
+  "order": [
+    "custom_liquid_jjpUeJ",
+    "banner",
+    "collections_slider_tr38BG",
+    "product-grid"
+  ]
+}

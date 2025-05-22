@@ -1,0 +1,233 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": false,
+        "show_content": false,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 0
+      }
+    },
+    "page_navigation_4EtxMc": {
+      "type": "page-navigation",
+      "blocks": {
+        "navigation_item_kDHjdt": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "About Zippy",
+            "link_url": "shopify://pages/about-us"
+          }
+        },
+        "navigation_item_YdmhFw": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Quality",
+            "link_url": "shopify://pages/quality"
+          }
+        },
+        "navigation_item_WBw9Ap": {
+          "type": "navigation_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Sustainability",
+            "link_url": "shopify://pages/sustainability"
+          }
+        },
+        "navigation_item_eJDVpT": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Sonae Group",
+            "link_url": "shopify://pages/sonae-group"
+          }
+        },
+        "navigation_item_KPH7Ac": {
+          "type": "navigation_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Sales Terms & Conditions",
+            "link_url": "shopify://pages/sales-terms-and-conditions"
+          }
+        },
+        "navigation_item_E8BfPN": {
+          "type": "navigation_item",
+          "disabled": true,
+          "settings": {
+            "heading": "Privacy Policy",
+            "link_url": "shopify://pages/privacy-policy"
+          }
+        },
+        "text_ndbx44": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<h6><strong>Privacy Policy</strong></h6>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "text_Dyj6Kd": {
+          "type": "text",
+          "disabled": true,
+          "settings": {
+            "text": "<p>We are committed to ensuring that our data protection is in place, which is why security and transparency always come first with Zippy.</p><p>Zippy has changed its privacy policy under the New General Data Protection Regulation. Any data given is used so that Zippy can provide a better and more customized service, from recommendations that are ideal for the whole family to exclusive offers.</p><p>This data is processed under the law and with complete trust and security. Read our Privacy Policy to access all the information on how we process your personal data and understand your rights.</p><h5></h5>",
+            "content_alignment": "left",
+            "list_1": "",
+            "list_2": ""
+          }
+        },
+        "faq_item_enDjKT": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Our commitment",
+            "faq_answer": "<p>Personal data protection is our priority, therefore, we have committed to treating only personal data that is absolutely necessary to provide a better service, ensuring clear information and the best practices in terms of personal data security and protection.</p><p>Whenever your personal data are treated by contracted third parties, we will ensure that they work with the same level of security and privacy in terms of personal data protection. We want to be worthy of your trust so that you can rest assured that your personal data are safe with us.</p><p>We take our responsibilities seriously and are committed to continuously protecting your privacy. Should you have any queries regarding the treatment of your personal data, please feel free to contact us.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_wV46et": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Who is responsible for treating your personal data?",
+            "faq_answer": "<p>Zippy – Comércio e Distribuição S.A., with head o¬ce in Rua João Mendonça, n.º 529, 4464-503 – Senhora da Hora, Matosinhos, share capital of € 2.050.000,00, and registered at the Commercial Registry O¬ce of Porto, under tax identification and legal person no. 503 226 696.</p><p>Use the following e-mail should you need to contact us: <a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_gBLwHF": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "How can you contact the person in charge of protecting your personal data?",
+            "faq_answer": "<p>The person responsible for protecting your personal data can be contacted via the following e-mail: <a href=\"mailto:dpo@zippy.pt\">dpo@zippy.pt</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_bhzGeR": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What personal data do we use and what are they used for?",
+            "faq_answer": "<p>We undertake to treating only strictly necessary personal data that will enable us to provide top quality services:<br/><br/>- Online account:</p><p>When you create an online account at https://zippyonline.com we will be treating your personal identification (name) and contact data (e-mail, address and mobile phone number). We need to treat these personal data to enable you to use all of your online account features, namely, online shopping and be able to access your order history. Your personal data will be deleted 5 years after your last login.</p><p>- Direct Marketing:</p><p>We also need your identification (name) and contact information (e-mail and mobile phone number) so we can send general or customized newsletters, information on campaigns and special deals, discounts or promotions, via SMS and/or e-mail. You can unsubscribe from receiving this information at any time either by changing your personal account settings or use the link in the newsletter we send you. We will only keep your personal data for the time you consent to receiving such newsletters. Should you choose to unsubscribe, we will delete your personal data treated for this purpose.</p><p>- Managing transactions:</p><p>If you’d like your taxpayer number detailed in your purchase order, we will need to record it and later forward it to the Tax Authority.</p><p>- Exchanges | Returns:</p><p>Should you need to exchange an item, we will need your identification (name) and contact (mobile telephone number, address and e-mail). These data and your bank account identification will also be needed should you wish to return any of your purchased items.</p><p>- Customer Care:</p><p>In order to be able to provide the best customer care and support, will need your identification (name) and contact (mobile telephone number, address and e-mail) so that we can identify you, analyze your request, and promptly contact you.</p><p>- Suggestions and Complaints:</p><p>You can make suggestions or complaints regarding our services, at any time, by providing your identification (name) and contact information (e-mail and mobile phone number).</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_39Y8Qk": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "How long will we keep your personal data for?",
+            "faq_answer": "<p>We will only keep your personal data for the time strictly necessary to comply with the objectives aforementioned and within the limits of what is legally allowed. Once the deadline for keeping your data has ended, we will undertake to delete, destroy or ensure your personal data is made anonymous. </p><p>In general, with the exception of transaction data which, by law, we are obliged to keep for a 10-year period, we delete all your personal data as soon as your questions or requests have been answered and duly dealt with, or once the warranties for the articles purchased or repaired have expired.Should you have any queries or need further information regarding the time your personal data is maintained, please contact us via the following e-mail: <a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a></p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_ABmbaQ": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Who we may share your personal data with?",
+            "faq_answer": "<p>In certain cases, and only as strictly necessary, we may disclose your personal data to third parties providing services for us with regard to home deliveries, item repairs, customer care, and marketing activities.</p><p>Should we need to share your personal data with other bodies not located in European Economic Area, we will ensure that they are obliged to respect the European legislation regarding data protection.</p><p>We will communicate your personal data to the Tax Authority, as required by law. We will never share your personal data with other companies or brands for commercial purposes.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_VmcCJP": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "What are your rights and how can you exercise them?",
+            "faq_answer": "<p>As a rule, the personal data subject has the following rights in terms of data protection: the right of access, the right to rectification, the right to erasure, the right to restrict processing, the right to data portability, the right to object to processing, and rights to automated decision making and profiling.In cases where you have authorized that your personal data be treated in a certain manner, you may withdraw such consent at any given time. Should you wish to exercise any of these rights, please forward your request to the following e-mail:<a href=\"mailto:customer@zippyonline.com\">customer@zippyonline.com</a></p><p>Your requests will be carefully analyzed, and their legitimacy and relevance verified, and we will take all necessary steps to respond in due time. If necessary, you may also file a complaint with the National Data Protection Authority.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_yQDLck": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Cookies",
+            "faq_answer": "<p>Our website uses cookies for a better browsing experience and performance, and for an efficient and increased response time as well as eliminating the need to repeatedly introduce the same information. By using cookies our website will be able to recognize your device next time you visit us, and cookies are also essential in ensuring that it works effi¬ciently. The cookies used on our website do not collect person information that makes it possible to identify you; it will only keep general information such as how and/or the place where you accessed our website from, as well as how you use it. Cookies will only keep information on user preferences.<br/><br/>- Session cookies:</p><p>Are temporary cookies that remain in your browser cookie file until you leave the web page, and are, therefore, not kept in the user’s hard disk. The information processed by such cookies is used to analyse the website’s tra¬c patterns. That said, it also helps us improve the website content and usability.</p><p>-Performance cookies:</p><p>Are those which, when correctly treated by us or by third parties, will help us quantify the number of website users and measure and statistically analyse how those users make use of the service provided. We will study how you browse through our website so that we can improve our product supply or the services available.</p><p>- Advertising cookies:</p><p>Are those which, when correctly treated by us or by third parties, will help us efficiently manage advertisements on our website, and help us analyse your browsing habits so as to show more advertisements related to your browsing profile.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_rD6VfM": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "How we protect your personal data?",
+            "faq_answer": "<p>We use several information security measures, together with the best national and international practices, so as to protect your personal data, including technological control, administrative, technical and physical measures, and procedures that ensure the protection of your personal data, preventing any misuse, unauthorized access and disclosure, loss of personal data, improper or unintended changes, or unauthorized destruction.</p><p>In terms of information security, we are committed to improving continuously and on a daily basis. We would like to highlight the following measures, among others:</p><p>I. Restricted access to your personal data;</p><p>II. Your personal data are stored and communicated in a safe manner;</p><p>III. Information systems are protected by using devices that prevent any unauthorized use of your personal data;</p><p>IV. Mechanisms have been implemented to safeguard the integrity and quality of your personal data;</p><p>V. Permanent monitorization of our information systems so as to anticipate, detect and prevent your personal data from being misused;</p><p>VI. Redundancy of personal data storage, processing and communication equipment to avoid loss of availability.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_y6zyxk": {
+          "type": "faq_item",
+          "disabled": true,
+          "settings": {
+            "faq_question": "Links to other websites and social networks",
+            "faq_answer": "<p>We may provide hyperlinks to other sites of interest or partners, and we are not responsible for the privacy policy, cookie policy or conditions of use of those sites. By accessing other sites through the hyperlinks provided, the entities that manage those sites may collect information about you, which will be used by them.</p><p>We recommend that when you access other websites, you consult all the information and conditions mentioned above.</p><p>When you choose to follow us on social networks, when you interact with us on them, or when you access the website through them, your personal data may be processed by the entities that manage the social networks or the functionalities provided, in accordance with their respective privacy policies, which we recommend you read.</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "faq_item_c9xBbe": {
+          "type": "faq_item",
+          "settings": {
+            "faq_question": "Updates to this privacy policy",
+            "faq_answer": "<p>The present Privacy Policy may be reviewed and updated, and correct information always available at https://zippyonline.com</p>",
+            "list_1": "",
+            "table_1": ""
+          }
+        },
+        "navigation_item_FXWqUN": {
+          "type": "navigation_item",
+          "settings": {
+            "heading": "Cookies Policy",
+            "link_url": "shopify://pages/cookies-policy"
+          }
+        }
+      },
+      "block_order": [
+        "navigation_item_kDHjdt",
+        "navigation_item_YdmhFw",
+        "navigation_item_WBw9Ap",
+        "navigation_item_eJDVpT",
+        "navigation_item_KPH7Ac",
+        "navigation_item_E8BfPN",
+        "text_ndbx44",
+        "text_Dyj6Kd",
+        "faq_item_enDjKT",
+        "faq_item_wV46et",
+        "faq_item_gBLwHF",
+        "faq_item_bhzGeR",
+        "faq_item_39Y8Qk",
+        "faq_item_ABmbaQ",
+        "faq_item_VmcCJP",
+        "faq_item_yQDLck",
+        "faq_item_rD6VfM",
+        "faq_item_y6zyxk",
+        "faq_item_c9xBbe",
+        "navigation_item_FXWqUN"
+      ],
+      "settings": {
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40,
+        "padding_top_desktop": 0,
+        "padding_bottom_desktop": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "page_navigation_4EtxMc"
+  ]
+}
