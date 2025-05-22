@@ -1,139 +1,138 @@
+[![Build Status](https://dev.azure.com/zippylosan/Devops/_apis/build/status%2Fshopifysite?branchName=dev)](https://dev.azure.com/zippylosan/Devops/_build/latest?definitionId=38&branchName=dev)
+<sub>Click the badge to see details and the date/time of the last build</sub>
+
 # Shopify Theme Dev Container & CI/CD
 
-Este repositório fornece um ambiente completo para desenvolvimento, versionamento e deploy de temas Shopify, utilizando Dev Containers, Docker e Azure DevOps.
+This repository provides a complete environment for developing, versioning, and deploying Shopify themes using Dev Containers, Docker, and Azure DevOps.
 
-## Índice
-- [O que está incluso](#o-que-está-incluso)
-- [Pipeline CI/CD (Azure Pipelines)](#pipeline-cicd-azure-pipelines)
-- [Guia rápido para iniciar o desenvolvimento](#guia-rápido-para-iniciar-o-desenvolvimento)
-- [Comandos úteis do Shopify CLI](#comandos-úteis-do-shopify-cli)
-- [Melhores práticas](#melhores-práticas)
-- [Como rodar localmente os passos do pipeline](#como-rodar-localmente-os-passos-do-pipeline)
-- [Dúvidas?](#dúvidas)
+## Table of Contents
+- [What's Included](#whats-included)
+- [CI/CD Pipeline (Azure Pipelines)](#cicd-pipeline-azure-pipelines)
+- [Quick Start Guide](#quick-start-guide)
+- [Useful Shopify CLI Commands](#useful-shopify-cli-commands)
+- [Best Practices](#best-practices)
+- [How to Run Pipeline Steps Locally](#how-to-run-pipeline-steps-locally)
+- [Questions?](#questions)
 
-## O que está incluso
-- **Ambiente padronizado** com Dev Container (VS Code + Docker)
-- **CI/CD automatizado** via Azure Pipelines
-- **Lint, Prettier e Theme Check** para garantir qualidade do código
-- **Deploy seguro** para ambientes de staging e produção
-
----
-
-## Pipeline CI/CD (Azure Pipelines)
-O pipeline executa automaticamente, a cada push nos branches `main` ou `dev`, as seguintes etapas:
-
-1. **Instala dependências** (Node.js, Shopify CLI, linting tools)
-2. **Checa formatação** com Prettier
-3. **Roda ESLint** nos arquivos JS
-4. **Roda Stylelint** nos arquivos CSS
-5. **Roda Shopify Theme Check**
-6. **Define o ID do tema** conforme o branch (`main` = produção, `dev` = staging)
-7. **Faz o push do tema** para a loja Shopify
-8. **Publica o tema** (apenas se for branch `main` e variável `PUBLISH_THEME=true`)
+## What's Included
+- **Standardized environment** with Dev Container (VS Code + Docker)
+- **Automated CI/CD** via Azure Pipelines
+- **Lint, Prettier, and Theme Check** to ensure code quality
+- **Safe deploy** to staging and production environments
 
 ---
 
+## CI/CD Pipeline (Azure Pipelines)
+The pipeline runs automatically on every push to the `main` or `dev` branches and performs the following steps:
 
-## Guia rápido para iniciar o desenvolvimento
+1. **Installs dependencies** (Node.js, Shopify CLI, linting tools)
+2. **Checks formatting** with Prettier
+3. **Runs ESLint** on JS files
+4. **Runs Stylelint** on CSS files
+5. **Runs Shopify Theme Check**
+6. **Sets the theme ID** based on the branch (`main` = production, `dev` = staging)
+7. **Pushes the theme** to the Shopify store
+8. **Publishes the theme** (only if branch is `main` and variable `PUBLISH_THEME=true`)
 
-### 1. Clonar o repositório
+---
+
+## Quick Start Guide
+
+### 1. Clone the repository
 ```bash
-git clone <URL-do-repositório> ~/shopifySite
+git clone <repository-URL> ~/shopifySite
 cd ~/shopifySite
 ```
-Abra no VS Code:
+Open in VS Code:
 ```bash
 code .
 ```
 
-### 2. Abrir no Dev Container
-No VS Code, pressione `Ctrl+Shift+P` e selecione **Dev Containers: Reopen in Container**.
+### 2. Open in Dev Container
+In VS Code, press `Ctrl+Shift+P` and select **Dev Containers: Reopen in Container**.
 
-### 3. Autenticar no Shopify
-No terminal do Dev Container:
+### 3. Authenticate with Shopify
+In the Dev Container terminal:
 ```bash
-shopify theme dev --store <sualoja.myshopify.com>
+shopify theme dev --store <yourstore.myshopify.com>
 ```
-Siga o link para autenticar no navegador.
+Follow the link to authenticate in your browser.
 
-### 4. Rodar localmente
-No terminal, dentro da pasta do tema:
+### 4. Run locally
+In the terminal, inside the theme folder:
 ```bash
-shopify theme dev --store <sualoja.myshopify.com>
+shopify theme dev --store <yourstore.myshopify.com>
 ```
-Acesse [http://localhost:9292](http://localhost:9292) para visualizar.
+Go to [http://localhost:9292](http://localhost:9292) to preview.
 
-### 5. Versionar alterações
+### 5. Commit and push changes
 ```bash
 git add .
-git commit -m "Descrição da alteração"
+git commit -m "Description of the change"
 git push origin <branch>
 ```
 
 ---
 
-## Comandos úteis do Shopify CLI
+## Useful Shopify CLI Commands
 
-- Listar temas:
+- List themes:
   ```bash
-  shopify theme list --store <sualoja.myshopify.com>
+  shopify theme list --store <yourstore.myshopify.com>
   ```
-- Baixar tema:
+- Download theme:
   ```bash
-  shopify theme pull --store <sualoja.myshopify.com> --theme <ID_DO_TEMA>
+  shopify theme pull --store <yourstore.myshopify.com> --theme <THEME_ID>
   ```
-- Limpar autenticação:
+- Logout:
   ```bash
   shopify auth logout
   ```
 ---
 
+## Best Practices
+- **Never publish directly to the live (active) theme.** Always use a development theme.
+- **Always run lint, prettier, and theme check before pushing.**
+- **Write clear commit messages.**
+- **Check in the Shopify admin panel that the correct theme was updated.**
+- **Use the Dev Container to ensure a standardized environment.**
 
-## Melhores práticas
-- **Nunca publique direto no tema ativo (live)**. Use sempre um tema de desenvolvimento.
-- **Sempre rode lint, prettier e theme check antes do push**.
-- **Descreva bem seus commits**.
-- **Confirme no painel da Shopify se o tema correto foi atualizado**.
-- **Use o Dev Container para garantir ambiente padronizado**.
+---
 
+### How to Run Pipeline Steps Locally
 
---- 
-
-
-### Como rodar localmente os passos do pipeline
-
-1. Instale as dependências:
+1. Install dependencies:
    ```bash
    npm install -g @shopify/cli @shopify/theme
    npm install --save-dev eslint stylelint stylelint-config-standard prettier @shopify/prettier-plugin-liquid
    ```
-2. Cheque a formatação:
+2. Check formatting:
    ```bash
-   npx prettier --check "themes/<nome-do-tema>/**/*.{liquid,js,css,json}"
+   npx prettier --check "themes/<theme-name>/**/*.{liquid,js,css,json}"
    ```
-3. Rode o ESLint:
+3. Run ESLint:
    ```bash
-   npx eslint "themes/<nome-do-tema>/assets/*.js"
+   npx eslint "themes/<theme-name>/assets/*.js"
    ```
-4. Rode o Stylelint:
+4. Run Stylelint:
    ```bash
-   npx stylelint "themes/<nome-do-tema>/assets/*.css"
+   npx stylelint "themes/<theme-name>/assets/*.css"
    ```
-5. Rode o Theme Check:
+5. Run Theme Check:
    ```bash
-   cd themes/<nome-do-tema>
+   cd themes/<theme-name>
    shopify theme check
    ```
-6. Faça o push do tema (atenção: use um tema de desenvolvimento!):
+6. Push the theme (make sure to use a development theme!):
    ```bash
-   shopify theme push --store <sualoja.myshopify.com> --theme <ID_DO_TEMA> --password <TOKEN>
+   shopify theme push --store <yourstore.myshopify.com> --theme <THEME_ID> --password <TOKEN>
    ```
-7. (Opcional) Publique o tema (produção):
+7. (Optional) Publish the theme (production):
    ```bash
-   shopify theme publish --store <sualoja.myshopify.com> --theme <ID_DO_TEMA> --password <TOKEN>
+   shopify theme publish --store <yourstore.myshopify.com> --theme <THEME_ID> --password <TOKEN>
    ```
 
 ---
 
-## Dúvidas?
-Consulte este README sempre que precisar relembrar o fluxo ou comandos principais. Para detalhes do pipeline, veja o arquivo `azure-pipelines.yml`.
+## Questions?
+Refer to this README whenever you need to review the workflow or main commands. For pipeline details, see the `azure-pipelines.yml` file.
