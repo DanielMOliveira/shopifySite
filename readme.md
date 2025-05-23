@@ -36,7 +36,48 @@ The pipeline runs automatically on every push to the `main` or `dev` branches an
 
 ---
 
-## Quick Start Guide
+## ⚙️ Pipeline Configuration and config.json
+
+The pipeline is fully dynamic and branch-aware, using the `deploy/config.json` file to determine which Shopify store, theme ID, and folder to use for each branch. This allows for safe deployments to different environments (main, dev, feature branches) and prevents accidental overwrites.
+
+### How it works
+- On every build, the pipeline reads `deploy/config.json` and matches the current branch name to a configuration block.
+- Each block defines:
+  - `store`: Shopify store URL
+  - `theme_id`: Target theme ID for that branch
+  - `publish`: Whether to publish the theme after push (true/false)
+  - `theme_folder`: Path to the theme code in the repo
+- If a branch is not configured, the pipeline fails with an error.
+
+**Example config.json:**
+```json
+{
+  "main": {
+    "store": "zippy-development.myshopify.com",
+    "theme_id": "180539097471",
+    "publish": false,
+    "theme_folder": "themes/dawn/"
+  },
+  "dev": {
+    "store": "zippy-development.myshopify.com",
+    "theme_id": "180267843959",
+    "publish": false,
+    "theme_folder": "themes/dawn/"
+  },
+  "feature/nova-feature": {
+    "store": "zippy-development.myshopify.com",
+    "theme_id": "333333333333",
+    "publish": false,
+    "theme_folder": "themes/dawn/feature/nova-feature/"
+  }
+}
+```
+
+> **Note:** Always update `deploy/config.json` when creating a new branch that needs a different theme or store.
+
+---
+
+## Quick Start Guide (Updated)
 
 ### 1. Clone the repository
 ```bash
@@ -54,7 +95,7 @@ In VS Code, press `Ctrl+Shift+P` and select **Dev Containers: Reopen in Containe
 ### 3. Authenticate with Shopify
 In the Dev Container terminal:
 ```bash
-shopify theme list --store <yourstore.myshopify.com>
+shopify theme dev --store <yourstore.myshopify.com>
 ```
 Follow the link to authenticate in your browser.
 
@@ -66,7 +107,7 @@ shopify theme pull --theme <THEME_ID>
 > **Important:** Always run this command before every commit to avoid overwriting changes made directly in the Shopify admin.
 
 ### 5. Run locally
-In the terminal, move to a theme folder (themes/ThemeName) and run:
+In the terminal, inside the theme folder:
 ```bash
 shopify theme dev --store <yourstore.myshopify.com>
 ```
