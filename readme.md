@@ -77,7 +77,7 @@ The pipeline is fully dynamic and branch-aware, using the `deploy/config.json` f
 
 ---
 
-## Quick Start Guide (Updated)
+## Quick Start Guide
 
 ### 1. Clone the repository
 ```bash
@@ -108,6 +108,7 @@ Check the list to confirm the theme ID you want to work with.
 
 ### 5. Pull the latest theme code from Shopify
 Before making any changes or commits, always pull the latest version of the theme from Shopify to ensure you are working with the most up-to-date code:
+Ensure you are in the correct theme folder:
 ```bash
 shopify theme pull --theme <THEME_ID>
 ```
@@ -131,7 +132,7 @@ git push origin <branch>
 
 ---
 
-## Test Values / Valores para Testes
+## Values zippy development.myshopify.com
 
 | Placeholder                | Example Value                  |
 |----------------------------|-------------------------------|
@@ -153,6 +154,11 @@ git push origin <branch>
 - Logout:
   ```bash
   shopify auth logout
+  ```
+
+  - Theme check:
+  ```bash
+  shopify theme check
   ```
 ---
 
