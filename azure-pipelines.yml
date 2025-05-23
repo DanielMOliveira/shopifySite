@@ -64,8 +64,8 @@ steps:
   - script: |
       mkdir -p lint-reports
       npx eslint "$THEME_FOLDER/**/*.js" > lint-reports/eslint.txt || true
-    displayName: 'Run ESLint '
-  
+    displayName: 'Run ESLint'
+
   - script: |
       mkdir -p lint-reports
       npx stylelint "$THEME_FOLDER/**/*.css" > lint-reports/stylelint.txt || true
@@ -81,7 +81,7 @@ steps:
       PathtoPublish: 'lint-reports'
       ArtifactName: 'lint-results'
       publishLocation: 'Container'
-    displayName: 'Publicar artefatos dos lints'
+    displayName: 'Publish lint artifacts'
 
   - script: |
       cd "$THEME_FOLDER"
