@@ -23,16 +23,16 @@ This repository provides a complete environment for developing, versioning, and 
 ---
 
 ## CI/CD Pipeline (Azure Pipelines)
-The pipeline runs automatically on every push to the `main` or `dev` branches and performs the following steps:
+The pipeline runs automatically on every push to the `main`, `dev`, or any `feature/*` branch and performs the following steps:
 
 1. **Installs dependencies** (Node.js, Shopify CLI, linting tools)
 2. **Checks formatting** with Prettier
 3. **Runs ESLint** on JS files
 4. **Runs Stylelint** on CSS files
 5. **Runs Shopify Theme Check**
-6. **Sets the theme ID** based on the branch (`main` = production, `dev` = staging)
-7. **Pushes the theme** to the Shopify store
-8. **Publishes the theme** (only if branch is `main` and variable `PUBLISH_THEME=true`)
+6. **Reads store, theme ID, publish flag, and theme folder from `deploy/config.json` based on the branch**
+7. **Push the theme** to the Shopify store
+8. **Publish the theme** (only if `publish: true` for the branch in `config.json`)
 
 ---
 
@@ -99,21 +99,28 @@ shopify theme dev --store <yourstore.myshopify.com>
 ```
 Follow the link to authenticate in your browser.
 
-### 4. Pull the latest theme code from Shopify
+### 4. List available themes in the store
+Before pulling or pushing, it's a good practice to list all themes and confirm the correct theme ID:
+```bash
+shopify theme list --store <yourstore.myshopify.com>
+```
+Check the list to confirm the theme ID you want to work with.
+
+### 5. Pull the latest theme code from Shopify
 Before making any changes or commits, always pull the latest version of the theme from Shopify to ensure you are working with the most up-to-date code:
 ```bash
 shopify theme pull --theme <THEME_ID>
 ```
 > **Important:** Always run this command before every commit to avoid overwriting changes made directly in the Shopify admin.
 
-### 5. Run locally
+### 6. Run locally
 In the terminal, inside the theme folder:
 ```bash
 shopify theme dev --store <yourstore.myshopify.com>
 ```
 Go to [http://localhost:9292](http://localhost:9292) to preview.
 
-### 6. Commit and push changes
+### 7. Commit and push changes
 ```bash
 git add .
 git commit -m "Description of the change"
@@ -121,6 +128,15 @@ git push origin <branch>
 ```
 
 > **Note:** The code in the repository always takes priority over changes made directly in the Shopify admin. When you push from the repository, it will overwrite any changes made online.
+
+---
+
+## Test Values / Valores para Testes
+
+| Placeholder                | Example Value                  |
+|----------------------------|-------------------------------|
+| `<yourstore.myshopify.com>`| zippy-development.myshopify.com |
+| `<THEME_ID>`               | 180267843959                  |
 
 ---
 
